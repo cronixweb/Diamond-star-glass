@@ -66,13 +66,17 @@ class CustomerPasswordNew {
 
   handleTip() {
     let tipText = EMAILTIP;
-    const tip = document.querySelector('p[data-tip]');
-    const supportType = tip.getAttribute('data-support-type-list');
-    if (supportType === 'email') {
+    const tip = document.querySelector('#reset-customer-password-tip');
+    const supportTypeDom = document.querySelector('#reset-customer-password-support-type');
+    const supportType = supportTypeDom.getAttribute('data-support-type-list');
+    if (supportType.includes('email')) {
       tipText = EMAILTIP;
     }
-    if (supportType === 'mobile') {
+    if (supportType.includes('mobile')) {
       tipText = PHONETIP;
+    }
+    if (supportType.includes('email') && supportType.includes('mobile')) {
+      tipText = EMAILTIP;
     }
     tip.innerText = tipText;
   }
@@ -83,7 +87,7 @@ class CustomerPasswordNew {
     const mobile = document.querySelector('.field[data-type="mobile"]');
     const emailTab = tab && tab.querySelector('a[data-type="email"]');
     const mobileTab = tab && tab.querySelector('a[data-type="mobile"]');
-    const tip = document.querySelector('p[data-tip]');
+    const tip = document.querySelector('#reset-customer-password-tip');
 
     const map = {
       email,

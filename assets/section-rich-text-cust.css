@@ -1,0 +1,54 @@
+.in-stock-collection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.in-stock-collection__content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 55px 80px;
+  width: 100%;
+}
+
+.in-stock-collection h2 {
+    margin: 0;
+    margin-bottom: 24px;
+
+  color: #121212;
+  /* font-family: Gotham; */
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.in-stock-collection__button {
+  color: #ffffff !important;
+  display: inline-block;
+  padding: 0 40px;
+  background-color: #000;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+
+  text-align: center;
+  /* font-family: "Open Sans"; */
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.25rem;
+  letter-spacing: 0.03125rem;
+  text-transform: uppercase;
+}
+
+
+@media screen and (min-width: 950px) and (max-width: 749px){
+
+}
+
+@media screen and (min-width: 750px) {
+  
+}

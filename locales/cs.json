@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "Do košíku můžete přidat pouze {{quantity}} položky z této položky."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Neplatná E-mailová adresa"
-    },
     "account": {
       "account_binding": "Vázání Účtu",
       "account_information": "Účet",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Můžete požádat o uzavření tohoto účtu. Po uzavření budou všechny informace pro identifikaci tohoto účtu smazány, včetně:",
       "email": "E-mailové",
       "email_repeat_tip": "E-mail byl zaregistrován",
+      "email_subscribe_invalid_tip": "Neplatná E-mailová adresa",
       "first_name": "Jméno",
       "gender": "Pohlaví",
       "gender_female": "Žena",
@@ -260,7 +258,7 @@
       "copy_success": "Kód kupónu zkopírován",
       "discount_title": "Aktivujte účet a získejte slevový kód",
       "normal_title": "Aktivovat účet",
-      "normal_title_with_discount_code": "Aktivujte svůj účet a získejte slevový kód",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Přihlaste se k odběru e-mailů a získejte aktualizace, přístup k exkluzivním nabídkám, a více.",
       "success_title": "Gratulujeme k získání skvělou slevu",
       "token_expired": "Platnost odkazu vypršela"
@@ -300,19 +298,98 @@
         "shipping": "Adresa pro doručení společnosti",
         "title": "Žádost o účet společnosti"
       },
+      "address": {
+        "placeholder": "Podrobná adresa"
+      },
+      "address2": {
+        "placeholder": "Podrobná adresa 2"
+      },
       "bill": {
         "sameAsCompany": "Adresa fakturace společnosti stejná jako adresa pro doručení společnosti"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Podrobná adresa"
+        },
+        "address2": {
+          "placeholder": "Podrobná adresa 2"
+        },
+        "city": {
+          "placeholder": "Město"
+        },
+        "country": {
+          "placeholder": "Země/region"
+        },
+        "district": {
+          "placeholder": "Distrikt"
+        },
+        "phone": {
+          "placeholder": "Číslo mobilního telefonu"
+        },
+        "province": {
+          "placeholder": "Provincie"
+        },
+        "zip": {
+          "placeholder": "Poštovní směrovací číslo"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Fakturační adresa společnosti je stejná jako přijímací adresa"
+      },
+      "billing_address": {
+        "title": "Fakturační adresa společnosti"
+      },
+      "city": {
+        "placeholder": "Město"
+      },
+      "company_name": {
+        "placeholder": "Název společnosti"
+      },
+      "country": {
+        "placeholder": "Země/region"
       },
       "create": {
         "limit": "Počet společností pro obchod dosáhl svého limitu. Prosím, kontaktujte obchodníka o pomoc.",
         "success": "Děkujeme. Formulář byl odeslán."
       },
+      "district": {
+        "placeholder": "Distrikt"
+      },
+      "email": {
+        "placeholder": "Poštovní schránka"
+      },
       "field": {
         "companyName": "Název společnosti",
         "email": "E-mail"
       },
+      "first_name": {
+        "placeholder": "Jména"
+      },
       "form": {
         "submit": "Odeslat"
+      },
+      "last_name": {
+        "placeholder": "Příjmení"
+      },
+      "phone": {
+        "placeholder": "Číslo mobilního telefonu"
+      },
+      "province": {
+        "placeholder": "Provincie"
+      },
+      "register": {
+        "button": "Podání",
+        "success": {
+          "description": "Formulář byl úspěšně odeslán.",
+          "title": "Děkujeme za vyplnění!"
+        },
+        "title": "Žádost o firemní účet"
+      },
+      "shipping_address": {
+        "title": "Adresa přijímající společnosti"
+      },
+      "zip": {
+        "placeholder": "Poštovní směrovací číslo"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Vymazat",
       "company_empty_hint": "Název společnosti nemůže být prázdný",
       "company_existed": "Název společnosti již existuje.",
+      "company_frequent_operation": "Opakujte operaci, zkuste to znovu později",
+      "company_registry_closed": "Obchodník neaktivoval funkci aplikace firemního účtu, kontaktujte prosím obchodníka s žádostí.",
       "confirm": "OK",
       "confirm_button": "Ok",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Zašleme vám SMS pro resetování hesla",
       "proceed_to_checkout": "Pokračujte k pokladně",
       "title": "Název stránky",
-      "verification_code_success": "Na vaše přihlašovací údaje byl zaslán ověřovací kód {{type}}<em>{{value}}</em>, zadejte jej prosím níže."
+      "verification_code_success": "Na vaše přihlašovací údaje byl zaslán ověřovací kód {{type}} <em>{{value}}</em>, zadejte jej prosím níže."
     },
     "login": {
       "member_login_common": "Přihlášení člena",
@@ -461,12 +540,18 @@
       "go_to_login": "Přejděte k přihlášení",
       "tips_agree_with_the_shop": "Souhlasím s"
     },
+    "subscribe": {
+      "email_has_bind": "Tato e-mailová adresa byla spojena s jiným účtem",
+      "phone_has_bind": "Tento telefon byl vázán na jiný účet"
+    },
     "subscription": {
       "email": "E-mailové",
+      "email_subscribe_error_tip": "Tato poštovní schránka je vázána na jiný účet",
       "email_subscription_text": "Získejte propagační informace o předplatném E-mailem",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Mobilní Telefon",
+      "phone_subscribe_error_tip": "Tento mobilní telefon je vázán na jiný účet",
       "phone_subscription_text": "Přihlaste se k odběru telefonické propagace",
       "reason_other_length": "Zadejte až 300 znaků",
       "reason_other_placeholder": "Vstupní obsah",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Předplatné zrušeno, bude Přesměrováno na domovskou stránku",
       "unsubscribe_tip": "Po odhlášení z odběru již nebudete dostávat nejnovější propagační akce.",
       "unsubscribe_title": "Odhlásit odběr"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Zadejte prosím obsah",
+      "goto_btn": "Vstupte do obchodu",
+      "notyet": "Ještě jste se nepřihlásili k odběru",
+      "notyet_desc": "Můžete jít do obchodu a přihlásit se k odběru",
+      "success": "Předplatné zrušeno",
+      "success_tip": "Odhlásili jste odběr {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Koupit znovu",
     "checkout_order": {
       "pay_amount": "zaplatit částku",
       "receiver_account": "účet příjemce",
@@ -596,8 +690,9 @@
       "details": "Podrobnosti objednávky",
       "insuranceService": "Pojišťovací Služby",
       "insuranceService_applyClaim": "Žádost o reklamaci",
-      "insuranceService_content_email": "1. Podmínky byly zaslány na váš e-mail „{{email}}“ společností {{serviceName}}. Pokud jste neobdrželi informace o zásadách, kontaktujte prosím volací obchod. 2. Pokud během doručování dojde k poškození, ztrátě, zpoždění nebo jiné situaci, můžete uplatnit reklamaci., můžete požádat o reklamaci.",
-      "insuranceService_content_phone": "1. Podmínky byly odeslány do vašeho telefonu „{{phopne}}“ {{serviceName}}. Pokud jste neobdrželi informace o podmínkách, obraťte se prosím na zákaznický servis obchodu. 2. Pokud během doručování dojde k poškození, ztrátě, zpoždění nebo jiné situaci, můžete uplatnit reklamaci, můžete požádat o reklamaci.",
+      "insuranceService_content_line1__email": "1. Podmínky byly zaslány na váš e-mail „{{email}}“ společností {{serviceName}}. Pokud jste neobdrželi informace o zásadách, kontaktujte prosím volací obchod. ",
+      "insuranceService_content_line1__phone": "1. Pojistka byla zakoupena prostřednictvím {{serviceName}}. Máte-li jakékoli další dotazy, obraťte se na zákaznický servis obchodu.",
+      "insuranceService_content_line2": "2. Pokud během doručování dojde k poškození, ztrátě, zpoždění nebo jiné situaci, můžete uplatnit reklamaci, můžete požádat o reklamaci.",
       "order": "Objednat",
       "remark": "Poznámka k objednávce",
       "time": "Objednáno na:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Načítání dalších položek",
+      "loading_btn": "Načíst více",
       "no_product_data_found": "Nebyly nalezeny žádné údaje o produktu. Zkuste to prosím později",
       "sold_out": "Vyprodáno",
-      "added_to_cart_successfully": "Přidáno do košíku úspěšně",
+      "load_more": "Načítání dalších položek",
       "load_more_items": "Načítání {{current_offset}} ~ {{last_current_offset}} z {{total}} položek",
-      "unavailable": "nedostupný"
+      "unavailable": "Zboží neexistuje",
+      "variant_property_color": "Barva"
     },
     "giftcard": {
       "seoTitle": "Zůstatek vaše {{ shop }} dárkových karet je {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtrovat",
       "filters_selected": "{{count}} bylo vybráno",
       "from_price_html": "Od {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} z {{total}} položek",
       "less": "méně",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} z {{total}} položek",
       "load_more_tip": "Načítání dalších položek",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% ze ceny",
       "select_product_all_options": "Vybraná variant produktu je neúplná nebo nedostupná. Prosím, vyberte znovu",
       "sort_button": "Seřadit",
-      "top_sellers": "Nejprodávanější",
-      "more__product_num": "{{num}} výrobků",
-      "one_product_num": "{{num}} výrobek",
-      "show": "Ukázat"
+      "top_sellers": "Nejprodávanější"
     },
     "product_search": {
       "back_to_home": "Zpět na domovskou stránku",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Vícekanálové platby",
       "Paypal": "PayPal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kreditní Karta"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Limit produktu byl překročen"
     },
     "order": {
-      "deleted": "NEPLATNÝ"
+      "deleted": "NEPLATNÝ",
+      "rebuy": "Koupit znovu"
     },
     "payment": {
       "continue_shopping": "Pokračovat v nákupu",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Přihlášení ke kanálu třetí strany není nakonfigurované",
       "error_message_1009": "Volání rozhraní třetí strany se nezdařilo",
       "error_message_1010": "Nepodařilo se odeslat",
-      "error_message_1011": "Účet není aktivován",
+      "error_message_1011": "Účet není aktivován, abyste doplnili heslo a další informace.",
       "error_message_1012": "Výjimka služby",
       "error_message_1013": "Výjimka služby",
       "error_message_1014": "Ověřovací kód se nezdařil",

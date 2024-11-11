@@ -1,5 +1,7 @@
+{{snippet "stylesheet" href=(asset_url "component-tool-tip.css")}}
 {{snippet "stylesheet" href=(asset_url "section-customer.css")}}
 <script src="{{asset_url 'section-customer-lib-jquery.js'}}" defer></script>
+<script src="{{asset_url 'component-tool-tip.js'}}" defer></script>
 <script src="{{asset_url 'section-main-activate-account.js'}}" defer></script>
 
 {{assign "privacy_policy_url" shop.privacy_policy.url}}
@@ -13,35 +15,7 @@
 }}
 
 <div class="customer activate page-width section-padding">
-  <h1 class="title5 text-center customer-form-title">
-    {{#if invite_activation_information.discount_enable}}
-      {{t "customer.activate.normal_title_with_discount_code"}}
-    {{else}}
-      {{t "customer.activate.normal_title"}}
-    {{/if}}
-  </h1>
-
-  {{#if invite_activation_information.discount_enable}}
-  <div class="marketing-discount-display" style="--background-color: {{invite_activation_information.discount_bg_color.rgba}}">
-    {{#if invite_activation_information.discount_banner_image}}
-    <div class="marketing-banner-image">
-      {{snippet "image" data=invite_activation_information.discount_banner_image}}
-    </div>
-    {{/if}}
-    <div class="marketing-banner-body">
-      <div class="marketing-banner-title">
-        {{snippet 'icon-star'}}
-        <span class="marketing-banner-title-text">Gift For Avtivation</span>
-        {{snippet 'icon-star'}}
-      </div>
-      <div class="marketing-banner-text">
-        <div class="marketing-banner-text--inner body3">
-          {{invite_activation_information.discount_dec}}
-        </div>
-      </div>
-    </div>
-  </div>
-  {{/if}}
+  <h1 class="title5 text-center customer-form-title">{{t "customer.activate.normal_title"}}</h1>
 
   {{#form "activate_customer_password" id="activate-account-form"}}
     <div class="field">
@@ -79,6 +53,9 @@
           <span class="field-checkbox">
             <input type="checkbox" name="agree" required />
             <span class="checkbox"></span>
+            <tool-tip tip-position="bottom" controlled>
+              {{t 'customer.general.user_agreement_tip'}}
+            </tool-tip>
           </span>
           <span class="body4">
             {{t "customer.register.tips_agree_with_the_shop"}}

@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Du kan bare legge til {{quantity}} varer i denne varen i handlekurven din."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Ugyldig e-postadresse"
-    },
     "account": {
       "account_binding": "Kontobinding",
       "account_information": "Regnskap",
       "bind": "Binding",
       "birthday": "Bursdagsdato",
       "change_password": "Endre passordet",
-      "confirm_btn": "Bevestigen",
+      "confirm_btn": "Bekrefte",
       "confirm_subscription_modal_btn": "Bekreft abonnement",
       "confirm_subscription_modal_content": "Du har tidligere sendt inn et abonnement. En e-postbekreftelse er sendt til denne e-postadressen. Du kan bekrefte dette i e-posten din eller klikke på denne knappen.",
       "confirm_subscription_modal_title": "Bekreft abonnement via e-post.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Du kan be om at denne kontoen lukkes. Hvis denne kontoen identifiseres, slettes all informasjon, spesielt:",
       "email": "E-post",
       "email_repeat_tip": "E-posten er registrert",
+      "email_subscribe_invalid_tip": "Ugyldig e-postadresse",
       "first_name": "Navn",
       "gender": "Kjønn",
       "gender_female": "Kvinne",
@@ -260,7 +258,7 @@
       "copy_success": "Kopiert kupongkode",
       "discount_title": "Aktiver konto og få rabattkoden",
       "normal_title": "Aktiver konto",
-      "normal_title_with_discount_code": "Aktiver kontoen din og få en rabattkode",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Abonner på e-post for å motta oppdateringer, få tilgang til eksklusive tilbud og mer.",
       "success_title": "Gratulerer med å få en god rabatt",
       "token_expired": "Linken er utløpt"
@@ -300,19 +298,98 @@
         "shipping": "Selskapets leveringsadresse",
         "title": "Søknad om firmakonto"
       },
+      "address": {
+        "placeholder": "Detaljert adresse"
+      },
+      "address2": {
+        "placeholder": "Detaljert adresse 2"
+      },
       "bill": {
         "sameAsCompany": "Firmaets faktureringsadresse er den samme som firmaets leveringsadresse"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Detaljert adresse"
+        },
+        "address2": {
+          "placeholder": "Detaljert adresse 2"
+        },
+        "city": {
+          "placeholder": "By"
+        },
+        "country": {
+          "placeholder": "Land/Region"
+        },
+        "district": {
+          "placeholder": "Distrikt"
+        },
+        "phone": {
+          "placeholder": "Mobiltelefonnummer"
+        },
+        "province": {
+          "placeholder": "Provins"
+        },
+        "zip": {
+          "placeholder": "Postnummer"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Selskapets faktureringsadresse er den samme som leveringsadresse"
+      },
+      "billing_address": {
+        "title": "Selskapets faktureringsadresse"
+      },
+      "city": {
+        "placeholder": "By"
+      },
+      "company_name": {
+        "placeholder": "Selskapets navn"
+      },
+      "country": {
+        "placeholder": "Land/Region"
       },
       "create": {
         "limit": "Antall bedrifter for butikken har nådd sin grense. Ta kontakt med selgeren for å få hjelp.",
         "success": "Takk skal du ha. Skjemaet er sendt inn."
       },
+      "district": {
+        "placeholder": "Distrikt"
+      },
+      "email": {
+        "placeholder": "Postkasse"
+      },
       "field": {
         "companyName": "Selskapsnavn",
         "email": "E-post"
       },
+      "first_name": {
+        "placeholder": "Etternavn"
+      },
       "form": {
         "submit": "Sende inn"
+      },
+      "last_name": {
+        "placeholder": "Navn"
+      },
+      "phone": {
+        "placeholder": "Mobiltelefonnummer"
+      },
+      "province": {
+        "placeholder": "Provins"
+      },
+      "register": {
+        "button": "Send inn",
+        "success": {
+          "description": "Skjemaet har blitt sendt inn.",
+          "title": "Takk for at du fylte det ut!"
+        },
+        "title": "Søknad om firmakonto"
+      },
+      "shipping_address": {
+        "title": "Selskapets leveringsadresse"
+      },
+      "zip": {
+        "placeholder": "Postnummer"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Annuller",
       "company_empty_hint": "Firmanavnet kan ikke stå tomt",
       "company_existed": "Firmanavnet finnes allerede.",
+      "company_frequent_operation": "Gjenta operasjonen, prøv igjen senere",
+      "company_registry_closed": "Selgeren har ikke aktivert applikasjonsfunksjonen for firmakonto. Kontakt selgeren for å søke.",
       "confirm": "OK",
       "confirm_button": "Ok",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Vi sender deg en SMS for å tilbakestille passord ditt",
       "proceed_to_checkout": "Fortsett til utsjekking",
       "title": "Side tittel",
-      "verification_code_success": "Bekreftelseskode sendt for å logge inn {{type}}<em>{{value}}</em>, skriv inn koden nedenfor."
+      "verification_code_success": "Bekreftelseskode sendt for å logge inn {{type}} <em>{{value}}</em>, skriv inn koden nedenfor."
     },
     "login": {
       "member_login_common": "Pålogging for medlem",
@@ -461,12 +540,18 @@
       "go_to_login": "Gå til logg på",
       "tips_agree_with_the_shop": "Jeg godtar"
     },
+    "subscribe": {
+      "email_has_bind": "Denne e-postadressen er knyttet til en annen konto",
+      "phone_has_bind": "Denne telefonen har blitt bundet til en annen konto"
+    },
     "subscription": {
       "email": "E-post",
+      "email_subscribe_error_tip": "Denne e-postadressen har vært knyttet til en annen konto",
       "email_subscription_text": "Motta kampanjeinformasjonen for abonnementet på E-post",
       "line": "LINJE",
       "messenger": "Budbringer",
       "phone": "Mobiltelefon",
+      "phone_subscribe_error_tip": "Denne mobiltelefonen har vært knyttet til en annen konto",
       "phone_subscription_text": "Abonnere på telefonkampanje",
       "reason_other_length": "Skriv inn opptil 300 tegn",
       "reason_other_placeholder": "Input innhold",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Abonnement kansellert, du blir omdirigert til hjemmesiden",
       "unsubscribe_tip": "Når du har avsluttet abonnementet, vil du ikke motta siste kampanje lenger.",
       "unsubscribe_title": "Avmeldt"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Vennligst skriv inn innhold",
+      "goto_btn": "Gå inn i butikken",
+      "notyet": "Du har ikke abonnert ennå",
+      "notyet_desc": "Du kan gå til butikken for å abonnere",
+      "success": "Abonnement kansellert",
+      "success_tip": "Du har avsluttet abonnementet på {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Kjøp igjen",
     "checkout_order": {
       "pay_amount": "betale beløp",
       "receiver_account": "mottakerkonto",
@@ -596,8 +690,9 @@
       "details": "Bestillingsdetaljer",
       "insuranceService": "Forsikringstjenester",
       "insuranceService_applyClaim": "Søke om krav",
-      "insuranceService_content_email": "1. Policyen ble sendt til din “{{email}}” e-postadresse av {{serviceName}}. Hvis du ikke har mottatt din policyinformasjon, kan du kontakte butikkens kundeservice. 2. Hvis det er skade, tap, forsinkelse eller andre situasjoner under transport, kan du be om et krav.",
-      "insuranceService_content_phone": "1. Policyen er sendt til “{{phopne}}”elefonen din fra {{serviceName}}. Hvis du ikke har mottatt din policyinformasjon, kan du kontakte butikkens kundeservice. 2. Hvis det er skade, tap, forsinkelse eller andre situasjoner under transport, kan du be om et krav.",
+      "insuranceService_content_line1__email": "1. Policyen ble sendt til din “{{email}}” e-postadresse av {{serviceName}}. Hvis du ikke har mottatt din policyinformasjon, kan du kontakte butikkens kundeservice. ",
+      "insuranceService_content_line1__phone": "1. Kilden ble anskaffet gjennom {{serviceName}}. Hvis du har ytterligere spørsmål, vennligst kontakt butikkens kundeservice.",
+      "insuranceService_content_line2": "2. Hvis det er skade, tap, forsinkelse eller andre situasjoner under transport, kan du be om et krav.",
       "order": "Ordrer",
       "remark": "Bestillingsmerknader",
       "time": "Bestilt den:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Laster inn flere varer",
+      "loading_btn": "Last inn mer",
       "no_product_data_found": "Finner ingen produktdata. Prøv på nytt senere",
       "sold_out": "Utsolgt",
-      "added_to_cart_successfully": "Lagt til i handlekurven vellykket",
+      "load_more": "Laster inn flere varer",
       "load_more_items": "Lasting {{current_offset}} ~ {{last_current_offset}} av {{total}} varer",
-      "unavailable": "utilgjengelig"
+      "unavailable": "Varene finnes ikke",
+      "variant_property_color": "Farge"
     },
     "giftcard": {
       "seoTitle": "Din {{ shop }} gavekort balanse er {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filter",
       "filters_selected": "{{count}} er valgt",
       "from_price_html": "Fra {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} av {{total}} varer",
       "less": "mindre",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} av {{total}} varer",
       "load_more_tip": "Laster inn flere varer",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% avslag",
       "select_product_all_options": "Den valgte produktvarianten er ufullstendig eller utilgjengelig. Vennligst velg på nytt",
       "sort_button": "Sorter",
-      "top_sellers": "Bestselgere",
-      "more__product_num": "{{num}} Produkter",
-      "one_product_num": "{{num}} produkt",
-      "show": "Vise"
+      "top_sellers": "Bestselgere"
     },
     "product_search": {
       "back_to_home": "Tilbake til hjemmesiden",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Multi-kanal betalinger",
       "Paypal": "PayPal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kredittkort"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Produktgrensen er overskredet"
     },
     "order": {
-      "deleted": "UGYLDIG"
+      "deleted": "UGYLDIG",
+      "rebuy": "Kjøp den igjen"
     },
     "payment": {
       "continue_shopping": "Fortsette å handle",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Tredjeparts kanalpålogging er ikke konfigurert",
       "error_message_1009": "Tredjeparts grensesnittanrop mislyktes",
       "error_message_1010": "Mislykket sending",
-      "error_message_1011": "Kontoen er ikke aktivert",
+      "error_message_1011": "Kontoen er ikke aktivert. Registrer deg for å fylle ut passordet og annen informasjon.",
       "error_message_1012": "Service unntak",
       "error_message_1013": "Service unntak",
       "error_message_1014": "Bekreftelseskoden mislyktes",

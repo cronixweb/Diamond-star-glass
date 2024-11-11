@@ -1,0 +1,104 @@
+{{snippet "stylesheet" href=(asset_url "section-instagram-feed.css")}}
+
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
+<div class="instagram-feed three-category-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+    <h2>{{ section.settings.heading-instagram-feed }}</h2>
+    <div class="instagram-carousel">
+        {{#for section.blocks as |block|}}
+            <div class="instagram-item">
+                {{snippet "image" data=block.settings.instagram-image}}
+            </div>
+        {{/for}}
+    </div>
+</div>
+
+
+{{#schema }}
+{
+  "name": "Instagram Feed",
+  "settings": [
+    {
+        "type": "richtext",
+        "id": "heading-instagram-feed",
+        "label": {
+            "en": "Main text"
+        },
+        "default": "Follow us @diamondstarglass"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1",
+          "label": "Color 1"
+        },
+        {
+          "value": "2",
+          "label": "Color 2"
+        },
+        {
+          "value": "3",
+          "label": "Color 3"
+        }
+      ],
+      "default": "none",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "group_header",
+      "label": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+    "blocks": [
+    {
+      "type": "richtext",
+      "name": "heading",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "instagram-image",
+            "label": "Image",
+            "limit": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Feed",
+      "category": "Custom"
+    }
+  ]
+}
+{{/schema }}

@@ -1,0 +1,180 @@
+{{snippet "stylesheet" href=(asset_url "section-hero-banner.css")}}
+
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
+<style>
+  .hero-section-{{section.id}} {
+      background-image: url('{{section.settings.background_image}}');
+      
+      justify-content: {{ section.settings.content_align }};
+      text-align: {{ section.settings.text_align }};
+
+  }
+
+  .hero-section-{{section.id}}.page-width1 {
+      margin: 60px 20px;
+  }
+
+</style>
+
+{{#if section.settings.width_style == false}}
+<div class="hero-section hero-section-{{section.id}} page-width1 section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+  <div class="hero-section__content">
+    {{#for section.blocks as |block|}}
+      <h2>{{{ block.settings.heading }}}</h2>
+      <p>{{{ block.settings.subheading }}}</p>
+      <a href="{{ block.settings.button_link }}" class="hero-section__button">{{{ block.settings.button_text }}}</a>
+    {{/for}}
+  </div>
+</div>
+{{else}}
+<div class="hero-section hero-section-{{section.id}} section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+  <div class="hero-section__content">
+    {{#for section.blocks as |block|}}
+      <h2>{{{ block.settings.heading }}}</h2>
+      <p>{{{ block.settings.subheading }}}</p>
+      <a href="{{ block.settings.button_link }}" class="hero-section__button">{{{ block.settings.button_text }}}</a>
+    {{/for}}
+  </div>
+</div>
+{{/if}}
+
+
+{{#schema}}
+  {
+    "name": "Image Banner Custom",
+    "class": "section", 
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "width_style",
+        "label": {
+          "en": "Make Full Width"
+        },
+        "default": true
+      },
+      {
+        "type": "text_align",
+        "id": "content_align",
+        "label": {
+          "en": "Content Alignment"
+        }
+      },
+      {
+        "type": "text_align",
+        "id": "text_align",
+        "label": {
+          "en": "Text Alignment"
+        }
+      },
+      {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1",
+          "label": "Color 1"
+        },
+        {
+          "value": "2",
+          "label": "Color 2"
+        },
+        {
+          "value": "3",
+          "label": "Color 3"
+        }
+      ],
+      "default": "none",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "group_header",
+      "label": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    }
+    ],
+  "blocks": [
+    {
+      "type": "richtext",
+      "name": "heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "25+ Years of Craftsmanship and Design Expertise."
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "name": "subheading",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "Discover Custom Beach Essentials That Blend Style, Comfort, And Functionality—Curated To Create Your Perfect Beachside Retreat."
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "Buttons",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "View Catalog"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Image Banner Custom"
+      }
+    ]
+  }
+{{/schema}}
+

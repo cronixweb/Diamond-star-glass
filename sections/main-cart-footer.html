@@ -9,9 +9,8 @@
   class="page-width cart__footer-container {{#if cart.empty}}cart-empty{{/if}}"
   id="main-cart-footer"
   data-id="{{section.id}}"
-  data-show-fixed-checkout="{{if (isFalsey cart.empty) and cart.total_discount > 0}}"
 >
-  <div class="cart__checkout-container" data-blocks="{{json section}}">
+  <div class="cart__checkout-container">
     {{#for section.blocks as |block|}}
       {{#if block.type == "subtotal"}}
         <div class="cart__checkout-subtotal" {{{block.shopline_attributes}}}>
@@ -27,10 +26,7 @@
               </li>
             {{/if}}
             {{#if cart.total_discount > 0}}
-              <li class="cart__discount">
-                <em class="body3">{{t "transaction.general.discount_off"}}</em>
-                <span class="body2 fw-bold">-{{money_with_currency cart.total_discount}}</span>
-              </li>
+              {{snippet "cart-level-discount-applications" cart=cart}}
             {{/if}}
             <li class="cart__total">
               <em class="body2 fw-bold">{{t "cart.payment.total_sum"}}</em>
@@ -45,7 +41,7 @@
             {{#if additional_checkout_buttons}}
               {{{content_for_additional_checkout_buttons}}}
             {{/if}}
-            {{assign "form_id" (append 'cart-form--' scene)}}
+            {{assign "form_id" (append "cart-form--" scene)}}
             {{#form "cart" id=form_id}}
               <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout">
                 {{t "cart.checkout_proceeding.checkout"}}
@@ -70,9 +66,15 @@
       {{/startsWith}}
     {{/for}}
     <div id="cart-errors"></div>
-</div>
+  </div>
 
-  {{snippet "cart-fixed-checkout" scene=scene cart=cart shop=shop className="cart-footer__fixed-checkout display-none-desktop"}}
+  {{snippet
+    "cart-fixed-checkout"
+    scene=scene
+    cart=cart
+    shop=shop
+    className="cart-footer__fixed-checkout display-none-desktop"
+  }}
 </div>
 
 {{#schema}}

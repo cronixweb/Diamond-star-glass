@@ -17,11 +17,11 @@
   <p class="coupon-error-message field__info field__info--error"></p>
 
   <ul class="cart__coupon-list">
-    {{#for cart.discount_applications as |item|}}
-      {{#if item.code}}
-        <li class="coupon__list-item" data-code="{{item.code}}">
+    {{#for cart.discount_applications as |discount_application|}}
+      {{#if discount_application.code}}
+        <li class="coupon__list-item" data-code="{{discount_application.code}}">
           {{snippet "icon-discount-tag"}}
-          <span class="body4 fw-bold coupon__code">{{item.code}}</span>
+          <span class="body4 fw-bold coupon__code">{{discount_application.code}}</span>
           <div class="coupon__close">{{snippet "icon-close"}}</div>
         </li>
       {{/if}}

@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "V nakupovalno košarico lahko dodate samo {{quantity}} blago."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Neveljaven e-poštni naslov"
-    },
     "account": {
       "account_binding": "Povezava z računom",
       "account_information": "Račun",
       "bind": "Povezava",
       "birthday": "Datum rojstva",
       "change_password": "Sprememba gesla",
-      "confirm_btn": "Bekräfta",
+      "confirm_btn": "Potrdite",
       "confirm_subscription_modal_btn": "Potrdite naročnino",
       "confirm_subscription_modal_content": "Že prej ste oddali naročnino. Na ta e-poštni naslov je bilo poslano potrditveno e-poštno sporočilo. Potrdite lahko v e-poštnem sporočilu ali s klikom na ta gumb.",
       "confirm_subscription_modal_title": "Potrdite svojo naročnino na e-pošto.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Lahko vložite zahtevo za zaprtje tega računa. Po zaprtju bodo izbrisani vsi podatki za identifikacijo tega računa, vključno z:",
       "email": "Elektronski",
       "email_repeat_tip": "Elektronski naslov je registriran",
+      "email_subscribe_invalid_tip": "Neveljaven e-poštni naslov",
       "first_name": "Ime",
       "gender": "Spol",
       "gender_female": "Ženski",
@@ -260,7 +258,7 @@
       "copy_success": "Kopirana koda kupona",
       "discount_title": "Aktivirajte račun in prejmite kodo za popust",
       "normal_title": "Aktivirajte račun",
-      "normal_title_with_discount_code": "Aktivirajte račun in pridobite kodo za popust",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Naročite se na e-poštna sporočila za prejemanje posodobitev, dostop do ekskluzivnih ponudb in še več.",
       "success_title": "Čestitamo, da ste dobili odličen popust",
       "token_expired": "Povezava je potekla"
@@ -300,19 +298,98 @@
         "shipping": "Naslov za pošiljanje podjetja",
         "title": "Vloga za odprtje podjetniškega računa"
       },
+      "address": {
+        "placeholder": "Podroben naslov"
+      },
+      "address2": {
+        "placeholder": "Podroben naslov 2"
+      },
       "bill": {
         "sameAsCompany": "Naslov za obračun podjetja enak kot naslov za pošiljanje podjetja"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Podroben naslov"
+        },
+        "address2": {
+          "placeholder": "Podroben naslov 2"
+        },
+        "city": {
+          "placeholder": "Mesto"
+        },
+        "country": {
+          "placeholder": "Država/Regija"
+        },
+        "district": {
+          "placeholder": "Okrožje"
+        },
+        "phone": {
+          "placeholder": "Številka mobilnega telefona"
+        },
+        "province": {
+          "placeholder": "Pokrajina"
+        },
+        "zip": {
+          "placeholder": "Poštna številka"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Računovodski naslov podjetja je enak naslovu za pošiljanje"
+      },
+      "billing_address": {
+        "title": "Obračunski naslov podjetja"
+      },
+      "city": {
+        "placeholder": "Mesto"
+      },
+      "company_name": {
+        "placeholder": "Ime podjetja"
+      },
+      "country": {
+        "placeholder": "Država/Regija"
       },
       "create": {
         "limit": "Število podjetij za trgovino je doseglo svojo mejo. Prosimo, kontaktirajte trgovca za pomoč.",
         "success": "Hvala. Obrazec je bil poslan."
       },
+      "district": {
+        "placeholder": "Okrožje"
+      },
+      "email": {
+        "placeholder": "Poštni nabiralnik"
+      },
       "field": {
         "companyName": "Ime podjetja",
         "email": "E-pošta"
       },
+      "first_name": {
+        "placeholder": "Priimki"
+      },
       "form": {
         "submit": "Pošlji"
+      },
+      "last_name": {
+        "placeholder": "Imena"
+      },
+      "phone": {
+        "placeholder": "Številka mobilnega telefona"
+      },
+      "province": {
+        "placeholder": "Pokrajina"
+      },
+      "register": {
+        "button": "Pošljite",
+        "success": {
+          "description": "Obrazec je bil uspešno poslan.",
+          "title": "Hvala, ker ste ga izpolnili!"
+        },
+        "title": "Vloga za račun podjetja"
+      },
+      "shipping_address": {
+        "title": "Naslov za pošiljanje podjetja"
+      },
+      "zip": {
+        "placeholder": "Poštna številka"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Počisti",
       "company_empty_hint": "Ime podjetja ne sme biti prazno",
       "company_existed": "Ime podjetja že obstaja.",
+      "company_frequent_operation": "Ponovite operacijo, poskusite znova pozneje",
+      "company_registry_closed": "Trgovec ni omogočil funkcije prijave za račun podjetja. Za prijavo se obrnite na trgovca.",
       "confirm": "V redu",
       "confirm_button": "V redu",
       "date_format": "MM/dd/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Poslali vam bomo sporočilo SMS za ponastavitev gesla",
       "proceed_to_checkout": "Nadaljujte do blagajne",
       "title": "Naslov strani",
-      "verification_code_success": "Na vašo prijavo {{type}}<em>{{value}}</em> je bila poslana potrditvena koda, prosimo, vpišite jo spodaj."
+      "verification_code_success": "Na vašo prijavo {{type}} <em>{{value}}</em> je bila poslana potrditvena koda, prosimo, vpišite jo spodaj."
     },
     "login": {
       "member_login_common": "Prijava članov",
@@ -461,12 +540,18 @@
       "go_to_login": "Pojdite na prijavo",
       "tips_agree_with_the_shop": "Strinjam se z"
     },
+    "subscribe": {
+      "email_has_bind": "Ta e-poštni naslov je bil povezan z drugim računom",
+      "phone_has_bind": "Ta telefon je vezan na drug račun"
+    },
     "subscription": {
       "email": "Elektronski",
+      "email_subscribe_error_tip": "Ta e-poštni naslov je bil povezan z drugim računom",
       "email_subscription_text": "Prejemanje informacij o promociji naročnine po e-pošti",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Mobilni telefon",
+      "phone_subscribe_error_tip": "Ta mobilni telefon je bil povezan z drugim računom",
       "phone_subscription_text": "Naročite se na telefonsko promocijo",
       "reason_other_length": "Vnesite do 300 besed",
       "reason_other_placeholder": "Vnesite",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Naročnina preklicana, bo preusmerjena na domačo stran",
       "unsubscribe_tip": "Ko se odjavite, ne boste več prejemali najnovejših promocijskih ponudb.",
       "unsubscribe_title": "Odjava od naročnine"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Vnesite vsebino",
+      "goto_btn": "Vstopite v trgovino",
+      "notyet": "Niste še naročeni",
+      "notyet_desc": "Lahko se naročite v trgovini",
+      "success": "Naročnina preklicana",
+      "success_tip": "Odjavili ste se iz trgovine {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Kupi ponovno",
     "checkout_order": {
       "pay_amount": "plačati znesek",
       "receiver_account": "račun prejemnika",
@@ -596,8 +690,9 @@
       "details": "Podrobnosti o naročilu",
       "insuranceService": "Storitve zavarovanja",
       "insuranceService_applyClaim": "Vložitev zahtevkov",
-      "insuranceService_content_email": "1. Polico je na vaš e-poštni naslov \"{{email}}\" poslal {{serviceName}}. Če podatkov o polici niste prejeli, prosimo, da stopite v stik s službo za pomoč strankam v trgovini. 2. Če med prevozom pride do poškodbe, izgube, zamude ali druge okoliščine, lahko vložite zahtevek.",
-      "insuranceService_content_phone": "1. Polico je na vaš telefon\"{{phopne}}\" poslal {{serviceName}}. Če podatkov o polici niste prejeli, prosimo, da stopite v stik s službo za pomoč strankam v trgovini. 2. Če med prevozom pride do poškodbe, izgube, zamude ali druge okoliščine, lahko vložite zahtevek.",
+      "insuranceService_content_line1__email": "1. Polico je na vaš e-poštni naslov \"{{email}}\" poslal {{serviceName}}. Če podatkov o polici niste prejeli, prosimo, da stopite v stik s službo za pomoč strankam v trgovini. ",
+      "insuranceService_content_line1__phone": "1. Polica je bila kupljena preko {{serviceName}}. Če imate kakršna koli druga vprašanja, prosimo, da stopite v stik s službo za pomoč strankam v trgovini.",
+      "insuranceService_content_line2": "2. Če med prevozom pride do poškodbe, izgube, zamude ali druge okoliščine, lahko vložite zahtevek.",
       "order": "Naročilo",
       "remark": "Opomba o naročilu",
       "time": "Naročeno pri:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Nalaganje več predmetov",
+      "loading_btn": "Naloži več",
       "no_product_data_found": "Ni najdenih podatkov o izdelku. Poskusite znova pozneje",
       "sold_out": "Razprodano",
-      "added_to_cart_successfully": "Uspešno dodan v košarico",
+      "load_more": "Nalaganje več predmetov",
       "load_more_items": "Nalaganje {{current_offset}} ~ {{last_current_offset}} iz {{total}} predmetov",
-      "unavailable": "ni na voljo"
+      "unavailable": "Blago ne obstaja",
+      "variant_property_color": "Barva"
     },
     "giftcard": {
       "seoTitle": "Vaše stanje darilne kartice {{ shop }} je {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtriraj",
       "filters_selected": "{{count}} je bilo izbranih",
       "from_price_html": "Od {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} od {{total}} predmetov",
       "less": "manj oznak",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} od {{total}} predmetov",
       "load_more_tip": "Nalaganje več elementov",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% popusta",
       "select_product_all_options": "Izbrana različica izdelka je nepopolna ali ni na voljo. Prosimo, izberite znova",
       "sort_button": "Razvrščanje",
-      "top_sellers": "Najbolje prodajani izdelki",
-      "more__product_num": "{{num}} izdelki",
-      "one_product_num": "{{num}} izdelek",
-      "show": "Prikaži"
+      "top_sellers": "Najbolje prodajani izdelki"
     },
     "product_search": {
       "back_to_home": "Nazaj na domačo stran",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Večkanalna plačila",
       "Paypal": "PayPal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kreditna kartica"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Mejna vrednost izdelka je presežena"
     },
     "order": {
-      "deleted": "NEVELJAVNO"
+      "deleted": "NEVELJAVNO",
+      "rebuy": "Ponovno ga kupite"
     },
     "payment": {
       "continue_shopping": "Nadaljuj z nakupovanjem",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Prijava brez nastavitve kanalov tretjih oseb",
       "error_message_1009": "Neuspešen klic vmesnika tretje osebe",
       "error_message_1010": "Neuspešno pošiljanje",
-      "error_message_1011": "Številka računa ni aktivirana",
+      "error_message_1011": "Račun ni aktiviran, da izpolnite geslo in druge podatke.",
       "error_message_1012": "Izjeme pri storitvah",
       "error_message_1013": "Izjeme pri storitvah",
       "error_message_1014": "Neuspešno preverjanje potrditvene kode",

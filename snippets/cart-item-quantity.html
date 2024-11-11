@@ -10,13 +10,13 @@
 
 <cart-item-quantity class="cart-item__quantity">
   <div>
-    <div class="cart-item__quantity-wrapper">
+    <div class="cart-item__quantity-wrapper"> 
       {{#if item.enable_quantity_adjust}}
-        {{snippet
-          "quantity-input"
-          namespace=namespace
-          value=item.quantity
-          id=item.key
+        {{snippet 
+          "quantity-input" 
+          namespace=namespace 
+          value=item.quantity 
+          id=item.key 
           min=item.variant.quantity_rule.min
           max=item.variant.quantity_rule.max
           step=item.variant.quantity_rule.increment
@@ -57,7 +57,7 @@
               {{/if}}
             </div>
           {{/if}}
-          {{#if item.variant.quantity_price_breaks.length > 0}}
+          {{#if item.variant.quantity_price_breaks.length > 0}} 
             <ul class="list-unstyled body5">
               <li>
                 <span>{{ item.variant.quantity_rule.min }}+</span>

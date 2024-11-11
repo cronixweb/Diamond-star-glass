@@ -1,32 +1,28 @@
 .predictive-search {
   --predictive-search-result-padding: 20px;
-
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background: rgb(var(--color-page-background));
-  border-top: none;
+  background-color: rgb(var(--color-header-background));
+  color: rgb(var(--color-header-text));
   border-radius: 0 0 var(--menu-modal-border-radius)
     var(--menu-modal-border-radius);
+  z-index: 1;
 }
 
 .predictive-search__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(var(--predictive-search-result-padding) / 2)
-    var(--predictive-search-result-padding);
-  color: rgb(var(--color-light-text));
+  padding: var(--predictive-search-result-padding) 0
+    calc(var(--predictive-search-result-padding) / 2) 0;
   text-transform: uppercase;
-}
-
-@media screen and (max-width: 959px) {
-  .predictive-search__head {
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
-  }
+  margin: 0 var(--predictive-search-result-padding)
+    calc(var(--predictive-search-result-padding) / 2)
+    var(--predictive-search-result-padding);
+  border-bottom: 1px solid rgb(var(--color-entry-line));
 }
 
 .predictive-search__head .predictive-search__spinner {
@@ -38,36 +34,20 @@
 }
 
 .predictive-search__list-item > * {
+  padding: calc(var(--predictive-search-result-padding) / 2);
   transition: color 0.3s, background 0.3s;
 }
 
 .predictive-search__list-item[selected="true"] > *,
 .predictive-search__list-item:hover > * {
   color: rgb(var(--color-text));
-  background-color: rgba(rgb(var(--color-text)), 0.08);
-}
-
-.predictive-search__list-item:nth-of-type(1):not(:last-child),
-.predictive-search__list-item:nth-last-of-type(1):not(:first-child) {
-  border-top: 1px solid rgb(var(--color-entry-line));
-}
-
-.predictive-search__list-item:nth-of-type(1):not(:last-child)
-  .predictive-search__item {
-  padding-top: var(--predictive-search-result-padding);
-}
-
-.predictive-search__list-item:nth-last-of-type(2) .predictive-search__item {
-  padding-bottom: var(--predictive-search-result-padding);
+  background-color: rgba(var(--color-text), 0.08);
 }
 
 .predictive-search__item {
-  padding: calc(var(--predictive-search-result-padding) / 2)
-    var(--predictive-search-result-padding);
   display: grid;
   grid-template: "image content" auto / auto 1fr;
   gap: var(--predictive-search-result-padding);
-  align-items: center;
 }
 
 .predictive-search__item-image {
@@ -95,20 +75,17 @@
   margin: 0;
 }
 
-.predictive-search__term {
-  width: 100%;
-  padding: 8px var(--predictive-search-result-padding);
-  border: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  color: rgba(var(--color-text));
+.predictive-search__item-price {
+  margin: 0;
 }
 
-.predictive-search__term:hover .predictive-search__term-icon {
-  transform: scale(1.1);
+.predictive-search__item-price .line-through {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.predictive-search__term {
+  margin: var(--predictive-search-result-padding);
 }
 
 .predictive-search__term-icon {
@@ -155,6 +132,30 @@ predictive-search[data-focus][loading]
   .predictive-search__head
   .predictive-search__spinner {
   display: flex;
+}
+
+.predictive-search__results-list {
+  display: grid;
+  /* row-gap: var(--predictive-search-result-padding);
+  column-gap: var(--predictive-search-result-padding); */
+  margin-top: calc(var(--predictive-search-result-padding) / 2);
+  padding: 0 calc(var(--predictive-search-result-padding) / 2);
+}
+
+.search-modal__content[data-col="4"] .predictive-search__results-list {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.search-modal__content[data-col="3"] .predictive-search__results-list {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.search-modal__content[data-col="2"] .predictive-search__results-list {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.search-modal__content[data-col="1"] .predictive-search__results-list {
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .collection.loading::before {
@@ -315,6 +316,7 @@ predictive-search[data-focus][loading]
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgb(var(--color-text));
 }
 
 .search__collection-card {

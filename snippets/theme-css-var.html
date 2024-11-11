@@ -1,19 +1,29 @@
 <style>
+{{ font_face (font_modify settings.title_font_family 'weight' '400') }}
+{{ font_face (font_modify settings.title_font_family 'weight' '500') }}
+{{ font_face (font_modify settings.title_font_family 'weight' '600') }}
+{{ font_face (font_modify settings.title_font_family 'weight' '700') }}
+{{ font_face settings.title_font_family }}
+{{ font_face (font_modify settings.body_font_family 'weight' '400') }}
+{{ font_face (font_modify settings.body_font_family 'weight' '500') }}
+{{ font_face (font_modify settings.body_font_family 'weight' '600') }}
+{{ font_face (font_modify settings.body_font_family 'weight' '700') }}
+{{ font_face settings.body_font_family }}
 :root {
-    --title-font: "{{ settings.title_font_family.family }}";
+    --title-font: "{{ settings.title_font_family.family }}", "{{ settings.title_font_family.fallback_families }}";
     --title-font-weight: {{ settings.title_font_family.weight }};
     --title-font-style: {{ settings.title_font_family.style }};
-    --title-letter-spacing: {{ divide settings.title_letter_spacing 1000 }}em;
+    --title-letter-spacing: {{#if settings.title_letter_spacing == 0}}0.00000001em{{else}}{{ divide settings.title_letter_spacing 1000 }}em{{/if}};
     --title-font-size: {{ settings.title_font_size }}px;
     --title-line-height: {{ settings.title_line_height }};
     --title-text-transform: {{#if settings.title_uppercase}}uppercase{{else}}unset{{/if}};
-    --body-font: "{{ settings.body_font_family.family }}";
+    --body-font: "{{ settings.body_font_family.family }}", "{{ settings.body_font_family.fallback_families }}";
     {{assign 'bodyFontWeight' settings.body_font_family.weight}}
     --body-font-weight: {{ bodyFontWeight }};
     {{assign 'bodyBoldFontWeight' (add bodyFontWeight 300)}}
     --body-bold-font-weight: {{#gte bodyBoldFontWeight 1000}}1000{{else}}{{ bodyBoldFontWeight }}{{/gte}};
     --body-font-style: {{ settings.body_font_family.style }};
-    --body-letter-spacing: {{ divide settings.body_letter_spacing 1000 }}em;
+    --body-letter-spacing: {{#if settings.body_letter_spacing == 0}}0.00000001em{{else}}{{ divide settings.body_letter_spacing 1000 }}em{{/if}};
     --body-font-size: {{ settings.body_font_size }}px;
     --body-line-height: {{ settings.body_line_height }};
 
@@ -35,12 +45,24 @@
     --color-image-background: {{ settings.color_image_background.red }}, {{ settings.color_image_background.green }}, {{settings.color_image_background.blue }};
     --color-image-loading-background: {{ settings.color_image_loading_background.red }}, {{ settings.color_image_loading_background.green }}, {{settings.color_image_loading_background.blue }};
     --color-mask: {{ settings.color_mask.red }}, {{ settings.color_mask.green }}, {{settings.color_mask.blue }};
+    --color-shadow: {{#if settings.color_shadow}}{{ settings.color_shadow.red }}, {{ settings.color_shadow.green }}, {{settings.color_shadow.blue }}{{else}}var(--color-text){{/if}};
     --color-scheme-1-bg: {{ settings.color_scheme_1_bg.red }}, {{ settings.color_scheme_1_bg.green }}, {{settings.color_scheme_1_bg.blue }};
     --color-scheme-1-text: {{ settings.color_scheme_1_text.red }}, {{ settings.color_scheme_1_text.green }}, {{settings.color_scheme_1_text.blue }};
     --color-scheme-2-bg: {{ settings.color_scheme_2_bg.red }}, {{ settings.color_scheme_2_bg.green }}, {{settings.color_scheme_2_bg.blue }};
     --color-scheme-2-text: {{ settings.color_scheme_2_text.red }}, {{ settings.color_scheme_2_text.green }}, {{settings.color_scheme_2_text.blue }};
     --color-scheme-3-bg: {{ settings.color_scheme_3_bg.red }}, {{ settings.color_scheme_3_bg.green }}, {{settings.color_scheme_3_bg.blue }};
     --color-scheme-3-text: {{ settings.color_scheme_3_text.red }}, {{ settings.color_scheme_3_text.green }}, {{settings.color_scheme_3_text.blue }};
+
+    --color-header-background: {{ settings.color_header_background.red }}, {{ settings.color_header_background.green }}, {{settings.color_header_background.blue }};
+    --color-header-text: {{ settings.color_header_text.red }}, {{ settings.color_header_text.green }}, {{settings.color_header_text.blue }};
+    --color-header-pc-searchbar-border: {{ settings.color_header_pc_search_bar_border.red }}, {{ settings.color_header_pc_search_bar_border.green }}, {{settings.color_header_pc_search_bar_border.blue }};
+    --color-header-pc-searchbar-text: {{ settings.color_header_pc_search_bar_text.red }}, {{ settings.color_header_pc_search_bar_text.green }}, {{settings.color_header_pc_search_bar_text.blue }};
+    --color-header-pc-searchbar-bg: {{ settings.color_header_pc_search_bar_bg.red }}, {{ settings.color_header_pc_search_bar_bg.green }}, {{settings.color_header_pc_search_bar_bg.blue }};
+    --color-announcement-bar-background: {{ settings.color_announcement_bar_background.red }}, {{ settings.color_announcement_bar_background.green }}, {{settings.color_announcement_bar_background.blue }};
+    --color-announcement-bar-text: {{ settings.color_announcement_bar_text.red }}, {{ settings.color_announcement_bar_text.green }}, {{settings.color_announcement_bar_text.blue }};
+    --color-footer-text: {{ settings.color_footer_text.red }}, {{ settings.color_footer_text.green }}, {{settings.color_footer_text.blue }};
+    --color-footer-border: {{ settings.color_footer_border.red }}, {{ settings.color_footer_border.green }}, {{settings.color_footer_border.blue }};
+    --color-footer-background: {{ settings.color_footer_background.red }}, {{ settings.color_footer_background.green }}, {{settings.color_footer_background.blue }};
 
     --page-width: {{ settings.page_width }}px;
     --section-vertical-gap: {{ settings.section_vertical_gap }}px;
@@ -62,10 +84,6 @@
     --sku-selector-border-opacity: {{ settings.sku_selector_border_opacity }}%;
     --sku-selector-border-radius: {{ settings.sku_selector_border_radius }}px;
     --sku-selector-border-radius-outset: {{ ternary (lte settings.sku_selector_border_radius 0) 0 (add settings.sku_selector_border_radius settings.sku_selector_border_thickness) }}px;
-    --sku-selector-shadow-opacity: {{ settings.sku_selector_shadow_opacity }}%;
-    --sku-selector-shadow-offset-x: {{ settings.sku_selector_shadow_offset_x }}px;
-    --sku-selector-shadow-offset-y: {{ settings.sku_selector_shadow_offset_y }}px;
-    --sku-selector-shadow-blur: {{ settings.sku_selector_shadow_blur }}px;
 
     --input-border-thickness: {{ settings.input_border_thickness }}px;
     --input-border-opacity: {{ settings.input_border_opacity }}%;
@@ -93,6 +111,7 @@
     --product-card-shadow-offset-x: {{ settings.product_card_shadow_offset_x }}px;
     --product-card-shadow-offset-y: {{ settings.product_card_shadow_offset_y }}px;
     --product-card-shadow-blur: {{ settings.product_card_shadow_blur }}px;
+    --product-card-content-align: {{ settings.product_card_content_align }};
 
     --collection-card-border-thickness: {{ settings.collection_card_border_thickness }}px;
     --collection-card-border-opacity: {{ settings.collection_card_border_opacity }}%;
@@ -151,5 +170,8 @@
     --drawer-shadow-blur: {{ settings.drawer_shadow_blur }}px;
 
     --product-discount-radius: {{ settings.product_discount_radius }}px;
+
+    --swatch-background-default-image: url({{ asset_url 'color-swatch-default.png'}});
+    --swatch-size: {{ settings.swatch_size }}px;
 }
 </style>

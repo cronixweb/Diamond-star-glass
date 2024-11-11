@@ -9,10 +9,10 @@ defineCustomElement(
           const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
           const currentCartItem = event.target.closest('.cart-item');
           const currentCartItemKey = currentCartItem.dataset.key;
-          const currentCartItemQuantity = currentCartItem.querySelector('[name="quantity"]').value;
+          const currentCartItemQuantity = currentCartItem.querySelector('.cart-item__quantity [name="quantity"]').value;
           // Get the same product quantity（Certain marketing campaigns may generate）
           const sameProductQuantity = Array.from(
-            cartItems.querySelectorAll(`[data-key="${currentCartItemKey}"] [name="quantity"]`),
+            cartItems.querySelectorAll(`[data-key="${currentCartItemKey}"] .cart-item__quantity [name="quantity"]`),
           ).reduce((total, quantityInput) => total + parseInt(quantityInput.value, 10), 0);
           cartItems.updateQuantity(currentCartItemKey, sameProductQuantity - currentCartItemQuantity);
         });
@@ -50,7 +50,7 @@ defineCustomElement(
           this.onChange(event);
         }, 300);
 
-        this.currentItemCount = Array.from(this.querySelectorAll('[name="quantity"]')).reduce(
+        this.currentItemCount = Array.from(this.querySelectorAll('.cart-item__quantity [name="quantity"]')).reduce(
           (total, quantityInput) => total + parseInt(quantityInput.value, 10),
           0,
         );
@@ -62,7 +62,7 @@ defineCustomElement(
         const cartItemKey = event.target.closest('.cart-item').dataset.key;
         // Get the same product quantity（Certain marketing campaigns may generate）
         const sameProductQuantity = Array.from(
-          this.querySelectorAll(`[data-key="${cartItemKey}"] [name="quantity"]`),
+          this.querySelectorAll(`[data-key="${cartItemKey}"] .cart-item__quantity [name="quantity"]`),
         ).reduce((total, quantityInput) => total + parseInt(quantityInput.value, 10), 0);
         this.updateQuantity(cartItemKey, sameProductQuantity);
       }
@@ -75,6 +75,7 @@ defineCustomElement(
         };
         const mainCartItemsDataset = document.getElementById('main-cart-items').dataset;
         const showFixedCheckout = mainCartItemsDataset.showFixedCheckout === 'true';
+        const enableDiscount = mainCartItemsDataset.enableDiscount === 'true';
 
         return [
           {
@@ -88,9 +89,15 @@ defineCustomElement(
             selector: '#cart-icon-bubble-wrapper',
           },
           {
+            id: 'cart-icon-bubble-mobile',
+            section: 'cart-icon-bubble-mobile',
+            selector: '#cart-icon-bubble-wrapper-mobile',
+          },
+          {
             id: 'main-cart-footer',
             section: document.getElementById('main-cart-footer').dataset.id,
             selectors: [
+              enableDiscount ? '.cart__coupon-wrapper' : null,
               '.cart__amount-wrapper',
               showFixedCheckout ? '.cart-fixed-checkout__amount' : null,
               '.cart-fixed-checkout__footer .cart__total',
@@ -136,7 +143,13 @@ defineCustomElement(
             const cartDrawer = document.querySelector('cart-drawer');
             if (cartDrawer) {
               const cartDrawerWrapper = cartDrawer.querySelector('.cart-drawer__inner-wrapper');
-              if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('cart-empty', parsedState.item_count === 0);
+              const cartDrawerFixedCheckout = cartDrawer.querySelector('.cart-fixed-checkout');
+              if (cartDrawerWrapper) {
+                cartDrawerWrapper.classList.toggle('cart-empty', parsedState.item_count === 0);
+              }
+              if (cartDrawerFixedCheckout) {
+                cartDrawerFixedCheckout.classList.toggle('cart-empty', parsedState.item_count === 0);
+              }
             }
             const replaceElement = (section, selector) => {
               const elementToReplace =
@@ -152,7 +165,6 @@ defineCustomElement(
                 replaceElement(section, section.selector);
               }
             });
-
             let message = '';
             // over stock case
             if (this.currentItemCount === parsedState.item_count) {

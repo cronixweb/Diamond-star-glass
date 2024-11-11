@@ -10,13 +10,14 @@
               style="padding-bottom:{{times (divide 1 article.image.aspect_ratio) 100}}%;"
             {{/if}}
           >
-            {{snippet "image" data=article.image fetchpriority="high"}}
+            {{snippet "image" data=article.image lazy=false fetchpriority="high"}}
           </div>
         </div>
       {{/if}}
     {{/if}}
     {{#if block.type == "title"}}
       <header class="page-width" {{{block.shopline_attributes}}}>
+        {{snippet "breadcrumb" class="text-left" settings=settings}}
         <h1 class="article-template__title title4">{{article.title}}</h1>
         {{#if block.settings.blog_show_date}}
           <span class="circle-divider caption-with-letter-spacing body3">
@@ -38,8 +39,13 @@
     {{/if}}
     {{#if block.type == "share"}}
       <div class="article-template__social-sharing page-width" {{{block.shopline_attributes}}}>
-        {{assign "share_url" (append request.origin article.url)}}
-        {{snippet "share-button" share_link=share_url}}
+        {{snippet
+          "share-card"
+          theme_settings=settings
+          share_type="article_detail"
+          share_data=article
+          domain=request.host
+        }}
       </div>
     {{/if}}
   {{/for}}
@@ -193,7 +199,7 @@
       ],
     {{/if}}
     "datePublished": "{{ date article.published_at '%Y-%m-%dT%H:%M:%SZ' }}",
-    "dateCreated": "{{ date  article.created_at '%Y-%m-%dT%H:%M:%SZ' }}",
+    "dateCreated": "{{ date article.created_at '%Y-%m-%dT%H:%M:%SZ' }}",
     "author": {
       "@type": "Person",
       "name": "{{ article.author }}"

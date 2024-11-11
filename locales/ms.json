@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Anda hanya boleh menambah {{quantity}} item daripada item ini pada troli anda."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Alamat E-mel Tidak Sah"
-    },
     "account": {
       "account_binding": "Pengikatan Akaun",
       "account_information": "Akaun",
       "bind": "Mengikat",
       "birthday": "Tarikh Lahir",
       "change_password": "Ubah kata laluan",
-      "confirm_btn": "Bekrefte",
+      "confirm_btn": "Sahkan",
       "confirm_subscription_modal_btn": "Sahkan Langganan",
       "confirm_subscription_modal_content": "Anda telah menyerahkan langganan sebelum ini. E-mel pengesahan telah dihantar ke alamat e-mel ini. Anda boleh sama ada mengesahkan dalam e-mel anda atau klik butang ini.",
       "confirm_subscription_modal_title": "Sahkan langganan E-mel anda.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Anda boleh memohon untuk menutup akaun ini. Sebaik sahaja ditutup, sebarang maklumat untuk mengenal pasti akaun ini akan dihapuskan, termasuk:",
       "email": "E-mel",
       "email_repeat_tip": "E-mel telah didaftarkan",
+      "email_subscribe_invalid_tip": "Alamat E-mel Tidak Sah",
       "first_name": "Nama",
       "gender": "Jantina",
       "gender_female": "Perempuan",
@@ -260,7 +258,7 @@
       "copy_success": "Kod kupon disalin",
       "discount_title": "Aktifkan akaun dan dapatkan kod diskaun",
       "normal_title": "Aktifkan akaun",
-      "normal_title_with_discount_code": "Aktifkan akaun dan dapatkan kod diskaun",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Langgan e-mel untuk menerima kemas kini, akses kepada tawaran eksklusif dan pelbagai lagi.",
       "success_title": "Tahniah kerana mendapat jumlah diskaun yang hebat",
       "token_expired": "Pautan telah tamat tempoh"
@@ -300,19 +298,98 @@
         "shipping": "Alamat penghantaran syarikat",
         "title": "Permohonan akaun syarikat"
       },
+      "address": {
+        "placeholder": "Alamat terperinci"
+      },
+      "address2": {
+        "placeholder": "Alamat terperinci 2"
+      },
       "bill": {
         "sameAsCompany": "Alamat pengebilan syarikat sama dengan alamat penghantaran syarikat"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Alamat terperinci"
+        },
+        "address2": {
+          "placeholder": "Alamat terperinci 2"
+        },
+        "city": {
+          "placeholder": "Bandar"
+        },
+        "country": {
+          "placeholder": "Negara/Rantau"
+        },
+        "district": {
+          "placeholder": "Daerah"
+        },
+        "phone": {
+          "placeholder": "Nombor telefon bimbit"
+        },
+        "province": {
+          "placeholder": "Wilayah"
+        },
+        "zip": {
+          "placeholder": "Poskod"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Alamat pengebilan syarikat adalah sama dengan alamat penerimaan"
+      },
+      "billing_address": {
+        "title": "Alamat pengebilan syarikat"
+      },
+      "city": {
+        "placeholder": "Bandar"
+      },
+      "company_name": {
+        "placeholder": "Nama syarikat"
+      },
+      "country": {
+        "placeholder": "Negara/Rantau"
       },
       "create": {
         "limit": "Bilangan syarikat untuk kedai itu telah mencapai hadnya. Sila hubungi peniaga untuk mendapatkan bantuan.",
         "success": "Terima kasih. Borang telah diserahkan."
       },
+      "district": {
+        "placeholder": "Daerah"
+      },
+      "email": {
+        "placeholder": "Peti mel"
+      },
       "field": {
         "companyName": "Nama syarikat",
         "email": "E-mel"
       },
+      "first_name": {
+        "placeholder": "Nama"
+      },
       "form": {
         "submit": "Hantar"
+      },
+      "last_name": {
+        "placeholder": "Nama keluarga"
+      },
+      "phone": {
+        "placeholder": "Nombor telefon bimbit"
+      },
+      "province": {
+        "placeholder": "Wilayah"
+      },
+      "register": {
+        "button": "Penyerahan",
+        "success": {
+          "description": "Borang telah berjaya dihantar.",
+          "title": "Terima kasih kerana mengisi!"
+        },
+        "title": "Permohonan Akaun Syarikat"
+      },
+      "shipping_address": {
+        "title": "Alamat Penerimaan Syarikat"
+      },
+      "zip": {
+        "placeholder": "Poskod"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Padam",
       "company_empty_hint": "Nama syarikat tidak boleh kosong",
       "company_existed": "Nama syarikat sudah wujud",
+      "company_frequent_operation": "Ulangi operasi, sila cuba lagi kemudian",
+      "company_registry_closed": "Pedagang belum mendayakan fungsi aplikasi akaun syarikat, sila hubungi pedagang untuk memohon.",
       "confirm": "OK",
       "confirm_button": "Ok",
       "date_format": "MM/dd/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Kami akan menghantar SMS kepada anda untuk menetapkan semula kata laluan anda",
       "proceed_to_checkout": "Teruskan ke pembayaran",
       "title": "Tajuk Halaman",
-      "verification_code_success": "Kod pengesahan telah dihantar ke {{type}}<em>{{value}}</em> log masuk anda, sila masukkan kod pengesahan di bawah."
+      "verification_code_success": "Kod pengesahan telah dihantar ke {{type}} <em>{{value}}</em> log masuk anda, sila masukkan kod pengesahan di bawah."
     },
     "login": {
       "member_login_common": "Daftar masuk ahli",
@@ -461,12 +540,18 @@
       "go_to_login": "Pergi ke daftar masuk",
       "tips_agree_with_the_shop": "Saya bersetuju dengan"
     },
+    "subscribe": {
+      "email_has_bind": "Alamat e-mel ini telah terikat dengan akaun lain",
+      "phone_has_bind": "Telefon ini telah terikat dengan akaun lain"
+    },
     "subscription": {
       "email": "E-mel",
+      "email_subscribe_error_tip": "Peti mel ini terikat kepada akaun lain",
       "email_subscription_text": "Terima maklumat promosi langganan melalui E-mel",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Telefon Bimbit",
+      "phone_subscribe_error_tip": "Telefon bimbit ini terikat kepada akaun lain",
       "phone_subscription_text": "Langgan promosi melalui telefon",
       "reason_other_length": "Masukkan sehingga 300 aksara",
       "reason_other_placeholder": "Kandungan input",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Langganan dibatalkan, akan diarahkan semula ke halaman utama",
       "unsubscribe_tip": "Setelah dihentikan langganan, anda tidak akan menerima promosi terkini lagi.",
       "unsubscribe_title": "Berhenti melanggan"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Sila masukkan kandungan",
+      "goto_btn": "Masuk kedai",
+      "notyet": "Anda belum melanggan lagi",
+      "notyet_desc": "Anda boleh pergi ke kedai untuk melanggan",
+      "success": "Langganan dibatalkan",
+      "success_tip": "Anda telah berhenti melanggan {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Beli lagi",
     "checkout_order": {
       "pay_amount": "membayar jumlah",
       "receiver_account": "akaun penerima",
@@ -596,8 +690,9 @@
       "details": "Butiran pesanan",
       "insuranceService": "Perkhidmatan Insurans",
       "insuranceService_applyClaim": "Memohon Tuntutan",
-      "insuranceService_content_email": "1. Dasar telah dihantar kepada e-mel anda \"{{email}}\" oleh {{serviceName}}. Jika anda belum menerima maklumat dasar, sila hubungi khidmat pelanggan kedai. 2. Jika terdapat sebarang kerosakan, kehilangan, kelewatan atau situasi lain semasa penghantaran, anda boleh memohon tuntutan. ",
-      "insuranceService_content_phone": "1. Dasar telah dihantar kepada e-mel anda \"{{phopne}}\" oleh {{serviceName}}. Jika anda belum menerima maklumat dasar, sila hubungi khidmat pelanggan kedai. 2. Jika terdapat sebarang kerosakan, kehilangan, kelewatan atau situasi lain semasa penghantaran, anda boleh memohon tuntutan. ",
+      "insuranceService_content_line1__email": "1. Dasar telah dihantar kepada e-mel anda \"{{email}}\" oleh {{serviceName}}. Jika anda belum menerima maklumat dasar, sila hubungi khidmat pelanggan kedai. ",
+      "insuranceService_content_line1__phone": "1. Polisi ini telah dibeli oleh {{serviceName}}. Jika anda mempunyai persoalan lain, sila hubungi perkhidmatan pelanggan di kedai.",
+      "insuranceService_content_line2": "2. Jika terdapat sebarang kerosakan, kehilangan, kelewatan atau situasi lain semasa penghantaran, anda boleh memohon tuntutan. ",
       "order": "Pesanan",
       "remark": "Catatan pesanan",
       "time": "Dipesan pada:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Memuat lebih banyak item",
+      "loading_btn": "Muatkan lagi",
       "no_product_data_found": "Tiada data produk ditemui. Sila cuba lagi kemudian",
       "sold_out": "Habis Dijual",
-      "added_to_cart_successfully": "Berjaya ditambahkan pada troli",
+      "load_more": "Memuat lebih banyak item",
       "load_more_items": "Sedang memuat {{current_offset}} ~ {{last_current_offset}} daripada {{total}} item",
-      "unavailable": "tidak tersedia"
+      "unavailable": "Barangan tidak wujud",
+      "variant_property_color": "Warna"
     },
     "giftcard": {
       "seoTitle": "Baki kad hadiah {{ shop }} anda adalah {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Penapis",
       "filters_selected": "{{count}} telah dipilih",
       "from_price_html": "Dari {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} daripada {{total}} item",
       "less": "kurang",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} daripada {{total}} item",
       "load_more_tip": "Memuatkan lebih banyak item",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% diskaun",
       "select_product_all_options": "Varian produk yang dipilih tidak lengkap atau tidak tersedia. Sila pilih semula.",
       "sort_button": "Susun",
-      "top_sellers": "Produk yang laris",
-      "more__product_num": "{{num}} produk-produk",
-      "one_product_num": "{{num}} produk",
-      "show": "Tunjukkan"
+      "top_sellers": "Produk yang laris"
     },
     "product_search": {
       "back_to_home": "Kembali ke laman Utama",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Pembayaran berbilang saluran",
       "Paypal": "PayPal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kad Kredit"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Telah melebihi had produk"
     },
     "order": {
-      "deleted": "TIDAK SAH"
+      "deleted": "TIDAK SAH",
+      "rebuy": "Beli semula"
     },
     "payment": {
       "continue_shopping": "Teruskan membeli-belah",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Log masuk tanpa mengkonfigurasi saluran pihak ketiga",
       "error_message_1009": "Gagal memuat antara muka pihak ketiga",
       "error_message_1010": "Gagal menghantar",
-      "error_message_1011": "Nombor akaun tidak diaktifkan",
+      "error_message_1011": "Akaun tidak diaktifkan Sila daftar untuk melengkapkan kata laluan dan maklumat lain.",
       "error_message_1012": "Pengecualian perkhidmatan",
       "error_message_1013": "Pengecualian perkhidmatan",
       "error_message_1014": "Gagal mengesahkan kod pengesahan",

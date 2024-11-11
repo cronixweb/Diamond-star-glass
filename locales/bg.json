@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "Можете да добавите само {{quantity}} артикула в количката си."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Невалиден имейл адрес"
-    },
     "account": {
       "account_binding": "Свързване на акаунт",
       "account_information": "Сметка",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Можете да заявите затварянето на този акаунт След затварянето, всякаква информация за идентифицирането на този акаунт ще бъде изтрита, включително:",
       "email": "Имейл",
       "email_repeat_tip": "Имейлът е регистриран",
+      "email_subscribe_invalid_tip": "Невалиден имейл адрес",
       "first_name": "Име",
       "gender": "Пол",
       "gender_female": "Жена",
@@ -260,7 +258,7 @@
       "copy_success": "Кодът на купона е копиран",
       "discount_title": "Активирайте акаунт и получете код за отстъпка",
       "normal_title": "Активирайте акаунт",
-      "normal_title_with_discount_code": "Активирайте акаунта и получете код за отстъпка",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Абонирайте се за имейли, за да получавате актуализации, достъп до изключителни оферти и много други.",
       "success_title": "Поздравления за получаването на страхотна отстъпка",
       "token_expired": "Вашият линк е изтекъл"
@@ -300,19 +298,98 @@
         "shipping": "Адрес за доставка на компанията",
         "title": "Кандидатстване за акаунт на компанията"
       },
+      "address": {
+        "placeholder": "Подробен адрес"
+      },
+      "address2": {
+        "placeholder": "Подробен адрес 2"
+      },
       "bill": {
         "sameAsCompany": "Адрес за плащане на компанията същият като адреса за доставка на компанията"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Подробен адрес"
+        },
+        "address2": {
+          "placeholder": "Подробен адрес 2"
+        },
+        "city": {
+          "placeholder": "Град"
+        },
+        "country": {
+          "placeholder": "Държава/регион"
+        },
+        "district": {
+          "placeholder": "Област"
+        },
+        "phone": {
+          "placeholder": "Номер на мобилен телефон"
+        },
+        "province": {
+          "placeholder": "Провинция"
+        },
+        "zip": {
+          "placeholder": "Пощенски код"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Адресът за фактуриране на дружеството е същият като адреса за получаване"
+      },
+      "billing_address": {
+        "title": "Адрес за фактуриране на компанията"
+      },
+      "city": {
+        "placeholder": "Град"
+      },
+      "company_name": {
+        "placeholder": "Име на компанията"
+      },
+      "country": {
+        "placeholder": "Държава/регион"
       },
       "create": {
         "limit": "Броят на компаниите за магазина е достигнал лимита си. Моля, свържете се с търговеца за помощ.",
         "success": "Благодаря. Формата е изпратена."
       },
+      "district": {
+        "placeholder": "Област"
+      },
+      "email": {
+        "placeholder": "Пощенска кутия"
+      },
       "field": {
         "companyName": "Име на компанията",
         "email": "Имейл"
       },
+      "first_name": {
+        "placeholder": "Имена"
+      },
       "form": {
         "submit": "Изпращане"
+      },
+      "last_name": {
+        "placeholder": "Фамилия"
+      },
+      "phone": {
+        "placeholder": "Номер на мобилен телефон"
+      },
+      "province": {
+        "placeholder": "Провинция"
+      },
+      "register": {
+        "button": "Подаване на информация",
+        "success": {
+          "description": "Формулярът е изпратен успешно.",
+          "title": "Благодаря за попълването!"
+        },
+        "title": "Заявление за фирмена сметка"
+      },
+      "shipping_address": {
+        "title": "Адрес на дружеството, което получава"
+      },
+      "zip": {
+        "placeholder": "Пощенски код"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Изчистване",
       "company_empty_hint": "Името на компанията не може да бъде празно",
       "company_existed": "Името на компанията вече съществува.",
+      "company_frequent_operation": "Повторете операцията, моля, опитайте отново по-късно",
+      "company_registry_closed": "Търговецът не е активирал функцията за кандидатстване за фирмен акаунт, моля, свържете се с търговеца, за да кандидатствате.",
       "confirm": "OK",
       "confirm_button": "OK",
       "date_format": "dd MM yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Ще ви изпратим SMS, за да възстановите паролата си",
       "proceed_to_checkout": "Продължете към плащането",
       "title": "Заглавие на страницата",
-      "verification_code_success": "Изпратен е код за потвърждение до начина ви за влизане {{type}}<em>{{value}}</em>, моля, въведете го по-долу."
+      "verification_code_success": "Изпратен е код за потвърждение до начина ви за влизане {{type}} <em>{{value}}</em>, моля, въведете го по-долу."
     },
     "login": {
       "member_login_common": "Вписване на член",
@@ -461,12 +540,18 @@
       "go_to_login": "Впишете се",
       "tips_agree_with_the_shop": "Съгласен съм с"
     },
+    "subscribe": {
+      "email_has_bind": "Този имейл адрес е свързан с друг акаунт",
+      "phone_has_bind": "Този телефон е свързан с друг акаунт"
+    },
     "subscription": {
       "email": "Имейл",
+      "email_subscribe_error_tip": "Тази пощенска кутия е свързана с друг акаунт",
       "email_subscription_text": "Получавайте промоционална информация за абонамента по имейл",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Мобилен телефон",
+      "phone_subscribe_error_tip": "Този мобилен телефон е свързан с друг акаунт",
       "phone_subscription_text": "Абониране за телефонна промоция",
       "reason_other_length": "Въведете до 300 знака",
       "reason_other_placeholder": "Въвеждане на съдържание",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Абонаментът е анулиран и скоро ще бъдете пренасочени към началната страница",
       "unsubscribe_tip": "След отписването няма повече да получавате най-новите промоции-",
       "unsubscribe_title": "Отписване"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Моля, въведете съдържание",
+      "goto_btn": "Влезте в магазина",
+      "notyet": "Все още не сте се абонирали",
+      "notyet_desc": "Можете да отидете в магазина, за да се абонирате",
+      "success": "Абонаментът е анулиран",
+      "success_tip": "Отписахте се от {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Купувай отново",
     "checkout_order": {
       "pay_amount": "заплати сума",
       "receiver_account": "получател акаунт",
@@ -596,8 +690,9 @@
       "details": "Подробности за поръчката",
       "insuranceService": "Застрахователни услуги",
       "insuranceService_applyClaim": "Заявяване на претенции",
-      "insuranceService_content_email": "1.Полицата е изпратена на вашия имейл \"{{email}}\" от {{serviceName}}. Ако не сте получили информация за полицата, моля, свържете се с услугата на магазина за обслужване на клиента. 2.Ако има някаква повреда, загуба, забавяне или друга ситуация по време на транспорта, можете да заявите претенция.",
-      "insuranceService_content_phone": "1.Полицата е изпратена на вашия телефон \"{{phopne}}\" от {{serviceName}}. Ако не сте получили информация за полицата, моля, свържете се с услугата на магазина за обслужване на клиента. 2.Ако има някаква повреда, загуба, забавяне или друга ситуация по време на транспорта, можете да заявите претенция.",
+      "insuranceService_content_line1__email": "1.Полицата е изпратена на вашия имейл \"{{email}}\" от {{serviceName}}. Ако не сте получили информация за полицата, моля, свържете се с услугата на магазина за обслужване на клиента. ",
+      "insuranceService_content_line1__phone": "1. Полицата е закупена чрез {{serviceName}}. Ако имате други въпроси, свържете се с отдела за обслужване на клиенти на магазина.",
+      "insuranceService_content_line2": "2.Ако има някаква повреда, загуба, забавяне или друга ситуация по време на транспорта, можете да заявите претенция.",
       "order": "Ред",
       "remark": "Забележка за поръчката",
       "time": "Поръчано в",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Зареждане на още елементи",
+      "loading_btn": "Заредете повече",
       "no_product_data_found": "Не е намерена информация за продукта. Моля, опитайте по-късно",
       "sold_out": "Продадено",
-      "added_to_cart_successfully": "Добавен в количката успешно",
+      "load_more": "Зареждане на още елементи",
       "load_more_items": "Зареждат се {{current_offset}} ~ {{last_current_offset}} от {{total}} артикула",
-      "unavailable": "недостъпен"
+      "unavailable": "Стоката не съществува",
+      "variant_property_color": "Цвят"
     },
     "giftcard": {
       "seoTitle": "Балансът на вашата карта за подаръци {{ shop }} е {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Филтър",
       "filters_selected": "Избрани са {{count}}",
       "from_price_html": "От {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} от {{total}} артикула",
       "less": "По-малко",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} от {{total}} артикула",
       "load_more_tip": "Зареждат се още елементи",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% намаление",
       "select_product_all_options": "Избраната варианта на продукта е непълен или недостъпен. Моля, изберете отново",
       "sort_button": "сортиране",
-      "top_sellers": "Най-продавани",
-      "more__product_num": "{{num}} Продукти",
-      "one_product_num": "{{num}} Продукт",
-      "show": "Покажи"
+      "top_sellers": "Най-продавани"
     },
     "product_search": {
       "back_to_home": "Върни се на началната страница",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Многоканални плащания",
       "Paypal": "PayPal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Кредитна карта"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Лимитът на продукта е надхвърлен"
     },
     "order": {
-      "deleted": "НЕВАЛИДНО"
+      "deleted": "НЕВАЛИДНО",
+      "rebuy": "Купете го отново"
     },
     "payment": {
       "continue_shopping": "Продължавай да пазаруваш",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Влезте в системата, без да конфигурирате каналите на трети страни",
       "error_message_1009": "Неуспешно извикване на интерфейс на трета страна",
       "error_message_1010": "Неуспешно изпращане",
-      "error_message_1011": "Номерът на сметката не е активиран",
+      "error_message_1011": "Акаунтът не е активиран, за да попълните паролата и другата информация.",
       "error_message_1012": "Изключения при обслужване",
       "error_message_1013": "Изключения при обслужване",
       "error_message_1014": "Неуспешно потвърждаване на кода за проверка",

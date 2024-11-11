@@ -1,0 +1,57 @@
+.product-categories-section__header h2 {
+    margin: 0;
+    margin-bottom: 8px;
+
+    color: #121212;
+    /* font-family: Gotham; */
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    text-transform: capitalize;
+}
+
+.product-categories-section__header p {
+    margin: 0;
+    margin-bottom: 64px;
+
+    color: #121212;
+    /* font-family: "Open Sans"; */
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Grid Styling */
+.product-categories-section__grid {
+  display: flex;
+  gap: 29px;
+}
+
+.product-category img {
+  width: 100%;
+  height: 300px;
+}
+
+.product-category h3 {
+    margin: 0;
+    margin-top: 24px;
+
+    color: #121212;
+    text-align: center;
+    /* font-family: "Open Sans"; */
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+@media screen and (min-width: 950px) and (max-width: 749px){
+
+}
+
+@media screen and (min-width: 750px) {
+  
+}

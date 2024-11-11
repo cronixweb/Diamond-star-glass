@@ -137,6 +137,11 @@ defineCustomElement('cart-coupon', () => {
           selector: '#cart-icon-bubble-wrapper',
         },
         {
+          id: 'cart-icon-bubble-mobile',
+          section: 'cart-icon-bubble-mobile',
+          selector: '#cart-icon-bubble-wrapper-mobile',
+        },
+        {
           id: 'cart-drawer',
           section: 'cart-drawer',
           selectors: ['.cart-drawer__inner', '.cart-fixed-checkout'],
@@ -154,7 +159,7 @@ defineCustomElement('cart-coupon', () => {
           {
             id: 'main-cart-footer',
             section: document.getElementById('main-cart-footer').dataset.id,
-            selector: '.cart__checkout-subtotal',
+            selectors: ['.cart__checkout-subtotal', '.cart-fixed-checkout'],
           },
         ];
       }

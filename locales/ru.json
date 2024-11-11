@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Вы можете добавить только {{quantity}} штук этого товара в корзину для покупки."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Недействительный адрес электронной почты"
-    },
     "account": {
       "account_binding": "Аккаунт привязан",
       "account_information": "Аккаунт",
       "bind": "Привязка",
       "birthday": "Дата рождения",
       "change_password": "Измените пароль",
-      "confirm_btn": "Konfirmovať",
+      "confirm_btn": "Подтверждение",
       "confirm_subscription_modal_btn": "Подтвердите подписку",
       "confirm_subscription_modal_content": "Вы ранее оформили подписку. Письмо с подтверждением уже отправили на почту. Вы можете подтвердить его в своем электронном письме или нажать эту кнопку.",
       "confirm_subscription_modal_title": "Пожалуйста, подтвердите подписку на электронную почту.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Вы можете подать заявку на аннулирование этого аккаунта. После аннулирования аккаунта любая информация, используемая для идентификации аккаунта, будет удалена, в том числе:",
       "email": "Электронная почта",
       "email_repeat_tip": "Почта зарегистрирована",
+      "email_subscribe_invalid_tip": "Недействительный адрес электронной почты",
       "first_name": "Имя",
       "gender": "Пол.",
       "gender_female": "Жен.",
@@ -260,7 +258,7 @@
       "copy_success": "Купон скопирован",
       "discount_title": "Активируйте аккаунт и получите код скидки",
       "normal_title": "Активируйте аккаунт",
-      "normal_title_with_discount_code": "Активируйте аккаунт и получите код скидки",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Подпишитесь на электронные письма, чтобы получать обновления, получать доступ к эксклюзивным льготам и т.д..",
       "success_title": "Поздравляю, что вы получили скидку",
       "token_expired": "Срок действия вашей сслыки истек"
@@ -300,19 +298,98 @@
         "shipping": "Адрес для доставки компании",
         "title": "Заявка на открытие счета для компании"
       },
+      "address": {
+        "placeholder": "Подробный адрес"
+      },
+      "address2": {
+        "placeholder": "Подробный адрес 2"
+      },
       "bill": {
         "sameAsCompany": "Адрес для выставления счетов компании такой же, как адрес для доставки"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Подробный адрес"
+        },
+        "address2": {
+          "placeholder": "Подробный адрес 2"
+        },
+        "city": {
+          "placeholder": "Город"
+        },
+        "country": {
+          "placeholder": "Страна/регион"
+        },
+        "district": {
+          "placeholder": "Район"
+        },
+        "phone": {
+          "placeholder": "Номер телефона"
+        },
+        "province": {
+          "placeholder": "Провинция"
+        },
+        "zip": {
+          "placeholder": "Почтовый индекс"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Адрес счетов компании совпадает с адресом получения товара"
+      },
+      "billing_address": {
+        "title": "Адрес компании по выставлению счетов"
+      },
+      "city": {
+        "placeholder": "Город"
+      },
+      "company_name": {
+        "placeholder": "Название компании"
+      },
+      "country": {
+        "placeholder": "Страна/регион"
       },
       "create": {
         "limit": "Количество компаний для магазина достигло своего предела. Пожалуйста, свяжитесь с торговцем для получения помощи.",
         "success": "Спасибо. Форма была отправлена."
       },
+      "district": {
+        "placeholder": "Район"
+      },
+      "email": {
+        "placeholder": "Электронная почта"
+      },
       "field": {
         "companyName": "Название компании",
         "email": "Электронная почта"
       },
+      "first_name": {
+        "placeholder": "Имя"
+      },
       "form": {
         "submit": "Отправить"
+      },
+      "last_name": {
+        "placeholder": "Фамилия"
+      },
+      "phone": {
+        "placeholder": "Номер телефона"
+      },
+      "province": {
+        "placeholder": "Провинция"
+      },
+      "register": {
+        "button": "Представление",
+        "success": {
+          "description": "Форма была успешно отправлена.",
+          "title": "Спасибо за заполнение!"
+        },
+        "title": "Заявка на счет компании"
+      },
+      "shipping_address": {
+        "title": "Адрес получения товара компании"
+      },
+      "zip": {
+        "placeholder": "Почтовый индекс"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Очистить",
       "company_empty_hint": "Название компании не может быть пустым",
       "company_existed": "Название компании уже существует.",
+      "company_frequent_operation": "Повторите операцию, повторите попытку позже",
+      "company_registry_closed": "Продавец не включил функцию приложения для учетной записи компании. Чтобы подать заявку, свяжитесь с продавцом.",
       "confirm": "Определение",
       "confirm_button": "Определение",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Мы отправляем вам текстовое сообщение на мобильный телефон для сброса пароля",
       "proceed_to_checkout": "Произвести расчет",
       "title": "Заголовок страницы",
-      "verification_code_success": "Проверочный код был отправлен на ваш логин{{type}}<em>{{value}}</em>, пожалуйста, введите его ниже."
+      "verification_code_success": "Проверочный код был отправлен на ваш логин{{type}} <em>{{value}}</em>, пожалуйста, введите его ниже."
     },
     "login": {
       "member_login_common": "Логин членов",
@@ -461,12 +540,18 @@
       "go_to_login": "Перейти к логину",
       "tips_agree_with_the_shop": "Я согласен с магазином"
     },
+    "subscribe": {
+      "email_has_bind": "Этот адрес электронной почты привязан к другой учетной записи",
+      "phone_has_bind": "Этот телефон привязан к другому аккаунту"
+    },
     "subscription": {
       "email": "Электронная почта",
+      "email_subscribe_error_tip": "Эта почта была привязана к другому аккаунту",
       "email_subscription_text": "Получайте информацию о стимулировании продажи подписки по электронной почте",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Мобильный телефон",
+      "phone_subscribe_error_tip": "Этот номер телефона был привязан к другому аккаунту",
       "phone_subscription_text": "Получайте информацию о стимулировании продажи подписки по мобильному телефону",
       "reason_other_length": "Введите максимально 300 символов",
       "reason_other_placeholder": "Введите содержание",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Подписка отменена, будет перенаправлять на главную страницу",
       "unsubscribe_tip": "После отмены подписки вы больше не будете получать последнюю информацию о стимулировании продажи.",
       "unsubscribe_title": "Подписка отменена"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Пожалуйста, введите содержание",
+      "goto_btn": "Войти в магазин",
+      "notyet": "Вы еще не подписались",
+      "notyet_desc": "Вы можете пойти в магазин, чтобы подписаться",
+      "success": "Подписка отменена",
+      "success_tip": "Вы отменили подписку на {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Купи снова",
     "checkout_order": {
       "pay_amount": "сумма платежа",
       "receiver_account": "учетная запись получателя",
@@ -596,8 +690,9 @@
       "details": "Подробности о заказе",
       "insuranceService": "Сервис о страховании",
       "insuranceService_applyClaim": "Заявить претензию",
-      "insuranceService_content_email": "1.Письменная гарантия отправляется {{serviceName}} на вашу почту \"{{email}}\". Если вы не получили, пожалуйста, свяжитесь со службой клиентов магазина.2.Если в процессе отправки возникли повреждение, потеря, опоздание, вы можете заявить претензию. ",
-      "insuranceService_content_phone": "1.Письменная гарантия отправляется {{serviceName}} на ваш мобильный телефон\"{{phopne}}\". Если вы не получили, пожалуйста, свяжитесь со службой клиентов магазина.2.Если в процессе отправки возникли повреждение, потеря, опоздание, вы можете заявить претензию. ",
+      "insuranceService_content_line1__email": "1.Письменная гарантия отправляется {{serviceName}} на вашу почту \"{{email}}\". Если вы не получили, пожалуйста, свяжитесь со службой клиентов магазина.",
+      "insuranceService_content_line1__phone": "1. Письменная гарантия покупает через {{serviceName}}. Если у вас какие-то вопросы, пожалуйста, свяжитесь с службой магазина.",
+      "insuranceService_content_line2": "2.Если в процессе отправки возникли повреждение, потеря, опоздание, вы можете заявить претензию. ",
       "order": "Заказ",
       "remark": "Примечание заказа",
       "time": "Время заказа:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Загрузите больше проектов",
+      "loading_btn": "Загрузить больше",
       "no_product_data_found": "Пока нет данных о текущим продукте. Повторите попытку позже.",
       "sold_out": "Распродано",
-      "added_to_cart_successfully": "Успешная покупка",
+      "load_more": "Загрузите больше проектов",
       "load_more_items": "Загрузка {{current_offset}} ~ {{last_current_offset}} / {{total}} проектов",
-      "unavailable": "Не доступно"
+      "unavailable": "Данный товар не существует",
+      "variant_property_color": "Цвет"
     },
     "giftcard": {
       "seoTitle": "Остаток подарочной карты {{ shop }} является {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Отбор",
       "filters_selected": "Выбран {{count}} штука",
       "from_price_html": "От {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} / {{total}} проект",
       "less": "Меньше этикеток",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} / {{total}} проект",
       "load_more_tip": "Загрузите больше пунктов",
@@ -786,10 +884,7 @@
       "save_ratio": "Скидка {{price}}%",
       "select_product_all_options": "Выбранный вариант товара неполный или недоступен. Пожалуйста, выберите снова",
       "sort_button": "Сортировка",
-      "top_sellers": "С широким сбытом",
-      "more__product_num": "{{num}} Продукты",
-      "one_product_num": "{{num}} Продукт",
-      "show": "Показать"
+      "top_sellers": "С широким сбытом"
     },
     "product_search": {
       "back_to_home": "Вернуться на главную страницу",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Многоканальные платежи",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Кредитная карта"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Превышать лимит товара"
     },
     "order": {
-      "deleted": "Удалено"
+      "deleted": "Удалено",
+      "rebuy": "Купить снова"
     },
     "payment": {
       "continue_shopping": "Продолжайте покупку",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Вход через канал третьей стороны не настроен",
       "error_message_1009": "Не удалось вызвать интерфейс третьей стороны",
       "error_message_1010": "Не удалось отправить",
-      "error_message_1011": "Аккаунт не активирован",
+      "error_message_1011": "Учетная запись не активирована. Пожалуйста, зарегистрируйтесь, чтобы ввести пароль и другую информацию.",
       "error_message_1012": "Аномальный сервис",
       "error_message_1013": "Аномальный сервис",
       "error_message_1014": "Не удалось подтвердить проверочный код",

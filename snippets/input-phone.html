@@ -38,11 +38,11 @@
     {{snippet "icon-arrow"}}
   </div>
   <select name="{{code_name}}" class="country-select" {{#if input_disabled}}disabled{{/if}}>
-    {{#for all_country_dialing_code as |item|}}
-      {{#if country_iso_code == item.iso_code}}
-        <option value="{{item.dialing_code}}" data-iso-code="{{item.iso_code}}" selected="selected">{{item.name}}</option>
+    {{#for all_country_dialing_code as |country_dialing_code|}}
+      {{#if country_iso_code == country_dialing_code.iso_code}}
+        <option value="{{country_dialing_code.dialing_code}}" data-iso-code="{{country_dialing_code.iso_code}}" selected="selected">{{country_dialing_code.name}}</option>
       {{else}}
-        <option value="{{item.dialing_code}}" data-iso-code="{{item.iso_code}}">{{item.name}}</option>
+        <option value="{{country_dialing_code.dialing_code}}" data-iso-code="{{country_dialing_code.iso_code}}">{{country_dialing_code.name}}</option>
       {{/if}}
     {{/for}}
   </select>

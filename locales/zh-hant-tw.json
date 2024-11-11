@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "您只能向購物車添加 {{quantity}} 件此商品。"
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "無效的郵箱地址"
-    },
     "account": {
       "account_binding": "帳戶綁定",
       "account_information": "賬戶",
@@ -216,6 +213,7 @@
       "delete_account_notify": "您可申請註銷此賬戶。賬戶註銷後，任何用於識別此賬戶的信息將被刪除，包括：",
       "email": "電子郵件",
       "email_repeat_tip": "該電子郵件已經註冊",
+      "email_subscribe_invalid_tip": "無效的郵箱地址",
       "first_name": "名字",
       "gender": "性別",
       "gender_female": "女性",
@@ -260,7 +258,7 @@
       "copy_success": "優惠券已復制",
       "discount_title": "激活賬號並獲取折扣碼",
       "normal_title": "激活賬號",
-      "normal_title_with_discount_code": "啟動帳號並取得折扣碼",
+      "normal_title_with_discount_code": "",
       "subscription_text": "訂閱電子郵件以接收更新、訪問獨家優惠等。",
       "success_title": "恭喜您獲得折扣",
       "token_expired": "您的鏈接已失效"
@@ -300,19 +298,98 @@
         "shipping": "公司收貨地址",
         "title": "公司帳號申請"
       },
+      "address": {
+        "placeholder": "詳細地址"
+      },
+      "address2": {
+        "placeholder": "詳細地址2"
+      },
       "bill": {
         "sameAsCompany": "公司帳單地址與收貨地址相同"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "詳細地址"
+        },
+        "address2": {
+          "placeholder": "詳細地址2"
+        },
+        "city": {
+          "placeholder": "城市"
+        },
+        "country": {
+          "placeholder": "國家/地區"
+        },
+        "district": {
+          "placeholder": "區"
+        },
+        "phone": {
+          "placeholder": "手機號碼"
+        },
+        "province": {
+          "placeholder": "省份"
+        },
+        "zip": {
+          "placeholder": "郵遞區號"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "公司帳單地址與收貨地址相同"
+      },
+      "billing_address": {
+        "title": "公司帳單地址"
+      },
+      "city": {
+        "placeholder": "城市"
+      },
+      "company_name": {
+        "placeholder": "公司名稱"
+      },
+      "country": {
+        "placeholder": "國家/地區"
       },
       "create": {
         "limit": "公司數量已達上限，請聯絡商家進行處理。",
         "success": "感謝，表單已投稿！"
       },
+      "district": {
+        "placeholder": "區"
+      },
+      "email": {
+        "placeholder": "郵箱"
+      },
       "field": {
         "companyName": "公司名稱",
         "email": "信箱"
       },
+      "first_name": {
+        "placeholder": "名字"
+      },
       "form": {
         "submit": "提交"
+      },
+      "last_name": {
+        "placeholder": "姓氏"
+      },
+      "phone": {
+        "placeholder": "手機號碼"
+      },
+      "province": {
+        "placeholder": "省份"
+      },
+      "register": {
+        "button": "提交",
+        "success": {
+          "description": "表單已提交成功。",
+          "title": "感謝填寫！"
+        },
+        "title": "公司帳號申請"
+      },
+      "shipping_address": {
+        "title": "公司收貨地址"
+      },
+      "zip": {
+        "placeholder": "郵政編碼"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "清除",
       "company_empty_hint": "公司名稱不能為空",
       "company_existed": "公司名稱已存在",
+      "company_frequent_operation": "重複操作，請稍後再試",
+      "company_registry_closed": "商家未啟用公司帳號申請功能，請聯絡商家進行申請",
       "confirm": "確定",
       "confirm_button": "確定",
       "date_format": "yyyy-MM-dd",
@@ -440,7 +519,7 @@
       "phone_tip": "我們將向您發送用於重置密碼的手機短信",
       "proceed_to_checkout": "進行結算",
       "title": "頁面標題",
-      "verification_code_success": "驗證碼已傳送至您的登入{{type}}<em>{{value}}</em>，請在下方輸入驗證碼。"
+      "verification_code_success": "驗證碼已傳送至您的登入{{type}} <em>{{value}}</em>，請在下方輸入驗證碼。"
     },
     "login": {
       "member_login_common": "會員登入",
@@ -461,12 +540,18 @@
       "go_to_login": "前往登入",
       "tips_agree_with_the_shop": "我同意"
     },
+    "subscribe": {
+      "email_has_bind": "此郵箱已綁定至其他帳號",
+      "phone_has_bind": "此手機已綁定至其他帳號"
+    },
     "subscription": {
       "email": "電子郵件",
+      "email_subscribe_error_tip": "此郵箱已綁定至其他帳號",
       "email_subscription_text": "訂閱電子郵件促銷活動訊息",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "行動電話",
+      "phone_subscribe_error_tip": "此手機已綁定至其他帳號",
       "phone_subscription_text": "訂閱手機促銷活動訊息",
       "reason_other_length": "最多輸入300個字",
       "reason_other_placeholder": "輸入內容",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "訂閱已取消，即將跳轉至主頁",
       "unsubscribe_tip": "取消訂閱後，您將無法再收到最新促銷活動訊息。",
       "unsubscribe_title": "取消訂閱"
+    },
+    "unsubscribe": {
+      "content_placeholder": "請輸入內容",
+      "goto_btn": "進入商店",
+      "notyet": "您尚未訂閱",
+      "notyet_desc": "您可以前往商店進行訂閱",
+      "success": "訂閱已取消",
+      "success_tip": "您已經從{{storeName}}取消訂閱"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "再次購買",
     "checkout_order": {
       "pay_amount": "支付金額",
       "receiver_account": "收款賬戶",
@@ -596,8 +690,9 @@
       "details": "訂單詳細資料",
       "insuranceService": "保險服務",
       "insuranceService_applyClaim": "申請索賠",
-      "insuranceService_content_email": "1.保單已由{{serviceName}}發送到您的郵箱\"{{email}}\"。如果您沒有收到保單郵件，請聯繫店鋪客服。2.如運送過程中出現損壞、遺失、延誤等情況，您可以申請索賠。",
-      "insuranceService_content_phone": "1.保單已由{{serviceName}}發送到您的手機\"{{phopne}}\"。如果您沒有收到保單信息，請聯繫店鋪客服。2.如運送過程中出現損壞、遺失、延誤等情況，您可以申請索賠。",
+      "insuranceService_content_line1__email": "1.保單已由{{serviceName}}發送到您的郵箱\"{{email}}\"。如果您沒有收到保單郵件，請聯繫店鋪客服。",
+      "insuranceService_content_line1__phone": "1.已透過{{serviceName}}購買了運輸保障服務。如果您有其他疑問，請聯絡店家客服。",
+      "insuranceService_content_line2": "2.如運送過程中出現損壞、遺失、延誤等情況，您可以申請索賠。",
       "order": "訂單",
       "remark": "訂單備註",
       "time": "訂購於：",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "加載更多項目",
+      "loading_btn": "加載更多",
       "no_product_data_found": "找不到產品資料。請稍後再試",
       "sold_out": "已售罄",
-      "added_to_cart_successfully": "加購成功",
+      "load_more": "加載更多項目",
       "load_more_items": "加載 {{current_offset}} ~ {{last_current_offset}} / {{total}} 項目",
-      "unavailable": "不可用的"
+      "unavailable": "該商品不存在",
+      "variant_property_color": "顏色"
     },
     "giftcard": {
       "seoTitle": "您的 {{ shop }} 的禮品卡餘額為 {{ value }}！",
@@ -765,6 +862,7 @@
       "filter": "篩選",
       "filters_selected": "已選擇{{count}}個",
       "from_price_html": "{{price}} 起",
+      "infinite_btn_desc": "{{last_current_offset}} / {{total}} 項目",
       "less": "更少標籤",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} / {{total}} 項目",
       "load_more_tip": "加載更多項目",
@@ -786,10 +884,7 @@
       "save_ratio": "優惠 {{price}}%",
       "select_product_all_options": "選擇的商品規格不完整或不可用，請重新選擇",
       "sort_button": "排序",
-      "top_sellers": "熱賣商品",
-      "more__product_num": "{{num}} 商品",
-      "one_product_num": "{{num}} 商品",
-      "show": "顯示"
+      "top_sellers": "熱賣商品"
     },
     "product_search": {
       "back_to_home": "返回首頁",
@@ -886,6 +981,10 @@
       "MultiplePayment": "多渠道付款",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "支付寶（推薦中國內地實名用戶使用）",
+        "mpay": "MPay（推薦MPay用戶使用）"
+      },
       "third-part": "信用卡"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "已超過此產品限制"
     },
     "order": {
-      "deleted": "已刪除"
+      "deleted": "已刪除",
+      "rebuy": "再購買"
     },
     "payment": {
       "continue_shopping": "繼續購物",
@@ -979,13 +1079,13 @@
       "error_message_1008": "未配置第三方渠道登錄",
       "error_message_1009": "調用第三方接口失敗",
       "error_message_1010": "發送失敗",
-      "error_message_1011": "賬號未激活",
+      "error_message_1011": "帳號未激活，請進行註冊以完善密碼等信息",
       "error_message_1012": "服務異常",
       "error_message_1013": "服務異常",
       "error_message_1014": "校驗驗證碼失敗",
       "error_message_1015": "請校驗動態驗證碼",
       "error_message_1016": "服務異常",
-      "error_message_1017": "該賬號存在風險",
+      "error_message_1017": "我們無法完成您的登入請求，請確認您的帳號狀態",
       "error_message_1018": "郵箱已綁定",
       "error_message_1020": "登錄超時",
       "error_message_1021": "登錄超時",

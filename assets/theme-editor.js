@@ -4,8 +4,9 @@ function themeEditorEntry() {
   window.__themeEditorInstance__ = true;
 
   function getThemeEditorEventData(event) {
-    const shoplineEditorBlockData = event.target?.dataset?.shoplineEditorBlock;
+    const { index = null } = event.detail;
     const shoplineSection = event.target?.closest('[data-shopline-editor-section]');
+
     const sectionType = (() => {
       const sectionData = shoplineSection?.dataset?.shoplineEditorSection;
 
@@ -20,23 +21,8 @@ function themeEditorEntry() {
 
       return '';
     })();
-    const blockType = (() => {
-      if (shoplineEditorBlockData) {
-        try {
-          const parsedData = JSON.parse(shoplineEditorBlockData);
-
-          return parsedData.type || '';
-        } catch (err) {
-          return '';
-        }
-      }
-
-      return null;
-    })();
-    const { index = null } = event.detail;
 
     return {
-      blockType,
       blockElement: event.target,
       sectionType,
       index,
@@ -47,16 +33,16 @@ function themeEditorEntry() {
     const { index, blockElement, sectionType } = getThemeEditorEventData(event);
 
     if (sectionType === 'announcement-bar') {
-      const announcementBarSection = blockElement?.closest('announcement-bar-section');
+      const announcementBarSlider = blockElement?.closest('announcement-bar-slider');
 
       return {
         blockSelect: () => {
           if (index !== null) {
-            announcementBarSection?.splideTo(index);
+            announcementBarSlider?.splideTo(index);
           }
         },
         blockDeselect: () => {
-          announcementBarSection?.play();
+          announcementBarSlider?.play();
         },
       };
     }
@@ -78,7 +64,7 @@ function themeEditorEntry() {
       };
     }
 
-    if (sectionType === 'collection-list') {
+    if (sectionType === 'collection-list-new' || sectionType === 'icon-list') {
       const slider = blockElement?.closest('slider-component');
 
       return {
@@ -86,6 +72,33 @@ function themeEditorEntry() {
           if (index !== null) {
             slider?.slideTo(index + 1);
           }
+        },
+      };
+    }
+
+    if (sectionType === 'featured-collection') {
+      const sliderTab = blockElement?.closest('featured-collection-tabs');
+
+      return {
+        blockSelect: () => {
+          if (index !== null) {
+            sliderTab?.switchTab(index + 1);
+          }
+        },
+      };
+    }
+
+    if (sectionType === 'featured-slideshow') {
+      const featuredSlideshowSection = blockElement?.closest('featured-slideshow-section');
+
+      return {
+        blockSelect: () => {
+          if (index !== null && featuredSlideshowSection) {
+            featuredSlideshowSection.splideTo(index + 1);
+          }
+        },
+        blockDeselect: () => {
+          featuredSlideshowSection?.play();
         },
       };
     }
@@ -99,6 +112,18 @@ function themeEditorEntry() {
         },
         blockDeselect: () => {
           footerMenu?.closeMenu();
+        },
+      };
+    }
+
+    if (sectionType === 'picture-floating') {
+      const pictureFloating = blockElement?.closest('picture-floating');
+
+      return {
+        blockSelect: () => {
+          if (index !== null) {
+            pictureFloating?.splideTo(index);
+          }
         },
       };
     }

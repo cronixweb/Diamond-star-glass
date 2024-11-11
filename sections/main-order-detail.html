@@ -27,9 +27,9 @@
     <div class="order-detail__panel">
       <h3 class="panel__title body2 fw-bold">{{ t 'order.shipping.info' }}</h3>
       <div class="panel__content body4 order-detail__info">
-        {{#if customer.name}}<p>{{ customer.name }}</p>{{/if}}
-        {{#if customer.email}}<p>{{ customer.email }}</p>{{/if}}
-        {{#if customer.phone}}<p>{{ customer.phone }}</p>{{/if}}
+        {{#if order.customer.name}}<p>{{ order.customer.name }}</p>{{/if}}
+        {{#if order.customer.email}}<p>{{ order.customer.email }}</p>{{/if}}
+        {{#if order.customer.phone}}<p>{{ order.customer.phone }}</p>{{/if}}
         {{#if order.shipping_address}}{{ format_address order.shipping_address }}{{/if}}
       </div>
     </div>
@@ -46,13 +46,13 @@
           </tr>
         </thead>
         <tbody>
-          {{#for order.line_items as |line_item|}}
-            {{ assign 'has_fulfillment' (if (length line_item.fulfillments) > 0) }}
+          {{#for order.line_items as |item|}}
+            {{ assign 'has_fulfillment' (if (length item.fulfillments) > 0) }}
             <tr class="body3">
               <td align="left">
                 <div class="product-item__cover">
-                  {{#if line_item.image.src}}
-                    {{ snippet 'image' data=line_item.image pc_size="80px" mobile_size="64px" }}
+                  {{#if item.image.src}}
+                    {{ snippet 'image' data=item.image pc_size="80px" mobile_size="64px" }}
                   {{else}}
                     {{ placeholder_svg_tag 'image' "image-fallback"}}
                   {{/if}}
@@ -61,22 +61,22 @@
               <td class="main-col left" align="left" {{#not has_fulfillment}}colspan="2"{{/not}}>
                 <div class="product-item__main">
                   <div class="product-item__info">
-                    <p class="product-item__title tag-unstyled">{{ line_item.title }}</p>
+                    <p class="product-item__title tag-unstyled">{{ item.title }}</p>
                     <p class="product-item__spec tag-unstyled body5">
-                      {{#for line_item.options_with_values as |option|}}
+                      {{#for item.options_with_values as |option|}}
                         <span>{{ option.value }}</span>{{#not forloop.last}} / {{/not}}
                       {{/for}}
                     </p>
-                    {{#for line_level_discount_allocations as |discount|}}
+                    {{#for item.line_level_discount_allocations as |discount_allocation|}}
                       <span class="product-item__discount body5">
                         {{ snippet 'icon-discount-tag' }}
-                        {{ discount.discount_application.title }}(-{{ money_with_currency discount.amount currency=order.currency }})
+                        {{ discount_allocation.discount_application.title }}(-{{ money_with_currency discount_allocation.amount currency=order.currency }})
                       </span>
                     {{/for}}
 
                     
-                    {{#if properties.length > 0}}
-                      {{#for properties as |property|}}
+                    {{#if item.properties.length > 0}}
+                      {{#for item.properties as |property|}}
                         <div class="product-property product-item__spec body5">
                           <span class="product-property__name">{{property.name}}:&nbsp;</span>
                           {{#if property.type == "text"}}
@@ -105,7 +105,7 @@
                   
                   {{#if has_fulfillment}}
                     <div class="product-item__fulfillments display-none-desktop">
-                      {{#for fulfillments as |fulfillment|}}
+                      {{#for item.fulfillments as |fulfillment|}}
                         <div class="product-item__fulfillment">
                           <div class="fulfillment__text body4">{{ t 'order.fulfillment.createTime' time=fulfillment.created_at }}</div>
                           {{#if fulfillment.tracking_number}}<div class="fulfillment__text body4 fw-bold">{{ fulfillment.tracking_company }} {{ fulfillment.tracking_number }}</div>{{/if}}
@@ -116,10 +116,10 @@
                   {{/if}}
                   
                   <span class="product-item__prices fw-bold display-none-desktop">
-                    {{#if line_item.original_price != line_item.final_price}}
-                      <span class="product-item__ori-price">{{ money_with_currency line_item.original_price currency=order.currency }}</span>
+                    {{#if item.original_price != item.final_price}}
+                      <span class="product-item__ori-price">{{ money_with_currency item.original_price currency=order.currency }}</span>
                     {{/if}}
-                    <span class="product-item__price">{{ money_with_currency line_item.final_price currency=order.currency }}</span>
+                    <span class="product-item__price">{{ money_with_currency item.final_price currency=order.currency }}</span>
                   </span>
                 </div>
               </td>
@@ -127,7 +127,7 @@
               {{#if has_fulfillment}}
                 <td class="fulfillment-td" align="left">
                   <div class="product-item__fulfillments display-none-tablet">
-                    {{#for fulfillments as |fulfillment|}}
+                    {{#for item.fulfillments as |fulfillment|}}
                       <div class="product-item__fulfillment">
                         <div class="fulfillment__text body4">{{ t 'order.fulfillment.createTime' time=fulfillment.created_at }}</div>
                         {{#if fulfillment.tracking_number}}<div class="fulfillment__text body4 fw-bold">{{ fulfillment.tracking_company }} {{ fulfillment.tracking_number }}</div>{{/if}}
@@ -139,16 +139,16 @@
               {{/if}}
               <td class="tool-col fw-bold" align="right">
                 <div class="col-wrap">
-                  <span class="product-item__quantity">x{{ line_item.quantity }}</span>
+                  <span class="product-item__quantity">x{{ item.quantity }}</span>
                 </div>
               </td>
               <td class="tool-col display-none-tablet fw-bold" align="right">
                 <div class="col-wrap">
                   <div class="product-item__prices">
-                    {{#if line_item.original_price != line_item.final_price}}
-                      <span class="product-item__ori-price">{{ money_with_currency line_item.original_price currency=order.currency }}</span>
+                    {{#if item.original_price != item.final_price}}
+                      <span class="product-item__ori-price">{{ money_with_currency item.original_price currency=order.currency }}</span>
                     {{/if}}
-                    <span class="product-item__price">{{ money_with_currency line_item.final_price currency=order.currency }}</span>
+                    <span class="product-item__price">{{ money_with_currency item.final_price currency=order.currency }}</span>
                   </div>
                 </div>
               </td>
@@ -222,6 +222,9 @@
             </div>
           </div>
         </div>
+        <a href="{{order.rebuy_url}}" class="order-detail_rebuy button button--secondary">
+          {{t "transaction.order.rebuy"}}
+        </a>
       </div>
     </div>
 
@@ -255,7 +258,7 @@
     <div class="order-detail__panel">
       <h3 class="panel__title body2 fw-bold">{{ t 'order.order_status.contact_us' }}</h3>
       <div class="panel__content body4">
-        {{t 'order.order_status.help_tips' email=shop.email }}
+        {{t 'order.order_status.help_tips' email=@root.shop.email }}
       </div>
     </div>
   </section>

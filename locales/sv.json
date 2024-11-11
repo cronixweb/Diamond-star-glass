@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Du kan bara lägga till {{quantity}} artiklar till den här artikeln i din kundvagn."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Ogiltig e-postadress"
-    },
     "account": {
       "account_binding": "Kontolänk",
       "account_information": "Kontoen",
       "bind": "Obligatorisk",
       "birthday": "Födelsedag",
       "change_password": "Ändra lösenordet",
-      "confirm_btn": "ยืนยัน",
+      "confirm_btn": "Bekräfta",
       "confirm_subscription_modal_btn": "Bekräfta ditt prenumeration",
       "confirm_subscription_modal_content": "Du har tidigare skickat ett prenumeration. Ett bekräftelsemail har skickats till den här e-postadressen. Du kan bekräfta i din e-post eller klicka på den här knappen.",
       "confirm_subscription_modal_title": "Bekräfta din prenumerationen via e-post.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Du kan ansöka om att avsluta detta konto. När kontot en gång har avslutas kommer all information för identifiering av detta konto raderas, inkluderar:",
       "email": "E-post",
       "email_repeat_tip": "E-postmeddelandet har sparats",
+      "email_subscribe_invalid_tip": "Ogiltig e-postadress",
       "first_name": "Namn",
       "gender": "Snäll",
       "gender_female": "Kvinna",
@@ -260,7 +258,7 @@
       "copy_success": "Kopierad kupongkod",
       "discount_title": "Aktivera konto och få rabattkoden",
       "normal_title": "Aktivera konto",
-      "normal_title_with_discount_code": "Aktivera ditt konto och få en rabattkod",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Prenumerera på mejl för att få uppdateringar, få tillgång till exklusiva erbjudanden och mer.",
       "success_title": "Grattis till att få en bra rabatt",
       "token_expired": "Länken har upphört att gälla"
@@ -300,19 +298,98 @@
         "shipping": "Företagets leveransadress",
         "title": "Företagskontoansökan"
       },
+      "address": {
+        "placeholder": "Detaljerad adress"
+      },
+      "address2": {
+        "placeholder": "Detaljerad adress 2"
+      },
       "bill": {
         "sameAsCompany": "Företagets faktureringsadress samma som företagets leveransadress"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Detaljerad adress"
+        },
+        "address2": {
+          "placeholder": "Detaljerad adress 2"
+        },
+        "city": {
+          "placeholder": "Stad"
+        },
+        "country": {
+          "placeholder": "Land/Region"
+        },
+        "district": {
+          "placeholder": "Distrikt"
+        },
+        "phone": {
+          "placeholder": "Mobiltelefonnummer"
+        },
+        "province": {
+          "placeholder": "Provins"
+        },
+        "zip": {
+          "placeholder": "Postnummer"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Företagets faktureringsadress är densamma som leveransadressen"
+      },
+      "billing_address": {
+        "title": "Företagets faktureringsadress"
+      },
+      "city": {
+        "placeholder": "Stad"
+      },
+      "company_name": {
+        "placeholder": "Företagets namn"
+      },
+      "country": {
+        "placeholder": "Land/Region"
       },
       "create": {
         "limit": "Antalet företag för butiken har nått sin gräns. Kontakta handlaren för hjälp.",
         "success": "Tack. Formuläret har skickats."
       },
+      "district": {
+        "placeholder": "Distrikt"
+      },
+      "email": {
+        "placeholder": "Brevlåda"
+      },
       "field": {
         "companyName": "Företagsnamn",
         "email": "E-post"
       },
+      "first_name": {
+        "placeholder": "Efternamn"
+      },
       "form": {
         "submit": "Skicka"
+      },
+      "last_name": {
+        "placeholder": "Namn"
+      },
+      "phone": {
+        "placeholder": "Mobiltelefonnummer"
+      },
+      "province": {
+        "placeholder": "Provins"
+      },
+      "register": {
+        "button": "Skicka in",
+        "success": {
+          "description": "Formuläret har skickats in framgångsrikt.",
+          "title": "Tack för att du fyllde i det!"
+        },
+        "title": "Ansökan om företagskonto"
+      },
+      "shipping_address": {
+        "title": "Företagets leveransadress"
+      },
+      "zip": {
+        "placeholder": "Postnummer"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Avbryt",
       "company_empty_hint": "Företagsnamnet får inte vara tomt",
       "company_existed": "Företagsnamnet finns redan.",
+      "company_frequent_operation": "Upprepa operationen, försök igen senare",
+      "company_registry_closed": "Säljaren har inte aktiverat applikationsfunktionen för företagskonto, kontakta säljaren för att ansöka.",
       "confirm": "OKEJ",
       "confirm_button": "Okej",
       "date_format": "MM/dd/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Vi skickar ett SMS för att återställa ditt lösenord",
       "proceed_to_checkout": "Fortsätt till utcheckningen",
       "title": "Sidans titel",
-      "verification_code_success": "Bekräftelseskod skickad för att logga in {{type}}<em>{{value}}</em>, ange koden nedan."
+      "verification_code_success": "Bekräftelseskod skickad för att logga in {{type}} <em>{{value}}</em>, ange koden nedan."
     },
     "login": {
       "member_login_common": "Medlemsregistrering",
@@ -461,12 +540,18 @@
       "go_to_login": "Gå prenumerera",
       "tips_agree_with_the_shop": "Jag håller med"
     },
+    "subscribe": {
+      "email_has_bind": "Den här e-postadressen har kopplats till ett annat konto",
+      "phone_has_bind": "Den här telefonen har kopplats till ett annat konto"
+    },
     "subscription": {
       "email": "E-post",
+      "email_subscribe_error_tip": "Den här e-postadressen har länkats till ett annat konto",
       "email_subscription_text": "Få kampanjinformation från prenumerationen via E-post",
       "line": "LINJE",
       "messenger": "Budbärare",
       "phone": "Mobiltelefon",
+      "phone_subscribe_error_tip": "Den här mobiltelefonen har länkats till ett annat konto",
       "phone_subscription_text": "Registrera dig för telefonkampanjen",
       "reason_other_length": "Ange upp till 300 tecken",
       "reason_other_placeholder": "Mata in innehåll",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Prenumerationen avbryts, du kommer att omdirigeras till hemsidan",
       "unsubscribe_tip": "När du har skrivits ut kommer du inte längre att dra nytta av en kampanj.",
       "unsubscribe_title": "Avsluta prenumerationen"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Vänligen ange innehåll",
+      "goto_btn": "Gå in i butiken",
+      "notyet": "Du har inte prenumererat ännu",
+      "notyet_desc": "Du kan gå till butiken för att prenumerera",
+      "success": "Abonnemanget avslutat",
+      "success_tip": "Du har avslutat prenumerationen på {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Köp igen",
     "checkout_order": {
       "pay_amount": "betala belopp",
       "receiver_account": "mottagarkonto",
@@ -596,8 +690,9 @@
       "details": "Beställ information",
       "insuranceService": "Försäkringstjänster",
       "insuranceService_applyClaim": "Ansök om krav",
-      "insuranceService_content_email": "1. Policyn skickades till din “{{email}}”-e-postadress av {{serviceName}}. Om du inte har fått din policyinformation, vänligen kontakta din butiks kundtjänst. 2. Om det finns skada, förlust, försening eller någon annan situation under transporten kan du begära ett krav.",
-      "insuranceService_content_phone": "1. Policyn har skickats till din “{{phopne}}”-telefon från {{serviceName}}. Om du inte har fått din policyinformation, vänligen kontakta din butiks kundtjänst. 2. Om det finns skada, förlust, försening eller någon annan situation under transporten kan du begära ett krav.",
+      "insuranceService_content_line1__email": "1. Policyn skickades till din “{{email}}”-e-postadress av {{serviceName}}. Om du inte har fått din policyinformation, vänligen kontakta din butiks kundtjänst. ",
+      "insuranceService_content_line1__phone": "1. Källan förvärvades genom {{serviceName}}. Om du har ytterligare frågor, vänligen kontakta butikens kundtjänst.",
+      "insuranceService_content_line2": "2. Om det finns skada, förlust, försening eller någon annan situation under transporten kan du begära ett krav.",
       "order": "Beställ",
       "remark": "Observation av kontroller",
       "time": "Beställd från:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Laddar fler objekt",
+      "loading_btn": "Ladda mer",
       "no_product_data_found": "Inga produktdata hittades. Försök igen senare",
       "sold_out": "Slutsålt",
-      "added_to_cart_successfully": "Har lagts till i kundvagnen",
+      "load_more": "Laddar fler objekt",
       "load_more_items": "Laddar {{current_offset}} ~ {{last_current_offset}} av {{total}} saker",
-      "unavailable": "inte tillgänglig"
+      "unavailable": "Varorna finns inte",
+      "variant_property_color": "Färg"
     },
     "giftcard": {
       "seoTitle": "Din {{ shop }} presentkort balans är {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtrera",
       "filters_selected": "{{count}} har valts",
       "from_price_html": "Från {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} av {{total}} saker",
       "less": "mindre",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} av {{total}} saker",
       "load_more_tip": "Laddar fler objekt",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% reduktion",
       "select_product_all_options": "Den valda produktvarianten är ofullständig eller otillgänglig. Vänligen välj igen",
       "sort_button": "Sortera",
-      "top_sellers": "Bästsäljare",
-      "more__product_num": "{{num}} Produkter",
-      "one_product_num": "{{num}} produkt",
-      "show": "Visa"
+      "top_sellers": "Bästsäljare"
     },
     "product_search": {
       "back_to_home": "Tillbaka till hemsidan",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Flerkanalsbetalningar",
       "Paypal": "PayPal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kreditkort"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Produktgränsen har överskridits"
     },
     "order": {
-      "deleted": "OGILTIG"
+      "deleted": "OGILTIG",
+      "rebuy": "Köp den igen"
     },
     "payment": {
       "continue_shopping": "Fortsätt handla",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Tredjeparts kanalloggning är inte konfigurerad",
       "error_message_1009": "Tredjeparts Gränssnitts Samtal misslyckades",
       "error_message_1010": "Misslyckad överföring",
-      "error_message_1011": "Konto är inte aktiverat",
+      "error_message_1011": "Kontot är inte aktiverat Vänligen registrera dig för att fylla i lösenordet och annan information.",
       "error_message_1012": "Service Undantag",
       "error_message_1013": "Service Undantag",
       "error_message_1014": "Bekräftelsekoden misslyckades",

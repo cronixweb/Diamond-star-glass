@@ -4,7 +4,6 @@ input {
 .text-columns-with-images-item {
   font-size: 0;
   height: 100%;
-  max-width: 700px;
   position: relative;
   width: 100%;
 }

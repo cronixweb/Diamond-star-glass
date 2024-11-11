@@ -10,6 +10,7 @@
 {{assign "no_spacing" "false"}}
 
 {{assign "pc_cols" section.settings.pc_cols}}
+
 {{#if (if (length section.blocks) == 1)}}
   {{assign "pc_cols" 1}}
 {{/if}}
@@ -19,7 +20,7 @@
   {{assign "image_ratio" "100%"}}
 {{/if}}
 
-{{#if (if color_scheme == "none") and (if (isFalsey show_block_bg))}}
+{{#if color_scheme == "none" and (isFalsey show_block_bg)}}
   {{assign "no_spacing" "true"}}
 {{/if}}
 
@@ -27,7 +28,7 @@
   {{assign "no_spacing" "false"}}
 {{/if}}
 
-{{#if settings.content_shadow_opacity >= 1}}
+{{#if (if settings.content_shadow_opacity >= 1)}}
   {{assign "no_spacing" "false"}}
 {{/if}}
 <script src="{{asset_url 'component-slider.js'}}" defer></script>
@@ -68,7 +69,6 @@
         <div class="text-columns-with-images__inner {{container-wrapper-cls}}">
           {{snippet
             "text-columns-with-image-card"
-            block=block
             image_style=image_style
             image_width=image_width
             image_ratio=image_ratio
@@ -80,6 +80,7 @@
             jump_link=jump_link
             shopline_attributes=block.shopline_attributes
             theme_settings=settings
+            block=block
           }}
         </div>
       {{/for}}
@@ -94,10 +95,9 @@
         >
           <ul id="Slider-{{section.id}}" class="text-columns-images-swiper-box slider list-unstyled">
             {{#for section.blocks as |block|}}
-              <li id="Slide-{{id}}" class="slider__slide">
+              <li id="Slide-{{block.id}}" class="slider__slide">
                 {{snippet
                   "text-columns-with-image-card"
-                  block=block
                   image_style=image_style
                   image_width=image_width
                   image_ratio=image_ratio
@@ -106,8 +106,10 @@
                   color_scheme=color_scheme
                   text_align=text_align
                   jump_link=jump_link
+                  pc_cols=pc_cols
                   shopline_attributes=block.shopline_attributes
                   theme_settings=settings
+                  block=block
                 }}
               </li>
             {{/for}}
@@ -272,7 +274,7 @@
       "type": "select",
       "id": "color_scheme",
       "label": "t:sections.text-columns-with-image.settings.color_scheme.label",
-      "default": "none",
+      "default": "2",
       "options": [
         {
           "value": "none",
@@ -357,6 +359,8 @@
   ],
   "presets": [
     {
+      "category_index": 1,
+      "category": "t:sections.text-columns-with-image.presets.presets__0.category",
       "name": "t:sections.text-columns-with-image.presets.presets__0.name",
       "blocks": [
         {
@@ -403,7 +407,7 @@
         "button_text": "Button",
         "jump_link": "",
         "show_touch": false,
-        "color_scheme": "none",
+        "color_scheme": "2",
         "pc_cols": 3,
         "padding_bottom": 80,
         "padding_top": 80

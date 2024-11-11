@@ -27,6 +27,9 @@
     z-index: 1;
   }
 }
+.featured-product .product-pswp__toolbar .product-pswp__button--arrow {
+  display: none;
+}
 /* The ipad end responds to the mobile end in vertical screen */
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */

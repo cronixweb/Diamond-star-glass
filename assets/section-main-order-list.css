@@ -36,6 +36,7 @@
   background-color: rgba(var(--color-page-background));
   transition: background 0.3s;
   border-bottom: 1px solid rgba(var(--color-entry-line), 0.5);
+  position: relative;
 }
 
 .customer-order-item:hover {
@@ -58,6 +59,15 @@
       "foot" auto;
     padding: 20px;
   }
+}
+
+.customer-order-item__link {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .customer-order-item__head {
@@ -87,14 +97,13 @@
 @media screen and (max-width: 959px) {
   .customer-order-item__body {
     grid-template-columns: 1fr;
-    padding-bottom: var(--gap);
-    border-bottom: 1px solid rgba(var(--color-entry-line), 0.5);
   }
 }
 
 .customer-order-item__foot {
   grid-area: foot;
   padding-top: calc(20px - var(--gap));
+  text-align: right;
 }
 
 .customer-order-item__seq {
@@ -138,16 +147,6 @@
 @media screen and (max-width: 959px) {
   .customer-order-item__cover {
     --cover-image-size: 60px;
-  }
-}
-
-.customer-order-item__product-total {
-  margin-left: 24px;
-}
-
-@media screen and (max-width: 959px) {
-  .customer-order-item__product-total {
-    margin-left: 12px;
   }
 }
 
@@ -196,13 +195,27 @@
   }
 }
 
-.customer-order-item__total-info {
-  text-align: right;
-  margin: 0;
+.customer-order-item__total-content {
+  margin-left: 24px;
 }
 
 @media screen and (max-width: 959px) {
-  .customer-order-item__total-info {
+  .customer-order-item__total-content {
+    margin-left: 12px;
+  }
+}
+
+.customer-order-item__total-content > p {
+  margin: 0;
+}
+
+.customer-order-item__price-total {
+  text-align: right;
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 959px) {
+  .customer-order-item__price-total {
     text-align: left;
   }
 }
@@ -227,6 +240,16 @@
 .customer-order-list__empty .empty-title {
   margin-top: 0;
   margin-bottom: 32px;
+}
+
+.customer-order-item__rebuy {
+  z-index: 1;
+}
+
+@media screen and (max-width: 959px) {
+  .customer-order-item__rebuy {
+    width: 100%;
+  }
 }
 
 /* The ipad end responds to the mobile end in vertical screen */

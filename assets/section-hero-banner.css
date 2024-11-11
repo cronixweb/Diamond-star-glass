@@ -1,0 +1,64 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.hero-section__content {
+  max-width: 50%;
+  padding: 150px 30px;
+}
+
+.hero-section h2 {
+  margin: 0;
+  margin-bottom: 8px;
+
+  /* font-family: Gotham; */
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.hero-section p {
+  margin: 0;
+  margin-bottom: 48px;
+
+  /* font-family: "Open Sans"; */ 
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.03rem;
+  text-transform: capitalize;
+}
+
+.hero-section__button {
+  display: inline-block;
+  padding: 0px 40px;
+  background-color: #EFEFEF;
+  color: #121212;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+
+  text-align: center;
+  /* font-family: "Open Sans"; */
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.75rem;
+  letter-spacing: 0.03125rem;
+  text-transform: uppercase;
+}
+
+
+@media screen and (min-width: 950px) and (max-width: 749px){
+
+}
+
+@media screen and (min-width: 750px) {
+  
+}

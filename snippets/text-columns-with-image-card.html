@@ -2,7 +2,6 @@
   Renders a text-columns-with-image-card
 
   Accepts:
-  - block: {Object} The block object.
   - image_style: {String} If the image scale is circular the value is 'circle' otherwise the value is 'square'.
   - image_width: {String} Image width, values are only allowed to be '100%' | '50%' | '33.33%'.
   - image_ratio: {String} Image scale, values only allowed are 'auto' | '100%' | '133.33%' | 'circle'.
@@ -13,12 +12,12 @@
   - pc_cols: {Number} Number of columns on the computer side.
   - jump_link: {String} Url of the card link.
   - shopline_attributes: {object} Shopline_attributes object
+  - block: {object} The block object
 
 
   Usage:
   {{snippet
     "text-columns-with-image-card"
-    block=block
     image_style="square"
     image_width="100%"
     image_ratio="100%"
@@ -47,7 +46,7 @@
     {{#if (isTruthy show_mask)}}
       {{#style}}
         .text-columns-with-images-item__extract-mask {
-          {{#if (color_extract theme_bg 'lightness') >= 40 }}
+          {{#if theme_bg.lightness >= 40 }}
             background-color: rgba(0, 0, 0, 0.05);
           {{else}}
             background-color: rgba(255, 255, 255, 0.1);

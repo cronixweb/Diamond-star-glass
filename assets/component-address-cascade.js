@@ -4,253 +4,254 @@ defineCustomElement(
     class AddressCascade extends HTMLElement {
       constructor() {
         super();
-        this.countryEl = document.getElementById('AddressCountry');
-        this.provinceEl = document.getElementById('AddressProvince');
-        this.cityEl = document.getElementById('AddressCity');
-        this.cityInputEl = document.getElementById('AddressCityInput');
-        this.districtEl = document.getElementById('AddressDistrict');
-        this.districtInputEl = document.getElementById('AddressDistrictInput');
-        this.provinceContainer = document.getElementById('AddressProvinceContainer');
-        this.cityContainer = document.getElementById('AddressCityContainer');
-        this.cityInputContainer = document.getElementById('AddressCityInputContainer');
-        this.districtContainer = document.getElementById('AddressDistrictContainer');
-        this.districtInputContainer = document.getElementById('AddressDistrictInputContainer');
+        this.countryEl = this.querySelector('#AddressCountry');
 
-        this.initCountry();
+        this.provinceSelectEl = this.querySelector('#AddressProvinceSelect');
+        this.provinceInputEl = this.querySelector('#AddressProvinceInput');
+        this.provinceGroup = this.querySelector('#AddressProvinceGroup');
+
+        this.citySelectEl = this.querySelector('#AddressCitySelect');
+        this.cityInputEl = this.querySelector('#AddressCityInput');
+        this.cityGroup = this.querySelector('#AddressCityGroup');
+
+        this.districtSelectEl = this.querySelector('#AddressDistrictSelect');
+        this.districtInputEl = this.querySelector('#AddressDistrictInput');
+        this.districtGroup = this.querySelector('#AddressDistrictGroup');
+
+        this.provinceSelectContainer = this.querySelector('#AddressProvinceSelectContainer');
+        this.provinceInputContainer = this.querySelector('#AddressProvinceInputContainer');
+
+        this.citySelectContainer = this.querySelector('#AddressCitySelectContainer');
+        this.cityInputContainer = this.querySelector('#AddressCityInputContainer');
+
+        this.districtSelectContainer = this.querySelector('#AddressDistrictSelectContainer');
+        this.districtInputContainer = this.querySelector('#AddressDistrictInputContainer');
+
+        this.localization = JSON.parse(this.getAttribute('localization') || '{}');
+
+        this.config = {
+          country: { display: true, type: 'select' },
+          province: { display: false, type: 'select' },
+          city: { display: false, type: 'input' },
+          district: { display: false, type: 'input' },
+        };
+
+        this.init();
         this.bindEvent();
-        const hasNextLevel = this.createProvinceOptions();
-        if (hasNextLevel) {
-          this.initProvince();
-          this.createCityOptions().then((hasDistrictLevel) => {
-            if (hasDistrictLevel) {
-              this.toggleCityInputContainer(false);
-              this.toggleDistrictInputContainer(false);
+      }
 
-              this.initCity();
-              this.createDistrictOptions().then(() => {
-                this.initDistrict();
-              });
-            } else {
-              // If there are no city and district data
-              // show the city and district input instead
-              this.toggleCityInputContainer(true);
-              this.toggleDistrictInputContainer(true);
+      async init() {
+        await this.initCountry();
+        await this.fetchAddressTemplate();
+        await this.initProvince();
+        await this.initCity();
+        await this.initDistrict();
+      }
 
-              this.initCityInput();
-              this.initDistrictInput();
-            }
-          });
-        } else {
-          // If there is no province data
-          // show the city and district input
-          this.toggleCityInputContainer(true);
-          this.toggleDistrictInputContainer(true);
+      getFieldType(type) {
+        const mapping = {
+          1: 'select',
+          2: 'input',
+        };
 
-          this.initCityInput();
-          this.initDistrictInput();
-        }
+        return mapping[type];
       }
 
       bindEvent() {
         window.Shopline.addListener(this.countryEl, 'change', window.Shopline.bind(this.countryHandler, this));
-        window.Shopline.addListener(this.provinceEl, 'change', window.Shopline.bind(this.provinceHandler, this));
-        window.Shopline.addListener(this.cityEl, 'change', window.Shopline.bind(this.cityHandler, this));
+        window.Shopline.addListener(this.provinceSelectEl, 'change', window.Shopline.bind(this.provinceHandler, this));
+        window.Shopline.addListener(this.citySelectEl, 'change', window.Shopline.bind(this.cityHandler, this));
+        window.Shopline.addListener(this.districtSelectEl, 'change', window.Shopline.bind(this.districtHandler, this));
       }
 
-      initCountry() {
+      async fetchAddressTemplate() {
+        const country = this.countryEl.value;
+        const response = await fetch(
+          `/api/logistics/ajax-logistics/address-template/query.js?country=${country}&language=${window.Shopline.locale}`,
+        ).then((res) => res.json());
+
+        const { props } = response.data;
+
+        const countryTemplate = props.find((item) => item.propKey === 'country');
+        const provinceTemplate = props.find((item) => item.propKey === 'province');
+        const cityTemplate = props.find((item) => item.propKey === 'city');
+        const districtTemplate = props.find((item) => item.propKey === 'district');
+
+        this.config = {
+          country: { display: countryTemplate?.display, type: this.getFieldType(countryTemplate?.interactionType) },
+          province: { display: provinceTemplate?.display, type: this.getFieldType(provinceTemplate?.interactionType) },
+          city: { display: cityTemplate?.display, type: this.getFieldType(cityTemplate?.interactionType) },
+          district: { display: districtTemplate?.display, type: this.getFieldType(districtTemplate?.interactionType) },
+        };
+
+        this.renderTemplate();
+      }
+
+      renderTemplate() {
+        const { province, city, district } = this.config;
+
+        if (province.type === 'select') {
+          this.provinceSelectContainer.style.display = '';
+          this.provinceInputContainer.style.display = 'none';
+        } else {
+          this.provinceSelectContainer.style.display = 'none';
+          this.provinceInputContainer.style.display = '';
+        }
+
+        if (city.type === 'select') {
+          this.citySelectContainer.style.display = '';
+          this.cityInputContainer.style.display = 'none';
+        } else {
+          this.citySelectContainer.style.display = 'none';
+          this.cityInputContainer.style.display = '';
+        }
+
+        if (district.type === 'select') {
+          this.districtSelectContainer.style.display = '';
+          this.districtInputContainer.style.display = 'none';
+        } else {
+          this.districtSelectContainer.style.display = 'none';
+          this.districtInputContainer.style.display = '';
+        }
+
+        this.provinceGroup.style.display = province.display ? '' : 'none';
+        this.cityGroup.style.display = city.display ? '' : 'none';
+        this.districtGroup.style.display = district.display ? '' : 'none';
+      }
+
+      async createCountryOptions() {
+        const response = await fetch(
+          `/api/logistics/ajax-logistics/country/list.js?language=${window.Shopline.locale}`,
+        ).then((res) => res.json());
+
+        const { countries } = response.data;
+
+        const countriesOptions = countries.map((country) => {
+          return `<option value="${country.countryCode}">${country.name}</option>`;
+        });
+
+        this.countryEl.innerHTML = countriesOptions.join('');
+
+        const currentCountry = countries.find((v) => v.countryCode === this.localization.country.iso_code);
+
+        if (currentCountry) {
+          this.countryEl.value = currentCountry.countryCode;
+        }
+      }
+
+      // Obtain the next level addresses information and create options according to the country, province and city
+      async createNextLevelOptions({ currentSelectEl, currentLevel }) {
+        const currentLevelConfig = this.config[currentLevel];
+        const parentCode = this.getParent(currentLevel).value;
+        const countryCode = this.countryEl.value;
+
+        currentSelectEl.value = '';
+
+        if (!parentCode || !currentLevelConfig.display || currentLevelConfig.type === 'input') {
+          return;
+        }
+
+        const response = await fetch(
+          `/api/logistics/ajax-logistics/address/next.js?parentCode=${parentCode}&countryCode=${countryCode}&language=${window.Shopline.locale}`,
+        ).then((res) => res.json());
+
+        const { addressInfoList } = response.data;
+
+        const options = addressInfoList.map((current) => {
+          return `<option value="${current.code}">${current.name}</option>`;
+        });
+
+        currentSelectEl.innerHTML = options.join('');
+      }
+
+      async initCountry() {
+        await this.createCountryOptions();
         this.backfillDefault(this.countryEl);
       }
 
-      initProvince() {
-        this.backfillDefault(this.provinceEl);
+      getParent(currentLevel) {
+        const levels = [
+          { name: 'district', el: this.districtSelectEl },
+          { name: 'city', el: this.citySelectEl },
+          { name: 'province', el: this.provinceSelectEl },
+          { name: 'country', el: this.countryEl },
+        ];
+        const index = levels.findIndex((level) => level.name === currentLevel);
+        const partnerList = levels.slice(index + 1);
+        const foundParent = partnerList.find((level) => {
+          return this.config[level.name].display;
+        });
+
+        return foundParent.el;
       }
 
-      initCity() {
-        this.backfillDefault(this.cityEl);
+      async initProvince(reset = false) {
+        await this.createNextLevelOptions({
+          currentSelectEl: this.provinceSelectEl,
+          currentLevel: 'province',
+        });
+
+        if (reset) {
+          this.provinceInputContainer.querySelector('input').value = '';
+        } else {
+          this.backfillDefault(this.provinceSelectEl);
+        }
       }
 
-      initCityInput() {
-        this.backfillInputDefault(this.cityInputEl);
+      async initCity(reset = false) {
+        await this.createNextLevelOptions({
+          currentSelectEl: this.citySelectEl,
+          currentLevel: 'city',
+        });
+
+        if (reset) {
+          this.cityInputContainer.querySelector('input').value = '';
+        } else {
+          this.backfillDefault(this.citySelectEl);
+        }
       }
 
-      initDistrict() {
-        this.backfillDefault(this.districtEl);
+      async initDistrict(reset = false) {
+        await this.createNextLevelOptions({
+          currentSelectEl: this.districtSelectEl,
+          currentLevel: 'district',
+        });
+
+        if (reset) {
+          this.districtInputContainer.querySelector('input').value = '';
+        } else {
+          this.backfillDefault(this.districtSelectEl);
+        }
       }
 
-      initDistrictInput() {
-        this.backfillInputDefault(this.districtInputEl);
+      async districtHandler() {
+        this.districtInputContainer.querySelector('input').value = '';
+      }
+
+      async cityHandler() {
+        this.cityInputContainer.querySelector('input').value = '';
+        await this.initDistrict(true);
+      }
+
+      async provinceHandler() {
+        this.provinceInputContainer.querySelector('input').value = '';
+        await this.initCity(true);
+        await this.initDistrict(true);
+      }
+
+      async countryHandler() {
+        await this.fetchAddressTemplate();
+        await this.initProvince(true);
+        await this.initCity(true);
+        await this.initDistrict(true);
       }
 
       // backfill default value
       backfillDefault(selectElement) {
         const value = selectElement.getAttribute('data-default');
         if (value && selectElement.options.length > 0) {
-          this.setSelectorByValue(selectElement, value);
-        }
-      }
-
-      backfillInputDefault(selectElement) {
-        const value = selectElement.getAttribute('data-default');
-        if (value) {
           selectElement.value = value;
         }
-      }
-
-      // Obtain street information and create options according to the country, province and region
-      createDistrictOptions() {
-        const countryName = this.countryEl.value;
-        const province = this.provinceEl.value;
-        const city = this.cityEl.options[this.cityEl.selectedIndex].innerText;
-        return this.fetchAddressNextLevel({
-          countryName,
-          province: [province, city].join(','),
-        }).then((response) => {
-          this.clearOptions(this.districtEl);
-          if (!response.data.length) {
-            this.districtContainer.style.display = 'none';
-            return false;
-          }
-          response.data.forEach((cityOption) => {
-            this.createOption(this.districtEl, {
-              value: cityOption.code,
-              innerHTML: cityOption.name,
-            });
-          });
-          this.districtContainer.style.display = '';
-          return true;
-        });
-      }
-
-      cityHandler() {
-        this.createDistrictOptions();
-      }
-
-      // Get street information based on country and province and create options
-      createCityOptions() {
-        const countryName = this.countryEl.value;
-        const province = this.provinceEl.value;
-        return this.fetchAddressNextLevel({
-          countryName,
-          province,
-        }).then((response) => {
-          this.clearOptions(this.cityEl);
-          if (!response.data.length) {
-            this.cityContainer.style.display = 'none';
-            this.districtContainer.style.display = 'none';
-            this.clearOptions(this.districtEl);
-            return false;
-          }
-          response.data.forEach((city) => {
-            this.createOption(this.cityEl, {
-              value: city.code,
-              innerHTML: city.name,
-            });
-          });
-          this.cityContainer.style.display = '';
-          return true;
-        });
-      }
-
-      provinceHandler() {
-        return this.createCityOptions().then((hasNextLevel) => {
-          if (hasNextLevel) {
-            this.toggleCityInputContainer(false);
-            this.toggleDistrictInputContainer(false);
-
-            this.createDistrictOptions();
-          } else {
-            // If there are no city and district data
-            // show the city and district input instead
-            this.toggleCityInputContainer(true);
-            this.toggleDistrictInputContainer(true);
-          }
-        });
-      }
-
-      createProvinceOptions() {
-        const opt = this.countryEl.options[this.countryEl.selectedIndex];
-        const raw = opt.getAttribute('data-provinces');
-        const provinces = JSON.parse(raw);
-
-        this.clearOptions(this.provinceEl);
-        if (provinces && provinces.length === 0) {
-          this.provinceContainer.style.display = 'none';
-          this.cityContainer.style.display = 'none';
-          this.districtContainer.style.display = 'none';
-          this.clearOptions(this.districtEl);
-          this.clearOptions(this.cityEl);
-          return false;
-        }
-
-        for (let i = 0; i < provinces.length; i++) {
-          this.createOption(this.provinceEl, {
-            value: provinces[i][0],
-            innerHTML: provinces[i][1],
-          });
-        }
-
-        this.provinceContainer.style.display = '';
-        return true;
-      }
-
-      toggleDistrictInputContainer(show) {
-        this.districtInputContainer.querySelector('input').value = '';
-        if (show) {
-          this.districtInputContainer.style.display = '';
-        } else {
-          this.districtInputContainer.style.display = 'none';
-        }
-      }
-
-      toggleCityInputContainer(show) {
-        this.cityInputContainer.querySelector('input').value = '';
-        if (show) {
-          this.cityInputContainer.style.display = '';
-        } else {
-          this.cityInputContainer.style.display = 'none';
-        }
-      }
-
-      countryHandler() {
-        const hasNextLevel = this.createProvinceOptions();
-        if (hasNextLevel) {
-          this.provinceHandler();
-        } else {
-          // If there is no province data
-          // show the city and district input
-          this.toggleCityInputContainer(true);
-          this.toggleDistrictInputContainer(true);
-        }
-      }
-
-      createOption(parentEl, option) {
-        const opt = document.createElement('option');
-        opt.value = option.value;
-        opt.innerHTML = option.innerHTML;
-        parentEl.appendChild(opt);
-      }
-
-      clearOptions(selector) {
-        while (selector.firstChild) {
-          selector.removeChild(selector.firstChild);
-        }
-      }
-
-      setSelectorByValue(selector, value) {
-        for (let i = 0, count = selector.options.length; i < count; i++) {
-          const option = selector.options[i];
-          if (value === option.value || value === option.innerHTML) {
-            selector.selectedIndex = i;
-            return i;
-          }
-        }
-      }
-
-      fetchAddressNextLevel(params) {
-        const { countryName, province } = params;
-        return fetch(
-          `${window.routes.address_url}?countryName=${countryName}&addressNames=${province}&language=${window.Shopline.locale}`,
-        ).then((response) => response.json());
       }
     },
 );

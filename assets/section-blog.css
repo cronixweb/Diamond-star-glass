@@ -4,7 +4,6 @@
 }
 
 .blogs__list-wrapper {
-  overflow: hidden;
   width: 100%;
 }
 
@@ -14,7 +13,18 @@
   margin-block-end: 0;
 }
 
+.title__align-left {
+  margin-right: auto;
+}
+
+.title__align-right {
+  margin-left: auto;
+}
+
 @media (min-width: 960px) {
+  .blogs__list {
+    flex-wrap: wrap;
+  }
   .blogs__list--list .simple-blog {
     align-items: flex-start;
     display: flex;
@@ -73,7 +83,7 @@
   margin-top: 48px;
 }
 
-.blogs__item .simple-blog__main {
+.simple-blog:not(.blog-card-style-card) .simple-blog__main {
   margin-bottom: 20px;
 }
 
@@ -81,12 +91,65 @@
   .blogs__head {
     margin-bottom: 20px;
   }
-  .blogs__item:not(:last-child) {
-    margin-bottom: 10px;
+  .simple-blog:not(.blog-card-style-card) .simple-blog__main {
+    margin-bottom: 0px;
+  }
+  .blogs__list:not(.grid-cols-2-tablet) .blogs__item {
+    width: 100%;
+  }
+  .slider:not(.grid-cols-2-tablet) .blogs__item {
+    width: 85%;
+  }
+  .slider.grid-cols-2-tablet .blogs__item {
+    width: calc((200vw - var(--page-padding)) / (2 * var(--mobile-cols) + 1));
+  }
+  .blogs__list-wrapper.blogs__list-simple .slider {
+    margin-bottom: 0;
+  }
+  .blogs__list-wrapper .slider-buttons {
+    padding: 10px 0;
+  }
+  /* bars pagination */
+  .blogs__list-wrapper .blog__control--bars {
+    margin-top: 30px;
+    gap: 0;
   }
 
-  .blogs__item .simple-blog__main {
-    margin-bottom: 0;
+  .blogs__list-wrapper .blog__control--bars .blog__control--bar {
+    transition: background 0.3s;
+    background: rgba(var(--color-mask), 0.1);
+    flex: 1;
+    border: none;
+    height: 6px;
+  }
+  .blogs__list-wrapper .blog__control--bars .blog__control--bar:first-child {
+    border-radius: 2px 0 0 2px;
+  }
+  .blogs__list-wrapper .blog__control--bars .blog__control--bar:last-child {
+    border-radius: 0 2px 2px 0;
+  }
+  .blogs__list-wrapper .blog__control--bars .blog__control--bar.is-active {
+    background: rgba(var(--color-mask));
+    border-radius: 2px;
+  }
+  /* dots pagination */
+  .blogs__list-wrapper .blog__control--dots {
+    column-gap: 6px;
+  }
+  .blogs__list-wrapper .blog__control--dots .blog__control--dot {
+    display: block;
+    padding: 0;
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(var(--color-mask), 0.1);
+    transition: background 0.3s;
+  }
+  .blogs__list-wrapper .blog__control--dots .blog__control--dot.is-active {
+    width: 10px;
+    height: 10px;
+    background: rgba(var(--color-mask));
   }
 }
 

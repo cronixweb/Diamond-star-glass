@@ -13,6 +13,7 @@ class CustomerRegister {
       this.verifyCodeTimer = this.getVerifyCodeTimer();
       this.verifyCodeButton.addEventListener('click', this.onSendVerifyCodeHandler.bind(this));
     }
+    this.requireTooltipHandler();
     this.register = new window.Shopline.customerAccount.Register(this.form);
   }
 
@@ -207,6 +208,21 @@ class CustomerRegister {
         }, 1000);
       },
     };
+  }
+
+  requireTooltipHandler() {
+    this.agreeCheckBox = this.form.querySelector('input[name="agree"]');
+    if (this.agreeCheckBox) {
+      this.agreeCheckBox.addEventListener('invalid', (e) => {
+        e.preventDefault();
+        this.agreeCheckBox.parentNode.querySelector('tool-tip').open();
+      });
+      this.agreeCheckBox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          this.agreeCheckBox.parentNode.querySelector('tool-tip').close();
+        }
+      });
+    }
   }
 }
 

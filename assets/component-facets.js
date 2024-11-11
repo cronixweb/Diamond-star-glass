@@ -12,38 +12,19 @@ class MenuDrawer extends HTMLElement {
     this.querySelectorAll('summary').forEach((summary) =>
       summary.addEventListener('click', this.onSummaryClick.bind(this)),
     );
-    this.querySelectorAll('.mobile-facets__close-button').forEach((button) =>
-      button.addEventListener('click', this.onCloseButtonClick.bind(this)),
-    );
+
+    this.querySelector('.mobile-facets__close').addEventListener('click', this.closeMenuDrawer.bind(this));
   }
 
   onSummaryClick(event) {
     const summaryElement = event.currentTarget;
     const detailsElement = summaryElement.parentNode;
-    const parentMenuElement = detailsElement.closest('.has-submenu');
     const isOpen = detailsElement.hasAttribute('open');
 
     if (detailsElement === this.mainDetailsToggle) {
       if (isOpen) event.preventDefault();
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
-    } else {
-      setTimeout(() => {
-        detailsElement.classList.add('menu-opening');
-        parentMenuElement && parentMenuElement.classList.add('submenu-open');
-      }, 100);
     }
-  }
-
-  onCloseButtonClick(event) {
-    const detailsElement = event.currentTarget.closest('details');
-    this.closeSubmenu(detailsElement);
-  }
-
-  closeSubmenu(detailsElement) {
-    const parentMenuElement = detailsElement.closest('.submenu-open');
-    parentMenuElement && parentMenuElement.classList.remove('submenu-open');
-    detailsElement.classList.remove('menu-opening');
-    this.closeAnimation(detailsElement);
   }
 
   closeMenuDrawer(event) {
@@ -54,9 +35,7 @@ class MenuDrawer extends HTMLElement {
       details.removeAttribute('open');
       details.classList.remove('menu-opening');
     });
-    this.mainDetailsToggle.querySelectorAll('.submenu-open').forEach((submenu) => {
-      submenu.classList.remove('submenu-open');
-    });
+
     this.closeAnimation(this.mainDetailsToggle);
     document.body.classList.remove('overflow-hidden');
   }
@@ -64,6 +43,11 @@ class MenuDrawer extends HTMLElement {
   openMenuDrawer() {
     setTimeout(() => {
       this.mainDetailsToggle.classList.add('menu-opening');
+      // add filter modal sticky entry high z-index
+      const filterStickyEntry = this.closest('#main-collection-filters');
+      if (filterStickyEntry) {
+        filterStickyEntry.classList.add('improve-sticky-index');
+      }
       document.body.classList.add('overflow-hidden');
     });
   }
@@ -82,6 +66,11 @@ class MenuDrawer extends HTMLElement {
         window.requestAnimationFrame(handleAnimation);
       } else {
         detailsElement.removeAttribute('open');
+        // remove filter modal sticky entry high z-index
+        const filterStickyEntry = this.closest('#main-collection-filters');
+        if (detailsElement === this.mainDetailsToggle && filterStickyEntry) {
+          filterStickyEntry.classList.remove('improve-sticky-index');
+        }
       }
     };
 
@@ -94,7 +83,20 @@ class FacetFiltersForm extends HTMLElement {
   constructor() {
     super();
     this.debouncedOnSubmit = debounce((event) => {
-      if (event.target.closest('form').id === 'FacetFiltersFormMobile' && event.target.name !== 'sort_by') {
+      // handle sort filter
+      if (event.target.name === 'sort_by') {
+        const closestDetailsModal = event.target.closest('details-modal');
+        const closestDetails = event.target.closest('details');
+        if (closestDetailsModal) {
+          closestDetailsModal.close();
+        }
+        // details tag not includes details-modal
+        if (closestDetails && !closestDetails.classList.contains('js-disclosure-has-modal')) {
+          closestDetails.removeAttribute('open');
+        }
+      }
+      // stop mobile drawer input change
+      if (event.target.closest('form').id === 'FacetFiltersFormMobile') {
         return;
       }
       this.onSubmitHandler(event);
@@ -128,6 +130,7 @@ class FacetFiltersForm extends HTMLElement {
     console.log('sourceSearchParams', sourceSearchParams);
 
     let searchParams = sourceSearchParams;
+
     if (window.preview_query) {
       searchParams = `${sourceSearchParams}&${window.preview_query}`;
     }
@@ -158,6 +161,7 @@ class FacetFiltersForm extends HTMLElement {
         FacetFiltersForm.renderSearchResults(html);
         FacetFiltersForm.renderProductGridContainer(html);
         FacetFiltersForm.renderProductCount(html);
+        FacetFiltersForm.updateInfiniteScrollParams(html);
       });
   }
 
@@ -167,6 +171,17 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.renderSearchResults(html);
     FacetFiltersForm.renderProductGridContainer(html);
     FacetFiltersForm.renderProductCount(html);
+    FacetFiltersForm.updateInfiniteScrollParams(html);
+  }
+
+  static updateInfiniteScrollParams(html) {
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
+    const source = parsedHTML.querySelector('infinite-scroll');
+    if (!source) {
+      return;
+    }
+    const target = document.querySelector('infinite-scroll');
+    target.reset(source.dataset);
   }
 
   static updateURLHash(searchParams) {
@@ -211,7 +226,12 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static renderAdditionalElements(html) {
-    const mobileElementSelectors = ['.mobile-facets__open', '.mobile-facets__count', '.sorting'];
+    const mobileElementSelectors = [
+      '.mobile-facets__open',
+      '.mobile-facets__count',
+      '.js-sorting',
+      '.js-mobile-sorting',
+    ];
 
     mobileElementSelectors.forEach((selector) => {
       if (!html.querySelector(selector)) return;
@@ -251,10 +271,14 @@ class FacetFiltersForm extends HTMLElement {
     const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML;
     const container = document.getElementById('ProductCount');
     const containerDesktop = document.getElementById('ProductCountDesktop');
+    const ProductCountDesktopDrawer = document.getElementById('ProductCountDesktopDrawer');
 
     container.innerHTML = count;
     if (containerDesktop) {
       containerDesktop.innerHTML = count;
+    }
+    if (ProductCountDesktopDrawer) {
+      ProductCountDesktopDrawer.innerHTML = count;
     }
   }
 
@@ -294,12 +318,20 @@ class FacetFiltersForm extends HTMLElement {
 
     const forms = [];
     const targetFormType = event.target.closest('form').dataset.formType;
+    const isMobile = detectingScreen()?.isMobileScreen;
 
     sortFilterForms.forEach((form) => {
-      const { formType } = form.dataset;
+      const { formType, device } = form.dataset;
 
       if (formType === targetFormType) {
-        forms.push(this.createSearchParams(form));
+        if (device) {
+          // facets drawer mode there are two sort form at the same time
+          if ((isMobile && device === 'tablet') || (!isMobile && device === 'desktop')) {
+            forms.push(this.createSearchParams(form));
+          }
+        } else {
+          forms.push(this.createSearchParams(form));
+        }
       }
     });
 
@@ -678,3 +710,24 @@ class FacetRemove extends HTMLElement {
 }
 
 defineCustomElement('facet-remove', () => FacetRemove);
+
+function listenHeaderStickyFromFacets() {
+  const pageHeader = document.querySelector('header-layout');
+  const stickyElements = ['#main-collection-filters', '.facets-vertical-sort', '.facets-vertical .facets-container'];
+  if (!pageHeader || !pageHeader.bindStickyCallback) return;
+  pageHeader.bindStickyCallback((data) => {
+    const { sticking, height, top } = data;
+    stickyElements.forEach((selector) => {
+      const ele = document.querySelector(selector);
+      const eleEnabledSticky = ele?.classList.contains('facets-enabled-sticky');
+      if (!eleEnabledSticky) return;
+      if (sticking) {
+        const myTop = top + height;
+        ele.style.top = `${myTop}px`;
+      } else {
+        ele.style.top = `0`;
+      }
+    });
+  });
+}
+listenHeaderStickyFromFacets();

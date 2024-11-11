@@ -21,8 +21,14 @@ class CustomerLogin {
             handleSuccess: () => {
               window.location.href = window.routes.account_url;
             },
-            handleError: (error) => {
-              console.log(error);
+            handleError: (err) => {
+              if (err.code === 'needActivate') {
+                this.handleSetErrorMsg(null);
+                this.handleToggleActivateStep(err.data);
+                this.verifyCodeButton.click();
+              } else {
+                console.log(err);
+              }
             },
           },
         }
@@ -54,8 +60,9 @@ class CustomerLogin {
           this.verifyCodeTimer.stop();
         }
       })
-      .catch(() => {
+      .catch((err) => {
         this.verifyCodeTimer.stop();
+        this.handleSetErrorMsg(err);
       });
   }
 
@@ -77,6 +84,7 @@ class CustomerLogin {
         if (err.code === 'needActivate') {
           this.handleSetErrorMsg(null);
           this.handleToggleActivateStep();
+          this.verifyCodeButton.click();
         } else {
           this.handleSetErrorMsg(err);
         }
@@ -86,15 +94,14 @@ class CustomerLogin {
       });
   }
 
-  handleToggleActivateStep() {
+  handleToggleActivateStep(initialValues = null) {
     const title = this.form.querySelector('#customer-login-title');
     const hint = this.form.querySelector('#customer-activation-hint');
-    const formValue = this.login.getFormValue();
-    const accountFieldName = this.login.getAccountFieldName();
 
     if (hint) {
-      hint.innerText = t('customer.general.sign_in_activate', { account: formValue[accountFieldName[0]] });
+      hint.innerText = t('customer.general.sign_in_activate', { account: '' });
     }
+
     if (title) {
       title.innerText = t('customer.general.sign_in_activate_title');
     }
@@ -107,6 +114,21 @@ class CustomerLogin {
     const activateElements = this.form.querySelectorAll('[data-show="activation"]');
     Array.from(normalElements).forEach((element) => element.classList.add('display-none'));
     Array.from(activateElements).forEach((element) => element.classList.remove('display-none'));
+
+    if (initialValues) {
+      const emailDom = this.form.querySelector('.field[data-type="email"] input');
+      const mobileDom = this.form.querySelector('.field[data-type="mobile"] input');
+      if (initialValues.email && emailDom) {
+        emailDom.value = initialValues.email;
+      }
+      if (initialValues.countryCode && initialValues.nationNumber && mobileDom) {
+        mobileDom.value = initialValues.nationNumber;
+        const select = this.form.querySelector('.field[data-type="mobile"] select');
+        const selectLabel = this.form.querySelector('.field[data-type="mobile"] [data-id="country-select-label"]');
+        select.value = initialValues.countryCode;
+        selectLabel.innerHTML = `+${initialValues.countryCode}`;
+      }
+    }
   }
 
   handleTabSwitch() {

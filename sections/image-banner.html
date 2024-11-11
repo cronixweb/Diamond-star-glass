@@ -19,9 +19,9 @@
     {{assign "banner_ratio" (append (default (divide 100 banner1.aspect_ratio) 100) "%")}}
   {{/if}}
   {{#if banner2}}
-    {{#if (isFalsey banner_ratio)}}
+    {{#unless banner_ratio}}
       {{assign "banner_ratio" (append (default (divide 100 banner2.aspect_ratio) 100) "%")}}
-    {{/if}}
+    {{/unless}}
   {{/if}}
 {{/if}}
 <div class="section section-padding section-image-banner">
@@ -127,7 +127,7 @@
       {{#if banner1}}
         <div
           class="banner-item-wrapper first-banner
-            banner-item-wrapper--size-{{#if (isFalsey override_banner_height)}}{{banner_height_size}}{{else}}none{{/if}}"
+            banner-item-wrapper--size-{{#if override_banner_height}}none{{else}}{{banner_height_size}}{{/if}}"
         >
           <div style="padding-bottom: {{banner_ratio}};">
             {{snippet "image" data=banner1 mobile_size="100%" class="banner-item banner-mobile-item"}}
@@ -168,7 +168,7 @@
                   <div class="control">
                     {{~#if block.settings.button_text}}
                       <a
-                        {{#if block.settings.link}}href="{{block.settings.link}}"{{else}}href="javascript:;"{{/if}}
+                        href="{{block.settings.link}}"
                         class="button {{#if (isTruthy outline_button)}}button--secondary{{/if}}"
                       >
                         {{block.settings.button_text}}
@@ -176,7 +176,7 @@
                     {{~/if}}
                     {{~#if block.settings.link_text_2}}
                       <a
-                        {{#if block.settings.link_2}}href="{{block.settings.link_2}}"{{else}}href="javascript:;"{{/if}}
+                        href="{{block.settings.link_2}}"
                         class="button {{#if (isTruthy outline_button_2)}}button--secondary{{/if}}"
                       >
                         {{block.settings.link_text_2}}
@@ -184,7 +184,6 @@
                     {{~/if}}
                   </div>
                 </div>
-
               {{/if}}
             {{/for}}
           </div>
@@ -489,6 +488,8 @@
   ],
   "presets": [
     {
+      "category_index": 1,
+      "category": "t:sections.image-banner.presets.presets__0.category",
       "name": "t:sections.image-banner.presets.presets__0.name",
       "settings": {
         "banner1": "",

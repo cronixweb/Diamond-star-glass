@@ -36,12 +36,14 @@
 
     {{content_for_header}}
   </head>
-  <body>
+  <body data-template="{{ template.name }}" data-button-hover-animation="{{settings.btn_hover_animation}}">
     {{section "announcement-bar"}}
     {{section "header"}}
 
-    {{#if settings.cart_type == "drawer"}}
-      <cart-drawer-entry class="cart-drawer-entry"></cart-drawer-entry>
+    {{#if settings.cart_type == "drawer" and template.name != 'cart'}}
+      <cart-drawer-entry class="cart-drawer-entry">
+        {{snippet "cart-drawer"}}
+      </cart-drawer-entry>
     {{/if}}
 
     <main id="MainContent" class="content-for-layout" tabindex="-1">
@@ -70,6 +72,7 @@
       window.__I18N__ = window.__I18N__ || {};
       window.__I18N__['unvisiable'] = {{{ json (t 'unvisiable') }}};
       window.__I18N__['cart'] = {{{ json (t 'cart') }}};
+      window.__I18N__['products'] = {{{ json (t 'products') }}};
     </script>
   </body>
 </html>

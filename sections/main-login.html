@@ -9,7 +9,8 @@
   window.__I18N__['customer']['general'] = window.__I18N__['customer']['general'] || {{{ json (t 'customer.general') }}};
 </script>
 
-{{snippet "section-padding-creator"
+{{snippet
+  "section-padding-creator"
   section_id=section.id
   padding_top=section.settings.padding_top
   padding_bottom=section.settings.padding_bottom
@@ -19,10 +20,16 @@
   {{#form "customer_login" id="login-customer-form" thirdLogin="true"}}
     {{assign "activation_tag" form.register_config.activation_tag}}
     {{assign "support_type_list" (split form.register_config.types ",")}}
-    {{assign "has_switch" (if (inArray support_type_list 'email') and (inArray support_type_list 'mobile') )}}
+    {{assign "has_switch" (if (inArray support_type_list "email") and (inArray support_type_list "mobile"))}}
     {{assign
       "has_third_login"
-      (if (inArray support_type_list "line") or (inArray support_type_list "facebook") or (inArray support_type_list "google"))
+      (if
+        (inArray support_type_list "line")
+        or
+        (inArray support_type_list "facebook")
+        or
+        (inArray support_type_list "google")
+      )
     }}
 
     <h1 id="customer-login-title" class="title5 text-center customer-form-title">
@@ -30,11 +37,15 @@
     </h1>
 
     {{#if activation_tag}}
-      <p id="customer-activation-hint" class="body6 text-center customer-form-hint display-none" data-show="activation"></p>
+      <p
+        id="customer-activation-hint"
+        class="body6 text-center customer-form-hint display-none"
+        data-show="activation"
+      ></p>
     {{/if}}
 
     {{#if has_switch}}
-      <div class="tab" id="login-customer-tab" data-show="normal">
+      <div class="tab" id="login-customer-tab" data-show="activation">
         <a class="body3 active" data-type="email">
           {{t "customer.account.email"}}
         </a>
@@ -44,8 +55,8 @@
       </div>
     {{/if}}
 
-    {{#for support_type_list as |type|}}
-      {{#if type == "email"}}
+    {{#for support_type_list as |support_type|}}
+      {{#if (if support_type == "email")}}
         <div class="field" data-type="email">
           {{snippet
             "input-email"
@@ -53,7 +64,7 @@
             input_id="RegisterEmail"
             input_name="customer[email]"
             input_required=true
-            input_placeholder=(t 'customer.general.email')
+            input_placeholder=(t "customer.general.email")
           }}
           <label for="RegisterEmail" class="field__label body3">
             {{t "customer.general.email"}}
@@ -61,11 +72,11 @@
         </div>
       {{/if}}
 
-      {{#if type == "mobile"}}
+      {{#if support_type == "mobile"}}
         <phone-input class="field {{#if has_switch}}display-none{{/if}}" data-type="mobile">
           {{snippet
             "input-phone"
-            all_country_dialing_code= all_country_dialing_code
+            all_country_dialing_code=../all_country_dialing_code
             input_name="customer[phone]"
             input_id="RegisterPhone"
             code_name="customer[code]"
@@ -124,17 +135,19 @@
     <p id="customer-error-message" class="body6"></p>
 
     <div>
-      <button
-        class="button submit"
-        type="submit"
-      >
-        {{t 'customer.general.sign_in'}}
+      <button class="button submit" type="submit">
+        <span data-show="normal">
+          {{t "customer.general.sign_in"}}
+        </span>
+        <span class="display-none" data-show="activation">
+          {{t "customer.activate.button"}}
+        </span>
         {{snippet "loading-overlay-spinner"}}
       </button>
     </div>
 
     <div class="actions body4">
-      <a href="{{routes.account_recover_url}}">{{t 'customer.forget_password.forget_password_tips'}}</a>
+      <a href="{{routes.account_recover_url}}">{{t "customer.forget_password.forget_password_tips"}}</a>
       <a href="{{routes.account_register_url}}">{{t "customer.general.register"}}</a>
     </div>
 

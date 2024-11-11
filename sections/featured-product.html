@@ -1,3 +1,4 @@
+{{assign "theme_settings" settings}}
 {{assign "product" section.settings.product}}
 {{assign "product_form_id" (append "product-form-" section.id)}}
 {{assign "variant_images" (map (where product.images "attached_to_variant" true) "src")}}
@@ -15,12 +16,16 @@
 {{snippet "stylesheet" href=(asset_url "section-main-product.css")}}
 {{snippet "stylesheet" href=(asset_url "section-main-product-media-gallery.css")}}
 {{snippet "stylesheet" href=(asset_url "component-price.css")}}
+{{snippet "stylesheet" href=(asset_url "component-tool-tip.css")}}
+
+<script src="{{asset_url 'component-tool-tip.js'}}" defer></script>
 {{#if product.quantity_price_breaks_configured }}
   {{snippet "stylesheet" href=(asset_url "component-volume-pricing.css")}}
   <script src="{{asset_url 'price-per-item.js'}}" defer="defer"></script>
   <script src="{{asset_url 'component-show-more.js'}}" defer="defer"></script>
 {{/if}}
 <script src="{{asset_url 'product-info.js'}}" defer="defer"></script>
+
 <script src="{{asset_url 'component-product-form.js'}}" defer="defer"></script>
 <script src="{{asset_url 'component-quantity-input.js'}}" defer></script>
 
@@ -28,10 +33,16 @@
   <script src="{{asset_url 'theme-editor.js'}}" defer="defer"></script>
 {{/if}}
 
-{{#if (if (size product.media) > 0)}}
+{{#if (size product.media) > 0}}
   <script src="{{asset_url 'component-slider.js'}}" defer="defer"></script>
   <script src="{{asset_url 'component-product-modal.js'}}" defer="defer"></script>
   <script src="{{asset_url 'component-media-gallery.js'}}" defer="defer"></script>
+  {{#if section.settings.magnifier_interactive_type == "mode_2"}}
+    <link rel="stylesheet" href="{{asset_url 'lib-photoswipe.css'}}" />
+    <script src="{{asset_url 'lib-photoswipe.umd.min.js'}}" defer="defer"></script>
+    <script src="{{asset_url 'lib-photoswipe-lightbox.umd.min.js'}}" defer="defer"></script>
+    <script src="{{asset_url 'component-product-photo-swipe.js'}}" defer="defer"></script>
+  {{/if}}
 {{/if}}
 <section
   id="FeaturedProduct-{{section.id}}"
@@ -60,7 +71,11 @@
         class="product__media-wrapper
           {{#if section.settings.product_image_pc_position == 'right'}}display-none-desktop{{/if}}"
       >
-        {{snippet "product-media-gallery" variant_images=variant_images}}
+        {{snippet
+          "product-media-gallery"
+          variant_images=variant_images
+          magnifier_interactive_type=section.settings.magnifier_interactive_type
+        }}
       </div>
       <div class="product__info-wrapper">
         <product-info id="ProductInfo-{{section.id}}" data-section="{{ section.id }}" class="product__info-container">
@@ -69,100 +84,101 @@
               {{render block}}
             {{/startsWith}}
             {{#if block.type == "quantity_selector"}}
-              <div id="Quantity-Form-{{section.id}}" class="product__info-item" {{{block.shopline_attributes}}}>
+              {{assign 'selected_or_first_available_variant' (default product.selected_or_first_available_variant (first product.variants))}}
+              {{assign "volume_pricing_array" selected_or_first_available_variant.quantity_price_breaks }}
+              {{assign "current_qty_for_volume_pricing" selected_or_first_available_variant.quantity_rule.min}}
+
+              <div id="Quantity-Form-{{section.id}}"  class="product__info-item product__info-item--quantity-input" {{{block.shopline_attributes}}}>
                 <div class="quantity-input-label body3 fw-bold">
                   {{t "order.order_details.products.quantity"}}
                 </div>
-
-                {{assign 'selected_or_first_available_variant' (default product.selected_or_first_available_variant (first product.variants))}}
-                {{assign "volume_pricing_array" selected_or_first_available_variant.quantity_price_breaks }}
-                {{assign "current_qty_for_volume_pricing" selected_or_first_available_variant.quantity_rule.min}}
-
-                {{snippet
-                  "quantity-input"
-                  id=section.id
-                  form_id=product_form_id
+                {{snippet 
+                  "quantity-input" 
+                  id=section.id 
+                  form_id=product_form_id 
                   min=selected_or_first_available_variant.quantity_rule.min
                   max=selected_or_first_available_variant.quantity_rule.max
                   step=selected_or_first_available_variant.quantity_rule.increment
                   cart_qty=0
                   value=selected_or_first_available_variant.quantity_rule.min
                 }}
-                {{#if product.quantity_price_breaks_configured }}
-                  <price-per-item class="body4 fw-bold" id="Price-Per-Item-{{ section.id }}" data-section-id="{{ section.id }}" data-variant-id="{{ selected_or_first_available_variant.id }}">
-                    {{#if selected_or_first_available_variant.quantity_price_breaks.length > 0 }}
-                      <div class="price-per-item">
-                        {{#if current_qty_for_volume_pricing < (get 'minimum_quantity' (first volume_pricing_array)) }}
-                          {{assign 'variant_price' (money_with_currency selected_or_first_available_variant.price) }}
+                <div class="volume-pricing-box">
+                  {{#if product.quantity_price_breaks_configured }}
+                    <price-per-item class="body4 fw-bold" id="Price-Per-Item-{{ section.id }}" data-section-id="{{ section.id }}" data-variant-id="{{ selected_or_first_available_variant.id }}">
+                      {{#if selected_or_first_available_variant.quantity_price_breaks.length > 0 }}
+                        <div class="price-per-item">
+                          {{#if current_qty_for_volume_pricing < (get 'minimum_quantity' (first volume_pricing_array)) }}
+                            {{assign 'variant_price' (money_with_currency selected_or_first_available_variant.price) }}
+                            <span class="price-per-item--current">{{{t "products.product_details.each_price" price=variant_price}}}</span>
+                          {{else}}
+                            {{assign 'price_break_price' ''}}
+                            {{#for volume_pricing_array as |volume_price_item|}}
+                              {{#if current_qty_for_volume_pricing >= volume_price_item.minimum_quantity}}
+                                {{assign 'price_break_price' (money_with_currency volume_price_item.price)}}
+                              {{/if}}
+                            {{/for}}
+                            <span class="price-per-item--current">{{{t "products.product_details.each_price" price=price_break_price}}}</span>
+                          {{/if}}
+                        </div>
+                      {{else}}
+                        {{ assign "variant_price" (money_with_currency selected_or_first_available_variant.price) }}
+                        <div class="price-per-item">
                           <span class="price-per-item--current">{{{t "products.product_details.each_price" price=variant_price}}}</span>
-                        {{else}}
-                          {{assign 'price_break_price' ''}}
-                          {{#for volume_pricing_array as |volume_price_item|}}
-                            {{#if current_qty_for_volume_pricing >= volume_price_item.minimum_quantity}}
-                              {{assign 'price_break_price' (money_with_currency volume_price_item.price)}}
-                            {{/if}}
-                          {{/for}}
-                          <span class="price-per-item--current">{{{t "products.product_details.each_price" price=price_break_price}}}</span>
-                        {{/if}}
-                      </div>
-                    {{else}}
-                      {{ assign "variant_price" (money_with_currency selected_or_first_available_variant.price) }}
-                      <div class="price-per-item">
-                        <span class="price-per-item--current">{{{t "products.product_details.each_price" price=variant_price}}}</span>
-                      </div>
+                        </div>
+                      {{/if}}
+                    </price-per-item>
+                  {{/if}}
+                  <div class="quantity__rules body4">
+                    {{#if selected_or_first_available_variant.quantity_rule.increment > 1 }}
+                      <span class="divider">
+                        {{t "products.product_details.moq_increment" num=selected_or_first_available_variant.quantity_rule.increment}}
+                      </span>
                     {{/if}}
-                  </price-per-item>
-                {{/if}}
-                <div class="quantity__rules body4">
-                  {{#if selected_or_first_available_variant.quantity_rule.increment > 1 }}
-                    <span class="divider">
-                      {{t "products.product_details.moq_increment" num=selected_or_first_available_variant.quantity_rule.increment}}
-                    </span>
-                  {{/if}}
-                  {{#if selected_or_first_available_variant.quantity_rule.min > 1 }}
-                    <span class="divider">
-                      {{t "products.product_details.moq_minimum" num=selected_or_first_available_variant.quantity_rule.min}}
-                    </span>
-                  {{/if}}
-                  {{#if selected_or_first_available_variant.quantity_rule.max }}
-                    <span class="divider">
-                      {{t "products.product_details.moq_maximum" num=selected_or_first_available_variant.quantity_rule.max}}
-                    </span>
+                    {{#if selected_or_first_available_variant.quantity_rule.min > 1 }}
+                      <span class="divider">
+                        {{t "products.product_details.moq_minimum" num=selected_or_first_available_variant.quantity_rule.min}}
+                      </span>
+                    {{/if}}
+                    {{#if selected_or_first_available_variant.quantity_rule.max }}
+                      <span class="divider">
+                        {{t "products.product_details.moq_maximum" num=selected_or_first_available_variant.quantity_rule.max}}
+                      </span>
+                    {{/if}}
+                  </div>
+                  {{#if product.quantity_price_breaks_configured}}
+                    <volume-pricing id="Volume-{{ section.id }}">
+                      {{#if selected_or_first_available_variant.quantity_price_breaks.length > 0}}
+                        <div class="body3 fw-bold volume-pricing-title">{{t "products.product_details.price_break_title"}}</div>
+                        <ul class="list-unstyled body3">
+                          <li>
+                            <span>{{ selected_or_first_available_variant.quantity_rule.min }}+</span>
+                            {{ assign "price" (money_with_currency selected_or_first_available_variant.price) }}
+                            <span data-text="{{t "products.product_details.each_price" price=price}}">{{{t "products.product_details.each_price" price=price}}}</span>
+                          </li>
+                          {{#for selected_or_first_available_variant.quantity_price_breaks as |price_break|}}
+                            {{assign "price_break_price" (money_with_currency price_break.price) }}
+                            <li class="{{#if forloop.index0 >= 2 }}show-more-item display-none{{/if}}">
+                              <span>{{ price_break.minimum_quantity }}<span>+</span></span>
+                              <span data-text="{{t "products.product_details.each_price" price=price_break_price}}">{{{t "products.product_details.each_price" price=price_break_price}}}</span>
+                            </li>
+                          {{/for}}
+                        </ul>
+                        {{#if selected_or_first_available_variant.quantity_price_breaks.length >= 3 }}
+                          <show-more-button>
+                            <button
+                              class="button button--link"
+                              id="Show-More-{{ section.id }}"
+                              type="button"
+                            >
+                              <span class="show-more-expand">{{t "products.product_details.price_breaks_view_more"}}</span>
+                              <span class="show-more-fold display-none">{{t "products.product_details.price_breaks_view_less"}}</span>                              
+                            </button>
+                          </show-more-button>
+                        {{/if}}
+                      {{/if}}
+                    </volume-pricing>
                   {{/if}}
                 </div>
-                {{#if product.quantity_price_breaks_configured}}
-                  <volume-pricing id="Volume-{{ section.id }}">
-                    {{#if selected_or_first_available_variant.quantity_price_breaks.length > 0}}
-                      <div class="body3 fw-bold volume-pricing-title">{{t "products.product_details.price_break_title"}}</div>
-                      <ul class="list-unstyled body3">
-                        <li>
-                          <span>{{ selected_or_first_available_variant.quantity_rule.min }}+</span>
-                          {{ assign "price" (money_with_currency selected_or_first_available_variant.price) }}
-                          <span data-text="{{t "products.product_details.each_price" price=price}}">{{{t "products.product_details.each_price" price=price}}}</span>
-                        </li>
-                        {{#for selected_or_first_available_variant.quantity_price_breaks as |price_break|}}
-                          {{assign "price_break_price" (money_with_currency price_break.price) }}
-                          <li class="{{#if forloop.index0 >= 2 }}show-more-item display-none{{/if}}">
-                            <span>{{ price_break.minimum_quantity }}<span>+</span></span>
-                            <span data-text="{{t "products.product_details.each_price" price=price_break_price}}">{{{t "products.product_details.each_price" price=price_break_price}}}</span>
-                          </li>
-                        {{/for}}
-                      </ul>
-                      {{#if selected_or_first_available_variant.quantity_price_breaks.length >= 3 }}
-                        <show-more-button>
-                          <button
-                            class="button button--link"
-                            id="Show-More-{{ section.id }}"
-                            type="button"
-                          >
-                            <span class="show-more-expand">{{t "products.product_details.price_breaks_view_more"}}</span>
-                            <span class="show-more-fold display-none">{{t "products.product_details.price_breaks_view_less"}}</span>
-                          </button>
-                        </show-more-button>
-                      {{/if}}
-                    {{/if}}
-                  </volume-pricing>
-                {{/if}}
               </div>
             {{else if block.type == "title"}}
               <h2 class="product__info-item {{block.settings.heading_size}} fw-bold" {{{block.shopline_attributes}}}>
@@ -182,7 +198,7 @@
               <div class="product__info-item" {{{block.shopline_attributes}}}>{{{block.settings.html}}}</div>
             {{else if block.type == "price"}}
               <div class="product__info-item" id="price-{{section.id}}" {{{block.shopline_attributes}}}>
-                {{snippet "price" product=product use_variant=true}}
+                {{snippet "price" block=block product=product use_variant=true show_save=true}}
                 {{#if product.quantity_price_breaks_configured }}
                   <div class="volume-pricing-note">
                     <span class="body4">{{t "products.product_list.price_break_tag"}}</span>
@@ -201,8 +217,14 @@
               </div>
             {{else if block.type == "share"}}
               <div class="product__info-item share" {{{block.shopline_attributes}}}>
-                {{assign "share_url" (append request.origin product.url)}}
-                {{snippet "share-button" share_link=share_url}}
+                {{snippet
+                  "share-card"
+                  theme_settings=theme_settings
+                  share_type="product_detail"
+                  share_data=product
+                  id=section.id
+                  domain=request.host
+                }}
               </div>
             {{else if block.type == "variant_picker"}}
               {{#if (isFalsey product.has_only_default_variant)}}
@@ -241,12 +263,18 @@
       {{#if section.settings.product_image_pc_position == "right"}}
         
         <div class="product__media-wrapper display-none display-block-desktop">
-          {{snippet "product-media-gallery" variant_images=variant_images is_duplicate=true}}
+          {{snippet
+            "product-media-gallery"
+            variant_images=variant_images
+            is_duplicate=true
+            magnifier_interactive_type=section.settings.magnifier_interactive_type
+          }}
         </div>
       {{/if}}
     </div>
   </div>
   {{snippet "product-media-modal" variant_images=variant_images}}
+  {{snippet "product-photo-swipe-source" section=section variant_images=variant_images}}
 </section>
 
 {{#schema}}
@@ -256,12 +284,15 @@
   "max_blocks": 16,
   "presets": [
     {
+      "category_index": 2,
+      "category": "t:sections.featured-product.presets.presets__0.category",
       "name": "t:sections.featured-product.presets.presets__0.name",
       "setting": {
         "product": "",
         "color_scheme": "none",
         "secondary_background": false,
         "product_image_pc_position": "left",
+        "magnifier_interactive_type": "mode_1",
         "video_loop": false,
         "padding_top": 80,
         "padding_bottom": 80
@@ -351,6 +382,22 @@
         }
       ],
       "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "magnifier_interactive_type",
+      "label": "t:sections.featured-product.settings.magnifier_interactive_type.label",
+      "default": "mode_1",
+      "options": [
+        {
+          "value": "mode_1",
+          "label": "t:sections.featured-product.settings.magnifier_interactive_type.options__0.label"
+        },
+        {
+          "value": "mode_2",
+          "label": "t:sections.featured-product.settings.magnifier_interactive_type.options__1.label"
+        }
+      ]
     },
     {
       "type": "switch",

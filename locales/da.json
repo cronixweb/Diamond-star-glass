@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "Du kan kun tilføje {{quantity}} produkter til din indkøbskurv."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Ugyldig e-mailadresse"
-    },
     "account": {
       "account_binding": "Kontobinding",
       "account_information": "Konto",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Hvis du lukker denne konto, kan du ansøge. Når kontoen er lukket, slettes alle oplysninger til identifikation af kontoen, herunder:",
       "email": "E-mail",
       "email_repeat_tip": "E-mailen er registreret",
+      "email_subscribe_invalid_tip": "Ugyldig e-mailadresse",
       "first_name": "Navn",
       "gender": "Køn",
       "gender_female": "Kvinde",
@@ -260,7 +258,7 @@
       "copy_success": "Kopieret kuponkode",
       "discount_title": "Aktivér konto og få rabatkoden",
       "normal_title": "Aktivér konto",
-      "normal_title_with_discount_code": "Aktivér din konto og få en rabatkode",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Abonner på e-mail for at modtage opdateringer, få adgang til eksklusive tilbud og meget mere.",
       "success_title": "Tillykke med at få en god rabat",
       "token_expired": "Linket er udløbet"
@@ -300,19 +298,98 @@
         "shipping": "Virksomhedens leveringsadresse",
         "title": "Virksomhedens kontos ansøgning"
       },
+      "address": {
+        "placeholder": "Detaljeret adresse"
+      },
+      "address2": {
+        "placeholder": "Detaljeret adresse 2"
+      },
       "bill": {
         "sameAsCompany": "Virksomhedens faktureringsadresse samme som virksomhedens leveringsadresse"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Detaljeret adresse"
+        },
+        "address2": {
+          "placeholder": "Detaljeret adresse 2"
+        },
+        "city": {
+          "placeholder": "By"
+        },
+        "country": {
+          "placeholder": "Land/Region"
+        },
+        "district": {
+          "placeholder": "Distrikt"
+        },
+        "phone": {
+          "placeholder": "Mobiltelefonnummer"
+        },
+        "province": {
+          "placeholder": "Provins"
+        },
+        "zip": {
+          "placeholder": "Postnummer"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Virksomhedens faktureringsadresse er den samme som modtagelsesadressen"
+      },
+      "billing_address": {
+        "title": "Firmaets faktureringsadresse"
+      },
+      "city": {
+        "placeholder": "By"
+      },
+      "company_name": {
+        "placeholder": "Virksomhedens navn"
+      },
+      "country": {
+        "placeholder": "Land/Region"
       },
       "create": {
         "limit": "Antallet af virksomheder til butikken har nået sin grænse. Kontakt venligst forhandleren for assistance.",
         "success": "Tak. Formularen er sendt."
       },
+      "district": {
+        "placeholder": "Distrikt"
+      },
+      "email": {
+        "placeholder": "Postkasse"
+      },
       "field": {
         "companyName": "Virksomhedsnavn",
         "email": "Email"
       },
+      "first_name": {
+        "placeholder": "Navn"
+      },
       "form": {
         "submit": "Indsend"
+      },
+      "last_name": {
+        "placeholder": "Efternavn"
+      },
+      "phone": {
+        "placeholder": "Mobiltelefonnummer"
+      },
+      "province": {
+        "placeholder": "Provins"
+      },
+      "register": {
+        "button": "Indsendelse",
+        "success": {
+          "description": "Formularen er blevet indsendt med succes.",
+          "title": "Tak fordi du udfyldte den!"
+        },
+        "title": "Ansøgning om virksomhedskonto"
+      },
+      "shipping_address": {
+        "title": "Virksomhedens modtagelsesadresse"
+      },
+      "zip": {
+        "placeholder": "Postnummer"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Nulstil",
       "company_empty_hint": "Virksomhedsnavnet kan ikke være tomt",
       "company_existed": "Firmaets navn findes allerede.",
+      "company_frequent_operation": "Gentag handlingen, prøv venligst igen senere",
+      "company_registry_closed": "Sælgeren har ikke aktiveret virksomhedskontoapplikationsfunktionen. Kontakt venligst sælgeren for at ansøge.",
       "confirm": "OK",
       "confirm_button": "OK",
       "date_format": "dd/MM/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Vi sender dig en SMS for at nulstille din adgangskode",
       "proceed_to_checkout": "Gå til kassen",
       "title": "Sidens titel",
-      "verification_code_success": "Bekræftelseskode er sendt til at logge ind {{type}}<em>{{value}}</em>, indtast koden nedenfor."
+      "verification_code_success": "Bekræftelseskode er sendt til at logge ind {{type}} <em>{{value}}</em>, indtast koden nedenfor."
     },
     "login": {
       "member_login_common": "Medlem login",
@@ -461,12 +540,18 @@
       "go_to_login": "Gå til logon",
       "tips_agree_with_the_shop": "Jeg accepterer"
     },
+    "subscribe": {
+      "email_has_bind": "Denne e-mailadresse er blevet bundet til en anden konto",
+      "phone_has_bind": "Denne telefon er blevet bundet til en anden konto"
+    },
     "subscription": {
       "email": "E-mail",
+      "email_subscribe_error_tip": "Denne postkasse er bundet til en anden konto",
       "email_subscription_text": "Modtag forfremmelse oplysningerne for abonnementet pr. e-mail",
       "line": "LINJE",
       "messenger": "Messenger",
       "phone": "Mobiltelefon",
+      "phone_subscribe_error_tip": "Denne mobiltelefon er bundet til en anden konto",
       "phone_subscription_text": "Abonner telefonkampagne",
       "reason_other_length": "Indtast op til 300 ord",
       "reason_other_placeholder": "Indgående indhold",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Abonnementet er blevet opsagt. Du vil springe til forsiden",
       "unsubscribe_tip": "Når du har opsagt abonnementet, vil du ikke længere modtage den seneste kampagne.",
       "unsubscribe_title": "Ophæv abonnementet"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Indtast venligst indhold",
+      "goto_btn": "Gå ind i butikken",
+      "notyet": "Du har ikke abonneret endnu",
+      "notyet_desc": "Du kan gå til butikken for at abonnere",
+      "success": "Abonnement opsagt",
+      "success_tip": "Du har afmeldt {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Køb igen",
     "checkout_order": {
       "pay_amount": "betale beløb",
       "receiver_account": "modtagerkonto",
@@ -596,8 +690,9 @@
       "details": "Ordreoplysninger",
       "insuranceService": "Forsikringsydelser",
       "insuranceService_applyClaim": "Ansøg om krav",
-      "insuranceService_content_email": "1. Politik blev sendt til din \"{{email}}\" e-mailadresse af {{serviceName}}. Hvis du ikke har modtaget dine politikoplysninger, bedes du kontakte din butiks kundeservice. 2. Hvis der er skade, tab, forsinkelse eller enhver anden situation under transport, kan du anmode om et krav.",
-      "insuranceService_content_phone": "1. Politik blev sendt til din \"{{phopne}}\" telefon af {{serviceName}}. Hvis du ikke har modtaget dine politikoplysninger, bedes du kontakte din butiks kundeservice. 2. Hvis der er skade, tab, forsinkelse eller enhver anden situation under transport, kan du anmode om et krav.",
+      "insuranceService_content_line1__email": "1. Politik blev sendt til din \"{{email}}\" e-mailadresse af {{serviceName}}. Hvis du ikke har modtaget dine politikoplysninger, bedes du kontakte din butiks kundeservice. ",
+      "insuranceService_content_line1__phone": "1. Kilden blev erhvervet gennem {{serviceName}}. Hvis du har yderligere spørgsmål, bedes du kontakte butikkens kundeservice.",
+      "insuranceService_content_line2": "2. Hvis der er skade, tab, forsinkelse eller enhver anden situation under transport, kan du anmode om et krav.",
       "order": "Ordre",
       "remark": "Ordrebemærkning",
       "time": "Bestilt den:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Indlæser flere varer",
+      "loading_btn": "Indlæs mere",
       "no_product_data_found": "Ingen produktdata fundet. Prøv igen senere",
       "sold_out": "Solgt Ud",
-      "added_to_cart_successfully": "Føjet til indkøbskurven med succes",
+      "load_more": "Indlæser flere varer",
       "load_more_items": "Indlæser {{current_offset}} ~ {{last_current_offset}} af {{total}} elementer",
-      "unavailable": "Ikke tilgængelig"
+      "unavailable": "Varen eksisterer ikke",
+      "variant_property_color": "Farve"
     },
     "giftcard": {
       "seoTitle": "Saldoen på dit {{ shop }} -gavekort er {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtrer",
       "filters_selected": "{{count}} er blevet valgt",
       "from_price_html": "Fra {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} af {{total}} elementer",
       "less": "mindre",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} af {{total}} elementer",
       "load_more_tip": "Indlæser flere varer",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% rabat",
       "select_product_all_options": "Den valgte produktvariant er ufuldstændig eller utilgængelig. Vælg venligst igen",
       "sort_button": "Sorter",
-      "top_sellers": "Mest populære sælgere",
-      "more__product_num": "{{num}} Produkter",
-      "one_product_num": "{{num}} Produkt",
-      "show": "Vis"
+      "top_sellers": "Mest populære sælgere"
     },
     "product_search": {
       "back_to_home": "Tilbage til startsiden",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Multi-kanal betalinger",
       "Paypal": "Betaling",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kreditkort"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Produktgrænsen er overskredet"
     },
     "order": {
-      "deleted": "UGYLDIG"
+      "deleted": "UGYLDIG",
+      "rebuy": "Køb den igen"
     },
     "payment": {
       "continue_shopping": "Fortsæt med at shoppe",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Opret forbindelse uden at konfigurere tredjepartskanaler",
       "error_message_1009": "Kan ikke ringe til tredjepartsgrænseflade",
       "error_message_1010": "Send ikke",
-      "error_message_1011": "Kontonummer er ikke aktiveret",
+      "error_message_1011": "Kontoen er ikke aktiveret. Registrer venligst for at udfylde adgangskoden og andre oplysninger.",
       "error_message_1012": "Service undtagelser",
       "error_message_1013": "Service undtagelser",
       "error_message_1014": "Kontroller ikke verifikationskoden",

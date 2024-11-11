@@ -45,8 +45,8 @@
               <div class="body4 address__phone">{{ address.phone }}</div>
 
               <div class="body4 address__detail">
-                {{assign "address_formatted" (format_address address)}}
-                <div class="pay-info__content">{{{ replace address_formatted.string '<br>' ', ' }}}</div>
+                {{ assign 'formatted_address' (format_address address) }}
+                <div class="pay-info__content">{{{ replace formatted_address.string '<br>' ', ' }}}</div>
               </div>
             </div>
           {{/for}}
