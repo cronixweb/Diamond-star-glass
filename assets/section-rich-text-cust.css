@@ -1,28 +1,35 @@
 .in-stock-collection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
   background-size: cover;
   background-position: center;
 }
 
 .in-stock-collection__content {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 55px 80px;
+  padding: 48px 24px;
   width: 100%;
 }
 
 .in-stock-collection h2 {
-    margin: 0;
-    margin-bottom: 24px;
+  margin: 0;
+  margin-bottom: 24px;
 
   color: #121212;
   /* font-family: Gotham; */
-  font-size: 3rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
+}
+
+.hero-section p {
+  margin: 0;
+  margin-bottom: 40px;
+  font-size: 1.125rem;
+  letter-spacing: 0.0225rem;
+  /* font-family: "Open Sans"; */ 
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: capitalize;
 }
 
 .in-stock-collection__button {
@@ -44,11 +51,22 @@
   text-transform: uppercase;
 }
 
-
 @media screen and (min-width: 950px) and (max-width: 749px){
 
 }
 
 @media screen and (min-width: 750px) {
-  
+  .in-stock-collection__content {
+    padding: 55px 80px;
+  }
+
+  .in-stock-collection h2 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    margin-bottom: 48px;
+    font-size: 1.5rem;
+    letter-spacing: 0.03rem;
+  }
 }

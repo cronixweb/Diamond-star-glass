@@ -1,18 +1,13 @@
 .top-trending-products h2 {
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 
   color: #121212;
   /* font-family: Gotham; */
-  font-size: 3rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
   text-transform: capitalize;
-}
-
-.product-carousel {
-  display: flex;
-  gap: 29px;
 }
 
 .product-info {
@@ -25,19 +20,20 @@
 }
 
 .product-image img {
-    width: 398px;
-    height: 393px;
+  width: 398px;
+  height: 393px;
+  background: lightgray 50% / cover no-repeat;
 }
 
 .product-info .title {
-    color: #121212;
-    margin: 0;
-    margin-bottom: 8px;
-    /* font-family: "Open Sans"; */
-    font-size: 1.375rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 2.25rem;
+  color: #121212;
+  margin: 0;
+  margin-bottom: 8px;
+  /* font-family: "Open Sans"; */
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.25rem;
 }
 
 .product-info .size {
@@ -45,43 +41,48 @@
   margin-bottom: 10px;
 
   color: #424551;
-    /* font-family: "Open Sans"; */
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 140%; 
+  /* font-family: "Open Sans"; */
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; 
 }
 
 .product-info .money {
   margin: 0;  
-    color: #121212;
-    /* font-family: "Open Sans"; */
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 2.25rem;
-    float: left;
+  color: #121212;
+  /* font-family: "Open Sans"; */
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.25rem;
+  float: left;
 }
 
 .shop-now-button {
   margin: 0;
   text-decoration: none;
 
-    color: #121212;
-    /* font-family: "Open Sans"; */
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.625rem;
-    text-transform: uppercase;
-    float: right;
+  color: #121212;
+  /* font-family: "Open Sans"; */
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.625rem;
+  text-transform: uppercase;
+  float: right;
 }
-
 
 @media screen and (min-width: 950px) and (max-width: 749px){
 
 }
 
 @media screen and (min-width: 750px) {
-  
+  .top-trending-products h2 {
+    font-size: 3rem;
+  }
+
+  .product-item {
+    padding: 15px;
+  }
 }

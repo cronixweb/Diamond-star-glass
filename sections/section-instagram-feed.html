@@ -8,20 +8,63 @@
 }}
 
 <div class="instagram-feed three-category-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
-    <h2>{{ section.settings.heading-instagram-feed }}</h2>
-    <div class="instagram-carousel">
-        {{#for section.blocks as |block|}}
-            <div class="instagram-item">
-                {{snippet "image" data=block.settings.instagram-image}}
-            </div>
-        {{/for}}
+    {{#if section.settings.heading-instagram-feed }}
+      <h2>{{{ section.settings.heading-instagram-feed }}}</h2>
+    {{/if}}
+    <div class="instagram-carousel instagram-carousel-{{section.id}}">
+      {{#for section.blocks as |block|}}
+        {{#if (trim block.type) == "richtext"}}
+          <div class="instagram-item">
+            {{#if block.settings.instagram-image}}
+              {{snippet "image" data=block.settings.instagram-image}}
+            {{/if}}
+          </div>
+        {{/if}}
+      {{/for}}
     </div>
 </div>
 
+<script>
+  $('.instagram-carousel-{{section.id}}').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 5,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+</script>
 
 {{#schema }}
 {
-  "name": "Instagram Feed",
+  "name": "Instagram Feed Custom",
+  "class": "section",
   "settings": [
     {
         "type": "richtext",
@@ -96,7 +139,7 @@
   ],
   "presets": [
     {
-      "name": "Instagram Feed",
+      "name": "Instagram Feed Custom",
       "category": "Custom"
     }
   ]

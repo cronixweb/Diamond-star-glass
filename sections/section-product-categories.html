@@ -9,27 +9,71 @@
 
 <div class="product-categories-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
   <div class="product-categories-section__header">
-    <h2>{{ section.settings.section_title }}</h2>
-    <p>{{ section.settings.section_subtitle }}</p>
+    {{#if section.settings.section_title}}
+      <h2>{{{ section.settings.section_title }}}</h2>
+    {{/if}}
+    {{#if section.settings.section_subtitle}}
+      <p>{{{ section.settings.section_subtitle }}}</p>
+    {{/if}}
   </div>
-  <div class="product-categories-section__grid">
+
+  <div class="product-categories-section__grid product-categories-section__grid-{{section.id}}">
     {{#for section.blocks as |block|}}
-      <div class="product-category">
-        {{#for block.settings as |product_categories|}}
-          <a href="{{ product_categories.url }}">
-            {{snippet "image" data=product_categories.featured_image }}
-            <h3>{{ product_categories.title }}</h3>
-          </a>
-        {{/for}}
-      </div>
+      {{#if (trim block.type) == "category"}}
+        <div class="product-category">
+          {{#for block.settings as |product_categories|}}
+            <a href="{{ product_categories.url }}">
+              {{snippet "image" data=product_categories.featured_image }}
+              <h3>{{ product_categories.title }}</h3>
+            </a>
+          {{/for}}
+        </div>
+      {{/if}}
     {{/for}}
   </div>
 </div>
 
+<script>
+  $('.product-categories-section__grid-{{section.id}}').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+</script>
 
 {{#schema}}
 {
-  "name": "Product Categories Section",
+  "name": "Product Categories Custom",
+  "class": "section",
   "settings": [
     {
       "type": "text",
@@ -110,7 +154,7 @@
   ],
   "presets": [
     {
-      "name": "Product Categories",
+      "name": "Product Categories Custom",
       "category": "Custom"
     }
   ]

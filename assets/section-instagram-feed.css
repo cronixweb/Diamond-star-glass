@@ -5,16 +5,10 @@
     color: #121212;
     text-align: center;
     /* font-family: Gotham; */
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-}
-
-.instagram-carousel {
-    display: flex;
-    gap: 20px;
-
 }
 
 .instagram-item img {
@@ -22,11 +16,16 @@
     height: auto;
 }
 
-
 @media screen and (min-width: 950px) and (max-width: 749px){
 
 }
 
 @media screen and (min-width: 750px) {
-  
+    .instagram-feed h2 {
+        font-size: 2.5rem;
+    }
+
+    .instagram-item {
+        padding: 10px;
+    }
 }

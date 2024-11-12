@@ -7,25 +7,24 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<style>
-    .custom-design-section__container {
-        background: {{section.settings.color_page_background}};
-  }
-</style>
-
 <div class="custom-design-section three-category-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
-  <div class="custom-design-section__container">
+  <div class="custom-design-section__container" style="background: {{section.settings.color_page_background}};">
     <div class="custom-design-section__image">
-      {{ section.settings.image }}
-            {{snippet "image" data=section.settings.section_image }}
-
+      {{#if section.settings.image }}
+        {{snippet "image" data=section.settings.section_image }}
+      {{/if}}
     </div>
+
     <div class="custom-design-section__content">
-      <h2>{{ section.settings.section_title }}</h2>
-      <p>{{ section.settings.section_description }}</p>
-      <a href="{{ section.settings.section_link }}" class="custom-design-section__button">
-        {{ section.settings.section_link_text }} &rarr;
-      </a>
+      {{#if section.settings.section_title }}
+        <h2>{{ section.settings.section_title }}</h2>
+      {{/if}}
+      {{#if section.settings.section_description }}
+        <p>{{ section.settings.section_description }}</p>
+      {{/if}}
+      {{#if section.settings.section_link_text }}
+        <a href="{{ section.settings.section_link }}" class="custom-design-section__button">{{{ section.settings.section_link_text }}} &rarr;</a>
+      {{/if}}
     </div>
   </div>
 </div>
@@ -33,6 +32,7 @@
 {{#schema }}
 {
   "name": "Image With Text Custom",
+  "class": "section",
   "settings": [
     {
       "type": "image_picker",
