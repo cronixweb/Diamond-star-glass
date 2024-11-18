@@ -13,7 +13,7 @@
 {{/if}}
 <div class="footer-block--subscribe letter-size--{{default section.settings.letter_show_size 'full'}}">
   {{#if title}}
-    <div class="footer-block__heading {{title_size}} rte">{{{title}}}</div>
+    <div class="footer-block__heading {{title_size}} rte" id="signup_content">{{{title}}}</div>
   {{/if}}
   {{#form "customer" class="footer-letter-form"}}
     <div class="field">
@@ -33,7 +33,8 @@
       </div>
       <div class="field__suffix">
         <button type="submit" class="button button--link">
-          {{snippet "icon-mail"}}
+          {{#comment}} {{snippet "icon-mail"}} {{/comment}}
+          &rarr;
         </button>
       </div>
     </div>

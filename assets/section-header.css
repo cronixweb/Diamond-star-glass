@@ -479,7 +479,7 @@ header.is-transparent--active
   transform: scale(1);
 }
 .header-inline-menus__item {
-  padding: 0 16px;
+  padding: 0 13px;
 }
 .header-inline-menus__item--has-submenu {
   position: relative;
@@ -1255,3 +1255,76 @@ predictive-search[data-focus][loading]
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom CSS for Header */
+a.header-inline-menus__link.menus__link.body4 {
+  color: var(--Neutral-Black, #121212);
+  /* font-family: "Open Sans"; */
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.field {
+  color: #565656;
+font-family: "Open Sans";
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 0.9rem */
+}
+
+.field:after {
+  border: none;
+  /* border-radius: 41px; */
+}
+
+.header__icon-button {
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+p#header_icon-text {
+  margin: 0;
+  color: var(--Neutral-Black, #121212);
+  text-align: center;
+  /* font-family: "Open Sans"; */
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9625rem;
+  text-transform: capitalize;
+}
+
+@media (min-width: 960px) {
+
+  .header__icons, .header__tools {
+  justify-content: flex-end;
+}
+
+  .tile-search .search-modal__content {
+    justify-content: flex-end;
+    padding: 20px 50px 20px 20px;
+}
+
+    .tile-search .search-modal__form {
+        max-width: 450px;
+    }
+  .tile-search .search-modal__input {
+      width: 450px;
+      height: 41px;
+      padding: 13px 20px 13px 20px;
+      border-radius: 41px;
+      background-color: #F3F2F0;
+  }
+
+  .tile-search .search-modal__submit-button {
+      color: rgb(var(--color-header-pc-searchbar-text));
+      right: 0;
+      left: unset;
+      width: 48px;
+  }
+}

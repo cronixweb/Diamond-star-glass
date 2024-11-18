@@ -7,15 +7,15 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="custom-design-section three-category-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
-  <div class="custom-design-section__container" style="background: {{section.settings.color_page_background}};">
-    <div class="custom-design-section__image">
-      {{#if section.settings.image }}
+<div class="image-text-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+  <div class="image-text-section__container" style="background: {{section.settings.color_page_background}};">
+    <div class="image-text-section__image">
+      {{#if section.settings.section_image }}
         {{snippet "image" data=section.settings.section_image }}
       {{/if}}
     </div>
 
-    <div class="custom-design-section__content">
+    <div class="image-text-section__content">
       {{#if section.settings.section_title }}
         <h2>{{ section.settings.section_title }}</h2>
       {{/if}}
@@ -23,7 +23,7 @@
         <p>{{ section.settings.section_description }}</p>
       {{/if}}
       {{#if section.settings.section_link_text }}
-        <a href="{{ section.settings.section_link }}" class="custom-design-section__button">{{{ section.settings.section_link_text }}} &rarr;</a>
+        <a href="{{ section.settings.section_link }}" class="image-text-section__button">{{{ section.settings.section_link_text }}}</a>
       {{/if}}
     </div>
   </div>
@@ -37,18 +37,18 @@
     {
       "type": "image_picker",
       "id": "section_image",
-      "label": "Section Image"
+      "label": "Image"
     },
     {
       "type": "text",
       "id": "section_title",
-      "label": "Section Title",
+      "label": "Title",
       "default": "Custom Design"
     },
     {
       "type": "textarea",
       "id": "section_description",
-      "label": "Section Description",
+      "label": "Description",
       "default": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque."
     },
     {
@@ -60,12 +60,13 @@
       "type": "text",
       "id": "section_link_text",
       "label": "Button Text",
-      "default": "Explore More"
+      "default": "Explore More >"
     },
     {
       "id": "color_page_background",
       "type": "color",
-      "label": "Background"
+      "label": "Background",
+      "default": "#f3f0ea"
     },
     {
       "type": "select",

@@ -90,7 +90,13 @@ deferred-media {
 }
 
 :root {
-  --page-padding: 30px;
+  --page-padding: 120px;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --page-padding: 60px;
+  }
 }
 
 @media (max-width: 959px) {
@@ -2416,3 +2422,8 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('{{ asset_url "gotham-Black" }}') format('.otf');
+}

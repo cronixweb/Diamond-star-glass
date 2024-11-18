@@ -170,6 +170,14 @@
             {{snippet "icon-user"}}
           </a>
         {{/if}}
+
+        {{#if section.settings.show_favorite_icon}}
+          <a
+          class="icon-button header__icon-button {{#if (isFalsey section.settings.show_cart_entry)}}display-none{{/if}}" href="#">
+            {{snippet "icon-favorite"}}
+          </a>
+        {{/if}}
+
         <a
           id="cart-icon-bubble-mobile"
           class="icon-button header__icon-button display-none-desktop
@@ -353,6 +361,7 @@
               href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
             >
               {{snippet "icon-user"}}
+              <p id="header_icon-text">Account</p>
             </a>
             {{#if section.settings.hover_show_user_menu}}
               {{assign "menu_text_1" section.settings.user_menu_text_1}}
@@ -409,12 +418,18 @@
           </div>
         {{/if}}
 
+        <a class="icon-button header__icon-button {{#if (isFalsey section.settings.show_favorite_icon)}}display-none{{/if}}" href="#">
+          {{snippet "icon-favorite"}}
+          <p id="header_icon-text">Favorites</p>
+        </a>
+
         <a
           id="cart-icon-bubble"
           class="icon-button header__icon-button {{#if (isFalsey section.settings.show_cart_entry)}}display-none{{/if}}"
           href="{{routes.cart_url}}"
         >
           {{snippet "cart-icon-bubble"}}
+          <p id="header_icon-text">Cart</p>
         </a>
       </div>
 
@@ -964,6 +979,12 @@
       "id": "show_user_entry",
       "default": true,
       "label": "t:sections.header.settings.show_user_entry.label"
+    },
+      {
+      "type": "switch",
+      "id": "show_favorite_icon",
+      "default": true,
+      "label": "Display Favorite Icon"
     },
     {
       "type": "switch",

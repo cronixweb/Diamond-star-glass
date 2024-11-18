@@ -1,0 +1,116 @@
+{{snippet "stylesheet" href=(asset_url "section-blog-custom.css")}}
+
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
+<div class="blog-listing-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+    {{#if section.settings.title}}
+        <h2 class="section-title">{{ section.settings.title }}</h2>
+    {{/if}}
+    <div class="blog-content">
+        {{assign "blog_id" section.settings.blog_collection}} 
+
+        {{#for blog_id.articles limit=section.settings.article_limit as |blog|}}
+        <a href="{{ blog.url }}">
+            {{#if blog.image}}
+                <div class="blog_media">
+                    {{snippet "image" data=blog.image }}
+                </div>
+            {{/if}}
+            <div class="blog_description">
+                <p>{{ date blog.published_at '%d %B' }} • <span>{{ blog.author }}</span></p>
+                {{#if blog.title}}
+                    <h3>{{ blog.title }}</h3>
+                {{/if}}
+            </div>
+        </a>
+        {{/for}}
+    </div>
+</div>
+
+{{#schema}}
+{
+  "name": "Blog Custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Read The Latest"
+    },
+    {
+    "id": "blog_collection",
+    "type": "blog",
+    "label": {
+        "en": "Blogs"
+    }
+    },
+    {
+      "type": "range",
+      "id": "article_limit",
+      "label": "Number of Articles to Display",
+      "default": 1,
+      "min": 1,
+      "max": 2
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1",
+          "label": "Color 1"
+        },
+        {
+          "value": "2",
+          "label": "Color 2"
+        },
+        {
+          "value": "3",
+          "label": "Color 3"
+        }
+      ],
+      "default": "none",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "group_header",
+      "label": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Custom",
+      "category": "Blog"
+    }
+  ]
+}
+{{/schema}}

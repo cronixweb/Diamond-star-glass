@@ -5,7 +5,7 @@
       "desktop_logo_width": 200,
       "mobile_logo_width": 145,
       "color_page_background": "#FFFFFF",
-      "color_text": "#000000",
+      "color_text": "#121212",
       "color_light_text": "#686868",
       "color_sale": "#000",
       "color_discount": "#EE4700",
@@ -48,7 +48,7 @@
       "title_uppercase": false,
       "body_font_family": "Poppins:300",
       "body_letter_spacing": 0,
-      "body_font_size": 14,
+      "body_font_size": 16,
       "body_line_height": 1.6,
       "page_width": 1920,
       "section_vertical_gap": 0,
@@ -217,7 +217,7 @@
           "show_country_selector": false,
           "show_locale_selector": false,
           "show_search_entry": true,
-          "enabled_tile_search": false,
+          "enabled_tile_search": true,
           "transparent_header": false,
           "transparent_image": null,
           "transparent_title_color": "#FFFFFF",
@@ -296,10 +296,7 @@
             }
           }
         },
-        "block_order": [
-          "menuImage1",
-          "menuImage2"
-        ],
+        "block_order": [],
         "custom_css": []
       },
       "footer": {

@@ -525,3 +525,100 @@ footer-menu {
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Footer Code */
+@media (min-width: 960px) {
+#menu_text {
+  /* font-family: Gotham; */
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+}
+
+#signup_text {
+  /* font-family: Gotham; */
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+#menu_links {
+  /* font-family: "Open Sans"; */
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: none;
+}
+
+#signup_content {
+/* font-family: "Open Sans"; */
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: 1.4rem; /* 140% */
+}
+
+#custom_title, #custom_content {
+  /* font-family: "Open Sans"; */
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 1.05rem */
+}
+
+.footer__copyright.body6.corner-content__left,
+a.link.link--text.list-menu__item.list-menu__item--link {
+  /* font-family: "Open Sans"; */
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.footer-block--newsletter {
+  align-content: flex-end;
+}
+  .corner-content__left {
+    align-items: center;
+  } 
+
+  .content_vertical {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+.field__container {
+  background: var(--Background, #FFF);
+  display: inline-flex;
+  height: 50px;
+  padding: 14.66px 30.86px 15.34px 15px;
+  align-items: center;
+}
+
+.field__suffix {
+  background: var(--Grey-700, #787A80);
+  display: flex;
+  width: 53px;
+  height: 50px;
+  padding: 0px 14.14px 0px 13.86px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.button--link::after {
+  display: none;
+}
+
+.button--link {
+  padding: 0;
+  color: #fff;
+}

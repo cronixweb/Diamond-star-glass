@@ -1,0 +1,71 @@
+{{snippet "stylesheet" href=(asset_url "section-announcement-bar-custom.css")}}
+
+<div class="section-announcement-bar {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+    <div class="announcement-bar page-width" style="background-color: {{ section.settings.background_color }};">
+        {{#for section.blocks as |block|}}
+            {{#if (trim block.type) == "announcement"}}
+                <div class="announcement-content">
+                    <p class="announcement-text">
+                        {{{ block.settings.announcement_text }}}
+                    </p>
+                    <a href="{{ block.settings.link_url }}" class="announcement-link">
+                        {{{ block.settings.link_text }}}
+                    </a>
+                </div>
+            {{/if}}
+        {{/for}}
+    </div>
+</div>
+
+{{#schema}}
+{
+  "name": "Announcement Bar Custom",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ddd"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#121212"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "Announcement Text",
+          "default": "Long Weekend Sale: Up to 70% Off"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar Custom",
+      "category": "Custom"
+    }
+  ]
+}
+{{/schema}}

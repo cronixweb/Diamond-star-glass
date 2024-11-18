@@ -666,7 +666,7 @@
     "activate_account_discount": "Activate account and get discount code",
     "handle_success": "Operation successful",
     "search": {
-      "search": "Enter here and click search",
+      "search": "Search products",
       "search_hint": "Search for “{{key}}”"
     }
   },

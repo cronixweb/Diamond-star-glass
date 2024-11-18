@@ -1,4 +1,4 @@
-{{snippet "stylesheet" href=(asset_url "section-rich-text-cust.css")}}
+{{snippet "stylesheet" href=(asset_url "section-rich-text-custom.css")}}
 
 {{snippet
   "section-padding-creator"
@@ -7,8 +7,8 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="in-stock-collection page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
-  <div class="in-stock-collection__content" style="background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat;">
+<div class="section-rich-text page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+  <div class="section-rich-text__content" style="background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat;">
     {{#for section.blocks as |block|}}
 
       {{#if (trim block.type) == "richtext"}}
@@ -25,7 +25,7 @@
 
       {{#if (trim block.type) == "buttons"}}
         {{#if block.settings.button_text}}
-          <a href="{{ block.settings.button_link }}" class="in-stock-collection__button">{{{ block.settings.button_text }}}</a>
+          <a href="{{ block.settings.button_link }}" class="section-rich-text__button">{{{ block.settings.button_text }}}</a>
         {{/if}}
       {{/if}}
 
@@ -93,10 +93,12 @@
       "unit": "px"
     }
   ],
+  "max_blocks": 3,
   "blocks": [
     {
+      "limit": 1,
       "type": "richtext",
-      "name": "heading",
+      "name": "Heading",
       "settings": [
       {
         "type": "richtext",
@@ -107,8 +109,9 @@
       ]
     },
     {
+      "limit": 1,
       "type": "textarea",
-      "name": "subheading",
+      "name": "Subheading",
       "settings": [
         {
           "type": "textarea",
@@ -118,6 +121,7 @@
       ]
     },
     {
+      "limit": 1,
       "type": "buttons",
       "name": "Buttons",
       "settings": [

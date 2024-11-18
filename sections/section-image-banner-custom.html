@@ -1,4 +1,4 @@
-{{snippet "stylesheet" href=(asset_url "section-hero-banner.css")}}
+{{snippet "stylesheet" href=(asset_url "section-image-banner-custom.css")}}
 
 {{snippet
   "section-padding-creator"
@@ -7,16 +7,31 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="hero-section hero-section-{{section.id}} section-padding {{#if section.settings.width_style == false}} page-width {{/if}} {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+<div class="hero-section hero-section-{{section.id}} section-padding 
+{{#if section.settings.width_style == false}} page-width {{/if}} 
+{{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
   <div class="hero-section_image">
     {{#if section.settings.background_image}}
       {{snippet "image" data=section.settings.background_image }}
     {{/if}}
   </div>
-    {{#if section.settings.background_image}}
-      <div class="hero-section_overlay" style="opacity: {{section.settings.layer_opacity}}%"></div>
-    {{/if}}
-  <div class="hero-section__content page-width"  style="{{#if section.settings.content_align == 'left'}} left: 0%; {{/if}} {{#if section.settings.content_align == 'center'}} left: 50%; {{/if}} {{#if section.settings.content_align == 'right'}} right: 0%; {{/if}} text-align: {{ section.settings.text_align }};">
+
+  {{#if section.settings.background_image}}
+    <div class="hero-section_overlay" style="opacity: {{section.settings.layer_opacity}}% "></div>
+  {{/if}}
+
+  <div class="hero-section__content page-width"
+  
+  style=" {{#if section.settings.width_style == false}}
+    {{#if section.settings.horizontal_align == 'left'}} left: 5%; {{/if}} 
+    {{#if section.settings.horizontal_align == 'center'}} left: 50%;   transform: translate(-50%, -50%); {{/if}} 
+    {{#if section.settings.horizontal_align == 'right'}} right: 5%; {{/if}} 
+  {{else}}
+    {{#if section.settings.horizontal_align == 'left'}} left: 0%; {{/if}} 
+    {{#if section.settings.horizontal_align == 'center'}} left: 50%;   transform: translate(-50%, -50%);{{/if}} 
+    {{#if section.settings.horizontal_align == 'right'}} right: 0%;{{/if}} 
+  {{/if}}
+  text-align: {{ section.settings.text_align }}; ">
     {{#for section.blocks as |block|}}
 
       {{#if (trim block.type) == "richtext"}}
@@ -33,7 +48,19 @@
 
       {{#if (trim block.type) == "buttons"}}
         {{#if block.settings.button_text}}
-          <a href="{{ block.settings.button_link }}" class="hero-section__button">{{{ block.settings.button_text }}}</a>
+          <a href="{{ block.settings.button_link }}" class="hero-section__button" style="
+            {{#if block.settings.button_outline}}
+              background-color: #EFEFEF;
+              color: #121212;
+              font-weight: 700;
+              border: 1px solid #efefef;
+            {{else}}
+              background-color: transparent;
+              color: #fff;
+              font-weight: 600;
+              border: 1px solid #fff;
+            {{/if}}"
+          >{{{ block.settings.button_text }}}</a>
         {{/if}}
       {{/if}}
 
@@ -80,8 +107,8 @@
       },
       {
         "type": "select",
-        "id": "content_align",
-        "label": "Content Alignment",
+        "id": "horizontal_align",
+        "label": "Horizontal Alignment",
         "options": [
         {
           "label": "Left",
@@ -97,6 +124,26 @@
         }
       ],
       "default": "left"
+      },
+      {
+        "type": "vertical_align",
+        "id": "vertical_align",
+        "label": " Vertical Alignment",
+        "options": [
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Middle",
+          "value": "middle"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ],
+      "default": "middle"
       },
       {
       "type": "select",
@@ -147,10 +194,12 @@
       "unit": "px"
     }
     ],
+  "max_blocks": 3,
   "blocks": [
     {
+      "limit": 1,
       "type": "richtext",
-      "name": "heading",
+      "name": "Heading",
       "settings": [
         {
           "type": "richtext",
@@ -161,8 +210,9 @@
       ]
     },
     {
+      "limit": 1,
       "type": "text",
-      "name": "subheading",
+      "name": "Subheading",
       "settings": [
         {
           "type": "richtext",
@@ -173,9 +223,16 @@
       ]
     },
     {
+      "limit": 1,
       "type": "buttons",
       "name": "Buttons",
       "settings": [
+        {
+          "type": "switch",
+          "id": "button_outline",
+          "label": "Solid Button",
+          "default": true
+        },
         {
           "type": "text",
           "id": "button_text",
@@ -193,7 +250,8 @@
   ],
     "presets": [
       {
-        "name": "Image Banner Custom"
+        "name": "Image Banner Custom",
+        "category": "Custom"
       }
     ]
   }

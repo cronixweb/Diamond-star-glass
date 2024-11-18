@@ -1,4 +1,4 @@
-.custom-design-section__container {
+.image-text-section__container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,18 +6,18 @@
   gap: 1rem;
 }
 
-.custom-design-section__image img {
+.image-text-section__image img {
   width: 100%;
   height: 232px;
   background-position: center;
   background-size: cover;
 }
 
-.custom-design-section__content {
-  padding: 48px 24px;
+.image-text-section__content {
+  padding: 20px;
 }
 
-.custom-design-section__content h2 {
+.image-text-section__content h2 {
   margin: 0;
   margin-bottom: 12px;
 
@@ -30,7 +30,7 @@
   line-height: normal;
 }
 
-.custom-design-section__content p {
+.image-text-section__content p {
   margin: 0;
   margin-bottom: 24px;
 
@@ -43,7 +43,7 @@
   line-height: 1.625rem;
 }
 
-.custom-design-section__button {
+a.image-text-section__button {
   text-decoration: none;  
 
   color: #121212;
@@ -60,21 +60,17 @@
 
 }
 
-@media screen and (min-width: 750px) {
-  .custom-design-section__container {
+@media screen and (min-width: 768px) {
+  .image-text-section__container {
     flex-direction: row;
   }
 
-  .custom-design-section__content {
-    padding: 0 115px;
-  }
-
-  .custom-design-section__image img {
+  .image-text-section__image img {
     height: 495px;
   }
 
 
-  .custom-design-section__content h2 {
+  .image-text-section__content h2 {
     font-size: 2.5rem;
   }
 }
