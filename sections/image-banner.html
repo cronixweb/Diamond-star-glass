@@ -1,5 +1,12 @@
 {{snippet "stylesheet" href=(asset_url "section-image-banner.css")}}
 
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
 {{assign "banner1" section.settings.banner1}}
 {{assign "banner2" section.settings.banner2}}
 {{assign "banner_height_size" section.settings.banner_height_size}}
@@ -24,10 +31,10 @@
     {{/unless}}
   {{/if}}
 {{/if}}
-<div class="section section-padding section-image-banner">
+<div class="section section-image-banner">
   
   <div
-    class="section-image-banner-pc {{#if banner1 or banner2}}image-banner-loaded{{/if}} display-none display-block-desktop"
+    class="section-image-banner-pc {{#if banner1 or banner2}}image-banner-loaded{{/if}} display-none display-block-desktop {{#if section.settings.width_style == false}} section-padding page-width {{/if}}"
   >
     <div class="image-banner--container">
       {{#if banner1}}
@@ -390,6 +397,38 @@
       "type": "switch",
       "label": "t:sections.image-banner.settings.m_show_textarea.label",
       "default": true
+    },
+    {
+      "type": "group_header",
+      "label": "Section Padding"
+    },
+    {
+      "type": "switch",
+      "id": "width_style",
+      "label": {
+        "en": "Make Full Width"
+      },
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
     }
   ],
   "max_blocks": 3,

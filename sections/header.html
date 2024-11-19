@@ -563,93 +563,107 @@
                             color: {{menu_block.settings.text_color}};
                           }
                         </style>
-                        {{#if show_img1}}
-                          <div
-                            class="header__image"
-                            style="order:{{ternary (if menu_block.settings.image_1_position == 'left') -1 1}}"
-                          >
+                        <div class="header__submenus-wrapper">
+                          <div class="header__submenus-image_content">
+                          {{#if show_img1}}
                             <div
-                              class="header__image__content"
-                              style="
-                              {{#if menu_block.settings.menu_img_style == 'normal'}}
-                                padding-bottom:{{divide 100 show_img1.aspect_ratio}}%;
-                              {{/if}}
-                              "
+                              class="header__image"
+                              style="order:{{ternary (if menu_block.settings.image_1_position == 'left') -1 1}}"
                             >
-                              {{snippet "image" data=show_img1}}
+                              <div
+                                class="header__image__content"
+                                style="
+                                {{#if menu_block.settings.menu_img_style == 'normal'}}
+                                  padding-bottom:{{divide 100 show_img1.aspect_ratio}}%;
+                                {{/if}}
+                                "
+                              >
+                                {{snippet "image" data=show_img1}}
+                              </div>
+                              <div class="header__image--cover">
+                                <p
+                                  class="header__image_title
+                                    {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
+                                >{{menu_block.settings.image_1_title}}</p>
+                                {{snippet
+                                  "link"
+                                  classes="header__image_button body5 button--link"
+                                  href=menu_block.settings.image_1_link
+                                  text=menu_block.settings.image_1_link_text
+                                }}
+                              </div>
                             </div>
-                            <div class="header__image--cover">
-                              <p
-                                class="header__image_title
-                                  {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
-                              >{{menu_block.settings.image_1_title}}</p>
-                              {{snippet
-                                "link"
-                                classes="header__image_button body5 button--link"
-                                href=menu_block.settings.image_1_link
-                                text=menu_block.settings.image_1_link_text
-                              }}
-                            </div>
-                          </div>
-                        {{/if}}
-                        {{#if show_img2}}
-                          <div
-                            class="header__image image2"
-                            style="order:{{ternary (if menu_block.settings.image_2_position == 'left') -1 1}}"
-                          >
+                          {{/if}}
+                          {{#if show_img2}}
                             <div
-                              class="header__image__content"
-                              style="
-                              {{#if menu_block.settings.menu_img_style == 'normal'}}
-                                padding-bottom:{{divide 100 show_img2.aspect_ratio}}%;
-                              {{/if}}
-                              "
+                              class="header__image image2"
+                              style="order:{{ternary (if menu_block.settings.image_2_position == 'left') -1 1}}"
                             >
-                              {{snippet "image" data=show_img2}}
-                            </div>
+                              <div
+                                class="header__image__content"
+                                style="
+                                {{#if menu_block.settings.menu_img_style == 'normal'}}
+                                  padding-bottom:{{divide 100 show_img2.aspect_ratio}}%;
+                                {{/if}}
+                                "
+                              >
+                                {{snippet "image" data=show_img2}}
+                              </div>
 
-                            <div class="header__image--cover">
-                              <p
-                                class="header__image_title
-                                  {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
-                              >{{menu_block.settings.image_2_title}}</p>
-                              {{snippet
-                                "link"
-                                classes="header__image_button body5 button--link"
-                                href=menu_block.settings.image_2_link
-                                text=menu_block.settings.image_2_link_text
-                              }}
+                              <div class="header__image--cover">
+                                <p
+                                  class="header__image_title
+                                    {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
+                                >{{menu_block.settings.image_2_title}}</p>
+                                {{snippet
+                                  "link"
+                                  classes="header__image_button body5 button--link"
+                                  href=menu_block.settings.image_2_link
+                                  text=menu_block.settings.image_2_link_text
+                                }}
+                              </div>
                             </div>
-                          </div>
-                        {{/if}}
-                        {{#if show_img3}}
-                          <div
-                            class="header__image image3"
-                            style="order:{{ternary (if menu_block.settings.image_3_position == 'left') -1 1}}"
-                          >
+                          {{/if}}
+                          {{#if show_img3}}
                             <div
-                              class="header__image__content"
-                              style="
-                              {{#if menu_block.settings.menu_img_style == 'normal'}}
-                                padding-bottom:{{divide 100 show_img3.aspect_ratio}}%;
-                              {{/if}}"
+                              class="header__image image3"
+                              style="order:{{ternary (if menu_block.settings.image_3_position == 'left') -1 1}}"
                             >
-                              {{snippet "image" data=show_img3}}
+                              <div
+                                class="header__image__content"
+                                style="
+                                {{#if menu_block.settings.menu_img_style == 'normal'}}
+                                  padding-bottom:{{divide 100 show_img3.aspect_ratio}}%;
+                                {{/if}}"
+                              >
+                                {{snippet "image" data=show_img3}}
+                              </div>
+                              <div class="header__image--cover">
+                                <p
+                                  class="header__image_title
+                                    {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
+                                >{{menu_block.settings.image_3_title}}</p>
+                                {{snippet
+                                  "link"
+                                  classes="header__image_button body5 button--link"
+                                  href=menu_block.settings.image_3_link
+                                  text=menu_block.settings.image_3_link_text
+                                }}
+                              </div>
                             </div>
-                            <div class="header__image--cover">
-                              <p
-                                class="header__image_title
-                                  {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
-                              >{{menu_block.settings.image_3_title}}</p>
-                              {{snippet
-                                "link"
-                                classes="header__image_button body5 button--link"
-                                href=menu_block.settings.image_3_link
-                                text=menu_block.settings.image_3_link_text
-                              }}
-                            </div>
-                          </div>
-                        {{/if}}
+                          {{/if}}
+                        </div>
+
+                        <div class="header__submenus-menu_content">
+                          <ul class="header__submenu_list">
+                            <li><a href="#">All New Arrivals</a></li>
+                            <li><a href="#">In-Stock</a></li>
+                            <li><a href="#">Volume Discount</a></li>
+                            <li><a href="#">Volume Discount</a></li>
+                            <li><a href="#">View All Products</a></li>
+                          </ul>
+                        </div>
+                      </div>
                       {{/if}}
                     </div>
                   {{else}}
@@ -1107,7 +1121,7 @@
         {
           "type": "select",
           "id": "menu_img_style",
-          "default": "fill",
+          "default": "normal",
           "label": "t:sections.header.blocks.menuImage.settings.menu_img_style.label",
           "options": [
             {
