@@ -19,7 +19,7 @@
       <p>{{{ section.settings.section_subtitle }}}</p>
     {{/if}}
   </div>
-  <div class="splide">
+  <div class="splide featured-collection__slider-{{section.id}}">
     <div class="splide__track">
       <ul class="splide__list">
         {{#for section.blocks as |block|}}
@@ -58,11 +58,13 @@
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {
   // Initialize Splide
-   var splide = new Splide( '.splide', {
+   var splide = new Splide( '.splide.featured-collection__slider-{{section.id}}', {
     perPage: 4,
+    perMove: 1,
     autoplay: true,
     interval: 8000,
     pagination: false,
+    arrows: false,
     gap    : '20px',
     breakpoints: {
       1024: {
@@ -81,7 +83,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
   } );
   // Add the progress bar element
   splide.on('mounted move', function () {
-    var bar = document.querySelector('.my-slider-progress-bar');
+    var bar = document.querySelector('.featured-collection__slider-{{section.id}} .my-slider-progress-bar');
     if (bar && bar.style) {
         var end = splide.length;
         var rate = Math.min((splide.index + 1) / end, 1);

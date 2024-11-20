@@ -21,7 +21,6 @@
   margin: 0;
   margin-bottom: 12px;
 
-  color: #121212;
   text-align: center;
   /* font-family: "Open Sans"; */
   font-size: 2rem;
@@ -34,7 +33,6 @@
   margin: 0;
   margin-bottom: 24px;
 
-  color: #121212;
   text-align: center;
   /* font-family: "Open Sans"; */
   font-size: 1.125rem;
@@ -46,7 +44,6 @@
 a.image-text-section__button {
   text-decoration: none;  
 
-  color: #121212;
   text-align: center;
   /* font-family: "Open Sans"; */
   font-size: 1.25rem;

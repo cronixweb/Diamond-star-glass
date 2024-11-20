@@ -20,49 +20,50 @@
     {{/if}}
   </div>
 
-  <div class="splide">
+  <div class="splide multicolumn__slider-{{section.id}}">
     <div class="splide__track">
         <ul class="splide__list">
           {{#for section.blocks as |block|}}
             {{#if (trim block.type) == "multimedia"}}
               <li class="splide__slide multimedia-block" style="text-align: {{ block.settings.text_align }}">
-                {{#for block.settings as |product_multimedia|}}
-                  <a href="{{ product_multimedia.url }}">
-                    {{#if product_multimedia.featured_image}}
-                      {{snippet "image" data=product_multimedia.featured_image }}
+                  <a href="{{ block.settings.button_url }}">
+                    {{#if block.settings.image}}
+                      {{snippet "image" data=block.settings.image }}
                     {{/if}}
-                    {{#if product_multimedia.title}}
-                      <h3>{{ product_multimedia.title }}</h3>
+                    {{#if block.settings.title}}
+                      <h3>{{ block.settings.title }}</h3>
                     {{/if}}
-                    {{#if product_multimedia.description}}
-                      <p>{{{ product_multimedia.description }}}</p>
+                    {{#if block.settings.content}}
+                      <p>{{{ block.settings.content }}}</p>
                     {{/if}}
-                    {{#if product_multimedia.url}}
-                      <a class="explore-more" href="{{ product_multimedia.url }}">{{{ block.settings.button_text}}}</a>
+                    {{#if block.settings.button_text}}
+                      <a class="explore-more" href="{{ block.settings.button_url }}">{{{ block.settings.button_text}}}</a>
                     {{/if}}
                   </a>
-                {{/for}}
               </li>
             {{/if}}
           {{/for}}
         </ul>
     </div>
-      <!-- Add the progress bar element -->
+      {{#comment}} <!-- Add the progress bar element -->
     <div class="my-slider-progress">
     <div class="my-slider-progress-bar"></div>
-    </div>
+    </div> {{/comment}}
   </div>
 </div>
 
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {
   // Initialize Splide
-   var splide = new Splide( '.splide', {
+   var splide = new Splide( '.splide.multicolumn__slider-{{section.id}}', {
     perPage: 3,
+    perMove: 1,
     autoplay: true,
     interval: 8000,
-    pagination: false,
+    pagination: true,
+    arrows: false,
     gap    : '20px',
+    
     breakpoints: {
       1024: {
         perPage: 2,
@@ -76,7 +77,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
   } );
   // Add the progress bar element
   splide.on('mounted move', function () {
-    var bar = document.querySelector('.my-slider-progress-bar');
+    var bar = document.querySelector('.multicolumn__slider-{{section.id}} .my-slider-progress-bar');
     if (bar && bar.style) {
         var end = splide.length;
         var rate = Math.min((splide.index + 1) / end, 1);
@@ -163,12 +164,29 @@ splide.mount();
       "type": "multimedia",
       "name": "multimedia",
       "settings": [
-            {
-          "id": "product_multimedia",
-          "type": "collection_picker",
+        {
+          "type": "image_picker",
+          "id": "image",
           "label": {
-            "en": "Collection list"
+            "en": "Image on PC"
           }
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": {
+            "en": "Main title"
+          },
+          "default": "Assortments",
+          "limit": 500
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": {
+            "en": "Main text"
+          },
+          "default": "Meet our Project Collective partner and shop her favorite looks."
         },
         {
           "type": "text",
@@ -177,11 +195,16 @@ splide.mount();
           "default": "Explore More >"
         },
         {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button Link"
+        },
+        {
           "type": "text_align",
           "id": "text_align",
           "label": {
             "en": "Text alignment"
-          }
+        }
         }
       ]
     }

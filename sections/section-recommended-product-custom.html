@@ -15,7 +15,7 @@
     <h2>{{{ section.settings.heading-product-list }}}</h2>
   {{/if}}
 
-  <div class="splide">
+  <div class="splide product-list__slider-{{section.id}}">
     <div class="splide__track">
       <ul class="splide__list">
         {{#for section.settings.product_list as |product|}}
@@ -33,22 +33,24 @@
         {{/for}}
       </ul>
     </div>
-    <!-- Add the progress bar element -->
+    {{#comment}} <!-- Add the progress bar element -->
     <div class="my-slider-progress">
       <div class="my-slider-progress-bar"></div>
-    </div>
+    </div> {{/comment}}
   </div>
 </div>
 
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {
   // Initialize Splide
-   var splide = new Splide( '.splide', {
+   var splide = new Splide( '.splide.product-list__slider-{{section.id}}', {
     perPage: 4,
     autoplay: true,
     interval: 8000,
     pagination: false,
     gap    : '20px',
+    perMove: 1,
+    arrows: true,
     breakpoints: {
       1024: {
         perPage: 3,
@@ -66,7 +68,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
   } );
   // Add the progress bar element
   splide.on('mounted move', function () {
-    var bar = document.querySelector('.my-slider-progress-bar');
+    var bar = document.querySelector('.product-list__slider-{{section.id}} .my-slider-progress-bar');
     if (bar && bar.style) {
         var end = splide.length;
         var rate = Math.min((splide.index + 1) / end, 1);

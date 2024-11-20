@@ -14,18 +14,18 @@ button.splide__arrow.splide__arrow--prev,
 button.splide__arrow.splide__arrow--next  {
     position: absolute;
     top: 50%;
-    z-index: 22;
+    z-index: 10;
     cursor: pointer;
     border-radius: 100%;
     background: #F4F4F4;
-    padding: 16px;
+    padding: 14px;
     align-items: center;
 }
 
 button.splide__arrow.splide__arrow--next svg ,
 button.splide__arrow.splide__arrow--prev svg {
-    height: 24px;
-    width: 24px;
+    height: 14px;
+    width: 14px;
     color: #121212;
 }
 
@@ -37,4 +37,21 @@ button.splide__arrow.splide__arrow--prev {
 button.splide__arrow.splide__arrow--next {
     right: 0;
     transform: translateY(-50%);
+}
+
+ul.splide__pagination {
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    button.splide__arrow.splide__arrow--prev,
+    button.splide__arrow.splide__arrow--next  {
+        padding: 14px;
+    }
+    
+    button.splide__arrow.splide__arrow--next svg ,
+    button.splide__arrow.splide__arrow--prev svg {
+        height: 20px;
+        width: 20px;
+    }
 }

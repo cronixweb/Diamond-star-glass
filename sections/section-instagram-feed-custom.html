@@ -15,7 +15,7 @@
     <h2>{{{ section.settings.heading-instagram-feed }}}</h2>
   {{/if}}
 
-  <div class="splide">
+  <div class="splide instagram-feed__slider-{{section.id}}">
     <div class="splide__track">
       <ul class="splide__list">
         {{#for section.blocks as |block|}}
@@ -35,10 +35,10 @@
     </div>
     </div>
 
-    <!-- Add the progress bar element -->
+    {{#comment}} <!-- Add the progress bar element -->
     <div class="my-slider-progress">
       <div class="my-slider-progress-bar"></div>
-    </div>
+    </div> {{/comment}}
 
   </div>
 </div>
@@ -46,11 +46,13 @@
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {
   // Initialize Splide
-   var splide = new Splide( '.splide', {
+   var splide = new Splide( '.splide.instagram-feed__slider-{{section.id}}', {
     perPage: 5,
+    perMove: 1,
     autoplay: true,
     interval: 8000,
     pagination: false,
+    arrows: false,
     gap    : '20px',
     breakpoints: {
       1024: {
@@ -69,7 +71,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
   } );
   // Add the progress bar element
   splide.on('mounted move', function () {
-    var bar = document.querySelector('.my-slider-progress-bar');
+    var bar = document.querySelector('.instagram-feed__slider-{{section.id}} .my-slider-progress-bar');
     if (bar && bar.style) {
         var end = splide.length;
         var rate = Math.min((splide.index + 1) / end, 1);

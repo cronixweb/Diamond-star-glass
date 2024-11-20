@@ -1,7 +1,6 @@
 .featured-collection-section__header h2 {
   margin-bottom: 8px;
 
-  color: #121212;
   text-align: center;
   /* font-family: Gotham; */
   font-size: 2rem;
@@ -12,7 +11,6 @@
 }
 
 .featured-collection-section__header p {
-  color:  #121212;
   text-align: center;
   /* font-family: "Open Sans"; */
   font-size: 1.25rem;

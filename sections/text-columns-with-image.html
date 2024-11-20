@@ -54,6 +54,7 @@
       <h2 class="text-columns-with-images__title section-title {{section.settings.title_font_size}} text-center">
         {{section.settings.title}}
       </h2>
+      <p class="text-columns-with-images__text {{section.settings.content_font_size}} text-center">{{section.settings.content}}</p>
     {{/if}}
     {{assign "container-wrapper-cls" ""}}
     {{#if (isFalsey show_block_bg)}}
@@ -168,6 +169,34 @@
         {
           "value": "title5",
           "label": "t:sections.text-columns-with-image.settings.title_font_size.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": {
+        "en": "Main text"
+      },
+      "default": "Shop our latest designs—thoughtfully made to complete every room in your home."
+    },
+    {
+      "type": "select",
+      "id": "content_font_size",
+      "label": "t:sections.text-columns-with-image.settings.content_font_size.label",
+      "default": "title3",
+      "options": [
+        {
+          "value": "title2",
+          "label": "t:sections.text-columns-with-image.settings.content_font_size.options__0.label"
+        },
+        {
+          "value": "title3",
+          "label": "t:sections.text-columns-with-image.settings.content_font_size.options__1.label"
+        },
+        {
+          "value": "title5",
+          "label": "t:sections.text-columns-with-image.settings.content_font_size.options__2.label"
         }
       ]
     },

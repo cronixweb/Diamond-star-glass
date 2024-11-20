@@ -2425,5 +2425,6 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
 
 @font-face {
   font-family: 'Gotham';
-  src: url('{{ asset_url "gotham-Black" }}') format('.otf');
+  src: url('{{ asset_url "gotham-Black.otf" }}') format('.otf');
+  src: url('{{ asset_url "GothamMedium.ttf" }}') format('.ttf');
 }

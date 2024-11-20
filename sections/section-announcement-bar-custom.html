@@ -1,7 +1,7 @@
 {{snippet "stylesheet" href=(asset_url "section-announcement-bar-custom.css")}}
 
-<div class="section-announcement-bar {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
-    <div class="announcement-bar page-width" style="background-color: {{ section.settings.background_color }};">
+<div class="section-announcement-bar {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}" style="background-color: {{ section.settings.background_color }};">
+    <div class="announcement-bar page-width" >
         {{#for section.blocks as |block|}}
             {{#if (trim block.type) == "announcement"}}
                 <div class="announcement-content">
@@ -32,6 +32,30 @@
       "id": "text_color",
       "label": "Text Color",
       "default": "#121212"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1",
+          "label": "Color 1"
+        },
+        {
+          "value": "2",
+          "label": "Color 2"
+        },
+        {
+          "value": "3",
+          "label": "Color 3"
+        }
+      ],
+      "default": "none",
+      "label": "Color Scheme"
     }
   ],
   "max_blocks": 3,
