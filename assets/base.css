@@ -318,12 +318,12 @@ deferred-media {
   --title5-font-size: calc(var(--title-font-size) * 0.6);
   --title6-font-size: calc(var(--title-font-size) * 0.6);
 
-  --body1-font-size: calc(var(--body-font-size) * 1.142857);
-  --body2-font-size: calc(var(--body-font-size) * 1.071429);
-  --body3-font-size: calc(var(--body-font-size) * 1);
-  --body4-font-size: calc(var(--body-font-size) * 0.928571);
-  --body5-font-size: calc(var(--body-font-size) * 0.857143);
-  --body6-font-size: calc(var(--body-font-size) * 0.857143);
+  --body1-font-size: calc(var(--body-font-size) * 0.6875); /* 11px */
+  --body2-font-size: calc(var(--body-font-size) * 0.75); /* 12px */
+  --body3-font-size: calc(var(--body-font-size) * 0.875); /* 14px */
+  --body4-font-size: calc(var(--body-font-size) * 1);
+  --body5-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
+  --body6-font-size: calc(var(--body-font-size) * 1.25); /* 20px */
 }
 
 @media (min-width: 960px) {
@@ -335,12 +335,12 @@ deferred-media {
     --title5-font-size: calc(var(--title-font-size) * 0.833333);
     --title6-font-size: calc(var(--title-font-size) * 0.666667);
 
-    --body1-font-size: calc(var(--body-font-size) * 1.571429);
-    --body2-font-size: calc(var(--body-font-size) * 1.285714);
-    --body3-font-size: calc(var(--body-font-size) * 1.142857);
+    --body1-font-size: calc(var(--body-font-size) * 0.6875); /* 11px */
+    --body2-font-size: calc(var(--body-font-size) * 0.75); /* 12px */
+    --body3-font-size: calc(var(--body-font-size) * 0.875); /* 14px */
     --body4-font-size: calc(var(--body-font-size) * 1);
-    --body5-font-size: calc(var(--body-font-size) * 0.928571);
-    --body6-font-size: calc(var(--body-font-size) * 0.857143);
+    --body5-font-size: calc(var(--body-font-size) * 1.25); /* 20px */
+    --body6-font-size: calc(var(--body-font-size) * 1.5); /* 24px */
   }
 }
 

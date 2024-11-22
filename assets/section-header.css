@@ -1323,28 +1323,20 @@ predictive-search[data-focus][loading]
 
 /* Custom CSS for Header */
 
-a.header-inline-menus__link.menus__link.body4 {
-  color: var(--Neutral-Black, #121212);
-  /* font-family: "Open Sans"; */
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
+.header-inline-menus__link.menus__link {
   line-height: normal;
   text-transform: capitalize;
 }
 
-.field {
+.header .search-modal__content .field {
   color: #565656;
-font-family: "Open Sans";
-font-size: 0.75rem;
-font-style: normal;
-font-weight: 400;
-line-height: 120%; /* 0.9rem */
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-.field:after {
+.header .search-modal__content .field:after {
   border: none;
-  /* border-radius: 41px; */
 }
 
 .header__icon-button {
@@ -1355,11 +1347,8 @@ line-height: 120%; /* 0.9rem */
 
 p#header_icon-text {
   margin: 0;
-  color: var(--Neutral-Black, #121212);
   text-align: center;
-  /* font-family: "Open Sans"; */
-  font-size: 0.6875rem;
-  font-style: normal;
+  font-size: var(--body2-font-size);
   font-weight: 400;
   line-height: 0.9625rem;
   text-transform: capitalize;
@@ -1371,24 +1360,49 @@ p#header_icon-text {
 .mobile-menu{
   grid-area: mobile-menu;
 }
-
+.mobile-menu .header__icon-button{
+  padding: 0;
+}
+.mobile-menu .header__icon-button .icon-menu{
+  width: 30px;
+  height: 30px;
+}
 .header__icons, .header__tools {
   justify-content: flex-end;
 }
 .tile-search .search-modal__input {
   height: 41px;
   border-radius: 41px;
-  background-color: #F3F2F0;
+  padding: 13px 20px 13px 20px;
+  font-size: var(--body2-font-size);
+  font-family: var(--body-font);
+  color: rgb(var(--color-header-pc-searchbar-text));
+  background-color: rgba(var(--color-header-pc-searchbar-bg), 1);
+}
+.tile-search .search-modal__input::placeholder{
+  color: rgb(var(--color-header-pc-searchbar-text));
+  opacity: 1;
+  font-family: var(--body-font);
 }
 .tile-search .search-modal__content {
   width: 100%;
   padding-bottom: 24px;
+  padding-top: 4px;
 }
 .tile-search .search-modal__submit-button {
   color: rgb(var(--color-header-pc-searchbar-text));
   right: 0;
   left: unset;
   width: 48px;
+}
+.header-inline-menus__item{
+  padding: 0 6px;
+}
+.header-inline-menus__item:first-child{
+  padding-left: 0;
+}
+.header-inline-menus__item:last-child{
+  padding-right: 0;
 }
 @media screen and (max-width: 959px) {
   .header__container {
@@ -1397,23 +1411,36 @@ p#header_icon-text {
       "tools tools tools" auto
       / auto 1fr auto auto;
   }
+  .header__heading {
+    margin: 8px auto;
+  }
 }
 @media (min-width: 960px) {
+  .header-inline-menus__link.menus__link {
+    font-size: var(--body2-font-size);
+  }
   .header__container--left-line .header__inline-menus {
     justify-content: space-between;
   }
   .tile-search .search-modal__content{
-    width: 450px;
-    padding-bottom:0;
+    max-width: 660px;
+    width: 100%;
+    justify-content: left;
   }
-  .tile-search .search-modal__input {
-    padding: 13px 20px 13px 20px;
+  .header__container--left-line.tile-search .search-modal__content{
+    padding: 25px 0;
+    justify-content: start;
   }
   .tile-search .search-modal__content {
     justify-content: flex-end;
     padding: 20px 50px 20px 20px;
   }
   .tile-search .search-modal__form {
-    max-width: 450px;
+    max-width: 513px;
+  }
+}
+@media (min-width: 1200px) {
+  .header-inline-menus__link.menus__link {
+    font-size: var(--body4-font-size);
   }
 }

@@ -28,17 +28,17 @@
         "default": 160,
         "min": 50,
         "max": 400,
-        "step": 10,
+        "step": 2,
         "unit": "px"
       },
       {
         "type": "range",
         "id": "mobile_logo_width",
         "label": "t:settings_schema.logo.settings.mobile_logo_width.label",
-        "default": 145,
+        "default": 144,
         "min": 30,
         "max": 200,
-        "step": 10,
+        "step": 2,
         "unit": "px"
       }
     ]
