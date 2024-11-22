@@ -1,3 +1,4 @@
+<!-- Stylesheets and script -->
 {{snippet "stylesheet" href=(asset_url "section-collection-list-custom.css")}}
 {{snippet "stylesheet" href=(asset_url "splide-custom.css")}}
 {{snippet "stylesheet" href=(asset_url "lib-splide.min.css")}}
@@ -20,6 +21,7 @@
     {{/if}}
   </div>
 
+  <!-- Splide Slider Container -->
   <div class="splide collection-list__slider-{{section.id}}">
     <div class="splide__track">
       <ul class="splide__list">
@@ -37,50 +39,55 @@
         {{/for}}
       </ul>
     </div>
-      <!-- Add the progress bar element -->
-      <div class="my-slider-progress">
-        <div class="my-slider-progress-bar"></div>
-      </div>
+
+    <!-- Progress Bar -->
+    {{#if section.settings.progress-bar}}
+    <div class="my-slider-progress">
+      <div class="my-slider-progress-bar"></div>
+    </div>
+    {{/if}}
   </div>
 </div>
 
+<!-- JavaScript for Splide Initialization and Progress Bar -->
 <script>
-document.addEventListener( 'DOMContentLoaded', function () {
-  // Initialize Splide
-   var splide = new Splide( '.splide.collection-list__slider-{{section.id}}', {
+document.addEventListener('DOMContentLoaded', function () {
+  // Initialize Splide slider
+  var splide = new Splide('.splide.collection-list__slider-{{section.id}}', {
     perPage: 4,
     perMove: 1,
-    autoplay: true,
-    interval: 8000,
+    autoplay: false,
     pagination: false,
-    gap    : '20px',
+    arrows:{{#if section.settings.collection-arrows}}true{{else}}false{{/if}},
+    gap: '29px',
     breakpoints: {
       1024: {
-        perPage: 3,
-        gap    : '1rem',
+        perPage: 5,
+        gap: '29px',
       },
       640: {
         perPage: 2,
-        gap    : '1rem',
+        gap: '16px',
       },
       480: {
         perPage: 1,
-        gap    : '1rem',
+        gap: '16px',
       },
     },
-  } );
-  // Add the progress bar element
-  splide.on('mounted move', function () {
-    var bar = document.querySelector('.collection-list__slider-{{section.id}} .my-slider-progress-bar');
-    if (bar && bar.style) {
-        var end = splide.length;
-        var rate = Math.min((splide.index + 1) / end, 1);
-        bar.style.width = String(100 * rate) + '%';
-    }
   });
-splide.mount();
-} );
+
+  var bar    = splide.root.querySelector( '.my-slider-progress-bar' );
+  
+  splide.on( 'mounted move', function () {
+    var end  = splide.Components.Controller.getEnd() + 1;
+    var rate = Math.min( ( splide.index + 1 ) / end, 1 );
+    bar.style.width = String( 100 * rate ) + '%';
+  } );
+  
+  splide.mount();
+});
 </script>
+
 {{#schema}}
 {
   "name": "Collection List Custom",
@@ -97,6 +104,18 @@ splide.mount();
       "id": "section_subtitle",
       "label": "Subheading",
       "default": "Shop our latest designs—thoughtfully made to complete every room in your home."
+    },
+    {
+      "type": "switch",
+      "id": "progress-bar",
+      "label": "Show Progress Bar",
+      "default": true
+    },
+    {
+      "type": "switch",
+      "id": "collection-arrows",
+      "label": "Show Arrows",
+      "default": true
     },
     {
       "type": "select",
@@ -147,7 +166,7 @@ splide.mount();
       "unit": "px"
     }
   ],
-  "max_blocks": 8,
+  "max_blocks": 10,
   "blocks": [
     {
       "type": "collection",

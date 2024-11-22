@@ -1,27 +1,32 @@
 .featured-collection-section__header h2 {
   margin-bottom: 8px;
 
+  color:  #121212;
   text-align: center;
-  /* font-family: Gotham; */
-  font-size: 2rem;
+  font-family: 'Gotham';
+  font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%;
+  line-height: 130%; /* 72.8px */
   text-transform: capitalize;
 }
 
 .featured-collection-section__header p {
+  color:  #121212;
   text-align: center;
-  /* font-family: "Open Sans"; */
-  font-size: 1.25rem;
+  font-family: "Open Sans";
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin: 0;
+}
+.featured-collection-section__header{
+  margin-bottom: 32px;
+
 }
 
-.category-block {
-  padding: 20px;
-}
+
 
 .category-block img {
   width: 100%;
@@ -30,35 +35,36 @@
 }
 
 .category-block h3 {
-  margin: 0;
-  margin-top: 10px;
-
-  color: #413D3D;
-  /* font-family: "Open Sans"; */
-  font-size: 1.25rem;
+  color:  #121212;
+  font-family: "Open Sans";
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 2.25rem;
+  line-height: 1.8; 
+  margin-top: 16px;
 }
 
 .category-block p {
-  margin: 10px 0;
-
-  color: #413D3D;
-  /* font-family: "Open Sans"; */
-  font-size: 0.875rem;
+  color: #121212;
+  font-family: "Open Sans";
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.625rem; 
+  line-height: 1.4;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.featured-collection-section .my-slider-progress{
+  display: block;
 }
 
 .category-block a.explore-more {
-  color: #413D3D;
-  /* font-family: "Open Sans"; */
-  font-size: 0.875rem;
+  color:  #121212;
+  font-family: "Open Sans";
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.625rem;
+  line-height: 1.8; 
   text-transform: uppercase;
 }
 
@@ -67,11 +73,20 @@
 }
 
 @media screen and (min-width: 768px) {
+  .featured-collection-section__header{
+    max-width: 740px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  
+  }
   .featured-collection-section__header h2 {
-    font-size: 3.5rem;
+    font-size: 56px;
   }
 
   .featured-collection-section__header p {
-    font-size: 1.5rem;
+    font-size: 24px;
+  }
+  .featured-collection-section .my-slider-progress{
+    display: none;
   }
 }
