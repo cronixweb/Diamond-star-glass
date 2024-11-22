@@ -90,18 +90,12 @@ deferred-media {
 }
 
 :root {
-  --page-padding: 120px;
-}
-
-@media (max-width: 1440px) {
-  :root {
-    --page-padding: 60px;
-  }
+  --page-padding: 30px;
 }
 
 @media (max-width: 959px) {
   :root {
-    --page-padding: 20px;
+    --page-padding: 16px;
   }
 }
 

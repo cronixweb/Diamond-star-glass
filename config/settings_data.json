@@ -50,7 +50,7 @@
       "body_letter_spacing": 0,
       "body_font_size": 16,
       "body_line_height": 1.6,
-      "page_width": 1920,
+      "page_width": 1680,
       "section_vertical_gap": 0,
       "grid_horizontal_space": 20,
       "grid_vertical_space": 20,
@@ -212,7 +212,7 @@
         "disabled": false,
         "type": "header",
         "settings": {
-          "full_width": true,
+          "full_width": false,
           "header_division_bottom": true,
           "show_country_selector": false,
           "show_locale_selector": false,
@@ -246,8 +246,8 @@
           "highlight_menus": "",
           "highlight_text_color": "#FFFFFF",
           "highlight_bg_color": "#000000",
-          "padding_top": 8,
-          "padding_bottom": 8
+          "padding_top": 0,
+          "padding_bottom": 0
         },
         "blocks": {
           "menuImage1": {
@@ -639,7 +639,7 @@
             "enable_sticky_header": true,
             "show_line_separator": false,
             "show_search_entry": true,
-            "enabled_tile_search": true,
+            "enabled_tile_search": false,
             "show_user_entry": true,
             "show_cart_entry": true,
             "header_division_bottom": true,

@@ -103,14 +103,14 @@
         "
     >
       
-      <div class="header__tools display-none-desktop">
+      <div class="mobile-menu display-none-desktop">
         
         {{assign "menu" (default mobile_main_menu main_menu)}}
         {{snippet "header-menu-drawer" section=section menu=menu class="display-none-desktop" highlight_menus_list=highlight_menus_list}}
 
         
         {{#if section.settings.show_search_entry}}
-          <header-modal class="header__search">
+          <header-modal class="header__search display-none">
             <details>
               <summary class="modal__toggle">
                 <button class="icon-button header__icon-button">
@@ -229,7 +229,7 @@
       {{/if}}
 
       {{#if section.settings.show_search_entry}}
-        <div class="header__tools display-none-tablet">
+        <div class="header__tools">
           {{#unless section.settings.enabled_tile_search}}
             <header-modal class="header__search">
               <details>
