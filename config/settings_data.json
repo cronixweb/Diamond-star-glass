@@ -160,10 +160,10 @@
       "cart_empty_recommend_product_to_show": 12,
       "cart_empty_recommend_product_image_ratio": 150,
       "cart_empty_recommend_product_image_fill_type": "contain",
-      "social_facebook_link": "",
-      "social_twitter_link": "",
-      "social_pinterest_link": "",
-      "social_instagram_link": "",
+      "social_facebook_link": "https://www.facebook.com/",
+      "social_twitter_link": "https://x.com/",
+      "social_pinterest_link": "https://in.pinterest.com/",
+      "social_instagram_link": "https://www.instagram.com/",
       "social_snapchat_link": "",
       "social_tiktok_link": "",
       "social_youtube_link": "",
@@ -377,14 +377,6 @@
               "subscribe_letter_title": "Sign up to hear about our latest sales, new arrivals &amp; more."
             }
           },
-          "1731043411944f6d9621": {
-            "type": "image",
-            "settings": {
-              "image_width": 100,
-              "image_full_width": false,
-              "align": "center"
-            }
-          },
           "173104343143120e9c8b": {
             "type": "menu",
             "settings": {
@@ -404,8 +396,16 @@
           "1731043441254ce68db2": {
             "type": "custom",
             "settings": {
-              "title": "By submitting your email, you agree that Diamond Star may send you promotional email messages with offers, updates, and other marketing messages. ",
-              "content": "Please visit our privacy policy to learn how we can use your information."
+              "title": "",
+              "content": "By submitting your email, you agree that Diamond Star may send you promotional email messages with offers, updates, and other marketing messages.&nbsp;<br>Please visit our privacy policy to learn how we can use your information."
+            }
+          },
+          "1732378783667501f2e7": {
+            "type": "social_media",
+            "settings": {
+              "title": "Follow us",
+              "block_media_icon_width": 40,
+              "block_media_icon_padding": 24
             }
           }
         },
@@ -414,10 +414,10 @@
           "footer-menu2",
           "17310434078307d983be",
           "173104341918049221eb",
-          "1731043411944f6d9621",
           "173104343143120e9c8b",
           "1731043436758c63b483",
-          "1731043441254ce68db2"
+          "1731043441254ce68db2",
+          "1732378783667501f2e7"
         ],
         "custom_css": []
       }
@@ -707,7 +707,7 @@
           "settings": {
             "show_locale_selector": false,
             "show_country_selector": false,
-            "show_social_media": true,
+            "show_social_media": false,
             "show_pay_channel": {
               "show": false,
               "pay_channel_list": []
