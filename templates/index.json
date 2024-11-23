@@ -1,48 +1,5 @@
 {
   "sections": {
-    "featured-slideshow": {
-      "disabled": false,
-      "type": "featured-slideshow",
-      "settings": {
-        "show_arrows": true,
-        "switch": true,
-        "autoplay": true,
-        "autoplay_speed": 7,
-        "content_height": 100
-      },
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "icon": "image",
-          "settings": {
-            "image_text_layout": "100%",
-            "image_layout_style": "revert",
-            "show_content_line": true,
-            "overlay_opacity": 50,
-            "text_font_color": "#FFFFFF",
-            "text_background_color": "#2C2924",
-            "content_vertical_layout": "flex-end",
-            "content_horizontal_layout": "start",
-            "title": "Highlight an\nimage banner",
-            "title_font": "Oregano:400",
-            "title_font_size": "title4",
-            "content": "",
-            "button_text": "Shop this",
-            "button_style": "button--secondary",
-            "text_content_horizontal_layout": "center",
-            "text_title": "THighlight an\nimage banner",
-            "text_title_font_size": "title3",
-            "text_enabled_custom_font": true,
-            "text_content": "",
-            "text_button_text": "Shop this",
-            "text_button_style": "button--link"
-          }
-        }
-      },
-      "block_order": [
-        "block-1"
-      ]
-    },
     "icon-list": {
       "disabled": false,
       "type": "icon-list",
@@ -58,48 +15,48 @@
           "type": "item",
           "icon": "image",
           "settings": {
-            "image": {},
-            "jump_link": ""
+            "jump_link": "",
+            "image": {}
           }
         },
         "block-2": {
           "type": "item",
           "icon": "image",
           "settings": {
-            "image": {},
-            "jump_link": ""
+            "jump_link": "",
+            "image": {}
           }
         },
         "block-3": {
           "type": "item",
           "icon": "image",
           "settings": {
-            "image": {},
-            "jump_link": ""
+            "jump_link": "",
+            "image": {}
           }
         },
         "block-4": {
           "type": "item",
           "icon": "image",
           "settings": {
-            "image": {},
-            "jump_link": ""
+            "jump_link": "",
+            "image": {}
           }
         },
         "block-5": {
           "type": "item",
           "icon": "image",
           "settings": {
-            "image": {},
-            "jump_link": ""
+            "jump_link": "",
+            "image": {}
           }
         },
         "block-6": {
           "type": "item",
           "icon": "image",
           "settings": {
-            "image": {},
-            "jump_link": ""
+            "jump_link": "",
+            "image": {}
           }
         }
       },
@@ -112,278 +69,467 @@
         "block-6"
       ]
     },
-    "collection-list": {
+    "1732178487923605d885": {
       "disabled": false,
-      "type": "collection-list",
+      "type": "section-image-banner-custom",
       "settings": {
-        "title": "Collection list",
-        "collection_title_position": "left-center",
-        "button_text": "View all",
+        "width_style": true,
+        "layer_opacity": 30,
+        "horizontal_align": "left",
+        "vertical_align": "middle",
         "color_scheme": "none",
-        "show_collection_cover": true,
-        "cover_image_size": "w_1_h_2",
-        "cover_image_title_position": "center",
-        "cover_image_title": "Collection",
-        "cover_image_title_color": "#000000",
-        "desktop_grid_cols": 3,
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "background_image": "shopline://shop_images/Frame 1000002456 (1).jpg"
       },
       "blocks": {
-        "block-1": {
-          "type": "collection",
+        "1732178540080d7b5140": {
+          "type": "richtext",
           "settings": {
-            "image_display_area": "left",
-            "button_text": "SHOP NOW"
+            "heading": "25+ Years of Craftsmanship and Design Expertise."
           }
         },
-        "block-2": {
-          "type": "collection",
+        "1732178605980286de59": {
+          "type": "text",
           "settings": {
-            "image_display_area": "left",
-            "button_text": "SHOP NOW"
+            "subheading": "Discover Custom Beach Essentials That Blend Style, Comfort, And Functionality—Curated To Create Your Perfect Beachside Retreat."
           }
         },
-        "block-3": {
-          "type": "collection",
+        "17321786164954a8e2cc": {
+          "type": "buttons",
           "settings": {
-            "image_display_area": "left",
-            "button_text": "SHOP NOW"
-          }
-        },
-        "block-4": {
-          "type": "collection",
-          "settings": {
-            "button_text": "SHOP NOW",
-            "image_display_area": "left"
+            "button_outline": true,
+            "button_text": "View Catalog",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4"
-      ]
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "title3",
-        "collection": null,
-        "products_to_show": 12,
-        "columns_desktop": 4,
-        "full_width": false,
-        "columns_mobile": 2,
-        "enable_desktop_slider": true,
-        "enable_mobile_slider": true,
-        "button_text": "View all",
-        "product_image_ratio": "150",
-        "image_fill_type": "cover",
-        "show_secondary_image": true,
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
-      "blocks": {
-        "block-1": {
-          "type": "collection",
-          "settings": {}
-        },
-        "block-2": {
-          "type": "collection",
-          "settings": {}
-        },
-        "block-3": {
-          "type": "collection",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
+        "1732178540080d7b5140",
+        "1732178605980286de59",
+        "17321786164954a8e2cc"
       ],
-      "disabled": false
+      "custom_css": []
     },
-    "picture-promotion": {
+    "1732178924874a51f28c": {
       "disabled": false,
-      "type": "picture-promotion",
+      "type": "section-rich-text-custom",
       "settings": {
-        "is_fullscreen": true,
+        "color_scheme": "none",
         "padding_top": 60,
         "padding_bottom": 60,
-        "title_font_family": "Poppins:600",
-        "pc_title_font_size": 70,
-        "m_title_font_size": 30,
-        "subtitle_font_family": "Poppins:600",
-        "pc_subtitle_font_size": 110,
-        "m_subtitle_font_size": 50,
-        "font_color": "#FFFFFF",
-        "font_border_color": "#000000"
+        "background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
       },
       "blocks": {
-        "block-1": {
-          "type": "image",
+        "17321789322925ea0413": {
+          "type": "richtext",
           "settings": {
-            "image": "",
-            "link": "",
-            "title": "BUY 3 get",
-            "subtitle": "50% OFF",
-            "enabled_font_border": true
+            "heading": "Shop our huge in-stock collection!"
           }
         },
-        "block-2": {
-          "type": "image",
+        "1732178940665d7bbf35": {
+          "type": "buttons",
           "settings": {
-            "image": "",
-            "link": "",
-            "title": "BUY 3 get",
-            "subtitle": "50% OFF",
-            "enabled_font_border": true
+            "button_text": "Shop All In-Stock",
+            "button_link": "/collections/in-stock"
           }
         }
       },
       "block_order": [
-        "block-1",
-        "block-2"
-      ]
-    },
-    "featured-collection-2": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "title3",
-        "collection": null,
-        "products_to_show": 12,
-        "columns_desktop": 4,
-        "full_width": false,
-        "columns_mobile": 2,
-        "enable_desktop_slider": true,
-        "enable_mobile_slider": true,
-        "button_text": "View all",
-        "product_image_ratio": "150",
-        "image_fill_type": "cover",
-        "show_secondary_image": true,
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "tab_background_color": "#000000",
-        "tab_text_color": "#CDF24D"
-      },
-      "blocks": {
-        "block-2": {
-          "type": "collection",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "block-2"
+        "17321789322925ea0413",
+        "1732178940665d7bbf35"
       ],
-      "disabled": false
+      "custom_css": []
     },
-    "blog": {
+    "17321789952269d54a93": {
       "disabled": false,
-      "type": "blog",
+      "type": "section-collection-list-custom",
       "settings": {
-        "title": "Blogs",
-        "blog_collection": "",
-        "mobile_pagination_style": "simple",
-        "enable_mobile_slide": false,
-        "limit": 4,
-        "pc_cols": 4,
-        "title_font_size": "title3",
-        "is_show_date": true,
-        "is_show_author": true,
-        "is_show_cover": true,
-        "is_show_desc": true,
-        "btn_text": "View all",
+        "section_title": "Our Product Categories",
+        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
         "color_scheme": "none",
-        "cover_img_ratio": "0.75",
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
-      "blocks": {},
-      "block_order": []
-    },
-    "sign-up-and-save": {
-      "type": "sign-up-and-save",
-      "settings": {
-        "full_screen_width": true,
-        "color_scheme": "none",
-        "padding_top": 80,
-        "padding_bottom": 80
-      },
-      "disabled": false,
-      "blocks": {
-        "block-1": {
-          "type": "title",
-          "settings": {
-            "title": "Sign up and save",
-            "fontSize": "title3"
-          }
-        },
-        "block-2": {
-          "type": "desc",
-          "settings": {
-            "description": "Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals."
-          }
-        },
-        "block-3": {
-          "type": "button",
-          "settings": {
-            "button_text": "Subscribe",
-            "placeholder": "Enter your email"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
-      ]
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "disabled": false,
-      "settings": {
-        "title": "Image with text",
-        "title_font_size": "title3",
-        "content": "Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.",
-        "button_text": "Optional button",
-        "show_image_line": true,
-        "image_height": "lg",
-        "layout": "title_left",
         "padding_top": 60,
         "padding_bottom": 60
-      }
-    },
-    "video": {
-      "type": "video",
-      "disabled": false,
-      "settings": {
-        "title": "",
-        "title_size": "title3",
-        "cover": {
-          "url": ""
+      },
+      "blocks": {
+        "1732178999539bb5c569": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267112976879693429683575"
+          }
         },
-        "internal_video": "",
-        "external_video": "",
-        "full_width": true,
+        "1732179016729eace2d8": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267112976879693429683575"
+          }
+        },
+        "17321790180775c84e5d": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267112976879693429683575"
+          }
+        },
+        "1732179019562c15dc59": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267112976879693429683575"
+          }
+        },
+        "1732179020898665ef59": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267112976879693429683575"
+          }
+        }
+      },
+      "block_order": [
+        "1732178999539bb5c569",
+        "1732179016729eace2d8",
+        "17321790180775c84e5d",
+        "1732179019562c15dc59",
+        "1732179020898665ef59"
+      ],
+      "custom_css": []
+    },
+    "17321790789703fa3e7d": {
+      "disabled": false,
+      "type": "section-image-banner-custom",
+      "settings": {
+        "background_image": "shopline://shop_images/banner_2_6721831604329605126.png",
+        "width_style": false,
+        "layer_opacity": 30,
+        "horizontal_align": "left",
+        "vertical_align": "middle",
+        "color_scheme": "none",
+        "padding_top": 0,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "173217909214313cf9b1": {
+          "type": "richtext",
+          "settings": {
+            "heading": "candleholders"
+          }
+        },
+        "1732179096427d6e5d4a": {
+          "type": "text",
+          "settings": {
+            "subheading": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
+          }
+        },
+        "17321791026266a547b0": {
+          "type": "buttons",
+          "settings": {
+            "button_outline": true,
+            "button_text": "Explore More",
+            "button_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "173217909214313cf9b1",
+        "1732179096427d6e5d4a",
+        "17321791026266a547b0"
+      ],
+      "custom_css": [
+        ".shopline-section{max-width:1920px; padding:0 120px;}"
+      ]
+    },
+    "1732179207074cf0c35c": {
+      "disabled": false,
+      "type": "section-image-banner-custom",
+      "settings": {
+        "background_image": "shopline://shop_images/image 4.jpg",
+        "width_style": false,
+        "layer_opacity": 10,
+        "horizontal_align": "right",
+        "vertical_align": "middle",
         "color_scheme": "none",
         "padding_top": 0,
         "padding_bottom": 0
-      }
+      },
+      "blocks": {
+        "1732179365483548319a": {
+          "type": "richtext",
+          "settings": {
+            "heading": "Terrariums"
+          }
+        },
+        "173217936999644e9ba8": {
+          "type": "text",
+          "settings": {
+            "subheading": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
+          }
+        },
+        "17321793749465a6ab08": {
+          "type": "buttons",
+          "settings": {
+            "button_outline": true,
+            "button_text": "Explore More",
+            "button_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "1732179365483548319a",
+        "173217936999644e9ba8",
+        "17321793749465a6ab08"
+      ],
+      "custom_css": []
+    },
+    "1732179452820d023915": {
+      "disabled": false,
+      "type": "section-announcement-bar-custom",
+      "settings": {
+        "background_color": "#ddd",
+        "text_color": "#121212",
+        "color_scheme": "none"
+      },
+      "blocks": {
+        "1732179457856e0a4480": {
+          "type": "announcement",
+          "settings": {
+            "announcement_text": "Long Weekend Sale: Up to 70% Off",
+            "link_text": "Shop Now",
+            "link_url": "/collections/all"
+          }
+        },
+        "17321794622553840299": {
+          "type": "announcement",
+          "settings": {
+            "announcement_text": "Free Shipping on Bedding, Decor & More",
+            "link_text": "Shop Now",
+            "link_url": "/collections/all"
+          }
+        },
+        "17321794649733c3c8e3": {
+          "type": "announcement",
+          "settings": {
+            "announcement_text": "Quick Shipping on 1000s of Items",
+            "link_text": "Delivered in 1-5 Weeks ",
+            "link_url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "1732179457856e0a4480",
+        "17321794622553840299",
+        "17321794649733c3c8e3"
+      ],
+      "custom_css": []
+    },
+    "17321800082023010e72": {
+      "disabled": false,
+      "type": "section-multicolumn-custom",
+      "settings": {
+        "color_page_background": "#F3F0EA",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17321800300664c5773f": {
+          "type": "multimedia",
+          "settings": {
+            "title": "Specialty-Assortments",
+            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "button_text": "Explore More >",
+            "image": "shopline://shop_images/img5.jpeg"
+          }
+        },
+        "1732180027284f0c4587": {
+          "type": "multimedia",
+          "settings": {
+            "title": "Assortments",
+            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "button_text": "Explore More >",
+            "image": "shopline://shop_images/img2.jpeg"
+          }
+        },
+        "1732180031635896fbb1": {
+          "type": "multimedia",
+          "settings": {
+            "title": "Specialty",
+            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "button_text": "Explore More >",
+            "image": "shopline://shop_images/img3.jpeg"
+          }
+        }
+      },
+      "block_order": [
+        "17321800300664c5773f",
+        "1732180027284f0c4587",
+        "1732180031635896fbb1"
+      ],
+      "custom_css": []
+    },
+    "1732180213100914cef3": {
+      "disabled": false,
+      "type": "section-recommended-product-custom",
+      "settings": {
+        "heading-product-list": "Shop by Style",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "product_list": [
+          "16067287634590165924383575",
+          "16067287632576732294063575",
+          "16067287630039849867663575",
+          "16067112743325411662363575"
+        ]
+      },
+      "blocks": {},
+      "block_order": [],
+      "custom_css": []
+    },
+    "173218023734864d5750": {
+      "disabled": false,
+      "type": "section-featured-collection-custom",
+      "settings": {
+        "section_title": "Best Collections",
+        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "173218024929746b52a3": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now >",
+            "product_category": "12267112976879693429683575"
+          }
+        },
+        "1732180262514ee60307": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now >",
+            "product_category": "12267112976879693429683575"
+          }
+        },
+        "17321802697634674a55": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now >",
+            "product_category": "12267112976879693429683575"
+          }
+        },
+        "17321802798314843832": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now >",
+            "product_category": "12267112976879693429683575"
+          }
+        }
+      },
+      "block_order": [
+        "173218024929746b52a3",
+        "1732180262514ee60307",
+        "17321802697634674a55",
+        "17321802798314843832"
+      ],
+      "custom_css": []
+    },
+    "17321803840959e6e8b6": {
+      "disabled": false,
+      "type": "section-image-with-text-custom",
+      "settings": {
+        "section_title": "Custom Design",
+        "section_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
+        "section_link_text": "Explore More >",
+        "color_page_background": "#f3f0ea",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "section_image": "shopline://shop_images/iwt.png"
+      },
+      "blocks": {},
+      "block_order": [],
+      "custom_css": []
+    },
+    "17321804744621df169f": {
+      "disabled": false,
+      "type": "section-recommended-product-custom",
+      "settings": {
+        "heading-product-list": "Top Trending Products",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "product_list": [
+          "16067287634590165924383575",
+          "16067287632576732294063575",
+          "16067287630039849867663575",
+          "16067112743325411662363575"
+        ]
+      },
+      "blocks": {},
+      "block_order": [],
+      "custom_css": []
+    },
+    "1732180510845b0d2ea5": {
+      "disabled": false,
+      "type": "section-instagram-feed-custom",
+      "settings": {
+        "heading-instagram-feed": "Follow us @diamondstarglass",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1732180852654ee7b462": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 7.jpg"
+          }
+        },
+        "17321808720547055fe6": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 8.jpg"
+          }
+        },
+        "1732181200635df7c486": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9.jpg"
+          }
+        },
+        "173218129373027ffd1e": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 7.jpg"
+          }
+        },
+        "1732181295063fd94816": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1732180852654ee7b462",
+        "17321808720547055fe6",
+        "1732181200635df7c486",
+        "173218129373027ffd1e",
+        "1732181295063fd94816"
+      ],
+      "custom_css": []
     }
   },
   "order": [
-    "featured-slideshow",
-    "collection-list",
-    "featured-collection",
-    "text-with-image",
-    "video",
-    "featured-collection-2",
-    "picture-promotion",
-    "blog",
-    "sign-up-and-save"
+    "1732179452820d023915",
+    "1732178487923605d885",
+    "1732178924874a51f28c",
+    "17321789952269d54a93",
+    "17321790789703fa3e7d",
+    "1732179207074cf0c35c",
+    "17321800082023010e72",
+    "1732180213100914cef3",
+    "173218023734864d5750",
+    "17321803840959e6e8b6",
+    "17321804744621df169f",
+    "1732180510845b0d2ea5"
   ]
 }

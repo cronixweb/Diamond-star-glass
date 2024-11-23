@@ -70,12 +70,15 @@
   style="--padding-top:{{default (append section.settings.padding_top 'px') '40px'}};--padding-bottom:{{default
     (append section.settings.padding_bottom 'px')
     '40px'
+  }};--padding-top-mobile:{{default (append section.settings.padding_top_mobile 'px') '40px'}};--padding-bottom-mobile:{{default
+    (append section.settings.padding_bottom_mobile 'px')
+    '40px'
   }};--padding-left:{{default (append section.settings.padding_left 'px') '30px'}};--padding-right:{{default
     (append section.settings.padding_right 'px')
     '30px'
   }};--media-icon-width:{{section.settings.media_icon_width}}px;--media-icon-padding:{{section.settings.media_icon_padding}}px;"
 >
-  <div class="footer__content-top page-width">
+  <div class="footer__content-top page-width page-width--narrow">
     {{#if letter_is_block_up or media_is_block_up}}
       {{assign "align_class" "content-align-row"}}
       {{#if letter_is_block_up and media_is_block_up and is_db_col and is_db_show}}
@@ -90,105 +93,205 @@
         {{/if}}
       </div>
     {{/if}}
-    <div class="footer__blocks-wrapper grid grid-cols-{{col}} grid-cols-1-tablet">
-      {{#for section.blocks as |block|}}
-        {{#if block.type == "menu"}}
-          <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
-            {{#if block.settings.title}}
-              <div class="footer-block__heading body3" id="menu_text">
-                {{block.settings.title}}
-                {{snippet "icon-arrow"}}
-                {{snippet "icon-minus"}}
+    <div class="footer-content-wrapper">
+      <div class="footer__blocks-wrapper">
+        <div class="grid grid-cols-{{col}} grid-cols-1-tablet">
+          {{#for section.blocks as |block|}}
+            {{#if block.type == "menu"}}
+              <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
+                {{#if block.settings.title}}
+                  <div class="footer-block__heading body4" id="menu_text">
+                    {{block.settings.title}}
+                    {{snippet "icon-arrow"}}
+                    {{snippet "icon-minus"}}
+                  </div>
+                {{/if}}
+                {{assign "link" block.settings.menu}}
+                <ul class="footer-block__details-content list-unstyled">
+                  {{#for link.links as |link|}}
+                    <li class="body4">
+                      <a
+                        href="{{default link.url 'javascript:;'}}"
+                        class="link link--text list-menu__item list-menu__item--link
+                          {{#if link.active}}list-menu__item--active{{/if}}" id="menu_links"
+                      >
+                        {{link.title}}
+                      </a>
+                    </li>
+                  {{/for}}
+                </ul>
+              </footer-menu>
+            {{/if}}
+            
+            {{#if block.type == "conact"}}
+              <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
+                {{#if block.settings.title}}
+                  <div class="footer-block__heading body3">
+                    {{block.settings.title}}
+                    {{snippet "icon-arrow"}}
+                    {{snippet "icon-minus"}}
+                  </div>
+                {{/if}}
+                {{snippet "footer-conact" block=block}}
+              </footer-menu>
+            {{/if}}
+            {{#if block.type == "logo_list"}}
+              <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
+                {{#if block.settings.title}}
+                  <div class="footer-block__heading body3">
+                    {{block.settings.title}}
+                    {{snippet "icon-arrow"}}
+                    {{snippet "icon-minus"}}
+                  </div>
+                {{/if}}
+                {{snippet "footer-logo-list" block=block}}
+              </footer-menu>
+            {{/if}}
+            {{#if block.type == "image" and (isFalsey block.settings.image_full_width)}}
+              <div class="footer-block grid__item" {{{block.shopline_attributes}}}>
+                {{#capture "img_style"}}width:{{block.settings.image_width}}px;height:{{block.settings.image_width}}px;{{/capture}}
+                {{#if block.settings.image}}
+                  <div class="footer-block__details-content footer-block-image" style="text-align: {{block.settings.align}};">
+                    {{snippet "image" data=block.settings.image style=img_style}}
+                  </div>
+                {{/if}}
               </div>
             {{/if}}
-            {{assign "link" block.settings.menu}}
-            <ul class="footer-block__details-content list-unstyled">
-              {{#for link.links as |link|}}
-                <li class="body5">
-                  <a
-                    href="{{default link.url 'javascript:;'}}"
-                    class="link link--text list-menu__item list-menu__item--link
-                      {{#if link.active}}list-menu__item--active{{/if}}" id="menu_links"
-                  >
+          {{/for}}
+        </div>
+        <div
+          class="footer__content-bottom display-none-tablet content_vertical"
+        >
+      
+          <div
+            class="footer__copyright body3
+              {{#if section.settings.copyright_menu_type == 'copyright_left'}}corner-content__left{{/if}}"
+          > 
+            {{#capture "storeName"}}
+              <a href="{{routes.root_url}}">{{shop.name}}</a>
+            {{/capture}}
+            <small class="copyright__content body3">{{{t "general.footer.copyright" year=(date 'now' '%Y') storeName=storeName}}} </small>
+            <div class="copyright-menu-box">
+              {{#for section.settings.copyright_menu.links as |link|}}
+                <div class="line body3">|</div>
+                <div class="footer-menu--item body3">
+                  <a href="{{default link.url 'javascript:;'}}" class="link link--text list-menu__item list-menu__item--link">
                     {{link.title}}
                   </a>
-                </li>
+                </div>
               {{/for}}
-            </ul>
-          </footer-menu>
-        {{/if}}
-        
-        {{#if block.type == "conact"}}
-          <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
-            {{#if block.settings.title}}
-              <div class="footer-block__heading body3">
-                {{block.settings.title}}
-                {{snippet "icon-arrow"}}
-                {{snippet "icon-minus"}}
+            </div>
+          </div>
+          <div class="footer__content-bottom-wrapper">
+            {{#if settings.show_locale_selector and (gt (length localization.available_languages) 1)}}
+              {{ assign 'show_locale_selector' true}}
+            {{/if}}
+            {{#if settings.show_country_selector and (gt (length localization.available_countries) 1)}}
+              {{ assign 'show_country_selector' true}}
+            {{/if}}
+            {{#if show_locale_selector or show_country_selector}}
+              <div class="footer__column footer__localization">
+                <localization-form>
+                  {{#form "localization" id="localization-form" enctype="multipart/form-data" accept-charset="UTF-8"}}
+                    {{#if show_locale_selector}}
+                      <dropdown-menu>
+                        <div class="dropdown-menu">
+                          <input type="hidden" name="locale_code" value="{{localization.language.iso_code}}" />
+                          <button class="button button--secondary dropdown-menu__button" type="button">
+                            <span data-label>{{localization.language.endonym_name}}</span>
+                            {{snippet "icon-arrow"}}
+                          </button>
+                          <div class="dropdown-menu__list-wrapper top global-modal-border-shadow body4" hidden>
+                            <ul class="dropdown-menu__list list-unstyled">
+                              {{#for localization.available_languages as |language|}}
+                                <li>
+                                  <a href="javascript:;" data-value="{{language.iso_code}}">{{language.endonym_name}}</a>
+                                </li>
+                              {{/for}}
+                            </ul>
+                          </div>
+                        </div>
+                      </dropdown-menu>
+                    {{/if}}
+                    {{#if show_country_selector}}
+                      <dropdown-menu>
+                        <div class="dropdown-menu">
+                          <input type="hidden" name="country_code" value="{{localization.country.iso_code}}" />
+                          <button class="button button--secondary dropdown-menu__button" type="button">
+                            <span data-label>{{localization.country.name}}（{{localization.country.currency.iso_code}}
+                              {{localization.country.currency.symbol}}）</span>
+                            {{snippet "icon-arrow"}}
+                          </button>
+                          <div class="dropdown-menu__list-wrapper top align--right global-modal-border-shadow body4" hidden>
+                            <ul class="dropdown-menu__list list-unstyled">
+                              {{#for localization.available_countries as |country|}}
+                                <li>
+                                  <a href="javascript:;" data-value="{{country.iso_code}}">
+                                    {{country.name}}（{{country.currency.iso_code}}
+                                    {{country.currency.symbol}}）
+                                  </a>
+                                </li>
+                              {{/for}}
+                            </ul>
+                          </div>
+                        </div>
+                      </dropdown-menu>
+                    {{/if}}
+                  {{/form}}
+                </localization-form>
               </div>
             {{/if}}
-            {{snippet "footer-conact" block=block}}
-          </footer-menu>
-        {{/if}}
-        {{#if block.type == "logo_list"}}
-          <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
-            {{#if block.settings.title}}
-              <div class="footer-block__heading body3">
-                {{block.settings.title}}
-                {{snippet "icon-arrow"}}
-                {{snippet "icon-minus"}}
-              </div>
-            {{/if}}
-            {{snippet "footer-logo-list" block=block}}
-          </footer-menu>
-        {{/if}}
-        {{#if block.type == "custom"}}
-          <div class="footer-block grid__item" {{{block.shopline_attributes}}}>
-            {{#if block.settings.title}}
-              <div class="footer-block__heading body3" id="custom_title">{{block.settings.title}}</div>
-            {{/if}}
-            {{#if block.settings.content}}
-              <div class="footer-block__details-content rte body5" id="custom_content">
-                {{{block.settings.content}}}
-              </div>
-            {{/if}}
+            <div class="footer__column footer__column--info">
+              {{#if settings.show_pay_channel.show}}
+                <div class="footer__payment">
+                  {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
+                    {{payment_type_svg_tag pay_channel_item.type}}
+                  {{/for}}
+                </div>
+              {{/if}}
+            </div>
           </div>
-        {{/if}}
-        
-        {{#if block.type == "newsletter"}}
-          <div class="footer-block grid__item" {{{block.shopline_attributes}}}>
-            {{#if block.settings.title}}
-              <div class="footer-block__heading body3" id="signup_text">{{{block.settings.title}}}</div>
-            {{/if}}
-            {{snippet "footer-newsletter" data=block}}
-          </div>
-        {{/if}}
-        {{#if block.type == "social_media"}}
-          <div
-            class="footer-block grid__item"
-            {{{block.shopline_attributes}}}
-            style="--block-media-icon-width:{{default
-              (append block.settings.block_media_icon_width 'px')
-              '28px'
-            }};--block-media-icon-padding:{{default (append block.settings.block_media_icon_padding 'px') '8px'}};"
-          >
-            {{#if block.settings.title}}
-              <div class="footer-block__heading body3">{{block.settings.title}}</div>
-            {{/if}}
-            {{snippet "footer-social" data=block}}
-          </div>
-        {{/if}}
-        {{#if block.type == "image" and (isFalsey block.settings.image_full_width)}}
-          <div class="footer-block grid__item" {{{block.shopline_attributes}}}>
-            {{#capture "img_style"}}width:{{block.settings.image_width}}px;height:{{block.settings.image_width}}px;{{/capture}}
-            {{#if block.settings.image}}
-              <div class="footer-block__details-content footer-block-image" style="text-align: {{block.settings.align}};">
-                {{snippet "image" data=block.settings.image style=img_style}}
-              </div>
-            {{/if}}
-          </div>
-        {{/if}}
-      {{/for}}
+        </div>
+      </div>
+      <div class="footer-other-details">
+        {{#for section.blocks as |block|}}        
+          {{#if block.type == "newsletter"}}
+            <div class="footer-block footer-block-newsletter" {{{block.shopline_attributes}}}>
+              {{#if block.settings.title}}
+                <div class="footer-block__heading body7" id="signup_text">{{{block.settings.title}}}</div>
+              {{/if}}
+              {{snippet "footer-newsletter" data=block}}
+            </div>
+          {{/if}}
+          {{#if block.type == "custom"}}
+            <div class="footer-block footer-block-custom-text" {{{block.shopline_attributes}}}>
+              {{#if block.settings.title}}
+                <div class="footer-block__heading body4" id="custom_title">{{block.settings.title}}</div>
+              {{/if}}
+              {{#if block.settings.content}}
+                <div class="footer-block__details-content rte body2" id="custom_content">
+                  {{{block.settings.content}}}
+                </div>
+              {{/if}}
+            </div>
+          {{/if}}
+          {{#if block.type == "social_media"}}
+            <div
+              class="footer-block footer-block-social-media"
+              {{{block.shopline_attributes}}}
+              style="--block-media-icon-width:{{default
+                (append block.settings.block_media_icon_width 'px')
+                '28px'
+              }};--block-media-icon-padding:{{default (append block.settings.block_media_icon_padding 'px') '8px'}};"
+            >
+              {{#if block.settings.title}}
+                <div class="footer-block__heading">{{block.settings.title}}</div>
+              {{/if}}
+              {{snippet "footer-social" data=block}}
+            </div>
+          {{/if}}
+        {{/for}}
+      </div>
     </div>
     {{#if (isFalsey letter_is_block_up) or (isFalsey media_is_block_up)}}
       {{assign "align_class" "content-align-row"}}
@@ -218,30 +321,27 @@
     {{/if}}
   {{/for}}
   <div
-    class="footer__content-bottom page-width
+    class="footer__content-bottom page-width page-width--narrow display-none-desktop 
       {{#if section.settings.copyright_show_type == 'vertical'}}content_vertical{{/if}}"
   >
 
     <div
-      class="footer__copyright body6
-        {{#if section.settings.copyright_menu_type == 'copyright_left'}}corner-content__left{{/if}}"
+      class="footer__copyright body3 corner-content__left"
     >
+    {{#capture "storeName"}}
+      <a href="{{routes.root_url}}">{{shop.name}}</a>
+    {{/capture}}
+      <small class="copyright__content body3">{{{t "general.footer.copyright" year=(date 'now' '%Y') storeName=storeName}}}</small>
       <div class="copyright-menu-box">
         {{#for section.settings.copyright_menu.links as |link|}}
-          {{#if forloop.index0 > 0}}
-            <div class="line body5">|</div>
-          {{/if}}
-          <div class="footer-menu--item body5">
+          <div class="line body3">|</div>
+          <div class="footer-menu--item body3">
             <a href="{{default link.url 'javascript:;'}}" class="link link--text list-menu__item list-menu__item--link">
               {{link.title}}
             </a>
           </div>
         {{/for}}
       </div>
-      {{#capture "storeName"}}
-        <a href="{{routes.root_url}}">{{shop.name}}</a>
-      {{/capture}}
-      <small class="copyright__content">{{{t "general.footer.copyright" year=(date 'now' '%Y') storeName=storeName}}}</small>
     </div>
     <div class="footer__content-bottom-wrapper">
       {{#if settings.show_locale_selector and (gt (length localization.available_languages) 1)}}
@@ -353,6 +453,27 @@
           "label": "t:sections.footer.settings.align_type.options__2.label"
         }
       ]
+    },
+    
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.footer.settings.padding_top_mobile.label",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.footer.settings.padding_bottom_mobile.label",
+      "default": 40
     },
     {
       "type": "range",

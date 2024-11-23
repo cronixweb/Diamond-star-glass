@@ -604,7 +604,7 @@
       "success_feedback": "Thanks for contacting us, we will reply you ASAP."
     },
     "footer": {
-      "copyright": "© {{year}} {{{storeName}}}",
+      "copyright": "© {{year}} {{{storeName}}}. All Rights Reserved",
       "subscribe_format_error": "Invalid email address",
       "subscribe_success": "Subscribed successfully"
     },
