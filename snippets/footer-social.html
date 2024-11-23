@@ -5,18 +5,18 @@
         {{#if theme_settings.show_official_icon}}
           {{snippet "icon-official-fb"}}
         {{else}}
-          {{snippet "icon-social-fb"}}
+          {{snippet "icon-social-fb-new"}}
         {{/if}}
       </a>
     </li>
   {{/if}}
-  {{#if theme_settings.social_twitter_link}}
+  {{#if theme_settings.social_instagram_link}}
     <li>
-      <a href="{{theme_settings.social_twitter_link}}" target="_blank">
+      <a href="{{theme_settings.social_instagram_link}}" target="_blank">
         {{#if theme_settings.show_official_icon}}
-          {{snippet "icon-official-twitter"}}
+          {{snippet "icon-official-ig" id="page-footer"}}
         {{else}}
-          {{snippet "icon-social-twitter"}}
+          {{snippet "icon-social-ig"}}
         {{/if}}
       </a>
     </li>
@@ -32,13 +32,13 @@
       </a>
     </li>
   {{/if}}
-  {{#if theme_settings.social_instagram_link}}
+  {{#if theme_settings.social_twitter_link}}
     <li>
-      <a href="{{theme_settings.social_instagram_link}}" target="_blank">
+      <a href="{{theme_settings.social_twitter_link}}" target="_blank">
         {{#if theme_settings.show_official_icon}}
-          {{snippet "icon-official-ig" id="page-footer"}}
+          {{snippet "icon-official-twitter"}}
         {{else}}
-          {{snippet "icon-social-ig"}}
+          {{snippet "icon-social-twitter"}}
         {{/if}}
       </a>
     </li>

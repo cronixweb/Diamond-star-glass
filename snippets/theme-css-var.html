@@ -9,6 +9,16 @@
 {{ font_face (font_modify settings.body_font_family 'weight' '600') }}
 {{ font_face (font_modify settings.body_font_family 'weight' '700') }}
 {{ font_face settings.body_font_family }}
+/* Custom fonts */
+@font-face {
+    font-family: 'Gotham';
+    src: local('Gotham-Bold'), 
+        url('{{ asset_url 'Gotham-Bold.woff2' }}') format('woff2'),
+        url('{{ asset_url 'Gotham-Bold.woff' }}') format('woff');
+    font-weight: 700; /* Bold weight */
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     --title-font: "{{ settings.title_font_family.family }}", "{{ settings.title_font_family.fallback_families }}";
     --title-font-weight: {{ settings.title_font_family.weight }};
@@ -173,6 +183,6 @@
 
     --swatch-background-default-image: url({{ asset_url 'color-swatch-default.png'}});
     --swatch-size: {{ settings.swatch_size }}px;
-    --custom-font-family: Gotham;
+    --custom-font-family: "Gotham";
 }
 </style>

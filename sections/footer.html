@@ -95,7 +95,7 @@
     {{/if}}
     <div class="footer-content-wrapper">
       <div class="footer__blocks-wrapper">
-        <div class="grid grid-cols-{{col}} grid-cols-1-tablet">
+        <div class="footer-menus">
           {{#for section.blocks as |block|}}
             {{#if block.type == "menu"}}
               <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
@@ -122,7 +122,10 @@
                 </ul>
               </footer-menu>
             {{/if}}
-            
+          {{/for}}
+        </div>
+        <div class="grid grid-cols-{{col}} grid-cols-1-tablet"> 
+          {{#for section.blocks as |block|}}
             {{#if block.type == "conact"}}
               <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
                 {{#if block.settings.title}}
@@ -277,7 +280,7 @@
           {{/if}}
           {{#if block.type == "social_media"}}
             <div
-              class="footer-block footer-block-social-media"
+              class="footer-block footer-block-social-media display-none-tablet"
               {{{block.shopline_attributes}}}
               style="--block-media-icon-width:{{default
                 (append block.settings.block_media_icon_width 'px')
@@ -331,8 +334,8 @@
     {{#capture "storeName"}}
       <a href="{{routes.root_url}}">{{shop.name}}</a>
     {{/capture}}
-      <small class="copyright__content body3">{{{t "general.footer.copyright" year=(date 'now' '%Y') storeName=storeName}}}</small>
       <div class="copyright-menu-box">
+        <small class="copyright__content body3">{{{t "general.footer.copyright" year=(date 'now' '%Y') storeName=storeName}}}</small>
         {{#for section.settings.copyright_menu.links as |link|}}
           <div class="line body3">|</div>
           <div class="footer-menu--item body3">
@@ -342,6 +345,25 @@
           </div>
         {{/for}}
       </div>
+    </div>
+    <div class="footer-mobile-social-icons">
+      {{#for section.blocks as |block|}}
+        {{#if block.type == "social_media"}}
+          <div
+            class="footer-block footer-block-social-media"
+            {{{block.shopline_attributes}}}
+            style="--block-media-icon-width:{{default
+              (append block.settings.block_media_icon_width 'px')
+              '28px'
+            }};--block-media-icon-padding:{{default (append block.settings.block_media_icon_padding 'px') '8px'}};"
+          >
+            {{#if block.settings.title}}
+              <div class="footer-block__heading">{{block.settings.title}}</div>
+            {{/if}}
+            {{snippet "footer-social" data=block}}
+          </div>
+        {{/if}}
+      {{/for}}
     </div>
     <div class="footer__content-bottom-wrapper">
       {{#if settings.show_locale_selector and (gt (length localization.available_languages) 1)}}

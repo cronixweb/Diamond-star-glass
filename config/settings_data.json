@@ -307,7 +307,7 @@
           "align_type": "left",
           "padding_top": 100,
           "padding_bottom": 40,
-          "padding_top_mobile": 44,
+          "padding_top_mobile": 52,
           "padding_bottom_mobile": 44,
           "padding_left": 0,
           "padding_right": 0,
@@ -317,7 +317,7 @@
           "letter_show_size": "small",
           "subscribe_letter_title": "Subscribe today and get 10% off your first purchase",
           "subscribe_letter_placeholder": "Enter your email",
-          "show_social_media": true,
+          "show_social_media": false,
           "media_pc_show_row": true,
           "media_show_type": "down",
           "media_icon_width": 28,
@@ -397,7 +397,7 @@
             "type": "custom",
             "settings": {
               "title": "",
-              "content": "By submitting your email, you agree that Diamond Star may send you promotional email messages with offers, updates, and other marketing messages.&nbsp;<br>Please visit our privacy policy to learn how we can use your information."
+              "content": "<p>By submitting your email, you agree that Diamond Star may send you promotional email messages with offers, updates, and other marketing messages.</p><p>Please visit our privacy policy to learn how we can use your information.</p>"
             }
           },
           "1732378783667501f2e7": {
@@ -707,7 +707,7 @@
           "settings": {
             "show_locale_selector": false,
             "show_country_selector": false,
-            "show_social_media": false,
+            "show_social_media": true,
             "show_pay_channel": {
               "show": false,
               "pay_channel_list": []
