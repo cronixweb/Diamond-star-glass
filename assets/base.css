@@ -325,6 +325,8 @@ deferred-media {
   --body5-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
   --body6-font-size: calc(var(--body-font-size) * 1.25); /* 20px */
   --body7-font-size: calc(var(--body-font-size) * 1.5); /* 24px */
+  --megamenu-title: calc(var(--body-font-size) * 1.375); /* 22px */
+  --megamenu-links: calc(var(--body-font-size) * 1.125); /* 18px */
 }
 
 @media (min-width: 960px) {

@@ -566,7 +566,7 @@ footer-menu {
   text-transform: uppercase;
 }
 .footer-block--subscribe .field__container {
-  background: #FFF;
+  background: var(--color-white);
   display: inline-flex;
   align-items: center;
 }
@@ -574,11 +574,11 @@ footer-menu {
   height: 50px;
 }
 .footer-block--subscribe .field__suffix {
-  background:  #787A80;
+  background:  var(--color-grey-dark);
   display: flex;
   width: 53px;
   height: 50px;
-  padding: 0px 14.14px 0px 13.86px;
+  padding: 0px 14px 0 14px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -725,7 +725,7 @@ footer-menu {
   }
   .footer-other-details{
     width: 37%;
-    border-left: 2px solid #fff;
+    border-left: 2px solid var(--color-white);
   }
   .footer__blocks-wrapper .footer-block {
     min-width: auto;

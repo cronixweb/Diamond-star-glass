@@ -2456,6 +2456,9 @@
             "text_color": {
               "label": "Font color"
             },
+            "link_color": {
+              "label": "link color"
+            },
             "group_header__0": {
               "label": "Image 1"
             },
