@@ -280,7 +280,7 @@
     },
     "1732179452820d023915": {
       "disabled": false,
-      "type": "section-announcement-bar-custom",
+      "type": "section-quick-links-bar",
       "settings": {
         "background_color": "#ddd",
         "text_color": "#121212",
@@ -291,7 +291,7 @@
           "type": "announcement",
           "settings": {
             "announcement_text": "Long Weekend Sale: Up to 70% Off",
-            "link_text": "Shop Now",
+            "link_text": "Shop Now ›",
             "link_url": "/collections/all"
           }
         },
@@ -299,7 +299,7 @@
           "type": "announcement",
           "settings": {
             "announcement_text": "Free Shipping on Bedding, Decor & More",
-            "link_text": "Shop Now",
+            "link_text": "Shop Now ›",
             "link_url": "/collections/all"
           }
         },
@@ -307,7 +307,7 @@
           "type": "announcement",
           "settings": {
             "announcement_text": "Quick Shipping on 1000s of Items",
-            "link_text": "Delivered in 1-5 Weeks ",
+            "link_text": "Delivered in 1-5 Weeks ›",
             "link_url": "/collections/all"
           }
         }

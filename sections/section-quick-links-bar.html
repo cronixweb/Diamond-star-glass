@@ -1,14 +1,19 @@
 {{snippet "stylesheet" href=(asset_url "section-announcement-bar-custom.css")}}
-
-<div class="section-announcement-bar {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}" style="background-color: {{ section.settings.background_color }};">
+<style>
+  .section-announcement-bar {
+    --bar-bg-color: {{section.settings.background_color}};
+    --bar-text-color: {{section.settings.text_color}};
+  }
+</style>
+<div class="section-announcement-bar">
     <div class="announcement-bar page-width" >
         {{#for section.blocks as |block|}}
             {{#if (trim block.type) == "announcement"}}
                 <div class="announcement-content">
-                    <p class="announcement-text">
+                    <p class="announcement-text body3">
                         {{{ block.settings.announcement_text }}}
                     </p>
-                    <a href="{{ block.settings.link_url }}" class="announcement-link">
+                    <a href="{{ block.settings.link_url }}" class="announcement-link body1">
                         {{{ block.settings.link_text }}}
                     </a>
                 </div>
@@ -19,67 +24,43 @@
 
 {{#schema}}
 {
-  "name": "Announcement Bar Custom",
+  "name": "t:sections.section-quick-links-bar.name",
   "settings": [
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background Color",
+      "label": "t:sections.section-quick-links-bar.settings.background_color.label",
       "default": "#ddd"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "Text Color",
+      "label": "t:sections.section-quick-links-bar.settings.text_color.label",
       "default": "#121212"
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "none",
-          "label": "None"
-        },
-        {
-          "value": "1",
-          "label": "Color 1"
-        },
-        {
-          "value": "2",
-          "label": "Color 2"
-        },
-        {
-          "value": "3",
-          "label": "Color 3"
-        }
-      ],
-      "default": "none",
-      "label": "Color Scheme"
     }
   ],
   "max_blocks": 3,
   "blocks": [
     {
       "type": "announcement",
-      "name": "Announcement",
+      "name": "t:sections.section-quick-links-bar.blocks.announcement.name",
       "settings": [
         {
           "type": "text",
           "id": "announcement_text",
-          "label": "Announcement Text",
+          "label": "t:sections.section-quick-links-bar.blocks.announcement_text.settings.heading.label",
           "default": "Long Weekend Sale: Up to 70% Off"
         },
         {
           "type": "text",
           "id": "link_text",
-          "label": "Link Text",
+          "label": "t:sections.section-quick-links-bar.blocks.announcement_text.settings.link_text.label",
           "default": "Shop Now"
         },
         {
           "type": "url",
           "id": "link_url",
-          "label": "Link URL",
+          "label": "t:sections.section-quick-links-bar.blocks.announcement_text.settings.link_url.label",
           "default": "/collections/all"
         }
       ]
@@ -87,8 +68,8 @@
   ],
   "presets": [
     {
-      "name": "Announcement Bar Custom",
-      "category": "Custom"
+      "name": "t:sections.section-quick-links-bar.presets.presets__0.name",
+      "category": "t:sections.section-quick-links-bar.presets.presets__0.category"
     }
   ]
 }

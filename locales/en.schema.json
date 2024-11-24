@@ -6252,6 +6252,39 @@
           "name": "Video"
         }
       }
+    },
+    "section-quick-links-bar": {
+      "name": "Quick links bar",
+      "settings": {
+        "background_color": {
+          "label": "Background Color"
+        },
+        "text_color": {
+          "label": "Text color"
+        }
+      },
+      "blocks": {
+        "announcement": {
+          "name": "Text Block",
+          "settings": {
+            "announcement_text": {
+              "label": "Text"
+            },
+            "link_text": {
+              "label": "Link text"
+            },
+            "link_url": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "presets__0": {
+          "category": "Custom",
+          "name": "VQuick links bar"
+        }
+      }
     }
   },
   "settings_schema": {
