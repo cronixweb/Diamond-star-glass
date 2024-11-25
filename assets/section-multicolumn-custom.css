@@ -2,7 +2,6 @@
     margin-bottom: 8px;
   
     text-align: center;
-    /* font-family: Gotham; */
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
@@ -12,15 +11,23 @@
 
 .multicolumn-section__header p {
     text-align: center;
-    /* font-family: "Open Sans"; */
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
+.splide__list.multimedia-list{
+    padding: 0 !important;
+}
+
 .multimedia-block {
-    padding: 16px;
+    padding: 0;
+    text-align: center;
+}
+
+.multimedia-block.multimedia-none {
+    padding: 0;
 }
 
 .multimedia-block img {
@@ -30,47 +37,86 @@
 
 .multimedia-block h3 {
     margin: 0;
-    margin-top: 10px;
-
+    margin-top: 16px;
     color: #413D3D;
-    /* font-family: "Open Sans"; */
-    font-size: 1.25rem;
+    text-align: center;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 2.25rem;
+    line-height: 1.8;
 }
 
 .multimedia-block p {
-    margin: 10px 0;
-
+    margin: 0;
+    margin-bottom: 10px;
     color: #413D3D;
-    /* font-family: "Open Sans"; */
-    font-size: 0.875rem;
+    text-align: center;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.625rem; 
+    line-height: 1.85; 
+}
+.multimedia-block .inner-content-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .multimedia-block a.explore-more {
     color: #413D3D;
-    /* font-family: "Open Sans"; */
-    font-size: 0.875rem;
+    font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 1.625rem;
+    line-height: 1.85;
     text-transform: uppercase;
 }
+.multicolumn-section .splide__pagination.splide__pagination--ltr{
+    gap: 4px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+.multicolumn-section .splide__pagination.splide__pagination--ltr li{
+    width: 100%;
+    max-width: 30px;
+    height: 3px;
+}
+.multicolumn-section .splide__pagination.splide__pagination--ltr li .splide__pagination__page{
+    border-radius: 2px;
+    width: 100%;
+    max-width: 30px;
+    height: 3px;
+    background-color: #E5DED0;
+    border-color: transparent;
+}
+.multicolumn-section .splide__pagination.splide__pagination--ltr li .splide__pagination__page.is-active{
 
-@media screen and (min-width: 950px) and (max-width: 749px){
-
+    background-color: #CCC2AD;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1400px) {
+    
+    .splide__list.multimedia-list{
+        padding: 64px 92px 51px 92px !important;
+    }
+}
+
+
+@media screen and (min-width: 991px) {
+    .multimedia-block {
+        padding: 64px;
+        text-align: center;
+    }
+    .splide__list.multimedia-list{
+        padding: 40px 0 !important;
+    }
+    
     .multicolumn-section__header h2 {
-        font-size: 3.5rem;
+        font-size: 20px;
     }
 
     .multicolumn-section__header p {
         font-size: 1.5rem;
     }
 }
+

@@ -9,8 +9,25 @@
   padding_top=section.settings.padding_top
   padding_bottom=section.settings.padding_bottom
 }}
-
-<div class="multicolumn-section multicolumn-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}" style="background: {{section.settings.color_page_background}};">
+<style>
+  .multicolumn-section-main{
+    background: {{section.settings.color_page_background}};
+  }
+  .multicolumn-section-{{section.id}}{
+    background: none;
+  }
+  @media screen and (min-width: 1400px) {
+    
+    .multicolumn-section-main{
+    background: none;
+  }
+  .multicolumn-section-{{section.id}}{
+    background: {{section.settings.color_page_background}};
+  }
+}
+</style>
+<div class="multicolumn-section-main page-width section-padding">
+<div class="multicolumn-section multicolumn-section-{{section.id}} {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
   <div class="multicolumn-section__header">
     {{#if section.settings.section_title}}
       <h2>{{{ section.settings.section_title }}}</h2>
@@ -22,10 +39,10 @@
 
   <div class="splide multicolumn__slider-{{section.id}}">
     <div class="splide__track">
-        <ul class="splide__list">
+        <ul class="splide__list multimedia-list">
           {{#for section.blocks as |block|}}
             {{#if (trim block.type) == "multimedia"}}
-              <li class="splide__slide multimedia-block" style="text-align: {{ block.settings.text_align }}">
+              <li class="splide__slide multimedia-block {{#if @index == 1}}multimedia-none{{/if}}" style="text-align: {{ block.settings.text_align }}">
                   <a href="{{ block.settings.button_url }}">
                     {{#if block.settings.image}}
                       {{snippet "image" data=block.settings.image }}
@@ -37,7 +54,10 @@
                       <p>{{{ block.settings.content }}}</p>
                     {{/if}}
                     {{#if block.settings.button_text}}
+                      <div class="inner-content-btn">
                       <a class="explore-more" href="{{ block.settings.button_url }}">{{{ block.settings.button_text}}}</a>
+                      {{snippet "icon-right-arrow" }}
+                      </div>
                     {{/if}}
                   </a>
               </li>
@@ -51,28 +71,24 @@
     </div> {{/comment}}
   </div>
 </div>
-
+</div>
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {
   // Initialize Splide
    var splide = new Splide( '.splide.multicolumn__slider-{{section.id}}', {
     perPage: 3,
     perMove: 1,
-    autoplay: true,
+    autoplay: false,
     interval: 8000,
     pagination: true,
     arrows: false,
-    gap    : '20px',
+    gap: '50px',
     
     breakpoints: {
-      1024: {
-        perPage: 2,
-        gap    : '1rem',
-      },
-      480: {
+      991: {
         perPage: 1,
-        gap    : '1rem',
-      },
+        gap : '1rem',
+      }
     },
   } );
   // Add the progress bar element

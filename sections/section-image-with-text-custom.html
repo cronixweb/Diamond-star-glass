@@ -7,7 +7,7 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="image-text-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+<div class="image-text-section iha-image-text-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
   <div class="image-text-section__container" style="background: {{section.settings.color_page_background}};">
     <div class="image-text-section__image">
       {{#if section.settings.section_image }}
@@ -23,7 +23,10 @@
         <p>{{ section.settings.section_description }}</p>
       {{/if}}
       {{#if section.settings.section_link_text }}
+      <div class="inner-content-btn">
         <a href="{{ section.settings.section_link }}" class="image-text-section__button">{{{ section.settings.section_link_text }}}</a>
+        {{snippet "icon-right-arrow" }}
+        </div>
       {{/if}}
     </div>
   </div>

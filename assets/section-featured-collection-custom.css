@@ -3,18 +3,17 @@
 
   color:  #121212;
   text-align: center;
-  font-family: 'Gotham';
+  font-family: var(--custom-font-family);
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 130%; /* 72.8px */
+  line-height: 1.3; /* 72.8px */
   text-transform: capitalize;
 }
 
 .featured-collection-section__header p {
   color:  #121212;
   text-align: center;
-  font-family: "Open Sans";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -36,7 +35,6 @@
 
 .category-block h3 {
   color:  #121212;
-  font-family: "Open Sans";
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -46,7 +44,6 @@
 
 .category-block p {
   color: #121212;
-  font-family: "Open Sans";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -57,10 +54,14 @@
 .featured-collection-section .my-slider-progress{
   display: block;
 }
-
+.category-block .inner-content-btn{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 4px;
+}
 .category-block a.explore-more {
   color:  #121212;
-  font-family: "Open Sans";
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
