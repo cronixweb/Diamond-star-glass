@@ -294,9 +294,30 @@
               "image_2": null,
               "image_3": null
             }
+          },
+          "17325463020702f2c9d4": {
+            "type": "menuImage",
+            "settings": {
+              "menu_link_list": "6746684712855540965",
+              "menu_title": "New",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2": "shopline://shop_images/flowers.jpg",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more"
+            }
           }
         },
-        "block_order": [],
+        "block_order": [
+          "17325463020702f2c9d4"
+        ],
         "custom_css": []
       },
       "footer": {
