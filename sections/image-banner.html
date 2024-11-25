@@ -31,10 +31,10 @@
     {{/unless}}
   {{/if}}
 {{/if}}
-<div class="section section-image-banner">
+<div class="section section-image-banner {{#if section.settings.width_style == false}}custom-padding section-padding page-width{{/if}}">
   
   <div
-    class="section-image-banner-pc {{#if banner1 or banner2}}image-banner-loaded{{/if}} display-none display-block-desktop {{#if section.settings.width_style == false}} section-padding page-width {{/if}}"
+    class="section-image-banner-pc {{#if banner1 or banner2}}image-banner-loaded{{/if}} display-none display-block-desktop"
   >
     <div class="image-banner--container">
       {{#if banner1}}
@@ -65,10 +65,11 @@
     
     {{#if blocks_length > 0}}
       <div class="content content--pos-{{pc_position}}">
-        <div class="page-width">
+        <div class="page-width {{#if section.settings.width_style_padding == true}}cc-page-padding{{/if}}">
           <div
             class="wrapper global-content-border-shadow
               pc-content-text-{{section.settings.pc_text_position}}
+              iha-desktop-content-{{section.settings.desktop_text_container}}
               {{#if (isFalsey show_textarea) and (isFalsey banner1) and (isFalsey banner2)}}wrapper--default--shadow{{/if}}
               {{#if show_textarea}}
                 color-scheme-{{color_scheme}}
@@ -84,7 +85,7 @@
               {{/if}}
 
               {{#if (trim block.type) == "desc"}}
-                <p {{{block.shopline_attributes}}} class="desc body1">
+                <p {{{block.shopline_attributes}}} class="desc body1 custom--body">
                   {{block.settings.description}}
                 </p>
               {{/if}}
@@ -164,7 +165,7 @@
               {{/if}}
 
               {{#if (trim block.type) == "desc"}}
-                <p {{{block.shopline_attributes}}} class="body1">
+                <p {{{block.shopline_attributes}}} class="body1 custom--body">
                   {{block.settings.description}}
                 </p>
               {{/if}}
@@ -387,6 +388,26 @@
       "default": "center"
     },
     {
+      "id": "desktop_text_container",
+      "type": "select",
+      "label": "t:sections.image-banner.settings.desktop_text_container.label",
+      "options": [
+        {
+          "label": "t:sections.image-banner.settings.desktop_text_container.options__0.label",
+          "value": "full"
+        },
+        {
+          "label": "t:sections.image-banner.settings.desktop_text_container.options__1.label",
+          "value": "half"
+        },
+        {
+          "label": "t:sections.image-banner.settings.desktop_text_container.options__2.label",
+          "value": "onethird"
+        }
+      ],
+      "default": "half"
+    },
+    {
       "id": "mobile_banner_flatten",
       "type": "switch",
       "label": "t:sections.image-banner.settings.mobile_banner_flatten.label",
@@ -409,6 +430,14 @@
         "en": "Make Full Width"
       },
       "default": true
+    },
+    {
+      "type": "switch",
+      "id": "width_style_padding",
+      "label": {
+        "en": "Extra Padding"
+      },
+      "default": false
     },
     {
       "type": "range",
@@ -463,6 +492,10 @@
             {
               "value": "title5",
               "label": "t:sections.image-banner.blocks.title.settings.title_size.options__2.label"
+            },
+            {
+              "value": "custom--title",
+              "label": "t:sections.image-banner.blocks.title.settings.title_size.options__custom.label"
             }
           ]
         }

@@ -26,8 +26,13 @@
             <div class="product-info">
               <p class="title">{{ product.title }}</p>
               <p class="size">Size: {{ product.size }}</p>
-              <p class="money">{{ money product.price }}</p>
-              <a href="{{ product.url }}" class="shop-now-button">Shop Now ></a>
+              <div class="inner-content-price">
+                <p class="money">{{ money product.price }}</p>
+                <div class="inner-content-btn">
+                  <a href="{{ product.url }}" class="shop-now-button">Shop Now</a>
+                  {{snippet "icon-right-arrow" }}
+                </div>
+            </div>
             </div>
           </li>
         {{/for}}
