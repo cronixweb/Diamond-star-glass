@@ -2772,6 +2772,18 @@
             "label": "Right align"
           }
         },
+        "desktop_text_container": {
+          "label": "Content Container on Desktop",
+          "options__0": {
+            "label": "Full"
+          },
+          "options__1": {
+            "label": "Half"
+          },
+          "options__2": {
+            "label": "One third"
+          }
+        },
         "mobile_banner_flatten": {
           "label": "Tiled display on mobile"
         },
@@ -2796,6 +2808,9 @@
               },
               "options__2": {
                 "label": "Small"
+              },
+              "options__custom": {
+                "label": "Custom"
               }
             }
           }

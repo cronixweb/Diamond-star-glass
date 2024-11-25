@@ -38,7 +38,10 @@
                     <p>{{{ product_category.description }}}</p>
                   {{/if}}
                   {{#if product_category.url}}
-                    <a class="explore-more" href="{{ product_category.url }}">{{{ block.settings.button_text}}}</a>
+                    <div class="inner-content-btn">
+                      <a class="explore-more" href="{{ product_category.url }}">{{{ block.settings.button_text}}}</a>
+                      {{snippet "icon-right-arrow" }}
+                      </div>
                   {{/if}}
                 </a>
               {{/for}}

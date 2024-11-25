@@ -58,18 +58,43 @@
   z-index: 3;
 }
 .section-image-banner .content .wrapper .desc {
-  font-weight: 400;
-  margin-bottom: 16px;
+  font-weight: 600;
+  margin-bottom: 48px;
   margin-top: 8px;
   position: relative;
   z-index: 2;
+  line-height: 1.5;
+  letter-spacing: 0.48px;
+  text-transform: capitalize;
 }
-.section-image-banner .content .wrapper {
+@media screen and (max-width: 959px) {
+  .section-image-banner .content .wrapper .desc {
+    margin-bottom: 40px;
+    letter-spacing: 0.36px;
+
+  }
+}
+.section-image-banner .content .wrapper.iha-desktop-content-full {
   box-sizing: border-box;
   display: inline-block;
-  max-width: 800px;
+  max-width: 917px;
   min-width: 0;
-  padding: 40px;
+  position: relative;
+}
+
+.section-image-banner .content .wrapper.iha-desktop-content-half {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 917px;
+  min-width: 0;
+  position: relative;
+}
+
+.section-image-banner .content .wrapper.iha-desktop-content-onethird {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 574px;
+  min-width: 0;
   position: relative;
 }
 .section-image-banner .content .wrapper--default-scheme .desc,
@@ -77,11 +102,24 @@
   color: #fff;
 }
 .section-image-banner .content .wrapper--default-scheme .control .button {
-  --btn-border-background-color: #fff;
-  background-color: #fff;
+  --btn-border-background-color: #EFEFEF;
+  background-color: #EFEFEF;
   color: #000;
+  border-radius: 35px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 205px;
+  height: 60px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.48px;
+  text-transform: capitalize;
+  font-size: 16px;
+
 }
 .section-image-banner .content .wrapper--default-scheme .control .button:after {
+  border-radius: 35px;
   box-shadow: 0 0 0 var(--btn-border-thickness)
       rgba(0, 0, 0, calc(100% - var(--btn-border-opacity))),
     0 0 0 var(--btn-border-thickness) var(--btn-border-background-color);
@@ -222,10 +260,18 @@
   height: 650px;
   order: 0;
 }
+.cc-page-padding{
+  padding: 0 100px;
+}
 @media (max-width: 959px) {
   .section-image-banner .default-image {
     height: 450px;
   }
+  .custom-padding{
+    padding: 0;
+
+  }
+  
 }
 .pc-content-text-center,
 .mobile-content-text-center {
@@ -242,6 +288,7 @@
 .control-wrap .button {
   margin: 0 7px;
 }
+
 /* The ipad end responds to the mobile end in vertical screen */
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
