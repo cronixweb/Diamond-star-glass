@@ -28,9 +28,12 @@
         </div>
         <div
           class="grid
+            collapsible-content__layout-{{section.settings.layout_style}}
             {{#if section.settings.image}}grid-cols-2{{else}}grid-cols-1{{/if}}
             collapsible-content__grid
+            {{#if section.settings.layout_style == 'block'}}global-content-border-shadow{{/if}}
             {{#if section.settings.desktop_layout == 'image_second'}} collapsible-content__grid--reverse{{/if}}"
+          style="--box-background-color: {{#if section.settings.background_color == "rgba(0,0,0,0)"}}{{ settings.color_text.red }}, {{ settings.color_text.green }}, {{settings.color_text.blue }}, 0.1{{else}}{{ section.settings.background_color.red }}, {{ section.settings.background_color.green }}, {{section.settings.background_color.blue }};{{/if}}"
         >
           {{#if section.settings.image}}
             <div class="grid__item collapsible-content__grid-item">
@@ -48,13 +51,22 @@
           {{/if}}
           <div class="grid__item">
             {{#for section.blocks as |block|}}
-              <div class="accordion" {{{block.shopline_attributes}}}>
+              <div class="accordion {{#if section.settings.layout_style == 'inline'}}global-content-border-shadow{{/if}}" {{{block.shopline_attributes}}}>
                 <details
                   id="Details-{{block.id}}-{{section.id}}"
                   {{#if section.settings.open_first_collapsible_row and forloop.index0 == 0}} open {{/if}}
                 >
-                  <summary id="Summary-{{block.id}}-{{section.id}}">
-                    {{snippet "icon-accordion" icon=block.settings.icon}}
+                  <summary id="Summary-{{block.id}}-{{section.id}}" style="--icon-width: {{block.settings.icon_width}}px;">
+                    {{#if block.settings.upload_icon}}
+                      <img
+                        src="{{image_url block.settings.upload_icon width=block.settings.icon_width}}"
+                        alt="{{block.settings.upload_icon.alt}}"
+                        class="custom-icon-accordion"
+                        loading="lazy"
+                      />
+                    {{else}}
+                      {{snippet "icon-accordion" icon=block.settings.icon settings=block.settings}}
+                    {{/if}}
                     <h3 class="accordion__title title6">
                       {{block.settings.heading}}
                     </h3>
@@ -87,10 +99,13 @@
   "class": "section",
   "presets": [
     {
+      "category_index": 4,
+      "category": "t:sections.collapsible-content.presets.presets__0.category",
       "settings": {
         "heading": "Collapsible content",
         "heading_size": "title3",
         "heading_alignment": "center",
+        "layout_style": "none",
         "color_scheme": "none",
         "open_first_collapsible_row": false,
         "image": {},
@@ -106,6 +121,7 @@
             "heading": "Collapsible row",
             "icon": "check_mark",
             "row_content": "",
+            "icon_width": 16,
             "page": ""
           }
         },
@@ -115,6 +131,7 @@
             "heading": "Collapsible row",
             "icon": "check_mark",
             "row_content": "",
+            "icon_width": 16,
             "page": ""
           }
         },
@@ -124,6 +141,7 @@
             "heading": "Collapsible row",
             "icon": "check_mark",
             "row_content": "",
+            "icon_width": 16,
             "page": ""
           }
         },
@@ -133,6 +151,7 @@
             "heading": "Collapsible row",
             "icon": "check_mark",
             "row_content": "",
+            "icon_width": 16,
             "page": ""
           }
         }
@@ -185,6 +204,32 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "t:sections.collapsible-content.settings.layout_style.label",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.collapsible-content.settings.layout_style.options__0.label"
+        },
+        {
+          "value": "inline",
+          "label": "t:sections.collapsible-content.settings.layout_style.options__1.label"
+        },
+        {
+          "value": "block",
+          "label": "t:sections.collapsible-content.settings.layout_style.options__2.label"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "id": "background_color",
+      "type": "color",
+      "label": "t:sections.collapsible-content.settings.background_color.label",
+      "default": "rgba(0,0,0,0)"
     },
     {
       "type": "select",
@@ -482,6 +527,21 @@
           ],
           "default": "check_mark",
           "label": "t:sections.collapsible-content.blocks.collapsible_row.settings.icon.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "upload_icon",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.settings.upload_icon.label"
+        },
+        {
+          "type": "range",
+          "id": "icon_width",
+          "min": 12,
+          "max": 32,
+          "step": 2,
+          "unit": "px",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.settings.icon_width.label",
+          "default": 16
         },
         {
           "type": "richtext",

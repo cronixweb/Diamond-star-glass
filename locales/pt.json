@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "Você só pode adicionar {{quantity}} peças deste item ao seu carrinho de compras."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Endereço de e-mail Inválido"
-    },
     "account": {
       "account_binding": "Vinculação de conta",
       "account_information": "Conta",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Você pode solicitar a exclusão desta conta. Assim que a conta for excluída, qualquer informação usada para identificar a conta será apagada, incluindo:",
       "email": "Email",
       "email_repeat_tip": "O email foi registrado",
+      "email_subscribe_invalid_tip": "Endereço de e-mail Inválido",
       "first_name": "Primeiro nome",
       "gender": "Gênero",
       "gender_female": "Feminino",
@@ -260,7 +258,7 @@
       "copy_success": "Cupom copiado",
       "discount_title": "Ativar conta e obter código de desconto",
       "normal_title": "Ativar conta",
-      "normal_title_with_discount_code": "Ative a conta e obtenha o código de desconto",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Subscrever por e-mail para receber atualizações, acesso a ofertas exclusivas e muito mais.",
       "success_title": "Parabéns por seu desconto",
       "token_expired": "Seu link expirou"
@@ -300,19 +298,98 @@
         "shipping": "Endereço de envio da empresa",
         "title": "Aplicação de conta da empresa"
       },
+      "address": {
+        "placeholder": "Endereço pormenorizado"
+      },
+      "address2": {
+        "placeholder": "Endereço pormenorizado 2"
+      },
       "bill": {
         "sameAsCompany": "Endereço de cobrança da empresa igual ao endereço de envio da empresa"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Endereço pormenorizado"
+        },
+        "address2": {
+          "placeholder": "Endereço pormenorizado 2"
+        },
+        "city": {
+          "placeholder": "Cidade"
+        },
+        "country": {
+          "placeholder": "País/Região"
+        },
+        "district": {
+          "placeholder": "Bairro"
+        },
+        "phone": {
+          "placeholder": "Número de celular"
+        },
+        "province": {
+          "placeholder": "Estado"
+        },
+        "zip": {
+          "placeholder": "CEP"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "O endereço na conta da empresa é o mesmo para receber mercadorias"
+      },
+      "billing_address": {
+        "title": "Endereço da conta da empresa"
+      },
+      "city": {
+        "placeholder": "Cidade"
+      },
+      "company_name": {
+        "placeholder": "Nome da empresa"
+      },
+      "country": {
+        "placeholder": "País/Região"
       },
       "create": {
         "limit": "O número de empresas para a loja atingiu seu limite. Por favor, entre em contato com o comerciante para obter assistência.",
         "success": "Obrigado. O formulário foi enviado."
       },
+      "district": {
+        "placeholder": "Bairro"
+      },
+      "email": {
+        "placeholder": "E-mail"
+      },
       "field": {
         "companyName": "Nome da empresa",
         "email": "E-mail"
       },
+      "first_name": {
+        "placeholder": "Nome"
+      },
       "form": {
         "submit": "Enviar"
+      },
+      "last_name": {
+        "placeholder": "Apelido"
+      },
+      "phone": {
+        "placeholder": "Número de celular"
+      },
+      "province": {
+        "placeholder": "Estado"
+      },
+      "register": {
+        "button": "Enviar",
+        "success": {
+          "description": "O formulário foi enviado com sucesso.",
+          "title": "Obrigado por preencher!"
+        },
+        "title": "Pedir uma conta da empresa"
+      },
+      "shipping_address": {
+        "title": "Endereço de recebimento de mercadoria da empresa"
+      },
+      "zip": {
+        "placeholder": "CEP"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Limpar",
       "company_empty_hint": "O nome da empresa não pode ficar em branco",
       "company_existed": "O nome da empresa já existe.",
+      "company_frequent_operation": "Repita a operação, tente novamente mais tarde",
+      "company_registry_closed": "O comerciante não ativou a função de inscrição de conta corporativa. Entre em contato com o comerciante para solicitar.",
       "confirm": "Confirme",
       "confirm_button": "Confirme",
       "date_format": "dd/MM/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Por favor verifique seu telefone de login para redefinir sua senha",
       "proceed_to_checkout": "Faça a liquidação",
       "title": "Título da página",
-      "verification_code_success": "O código de verificação foi enviado para o seu {{type}}<em>{{value}}</em> de login, digite-o abaixo"
+      "verification_code_success": "O código de verificação foi enviado para o seu {{type}} <em>{{value}}</em> de login, digite-o abaixo"
     },
     "login": {
       "member_login_common": "Entrada de Membros",
@@ -461,12 +540,18 @@
       "go_to_login": "Para entrar",
       "tips_agree_with_the_shop": "Eu concordo com"
     },
+    "subscribe": {
+      "email_has_bind": "Este endereço de e-mail foi vinculado a outra conta",
+      "phone_has_bind": "Este telefone foi vinculado a outra conta"
+    },
     "subscription": {
       "email": "Email",
+      "email_subscribe_error_tip": "Este e-mail foi vinculado a outra conta",
       "email_subscription_text": "Receber as promoções inscritas por email",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Celular",
+      "phone_subscribe_error_tip": "Este celular foi vinculado a outra conta",
       "phone_subscription_text": "Receber as promoções inscritas por celular",
       "reason_other_length": "Insira até 300 caracteres",
       "reason_other_placeholder": "Insira o conteúdo",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "A inscrição foi cancelada e em breve será redirecionada para a página inicial",
       "unsubscribe_tip": "Ao cancelar a inscrição, você não receberá mais as últimas promoções.",
       "unsubscribe_title": "Cancelar a inscrição"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Por favor insira o conteúdo",
+      "goto_btn": "Entre na loja",
+      "notyet": "Você ainda não se inscreveu",
+      "notyet_desc": "Você pode ir até a loja para se inscrever",
+      "success": "Assinatura cancelada",
+      "success_tip": "Você cancelou a assinatura de {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Comprar novamente",
     "checkout_order": {
       "pay_amount": "pagar valor",
       "receiver_account": "conta receptora",
@@ -596,8 +690,9 @@
       "details": "Detalhes do pedido",
       "insuranceService": "Serviços de seguro",
       "insuranceService_applyClaim": "Solicitação de reclamação",
-      "insuranceService_content_email": "1. A apólice foi enviada para o seu e-mail \"{{email}}\" por {{serviceName}}. Se você não recebeu o e-mail da apólice, entre em contato com o serviço de atendimento ao cliente da loja.  2. Em caso de danos, perda, atraso ou outras situações durante a entrega, você pode solicitar uma reclamação.",
-      "insuranceService_content_phone": "1. A apólice foi enviada para o seu celular \"{{phopne}}\" por {{serviceName}}. Se você não recebeu a mensagem da apólice, entre em contato com o atendimento ao cliente da loja. 2. Em caso de danos, perda, atraso ou outras situações durante a entrega, você pode solicitar uma reclamação.",
+      "insuranceService_content_line1__email": "1. A apólice foi enviada para o seu e-mail \"{{email}}\" por {{serviceName}}. Se você não recebeu o e-mail da apólice, entre em contato com o serviço de atendimento ao cliente da loja.  ",
+      "insuranceService_content_line1__phone": "1. A apólice foi adquirida através de {{serviceName}}. Se você tiver outras dúvidas, entre em contato com o atendimento ao cliente da loja.",
+      "insuranceService_content_line2": "2. Em caso de danos, perda, atraso ou outras situações durante a entrega, você pode solicitar uma reclamação.",
       "order": "Pedidos",
       "remark": "Notas de pedido",
       "time": "Tempo do pedido:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Carregar mais itens",
+      "loading_btn": "carregar mais",
       "no_product_data_found": "Sem dados de produto atual, tente novamente mais tarde",
       "sold_out": "Esgotado",
-      "added_to_cart_successfully": "Compra adicional com sucesso",
+      "load_more": "Carregar mais itens",
       "load_more_items": "Carregando {{current_offset}} ~ {{last_current_offset}} de {{total}} itens",
-      "unavailable": "Não disponível"
+      "unavailable": "O produto não existe",
+      "variant_property_color": "Cor"
     },
     "giftcard": {
       "seoTitle": "O saldo de seu cartão-presente {{ shop }} é {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtro",
       "filters_selected": "{{count}} selecionado(s)",
       "from_price_html": "de {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} de {{total}} itens",
       "less": "Menos etiquetas",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} de {{total}} itens",
       "load_more_tip": "Carregar mais itens",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% de desconto",
       "select_product_all_options": "A variante de produto selecionada está incompleta ou indisponível. Por favor, escolha novamente",
       "sort_button": "Ordenar",
-      "top_sellers": "Mais vendidos",
-      "more__product_num": "{{num}} Produtos",
-      "one_product_num": "{{num}} Produto",
-      "show": "Exposição"
+      "top_sellers": "Mais vendidos"
     },
     "product_search": {
       "back_to_home": "Volte à página inicial",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Pagamentos multicanal",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Cartão de crédito"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Exceder o limite do produto"
     },
     "order": {
-      "deleted": "Excluído"
+      "deleted": "Excluído",
+      "rebuy": "Comprar novamente"
     },
     "payment": {
       "continue_shopping": "Continuar comprando",
@@ -979,7 +1079,7 @@
       "error_message_1008": "O acesso ao canal de terceiros não está configurado",
       "error_message_1009": "Falha no acesso à interface de terceiros",
       "error_message_1010": "Falha ao enviar",
-      "error_message_1011": "Conta não ativada",
+      "error_message_1011": "A conta não está ativada. Cadastre-se para completar a senha e outras informações.",
       "error_message_1012": "Erro de serviço",
       "error_message_1013": "Erro de serviço",
       "error_message_1014": "Falha na verificação por código de verificação",

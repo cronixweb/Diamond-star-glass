@@ -239,7 +239,7 @@
 }
 
 .product-item__spec {
-  font-weight: 300;
+  font-weight: 400;
   color: rgb(var(--color-light-text));
 }
 
@@ -402,10 +402,12 @@
 
 .order-detail__content .product-property {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .order-detail__content .product-property .product-property__name {
   flex-shrink: 0;
+  max-width: 100%;
 }
 
 .order-detail__content .product-property .product-property__value {
@@ -423,6 +425,11 @@
   width: 30px;
   height: 30px;
   object-fit: contain;
+}
+
+.order-detail_rebuy {
+  margin-top: 28px;
+  width: 100%;
 }
 
 /* The ipad end responds to the mobile end in vertical screen */

@@ -1,0 +1,150 @@
+{{snippet "stylesheet" href=(asset_url "section-rich-text-custom.css")}}
+
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
+<div class="section-rich-text page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+  <div class="section-rich-text__content" style="background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat;">
+    {{#for section.blocks as |block|}}
+
+      {{#if (trim block.type) == "richtext"}}
+        {{#if block.settings.heading}}
+          <h2>{{{ block.settings.heading }}}</h2>
+        {{/if}}
+      {{/if}}
+
+      {{#if (trim block.type) == "textarea"}}
+        {{#if block.settings.subheading}}
+          <p>{{{ block.settings.subheading }}}</p>
+        {{/if}}
+      {{/if}}
+
+      {{#if (trim block.type) == "buttons"}}
+        {{#if block.settings.button_text}}
+          <a href="{{ block.settings.button_link }}" class="section-rich-text__button">{{{ block.settings.button_text }}}</a>
+        {{/if}}
+      {{/if}}
+
+    {{/for}}
+  </div>
+</div>
+
+{{#schema}}
+{
+  "name": "Rich Text Custom",
+  "class": "section", 
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_pattern",
+      "label": "Background Pattern",
+      "info": "Upload a background pattern image to be displayed behind the content"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1",
+          "label": "Color 1"
+        },
+        {
+          "value": "2",
+          "label": "Color 2"
+        },
+        {
+          "value": "3",
+          "label": "Color 3"
+        }
+      ],
+      "default": "none",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "group_header",
+      "label": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "limit": 1,
+      "type": "richtext",
+      "name": "Heading",
+      "settings": [
+      {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Shop our huge in-stock collection!"
+      }
+      ]
+    },
+    {
+      "limit": 1,
+      "type": "textarea",
+      "name": "Subheading",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Subheading"
+        }
+      ]
+    },
+    {
+      "limit": 1,
+      "type": "buttons",
+      "name": "Buttons",
+      "settings": [
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop All In-Stock"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections/in-stock"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich Text Custom",
+      "category": "Custom"
+    }
+  ]
+}
+{{/schema}}

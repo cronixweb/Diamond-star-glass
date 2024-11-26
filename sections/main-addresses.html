@@ -96,100 +96,118 @@
       </label>
     </div>
 
-    <address-cascade>
+    <address-cascade localization="{{json localization}}">
       <div class="field">
         <select
           id="AddressCountry"
           class="field__input"
-          name="address[country]"
-          data-default="{{form.address.country.name}}"
+          name="address[country_code]"
+          data-default="{{form.address.country_code}}"
           autocomplete="country"
           required
-        >
-          {{{all_country_option_tags}}}
-        </select>
+        ></select>
         <label for="AddressCountry" class="field__label body3">
           {{t "customer.address.country"}}
         </label>
         {{snippet "icon-arrow"}}
       </div>
 
-      <div class="field" id="AddressProvinceContainer" style="display:none">
-        <select
-          class="field__input"
-          id="AddressProvince"
-          name="address[province]"
-          data-default="{{form.address.province}}"
-          autocomplete="address-level1"
-        ></select>
-        <label for="AddressProvince" class="field__label body3">
-          {{t "customer.address.province"}}
-        </label>
-        {{snippet "icon-arrow"}}
+      <div class="group" id="AddressProvinceGroup">
+        <div class="field" id="AddressProvinceSelectContainer" style="display:none">
+          <select
+            class="field__input"
+            id="AddressProvinceSelect"
+            name="address[province_code]"
+            data-default="{{form.address.province_code}}"
+            autocomplete="address-level1"
+          ></select>
+          <label for="AddressProvince" class="field__label body3">
+            {{t "customer.address.province"}}
+          </label>
+          {{snippet "icon-arrow"}}
+        </div>
+
+        <div class="field" id="AddressProvinceInputContainer" style="display:none">
+          <input
+            class="field__input"
+            id="AddressProvinceInput"
+            name="address[province]"
+            value="{{form.address.province}}"
+            placeholder="{{t "customer.address.province"}}"
+            autocomplete="address-level1"
+          />
+          <label for="AddressProvince" class="field__label body3">
+            {{t "customer.address.province"}}
+          </label>
+        </div>
       </div>
 
-      <div class="field" id="AddressCityContainer" style="display:none">
-        <select
-          type="text"
-          id="AddressCity"
-          name="address[city_code]"
-          data-default="{{form.address.city_code}}"
-          autocomplete="address-level2"
-          placeholder="{{t 'customer.address.city'}}"
-          class="field__input"
-        >
-        </select>
-        <label for="AddressCity" class="field__label body3">
-          {{t "customer.address.city"}}
-        </label>
-        {{snippet "icon-arrow"}}
-      </div>
+      <div class="group" id="AddressCityGroup">
+        <div class="field" id="AddressCitySelectContainer" style="display:none">
+          <select
+            type="text"
+            id="AddressCitySelect"
+            name="address[city_code]"
+            data-default="{{form.address.city_code}}"
+            autocomplete="address-level2"
+            placeholder="{{t 'customer.address.city'}}"
+            class="field__input"
+          >
+          </select>
+          <label for="AddressCity" class="field__label body3">
+            {{t "customer.address.city"}}
+          </label>
+          {{snippet "icon-arrow"}}
+        </div>
 
-      <div class="field" id="AddressCityInputContainer" style="display:none">
-        <input
-          type="text"
-          id="AddressCityInput"
-          name="address[city]"
-          data-default="{{form.address.city}}"
-          maxlength="64"
-          placeholder="{{t 'customer.address.city'}}"
-          class="field__input"
-        />
-        <label for="AddressCityInput" class="field__label body3">
-          {{t "customer.address.city"}}
-        </label>
-      </div>
+        <div class="field" id="AddressCityInputContainer" style="display:none">
+          <input
+            type="text"
+            id="AddressCityInput"
+            name="address[city]"
+            value="{{form.address.city}}"
+            maxlength="64"
+            placeholder="{{t 'customer.address.city'}}"
+            class="field__input"
+          />
+          <label for="AddressCityInput" class="field__label body3">
+            {{t "customer.address.city"}}
+          </label>
+        </div>
+        </div>
 
-      <div class="field" id="AddressDistrictContainer" style="display:none">
-        <select
-          type="text"
-          id="AddressDistrict"
-          name="address[district_code]"
-          data-default="{{form.address.district_code}}"
-          autocomplete="address-level2"
-          placeholder="{{t 'customer.address.district'}}"
-          class="field__input"
-        >
-        </select>
-        <label for="AddressDistrict" class="field__label body3">
-          {{t "customer.address.district"}}
-        </label>
-        {{snippet "icon-arrow"}}
-      </div>
+      <div class="group" id="AddressDistrictGroup">
+        <div class="field" id="AddressDistrictSelectContainer" style="display:none">
+          <select
+            type="text"
+            id="AddressDistrictSelect"
+            name="address[district_code]"
+            data-default="{{form.address.district_code}}"
+            autocomplete="address-level2"
+            placeholder="{{t 'customer.address.district'}}"
+            class="field__input"
+          >
+          </select>
+          <label for="AddressDistrict" class="field__label body3">
+            {{t "customer.address.district"}}
+          </label>
+          {{snippet "icon-arrow"}}
+        </div>
 
-      <div class="field" id="AddressDistrictInputContainer" style="display:none">
-        <input
-          type="text"
-          id="AddressDistrictInput"
-          name="address[district]"
-          data-default="{{form.address.district}}"
-          maxlength="64"
-          placeholder="{{t 'customer.address.district'}}"
-          class="field__input"
-        />
-        <label for="AddressDistrictInput" class="field__label body3">
-          {{t "customer.address.district"}}
-        </label>
+        <div class="field" id="AddressDistrictInputContainer" style="display:none">
+          <input
+            type="text"
+            id="AddressDistrictInput"
+            name="address[district]"
+            value="{{form.address.district}}"
+            maxlength="64"
+            placeholder="{{t 'customer.address.district'}}"
+            class="field__input"
+          />
+          <label for="AddressDistrictInput" class="field__label body3">
+            {{t "customer.address.district"}}
+          </label>
+        </div>
       </div>
     </address-cascade>
     <div class="field">

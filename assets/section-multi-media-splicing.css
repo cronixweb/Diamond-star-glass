@@ -15,10 +15,6 @@
   width: 100%;
 }
 
-.multi-media-splicing__item--collection .collection__item__name {
-  text-align: center;
-}
-
 .multi-media-splicing__card {
   background: rgb(var(--color-page-background));
   height: 100%;
@@ -133,6 +129,7 @@
 
 @media screen and (max-width: 959px) {
   .multi-media-splicing {
+    $p: &;
     grid-column-gap: var(--grid-horizontal-space);
     grid-row-gap: var(--grid-vertical-space);
   }

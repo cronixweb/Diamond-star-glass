@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Poți adăuga doar {{quantity}} obiecte la coșul tău."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Adresă de e-mail nevalidă"
-    },
     "account": {
       "account_binding": "Asociere cont",
       "account_information": "Cont",
       "bind": "Se asociază",
       "birthday": "Zi de naştere",
       "change_password": "Schimbă parolă",
-      "confirm_btn": "Подтверждение",
+      "confirm_btn": "Confirmați",
       "confirm_subscription_modal_btn": "Confirmați abonarea",
       "confirm_subscription_modal_content": "Ați solicitat o cerere de abonare anterior. Un e-mail de confirmare a fost trimis la această adresă de e-mail. Puteți fie să confirmați în e-mailul dumneavoastră, fie să faceți clic pe acest buton.",
       "confirm_subscription_modal_title": "Confirmați abonarea prin e-mail.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Puteți aplica pentru închiderea acestui cont. O data închis, orice informație pentru identificarea acestui cont va fi ștearsă, incluzând:",
       "email": "E-mail",
       "email_repeat_tip": "E-mailul a fost înregistrat",
+      "email_subscribe_invalid_tip": "Adresă de e-mail nevalidă",
       "first_name": "Prenume",
       "gender": "Sex",
       "gender_female": "Femeie",
@@ -260,7 +258,7 @@
       "copy_success": "Codul cupon copiat",
       "discount_title": "Activează contul și primește cod de reducere",
       "normal_title": "Activează contul",
-      "normal_title_with_discount_code": "Activați contul și primiți cod reducere",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Înregistrați-vă pentru e-mailuri pentru a primi actualizări, acces la oferte exclusive, și mai multe.",
       "success_title": "Felicitări pentru primirea reducerii",
       "token_expired": "Link-ul tău a expirat"
@@ -300,19 +298,98 @@
         "shipping": "Adresa de livrare a companiei",
         "title": "Cerere pentru contul companiei"
       },
+      "address": {
+        "placeholder": "Adresa detaliată"
+      },
+      "address2": {
+        "placeholder": "Adresa detaliată 2"
+      },
       "bill": {
         "sameAsCompany": "Adresa de facturare a companiei este aceeași cu adresa de livrare a companiei"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Adresa detaliată"
+        },
+        "address2": {
+          "placeholder": "Adresa detaliată 2"
+        },
+        "city": {
+          "placeholder": "Oraș"
+        },
+        "country": {
+          "placeholder": "Țară/Regiune"
+        },
+        "district": {
+          "placeholder": "Districtul"
+        },
+        "phone": {
+          "placeholder": "Număr de telefon mobil"
+        },
+        "province": {
+          "placeholder": "Provincie"
+        },
+        "zip": {
+          "placeholder": "Cod poștal"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Adresa de facturare a companiei este aceeași cu adresa de expediere"
+      },
+      "billing_address": {
+        "title": "Adresa de facturare a companiei"
+      },
+      "city": {
+        "placeholder": "Oraș"
+      },
+      "company_name": {
+        "placeholder": "Numele companiei"
+      },
+      "country": {
+        "placeholder": "Țară/Regiune"
       },
       "create": {
         "limit": "Numărul de companii pentru magazin a atins limita sa. Vă rugăm să contactați comerciantul pentru asistență.",
         "success": "Mulțumesc. Formularul a fost trimis."
       },
+      "district": {
+        "placeholder": "Districtul"
+      },
+      "email": {
+        "placeholder": "Cutia poștală"
+      },
       "field": {
         "companyName": "Numele companiei",
         "email": "Email"
       },
+      "first_name": {
+        "placeholder": "Nume de familie"
+      },
       "form": {
         "submit": "Trimite"
+      },
+      "last_name": {
+        "placeholder": "Nume"
+      },
+      "phone": {
+        "placeholder": "Număr de telefon mobil"
+      },
+      "province": {
+        "placeholder": "Provincie"
+      },
+      "register": {
+        "button": "Trimiteți",
+        "success": {
+          "description": "Formularul a fost trimis cu succes.",
+          "title": "Vă mulțumim că l-ați completat!"
+        },
+        "title": "Cerere de cont de firmă"
+      },
+      "shipping_address": {
+        "title": "Adresa de expediere a companiei"
+      },
+      "zip": {
+        "placeholder": "Cod poștal"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Şterge",
       "company_empty_hint": "Numele companiei nu poate fi gol",
       "company_existed": "Numele companiei există deja.",
+      "company_frequent_operation": "Repetați operația, vă rugăm să încercați din nou mai târziu",
+      "company_registry_closed": "Comerciantul nu a activat funcția de aplicare a contului companiei, vă rugăm să contactați comerciantul pentru a aplica.",
       "confirm": "OK",
       "confirm_button": "OK",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Veți primi un SMS pentru a vă reseta parola",
       "proceed_to_checkout": "Finalizează cumpărăturile",
       "title": "Titlul paginii",
-      "verification_code_success": "Un cod de verificare a fost trimis la {{type}}<em>{{value}}</em> tău de autentificare, vă rugăm introduceți-l mai jos."
+      "verification_code_success": "Un cod de verificare a fost trimis la {{type}} <em>{{value}}</em> tău de autentificare, vă rugăm introduceți-l mai jos."
     },
     "login": {
       "member_login_common": "Autentificare membru",
@@ -461,12 +540,18 @@
       "go_to_login": "Accesați autentificarea",
       "tips_agree_with_the_shop": "Sunt de acord cu"
     },
+    "subscribe": {
+      "email_has_bind": "Această adresă de e-mail a fost legată de un alt cont",
+      "phone_has_bind": "Acest telefon a fost legat la alt cont"
+    },
     "subscription": {
       "email": "E-mail",
+      "email_subscribe_error_tip": "Această adresă de e-mail a fost legată de un alt cont",
       "email_subscription_text": "Obțineți informațiile despre promoția pentru abonament pe e-mail",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Telefon mobil",
+      "phone_subscribe_error_tip": "Această telefonie mobilă a fost legată de un alt cont",
       "phone_subscription_text": "Abonare promoție prin telefon",
       "reason_other_length": "Introduceți până la 300 de caractere",
       "reason_other_placeholder": "Conținut de intrare",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Abonamentul a fost anulat și va fi redirecționat în curând către pagina de pornire",
       "unsubscribe_tip": "După dezabonare, nu veți mai primi ultimele promoții.",
       "unsubscribe_title": "Dezabonare"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Vă rugăm să introduceți conținut",
+      "goto_btn": "Intră în magazin",
+      "notyet": "Nu v-ați abonat încă",
+      "notyet_desc": "Puteți merge la magazin pentru a vă abona",
+      "success": "Abonament anulat",
+      "success_tip": "V-ați dezabonat de la {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Cumpără din nou",
     "checkout_order": {
       "pay_amount": "plătiți suma",
       "receiver_account": "contul de destinatar",
@@ -596,8 +690,9 @@
       "details": "Detalii comandă",
       "insuranceService": "Servicii de Asigurare",
       "insuranceService_applyClaim": "Aplică pentru cereri de despăgubire",
-      "insuranceService_content_email": "1. Politica a fost trimisă către e-mailul dvs. \"{{email}}\" de către {{serviceName}}. Dacă nu ați primit informațiile politicii, vă rugăm să contactați magazinul serviciului de clienți. 2. Dacă sunt daune, pierderi, întârzieri sai alte situații în timpul transportului, puteți aplica pentru o cerere de despăgubire.",
-      "insuranceService_content_phone": "1. Politica a fost trimisă către telefonul dvs de \"{{phopne}}\" către {{serviceName}}. Dacă nu ați primit informațiile politicii, vă rugăm să contactați magazinul serviciului de clienți. 2. Dacă sunt daune, pierderi, întârzieri sai alte situații în timpul transportului, puteți aplica pentru o cerere de despăgubire. ",
+      "insuranceService_content_line1__email": "1. Politica a fost trimisă către e-mailul dvs. \"{{email}}\" de către {{serviceName}}. Dacă nu ați primit informațiile politicii, vă rugăm să contactați magazinul serviciului de clienți. ",
+      "insuranceService_content_line1__phone": "1. Politica a fost cumpărată prin {{serviceName}}. Dacă aveți orice alte întrebări, vă rugăm să contactați serviciul clienți al magazinului.",
+      "insuranceService_content_line2": "2. Dacă sunt daune, pierderi, întârzieri sai alte situații în timpul transportului, puteți aplica pentru o cerere de despăgubire. ",
       "order": "Comandă",
       "remark": "Observații comandă",
       "time": "Comandat la:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Se încarcă mai multe articole",
+      "loading_btn": "Încărcați mai mult",
       "no_product_data_found": "Nu a fost găsită nicio informație despre produs. Vă rugăm să încercați din nou mai târziu",
       "sold_out": "Vândut",
-      "added_to_cart_successfully": "Adăugat în coș cu succes",
+      "load_more": "Se încarcă mai multe articole",
       "load_more_items": "Încărcare {{current_offset}} ~ {{last_current_offset}} din {{total}} obiecte",
-      "unavailable": "indisponibil"
+      "unavailable": "Bunurile nu există",
+      "variant_property_color": "Culoare"
     },
     "giftcard": {
       "seoTitle": "Soldul cardului dvs. cadou {{ shop }} este {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtru",
       "filters_selected": "{{count}} au fost selectate",
       "from_price_html": "Începând de la {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} din {{total}} obiecte",
       "less": "Mai puține",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} din {{total}} obiecte",
       "load_more_tip": "Se încarcă mai multe articole",
@@ -786,10 +884,7 @@
       "save_ratio": "Reducere {{price}}%",
       "select_product_all_options": "Varianta de produs selectată este incompletă sau indisponibilă. Vă rugăm să alegeți din nou",
       "sort_button": "Evaluare",
-      "top_sellers": "Top vânzări",
-      "more__product_num": "{{num}} Produse",
-      "one_product_num": "{{num}} Produs",
-      "show": "Afişează"
+      "top_sellers": "Top vânzări"
     },
     "product_search": {
       "back_to_home": "Înapoi la prima pagină",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Plăți multicanal",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Card de credit"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Limita produsului a fost depășită"
     },
     "order": {
-      "deleted": "NEVALID"
+      "deleted": "NEVALID",
+      "rebuy": "Cumpărați-l din nou"
     },
     "payment": {
       "continue_shopping": "Continuă cumpărăturile",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Conectați-vă fără a configura canalele terță parte",
       "error_message_1009": "Nu se poate apela interfața terță parte",
       "error_message_1010": "Trimiterea eșuată",
-      "error_message_1011": "Numărul de cont nu este activat",
+      "error_message_1011": "Contul nu este activat. Vă rugăm să vă înregistrați pentru a completa parola și alte informații.",
       "error_message_1012": "Service pentru excepții",
       "error_message_1013": "Service pentru excepții",
       "error_message_1014": "Nu se verifică codul de verificare",

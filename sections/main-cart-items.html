@@ -15,18 +15,21 @@
   padding_bottom=section.settings.padding_bottom
 }}
 <cart-items class="page-width section-padding {{#if cart.empty}}cart-empty{{/if}}">
-  <div class="cart__items" id="main-cart-items" data-id="{{section.id}}">
+  <div class="cart__items" id="main-cart-items" data-id="{{section.id}}" data-show-fixed-checkout="{{if (isFalsey cart.empty) and cart.total_discount > 0}}" data-enable-discount="{{cart.discount_enable_cart}}">
     <div class="cart-title-wrapper">
       <h1 class="title4 text-uppercase">{{t "general.header.cart"}}</h1>
-      <a href="{{routes.all_products_collection_url}}" class="body3 continue-shopping">
+      <a href="{{#if settings.cart_continue_url}}{{settings.cart_continue_url}}{{else}}{{routes.all_products_collection_url}}{{/if}}" class="body3 continue-shopping">
         {{t "cart.checkout_proceeding.continue_shopping"}}
       </a>
     </div>
     <div class="cart__warnings">
-      <h1 class="cart__empty-text body3">{{t "cart.item.empty_cart"}}</h1>
-      <a href="{{routes.all_products_collection_url}}" class="button body3 fw-bold">
-        {{t "cart.checkout_proceeding.continue_shopping"}}
-      </a>
+      <div class="cart__empty-text-wrapper">
+        <h1 class="cart__empty-text body3">{{t "cart.item.empty_cart"}}</h1>
+        <a href="{{#if settings.cart_continue_url}}{{settings.cart_continue_url}}{{else}}{{routes.all_products_collection_url}}{{/if}}" class="button body3 fw-bold">
+          {{t "cart.checkout_proceeding.continue_shopping"}}
+        </a>
+      </div>
+      {{snippet "cart-empty-recommend-product" grid_class="grid grid-cols-2 grid-cols-4-desktop" title_class="title4"}}
     </div>
     <div class="main-cart-items-container">
       <div class="main-cart-items-header">

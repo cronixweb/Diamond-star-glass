@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "您只能向购物车添加 {{quantity}} 件此商品。"
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "无效的邮箱地址"
-    },
     "account": {
       "account_binding": "账户绑定",
       "account_information": "账户",
@@ -216,6 +213,7 @@
       "delete_account_notify": "您可申请注销此账户。账户注销后，任何用于识别此账户的信息将被删除，包括：",
       "email": "电子邮件",
       "email_repeat_tip": "邮箱已注册",
+      "email_subscribe_invalid_tip": "无效的邮箱地址",
       "first_name": "名字",
       "gender": "性别",
       "gender_female": "女",
@@ -225,8 +223,8 @@
       "last_name": "姓氏",
       "modify_email": "修改电子邮件",
       "modify_email_modal_title": "修改电子邮件",
-      "modify_phone": "修改手机",
-      "modify_phone_modal_title": "修改手机",
+      "modify_phone": "手机",
+      "modify_phone_modal_title": "手机",
       "name": "名称",
       "next": "下一步",
       "nickname_empty_error": "First Name 和 Last Name 不能都为空",
@@ -300,19 +298,98 @@
         "shipping": "公司收货地址",
         "title": "公司账号申请"
       },
+      "address": {
+        "placeholder": "详细地址"
+      },
+      "address2": {
+        "placeholder": "详细地址2"
+      },
       "bill": {
         "sameAsCompany": "公司账单地址与收货地址相同"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "详细地址"
+        },
+        "address2": {
+          "placeholder": "详细地址2"
+        },
+        "city": {
+          "placeholder": "城市"
+        },
+        "country": {
+          "placeholder": "国家/地区"
+        },
+        "district": {
+          "placeholder": "区"
+        },
+        "phone": {
+          "placeholder": "手机号"
+        },
+        "province": {
+          "placeholder": "省份"
+        },
+        "zip": {
+          "placeholder": "邮政编码"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "公司账单地址与收货地址相同"
+      },
+      "billing_address": {
+        "title": "公司账单地址"
+      },
+      "city": {
+        "placeholder": "城市"
+      },
+      "company_name": {
+        "placeholder": "公司名称"
+      },
+      "country": {
+        "placeholder": "国家/地区"
       },
       "create": {
         "limit": "公司数量已经达到上限，请联系商家进行处理。",
         "success": "感谢，表单已提交！"
       },
+      "district": {
+        "placeholder": "区"
+      },
+      "email": {
+        "placeholder": "邮箱"
+      },
       "field": {
         "companyName": "公司名称",
         "email": "邮箱"
       },
+      "first_name": {
+        "placeholder": "名字"
+      },
       "form": {
         "submit": "提交"
+      },
+      "last_name": {
+        "placeholder": "姓氏"
+      },
+      "phone": {
+        "placeholder": "手机号"
+      },
+      "province": {
+        "placeholder": "省份"
+      },
+      "register": {
+        "button": "提交",
+        "success": {
+          "description": "表单已提交成功。",
+          "title": "感谢填写！"
+        },
+        "title": "公司账号申请"
+      },
+      "shipping_address": {
+        "title": "公司收货地址"
+      },
+      "zip": {
+        "placeholder": "邮政编码"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "清除",
       "company_empty_hint": "公司名称不能为空",
       "company_existed": "公司名称已存在",
+      "company_frequent_operation": "重复操作，请稍后再试",
+      "company_registry_closed": "商家未启用公司账号申请功能，请联系商家进行申请",
       "confirm": "确定",
       "confirm_button": "确定",
       "date_format": "yyyy-MM-dd",
@@ -440,7 +519,7 @@
       "phone_tip": "我们将向您发送用于重置密码的手机短信",
       "proceed_to_checkout": "进行结算",
       "title": "页面标题",
-      "verification_code_success": "验证码已发送至您的登录{{type}}<em>{{value}}</em>，请在下方输入验证码。"
+      "verification_code_success": "验证码已发送至您的登录{{type}} <em>{{value}}</em>，请在下方输入验证码。"
     },
     "login": {
       "member_login_common": "会员登录",
@@ -461,12 +540,18 @@
       "go_to_login": "去登录",
       "tips_agree_with_the_shop": "我同意店铺的"
     },
+    "subscribe": {
+      "email_has_bind": "此邮箱已绑定至其他账号",
+      "phone_has_bind": "此手机已绑定至其他账号"
+    },
     "subscription": {
       "email": "电子邮件",
+      "email_subscribe_error_tip": "此邮箱已绑定至其他账号",
       "email_subscription_text": "通过电子邮件接收订阅的促销信息",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "手机",
+      "phone_subscribe_error_tip": "此手机已绑定至其他账号",
       "phone_subscription_text": "通过手机接收订阅的促销信息",
       "reason_other_length": "最多输入300个字",
       "reason_other_placeholder": "输入内容",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "订阅已取消，即将跳转至主页",
       "unsubscribe_tip": "取消订阅后，您将不再收到最新促销信息。",
       "unsubscribe_title": "取消订阅"
+    },
+    "unsubscribe": {
+      "content_placeholder": "请输入内容",
+      "goto_btn": "进入商店",
+      "notyet": "您还未订阅",
+      "notyet_desc": "您可以前往店铺进行订阅",
+      "success": "订阅已取消",
+      "success_tip": "您已经从{{storeName}}取消订阅"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "再次购买",
     "checkout_order": {
       "pay_amount": "支付金额",
       "receiver_account": "收款账户",
@@ -596,8 +690,9 @@
       "details": "订单详情",
       "insuranceService": "保险服务",
       "insuranceService_applyClaim": "申请索赔",
-      "insuranceService_content_email": "1.保单已由{{serviceName}}发送到您的邮箱\"{{email}}\"。如果您没有收到保单邮件，请联系店铺客服。2.如运送过程中出现损坏、遗失、延误等情况，您可以申请索赔。",
-      "insuranceService_content_phone": "1.保单已由{{serviceName}}发送到您的手机\"{{phopne}}\"。如果您没有收到保单信息，请联系店铺客服。2.如运送过程中出现损坏、遗失、延误等情况，您可以申请索赔。",
+      "insuranceService_content_line1__email": "1.保单已由{{serviceName}}发送到您的邮箱\"{{email}}\"。如果您没有收到保单邮件，请联系店铺客服。",
+      "insuranceService_content_line1__phone": "1.已通过{{serviceName}}购买了运输保障服务。如果您有其他疑问，请联系店铺客服。",
+      "insuranceService_content_line2": "2.如运送过程中出现损坏、遗失、延误等情况，您可以申请索赔。",
       "order": "订单",
       "remark": "订单备注",
       "time": "订购时间：",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "加载更多项目",
+      "loading_btn": "加载更多",
       "no_product_data_found": "暂无当前商品数据，请稍后再试",
       "sold_out": "已售罄",
-      "added_to_cart_successfully": "加购成功",
+      "load_more": "加载更多项目",
       "load_more_items": "加载 {{current_offset}} ~ {{last_current_offset}} / {{total}} 项目",
-      "unavailable": "不可用的"
+      "unavailable": "该商品不存在",
+      "variant_property_color": "颜色"
     },
     "giftcard": {
       "seoTitle": "您的 {{ shop }} 的礼品卡余额为 {{ value }}！",
@@ -765,6 +862,7 @@
       "filter": "筛选",
       "filters_selected": "已选择{{count}}个",
       "from_price_html": "{{price}} 起",
+      "infinite_btn_desc": "{{last_current_offset}} / {{total}} 项目",
       "less": "更少标签",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} / {{total}} 项目",
       "load_more_tip": "加载更多项目",
@@ -786,10 +884,7 @@
       "save_ratio": "优惠 {{price}}%",
       "select_product_all_options": "选择的商品规格不完整或不可用，请重新选择",
       "sort_button": "排序",
-      "top_sellers": "热销",
-      "more__product_num": "{{num}} 商品",
-      "one_product_num": "{{num}} 商品",
-      "show": "显示"
+      "top_sellers": "热销"
     },
     "product_search": {
       "back_to_home": "返回首页",
@@ -886,6 +981,10 @@
       "MultiplePayment": "多渠道付款",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "支付宝（推荐中国内地实名用户使用）",
+        "mpay": "MPay（推荐MPay用户使用）"
+      },
       "third-part": "信用卡"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "已超出商品限购数量"
     },
     "order": {
-      "deleted": "已删除"
+      "deleted": "已删除",
+      "rebuy": "再次购买"
     },
     "payment": {
       "continue_shopping": "继续购物",
@@ -979,13 +1079,13 @@
       "error_message_1008": "未配置第三方渠道登录",
       "error_message_1009": "调用第三方接口失败",
       "error_message_1010": "发送失败",
-      "error_message_1011": "账号未激活",
+      "error_message_1011": "账号未激活，请进行注册以完善密码等信息",
       "error_message_1012": "服务异常",
       "error_message_1013": "服务异常",
       "error_message_1014": "校验验证码失败",
       "error_message_1015": "请校验动态验证码",
       "error_message_1016": "服务异常",
-      "error_message_1017": "该账号存在风险",
+      "error_message_1017": "我们无法完成您的登录请求，请确认您的账号状态",
       "error_message_1018": "邮箱已绑定",
       "error_message_1020": "登录超时",
       "error_message_1021": "登录超时",

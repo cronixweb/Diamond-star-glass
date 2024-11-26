@@ -10,10 +10,39 @@ defineCustomElement(
         this.predictiveSearchResults = this.querySelector('[data-predictive-search]');
 
         this.setupEventListeners();
+        this.initSearchItem();
+        this.resizeWidth();
+      }
+
+      resizeWidth() {
+        window.addEventListener('resize', this.initSearchItem.bind(this));
+      }
+
+      initSearchItem() {
+        const detail = this.getBoundingClientRect();
+        if (detail.width > 1200) {
+          this.setAttribute('data-col', 4);
+        } else if (detail.width > 980) {
+          this.setAttribute('data-col', 3);
+        } else if (detail.width > 600) {
+          this.setAttribute('data-col', 2);
+        } else {
+          this.setAttribute('data-col', 1);
+        }
       }
 
       get isOpen() {
         return this.getAttribute('open') === 'true';
+      }
+
+      get showSuggestedMenu() {
+        const show = this.getAttribute('data-show-suggested-menu') === 'true' && !this.input.value;
+        if (show) {
+          this.setAttribute('data-show-menu', true);
+        } else {
+          this.removeAttribute('data-show-menu');
+        }
+        return show;
       }
 
       get query() {
@@ -45,24 +74,35 @@ defineCustomElement(
         this.addEventListener('focusout', this.onFocusOut.bind(this));
         this.addEventListener('keyup', this.onKeyup.bind(this));
         this.addEventListener('keydown', this.onKeydown.bind(this));
+        if (this.input.attributes?.autofocus) {
+          this.onFocus();
+        }
       }
 
       onFormSubmit(event) {
-        if (!this.query.length || this.querySelector('[selected="true"]')) event.preventDefault();
+        if (!this.query.length) event.preventDefault();
       }
 
       onChange() {
         const searchTerm = this.query;
-
+        if (this.showSuggestedMenu) {
+          this.open();
+          return;
+        }
         if (!searchTerm.length) return this.close(true);
 
         this.getSearchResults(searchTerm);
       }
 
       onFocus() {
+        this.initSearchItem();
         this.setAttribute('data-focus', true);
-
         const searchTerm = this.query;
+
+        if (this.showSuggestedMenu) {
+          this.open();
+          return;
+        }
 
         if (!searchTerm.length) return;
 

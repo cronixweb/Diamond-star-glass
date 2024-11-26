@@ -33,10 +33,6 @@
     margin-bottom: 20px;
   }
 }
-.card-container .card__title-hint {
-  margin-top: 4px;
-  opacity: 0.6;
-}
 
 .info-item:first-child {
   margin-top: 0px;
@@ -93,7 +89,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
 }
 
 .info-row:first-child {
@@ -106,6 +101,38 @@
 
 .info-row + .info-row {
   border-top: 1px solid rgb(var(--color-entry-line));
+}
+
+.subscribe-wrapper {
+  padding: 16px 0;
+}
+
+.subscribe-wrapper:first-child {
+  padding-top: 0;
+}
+
+.subscribe-wrapper:last-child {
+  padding-bottom: 0;
+}
+
+.subscribe-wrapper + .subscribe-wrapper {
+  border-top: 1px solid rgb(var(--color-entry-line));
+}
+
+.subscribe-form__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subscribe-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.subscribe-form__error {
+  color: rgb(var(--color-discount));
 }
 
 /* The ipad end responds to the mobile end in vertical screen */

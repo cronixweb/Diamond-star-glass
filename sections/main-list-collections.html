@@ -1,5 +1,6 @@
 {{snippet "stylesheet" href=(asset_url "section-main-list-collections.css")}}
 {{snippet "stylesheet" href=(asset_url "component-card.css")}}
+{{snippet "stylesheet" href=(asset_url "snippet-collection-card.css")}}
 
 {{assign "title" section.settings.title}}
 {{assign "mobile_cols" section.settings.m_cols}}
@@ -11,7 +12,8 @@
 {{#if modulo_result == 0}}
   {{assign "paginate_by" 28}}
 {{/if}}
-<div class="page-width">
+<div class="page-width main-list-collections__body">
+  {{snippet "breadcrumb" class="text-center" settings=settings}}
   <h2 class="main-list-collections__title title-wrapper text-center title4">
     {{title}}
   </h2>
@@ -23,7 +25,7 @@
           {{snippet
             "collection-card"
             card_collection=card_collection
-            title=name
+            title=card_collection.title
             ratio=collection_image_ratio
             fill_type=collection_fill_type
             lazy_load=(if forloop.index0 > 2)
@@ -32,7 +34,7 @@
           }}
         {{/for}}
     </div>
-
+    
     <div class="main-list-collections__pagination">
       {{#if paginate.pages > 1}}
         {{snippet "pagination" paginate=paginate anchor=""}}

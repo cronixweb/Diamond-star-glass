@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "คุณสามารถเพิ่มสินค้าได้เพียง {{quantity}} รายการในตะกร้าสินค้าของคุณ"
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "ที่อยู่อีเมลที่ไม่ถูกต้อง"
-    },
     "account": {
       "account_binding": "การผูกบัญชี",
       "account_information": "บัญชี",
       "bind": "การผูก",
       "birthday": "วันเกิด",
       "change_password": "เปลี่ยนรหัสผ่าน",
-      "confirm_btn": "Onayla",
+      "confirm_btn": "ยืนยัน",
       "confirm_subscription_modal_btn": "ยืนยันการสมัครสมาชิก",
       "confirm_subscription_modal_content": "คุณได้ส่งการสมัครสมาชิกก่อนหน้านี้ อีเมลยืนยันถูกส่งไปยังกล่องจดหมายนี้แล้ว คุณสามารถยืนยันในอีเมลของคุณหรือคลิกปุ่มนี้",
       "confirm_subscription_modal_title": "โปรดยืนยันการสมัครอีเมลของคุณ",
@@ -216,6 +213,7 @@
       "delete_account_notify": "คุณสามารถขอลบบัญชีผู้ใช้นี้ได้ หลังจากลบบัญชีผู้ใช้แล้ว ข้อมูลใดๆ ที่ใช้ในการระบุบัญชีนี้จะถูกลบออก ซึ่งรวมถึง:",
       "email": "อีเมล",
       "email_repeat_tip": "อีเมลนี้ลงทะเบียนแล้ว",
+      "email_subscribe_invalid_tip": "ที่อยู่อีเมลที่ไม่ถูกต้อง",
       "first_name": "ชื่อ",
       "gender": "เพศ",
       "gender_female": "หญิง",
@@ -260,7 +258,7 @@
       "copy_success": "คัดลอกคูปองแล้ว",
       "discount_title": "เปิดใช้งานบัญชีและรับรหัสส่วนลด",
       "normal_title": "เปิดใช้งานบัญชี",
-      "normal_title_with_discount_code": "เปิดใช้งานบัญชีและรับโค้ดส่วนลด",
+      "normal_title_with_discount_code": "",
       "subscription_text": "สมัครรับอีเมลเพื่อรับการอัปเดต การเข้าถึงส่วนลดพิเศษ และอื่นๆ",
       "success_title": "ยินดีด้วยที่คุณได้รับส่วนลด",
       "token_expired": "ลิงก์ของคุณหมดอายุ"
@@ -300,19 +298,98 @@
         "shipping": "ที่อยู่จัดส่งของบริษัท",
         "title": "การสมัครบัญชีของบริษัท"
       },
+      "address": {
+        "placeholder": "ที่อยู่ละเอียด"
+      },
+      "address2": {
+        "placeholder": "ที่อยู่ละเอียด2"
+      },
       "bill": {
         "sameAsCompany": "ที่อยู่ใบเรียกเก็บเงินของบริษัทเหมือนกับที่อยู่จัดส่งของบริษัท"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "ที่อยู่ละเอียด"
+        },
+        "address2": {
+          "placeholder": "ที่อยู่ละเอียด2"
+        },
+        "city": {
+          "placeholder": "เมือง"
+        },
+        "country": {
+          "placeholder": "ประเทศ/ภูมิภาค"
+        },
+        "district": {
+          "placeholder": "เขต"
+        },
+        "phone": {
+          "placeholder": "เบอร์มือถือ"
+        },
+        "province": {
+          "placeholder": "จังหวัด"
+        },
+        "zip": {
+          "placeholder": "รหัสไปรษณีย์"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "ที่อยู่สำหรับใบเสร็จของบริษัทเหมือนกับที่อยู่รับสินค้า"
+      },
+      "billing_address": {
+        "title": "ที่อยู่สำหรับใบเสร็จของบริษัท"
+      },
+      "city": {
+        "placeholder": "เมือง"
+      },
+      "company_name": {
+        "placeholder": "ชื่อบริษัท"
+      },
+      "country": {
+        "placeholder": "ประเทศ/ภูมิภาค"
       },
       "create": {
         "limit": "จำนวนบริษัทสำหรับร้านค้าได้ถึงขีดจำกัดของมัน กรุณาติดต่อผู้ขายสำหรับความช่วยเหลือ",
         "success": "ขอบคุณค่ะ แบบฟอร์มถูกส่งแล้ว"
       },
+      "district": {
+        "placeholder": "เขต"
+      },
+      "email": {
+        "placeholder": "อีเมล"
+      },
       "field": {
         "companyName": "ชื่อบริษัท",
         "email": "อีเมล"
       },
+      "first_name": {
+        "placeholder": "ชื่อ"
+      },
       "form": {
         "submit": "ส่ง"
+      },
+      "last_name": {
+        "placeholder": "นามสกุล"
+      },
+      "phone": {
+        "placeholder": "เบอร์มือถือ"
+      },
+      "province": {
+        "placeholder": "จังหวัด"
+      },
+      "register": {
+        "button": "ส่ง",
+        "success": {
+          "description": "ฟอร์มส่งเรียบร้อยแล้ว",
+          "title": "ขอบคุณที่กรอก!"
+        },
+        "title": "การสมัครบัญชีบริษัท"
+      },
+      "shipping_address": {
+        "title": "ที่อยู่รับสินค้าของบริษัท"
+      },
+      "zip": {
+        "placeholder": "รหัสไปรษณีย์"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "ล้าง",
       "company_empty_hint": "ชื่อบริษัทต้องไม่เว้นว่าง",
       "company_existed": "ชื่อบริษัทนี้มีอยู่แล้ว",
+      "company_frequent_operation": "ทำซ้ำ โปรดลองอีกครั้งในภายหลัง",
+      "company_registry_closed": "ร้านค้าไม่ได้เปิดใช้งานฟังก์ชั่นการสมัครบัญชีบริษัท โปรดติดต่อร้านค้าเพื่อสมัคร",
       "confirm": "ตกลง",
       "confirm_button": "ตกลง",
       "date_format": "dd/MM/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "เราจะส่ง SMS เพื่อรีเซ็ตรหัสผ่านของคุณ",
       "proceed_to_checkout": "ดำเนินการชำระเงิน",
       "title": "หัวข้อของหน้า",
-      "verification_code_success": "รหัสยืนยันได้ถูกส่งไปยัง {{type}}<em>{{value}}</em> ที่คุณกำลังเข้าสู่ระบบอยู่ โปรดป้อนรหัสด้านล่าง"
+      "verification_code_success": "รหัสยืนยันได้ถูกส่งไปยัง {{type}} <em>{{value}}</em> ที่คุณกำลังเข้าสู่ระบบอยู่ โปรดป้อนรหัสด้านล่าง"
     },
     "login": {
       "member_login_common": "ลงชื่อเข้าใช้ในฐานะสมาชิก",
@@ -461,12 +540,18 @@
       "go_to_login": "ไปที่การเข้าสู่ระบบ",
       "tips_agree_with_the_shop": "ฉันยอมรับ"
     },
+    "subscribe": {
+      "email_has_bind": "ที่อยู่อีเมลนี้ถูกผูกไว้กับบัญชีอื่น",
+      "phone_has_bind": "โทรศัพท์เครื่องนี้ถูกผูกไว้กับบัญชีอื่น"
+    },
     "subscription": {
       "email": "อีเมล",
+      "email_subscribe_error_tip": "อีเมลนี้ถูกผูกไว้กับบัญชีอื่นแล้ว",
       "email_subscription_text": "สมัครรับโปรโมชั่นทางอีเมล",
       "line": "LINE",
       "messenger": "แอปส่งข้อความ",
       "phone": "โทรศัพท์มือถือ",
+      "phone_subscribe_error_tip": "โทรศัพท์นี้ถูกผูกไว้กับบัญชีอื่นแล้ว",
       "phone_subscription_text": "สมัครใช้รับโปรโมชั่นทางโทรศัพท์",
       "reason_other_length": "ป้อนตัวอักษรสูงสุด 300 ตัว",
       "reason_other_placeholder": "ป้อนข้อมูล",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "ยกเลิกการสมัครสมาชิกแล้ว กำลังจะเปลี่ยนเส้นทางไปยังหน้าแรก",
       "unsubscribe_tip": "เมื่อยกเลิกการสมัครแล้ว คุณจะไม่ได้รับโปรโมชั่นล่าสุดอีกต่อไป",
       "unsubscribe_title": "ยกเลิกการสมัครสมาชิก"
+    },
+    "unsubscribe": {
+      "content_placeholder": "กรุณากรอกเนื้อหา",
+      "goto_btn": "เข้าร้าน",
+      "notyet": "คุณยังไม่ได้สมัครสมาชิก",
+      "notyet_desc": "คุณสามารถไปที่ร้านเพื่อสมัครสมาชิก",
+      "success": "ยกเลิกการสมัครสมาชิกแล้ว",
+      "success_tip": "คุณได้ยกเลิกการสมัครจาก {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "ซื้ออีกครั้ง",
     "checkout_order": {
       "pay_amount": "จำนวนเงินที่จ่าย",
       "receiver_account": "บัญชีผู้รับ",
@@ -596,8 +690,9 @@
       "details": "รายละเอียดคำสั่งซื้อ",
       "insuranceService": "บริการการรับประกัน",
       "insuranceService_applyClaim": "ยื่นคำร้องการเคลม",
-      "insuranceService_content_email": "1. กรมธรรม์ได้ถูกส่งไปยังที่อยู่อีเมลของคุณ \"{{email}}\" โดย {{serviceName}} หากคุณไม่ได้รับอีเมลกรมธรรม์ โปรดติดต่อฝ่ายบริการลูกค้าของร้านค้า 2. หากเกิดความเสียหาย การสูญหาย ความล่าช้า ฯลฯ ในระหว่างการขนส่ง คุณสามารถยื่นคำร้องการเคลมได้",
-      "insuranceService_content_phone": "1. กรมธรรม์ได้ถูกส่งไปยังโทรศัพท์ของคุณ \"{{phopne}}\" โดย {{serviceName}} หากคุณไม่ได้รับข้อมูลกรมธรรม์ โปรดติดต่อฝ่ายบริการลูกค้าของร้านค้า 2. หากมีความเสียหาย การสูญหาย ความล่าช้า ฯลฯ ระหว่างการขนส่ง คุณสามารถยื่นคำร้องการเคลมได้",
+      "insuranceService_content_line1__email": "1. กรมธรรม์ได้ถูกส่งไปยังที่อยู่อีเมลของคุณ \"{{email}}\" โดย {{serviceName}} หากคุณไม่ได้รับอีเมลกรมธรรม์ โปรดติดต่อฝ่ายบริการลูกค้าของร้านค้า ",
+      "insuranceService_content_line1__phone": "1. มีการซื้อกรมธรรม์ผ่าน {{serviceName}} หากคุณมีคำถามอื่น ๆ โปรดติดต่อฝ่ายบริการลูกค้าของร้านค้า",
+      "insuranceService_content_line2": "2. หากมีความเสียหาย การสูญหาย ความล่าช้า ฯลฯ ระหว่างการขนส่ง คุณสามารถยื่นคำร้องการเคลมได้",
       "order": "คำสั่งซื้อ",
       "remark": "หมายเหตุคำสั่งซื้อ",
       "time": "สั่งซื้อเมื่อ:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "โหลดรายการเพิ่มเติม",
+      "loading_btn": "หลดเพิ่มเติม",
       "no_product_data_found": "ไม่พบข้อมูลสินค้า โปรดลองอีกครั้งในภายหลัง",
       "sold_out": "ขายหมดแล้ว",
-      "added_to_cart_successfully": "ซื้อสินค้าเพิ่มเติมสำเร็จ",
+      "load_more": "โหลดรายการเพิ่มเติม",
       "load_more_items": "กำลังโหลด{{current_offset}} ~ {{last_current_offset}} / {{total}}รายการ",
-      "unavailable": "ไม่พร้อมใช้งาน"
+      "unavailable": "สินค้านี้ไม่มีอยู่",
+      "variant_property_color": "สี"
     },
     "giftcard": {
       "seoTitle": "ยอดเงินคงเหลือบัตรของขวัญ {{ shop }} ของคุณคือ {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "กรอง",
       "filters_selected": "เลือก {{count}} รายการแล้ว",
       "from_price_html": "จาก {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} / {{total}}รายการ",
       "less": "น้อยลง",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} / {{total}}รายการ",
       "load_more_tip": "โหลดรายการเพิ่มเติม",
@@ -786,10 +884,7 @@
       "save_ratio": "ส่วนลด {{price}}%",
       "select_product_all_options": "ตัวเลือกตัวแปรผลิตภัณฑ์ที่เลือกไม่สมบูรณ์หรือไม่พร้อมใช้งาน กรุณาเลือกใหม่อีกครั้งค่ะ",
       "sort_button": "จัดเรียงลำดับ",
-      "top_sellers": "สินค้าขายดี",
-      "more__product_num": "{{num}} สินค้า",
-      "one_product_num": "{{num}} สินค้า",
-      "show": "แสดง"
+      "top_sellers": "สินค้าขายดี"
     },
     "product_search": {
       "back_to_home": "กลับสู่หน้าโฮมเพจ",
@@ -886,6 +981,10 @@
       "MultiplePayment": "การชำระเงินหลายช่องทาง",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "บัตรเครดิต"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "สินค้าเกินจำนวนจำกัด"
     },
     "order": {
-      "deleted": "ลบแล้ว"
+      "deleted": "ลบแล้ว",
+      "rebuy": "ซื้ออีกครั้ง"
     },
     "payment": {
       "continue_shopping": "ชอปปิ้งต่อไป ",
@@ -979,7 +1079,7 @@
       "error_message_1008": "ไม่มีการกำหนดค่าการเข้าสู่ระบบช่องบุคคลที่สาม",
       "error_message_1009": "ไม่สามารถเรียกอินเทอร์เฟซบุคคลที่สาม",
       "error_message_1010": "ส่งไม่สำเร็จ",
-      "error_message_1011": "บัญชีไม่ได้เปิดใช้งาน",
+      "error_message_1011": "บัญชีไม่ได้เปิดใช้งาน กรุณาลงทะเบียนเพื่อกรอกรหัสผ่านและข้อมูลอื่น ๆ",
       "error_message_1012": "การบริการผิดปกติ",
       "error_message_1013": "การบริการผิดปกติ",
       "error_message_1014": "ตรวจสอบรหัสยืนยันไม่สำเร็จ",

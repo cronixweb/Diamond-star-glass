@@ -9,9 +9,9 @@
 {{assign "mobile_height" section.settings.mobile_height}}
 
 
-{{ assign "first_block" section.blocks.first }}
+{{assign 'first_block' section.blocks.first}}
 
-{{#if (length section.blocks)}}
+{{#if first_block}}
   {{#if pc_height == "natural" and (not first_block.settings.image)}}
     {{assign "pc_height" "500px"}}
   {{/if}}
@@ -29,11 +29,20 @@
 {{/if}}
 
 <slider-component
-  class="slideshow"
+  class="slideshow
+    slideshow-layout--text-{{section.settings.mobile_content_layout}}
+    {{#if mobile_height == "100vh"}}slideshow--mobile-fullscreen{{/if}} {{#unless section.settings.full_screen}}page-width section--padding{{/unless}}"
   style="
     --slideshow-speed: {{section.settings.autoplay_speed}}s;
     --slideshow-pc-height: {{pc_height}};
     --slideshow-mobile-height: {{mobile_height}};
+    {{~#for section.blocks as |block|~}}
+      {{~#if block.settings.text_color != "rgba(0,0,0,0)"~}}
+        --slideshow-text-color-{{plus forloop.index0 1}}: {{block.settings.text_color.red}}, {{block.settings.text_color.green}}, {{block.settings.text_color.blue}};
+      {{~else if block.settings.pc_text_color != "rgba(0,0,0,0)"~}}
+        --slideshow-text-color-{{plus forloop.index0 1}}: {{block.settings.pc_text_color.red}}, {{block.settings.pc_text_color.green}}, {{block.settings.pc_text_color.blue}};
+      {{~/if~}}
+    {{~/for~}}
   "
   loop="true"
   autoplay="{{section.settings.autoplay}}"
@@ -41,25 +50,70 @@
 >
   <div id="Slider-{{section.id}}" class="slideshow__slider slider">
     {{#for section.blocks as |block|}}
-      {{assign "first_link_in_image" (if block.settings.link and (if (length block.settings.link_text) == 0))}}
+      {{assign "first_link_in_image" (if block.settings.link and (length block.settings.link_text) == 0)}}
       {{assign "ele" (ternary first_link_in_image 'a' 'div')}}
       <div
         {{{block.shopline_attributes}}}
         id="Slide-{{block.id}}"
-        class="slideshow__slide slider__slide"
+        class="slideshow__slide slider__slide {{#if forloop.index0 > 0}}slideshow__slide--adapt{{/if}}"
         style="
             --slideshow-overlay-opacity: {{block.settings.overlay_opacity}};
             --slideshow-title-size: {{block.settings.title_size}}px;
-            --slideshow-pc-text-position-vertical: {{itemAt (split block.settings.pc_text_position ' ') 0}};
-            --slideshow-pc-text-position-horizontal: {{itemAt (split block.settings.pc_text_position ' ') 1}};
+            --slideshow-pc-text-position-vertical: {{first (split block.settings.pc_text_position ' ')}};
+            --slideshow-pc-text-position-horizontal: {{last (split block.settings.pc_text_position ' ')}};
+            --slideshow-mobile-text-position-vertical: {{first (split block.settings.mobile_text_position ' ')}};
+            --slideshow-mobile-text-position-horizontal: {{last (split block.settings.mobile_text_position ' ')}};
             --slideshow-pc-text-align: {{block.settings.pc_text_align}};
             --slideshow-mobile-text-align: {{block.settings.mobile_text_align}};
+            --slideshow-pc-text-color: {{block.settings.pc_text_color}};
+            --slideshow-text-color--mb: {{#if block.settings.text_color != "rgba(0,0,0,0)"}}{{block.settings.text_color}}{{else if block.settings.pc_text_color != "rgba(0,0,0,0)"}}{{block.settings.pc_text_color}}{{else}}{{settings.color_text}}{{/if}};
+            --slideshow-text-area-bg-color:
+              {{~#if block.settings.text_area_background_color != "rgba(0,0,0,0)"~}}
+                {{block.settings.text_area_background_color}}
+              {{~else~}}
+                rgb({{times settings.color_image_background.red 0.66}}, {{times settings.color_image_background.green 0.66}}, {{times settings.color_image_background.blue
+0.66}})
+              {{~/if~}};
           "
       >
+
+        {{#capture "image_show_position"}}
+          {{#case block.settings.image_show_position}}
+            {{#when "left_top"}}
+              20% 0
+            {{/when}}
+            {{#when "top_center"}}
+              top center
+            {{/when}}
+            {{#when "right_top"}}
+              80% 0
+            {{/when}}
+            {{#when "left_left"}}
+              20% 50%
+            {{/when}}
+            {{#when "center_center"}}
+              center center
+            {{/when}}
+            {{#when "right_right"}}
+              80% 50%
+            {{/when}}
+            {{#when "right_bottom"}}
+              20% 100%
+            {{/when}}
+            {{#when "bottom_center"}}
+              bottom center
+            {{/when}}
+            {{#when "right_center"}}
+              80% 100%
+            {{/when}}
+          {{/case}}
+        {{/capture}}
+
         
         <{{ele}}
           {{#if first_link_in_image}}href="{{block.settings.link}}"{{/if}}
-          class="slideshow-slide__media {{#if forloop.index0 > 0}}slideshow-slide__media--adapt{{/if}} "
+          class="slideshow-slide__media"
+          style="--image-show-position: {{trim image_show_position}};"
         >
           
           {{#if block.settings.image}}
@@ -91,7 +145,21 @@
           {{/if}}
         </{{ele}}>
 
-        <div class="slideshow-slide__text-wrapper">
+        {{~#capture "pc_content_padding"~}}
+          {{#case block.settings.pc_content_width}}
+            {{#when "400px" "600px"}}
+              15%
+            {{/when}}
+            {{#when "800px"}}
+              8%
+            {{/when}}
+            {{#when "1200px"}}
+              5%
+            {{/when}}
+          {{/case}} 
+        {{~/capture~}}
+
+        <div class="slideshow-slide__text-wrapper {{#if block.settings.pc_content_width != "auto"}}slideshow-slide__text-max-width{{/if}}" {{#if block.settings.pc_content_width != "auto"}}style="--pc-content-width: {{block.settings.pc_content_width}}; --pc-content-padding: {{trim pc_content_padding}};"{{/if}}>
           <div class="slideshow-slide__text">
             {{#if block.settings.text_mask}}
               {{#if block.settings.text_mask_color == "deep"}}
@@ -102,24 +170,25 @@
               {{/if}}
             {{/if}}
 
-            <div class="slideshow-slide__text-nobtn">
-              {{#if block.settings.sub_title}}
-                <p class="slideshow-slide__sub-title body3" data-animation>{{block.settings.sub_title}}</p>
-              {{/if}}
-              {{#if block.settings.title}}
-                <h2 class="slideshow-slide__title title1" data-animation>{{newline_to_br block.settings.title}}</h2>
-              {{/if}}
-              {{#if block.settings.subheading}}
-                <p class="slideshow-slide__desc body3" data-animation>{{block.settings.subheading}}</p>
-              {{/if}}
-            </div>
-
+            {{#if block.settings.sub_title}}
+              <p class="slideshow-slide__sub-title body3" data-animation>{{block.settings.sub_title}}</p>
+            {{/if}}
+            {{#if block.settings.title}}
+              <h2 class="slideshow-slide__title title1" data-animation>{{newline_to_br block.settings.title}}</h2>
+            {{/if}}
+            {{#if block.settings.subheading}}
+              <p class="slideshow-slide__desc body3" data-animation>{{block.settings.subheading}}</p>
+            {{/if}}
             <div class="slideshow-slide__buttons">
               {{#if block.settings.link_text}}
                 <a
                   class="button slideshow-slide__button
-                    {{#if block.settings.is_profile_link}}button--secondary{{/if}}"
-                  style="{{#if block.settings.is_profile_link}}background-color: transparent;{{/if}}"
+                    {{#if block.settings.is_profile_link}}button--secondary{{/if}}
+                    {{block.settings.button_style}}"
+                  style="{{#if block.settings.is_profile_link}}background-color: transparent;{{/if}}
+                    --slideshow-btn-text-color: {{block.settings.btn_text_color.red}}, {{block.settings.btn_text_color.green}}, {{block.settings.btn_text_color.blue}};
+                    --slideshow-btn-bg-color: {{block.settings.btn_bg_color.red}}, {{block.settings.btn_bg_color.green}}, {{block.settings.btn_bg_color.blue}};
+                    --slideshow-btn-border-color: {{block.settings.btn_border_color.red}}, {{block.settings.btn_border_color.green}}, {{block.settings.btn_border_color.blue}};"
                   title="{{block.settings.link_text}}"
                   href="{{#if block.settings.link}}{{block.settings.link}}{{else}}javascript:;{{/if}}"
                 >
@@ -129,8 +198,12 @@
               {{#if block.settings.link_text_2}}
                 <a
                   class="button slideshow-slide__button
-                    {{#if block.settings.is_profile_link2}}button--secondary{{/if}}"
-                  style="{{#if block.settings.is_profile_link2}}background-color: transparent;{{/if}}"
+                    {{#if block.settings.is_profile_link2}}button--secondary{{/if}}
+                    {{block.settings.button_style2}}"
+                  style="{{#if block.settings.is_profile_link2}}background-color: transparent;{{/if}} 
+                      --slideshow-btn-text-color: {{block.settings.btn_text_color2.red}}, {{block.settings.btn_text_color2.green}}, {{block.settings.btn_text_color2.blue}};
+                      --slideshow-btn-bg-color: {{block.settings.btn_bg_color2.red}}, {{block.settings.btn_bg_color2.green}}, {{block.settings.btn_bg_color2.blue}};
+                      --slideshow-btn-border-color: {{block.settings.btn_border_color2.red}}, {{block.settings.btn_border_color2.green}}, {{block.settings.btn_border_color2.blue}};"
                   title="{{block.settings.link_text_2}}"
                   href="{{#if block.settings.link_2}}{{block.settings.link_2}}{{else}}javascript:;{{/if}}"
                 >
@@ -244,6 +317,12 @@
       ]
     },
     {
+      "type": "switch",
+      "id": "full_screen",
+      "label": "t:sections.slideshow.settings.full_screen.label",
+      "default": true
+    },
+    {
       "type": "select",
       "id": "style",
       "label": "t:sections.slideshow.settings.style.label",
@@ -278,6 +357,26 @@
       "max": 10,
       "step": 1,
       "unit": "t:sections.slideshow.settings.autoplay_speed.unit"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_layout",
+      "label": "t:sections.slideshow.settings.mobile_content_layout.label",
+      "default": "inside",
+      "options": [
+        {
+          "value": "inside",
+          "label": "t:sections.slideshow.settings.mobile_content_layout.options__0.label"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.slideshow.settings.mobile_content_layout.options__1.label"
+        },
+        {
+          "value": "overlap",
+          "label": "t:sections.slideshow.settings.mobile_content_layout.options__2.label"
+        }
+      ]
     }
   ],
   "blocks": [
@@ -295,6 +394,50 @@
           "type": "image_picker",
           "id": "image_mobile",
           "label": "t:sections.slideshow.blocks.image.settings.image_mobile.label"
+        },
+        {
+          "type": "select",
+          "id": "image_show_position",
+          "label": "t:sections.slideshow.blocks.image.settings.image_show_position.label",
+          "default": "center_center",
+          "options": [
+            {
+              "value": "left_top",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__0.label"
+            },
+            {
+              "value": "top_center",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__1.label"
+            },
+            {
+              "value": "right_top",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__2.label"
+            },
+            {
+              "value": "left_left",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__3.label"
+            },
+            {
+              "value": "center_center",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__4.label"
+            },
+            {
+              "value": "right_right",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__5.label"
+            },
+            {
+              "value": "right_bottom",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__6.label"
+            },
+            {
+              "value": "bottom_center",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__7.label"
+            },
+            {
+              "value": "right_center",
+              "label": "t:sections.slideshow.blocks.image.settings.image_show_position.options__8.label"
+            }
+          ]
         },
         {
           "type": "range",
@@ -335,30 +478,92 @@
           "default": "center flex-end",
           "options": [
             {
-              "value": "center flex-start",
+              "value": "flex-start flex-start",
               "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__0.label"
             },
             {
-              "value": "center center",
+              "value": "flex-start center",
               "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__1.label"
             },
             {
-              "value": "center flex-end",
+              "value": "flex-start flex-end",
               "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__2.label"
             },
             {
-              "value": "flex-end flex-start",
+              "value": "center flex-start",
               "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__3.label"
             },
             {
-              "value": "flex-end center",
+              "value": "center center",
               "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__4.label"
             },
             {
-              "value": "flex-end flex-end",
+              "value": "center flex-end",
               "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__5.label"
+            },
+            {
+              "value": "flex-end flex-start",
+              "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__6.label"
+            },
+            {
+              "value": "flex-end center",
+              "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__7.label"
+            },
+            {
+              "value": "flex-end flex-end",
+              "label": "t:sections.slideshow.blocks.image.settings.pc_text_position.options__8.label"
             }
           ]
+        },
+        {
+          "type": "select",
+          "id": "mobile_text_position",
+          "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.label",
+          "default": "center center",
+          "options": [
+            {
+              "value": "flex-start flex-start",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__0.label"
+            },
+            {
+              "value": "flex-start center",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__1.label"
+            },
+            {
+              "value": "flex-start flex-end",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__2.label"
+            },
+            {
+              "value": "center flex-start",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__3.label"
+            },
+            {
+              "value": "center center",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__4.label"
+            },
+            {
+              "value": "center flex-end",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__5.label"
+            },
+            {
+              "value": "flex-end flex-start",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__6.label"
+            },
+            {
+              "value": "flex-end center",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__7.label"
+            },
+            {
+              "value": "flex-end flex-end",
+              "label": "t:sections.slideshow.blocks.image.settings.mobile_text_position.options__8.label"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "pc_text_color",
+          "label": "t:sections.slideshow.blocks.image.settings.pc_text_color.label",
+          "default": "rgba(0,0,0,1)"
         },
         {
           "id": "pc_text_align",
@@ -423,7 +628,6 @@
           "default": 70,
           "min": 40,
           "max": 100,
-          "step": 1,
           "unit": "px"
         },
         {
@@ -431,6 +635,46 @@
           "id": "subheading",
           "label": "t:sections.slideshow.blocks.image.settings.subheading.label",
           "default": "And optional subtext"
+        },
+        {
+          "type": "select",
+          "id": "pc_content_width",
+          "label": "t:sections.slideshow.blocks.image.settings.pc_content_width.label",
+          "default": "auto",
+          "options": [
+            {
+              "value": "auto",
+              "label": "t:sections.slideshow.blocks.image.settings.pc_content_width.options__0.label"
+            },
+            {
+              "value": "400px",
+              "label": "400"
+            },
+            {
+              "value": "600px",
+              "label": "600"
+            },
+            {
+              "value": "800px",
+              "label": "800"
+            },
+            {
+              "value": "1200px",
+              "label": "1200"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "t:sections.slideshow.blocks.image.settings.text_color.label",
+          "default": "rgba(0,0,0,0)"
+        },
+        {
+          "type": "color",
+          "id": "text_area_background_color",
+          "label": "t:sections.slideshow.blocks.image.settings.text_area_background_color.label",
+          "default": "rgba(0,0,0,0)"
         },
         {
           "type": "group_header",
@@ -449,10 +693,42 @@
           "label": "t:sections.slideshow.blocks.image.settings.link.label"
         },
         {
-          "type": "switch",
-          "id": "is_profile_link",
-          "label": "t:sections.slideshow.blocks.image.settings.is_profile_link.label",
-          "default": false
+          "type": "select",
+          "id": "button_style",
+          "label": "t:sections.slideshow.blocks.image.settings.button_style.label",
+          "default": "button",
+          "options": [
+            {
+              "value": "button",
+              "label": "t:sections.slideshow.blocks.image.settings.button_style.options__0.label"
+            },
+            {
+              "value": "button--secondary",
+              "label": "t:sections.slideshow.blocks.image.settings.button_style.options__1.label"
+            },
+            {
+              "value": "button--link",
+              "label": "t:sections.slideshow.blocks.image.settings.button_style.options__2.label"
+            }
+          ]
+        },
+        {
+          "label": "t:sections.slideshow.blocks.image.settings.btn_bg_color.label",
+          "type": "color",
+          "id": "btn_bg_color",
+          "default": "#000000"
+        },
+        {
+          "label": "t:sections.slideshow.blocks.image.settings.btn_text_color.label",
+          "type": "color",
+          "id": "btn_text_color",
+          "default": "#FFFFFF"
+        },
+        {
+          "label": "t:sections.slideshow.blocks.image.settings.btn_border_color.label",
+          "type": "color",
+          "id": "btn_border_color",
+          "default": "#000000"
         },
         {
           "type": "text",
@@ -466,20 +742,55 @@
           "label": "t:sections.slideshow.blocks.image.settings.link_2.label"
         },
         {
-          "type": "switch",
-          "id": "is_profile_link2",
-          "label": "t:sections.slideshow.blocks.image.settings.is_profile_link2.label",
-          "default": false
+          "type": "select",
+          "id": "button_style2",
+          "label": "t:sections.slideshow.blocks.image.settings.button_style2.label",
+          "default": "button",
+          "options": [
+            {
+              "value": "button",
+              "label": "t:sections.slideshow.blocks.image.settings.button_style2.options__0.label"
+            },
+            {
+              "value": "button--secondary",
+              "label": "t:sections.slideshow.blocks.image.settings.button_style2.options__1.label"
+            },
+            {
+              "value": "button--link",
+              "label": "t:sections.slideshow.blocks.image.settings.button_style2.options__2.label"
+            }
+          ]
+        },
+        {
+          "label": "t:sections.slideshow.blocks.image.settings.btn_bg_color2.label",
+          "type": "color",
+          "id": "btn_bg_color2",
+          "default": "#000000"
+        },
+        {
+          "label": "t:sections.slideshow.blocks.image.settings.btn_text_color2.label",
+          "type": "color",
+          "id": "btn_text_color2",
+          "default": "#FFFFFF"
+        },
+        {
+          "label": "t:sections.slideshow.blocks.image.settings.btn_border_color2.label",
+          "type": "color",
+          "id": "btn_border_color2",
+          "default": "#000000"
         }
       ]
     }
   ],
   "presets": [
     {
+      "category_index": 1,
+      "category": "t:sections.slideshow.presets.presets__0.category",
       "name": "t:sections.slideshow.presets.presets__0.name",
       "settings": {
         "section_height": "natural",
         "mobile_height": "natural",
+        "full_screen": true,
         "style": "dots",
         "autoplay": true,
         "autoplay_speed": 7
@@ -491,18 +802,24 @@
           "settings": {
             "image": {},
             "image_mobile": {},
+            "image_show_position": "center_center",
             "overlay_opacity": 0,
             "pc_text_position": "center flex-end",
+            "mobile_text_position": "center center",
             "pc_text_align": "center",
             "mobile_text_align": "center",
             "title": "Two Line\nTitle Slide",
             "title_size": 70,
             "sub_title": "",
             "subheading": "And optional subtext",
+            "pc_content_width": "auto",
             "link_text": "Shop this",
             "is_profile_link": false,
             "link_text_2": "Shop all",
-            "is_profile_link2": false
+            "is_profile_link2": false,
+            "pc_text_color": "rgba(0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "text_area_background_color": "rgba(0,0,0,0)"
           }
         },
         {
@@ -511,18 +828,24 @@
           "settings": {
             "image": {},
             "image_mobile": {},
+            "image_show_position": "center_center",
             "overlay_opacity": 0,
             "pc_text_position": "center flex-end",
+            "mobile_text_position": "center center",
             "pc_text_align": "center",
             "mobile_text_align": "center",
             "title": "Two Line\nTitle Slide",
             "title_size": 70,
             "sub_title": "",
             "subheading": "And optional subtext",
+            "pc_content_width": "auto",
             "link_text": "Shop this",
             "is_profile_link": false,
             "link_text_2": "Shop all",
-            "is_profile_link2": false
+            "is_profile_link2": false,
+            "pc_text_color": "rgba(0,0,0)",
+            "text_color": "rgba(0,0,0,0)",
+            "text_area_background_color": "rgba(0,0,0,0)"
           }
         }
       ]

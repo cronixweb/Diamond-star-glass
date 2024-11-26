@@ -9,32 +9,27 @@
         {{ snippet 'icon-loading'}}
       </span>
     </h2>
+    <ul class="predictive-search__results-list list-unstyled" data-predictive-search>
+      {{#for predictive_search.products as |product|}}
+        <li class="predictive-search__list-item">
+          <a class="predictive-search__item link" href="{{ product.url }}">
+            {{#if product.featured_image}}
+              {{ snippet 'image' data=product.featured_image class="predictive-search__item-image" }}
+            {{else}}
+              {{ placeholder_svg_tag 'image' 'predictive-search__item-image' }}
+            {{/if}}
+            <div class="predictive-search__item-content">
+              <p class="predictive-search__item-head body3">{{ product.title }}</p>
+              {{#if settings.show_search_goods_price}}
+                <p class="predictive-search__item-price"><span class="body3">{{money product.price}}</span> {{#if product.compare_at_price > product.price}}<span class="body5 line-through">{{money product.compare_at_price}}</span>{{/if}}</p>
+              {{/if}}
+            </div>
+          </a>
+        </li>
+      {{/for}}
+    </ul>
   {{/if}}
-
-  <ul class="predictive-search__results-list list-unstyled" data-predictive-search>
-    {{#for predictive_search.products as |item|}}
-      <li class="predictive-search__list-item">
-        <a class="predictive-search__item link" href="{{ item.url }}">
-          {{#if item.featured_image}}
-            {{ snippet 'image' data=item.featured_image class="predictive-search__item-image" }}
-          {{else}}
-            {{ placeholder_svg_tag 'image' 'predictive-search__item-image' }}
-          {{/if}}
-          <div class="predictive-search__item-content">
-            <p class="predictive-search__item-head body3">{{ item.title }}</p>
-          </div>
-        </a>
-      </li>
-    {{/for}}
-    <li class="predictive-search__list-item">
-      <button class="predictive-search__term body3">
-        {{ t "general.search.search_hint" key="__QUERY_KEY__" }}
-        <span class="predictive-search__term-icon">
-          <svg viewBox="0 0 14 10" fill="none" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor"></path>
-          </svg>
-        </span>
-      </button>
-    </li>
-  </ul>
+  <button class="predictive-search__term button body3" type="submit">
+    {{ t "general.search.search_hint" key="__QUERY_KEY__" }}
+  </button>
 </div>

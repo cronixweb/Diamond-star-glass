@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "आप शॉपिंग कार्ट में केवल {{quantity}} व्यापार जोड़ सकते हैं।"
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "गलत ईमेल पता"
-    },
     "account": {
       "account_binding": "खाता जोड़ना",
       "account_information": "खाता",
@@ -216,6 +213,7 @@
       "delete_account_notify": "आप इस खाते को बंद करने के लिए आवेदन कर सकते हैं। एक बार बंद होने पर, इस खाते की पहचान की कोई भी जानकारी हटा दी जाएगी, जिसमें शामिल हैं:",
       "email": "ईमेल",
       "email_repeat_tip": "ईमेल पंजीकृत किया गया है",
+      "email_subscribe_invalid_tip": "गलत ईमेल पता",
       "first_name": "नाम",
       "gender": "लिंग",
       "gender_female": "महिला",
@@ -260,7 +258,7 @@
       "copy_success": "कूपन कोड कॉपी किया गया",
       "discount_title": "खाता सक्रिय करें और छूट कोड पाएं",
       "normal_title": "खाते को सक्रिय करें",
-      "normal_title_with_discount_code": "खाता सक्रिय करें और डिस्काउंट कोड पाएं",
+      "normal_title_with_discount_code": "",
       "subscription_text": "विशेष सौदों तक पहुंच, और बहुत कुछ ईमेल से अपडेट पाने के लिए सदस्यता लें।",
       "success_title": "अच्छा छूट मिलने पर बधाई कोड",
       "token_expired": "लिंक की वैधता समाप्त हुआ"
@@ -300,19 +298,98 @@
         "shipping": "कंपनी का शिपिंग पता",
         "title": "कंपनी खाता आवेदन"
       },
+      "address": {
+        "placeholder": "विस्तृत पता"
+      },
+      "address2": {
+        "placeholder": "विस्तृत पता 2"
+      },
       "bill": {
         "sameAsCompany": "कंपनी का बिलिंग पता कंपनी के शिपिंग पते के समान है"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "विस्तृत पता"
+        },
+        "address2": {
+          "placeholder": "विस्तृत पता 2"
+        },
+        "city": {
+          "placeholder": "शहर"
+        },
+        "country": {
+          "placeholder": "देश/क्षेत्र"
+        },
+        "district": {
+          "placeholder": "जिला"
+        },
+        "phone": {
+          "placeholder": "मोबाइल फ़ोन नंबर"
+        },
+        "province": {
+          "placeholder": "प्रदेश"
+        },
+        "zip": {
+          "placeholder": "पोस्टकोडअ"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "कंपनी का बिलिंग पता शिपिंग पते के समान है"
+      },
+      "billing_address": {
+        "title": "कंपनी का बिलिंग पता"
+      },
+      "city": {
+        "placeholder": "शहर"
+      },
+      "company_name": {
+        "placeholder": "कंपनी का नाम"
+      },
+      "country": {
+        "placeholder": "देश/क्षेत्र"
       },
       "create": {
         "limit": "दुकान के लिए कंपनियों की संख्या अपनी सीमा तक पहुंच गई है. कृपया सहायता के लिए व्यापारी से संपर्क करें।",
         "success": "धन्यवाद। फॉर्म जमा कर दिया गया है."
       },
+      "district": {
+        "placeholder": "जिला"
+      },
+      "email": {
+        "placeholder": "मेलबॉक्स"
+      },
       "field": {
         "companyName": "कंपनी का नाम",
         "email": "ईमेल"
       },
+      "first_name": {
+        "placeholder": "कुलनाम"
+      },
       "form": {
         "submit": "जमा करना"
+      },
+      "last_name": {
+        "placeholder": "नाम"
+      },
+      "phone": {
+        "placeholder": "मोबाइल फ़ोन नंबर"
+      },
+      "province": {
+        "placeholder": "प्रदेश"
+      },
+      "register": {
+        "button": "जमा करें",
+        "success": {
+          "description": "फॉर्म सफलतापूर्वक जमा कर दिया गया है।",
+          "title": "इसे भरने के लिए धन्यवाद!"
+        },
+        "title": "कंपनी खाते का आवेदन"
+      },
+      "shipping_address": {
+        "title": "कंपनी का शिपिंग पता"
+      },
+      "zip": {
+        "placeholder": "पोस्टकोडअ"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "स्पष्ट",
       "company_empty_hint": "कंपनी का नाम रिक्त नहीं हो सकता",
       "company_existed": "कंपनी का नाम पहले से मौजूद है।",
+      "company_frequent_operation": "ऑपरेशन दोहराएँ, कृपया बाद में पुनः प्रयास करें",
+      "company_registry_closed": "व्यापारी ने कंपनी खाता एप्लिकेशन फ़ंक्शन सक्षम नहीं किया है, कृपया आवेदन करने के लिए व्यापारी से संपर्क करें।",
       "confirm": "ठीक है",
       "confirm_button": "ठीक है",
       "date_format": "MM/dd/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "हम आपको अपना पासवर्ड रीसेट करने के लिए एक SMS भेजेंगे",
       "proceed_to_checkout": "चेक आउट करने के लिए आगे बढ़ें",
       "title": "पृष्ठ का शीर्षक",
-      "verification_code_success": "आपके लॉगिन {{type}}<em>{{value}}</em> पर एक सत्यापन कोड भेज दिया गया है, कृपया इसे नीचे दर्ज करें।"
+      "verification_code_success": "आपके लॉगिन {{type}} <em>{{value}}</em> पर एक सत्यापन कोड भेज दिया गया है, कृपया इसे नीचे दर्ज करें।"
     },
     "login": {
       "member_login_common": "सदस्य साइन इन",
@@ -461,12 +540,18 @@
       "go_to_login": "साइन इन पर जाएं",
       "tips_agree_with_the_shop": "मैं इसके लिए सहमत हूँ"
     },
+    "subscribe": {
+      "email_has_bind": "यह ईमेल पता किसी अन्य खाते से लिंक कर दिया गया है",
+      "phone_has_bind": "यह फ़ोन किसी अन्य खाते से लिंक कर दिया गया है"
+    },
     "subscription": {
       "email": "ईमेल",
+      "email_subscribe_error_tip": "इस ईमेल पते को किसी अन्य खाते से लिंक कर दिया गया है",
       "email_subscription_text": "ईमेल द्वारा सदस्यता की प्रचार जानकारी प्राप्त करें",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "फोन संशोधित करें",
+      "phone_subscribe_error_tip": "इस मोबाइल फोन को दूसरे अकाउंट से लिंक कर दिया गया है",
       "phone_subscription_text": "फ़ोन प्रोमोशन के लिए सदस्यता लें",
       "reason_other_length": "300 शब्दों तक दर्ज करें",
       "reason_other_placeholder": "इनपुट",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "सदस्यता रद्द, मुखपृष्ठ पर पुनर्निर्देशित की जाएगी",
       "unsubscribe_tip": "एक बार सदस्यता समाप्त करने के बाद, आपको अब नवीनतम प्रोमोशन नहीं मिलेगा।",
       "unsubscribe_title": "सदस्यता रद्द"
+    },
+    "unsubscribe": {
+      "content_placeholder": "कृपया सामग्री दर्ज करें",
+      "goto_btn": "दुकान में प्रवेश करें",
+      "notyet": "आपने अभी तक सदस्यता नहीं ली है",
+      "notyet_desc": "आप सब्सक्राइब करने के लिए स्टोर पर जा सकते हैं",
+      "success": "सदस्यता रद्द कर दी गई",
+      "success_tip": "आपने {{storeName}} से सदस्यता समाप्त कर दी है"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "फिर से खरीदें",
     "checkout_order": {
       "pay_amount": "भुगतान राशि",
       "receiver_account": "प्राप्तकर्ता खाता",
@@ -596,8 +690,9 @@
       "details": "ऑर्डर का विवरण",
       "insuranceService": "बीमा सेवाएं",
       "insuranceService_applyClaim": "दावे के लिए आवेदन कर",
-      "insuranceService_content_email": "1.पॉलिसी आपके ईमेल \"{{email}}\" पर {{serviceName}} द्वारा भेजी गई है। यदि आपको पॉलिसी की जानकारी प्राप्त नहीं हुई है, तो कृपया स्टोर की ग्राहक सेवा से संपर्क करें। 2. यदि परिवहन के दौरान कोई क्षति, नुकसान, देरी या अन्य स्थिति होती है, तो आप दावे के लिए आवेदन कर सकते हैं।",
-      "insuranceService_content_phone": "1. पॉलिसी आपके फ़ोन \"{{phopne}}\" पर {{serviceName}} द्वारा भेजी गई है। यदि आपको पॉलिसी की जानकारी प्राप्त नहीं हुई है, तो कृपया स्टोर की ग्राहक सेवा से संपर्क करें। 2. यदि परिवहन के दौरान कोई क्षति, नुकसान, देरी या अन्य स्थिति होती है, तो आप दावे के लिए आवेदन कर सकते हैं।",
+      "insuranceService_content_line1__email": "1.पॉलिसी आपके ईमेल \"{{email}}\" पर {{serviceName}} द्वारा भेजी गई है। यदि आपको पॉलिसी की जानकारी प्राप्त नहीं हुई है, तो कृपया स्टोर की ग्राहक सेवा से संपर्क करें। ",
+      "insuranceService_content_line1__phone": "1. पॉलिसी {{serviceName}} के माध्यम से खरीदी गई है। यदि आपके कोई अन्य प्रश्न हैं, तो कृपया दुकान की ग्राहक सेवा से संपर्क करें।",
+      "insuranceService_content_line2": "2. यदि परिवहन के दौरान कोई क्षति, नुकसान, देरी या अन्य स्थिति होती है, तो आप दावे के लिए आवेदन कर सकते हैं।",
       "order": "ऑर्डर",
       "remark": "ऑर्डर टिप्पणी",
       "time": "ऑर्डर दिया गया:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "और आइटम लोड किए जा रहे हैं",
+      "loading_btn": "और लोड करें",
       "no_product_data_found": "कोई उत्पाद डेटा नहीं मिला। बाद में पुन: प्रयास करें",
       "sold_out": "बिक गया",
-      "added_to_cart_successfully": "",
+      "load_more": "और आइटम लोड किए जा रहे हैं",
       "load_more_items": "{{total}} आइटमों में से {{current_offset}} ~ {{last_current_offset}} लोड हो रहा है",
-      "unavailable": "उपलब्ध नहीं"
+      "unavailable": "सामान मौजूद नहीं है",
+      "variant_property_color": "रंग"
     },
     "giftcard": {
       "seoTitle": "आपके {{ shop }} उपहार कार्ड का शेष राशि {{ value }} है!",
@@ -708,7 +805,7 @@
       "cancel": "रद्द करें",
       "country_region": "देश/क्षेत्र",
       "default_placeholder": "कृपया {{attrName}} चुनें",
-      "description": "",
+      "description": "विवरण",
       "each_price": "{{price}}/ प्रत्येक",
       "email": "ईमेल",
       "enter_email_address": "कृपया अपना पूरा ईमेल दर्ज करें",
@@ -765,6 +862,7 @@
       "filter": "फ़िल्टर",
       "filters_selected": "{{count}} का चयन कर लिया गया है",
       "from_price_html": "{{price}} से",
+      "infinite_btn_desc": "{{total}} आइटमों में से {{last_current_offset}}",
       "less": "कम लेबल",
       "load_more_desc": "{{total}} आइटमों में से {{current_offset}} ~ {{last_current_offset}}",
       "load_more_tip": "और आइटम लोड हो रहे हैं",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% छूट",
       "select_product_all_options": "चयनित उत्पाद वेरिएंट अधूरा या अनुपलब्ध है। कृपया फिर से चुनें।",
       "sort_button": "क्रमबद्ध",
-      "top_sellers": "सबसे अच्चे विक्रेता",
-      "more__product_num": "",
-      "one_product_num": "",
-      "show": ""
+      "top_sellers": "सबसे अच्चे विक्रेता"
     },
     "product_search": {
       "back_to_home": "होम पेज पर वापस जाएं",
@@ -886,6 +981,10 @@
       "MultiplePayment": "मल्टी-चैनल भुगतान",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "क्रेडिट कार्ड"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "उत्पाद की सीमा पार हो गई है"
     },
     "order": {
-      "deleted": "अवैध"
+      "deleted": "अवैध",
+      "rebuy": "इसे फिर से खरीदें"
     },
     "payment": {
       "continue_shopping": "शॉपिंग जारी रखें",
@@ -979,7 +1079,7 @@
       "error_message_1008": "तृतीय-पक्ष चैनलों को कॉन्फ़िगर किए बिना लॉग इन करें",
       "error_message_1009": "तृतीय-पक्ष इंटरफ़ेस को कॉल करने में विफल",
       "error_message_1010": "भेजने में विफल",
-      "error_message_1011": "खाता संख्या सक्रिय नहीं है",
+      "error_message_1011": "खाता सक्रिय नहीं है। कृपया पासवर्ड और अन्य जानकारी पूरी करने के लिए पंजीकरण करें।",
       "error_message_1012": "सेवा के अपवाद",
       "error_message_1013": "सेवा के अपवाद",
       "error_message_1014": "सत्यापन कोड सत्यापित करने में विफल",

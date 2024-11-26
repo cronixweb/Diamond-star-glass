@@ -63,7 +63,7 @@
       "max_amount_limit": "Ödeme için maksimum tutarı aştınız"
     },
     "checkout_proceeding": {
-      "checkout": "ÖDEME",
+      "checkout": "Satın al",
       "checkout_proceed": "Aşağıdaki ürünler satın alma limitini aşıyor, yine de ödemeye devam edilsin mi?",
       "continue": "Devam et",
       "continue_shopping": "ALIŞVERİŞE DEVAM",
@@ -186,7 +186,7 @@
       "information": "Abonelik"
     },
     "tips": {
-      "agree_with_the_shop": "Katılıyorum",
+      "agree_with_the_shop": "Gizlilik",
       "change_binding_after_verification": "Doğrulamadan sonra {{value}} bağlayabilir/değiştirebilirsiniz",
       "forget_password": "Parolanızı mı unuttunuz",
       "proceed_to_checkout": "Çıkışa doğru devam et",
@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Alışveriş sepetine yalnızca {{quantity}} ürün ekleyebilirsiniz."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Geçersiz E-posta Adresi"
-    },
     "account": {
       "account_binding": "Hesap Bağlama",
       "account_information": "Hesap",
       "bind": "Bağlama",
       "birthday": "Doğum Tarihi",
       "change_password": "Parolayı değiştir",
-      "confirm_btn": "Xác nhận",
+      "confirm_btn": "Onayla",
       "confirm_subscription_modal_btn": "Aboneliği Onayla",
       "confirm_subscription_modal_content": "Daha önceden abonelik gönderdiniz. Onay e-postası bu e-posta adresine gönderildi. E-postanızdan ya da bu tuşu tıklayarak onaylayabilirsiniz.",
       "confirm_subscription_modal_title": "E-posta aboneliğinizi onaylayın.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Bu hesabı kapatmak için başvurabilirsiniz. Kapatıldığında, bu hesabı tanımlamak için kullanılacak tüm bilgiler silinecektir, bu bilgilere şunlar dahildir:",
       "email": "E-posta",
       "email_repeat_tip": "E-posta kaydedildi",
+      "email_subscribe_invalid_tip": "Geçersiz E-posta Adresi",
       "first_name": "Ad",
       "gender": "Cinsiyet",
       "gender_female": "Kadın",
@@ -260,7 +258,7 @@
       "copy_success": "Kupon kodu kopyalandı",
       "discount_title": "Hesabı aktifleştirin ve indirim kodunu alın",
       "normal_title": "Hesabı aktifleştir",
-      "normal_title_with_discount_code": "Hesabı aktifleştir ve indirim kodunu al",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Güncellemeleri almak, özel anlaşmalara erişmek ve daha fazlası için e-postalara abone olun.",
       "success_title": "Harika bir indirim aldığınız için tebrikler",
       "token_expired": "Link geçerliliği sona erdi"
@@ -300,19 +298,98 @@
         "shipping": "Şirket teslimat adresi",
         "title": "Şirket hesap başvurusu"
       },
+      "address": {
+        "placeholder": "Detaylı adres"
+      },
+      "address2": {
+        "placeholder": "Detaylı adres 2"
+      },
       "bill": {
         "sameAsCompany": "Şirketin fatura adresi, şirketin teslimat adresiyle aynıdır"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Detaylı adres"
+        },
+        "address2": {
+          "placeholder": "Detaylı adres 2"
+        },
+        "city": {
+          "placeholder": "Şehir"
+        },
+        "country": {
+          "placeholder": "Ülke/Bölge"
+        },
+        "district": {
+          "placeholder": "Bölge"
+        },
+        "phone": {
+          "placeholder": "Cep telefonu numarası"
+        },
+        "province": {
+          "placeholder": "İl"
+        },
+        "zip": {
+          "placeholder": "Posta kodu"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Şirketin fatura adresinin sevkiyat adresi ile aynı olması"
+      },
+      "billing_address": {
+        "title": "Firma fatura adresi"
+      },
+      "city": {
+        "placeholder": "Şehir"
+      },
+      "company_name": {
+        "placeholder": "Şirket adı"
+      },
+      "country": {
+        "placeholder": "Ülke/Bölge"
       },
       "create": {
         "limit": "Mağaza için şirket sayısı sınırına ulaşıldı. Lütfen yardım için satıcıya başvurun.",
         "success": "Teşekkür ederim. Form gönderildi."
       },
+      "district": {
+        "placeholder": "Bölge"
+      },
+      "email": {
+        "placeholder": "Posta Kutusu"
+      },
       "field": {
         "companyName": "Şirket adı",
         "email": "E-posta"
       },
+      "first_name": {
+        "placeholder": "Soyadları"
+      },
       "form": {
         "submit": "Gönder"
+      },
+      "last_name": {
+        "placeholder": "İsimler"
+      },
+      "phone": {
+        "placeholder": "Cep telefonu numarası"
+      },
+      "province": {
+        "placeholder": "İl"
+      },
+      "register": {
+        "button": "Gönder",
+        "success": {
+          "description": "Form başarıyla gönderilmiştir.",
+          "title": "Doldurduğunuz için teşekkürler!"
+        },
+        "title": "Şirket hesabı başvurusu"
+      },
+      "shipping_address": {
+        "title": "Şirketin sevkiyat adresi"
+      },
+      "zip": {
+        "placeholder": "Posta kodu"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Temizle",
       "company_empty_hint": "Şirket adı boş olamaz",
       "company_existed": "Şirket adı zaten mevcut.",
+      "company_frequent_operation": "İşlemi tekrarlayın, lütfen daha sonra tekrar deneyin",
+      "company_registry_closed": "Satıcı, şirket hesabı başvuru işlevini etkinleştirmedi; başvuruda bulunmak için lütfen satıcıyla iletişime geçin.",
       "confirm": "Tamam",
       "confirm_button": "Tamam",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Parolanızı sıfırlamak için size bir SMS göndereceğiz",
       "proceed_to_checkout": "Çıkışa doğru devam et",
       "title": "Sayfa Başlığı",
-      "verification_code_success": "Doğrulama kodu, {{type}}<em>{{value}}</em> giriş hesabınıza gönderildi, lütfen aşağıya girin."
+      "verification_code_success": "Doğrulama kodu, {{type}} <em>{{value}}</em> giriş hesabınıza gönderildi, lütfen aşağıya girin."
     },
     "login": {
       "member_login_common": "Üye girişi",
@@ -461,20 +540,26 @@
       "go_to_login": "Oturum açmaya git",
       "tips_agree_with_the_shop": "Katılıyorum"
     },
+    "subscribe": {
+      "email_has_bind": "Bu e-posta adresi başka bir hesaba bağlandı",
+      "phone_has_bind": "Bu telefon başka bir hesaba bağlandı"
+    },
     "subscription": {
       "email": "E-posta",
+      "email_subscribe_error_tip": "Bu e-posta adresi başka bir hesaba bağlandı",
       "email_subscription_text": "Abonelikteki promosyon bilgilerini e-posta ile alın",
       "line": "LINE",
       "messenger": "Messenger",
-      "phone": "Cep telefonu",
+      "phone": "Telefon numarası",
+      "phone_subscribe_error_tip": "Bu cep telefonu başka bir hesaba bağlandı",
       "phone_subscription_text": "Telefon promosyonuna abone ol",
       "reason_other_length": "300 kelimeye kadar girin",
       "reason_other_placeholder": "Giriş",
       "save_button": "KAYDET",
-      "subscribe_button": "ABONE OL",
+      "subscribe_button": "Abone ol",
       "subscription_cancel_text": "ABONELİKTEN ÇIK",
-      "subscription_hint": "Abone olundu",
-      "subscription_title": "Abonelik",
+      "subscription_hint": "Abone oldunuz",
+      "subscription_title": "Abonelikler",
       "unsubscribe": "Abonelikten çık",
       "unsubscribe_btn": "Abonelikten çık",
       "unsubscribe_confirm_text": "Abonelikten çık",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Abonelik iptal edildi, ana sayfaya yönlendirilecek",
       "unsubscribe_tip": "Abonelikten çıkıldığında, artık en güncel promosyonların bilgilerini alamayacaksınız.",
       "unsubscribe_title": "Abonelikten çık"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Lütfen içeriği girin",
+      "goto_btn": "Mağazaya girin",
+      "notyet": "Henüz abone olmadınız",
+      "notyet_desc": "Abone olmak için mağazaya gidebilirsiniz",
+      "success": "Abonelik iptal edildi",
+      "success_tip": "{{storeName}} aboneliğinizi iptal ettiniz"
     }
   },
   "general": {
@@ -518,7 +611,7 @@
     "general": {
       "accept": "Kabul et",
       "decline": "Reddet",
-      "home": "ön Sayfa",
+      "home": "Anasayfa",
       "link": "Gizlilik Politikası",
       "more": "Daha fazla",
       "no_data": "Mevuct veri yok",
@@ -532,7 +625,7 @@
       "proofing_tip": "ÜZGÜNÜZ, ARADIĞINIZ MAĞAZA ŞU ANDA KAPALIDIR,<br/>LÜTFEN SONRA TEKRAR DENEYİN."
     },
     "header": {
-      "cart": "Sepetiniz",
+      "cart": "Sepet",
       "center": "Merkez",
       "close": "Kapat",
       "login": "Giriş",
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Tekrar satın al",
     "checkout_order": {
       "pay_amount": "Ödeme miktarı",
       "receiver_account": "alıcı hesabı",
@@ -596,8 +690,9 @@
       "details": "Sipariş detayları",
       "insuranceService": "Sigorta Hizmetleri",
       "insuranceService_applyClaim": "Tazminat başvurusunda",
-      "insuranceService_content_email": "1. Politika {{serviceName}} tarafından “{{email}}” e-posta adresinize gönderildi. Eğer politika bilgilerini almadıysanız, lütfen mağazanın müşteri hizmetleriyle iletişime geçin. 2. Eğer taşıma sırasında herhangi bir hasar, kayıp, gecikme veya farklı bir durum varsa, tazminat başvurusunda bulunabilirsiniz.",
-      "insuranceService_content_phone": "1. Politika {{serviceName}} tarafından “{{phopne}}” numaralı telefonunuza gönderildi. Eğer politika bilgilerini almadıysanız, lütfen mağazanın müşteri hizmetleriyle iletişime geçin. 2. Eğer taşıma sırasında herhangi bir hasar, kayıp, gecikme veya farklı bir durum varsa, tazminat başvurusunda bulunabilirsiniz.",
+      "insuranceService_content_line1__email": "1. Politika {{serviceName}} tarafından “{{email}}” e-posta adresinize gönderildi. Eğer politika bilgilerini almadıysanız, lütfen mağazanın müşteri hizmetleriyle iletişime geçin. ",
+      "insuranceService_content_line1__phone": "1. Poliçe {{serviceName}} üzerinden satın alındı. Eğer herhangi bir sorunuz varsa, lütfen mağazanın müşteri hizmetleriyle iletişime geçin.",
+      "insuranceService_content_line2": "2. Eğer taşıma sırasında herhangi bir hasar, kayıp, gecikme veya farklı bir durum varsa, tazminat başvurusunda bulunabilirsiniz.",
       "order": "Sipariş",
       "remark": "Sipariş açıklaması",
       "time": "Sipariş verme:",
@@ -657,7 +752,7 @@
       "collection": "Kategori"
     },
     "facets": {
-      "in_stock_only": "Sadece stoklarımızda",
+      "in_stock_only": "Sadece stokta olan ürünleri göster",
       "clear": "Temizle",
       "clear_all_filter": "Tümünü Sil",
       "confirm": "Onayla",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Daha fazla öğe yükleniyor",
+      "loading_btn": "Daha fazla yükle",
       "no_product_data_found": "Ürün verisi bulunamadı. Lütfen daha sonra tekrar deneyin",
       "sold_out": "Tümü Satıldı",
-      "added_to_cart_successfully": "Başarıyla sepete eklendi",
+      "load_more": "Daha fazla öğe yükleniyor",
       "load_more_items": "{{total}} öğeden {{current_offset}} ~ {{last_current_offset}} yükleniyor",
-      "unavailable": "kullanılamıyor"
+      "unavailable": "สินค้านี้ไม่มีอยู่",
+      "variant_property_color": "Renk"
     },
     "giftcard": {
       "seoTitle": "{{ shop }} hediye kartı bakiyeniz {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtre",
       "filters_selected": "{{count}} seçilmiştir",
       "from_price_html": "{{price}} başlayan fiyatlarla",
+      "infinite_btn_desc": "{{total}} öğeden {{last_current_offset}}",
       "less": "az",
       "load_more_desc": "{{total}} öğeden {{current_offset}} ~ {{last_current_offset}}",
       "load_more_tip": "Daha fazla öğe yükleniyor",
@@ -778,18 +876,15 @@
       "product_has_been_removed": "Ürün raflardan kaldırıldı",
       "product_sold_out": "TÜMÜ SATILDI",
       "products": "ürünleri",
-      "quick_shop": "Hızlı alışveriş",
+      "quick_shop": "Hızlı Bakış",
       "recommend": "Önerilen",
-      "sale": "satış",
+      "sale": "İndirimde",
       "save": "satış",
       "save_byjs": "{{priceDom}} tasarruf edin",
       "save_ratio": "{{price}}% İNDİRİM",
       "select_product_all_options": "Seçilen ürün varyantı eksik veya mevcut değil. Lütfen tekrar seçiniz",
       "sort_button": "Sırala",
-      "top_sellers": "En çok satanlar",
-      "more__product_num": "{{num}} ürün",
-      "one_product_num": "{{num}} ürün",
-      "show": "Göster"
+      "top_sellers": "En çok satanlar"
     },
     "product_search": {
       "back_to_home": "Ana sayfaya dön",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Çok kanallı ödemeler",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kredi Kartı"
     },
     "reduction_code": {
@@ -942,12 +1041,13 @@
       "product_limit": "Ürün limiti aşıldı"
     },
     "order": {
-      "deleted": "GEÇERSİZ"
+      "deleted": "GEÇERSİZ",
+      "rebuy": "Tekrar satın alın"
     },
     "payment": {
       "continue_shopping": "Alışverişe devam et",
       "more": "Daha",
-      "saved": "kaydedildi",
+      "saved": "Tasarruf edilen",
       "total": "Toplam"
     },
     "payment_disconut_channelinvalid_code": {
@@ -968,7 +1068,7 @@
       "paywith": "Ödeme aracı"
     },
     "customer": {
-      "error_message_1": "Güncellemeleri almak, özel fırsatlara erişmek ve daha fazlası için e-posta almak için beni kaydedin.",
+      "error_message_1": "Güncellemeler, özel fırsatlar ve daha fazlası için e-postalara kaydolun.",
       "error_message_1001": "Parola hatası",
       "error_message_1002": "Kullanıcı mevcut değil",
       "error_message_1003": "Hesabınız anormal durumdan dolayı devredışı bırakıldı; lütfen yasağın kaldırılması için satıcı ile iletişime geçin",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Üçüncü taraf kanalları yapılandırmadan giriş yapın",
       "error_message_1009": "Üçüncü taraf arayüzü çağrılamadı",
       "error_message_1010": "Gönderilemedi",
-      "error_message_1011": "Hesap numarası aktifleştirilmedi",
+      "error_message_1011": "Hesap etkinleştirilmedi. Şifreyi ve diğer bilgileri tamamlamak için lütfen kaydolun.",
       "error_message_1012": "Servis istisnaları",
       "error_message_1013": "Servis istisnaları",
       "error_message_1014": "Doğrulama kodu doğrulanamadı",

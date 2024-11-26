@@ -122,11 +122,13 @@
 
 .cart-notification-product__details .product-property {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 2px;
 }
 
 .cart-notification-product__details .product-property .product-property__name {
   flex-shrink: 0;
+  max-width: 100%;
 }
 
 .cart-notification-product__details .product-property .product-property__value {

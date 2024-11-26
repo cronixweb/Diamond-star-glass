@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Anda hanya dapat menambahkan produk {{quantity}} ke troli."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Alamat email yang tidak valid"
-    },
     "account": {
       "account_binding": "Pengikatan akun",
       "account_information": "Akun",
       "bind": "Mengikat",
       "birthday": "Hari lahir",
       "change_password": "Mengubah kata sandi",
-      "confirm_btn": "Konfirmasi",
+      "confirm_btn": "",
       "confirm_subscription_modal_btn": "Konfirmasikan langganan",
       "confirm_subscription_modal_content": "Sebelumnya Anda telah mengirimkan langganan. Email konfirmasi telah dikirim ke alamat email ini. Anda dapat mengonfirmasi hal ini di email Anda atau klik tombol ini.",
       "confirm_subscription_modal_title": "Silakan konfirmasikan langganan email Anda.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Anda dapat mengajukan untuk membatalkan akun ini. Setelah pembatalan akun, informasi apa pun yang digunakan untuk mengidentifikasi akun ini akan dihapus, termasuk:",
       "email": "Email",
       "email_repeat_tip": "Email sudah didaftar",
+      "email_subscribe_invalid_tip": "Alamat email yang tidak valid",
       "first_name": "Nama",
       "gender": "Kelamin",
       "gender_female": "Perempuan",
@@ -260,7 +258,7 @@
       "copy_success": "Kupon telah disalin",
       "discount_title": "Aktifkan akun dan dapatkan kode diskon",
       "normal_title": "Aktifkan akun",
-      "normal_title_with_discount_code": "Aktifkan akun Anda dan dapatkan kode diskon",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Berlangganan email untuk menerima pembaruan, mengakses diskon eksklusif, dll.",
       "success_title": "Selamat Anda dapatkan diskon",
       "token_expired": "Link Anda sudah mati"
@@ -300,19 +298,98 @@
         "shipping": "Alamat pengiriman perusahaan",
         "title": "Aplikasi akun perusahaan"
       },
+      "address": {
+        "placeholder": "Alamat terperinci"
+      },
+      "address2": {
+        "placeholder": "Alamat terperinci 2"
+      },
       "bill": {
         "sameAsCompany": "Alamat penagihan perusahaan sama dengan alamat pengiriman perusahaan"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Alamat terperinci"
+        },
+        "address2": {
+          "placeholder": "Alamat terperinci 2"
+        },
+        "city": {
+          "placeholder": "Kota"
+        },
+        "country": {
+          "placeholder": "Negara/Wilayah"
+        },
+        "district": {
+          "placeholder": "Distrik"
+        },
+        "phone": {
+          "placeholder": "Nomor ponsel"
+        },
+        "province": {
+          "placeholder": "Provinsi"
+        },
+        "zip": {
+          "placeholder": "Kode pos"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Alamat penagihan perusahaan sama dengan alamat penerima"
+      },
+      "billing_address": {
+        "title": "Alamat Penagihan Perusahaan"
+      },
+      "city": {
+        "placeholder": "Kota"
+      },
+      "company_name": {
+        "placeholder": "Nama Perusahaan"
+      },
+      "country": {
+        "placeholder": "Negara/Wilayah"
       },
       "create": {
         "limit": "Jumlah perusahaan untuk toko tersebut telah mencapai batasnya. Silakan hubungi pedagang untuk bantuan.",
         "success": "Terima kasih. Formulir telah diserahkan."
       },
+      "district": {
+        "placeholder": "Distrik"
+      },
+      "email": {
+        "placeholder": "Kotak surat"
+      },
       "field": {
         "companyName": "Nama perusahaan",
         "email": "Surel"
       },
+      "first_name": {
+        "placeholder": "Nama"
+      },
       "form": {
         "submit": "Kirim"
+      },
+      "last_name": {
+        "placeholder": "Nama Keluarga"
+      },
+      "phone": {
+        "placeholder": "Nomor telepon seluler"
+      },
+      "province": {
+        "placeholder": "Provinsi"
+      },
+      "register": {
+        "button": "Pengiriman",
+        "success": {
+          "description": "Formulir telah berhasil dikirimkan.",
+          "title": "Terima kasih telah mengisi!"
+        },
+        "title": "Aplikasi Akun Perusahaan"
+      },
+      "shipping_address": {
+        "title": "Alamat Perusahaan Penerima"
+      },
+      "zip": {
+        "placeholder": "Kode pos"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Bersih",
       "company_empty_hint": "Nama perusahaan tidak boleh kosong",
       "company_existed": "Nama perusahaan sudah ada",
+      "company_frequent_operation": "Ulangi operasi, silakan coba lagi nanti",
+      "company_registry_closed": "Merchant belum mengaktifkan fungsi aplikasi akun perusahaan, silakan hubungi merchant untuk mengajukan permohonan.",
       "confirm": "Konfirmasi",
       "confirm_button": "Konfirmasi",
       "date_format": "dd/MM/yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Kami akan mengirimi Anda SMS untuk mengatur ulang kata sandi Anda",
       "proceed_to_checkout": "Lanjutkan untuk pembayaran",
       "title": "Judul halaman",
-      "verification_code_success": "Kode verifikasi telah dikirim ke login Anda {{type}}<em>{{value}}</em>, silakan masukkan kode verifikasi di bawah ini."
+      "verification_code_success": "Kode verifikasi telah dikirim ke login Anda {{type}} <em>{{value}}</em>, silakan masukkan kode verifikasi di bawah ini."
     },
     "login": {
       "member_login_common": "Login anggota",
@@ -461,12 +540,18 @@
       "go_to_login": "Pergi login",
       "tips_agree_with_the_shop": "Saya setutu perjanjian toko"
     },
+    "subscribe": {
+      "email_has_bind": "Alamat email ini telah terikat dengan akun lain",
+      "phone_has_bind": "Ponsel ini telah terikat ke akun lain"
+    },
     "subscription": {
       "email": "Email",
+      "email_subscribe_error_tip": "Kotak surat ini terikat ke akun lain",
       "email_subscription_text": "Menerima informasi promo memesan melalui email",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "HP",
+      "phone_subscribe_error_tip": "Ponsel ini terikat ke akun lain",
       "phone_subscription_text": "Menerima informasi promo pesan melalui telepon",
       "reason_other_length": "Maksimal masukkan 300 kata",
       "reason_other_placeholder": "Masukkan isi",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Langganan telah dibatalkan, akan melompat ke halaman beranda",
       "unsubscribe_tip": "Setelah batal memesan, Anda tidak akan menerima informasi promo terbaru lagi.",
       "unsubscribe_title": "Batal pesan"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Silakan masukkan konten",
+      "goto_btn": "Masuk ke toko",
+      "notyet": "Anda belum berlangganan",
+      "notyet_desc": "Anda dapat pergi ke toko untuk berlangganan",
+      "success": "Langganan dibatalkan",
+      "success_tip": "Anda telah berhenti berlangganan dari {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Beli lagi",
     "checkout_order": {
       "pay_amount": "jumlah pembayaran",
       "receiver_account": "akun penerima",
@@ -596,8 +690,9 @@
       "details": "Detail pesanan",
       "insuranceService": "Pelayanan Asuransi",
       "insuranceService_applyClaim": "Pengajuan Klaim",
-      "insuranceService_content_email": "1. Polis asuransi telah dikirimkan oleh {{serviceName}} ke email Anda \"{{email}}\". Jika Anda tidak menerima email polis, silakan hubungi layanan pelanggan toko. 2. Jika terjadi kerusakan, kehilangan, atau keterlambatan selama pengiriman, Anda dapat mengajukan klaim.",
-      "insuranceService_content_phone": "2. Polis asuransi telah dikirimkan oleh {{serviceName}} ke ponsel Anda \"{{phopne}}\". Jika Anda tidak menerima email polis, silakan hubungi layanan pelanggan toko. 2. Jika terjadi kerusakan, kehilangan, atau keterlambatan selama pengiriman, Anda dapat mengajukan klaim.",
+      "insuranceService_content_line1__email": "1. Polis asuransi telah dikirimkan oleh {{serviceName}} ke email Anda \"{{email}}\". Jika Anda tidak menerima email polis, silakan hubungi layanan pelanggan toko. ",
+      "insuranceService_content_line1__phone": "1. Polis telah dibeli melalui {{serviceName}}. Jika Anda memiliki pertanyaan lain, silakan hubungi layanan pelanggan toko.",
+      "insuranceService_content_line2": "2.2. Jika terjadi kerusakan, kehilangan, atau keterlambatan selama pengiriman, Anda dapat mengajukan klaim.",
       "order": "Pesanan",
       "remark": "Catatan pesanan",
       "time": "Waktu pesan:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Muat lebih banyak item",
+      "loading_btn": "Muat lebih banyak",
       "no_product_data_found": "Tidak ada data produk saat ini, silakan coba lagi nanti",
       "sold_out": "Terjual habis",
-      "added_to_cart_successfully": "कार्ट में सफलतापूर्वक जोड़ा गया",
+      "load_more": "और आइटम लोड किए जा रहे हैं",
       "load_more_items": "Memuat item {{current_offset}} ~ {{last_current_offset}} / {{total}}",
-      "unavailable": "Tidak tersedia"
+      "unavailable": "Produk ini tidak tersedia",
+      "variant_property_color": "रंग"
     },
     "giftcard": {
       "seoTitle": "Saldo kartu hadiah {{ shop }} Anda adalah {{ value }}！",
@@ -708,7 +805,7 @@
       "cancel": "Batal",
       "country_region": "Negara/wilayah",
       "default_placeholder": "Silakan pilih {{attrName}}",
-      "description": "विवरण",
+      "description": "Deskripsi",
       "each_price": "{{price}}/setiap",
       "email": "Email",
       "enter_email_address": "Silakan isi email",
@@ -765,6 +862,7 @@
       "filter": "Saring",
       "filters_selected": "{{count}} telah dipilih",
       "from_price_html": "dari {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} / {{total}} item",
       "less": "Label yang lebih sedikit",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} / {{total}} item",
       "load_more_tip": "Muat lebih banyak proyek",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% Diskon",
       "select_product_all_options": "Pilihan varian produk yang dipilih tidak lengkap atau tidak tersedia. Silakan pilih kembali.",
       "sort_button": "Urutkan",
-      "top_sellers": "Penjualan baik",
-      "more__product_num": "{{num}} उत्पादों",
-      "one_product_num": "{{num}} उत्पाद",
-      "show": "दिखाएं"
+      "top_sellers": "Penjualan baik"
     },
     "product_search": {
       "back_to_home": "Kembali ke halaman pertama",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Pembayaran multi-saluran",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "kartu kredit"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Telah melebihi jumlah batasan"
     },
     "order": {
-      "deleted": "Terhapus"
+      "deleted": "Terhapus",
+      "rebuy": "Beli lagi"
     },
     "payment": {
       "continue_shopping": "Lanjutkan belanja",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Belum konfigurasi login saluran pihak ketiga",
       "error_message_1009": "Gagal mengatur antarmuka pihak ketiga",
       "error_message_1010": "Gagal mengirim",
-      "error_message_1011": "Akun belum diaktifkan",
+      "error_message_1011": "Akun belum diaktifkan, Silakan mendaftar untuk melengkapi kata sandi dan informasi lainnya.",
       "error_message_1012": "Layanan abnormal",
       "error_message_1013": "Layanan abnormal",
       "error_message_1014": "Verifikasi kode verifikasi gagal",

@@ -2,12 +2,12 @@
   margin: 6px 0;
 }
 
-price-per-item {
+.price-per-item__container price-per-item {
   display: block;
   margin-top: 12px;
 }
 
-price-per-item .price-per-item {
+.price-per-item__container price-per-item .price-per-item {
   line-height: normal;
 }
 
@@ -21,11 +21,16 @@ price-per-item .price-per-item {
 
 volume-pricing {
   display: block;
-  margin: 26px 0;
 }
 
 volume-pricing .volume-pricing-title {
-  margin-bottom: 10px;
+  margin: 26px 0 10px 0;
+}
+
+@media (max-width: 959px) {
+  volume-pricing .volume-pricing-title {
+    margin-top: 20px;
+  }
 }
 
 volume-pricing li {

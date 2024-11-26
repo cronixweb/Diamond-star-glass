@@ -19,7 +19,8 @@
         <ul class="customer-order-list list-unstyled">
           {{#for customer.orders as |order|}}
             <li>
-              <a href="{{ routes.account_order_list_url }}/{{ order.id }}" class="customer-order-item">
+              <div class="customer-order-item">
+                <a class="customer-order-item__link" href="{{ routes.account_order_list_url }}/{{ order.id }}"></a>
                 <div class="customer-order-item__head body5">
                   
                   <span class="customer-order-item__seq fw-bold" >{{t 'order.order_status.sequence' id=(append '#' order.order_number) }}</span>
@@ -46,9 +47,15 @@
                         {{ placeholder_svg_tag 'image' "image-fallback"}}
                       {{/if}}
                     </div>
-                    <p class="customer-order-item__product-total">
-                      {{t 'order.order_list.total_amount' transPackages=order.item_count }}
-                    </p>
+                    <div class="customer-order-item__total-content">
+                      <p class="customer-order-item__product-total">
+                        {{t 'order.order_list.total_amount' transPackages=order.item_count }}
+                      </p>
+                      <p class="customer-order-item__price-total body3 fw-bold">
+                        <span>{{t 'transaction.payment.total'}}</span>
+                        <span>{{ money_with_currency order.presentment_price currency=order.presentment_currency }}</span>
+                      </p>
+                    </div>
                   </div>
 
                   
@@ -68,12 +75,11 @@
                 </div>
 
                 <div class="customer-order-item__foot">
-                  <p class="customer-order-item__total-info body2 fw-bold">
-                    <span>{{t 'transaction.payment.total'}}</span>
-                    <span>{{ money_with_currency order.total_price currency=order.currency }}</span>
-                  </p>
+                  <a href="{{order.rebuy_url}}" class="customer-order-item__rebuy button button--secondary">
+                    {{t 'transaction.order.rebuy'}}
+                  </a>
                 </div>
-              </a>
+              </div>
             </li>
           {{/for}}
         </ul>

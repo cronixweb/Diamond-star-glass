@@ -1,7 +1,6 @@
 {{assign "scene" (append scene '-fixed')}}
 
-{{#unless cart.empty}}
-<div class="cart-fixed-checkout {{className}} {{#if cart.total_discount > 0}}collapsed{{/if}}">
+<div class="{{#if cart.empty}}cart-empty{{/if}} cart-fixed-checkout {{className}} {{#if cart.total_discount > 0}}collapsed{{/if}}">
   <div class="cart-fixed-checkout__container">
     {{#if cart.total_discount > 0}}
     <div class="cart-fixed-checkout__dropdown-button">
@@ -20,10 +19,7 @@
               <span class="body2 fw-bold">{{money_with_currency cart.items_subtotal_price}}</span>
             </li>
           {{/if}}
-          <li class="cart__discount">
-            <em class="body3">{{t "transaction.general.discount_off"}}</em>
-            <span class="body2 fw-bold">-{{money_with_currency cart.total_discount}}</span>
-          </li>
+          {{snippet "cart-level-discount-applications" cart=cart}}
         </ul>
         <div class="cart-fixed-checkout__desc body4 rte">
           {{#if cart.taxes_included and shop.shipping_policy.body}}
@@ -71,4 +67,3 @@
     </div>
   </div>
 </div>
-{{/unless}}

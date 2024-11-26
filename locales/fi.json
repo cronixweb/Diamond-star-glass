@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "Voit lisätä ostoskoriin vain {{quantity}} tuotteita."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Virheellinen sähköpostiosoite"
-    },
     "account": {
       "account_binding": "Tilin linkittäminen",
       "account_information": "Tili",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Voit hakea tämän tilin sulkemista. Sulkemisen jälkeen kaikki tämän tilin tunnistamista koskevat tiedot poistetaan, mukaan lukien:",
       "email": "Sähköposti",
       "email_repeat_tip": "Sähköpostiosoite on jo rekisteröity",
+      "email_subscribe_invalid_tip": "Virheellinen sähköpostiosoite",
       "first_name": "Nimi",
       "gender": "Sukupuoli",
       "gender_female": "Nainen",
@@ -260,7 +258,7 @@
       "copy_success": "Kuponkikoodi kopioitu",
       "discount_title": "Aktivoi tili ja hanki alennuskoodi",
       "normal_title": "Aktivoi tili",
-      "normal_title_with_discount_code": "Aktivoi tilisi ja saat alennuskoodin",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Tilaa sähköposteja saadaksesi päivityksiä, käyttääksesi eksklusiivisia tarjouksia ja paljon muuta.",
       "success_title": "Onnittelut suuren alennuksen saamisesta",
       "token_expired": "Linkki on vanhentunut"
@@ -300,19 +298,98 @@
         "shipping": "Yrityksen toimitusosoite",
         "title": "Yritystilihakemus"
       },
+      "address": {
+        "placeholder": "Yksityiskohtainen osoite"
+      },
+      "address2": {
+        "placeholder": "Yksityiskohtainen osoite 2"
+      },
       "bill": {
         "sameAsCompany": "Yrityksen laskutusosoite on sama kuin yrityksen toimitusosoite"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Yksityiskohtainen osoite"
+        },
+        "address2": {
+          "placeholder": "Yksityiskohtainen osoite 2"
+        },
+        "city": {
+          "placeholder": "Kaupunki"
+        },
+        "country": {
+          "placeholder": "Maa/Regio"
+        },
+        "district": {
+          "placeholder": "Piiri"
+        },
+        "phone": {
+          "placeholder": "Matkapuhelinnumero"
+        },
+        "province": {
+          "placeholder": "Maakunta"
+        },
+        "zip": {
+          "placeholder": "Postinumero"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Yrityksen laskutusosoite on sama kuin toimitusosoite."
+      },
+      "billing_address": {
+        "title": "Yrityksen laskutusosoite"
+      },
+      "city": {
+        "placeholder": "Kaupunki"
+      },
+      "company_name": {
+        "placeholder": "Yrityksen nimi"
+      },
+      "country": {
+        "placeholder": "Maa/Regio"
       },
       "create": {
         "limit": "Kaupan yritysten määrä on saavuttanut rajansa. Ota yhteyttä myyjään saadaksesi apua.",
         "success": "Kiitos. Lomake on lähetetty."
       },
+      "district": {
+        "placeholder": "Piiri"
+      },
+      "email": {
+        "placeholder": "Postilaatikko"
+      },
       "field": {
         "companyName": "Yrityksen nimi",
         "email": "Sähköposti"
       },
+      "first_name": {
+        "placeholder": "Sukunimet"
+      },
       "form": {
         "submit": "Lähetä"
+      },
+      "last_name": {
+        "placeholder": "Nimet"
+      },
+      "phone": {
+        "placeholder": "Matkapuhelinnumero"
+      },
+      "province": {
+        "placeholder": "Maakunta"
+      },
+      "register": {
+        "button": "Lähetä",
+        "success": {
+          "description": "Lomake on lähetetty onnistuneesti.",
+          "title": "Kiitos täyttämisestä!"
+        },
+        "title": "Yritystilin hakemus"
+      },
+      "shipping_address": {
+        "title": "Yrityksen toimitusosoite"
+      },
+      "zip": {
+        "placeholder": "Postinumero"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Tyhjennä",
       "company_empty_hint": "Yrityksen nimi ei voi olla tyhjä",
       "company_existed": "Yrityksen nimi on jo käytössä.",
+      "company_frequent_operation": "Toista toimenpide, yritä myöhemmin uudelleen",
+      "company_registry_closed": "Kauppias ei ole ottanut yritystilin hakutoimintoa käyttöön, ota yhteyttä kauppiaaseen hakeaksesi hakemusta.",
       "confirm": "OK",
       "confirm_button": "OK",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Lähetämme sinulle tekstiviestin salasanan vaihtamiseksi",
       "proceed_to_checkout": "Siirry maksamaan",
       "title": "Sivun otsikko",
-      "verification_code_success": "Vahvistuskoodi on lähetetty kirjautua sisään {{type}}<em>{{value}}</em>, syötä alla oleva koodi."
+      "verification_code_success": "Vahvistuskoodi on lähetetty kirjautua sisään {{type}} <em>{{value}}</em>, syötä alla oleva koodi."
     },
     "login": {
       "member_login_common": "Kirjaudu jäsenpalveluun",
@@ -461,12 +540,18 @@
       "go_to_login": "Siirry kirjautumaan sisään",
       "tips_agree_with_the_shop": "Hyväksyn"
     },
+    "subscribe": {
+      "email_has_bind": "Tämä sähköpostiosoite on sidottu toiseen tiliin",
+      "phone_has_bind": "Tämä puhelin on sidottu toiseen tiliin"
+    },
     "subscription": {
       "email": "Sähköposti",
+      "email_subscribe_error_tip": "Tämä sähköpostiosoite on yhdistetty toiseen tiliin",
       "email_subscription_text": "Saat tiedot kampanjoista sähköpostitse tilattuasi uutiskirjeemme",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Matkapuhelinnumero",
+      "phone_subscribe_error_tip": "Tämä matkapuhelin on yhdistetty toiseen tiliin",
       "phone_subscription_text": "Tilaa markkinointiviesti tekstiviestinä",
       "reason_other_length": "Kirjoita enintään 300 sanaa",
       "reason_other_placeholder": "Sisällön syöttö",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Tilaus on peruutettu. Siirryt etusivulle",
       "unsubscribe_tip": "Et saa enää uusinta kampanjaa kerran, kun olet peruuttanut tilauksen.",
       "unsubscribe_title": "Lopeta tilaus"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Anna sisältö",
+      "goto_btn": "Mene kauppaan",
+      "notyet": "Et ole vielä tilannut",
+      "notyet_desc": "Voit mennä kauppaan tilaamaan",
+      "success": "Tilaus peruttu",
+      "success_tip": "Olet peruuttanut myymälän {{storeName}} tilauksen"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Osta uudelleen",
     "checkout_order": {
       "pay_amount": "maksaa summa",
       "receiver_account": "vastaanottajan tili",
@@ -596,8 +690,9 @@
       "details": "Tilauksen tiedot",
       "insuranceService": "Vakuutuspalvelut",
       "insuranceService_applyClaim": "Hae vaatimusta",
-      "insuranceService_content_email": "1. Politiikka on lähetetty sähköpostiisi \"{{email}}\" by {{serviceName}}. Jos et ole saanut käytäntötietoja, ota yhteyttä kaupan asiakaspalveluun. 2. Jos kuljetuksen aikana on vahinko, menetys, viivästys tai muu tilanne, voit hakea vaatimusta.",
-      "insuranceService_content_phone": "1. Politiikka on lähetetty puhelin \"{{phopne}}\" by {{serviceName}}. Jos et ole saanut käytäntötietoja, ota yhteyttä kaupan asiakaspalveluun. 2. Jos kuljetuksen aikana on vahinko, menetys, viivästys tai muu tilanne, voit hakea vaatimusta.",
+      "insuranceService_content_line1__email": "1. Politiikka on lähetetty sähköpostiisi \"{{email}}\" by {{serviceName}}. Jos et ole saanut käytäntötietoja, ota yhteyttä kaupan asiakaspalveluun. ",
+      "insuranceService_content_line1__phone": "1. Lähde hankittiin {{serviceName}}:n kautta. Jos sinulla on kysyttävää, ota yhteyttä kaupan asiakaspalveluun.",
+      "insuranceService_content_line2": "2. Jos kuljetuksen aikana on vahinko, menetys, viivästys tai muu tilanne, voit hakea vaatimusta.",
       "order": "Tilaus",
       "remark": "Tilauksen huomautukset",
       "time": "Tilausaika:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Ladataan lisää kohteita",
+      "loading_btn": "Lataa lisää",
       "no_product_data_found": "Tuotetietoja ei löytynyt Yritä myöhemmin uudelleen",
       "sold_out": "Loppuunmyyty",
-      "added_to_cart_successfully": "Lisätty onnistuneesti ostoskoriin",
+      "load_more": "Ladataan lisää kohteita",
       "load_more_items": "Ladataan {{current_offset}} ~ {{last_current_offset}} kohdetta {{total}}",
-      "unavailable": "ei ole saatavilla"
+      "unavailable": "Tätä tuotetta ei ole enää saatavilla",
+      "variant_property_color": "Väri"
     },
     "giftcard": {
       "seoTitle": "{{ shop }} -lahjakorttisi saldo on {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Suodatin",
       "filters_selected": "{{count}} on valittu",
       "from_price_html": "Alkaen {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} {{total}}-kohteista",
       "less": "vähemmän",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} {{total}}-kohteista",
       "load_more_tip": "Ladataan lisää kohteita",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% alennus",
       "select_product_all_options": "Valittu tuotevaihtoehto on puutteellinen tai ei ole saatavilla. Valitse uudelleen",
       "sort_button": "Lajittelu",
-      "top_sellers": "Myydyimmät",
-      "more__product_num": "{{num}} Tuotteet",
-      "one_product_num": "{{num}} Tuote",
-      "show": "Näytä"
+      "top_sellers": "Myydyimmät"
     },
     "product_search": {
       "back_to_home": "Takaisin etusivulle",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Monikanavaiset maksut",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Credit-kortti"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Tuoteraja on ylitetty"
     },
     "order": {
-      "deleted": "VIRHEELLINEN"
+      "deleted": "VIRHEELLINEN",
+      "rebuy": "Osta se uudelleen"
     },
     "payment": {
       "continue_shopping": "Jatka ostoksia",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Yhdistä määrittämättä kolmansien osapuolien kanavia",
       "error_message_1009": "Ei voi soittaa kolmannen osapuolen käyttöliittymään",
       "error_message_1010": "Älä lähetä",
-      "error_message_1011": "Tilinumero ei ole käytössä",
+      "error_message_1011": "Tiliä ei ole aktivoitu Rekisteröidy saadaksesi salasanan ja muut tiedot.",
       "error_message_1012": "Palvelu Poikkeus",
       "error_message_1013": "Palvelu Poikkeus",
       "error_message_1014": "Älä tarkista varmennuskoodi",

@@ -45,7 +45,7 @@
 {{/if}}
 
 {{image_tag
-  (image_url data)
+  (image_url data quality=quality)
   class=(default class "")
   style=(default style "")
   widths=(default breakpoints "375, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2660, 2960, 3260, 3860")
@@ -55,4 +55,5 @@
   alt=(default data.alt "")
   decoding="async"
   fetchpriority=(default fetchpriority (ternary is_first_section "high" "auto"))
+  quality=quality
 }}

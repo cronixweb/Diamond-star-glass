@@ -24,10 +24,17 @@ accordion-component summary + * {
 }
 
 .accordion {
-  margin-top: 25px;
+  display: block;
+  margin-top: 26px;
   margin-bottom: 0;
   border-top: 1px solid rgba(var(--color-text), 0.08);
   border-bottom: 1px solid rgba(var(--color-text), 0.08);
+}
+
+@media (max-width: 959px) {
+  .accordion {
+    margin-top: 20px;
+  }
 }
 
 .accordion__title {
@@ -117,6 +124,18 @@ summary .icon-fold svg {
 .accordion details > summary .close {
   display: flex;
   align-items: center;
+}
+
+.accordion summary {
+  align-items: center;
+}
+
+.accordion summary .custom-icon-accordion,
+.accordion summary .icon-accordion {
+  width: var(--icon-width);
+  height: var(--icon-width);
+  align-self: center;
+  margin-right: 10px;
 }
 
 /* The ipad end responds to the mobile end in vertical screen */

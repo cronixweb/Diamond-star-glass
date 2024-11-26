@@ -39,6 +39,9 @@
     width: calc(50% - 8px);
   }
 }
+.addresses-container .group {
+  width: 100%;
+}
 
 /* The ipad end responds to the mobile end in vertical screen */
 

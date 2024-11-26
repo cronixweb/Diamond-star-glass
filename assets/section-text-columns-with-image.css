@@ -4,7 +4,6 @@ input {
 .text-columns-with-images-item {
   font-size: 0;
   height: 100%;
-  max-width: 700px;
   position: relative;
   width: 100%;
 }
@@ -241,7 +240,13 @@ input {
 }
 .text-columns-with-images__title {
   overflow: hidden;
+  margin-bottom: 8px !important;
+}
+
+.text-columns-with-images__text {
+  overflow: hidden;
   margin-bottom: 30px !important;
+
 }
 .color-scheme-1 .text-columns-images-swiper-container .pagination circle,
 .color-scheme-1 .text-columns-images-swiper-container .pagination path {

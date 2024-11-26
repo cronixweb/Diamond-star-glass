@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Bạn chỉ có thể thêm {{quantity}} mục của mặt hàng này vào giỏ hàng."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Địa chỉ email không hợp lệ"
-    },
     "account": {
       "account_binding": "Liên Kết Tài Khoản",
       "account_information": "Tài khoản",
       "bind": "Liên kết",
       "birthday": "Ngày Sinh Nhật",
       "change_password": "Thay đổi mật khẩu",
-      "confirm_btn": "",
+      "confirm_btn": "Xác nhận",
       "confirm_subscription_modal_btn": "Xác nhận đăng ký",
       "confirm_subscription_modal_content": "Bạn đã gửi đăng ký trước đó. Email xác nhận đã được gửi đến địa chỉ email này. Bạn có thể vào email hoặc nhấn vào nút này để xác nhận.",
       "confirm_subscription_modal_title": "Xác nhận đăng ký qua E-mail của bạn.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Bạn có thể xin đóng tài khoản này. Sau khi đóng, mọi thông tin liên quan đến xác minh tài khoản này sẽ bị xóa, bao gồm:",
       "email": "E-mail",
       "email_repeat_tip": "Email đã được đăng ký",
+      "email_subscribe_invalid_tip": "Địa chỉ email không hợp lệ",
       "first_name": "Tên",
       "gender": "Giới tính",
       "gender_female": "Nữ",
@@ -300,19 +298,98 @@
         "shipping": "Địa chỉ giao hàng của công ty",
         "title": "Đơn đăng ký tài khoản công ty"
       },
+      "address": {
+        "placeholder": "Địa chỉ chi tiết"
+      },
+      "address2": {
+        "placeholder": "Địa chỉ chi tiết 2"
+      },
       "bill": {
         "sameAsCompany": "Địa chỉ thanh toán của công ty giống với địa chỉ giao hàng của công ty"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Địa chỉ chi tiết"
+        },
+        "address2": {
+          "placeholder": "Địa chỉ chi tiết 2"
+        },
+        "city": {
+          "placeholder": "Thành phố"
+        },
+        "country": {
+          "placeholder": "Quốc gia/Khu vực"
+        },
+        "district": {
+          "placeholder": "Huyện"
+        },
+        "phone": {
+          "placeholder": "Số điện thoại di động"
+        },
+        "province": {
+          "placeholder": "Tỉnh"
+        },
+        "zip": {
+          "placeholder": "Mã bưu chính"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Địa chỉ thanh toán của công ty giống với địa chỉ nhận"
+      },
+      "billing_address": {
+        "title": "Địa chỉ thanh toán của công ty"
+      },
+      "city": {
+        "placeholder": "Thành phố"
+      },
+      "company_name": {
+        "placeholder": "Tên công ty"
+      },
+      "country": {
+        "placeholder": "Quốc gia/Khu vực"
       },
       "create": {
         "limit": "Số lượng công ty cho c",
         "success": "Cảm ơn bạn. Biểu mẫu đã được gửi đi."
       },
+      "district": {
+        "placeholder": "Huyện"
+      },
+      "email": {
+        "placeholder": "Hộp thư"
+      },
       "field": {
         "companyName": "Tên công ty",
         "email": "Email"
       },
+      "first_name": {
+        "placeholder": "Tên"
+      },
       "form": {
         "submit": "Gửi đi"
+      },
+      "last_name": {
+        "placeholder": "Họ"
+      },
+      "phone": {
+        "placeholder": "Số điện thoại di động"
+      },
+      "province": {
+        "placeholder": "Tỉnh"
+      },
+      "register": {
+        "button": "Trình",
+        "success": {
+          "description": "Biểu mẫu đã được gửi thành công.",
+          "title": "Cảm ơn bạn đã điền vào!"
+        },
+        "title": "Đăng ký tài khoản công ty"
+      },
+      "shipping_address": {
+        "title": "Địa chỉ nhận công ty"
+      },
+      "zip": {
+        "placeholder": "Mã bưu chính"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Xóa",
       "company_empty_hint": "Tên công ty không thể để trống",
       "company_existed": "Tên công ty đã tồn tại",
+      "company_frequent_operation": "Lặp lại thao tác, vui lòng thử lại sau",
+      "company_registry_closed": "Người bán chưa kích hoạt chức năng ứng dụng tài khoản công ty, vui lòng liên hệ với người bán để đăng ký.",
       "confirm": "OK",
       "confirm_button": "Ok",
       "date_format": "dd/MM/yyyy",
@@ -461,12 +540,18 @@
       "go_to_login": "Đi tới Đăng nhập",
       "tips_agree_with_the_shop": "Tôi đồng ý với"
     },
+    "subscribe": {
+      "email_has_bind": "Địa chỉ email này đã được liên kết với một tài khoản khác",
+      "phone_has_bind": "Điện thoại này đã được liên kết với một tài khoản khác"
+    },
     "subscription": {
       "email": "E-mail",
+      "email_subscribe_error_tip": "Hộp thư này được liên kết với một tài khoản khác",
       "email_subscription_text": "Nhận thông tin khuyến mãi của đăng ký qua email",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Số Điện Thoại Cố Định",
+      "phone_subscribe_error_tip": "Điện thoại di động này được liên kết với một tài khoản khác",
       "phone_subscription_text": "Đăng ký nhận ưu đãi qua điện thoại",
       "reason_other_length": "Nhập tối đa 300 ký tự",
       "reason_other_placeholder": "Nội dung thông tin",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Đã hủy đăng ký, bạn sẽ được chuyển đến trang chủ",
       "unsubscribe_tip": "Sau khi hủy đăng ký bạn sẽ không nhận được các chương trình ưu đãi mới nhất.",
       "unsubscribe_title": "Hủy đăng ký"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Vui lòng nhập nội dung",
+      "goto_btn": "Vào cửa hàng",
+      "notyet": "Bạn chưa đăng ký",
+      "notyet_desc": "Bạn có thể đến cửa hàng để đăng ký",
+      "success": "Đã hủy đăng ký",
+      "success_tip": "Bạn đã hủy đăng ký khỏi {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Mua lại",
     "checkout_order": {
       "pay_amount": "Số tiền trả",
       "receiver_account": "tài khoản người nhận",
@@ -596,8 +690,9 @@
       "details": "Chi tiết đơn hàng",
       "insuranceService": "Dịch vụ Bảo hiểm",
       "insuranceService_applyClaim": "Yêu cầu Bồi thường",
-      "insuranceService_content_email": "1.Chính sách đã được {{serviceName}} gửi tới email của bạn là \"{{email}}\". Nếu bạn chưa nhận được thông tin về chính sách, vui lòng liên hệ với bộ phận chăm sóc khách hàng của cửa hàng. 2. Nếu trong quá trình vận chuyển có bất kỳ hư hỏng, mất mát, trì hoãn hoặc tình huống nào khác, bạn có thể yêu cầu bồi thường.",
-      "insuranceService_content_phone": "1.Chính sách đã được {{serviceName}} gửi tới điện thoại của bạn là \"{{phopne}}\". Nếu bạn chưa nhận được thông tin về chính sách, vui lòng liên hệ với bộ phận chăm sóc khách hàng của cửa hàng. 2. Nếu trong quá trình vận chuyển có bất kỳ hư hỏng, mất mát, trì hoãn hoặc tình huống nào khác, bạn có thể yêu cầu bồi thường.",
+      "insuranceService_content_line1__email": "1.Chính sách đã được {{serviceName}} gửi tới email của bạn là \"{{email}}\". Nếu bạn chưa nhận được thông tin về chính sách, vui lòng liên hệ với bộ phận chăm sóc khách hàng của cửa hàng. ",
+      "insuranceService_content_line1__phone": "1. Chính sách đã được mua bởi {{serviceName}}. Nếu bạn có câu hỏi khác, vui lòng liên hệ với bộ phận chăm sóc khách hàng của cửa hàng.",
+      "insuranceService_content_line2": "2. Nếu trong quá trình vận chuyển có bất kỳ hư hỏng, mất mát, trì hoãn hoặc tình huống nào khác, bạn có thể yêu cầu bồi thường.",
       "order": "Đơn hàng",
       "remark": "Ghi chú đơn hàng",
       "time": "Đặt hàng lúc:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Đang tải thêm mục",
+      "loading_btn": "Tải thêm",
       "no_product_data_found": "Không tìm thấy thông tin sản phẩm. Vui lòng thử lại sau.",
       "sold_out": "Hết hàng",
-      "added_to_cart_successfully": "Đã thêm vào giỏ hàng thành công",
+      "load_more": "Đang tải thêm mục",
       "load_more_items": "Đang tải {{current_offset}} ~ {{last_current_offset}} trong số {{total}} mục",
-      "unavailable": "không có sẵn"
+      "unavailable": "",
+      "variant_property_color": "Màu sắc"
     },
     "giftcard": {
       "seoTitle": "",
@@ -765,6 +862,7 @@
       "filter": "Lọc",
       "filters_selected": "Đã chọn {{count}}",
       "from_price_html": "Từ {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} trong số {{total}} mục",
       "less": "ít hơn",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} trong số {{total}} mục",
       "load_more_tip": "Đang tải thêm các mặt hàng",
@@ -786,10 +884,7 @@
       "save_ratio": "Giảm {{price}}%",
       "select_product_all_options": "Biến thể sản phẩm đã chọn không đầy đủ hoặc không khả dụng. Vui lòng chọn lại.",
       "sort_button": "Phân loại",
-      "top_sellers": "Sản phẩm bán chạy",
-      "more__product_num": "{{num}} sản phẩm",
-      "one_product_num": "{{num}} sản phẩm",
-      "show": "Hiển thị"
+      "top_sellers": "Sản phẩm bán chạy"
     },
     "product_search": {
       "back_to_home": "Quay lại trang chủ",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Thanh toán đa kênh",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Thẻ Tín Dụng"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Đã vượt quá giới hạn sản phẩm"
     },
     "order": {
-      "deleted": "Đã xóa"
+      "deleted": "Đã xóa",
+      "rebuy": "Mua lại"
     },
     "payment": {
       "continue_shopping": "Tiếp tục mua sắm",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Đăng nhập không cần định cấu hình các kênh của bên thứ ba",
       "error_message_1009": "Không thể gọi giao diện của bên thứ ba",
       "error_message_1010": "Không thể gửi",
-      "error_message_1011": "Chưa kích hoạt số tài khoản",
+      "error_message_1011": "Tài khoản chưa được kích hoạt. Vui lòng đăng ký để điền mật khẩu và các thông tin khác.",
       "error_message_1012": "Ngoại lệ dịch vụ",
       "error_message_1013": "Ngoại lệ dịch vụ",
       "error_message_1014": "Không thể xác minh mã xác minh",

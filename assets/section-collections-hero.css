@@ -5,6 +5,13 @@
 .collection-hero .collection-hero__image-wrapper {
   position: relative;
   display: flex;
+  height: var(--pc-collection-img-height);
+  overflow: hidden;
+}
+@media (max-width: 959px) {
+  .collection-hero .collection-hero__image-wrapper {
+    height: var(--md-collection-img-height);
+  }
 }
 .collection-hero .collection-hero__inner {
   position: absolute;
@@ -12,6 +19,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 .collection-hero .collection-hero__text-wrapper {
   width: 100%;
@@ -19,13 +27,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   --color-text: 255, 255, 255;
   color: rgb(var(--color-text));
 }
 .collection-hero .collection-hero__image {
   width: 100%;
-  height: 470px;
+  height: 100%;
   object-fit: cover;
+  object-position: var(--collection-hero-cover-area);
+}
+.collection-hero .collection-hero__image-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--collection-hero-mask-color);
+  opacity: var(--collection-hero-mask-color-opacity);
 }
 .collection-hero .collection-hero__description {
   margin-top: 20px;
@@ -35,14 +54,40 @@
     margin-top: 10px;
   }
 }
+.collection-hero .breadcrumb {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 
-.collection-hero:not(.has-collection-image) .collection-hero__title {
-  margin-top: 40px;
+.collection-hero:not(.has-collection-image) .collection-hero__description {
+  margin-top: 12px;
+}
+
+.collection-hero__no-cover {
+  padding-top: 40px;
+}
+
+.collection-hero__no-cover.collection-hero__no-title {
+  padding-top: 0;
 }
 
 @media (max-width: 959px) {
-  .collection-hero:not(.has-collection-image) .collection-hero__title {
+  .collection-hero__no-cover.collection-hero__no-title .display-block-tablet {
     margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 960px) {
+  .collection-hero__no-cover.collection-hero__no-title .display-block-desktop {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 959px) {
+  .collection-hero__no-cover {
+    padding-top: 20px;
   }
 }
 

@@ -1,0 +1,84 @@
+{{snippet "stylesheet" href=(asset_url "quick-links.css")}}
+<style>
+  .section-announcement-bar {
+    --bar-bg-color: {{section.settings.background_color}};
+    --bar-text-color: {{section.settings.text_color}};
+  }
+</style>
+<div class="section-announcement-bar">
+    <div class="announcement-bar page-width blocks-{{section.settings.blocks_col}}">
+        {{#for section.blocks as |block|}}
+            <div class="announcement-content">
+                <h2 class="announcement-text body3">
+                    {{{ block.settings.announcement_text }}}
+                </h2>
+                <a href="{{ block.settings.link_url }}" class="announcement-link body1">
+                    {{{ block.settings.link_text }}}
+                </a>
+            </div>
+        {{/for}}
+    </div>
+</div>
+
+{{#schema}}
+{
+  "name": "t:sections.section-quick-links-bar.name",
+  "settings": [
+    {
+      "type": "range",
+      "id": "blocks_col",
+      "label": "t:sections.footer.settings.blocks_col.label",
+      "default": 3,
+      "min": 2,
+      "max": 3,
+      "step": 1,
+      "unit": "t:sections.footer.settings.blocks_col.unit"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.section-quick-links-bar.settings.background_color.label",
+      "default": "#ddd"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.section-quick-links-bar.settings.text_color.label",
+      "default": "#121212"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.section-quick-links-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement_text",
+          "label": "t:sections.section-quick-links-bar.blocks.announcement_text.settings.heading.label",
+          "default": "Long Weekend Sale: Up to 70% Off"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "t:sections.section-quick-links-bar.blocks.announcement_text.settings.link_text.label",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "t:sections.section-quick-links-bar.blocks.announcement_text.settings.link_url.label",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.section-quick-links-bar.presets.presets__0.name",
+      "category": "t:sections.section-quick-links-bar.presets.presets__0.category"
+    }
+  ]
+}
+{{/schema}}

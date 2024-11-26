@@ -1,15 +1,16 @@
 {{#comment}}
-     Render header tools
+    Render header menu drawer
 
     Accepts:
-    - show_user_entry: {Boolean}
-    - menu: {Object} Linklist object
+    - section: {Object} header section config
+    - menu: {Object} menu
     - class: {String} Custom classes
+    - highlight_menus_list: {array} highlight menus
 
     Usage:
     {{snippet
       "header-menu-drawer"
-      show_user_entry=section.settings.show_user_entry
+      section=section
       menu=menu
       class="display-none-tablet header__drawer-nav"
     }}
@@ -30,9 +31,10 @@
 
       <div class="drawer__head drawer__head--divider">
         <h5 class="drawer__title">
-          {{#if show_user_entry}}
+          {{#if section.settings.show_user_entry}}
             <a
-              class="header__user-center-button body3 fw-bold"
+              class="header__user-center-button body3 fw-bold
+                {{#if section.settings.user_mobile_layout == 'home'}}display-none-tablet{{/if}}"
               href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
             >
               {{snippet "icon-user"}}
@@ -50,48 +52,65 @@
           <nav class="header__drawer-nav">
             <ul class="header__drawer-menus list-unstyled">
               {{#for menu.links as |link|}}
+                {{assign 'is_highlight' false}}
+                {{#for highlight_menus_list as |hight_item|}} 
+                  {{#if (uppercase link.title) == (uppercase hight_item)}}
+                    {{assign 'is_highlight' true}}
+                    {{break}}
+                  {{/if}}
+                {{/for}}
                 {{#if (length link.links) > 0}}
                   <li>
                     <details>
-                      <summary class="drawer-menus__item body3 fw-bold">
-                        {{link.title}}
-                        <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
-                          {{snippet "icon-arrow"}}
-                        </span>
-                        <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
-                          {{snippet "icon-minus"}}
-                        </span>
+                      <summary class="body3">
+                        <div class="drawer-menus__item">
+                          <a
+                            class="body3 fw-bold"
+                            {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;"{{/if}}
+                          >
+                            <span class="{{#if is_highlight}}menu-item--highlight{{/if}}">{{link.title}}</span>
+                          </a>
+                          <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                            {{snippet "icon-arrow"}}
+                          </span>
+                          <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
+                            {{snippet "icon-minus"}}
+                          </span>
+                        </div>
                       </summary>
                       <ul class="drawer-menus__sub-menus list-unstyled">
-                        {{#for link.links as |link|}}
-                          {{#if (length link.links) > 0}}
+                        {{#for link.links as |sub_link|}}
+                          {{#if (length sub_link.links) > 0}}
                             <details>
-                              <summary class="drawer-menus__sub-item body5">
-                                {{link.title}}
-                                <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
-                                  {{snippet "icon-arrow"}}
-                                </span>
-                                <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
-                                  {{snippet "icon-minus"}}
-                                </span>
+                              <summary class="body5">
+                                <div class="drawer-menus__sub-item">
+
+                                  <a
+                                    class="body5"
+                                    {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}
+                                  >{{sub_link.title}}</a>
+                                  <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                                    {{snippet "icon-arrow"}}
+                                  </span>
+                                  <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
+                                    {{snippet "icon-minus"}}
+                                  </span>
+                                </div>
                               </summary>
                               <ul class="drawer-menus__sub-menus list-unstyled">
-                                {{#for link.links as |link|}}
-                                  <li>
+                                {{#for sub_link.links as |sub_sub_link|}}
+                                  <li class="drawer-menus__sub-item">
                                     <a
-                                      class="drawer-menus__sub-item body5"
-                                      {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;" role="link"{{/if}}
-                                    >{{link.title}}</a>
+                                      class="body5"
+                                      {{#if sub_sub_link.url}}href="{{sub_sub_link.url}}"{{else}}href="javascript:;"{{/if}}
+                                    >{{sub_sub_link.title}}</a>
                                   </li>
                                 {{/for}}
                               </ul>
                             </details>
                           {{else}}
-                            <li>
-                              <a
-                                class="drawer-menus__sub-item body5"
-                                {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;" role="link"{{/if}}
-                              >{{link.title}}</a>
+                            <li class="drawer-menus__sub-item">
+                              <a class="body5" {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}>{{sub_link.title}}</a>
                             </li>
                           {{/if}}
                         {{/for}}
@@ -99,17 +118,76 @@
                     </details>
                   </li>
                 {{else}}
-                  <li>
-                    <a
-                      class="drawer-menus__item body3 fw-bold"
-                      {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;" role="link"{{/if}}
-                    >{{link.title}}</a>
+                  <li class="drawer-menus__sub-item">
+                    <a class="body4 fw-bold" {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;"{{/if}}>
+                      <span class="{{#if is_highlight}}menu-item--highlight{{/if}}">{{link.title}}</span>
+                    </a>
                   </li>
                 {{/if}}
               {{/for}}
+              
+              {{#for section.blocks as |block|}}
+                {{#if block.type == "menuGallery"}}
+                  {{snippet "header-gallery" settings=block.settings shopline_attributes=block.shopline_attributes}}
+                {{/if}}
+              {{/for}}
+              
             </ul>
           </nav>
         </accordion-component>
+      </div>
+
+      <div class="drawer_footer">
+        <div class="header__localization header-drawer__localization display-none-desktop">
+          <localization-form>
+            {{#form "localization" id="localization-form" enctype="multipart/form-data" accept-charset="UTF-8"}}
+              {{#if section.settings.show_locale_selector and (gt (length localization.available_languages) 1)}}
+                <dropdown-menu>
+                  <div class="dropdown-menu">
+                    <input type="hidden" name="locale_code" value="{{localization.language.iso_code}}" />
+                    <button class="dropdown-menu__button body5" type="button">
+                      <span data-label>{{localization.language.endonym_name}}</span>
+                      {{snippet "icon-arrow"}}
+                    </button>
+                    <div class="dropdown-menu__list-wrapper top body4" hidden>
+                      <ul class="dropdown-menu__list list-unstyled">
+                        {{#for localization.available_languages as |language|}}
+                          <li>
+                            <a href="javascript:;" data-value="{{language.iso_code}}">{{language.endonym_name}}</a>
+                          </li>
+                        {{/for}}
+                      </ul>
+                    </div>
+                  </div>
+                </dropdown-menu>
+              {{/if}}
+              {{#if section.settings.show_country_selector and (gt (length localization.available_countries) 1)}}
+                <dropdown-menu>
+                  <div class="dropdown-menu">
+                    <input type="hidden" name="country_code" value="{{localization.country.iso_code}}" />
+                    <button class="dropdown-menu__button body5" type="button">
+                      <span data-label>{{localization.country.name}}（{{localization.country.currency.iso_code}}
+                        {{localization.country.currency.symbol}}）</span>
+                      {{snippet "icon-arrow"}}
+                    </button>
+                    <div class="dropdown-menu__list-wrapper top body4" hidden>
+                      <ul class="dropdown-menu__list list-unstyled">
+                        {{#for localization.available_countries as |country|}}
+                          <li>
+                            <a href="javascript:;" data-value="{{country.iso_code}}">
+                              {{country.name}}（{{country.currency.iso_code}}
+                              {{country.currency.symbol}}）
+                            </a>
+                          </li>
+                        {{/for}}
+                      </ul>
+                    </div>
+                  </div>
+                </dropdown-menu>
+              {{/if}}
+            {{/form}}
+          </localization-form>
+        </div>
       </div>
 
     </div>

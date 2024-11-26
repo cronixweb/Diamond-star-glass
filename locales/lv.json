@@ -196,16 +196,13 @@
     "cart_quantity_error_html": "Jūs varat pievienot {{quantity}} preces šai precei tikai savā iepirkumu grozā."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Nederīga e-pasta adrese"
-    },
     "account": {
       "account_binding": "Konta saite",
       "account_information": "Konts",
       "bind": "Saistoši",
       "birthday": "Dzimšanas datums",
       "change_password": "Mainiet paroli",
-      "confirm_btn": "Sahkan",
+      "confirm_btn": "Apstiprināt",
       "confirm_subscription_modal_btn": "Abonementa verificēšana",
       "confirm_subscription_modal_content": "Jūs iepriekš iesniedzāt abonementu. Uz šo e-pasta adresi ir nosūtīts apstiprinājuma e-pasts. Varat to apstiprināt savā e-pastā vai noklikšķināt uz šīs pogas.",
       "confirm_subscription_modal_title": "Apstipriniet savu abonementu pa e-pastu.",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Varat pieteikties šī konta slēgšanai. Pēc konta slēgšanas tiks dzēsta visa informācija, kas ļauj identificēt šo kontu, tostarp:",
       "email": "E-pasta",
       "email_repeat_tip": "E-pasts ir saglabāts",
+      "email_subscribe_invalid_tip": "Nederīga e-pasta adrese",
       "first_name": "Nosaukums",
       "gender": "Dzimumu",
       "gender_female": "Mātīte",
@@ -260,7 +258,7 @@
       "copy_success": "Kopēts kupona kodu",
       "discount_title": "Aktivizējiet kontu un saņemiet diskonta kodu",
       "normal_title": "Aktivizējiet kontu",
-      "normal_title_with_discount_code": "Aktivizējiet kontu un saņemiet atlaides kodu",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Abonējiet e-pastus, lai saņemtu atjauninājumus, piekļūtu ekskluzīviem piedāvājumiem un daudz ko citu.",
       "success_title": "Apsveicam ar lielas atlaides saņemšanu",
       "token_expired": "Saitē ir beidzies"
@@ -300,19 +298,98 @@
         "shipping": "Uzņēmuma piegādes adrese",
         "title": "Uzņēmuma konta pieteikums"
       },
+      "address": {
+        "placeholder": "Sīkāka adrese"
+      },
+      "address2": {
+        "placeholder": "Sīkāka adrese 2"
+      },
       "bill": {
         "sameAsCompany": "Uzņēmuma norēķinu adrese ir tāda pati kā uzņēmuma piegādes adrese"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Sīkāka adrese"
+        },
+        "address2": {
+          "placeholder": "Sīkāka adrese 2"
+        },
+        "city": {
+          "placeholder": "Pilsēta"
+        },
+        "country": {
+          "placeholder": "Valsts/Reģions"
+        },
+        "district": {
+          "placeholder": "Rajons"
+        },
+        "phone": {
+          "placeholder": "Mobilā tālruņa numurs"
+        },
+        "province": {
+          "placeholder": "Province"
+        },
+        "zip": {
+          "placeholder": "Pasta indekss"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "Uzņēmuma norēķinu adrese ir tāda pati kā piegādes adrese"
+      },
+      "billing_address": {
+        "title": "Uzņēmuma norēķinu adrese"
+      },
+      "city": {
+        "placeholder": "Pilsēta"
+      },
+      "company_name": {
+        "placeholder": "Uzņēmuma nosaukums"
+      },
+      "country": {
+        "placeholder": "Valsts/Reģions"
       },
       "create": {
         "limit": "Uzņēmumu skaits veikalam ir sasniedzis limitu. Lūdzu, sazinieties ar tirgotāju, lai saņemtu palīdzību.",
         "success": "Paldies. Veidlapa ir iesniegta."
       },
+      "district": {
+        "placeholder": "Rajons"
+      },
+      "email": {
+        "placeholder": "Pastkastīte"
+      },
       "field": {
         "companyName": "Kompānijas nosaukums",
         "email": "E-pasts"
       },
+      "first_name": {
+        "placeholder": "Uzvārdi"
+      },
       "form": {
         "submit": "Iesniegt"
+      },
+      "last_name": {
+        "placeholder": "Vārdi"
+      },
+      "phone": {
+        "placeholder": "Mobilā tālruņa numurs"
+      },
+      "province": {
+        "placeholder": "Province"
+      },
+      "register": {
+        "button": "Iesniegt",
+        "success": {
+          "description": "Veidlapa ir veiksmīgi iesniegta.",
+          "title": "Paldies par aizpildīšanu!"
+        },
+        "title": "Uzņēmuma konta pieteikums"
+      },
+      "shipping_address": {
+        "title": "Uzņēmuma piegādes adrese"
+      },
+      "zip": {
+        "placeholder": "Pasta indekss"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Skaidrs",
       "company_empty_hint": "Uzņēmuma nosaukuma lauks nedrīkst būt tukšs",
       "company_existed": "Uzņēmuma nosaukums jau eksistē",
+      "company_frequent_operation": "Atkārtojiet darbību, lūdzu, vēlāk mēģiniet vēlreiz",
+      "company_registry_closed": "Tirgotājs nav iespējojis uzņēmuma konta pieteikšanās funkciju. Lai pieteiktos, lūdzu, sazinieties ar tirgotāju.",
       "confirm": "LABI",
       "confirm_button": "LABI",
       "date_format": "dd.MM.yyyy",
@@ -440,7 +519,7 @@
       "phone_tip": "Mēs jums nosūtīsim īsziņu, lai atiestatītu paroli",
       "proceed_to_checkout": "Dodieties uz izrakstīšanos",
       "title": "Lapas virsraksts",
-      "verification_code_success": "Apstiprinājuma kodu, kas nosūtīts pieteikties {{type}}<em>{{value}}</em>, ievadiet kodu zemāk."
+      "verification_code_success": "Apstiprinājuma kodu, kas nosūtīts pieteikties {{type}} <em>{{value}}</em>, ievadiet kodu zemāk."
     },
     "login": {
       "member_login_common": "Dalībnieka pierakstīšanās",
@@ -461,12 +540,18 @@
       "go_to_login": "Iet savienot",
       "tips_agree_with_the_shop": "Es piekrītu"
     },
+    "subscribe": {
+      "email_has_bind": "Šis e-pasts jau ir piesaistīts citai kontai",
+      "phone_has_bind": "Šis tālrunis jau ir piesaistīts citai kontai"
+    },
     "subscription": {
       "email": "E-pasta",
+      "email_subscribe_error_tip": "Šī e-pasta adrese ir saistīta ar citu kontu",
       "email_subscription_text": "Saņemiet reklāmas informāciju no abonementa pa e-pastu",
       "line": "LĪNIJA",
       "messenger": "Ziņotājs",
       "phone": "Mobilais telefons",
+      "phone_subscribe_error_tip": "Šis mobilais tālrunis ir piesaistīts citam kontam",
       "phone_subscription_text": "Abonējiet tālruņa akcija",
       "reason_other_length": "Ievadiet līdz 300 vārdiem",
       "reason_other_placeholder": "Ievades saturs",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "Abonements ir atcelts. Jūs pāriet uz sākumlapu",
       "unsubscribe_tip": "Pēc tam, Anulēt abonementu, jūs vairs negūsit labumu no pēdējās paaugstināšanas.",
       "unsubscribe_title": "Anulēt abonementu"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Lūdzu, ievadiet saturu",
+      "goto_btn": "Iet uz veikalu",
+      "notyet": "Jūs vēl neesat abonējis",
+      "notyet_desc": "Jūs varat abonēt, dodieties uz veikalu",
+      "success": "Abonements ir atcelts",
+      "success_tip": "Jūs esat atcēlis abonementu no {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Pirkt vēlreiz",
     "checkout_order": {
       "pay_amount": "samaksas summa",
       "receiver_account": "saņēmēja konts",
@@ -596,8 +690,9 @@
       "details": "Sīkāka informācija par pasūtījumu",
       "insuranceService": "Apdrošināšanas pakalpojumiem",
       "insuranceService_applyClaim": "Pieteikties prasībai",
-      "insuranceService_content_email": "1. Politika jūsu \"{{email}}\" nosūtīja uz e-pasta {{serviceName}}. Ja neesat saņēmis informāciju par politiku, lūdzu, sazinieties ar sava veikala klientu apkalpošanu. 2. Ja transportēšanas laikā ir radušies bojājumi, nozaudēšana, aizkavēšanās vai kāda cita situācija, varat iesniegt prasību.",
-      "insuranceService_content_phone": "1. Politika jūsu \"{{phopne}}\" nosūtīja uz telefons {{serviceName}}. Ja neesat saņēmis informāciju par politiku, lūdzu, sazinieties ar sava veikala klientu apkalpošanu. 2. Ja transportēšanas laikā ir radušies bojājumi, nozaudēšana, aizkavēšanās vai kāda cita situācija, varat iesniegt prasību.",
+      "insuranceService_content_line1__email": "1. Politika jūsu \"{{email}}\" nosūtīja uz e-pasta {{serviceName}}. Ja neesat saņēmis informāciju par politiku, lūdzu, sazinieties ar sava veikala klientu apkalpošanu. ",
+      "insuranceService_content_line1__phone": "1. Avots tika iegūts, izmantojot {{serviceName}}. Ja jums ir vēl kādi jautājumi, lūdzu, sazinieties ar veikala klientu apkalpošanas dienestu.",
+      "insuranceService_content_line2": "2. Ja transportēšanas laikā ir radušies bojājumi, nozaudēšana, aizkavēšanās vai kāda cita situācija, varat iesniegt prasību.",
       "order": "Pasūtījums",
       "remark": "Piezīme par pasūtījumu",
       "time": "Pasūtīts:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "Notiek citu vienumu ielāde",
+      "loading_btn": "Ielādēt vairāk",
       "no_product_data_found": "Nav atrasti dati par produktu. Lūdzu, mēģiniet vēlreiz vēlāk",
       "sold_out": "Pārdevies",
-      "added_to_cart_successfully": "Pievienots grozam veiksmīgi",
+      "load_more": "Notiek citu vienumu ielāde",
       "load_more_items": "Notiek {{current_offset}} ~ {{last_current_offset}} no {{total}} vienumu ielāde",
-      "unavailable": "nav pieejams"
+      "unavailable": "Preces neeksistē",
+      "variant_property_color": "Krāsa"
     },
     "giftcard": {
       "seoTitle": "Jūsu {{ shop }} dāvanu kartes atlikums ir {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Filtrēt",
       "filters_selected": "{{count}} ir atlasīti",
       "from_price_html": "No {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} no {{total}} vienumiem",
       "less": "mazāk",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} no {{total}} vienumiem",
       "load_more_tip": "Notiek citu vienumu ielāde",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% samazinājums",
       "select_product_all_options": "Atlasītā produkta variante ir nepilnīga vai nav pieejama. Lūdzu, izvēlieties vēlreiz",
       "sort_button": "Kārtot",
-      "top_sellers": "Karsti Pārdošanu",
-      "more__product_num": "{{num}} Produktiem",
-      "one_product_num": "{{num}} Produktu",
-      "show": "Rādīt"
+      "top_sellers": "Karsti Pārdošanu"
     },
     "product_search": {
       "back_to_home": "Atpakaļ uz mājas lapu",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Vairāku kanālu maksājumi",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Kredītkarte"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Produkta ierobežojums ir pārsniegts"
     },
     "order": {
-      "deleted": "Nederīgu"
+      "deleted": "Nederīgu",
+      "rebuy": "Nopirkt vēlreiz"
     },
     "payment": {
       "continue_shopping": "Turpināt iepirkties",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Pieteikšanās bez trešo pušu kanālu konfigurēšanas",
       "error_message_1009": "Neizdodas izsaukt trešās puses saskarni",
       "error_message_1010": "Neizdodas nosūtīt",
-      "error_message_1011": "Konta numurs nav aktivizēts",
+      "error_message_1011": "Konts nav aktivizēts, lūdzu, reģistrējieties, lai aizpildītu paroli un citu informāciju.",
       "error_message_1012": "Pakalpojumu izņēmumi",
       "error_message_1013": "Pakalpojumu izņēmumi",
       "error_message_1014": "Nespēja pārbaudīt verifikācijas kodu",

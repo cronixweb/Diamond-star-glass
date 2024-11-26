@@ -1,3 +1,4 @@
+{{snippet "stylesheet" href=(asset_url "component-tool-tip.css")}}
 {{snippet "stylesheet" href=(asset_url "section-customer.css")}}
 <script src="{{asset_url 'section-customer-lib-jquery.js'}}" defer></script>
 
@@ -6,6 +7,7 @@
 <script src="{{asset_url 'section-customer-lib-rolldate.js'}}" defer></script>
 {{snippet "stylesheet" href=(asset_url "section-customer-datepicker.css")}}
 <script src="{{asset_url 'section-customer-datepicker.js'}}" defer></script>
+<script src="{{asset_url 'component-tool-tip.js'}}" defer></script>
 <script src="{{asset_url 'section-main-register.js'}}" defer></script>
 <script src="{{asset_url 'component-phone-input.js'}}" defer></script>
 
@@ -65,7 +67,7 @@
         <phone-input class="field {{#if has_switch}}display-none{{/if}}" data-type="mobile">
           {{snippet
             "input-phone"
-            all_country_dialing_code= all_country_dialing_code
+            all_country_dialing_code=all_country_dialing_code
             input_name="customer[phone]"
             input_id="RegisterPhone"
             input_required=true
@@ -208,6 +210,9 @@
           <span class="field-checkbox">
             <input type="checkbox" name="agree" required />
             <span class="checkbox"></span>
+            <tool-tip tip-position="bottom" controlled>
+              {{t 'customer.general.user_agreement_tip'}}
+            </tool-tip>
           </span>
           <span class="body4">
             {{t "customer.register.tips_agree_with_the_shop"}}
@@ -236,12 +241,18 @@
         </label>
       </div>
     {{/if}}
+    <div class="backToSignIn">
+      <a class="button button--link" href="{{routes.account_login_url}}">
+        {{t "customer.register.go_to_login"}}
+      </a>
+    </div>
+
+    {{#if form.register_config.company_account_application_entry_visible}}
+      <div class="sign-up__company-register">
+        <a href="{{routes.company_account_register_url}}" class="button button--link sign-up__link">{{t "customer.company.account.link"}}</a>
+      </div>
+    {{/if}}
   {{/form}}
-  <div class="backToSignIn">
-    <a class="button button--link" href="{{routes.account_login_url}}">
-      {{t "customer.register.go_to_login"}}
-    </a>
-  </div>
 </div>
 
 {{#schema}}

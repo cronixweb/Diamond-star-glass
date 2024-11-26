@@ -62,6 +62,10 @@ defineCustomElement(
             selector: '#cart-icon-bubble-wrapper',
           },
           {
+            id: 'cart-icon-bubble-mobile',
+            selector: '#cart-icon-bubble-wrapper-mobile',
+          },
+          {
             id: 'cart-notification-subtotal',
             selector: '.cart-notification-subtotal',
           },

@@ -13,6 +13,7 @@ defineCustomElement('quick-add-modal', () => {
     }
 
     connectedCallback() {
+      super.connectedCallback();
       if (this.moved) return;
       this.moved = true;
       document.body.appendChild(this);
@@ -45,6 +46,10 @@ defineCustomElement('quick-add-modal', () => {
         .then((responseText) => {
           const responseHTML = new DOMParser().parseFromString(responseText, 'text/html');
           this.productElement = responseHTML.querySelector('section[id^="MainProduct-"]');
+          this.productElement.querySelector('.product').setAttribute('mount', 'quick-add-modal');
+          this.productElement
+            .querySelector('media-gallery')
+            .setAttribute('data-parent-container', `#${this.modalContent.id}.${this.modalContent.className}`);
           this.preventDuplicatedIDs();
           this.removeDOMElements();
 

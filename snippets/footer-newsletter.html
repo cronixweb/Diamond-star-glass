@@ -1,0 +1,50 @@
+{{assign "title" data.settings.subscribe_letter_title}}
+{{assign "placeholder" (default data.settings.subscribe_letter_placeholder "Enter your email")}}
+{{assign "title_size" "body5"}}
+
+{{#if data.settings.letter_show_size == "small"}}
+  {{assign "title_size" "body3"}}
+{{/if}}
+{{#if data.settings.letter_show_size == "middle"}}
+  {{assign "title_size" "body2"}}
+{{/if}}
+{{#if data.settings.letter_show_size == "large"}}
+  {{assign "title_size" "body1"}}
+{{/if}}
+<div class="footer-block--subscribe letter-size--{{default section.settings.letter_show_size 'full'}}">
+  {{#if title}}
+    <div class="footer-block__heading {{title_size}} rte" id="signup_content">{{{title}}}</div>
+  {{/if}}
+  {{#form "customer" class="footer-letter-form"}}
+    <div class="field">
+      <div class="field__container">
+        {{assign input_id (append "NewsletterForm_" data.id)}}
+        {{snippet
+          "input-email"
+          input_class="field__input"
+          input_id=input_id
+          input_required=true
+          input_name="contact[email]"
+          input_placeholder=placeholder
+        }}
+        <label for="{{input_id}}" class="field__label body3">
+          {{placeholder}}
+        </label>
+      </div>
+      <div class="field__suffix">
+        <button type="submit" class="button button--link">
+          {{#comment}} {{snippet "icon-mail"}} {{/comment}}
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="11" viewBox="0 0 26 11" fill="none">
+            <path d="M25.0098 5.6616C25.2667 5.41753 25.2667 5.0218 25.0098 4.77773L20.823 0.800246C20.566 0.556168 20.1494 0.556168 19.8926 0.800246C19.6356 1.04432 19.6356 1.44005 19.8926 1.68413L23.6142 5.21966L19.8926 8.7552C19.6356 8.99928 19.6356 9.395 19.8926 9.63908C20.1494 9.88316 20.566 9.88316 20.823 9.63908L25.0098 5.6616ZM0.860352 5.84466H24.5446V4.59466H0.860352V5.84466Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    {{#if form.posted_successfully}}
+      {{snippet "tips-card" type="success" text=(t "general.footer.subscribe_success")}}
+    {{/if}}
+    {{#if form.errors.messages}}
+      {{snippet "tips-card" type="error" text=form.errors.messages}}
+    {{/if}}
+  {{/form}}
+</div>

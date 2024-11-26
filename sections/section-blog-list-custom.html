@@ -1,0 +1,129 @@
+{{snippet "stylesheet" href=(asset_url "section-blog-list-custom.css")}}
+
+{{snippet
+  "section-padding-creator"
+  section_id=section.id
+  padding_top=section.settings.padding_top
+  padding_bottom=section.settings.padding_bottom
+}}
+
+<div class="blog-list-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+    {{#if section.settings.title}}
+        <h2 class="section-list-title">{{ section.settings.title }}</h2>
+    {{/if}}
+    <div class="blog-list-content">
+        {{assign "blog_id" section.settings.blog_collection}} 
+
+        {{#for blog_id.articles limit=section.settings.article_limit as |blog|}}
+        <a href="{{ blog.url }}">
+            {{#if blog.image}}
+                <div class="blog-list_media">
+                    {{snippet "image" data=blog.image }}
+                </div>
+            {{/if}}
+            <div class="blog-list_description">
+                <p>{{ date blog.published_at '%d %B' }} • <span>{{ blog.author }}</span></p>
+                {{#if blog.title}}
+                    <h3>{{ blog.title }}</h3>
+                {{/if}}
+            </div>
+        </a>
+        {{/for}}
+    </div>
+    {{#if section.settings.button_text}}
+        <a href="{{ section.settings.button_link }}" class="section-blog-list__button">{{{ section.settings.button_text }}}</a>
+    {{/if}}
+</div>
+
+{{#schema}}
+{
+  "name": "Blog List Custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title"
+    },
+    {
+    "id": "blog_collection",
+    "type": "blog",
+    "label": {
+        "en": "Blogs"
+    }
+    },
+    {
+      "type": "range",
+      "id": "article_limit",
+      "label": "Number of Articles to Display",
+      "default": 6,
+      "min": 1,
+      "max": 9
+    },
+    {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View All"
+    },
+    {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1",
+          "label": "Color 1"
+        },
+        {
+          "value": "2",
+          "label": "Color 2"
+        },
+        {
+          "value": "3",
+          "label": "Color 3"
+        }
+      ],
+      "default": "none",
+      "label": "Color Scheme"
+    },
+    {
+      "type": "group_header",
+      "label": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "default": 60,
+      "max": 100,
+      "min": 0,
+      "step": 2,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog List Custom",
+      "category": "Blog"
+    }
+  ]
+}
+{{/schema}}

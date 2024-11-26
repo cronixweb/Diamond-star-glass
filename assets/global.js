@@ -35,43 +35,6 @@ function publish(eventName, data) {
 }
 ;
 
-// init cart related
-function initCartDrawerBySectionRender(mountEntry) {
-  fetch(`${window.location.pathname}?section_id=cart-drawer`)
-    .then((response) => response.text())
-    .then((responseText) => {
-      const html = new DOMParser().parseFromString(responseText, 'text/html');
-      const cartDrawer = html.querySelector('cart-drawer');
-      mountEntry.appendChild(cartDrawer);
-    });
-}
-
-function initCartBubbleByCount() {
-  fetch(`${window.routes.cart_count_url}`)
-    .then((response) => response.json())
-    .then((res) => {
-      const { count } = res;
-      const cartBubbleNum =
-        document.getElementById('cart-icon-bubble') &&
-        document.getElementById('cart-icon-bubble').querySelector('.header__cart-point');
-      if (count > 0) {
-        cartBubbleNum.innerText = count;
-      }
-    });
-}
-
-
-function initCart() {
-  initCartBubbleByCount();
-  const cartDrawerEntry = document.body.querySelector('cart-drawer-entry');
-  if (cartDrawerEntry) {
-    initCartDrawerBySectionRender(cartDrawerEntry);
-  }
-}
-
-initCart();
-;
-
 // Translation util
 window.t = function t(path, hash) {
   function parsePathToArray(p) {
@@ -164,6 +127,18 @@ function changeURLArg(urlStr, args) {
 /**
  * @global
  */
+function removeURLArg(urlStr, argArr) {
+  const url = new URL(urlStr);
+
+  argArr.forEach((arg) => {
+    url.searchParams.delete(arg);
+  });
+  return url;
+}
+
+/**
+ * @global
+ */
 function observeElementVisible(elm, fn, options) {
   const visibleObserver = new IntersectionObserver(
     (entrys) => {
@@ -184,6 +159,28 @@ function observeElementVisible(elm, fn, options) {
   };
 }
 
+function triggerResizeByOverflow() {
+  const obse = new MutationObserver((mutationsList) => {
+    const classMutation = mutationsList.find(
+      (mutation) => mutation.type === 'attributes' && mutation.attributeName === 'class',
+    );
+    const oldClass = classMutation.oldValue || '';
+    const newClass = classMutation.target.classList;
+    const isAddClass = !oldClass.includes('overflow-hidden') && newClass.contains('overflow-hidden');
+    const isRemoveClass = oldClass.includes('overflow-hidden') && !newClass.contains('overflow-hidden');
+    if (isAddClass || isRemoveClass) {
+      window.dispatchEvent(new Event('resize'));
+    }
+  });
+  obse.observe(document.body, {
+    attributes: true,
+    attributeOldValue: true,
+    attributeFilter: ['class'],
+  });
+}
+
+triggerResizeByOverflow();
+
 window.Shopline.bind = function (fn, scope) {
   return function (...arg) {
     return fn.apply(scope, arg);
@@ -195,6 +192,76 @@ window.Shopline.addListener = function (target, eventName, callback) {
     ? target.addEventListener(eventName, callback, false)
     : target.attachEvent(`on${eventName}`, callback);
 };
+;
+class Parallax {
+  constructor() {
+    this.parallaxContainers = document.querySelectorAll('.global-parallax-container');
+    this.parallaxListener = false;
+
+    this.bindEvent();
+  }
+
+  init() {
+    this.parallaxContainers = document.querySelectorAll('.global-parallax-container');
+    if (!this.parallaxListener) {
+      window.addEventListener('scroll', () => this.onScroll());
+      this.parallaxListener = true;
+    }
+    this.scrollHandler();
+  }
+
+  bindEvent() {
+    window.document.addEventListener('shopline:section:load', () => {
+      this.init();
+    });
+
+    window.document.addEventListener('shopline:section:reorder', () => {
+      this.init();
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (this.parallaxContainers.length > 0) {
+        this.scrollHandler();
+        window.addEventListener('scroll', () => this.onScroll());
+      }
+    });
+  }
+
+  scrollHandler() {
+    const viewPortHeight = window.innerHeight;
+
+    this.parallaxContainers.forEach((el) => {
+      const parallaxImage = el.querySelectorAll('.global-parallax');
+      const hasClass = el.classList.contains('global-parallax-container--loaded');
+
+      if (parallaxImage.length === 0) {
+        return;
+      }
+
+      const { top, height } = el.getBoundingClientRect();
+      if (top > viewPortHeight || top <= -height) return;
+
+      const speed = 2;
+      const range = 30;
+      const movableDistance = viewPortHeight + height;
+      const currentDistance = viewPortHeight - top;
+      const percent = ((currentDistance / movableDistance) * speed * range).toFixed(2);
+      const num = range - Number(percent);
+      parallaxImage.forEach((image) => {
+        image.style.transform = `translate3d(0 , ${-num}% , 0)`;
+      });
+      if (!hasClass) {
+        el.classList.add('global-parallax-container--loaded');
+      }
+    });
+  }
+
+  onScroll() {
+    requestAnimationFrame(this.scrollHandler.bind(this));
+  }
+}
+
+window.parallaxInstance = new Parallax();
 ;
 
 // Global util
@@ -281,14 +348,18 @@ class ModalDialog extends HTMLElement {
   }
 
   close() {
+    window.pauseAllMedia();
     document.body.classList.remove('overflow-hidden');
     document.body.dispatchEvent(new CustomEvent('modalClosed'));
     this.removeAttribute('open');
-    window.pauseAllMedia();
   }
 }
 customElements.define('modal-dialog', ModalDialog);
 ;
+function isMobileScreen() {
+  return window.matchMedia('(max-width: 959px)').matches;
+}
+
 /**
  * Detect screen size
  * @param {({ isMobileScreen: boolean, event: Event | null, first: boolean }) => Function | void} onResize Called when the screen size changes, when there is a return function, the last time will be cleaned up when changing
@@ -297,10 +368,6 @@ customElements.define('modal-dialog', ModalDialog);
  */
 
 function detectingScreen(onResize, immediate) {
-  function isMobileScreen() {
-    return window.matchMedia('(max-width: 959px)').matches;
-  }
-
   // last screen
   let isMb = isMobileScreen();
   let cleanUp;
@@ -354,6 +421,47 @@ function fetchConfig(type = 'json') {
   };
 }
 ;
+function initWhenVisible(options) {
+  const threshold = options.threshold ? options.threshold : 0;
+
+  const observer = new IntersectionObserver(
+    (entries, _observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (typeof options.callback === 'function') {
+            options.callback();
+            _observer.unobserve(entry.target);
+          }
+        }
+      });
+    },
+    { rootMargin: `0px 0px ${threshold}px 0px` },
+  );
+
+  observer.observe(options.element);
+}
+
+const init = () => {
+  document.querySelectorAll('.animation-delay-show-container').forEach((element) => {
+    initWhenVisible({
+      element,
+      callback: () => {
+        element.classList && element.classList.add('come-into-view');
+      },
+      threshold: -20,
+    });
+  });
+};
+
+init();
+
+window.document.addEventListener('shopline:section:load', () => {
+  init();
+});
+window.document.addEventListener('shopline:section:reorder', () => {
+  init();
+});
+;
 
 // Global component
 /**
@@ -366,13 +474,17 @@ class DetailsModal extends BaseElement {
     this.detailsContainer = this.querySelector('details');
     this.summaryToggle = this.querySelector('summary');
     this.contentElement = this.detailsContainer.querySelector('.modal__content');
-
-    this.detailsContainer.addEventListener('keyup', (event) => event.code.toUpperCase() === 'ESCAPE' && this.close());
-    const closeBtns = this.querySelectorAll('button[name="close"]');
     if (this.summaryToggle) {
       this.summaryToggle.addEventListener('click', this.onSummaryClick.bind(this));
       this.summaryToggle.setAttribute('role', 'button');
     }
+  }
+
+  connectedCallback() {
+    this.bodyContainer = this.createBodyContainer();
+    this.bodyContainer.__modal__ = this;
+    this.bodyContainer.addEventListener('keyup', (event) => event.code.toUpperCase() === 'ESCAPE' && this.close());
+    const closeBtns = this.bodyContainer.querySelectorAll('button[name="close"]');
     if (closeBtns.length) {
       closeBtns.forEach((btn) =>
         btn.addEventListener('click', (event) => {
@@ -381,6 +493,18 @@ class DetailsModal extends BaseElement {
         }),
       );
     }
+  }
+
+  disconnectedCallback() {
+    const { bodyContainer, detailsContainer } = this;
+    if (bodyContainer !== detailsContainer) {
+      bodyContainer.parentNode.removeChild(this.bodyContainer);
+    }
+  }
+
+  get container() {
+    const selector = this.getAttribute('container');
+    return selector ? document.querySelector(selector) : undefined;
   }
 
   get isOpen() {
@@ -393,6 +517,7 @@ class DetailsModal extends BaseElement {
 
   onSummaryClick(event) {
     event.preventDefault();
+    if (this.summaryToggle.hasAttribute('disabled')) return;
     this.isOpen ? this.close() : this.open(event);
   }
 
@@ -426,15 +551,41 @@ class DetailsModal extends BaseElement {
     });
   }
 
+  createBodyContainer() {
+    const { container, detailsContainer, summaryToggle } = this;
+
+    if (!container) return detailsContainer;
+
+    const bodyContainer = detailsContainer.cloneNode(false);
+    const summary = document.createElement('summary');
+    bodyContainer.appendChild(summary);
+    Array.from(detailsContainer.children).forEach((node) => {
+      if (node !== summaryToggle) {
+        detailsContainer.removeChild(node);
+        bodyContainer.appendChild(node);
+      }
+    });
+    bodyContainer.setAttribute('data-clone', true);
+    container.appendChild(bodyContainer);
+
+    return bodyContainer;
+  }
+
   open() {
     this.onBodyClickEvent = this.onBodyClickEvent || this.onBodyClick.bind(this);
     this.detailsContainer.setAttribute('open', true);
+    this.bodyContainer.setAttribute('open', true);
     if (!this.disabledBodyClickClose) {
-      this.detailsContainer.addEventListener('click', this.onBodyClickEvent);
+      this.bodyContainer.addEventListener('click', this.onBodyClickEvent);
+    }
+    // add filter modal sticky entry high z-index
+    const filterStickyEntry = this.closest('#main-collection-filters');
+    if (filterStickyEntry) {
+      filterStickyEntry.classList.add('improve-sticky-index');
     }
     document.body.classList.add('overflow-hidden');
 
-    const focusTarget = this.detailsContainer.querySelector('input[autofocus]:not([type="hidden"])');
+    const focusTarget = this.bodyContainer.querySelector('input[autofocus]:not([type="hidden"])');
     if (focusTarget) focusTarget.focus();
 
     return this.doAnimate();
@@ -445,10 +596,16 @@ class DetailsModal extends BaseElement {
 
     return this.doAnimate(true).then((res) => {
       this.detailsContainer.removeAttribute('open');
+      this.bodyContainer.removeAttribute('open');
       if (!this.disabledBodyClickClose) {
-        this.detailsContainer.removeEventListener('click', this.onBodyClickEvent);
+        this.bodyContainer.removeEventListener('click', this.onBodyClickEvent);
       }
       document.body.classList.remove('overflow-hidden');
+      // remove filter modal sticky entry high z-index
+      const filterStickyEntry = this.closest('#main-collection-filters');
+      if (filterStickyEntry) {
+        filterStickyEntry.classList.remove('improve-sticky-index');
+      }
       (this.focusToggle || false) && this.summaryToggle.focus();
       return res;
     });
@@ -471,6 +628,7 @@ class AccordionComponent extends HTMLElement {
   }
 
   onSummaryClick(event) {
+    if (event.target.tagName.toLocaleUpperCase() === 'A') return;
     event.preventDefault();
     const summary = event.currentTarget;
     const detailsContainer = summary.closest('details');
@@ -502,6 +660,13 @@ class AccordionComponent extends HTMLElement {
         node.querySelector('details')?.removeAttribute('open');
       });
     }
+
+    const template = detailsContainer.querySelector('template');
+    if (template) {
+      detailsContainer.appendChild(template.content);
+      detailsContainer.removeChild(template);
+    }
+
     detailsContainer.setAttribute('open', true);
     this.doAnimate(detailsContainer.querySelector('summary').nextElementSibling);
   }
@@ -518,6 +683,42 @@ class AccordionComponent extends HTMLElement {
 
 customElements.define('accordion-component', AccordionComponent);
 ;
+defineCustomElement('expand-component', () => {
+  return class ExpandComponent extends HTMLElement {
+    constructor() {
+      super();
+      this.maxHeight = this.getAttribute('max-height') || 150;
+    }
+
+    connectedCallback() {
+      this.init();
+    }
+
+    init() {
+      const expandWrapper = this.querySelector('.expand-wrapper');
+      const needExpandEle = expandWrapper.firstElementChild;
+      const viewMoreBox = expandWrapper.nextElementSibling;
+      if (!needExpandEle || !viewMoreBox) return;
+      const needExpandEleHeight = needExpandEle.offsetHeight;
+      const viewMoreBtn = viewMoreBox.querySelector('.expand-view-more-button');
+      const viewLessBtn = viewMoreBox.querySelector('.expand-view-less-button');
+      viewMoreBtn.addEventListener('click', () => {
+        viewMoreBox.setAttribute('open', true);
+        this.classList.remove('expand-limit-height');
+      });
+      viewLessBtn.addEventListener('click', () => {
+        viewMoreBox.removeAttribute('open');
+        this.classList.add('expand-limit-height');
+      });
+      if (needExpandEleHeight > this.maxHeight) {
+        viewMoreBox.style.display = 'block';
+      } else {
+        this.classList.remove('expand-limit-height');
+      }
+    }
+  };
+});
+;
 // deferred load media (eg: video)
 defineCustomElement(
   'deferred-media',
@@ -531,14 +732,37 @@ defineCustomElement(
       }
 
       loadContent(focus = true) {
-        window.pauseAllMedia();
         if (!this.getAttribute('loaded')) {
+          window.pauseAllMedia();
           const content = document.createElement('div');
           content.appendChild(this.querySelector('template').content.firstElementChild.cloneNode(true));
 
           this.setAttribute('loaded', true);
           const deferredElement = this.appendChild(content.querySelector('video, iframe'));
           if (focus) deferredElement.focus();
+
+          const { tagName } = deferredElement;
+          if (tagName === 'VIDEO') {
+            deferredElement.addEventListener('loadeddata', this.playVideo.bind(this), { once: true });
+          } else if (tagName === 'IFRAME') {
+            deferredElement.addEventListener('load', this.playVideo.bind(this), { once: true });
+          }
+        }
+      }
+
+      playVideo() {
+        const deferredElement = this.querySelector('video, iframe');
+        const { tagName } = deferredElement;
+        if (tagName === 'VIDEO') {
+          deferredElement.play();
+        } else if (tagName === 'IFRAME') {
+          // Autoplay video
+          // Require links to be carried enablejsapi=1
+          if (deferredElement.classList.contains('js-youtube')) {
+            deferredElement.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+          } else if (deferredElement.classList.contains('js-vimeo')) {
+            deferredElement.contentWindow.postMessage('{"method":"play"}', '*');
+          }
         }
       }
     },
@@ -569,28 +793,51 @@ class VariantSelects extends HTMLElement {
     super();
     this.addEventListener('change', this.onVariantChange);
     this.getVariantStrings();
+    this.updateOptions();
+    this.updateMasterId();
+    const defaultSelectedVariant = this.getAttribute('data-default-selected-variant');
+    if (defaultSelectedVariant !== 'false') {
+      this.setAvailability();
+    }
   }
 
   onVariantChange() {
     this.updateOptions();
     this.updateMasterId();
     this.removeErrorMessage();
-
     if (!this.currentVariant) {
-      this.toggleAddButton(true, '');
-      this.setUnavailable();
+      this.toggleMainAddButton(true, '');
+      this.toggleFloatAddButton(true, '');
+      if (this.isAllSelectedOptions()) {
+        this.setUnavailable();
+        this.setAvailability();
+      }
     } else {
       this.updateMedia();
       this.renderProductInfo();
+      this.setAvailability();
+      this.updateSku();
     }
 
     this.updateURL();
     this.updateVariantInput();
-    this.updateShareUrl();
+  }
+
+  updateSku() {
+    if (document.getElementById(`variant_sku_no_${this.dataset.section}`)) {
+      document.getElementById(`variant_sku_no_${this.dataset.section}`).textContent = this.currentVariant.sku
+        ? this.currentVariant.sku
+        : '';
+    }
   }
 
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select'), (select) => select.value);
+  }
+
+  isAllSelectedOptions() {
+    // If each option is selected, the array will have a value.
+    return this.options.every((item) => item);
   }
 
   updateMasterId() {
@@ -616,6 +863,8 @@ class VariantSelects extends HTMLElement {
     if (!modalContent) return;
     const newMediaModal = modalContent.querySelector(`[data-media-id="${this.currentVariant.featured_media.id}"]`);
     modalContent.prepend(newMediaModal);
+    const photoSwipe = document.querySelector(`[id^="ProductPhotoSwipe-${this.dataset.section}"]`);
+    photoSwipe?.prepend();
   }
 
   updateURL() {
@@ -627,17 +876,6 @@ class VariantSelects extends HTMLElement {
         sku: this.currentVariant?.id,
       }),
     );
-  }
-
-  updateShareUrl() {
-    const shareButton = document.getElementById(`Share-${this.dataset.section}`);
-    if (!shareButton || !shareButton.updateUrl) return;
-
-    const url = changeURLArg(`${window.shopUrl}${this.dataset.url}`, {
-      sku: this.currentVariant?.id,
-    });
-
-    shareButton.updateUrl(url);
   }
 
   updateVariantInput() {
@@ -695,7 +933,8 @@ class VariantSelects extends HTMLElement {
           pricePerItemDestination.innerHTML = pricePerItemSource.innerHTML;
         }
 
-        this.toggleAddButton(!this.currentVariant.available, this.variantStrings.soldOut);
+        this.toggleMainAddButton(!this.currentVariant.available, this.variantStrings.soldOut);
+        this.toggleFloatAddButton(!this.currentVariant.available, this.variantStrings.soldOut);
 
         publish(PUB_SUB_EVENTS.variantChange, {
           data: {
@@ -712,30 +951,180 @@ class VariantSelects extends HTMLElement {
     if (destination) destination.classList.toggle('visibility-hidden', source.innerText === '');
   }
 
-  toggleAddButton(disable, text) {
-    const productForm = document.getElementById(`product-form-${this.dataset.section}`);
+  handleAddButton(productForm, disable, text) {
     if (!productForm) return;
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
     if (!addButton) return;
 
     if (disable) {
+      if (!this.isAllSelectedOptions()) return;
       addButton.setAttribute('disabled', 'disabled');
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
+      addButton.classList.remove('disabled');
       addButtonText.textContent = this.variantStrings.addToCart;
     }
   }
 
+  toggleMainAddButton(disable, text) {
+    const productForm = document.getElementById(`product-form-${this.dataset.section}`);
+    this.handleAddButton(productForm, disable, text);
+  }
+
+  toggleFloatAddButton(disable, text) {
+    const productForm = document.getElementById(`product-form-${this.dataset.section}-float`);
+    this.handleAddButton(productForm, disable, text);
+  }
+
+  handleAddButtonUnavailable(mainProductForm) {
+    if (mainProductForm) {
+      const addButton = mainProductForm.querySelector('[name="add"]');
+      const addButtonText = mainProductForm.querySelector('[name="add"] > span');
+      if (addButton) {
+        addButtonText.textContent = this.variantStrings.unavailable;
+      }
+    }
+  }
+
   setUnavailable() {
-    const button = document.getElementById(`product-form-${this.dataset.section}`);
-    const addButton = button.querySelector('[name="add"]');
-    const addButtonText = button.querySelector('[name="add"] > span');
     const price = document.getElementById(`price-${this.dataset.section}`);
-    if (!addButton) return;
-    addButtonText.textContent = this.variantStrings.unavailable;
     if (price) price.classList.add('visibility-hidden');
+
+    const mainProductForm = document.getElementById(`product-form-${this.dataset.section}`);
+    this.handleAddButtonUnavailable(mainProductForm);
+
+    const floatProductForm = document.getElementById(`product-form-${this.dataset.section}-float`);
+    this.handleAddButtonUnavailable(floatProductForm);
+  }
+
+  setAvailability() {
+    this.querySelectorAll('.variant-input-wrapper').forEach((group) => {
+      this.disableVariantGroup(group);
+    });
+
+    const currentlySelectedValues = this.options.map((value, index) => {
+      return { value, index: `option${index + 1}` };
+    });
+    const initialOptions = this.createAvailableOptionsTree(this.variantData, currentlySelectedValues);
+    console.log('createAvailableOptionsTree_result', initialOptions);
+
+    Object.entries(initialOptions).forEach(([option, values]) => {
+      this.manageOptionState(option, values);
+    });
+  }
+
+  disableVariantGroup(group) {
+    group.querySelectorAll('option').forEach((option) => {
+      option.disabled = true;
+    });
+  }
+
+  createAvailableOptionsTree(variants, currentlySelectedValues) {
+    // Reduce variant array into option availability tree
+    return variants.reduce(
+      (options, variant) => {
+        // Check each option group (e.g. option1, option2, option3, option4, option5) of the variant
+        Object.keys(options).forEach((index) => {
+          if (variant[index] === null) return;
+          let entry = options[index].find((option) => option.value === variant[index]);
+          if (typeof entry === 'undefined') {
+            // If option has yet to be added to the options tree, add it
+            entry = { value: variant[index], soldOut: true };
+            options[index].push(entry);
+          }
+
+          const currentOption1 = currentlySelectedValues.find((selectedValue) => {
+            return selectedValue.index === 'option1';
+          });
+          const currentOption2 = currentlySelectedValues.find((selectedValue) => {
+            return selectedValue.index === 'option2';
+          });
+          const currentOption3 = currentlySelectedValues.find((selectedValue) => {
+            return selectedValue.index === 'option3';
+          });
+          const currentOption4 = currentlySelectedValues.find((selectedValue) => {
+            return selectedValue.index === 'option4';
+          });
+
+          switch (index) {
+            case 'option1':
+              // Option1 inputs should always remain enabled based on all available variants
+              entry.soldOut = entry.soldOut && variant.available ? false : entry.soldOut;
+              break;
+            case 'option2':
+              // Option2 inputs should remain enabled based on available variants that match first option group
+              if (currentOption1 && variant.option1 === currentOption1.value) {
+                entry.soldOut = entry.soldOut && variant.available ? false : entry.soldOut;
+              }
+              break;
+            case 'option3':
+              // Option 3 inputs should remain enabled based on available variants that match first and second option group
+              if (
+                currentOption1 &&
+                variant.option1 === currentOption1.value &&
+                currentOption2 &&
+                variant.option2 === currentOption2.value
+              ) {
+                entry.soldOut = entry.soldOut && variant.available ? false : entry.soldOut;
+              }
+              break;
+            case 'option4':
+              // Option 4 inputs should remain enabled based on available variants that match first and second and third option group
+              if (
+                currentOption1 &&
+                variant.option1 === currentOption1.value &&
+                currentOption2 &&
+                variant.option2 === currentOption2.value &&
+                currentOption3 &&
+                variant.option3 === currentOption3.value
+              ) {
+                entry.soldOut = entry.soldOut && variant.available ? false : entry.soldOut;
+              }
+              break;
+            case 'option5':
+              // Option 5 inputs should remain enabled based on available variants that match first and second and third and fourth option group
+              if (
+                currentOption1 &&
+                variant.option1 === currentOption1.value &&
+                currentOption2 &&
+                variant.option2 === currentOption2.value &&
+                currentOption3 &&
+                variant.option3 === currentOption3.value &&
+                currentOption4 &&
+                variant.option4 === currentOption4.value
+              ) {
+                entry.soldOut = entry.soldOut && variant.available ? false : entry.soldOut;
+              }
+              break;
+            default:
+          }
+        });
+
+        return options;
+      },
+      { option1: [], option2: [], option3: [], option4: [], option5: [] },
+    );
+  }
+
+  enableVariantOption(group, obj) {
+    
+    const value = obj.value.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+    const option = group.querySelector(`option[value="${value}"]`);
+    option.disabled = false;
+
+    if (obj.soldOut) {
+      option.disabled = true;
+    }
+  }
+
+  manageOptionState(option, values) {
+    const group = this.querySelector(`.variant-input-wrapper[data-option-index="${option}"]`);
+    // Loop through each option value
+    values.forEach((obj) => {
+      this.enableVariantOption(group, obj);
+    });
   }
 
   getVariantData() {
@@ -754,7 +1143,27 @@ class VariantRadios extends VariantSelects {
   updateOptions() {
     const fieldsets = Array.from(this.querySelectorAll('fieldset'));
     this.options = fieldsets.map((fieldset) => {
-      return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
+      const variantInputs = Array.from(fieldset.querySelectorAll('input'));
+      const checkedVariantInput = variantInputs.find((radio) => radio.checked);
+      return checkedVariantInput ? checkedVariantInput.value : '';
+    });
+  }
+
+  enableVariantOption(group, obj) {
+    
+    const value = obj.value.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+    const input = group.querySelector(`input[data-option-value="${value}"]`);
+    // Variant exists - enable & show variant
+    input.removeAttribute('disabled');
+    // Variant sold out - cross out option (remains selectable)
+    if (obj.soldOut) {
+      input.setAttribute('disabled', '');
+    }
+  }
+
+  disableVariantGroup(group) {
+    group.querySelectorAll('input').forEach((input) => {
+      input.setAttribute('disabled', '');
     });
   }
 }
@@ -774,5 +1183,9 @@ function pauseAllMedia() {
     video.contentWindow.postMessage('{"method":"pause"}', '*');
   });
   document.querySelectorAll('video').forEach((video) => video.pause());
+}
+;
+if (window.Shopline.uri.alias !== 'ProductsDetail' && window.Shopline.uri.alias !== 'Products') {
+  sessionStorage.removeItem('breadcrumb');
 }
 ;

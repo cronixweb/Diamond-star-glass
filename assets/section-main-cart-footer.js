@@ -4,7 +4,7 @@
   const checkoutButton = footerContainer.querySelector('.cart__checkout .cart__checkout-button');
   const fixedCheckout = footerContainer.querySelector('.cart-footer__fixed-checkout');
 
-  container.addEventListener('click', (event) => {
+  footerContainer.addEventListener('click', (event) => {
     const { target } = event;
 
     if (

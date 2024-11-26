@@ -167,6 +167,43 @@
   transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.collapsible-content__layout-inline .accordion,
+.collapsible-content__layout-block .accordion {
+  background-color: rgba(var(--box-background-color));
+  padding: 20px;
+  border: none;
+}
+
+.collapsible-content__layout-inline .accordion summary,
+.collapsible-content__layout-block .accordion summary {
+  padding: 0;
+}
+
+.collapsible-content__layout-inline .accordion .accordion__content,
+.collapsible-content__layout-block .accordion .accordion__content {
+  padding: 0;
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+
+.collapsible-content__layout-inline .accordion + .accordion {
+  margin-top: 12px;
+}
+
+.collapsible-content__layout-block .accordion + .accordion {
+  border-top: 1px solid rgba(var(--color-text), 0.08);
+}
+
+.collapsible-content__layout-block .accordion:first-child {
+  border-top-left-radius: var(--content-border-radius);
+  border-top-right-radius: var(--content-border-radius);
+}
+
+.collapsible-content__layout-block .accordion:last-child {
+  border-bottom-left-radius: var(--content-border-radius);
+  border-bottom-right-radius: var(--content-border-radius);
+}
+
 /* The ipad end responds to the mobile end in vertical screen */
 
 /* @custom-media --tablet (max-width: 959px); */

@@ -145,8 +145,8 @@ defineCustomElement('slider-component', () => {
       if (!this.slider) return;
 
       this.mql = window.matchMedia('(min-width: 750px)');
-      this.slideItems = Array.from(this.querySelectorAll('[id^="Slide-"]'));
-      this.currentPage = 1;
+      this.slideItems = this._getSlideItems();
+      this._setCurrentPage(1);
       this.totalPage = this.slideItems.length;
       this.enableSliderLooping = this.hasAttribute('loop');
 
@@ -163,9 +163,15 @@ defineCustomElement('slider-component', () => {
     }
 
     initSlides() {
-      this.slideItems = Array.from(this.querySelectorAll('[id^="Slide-"]'));
+      this._initializing = true;
+      this.slideItems = this._getSlideItems();
       this.totalPage = this._getTotalPage();
+      this._setCurrentPage();
       this.updateView();
+      this.slideTo(this.currentPage, true);
+      setTimeout(() => {
+        this._initializing = false;
+      });
     }
 
     get direction() {
@@ -182,19 +188,38 @@ defineCustomElement('slider-component', () => {
       return this.enableSliderLooping ? this.currentPage === this.totalPage : false;
     }
 
+    connectedCallback() {
+      this.resetSlides();
+    }
+
     resetSlides() {
       this.initSlides();
       this._slideUpdate();
     }
 
+    _getSlideItems() {
+      return Array.from(this.querySelectorAll('[id^="Slide-"]')).filter((slide) => slide.clientWidth > 0);
+    }
+
+    _setCurrentPage(idx) {
+      if (idx == null) {
+        const cIdx = this.slideItems.findIndex((slide) => slide.classList.contains(ACTIVE_CLASS));
+        idx = cIdx >= 0 ? cIdx + 1 : 1;
+      }
+      this.currentPage = idx;
+      this.setAttribute('current', idx);
+    }
+
     _slideUpdate() {
+      if (this._initializing) return;
+
       const idx = this.slideItems.findIndex((slide) => this.isSlideVisible(slide));
 
       if (idx < 0 || idx >= this.totalPage) return;
 
       const targetSlide = this.slideItems[idx];
       const previousPage = this.currentPage;
-      this.currentPage = idx + 1;
+      this._setCurrentPage(idx + 1);
 
       if (previousPage !== this.currentPage) {
         this.dispatchEvent(
@@ -258,10 +283,9 @@ defineCustomElement('slider-component', () => {
 
     /**
      * Switch to the target frame
-     * @param {number} idx
      */
-    slideTo(idx) {
-      if (idx === this.currentPage) return;
+    slideTo(idx, force) {
+      if (idx === this.currentPage && !force) return;
 
       const targetSlide = this.slideItems[idx - 1];
       targetSlide &&

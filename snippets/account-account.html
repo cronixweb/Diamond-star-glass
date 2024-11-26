@@ -94,7 +94,7 @@
                       </div>
                     </div>
                   </div>
-
+              
                   <div class="modify-info__step2" style="display: none;">
                     <div class="modify-info__desc body4"></div>
                     <div class="modify-info__content">
@@ -106,11 +106,11 @@
                             {{ snippet 'icon-arrow'}}
                           </div>
                           <select name="customer[code]" autocomplete="off">
-                            {{#for all_country_dialing_code as |item|}}
-                              {{#if localization.country.iso_code == item.iso_code}}
-                                <option value="{{item.dialing_code}}" data-iso-code="{{item.iso_code}}" selected="selected">{{item.name}}</option>
+                            {{#for all_country_dialing_code as |country_dialing_code|}}
+                              {{#if localization.country.iso_code == country_dialing_code.iso_code}}
+                                <option value="{{country_dialing_code.dialing_code}}" data-iso-code="{{country_dialing_code.iso_code}}" selected="selected">{{country_dialing_code.name}}</option>
                               {{else}}
-                                <option value="{{item.dialing_code}}" data-iso-code="{{item.iso_code}}">{{item.name}}</option>
+                                <option value="{{country_dialing_code.dialing_code}}" data-iso-code="{{country_dialing_code.iso_code}}">{{country_dialing_code.name}}</option>
                               {{/if}}
                             {{/for}}
                           </select>
@@ -126,11 +126,11 @@
                     <div class="modify-info__action-buttons">
                       <div class="button button--secondary modify-info_cancel-button js-modify-info__close_modal">{{t "customer.general.cancel_common"}}</div>
                       <button type="submit" class="button modify-info_confirm-button">
-                        <span>{{t "customer.account.confirm_btn"}}</span>
+                        <span>{{t "customer.account.confirm_btn"}}</span> 
                         {{snippet "loading-overlay-spinner"}}
                       </button>
                     </div>
-                  </div>
+                  </div>                  
                 {{else}}
                   <div class="modify-info__content">
                     <div class="modify-info__input">
@@ -141,11 +141,11 @@
                           {{ snippet 'icon-arrow'}}
                         </div>
                         <select name="customer[code]" autocomplete="off">
-                          {{#for all_country_dialing_code as |item|}}
-                            {{#if localization.country.iso_code == item.iso_code}}
-                              <option value="{{item.dialing_code}}" data-iso-code="{{item.iso_code}}" selected="selected">{{item.name}}</option>
+                          {{#for all_country_dialing_code as |country_dialing_code|}}
+                            {{#if localization.country.iso_code == country_dialing_code.iso_code}}
+                              <option value="{{country_dialing_code.dialing_code}}" data-iso-code="{{country_dialing_code.iso_code}}" selected="selected">{{country_dialing_code.name}}</option>
                             {{else}}
-                              <option value="{{item.dialing_code}}" data-iso-code="{{item.iso_code}}">{{item.name}}</option>
+                              <option value="{{country_dialing_code.dialing_code}}" data-iso-code="{{country_dialing_code.iso_code}}">{{country_dialing_code.name}}</option>
                             {{/if}}
                           {{/for}}
                         </select>
@@ -155,7 +155,7 @@
                   <div class="modify-info__action-buttons">
                     <div class="button button--secondary modify-info_cancel-button js-modify-info__close_modal">{{t "customer.general.cancel_common"}}</div>
                     <button type="submit" class="button modify-info_confirm-button">
-                      <span>{{t "customer.account.confirm_btn"}}</span>
+                      <span>{{t "customer.account.confirm_btn"}}</span> 
                       {{snippet "loading-overlay-spinner"}}
                     </button>
                   </div>
@@ -191,12 +191,12 @@
                     <div class="modify-info__action-buttons">
                       <div class="button button--secondary modify-info_cancel-button js-modify-info__close_modal">{{t "customer.general.cancel_common"}}</div>
                       <div class="button modify-info_next-button">
-                        <span>{{t "customer.account.next" }}</span>
+                        <span>{{t "customer.account.next"}}</span>
                         {{snippet "loading-overlay-spinner"}}
                       </div>
                     </div>
                   </div>
-
+              
                   <div class="modify-info__step2" style="display: none;">
                     <div class="modify-info__desc body4"></div>
                     <div class="modify-info__content">
@@ -206,18 +206,18 @@
                       <div class="modify-info__input">
                         <input class="body4" type="text" name="customer[verifycode]" placeholder="{{t "customer.general.verification_code"}}">
                         <button class="button button--link modify-info__send-code">
-                          {{ t "customer.general.send"}}
+                          {{t "customer.general.send"}}
                         </button>
                       </div>
                     </div>
                     <div class="modify-info__action-buttons">
                       <div class="button button--secondary modify-info_cancel-button js-modify-info__close_modal">{{t "customer.general.cancel_common"}}</div>
                       <button type="submit" class="button modify-info_confirm-button">
-                        <span>{{t "customer.account.confirm_btn"}}</span>
+                        <span>{{t "customer.account.confirm_btn"}}</span> 
                         {{snippet "loading-overlay-spinner"}}
                       </button>
                     </div>
-                  </div>
+                  </div>                  
                 {{else}}
                   <div class="modify-info__content">
                     <div class="modify-info__input">
@@ -227,7 +227,7 @@
                   <div class="modify-info__action-buttons">
                     <div class="button button--secondary modify-info_cancel-button js-modify-info__close_modal">{{t "customer.general.cancel_common"}}</div>
                     <button type="submit" class="button modify-info_confirm-button">
-                      <span>{{t "customer.account.confirm_btn"}}</span>
+                      <span>{{t "customer.account.confirm_btn"}}</span> 
                       {{snippet "loading-overlay-spinner"}}
                     </button>
                   </div>
@@ -241,20 +241,20 @@
       <div class="info-item third">
         <div class="body4 info-label">{{t 'customer.account.account_binding'}}</div>
         <div class="body4 info-value">
-          {{#for customer.login_sources as |source|}}
+          {{#for customer.login_sources as |item|}}
             <div class="bind-info">
-              {{#if source.login_source == 'facebook'}}
+              {{#if item.login_source == 'facebook'}}
                 {{ snippet 'icon-account-facebook' }}
-              {{else if source.login_source == 'line'}}
+              {{else if item.login_source == 'line'}}
                 {{ snippet 'icon-account-line' }}
-              {{else if source.login_source == 'google'}}
+              {{else if item.login_source == 'google'}}
                 {{ snippet 'icon-account-google' }}
-              {{else if source.login_source == 'tiktok'}}
+              {{else if item.login_source == 'tiktok'}}
                 {{ snippet 'icon-account-tiktok' }}
-              {{else if source.login_source == 'apple'}}
+              {{else if item.login_source == 'apple'}}
                 {{ snippet 'icon-account-apple' }}
               {{/if}}
-              <span>{{ ternary source.nickname source.nickname customer.name }}</span>
+              <span>{{ ternary item.nickname item.nickname customer.name }}</span>
             </div>
           {{/for}}
         </div>
@@ -262,7 +262,7 @@
     {{/if}}
 
 
-      {{#if (if customer.email or customer.phone) and shop.allow_cancel_account}}
+      {{#if shop.allow_cancel_account and (if customer.email or customer.phone)}}
         <div class="info-item">
           <div class="body4 info-value">
             {{#if customer.cancelling_account}}

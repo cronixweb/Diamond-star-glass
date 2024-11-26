@@ -4,6 +4,7 @@ class CustomerActivateAccount {
     this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
     this.submitBtn = this.form.querySelector('button[type="submit"]');
     this.handleTogglePwdInput();
+    this.requireTooltipHandler();
 
     this.activate = new window.Shopline.customerAccount.Activate(this.form);
   }
@@ -63,6 +64,21 @@ class CustomerActivateAccount {
       return;
     }
     this.form.querySelector('#customer-error-message').innerHTML = error;
+  }
+
+  requireTooltipHandler() {
+    this.agreeCheckBox = this.form.querySelector('input[name="agree"]');
+    if (this.agreeCheckBox) {
+      this.agreeCheckBox.addEventListener('invalid', (e) => {
+        e.preventDefault();
+        this.agreeCheckBox.parentNode.querySelector('tool-tip').open();
+      });
+      this.agreeCheckBox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+          this.agreeCheckBox.parentNode.querySelector('tool-tip').close();
+        }
+      });
+    }
   }
 }
 

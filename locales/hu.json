@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "{{quantity}} tételt adhat hozzá a kosarához."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "Érvénytelen e-mail-cím"
-    },
     "account": {
       "account_binding": "Fiók összekapcsolása",
       "account_information": "Fiók",
@@ -216,6 +213,7 @@
       "delete_account_notify": "Kérheti a fiók lezárását. A lezárás után, a fiókot azonosító összes információt törölni fogjuk beleértve a következőket:",
       "email": "E-mail",
       "email_repeat_tip": "Az email regisztrálva lett",
+      "email_subscribe_invalid_tip": "Érvénytelen e-mail-cím",
       "first_name": "Név",
       "gender": "Nem",
       "gender_female": "Nő",
@@ -260,7 +258,7 @@
       "copy_success": "Kuponkód átmásolva",
       "discount_title": "Aktiválja fiókját és kedvezménykódot kap",
       "normal_title": "Fiók aktiválás",
-      "normal_title_with_discount_code": "Aktiválja fiókját és kedvezménykódot kap",
+      "normal_title_with_discount_code": "",
       "subscription_text": "Iratkozzon fel az e-mailekre és friss híreket kap, valamint hozzáfér az exkluzív ajánlatokhoz és még sok máshoz.",
       "success_title": "Gratulálunk, nagyszerű kedvezményt kapott",
       "token_expired": "Az Ön hivatkozása lejárt"
@@ -300,19 +298,98 @@
         "shipping": "A cég szállítási címe",
         "title": "Vállalati számla alkalmazás"
       },
+      "address": {
+        "placeholder": "Részletes cím"
+      },
+      "address2": {
+        "placeholder": "Részletes cím 2"
+      },
       "bill": {
         "sameAsCompany": "A vállalat számlázási címe megegyezik a vállalati szállítási címmel"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "Részletes cím"
+        },
+        "address2": {
+          "placeholder": "Részletes cím 2"
+        },
+        "city": {
+          "placeholder": "Város"
+        },
+        "country": {
+          "placeholder": "Ország/Régió"
+        },
+        "district": {
+          "placeholder": "Kerület"
+        },
+        "phone": {
+          "placeholder": "Mobil telefonszám"
+        },
+        "province": {
+          "placeholder": "Tartomány"
+        },
+        "zip": {
+          "placeholder": "Irányítószám"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "A cég számlázási címe megegyezik a szállítási címmel"
+      },
+      "billing_address": {
+        "title": "Vállalat számlázási címe"
+      },
+      "city": {
+        "placeholder": "Város"
+      },
+      "company_name": {
+        "placeholder": "A vállalat neve"
+      },
+      "country": {
+        "placeholder": "Ország/Régió"
       },
       "create": {
         "limit": "Az üzlethez tartozó cégek száma elérte a korlátot. Segítségért forduljon a kereskedőhöz.",
         "success": "Köszönöm. Az űrlap elküldve."
       },
+      "district": {
+        "placeholder": "Kerület"
+      },
+      "email": {
+        "placeholder": "Postafiók"
+      },
       "field": {
         "companyName": "Cégnév",
         "email": "Email"
       },
+      "first_name": {
+        "placeholder": "Vezetéknevek"
+      },
       "form": {
         "submit": "Beküldés"
+      },
+      "last_name": {
+        "placeholder": "Nevek"
+      },
+      "phone": {
+        "placeholder": "Mobil telefonszám"
+      },
+      "province": {
+        "placeholder": "Tartomány"
+      },
+      "register": {
+        "button": "Elküldés",
+        "success": {
+          "description": "Az űrlapot sikeresen elküldtük.",
+          "title": "Köszönjük a kitöltést!"
+        },
+        "title": "Cégszámla iránti kérelem"
+      },
+      "shipping_address": {
+        "title": "A vállalat szállítási címe"
+      },
+      "zip": {
+        "placeholder": "Irányítószám"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "Törlés",
       "company_empty_hint": "A cégnév mező nem lehet üres",
       "company_existed": "A vállalatnév már létezik.",
+      "company_frequent_operation": "Ismételje meg a műveletet, próbálkozzon újra később",
+      "company_registry_closed": "A kereskedő nem engedélyezte a céges számla kérelmezési funkciót, kérjük, lépjen kapcsolatba a kereskedővel a jelentkezéshez.",
       "confirm": "OK",
       "confirm_button": "OK",
       "date_format": "yyyy-MM-dd",
@@ -440,7 +519,7 @@
       "phone_tip": "Egy SMS-t fogunk küldeni jelszava visszaállításához",
       "proceed_to_checkout": "Tovább a kijelentkezéshez",
       "title": "Oldal címe",
-      "verification_code_success": "Az ellenőrző kód el lett küldve az Ön {{type}}<em>{{value}}</em> bejelentkezésére. Kérjük, lent írja be."
+      "verification_code_success": "Az ellenőrző kód el lett küldve az Ön {{type}} <em>{{value}}</em> bejelentkezésére. Kérjük, lent írja be."
     },
     "login": {
       "member_login_common": "Bejelentkezés tagoknak",
@@ -461,12 +540,18 @@
       "go_to_login": "Tovább a bejelentkezéshez",
       "tips_agree_with_the_shop": "Elfogadom az"
     },
+    "subscribe": {
+      "email_has_bind": "Ez az e-mail cím egy másik fiókhoz lett kötve",
+      "phone_has_bind": "Ez a telefon egy másik fiókhoz lett kötve"
+    },
     "subscription": {
       "email": "E-mail",
+      "email_subscribe_error_tip": "Ezt az e-mail címet egy másik számlához kapcsolták",
       "email_subscription_text": "Kapja meg e-mailben az előfizetéssel kapcsolatos promóciós információkat",
       "line": "LINE",
       "messenger": "Messenger",
       "phone": "Mobiltelefon",
+      "phone_subscribe_error_tip": "Ezt a mobiltelefont egy másik számlához kapcsolták",
       "phone_subscription_text": "Feliratkozás telefon promócióra",
       "reason_other_length": "Legfeljebb 300 karaktert írjon",
       "reason_other_placeholder": "Bemeneti tartalom",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "A feliratkozást töröltük és hamarosan átirányítjuk a kezdőoldalra",
       "unsubscribe_tip": "Leiratkozás után nem fog több promóciót kapni.",
       "unsubscribe_title": "Leiratkozás"
+    },
+    "unsubscribe": {
+      "content_placeholder": "Kérjük, adja meg a tartalmat",
+      "goto_btn": "Lépjen be az üzletbe",
+      "notyet": "Még nem iratkozott fel",
+      "notyet_desc": "Mehetsz a boltba előfizetni",
+      "success": "Az előfizetés lemondva",
+      "success_tip": "Leiratkozott a következőről: {{storeName}}"
     }
   },
   "general": {
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "Vásárolj újra",
     "checkout_order": {
       "pay_amount": "fizetési összeget",
       "receiver_account": "fogadószámla",
@@ -596,8 +690,9 @@
       "details": "Megrendelés részletei",
       "insuranceService": "Biztosítási szolgáltatások",
       "insuranceService_applyClaim": "Kártérítés igénylése",
-      "insuranceService_content_email": "1. A kötvényt {{serviceName}} elküldte az Ön „{{email}}” e-mail-címére. Ha nem kapta meg a kötvénnyel kapcsolatos információkat, kérjük, forduljon az üzlet ügyfélszolgálatához. 2. Ha a szállítás során bármilyen sérülés, károsodás, késedelem vagy egyéb helyzet adódik, akkor kártérítést kérhet.",
-      "insuranceService_content_phone": "1. A kötvényt {{serviceName}} elküldte az Ön „{{phopne}}” telefonjára. Ha nem kapta meg a kötvénnyel kapcsolatos információkat, kérjük, forduljon az üzlet ügyfélszolgálatához. 2. Ha a szállítás során bármilyen sérülés, károsodás, késedelem vagy egyéb helyzet adódik, akkor kártérítést kérhet.",
+      "insuranceService_content_line1__email": "1. A kötvényt {{serviceName}} elküldte az Ön „{{email}}” e-mail-címére. Ha nem kapta meg a kötvénnyel kapcsolatos információkat, kérjük, forduljon az üzlet ügyfélszolgálatához. ",
+      "insuranceService_content_line1__phone": "1. A szabályzat megvásárlása {{serviceName}}-n keresztül történt. Ha kérése van, forduljon az üzlet ügyfélszolgálathoz.",
+      "insuranceService_content_line2": "2. Ha a szállítás során bármilyen sérülés, károsodás, késedelem vagy egyéb helyzet adódik, akkor kártérítést kérhet.",
       "order": "Rendelés",
       "remark": "Megjegyzés a rendeléshez",
       "time": "Megrendelve:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "További elemek betöltése",
+      "loading_btn": "Töltsön többet",
       "no_product_data_found": "Nem található termékadat. Kérjük, később próbálja újra",
       "sold_out": "Elfogyott",
-      "added_to_cart_successfully": "Sikeresen a kosárba",
+      "load_more": "További elemek betöltése",
       "load_more_items": "{{total}} tételből {{current_offset}} ~ {{last_current_offset}} betöltése",
-      "unavailable": "nem elérhető el"
+      "unavailable": "A javak nem léteznek",
+      "variant_property_color": "Szín"
     },
     "giftcard": {
       "seoTitle": "Az Ön {{ shop }} ajándékkártya egyenlege {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "Szűrő",
       "filters_selected": "{{count}} lett kiválasztva",
       "from_price_html": "{{price}} ártól",
+      "infinite_btn_desc": "{{total}} tételből {{last_current_offset}}",
       "less": "Kevesebb",
       "load_more_desc": "{{total}} tételből {{current_offset}} ~ {{last_current_offset}}",
       "load_more_tip": "További elemek betöltése",
@@ -786,10 +884,7 @@
       "save_ratio": "{{price}}% kedvezmény",
       "select_product_all_options": "A kiválasztott termékvariáns hiányos vagy nem elérhető. Kérjük, válasszon újra",
       "sort_button": "Változat",
-      "top_sellers": "Legfelkapottabb",
-      "more__product_num": "{{num}} Termékek",
-      "one_product_num": "{{num}} Termék",
-      "show": "Mutasd"
+      "top_sellers": "Legfelkapottabb"
     },
     "product_search": {
       "back_to_home": "Vissza a kezdőlapra",
@@ -886,6 +981,10 @@
       "MultiplePayment": "Többcsatornás fizetés",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "Hitelkártya"
     },
     "reduction_code": {
@@ -942,7 +1041,8 @@
       "product_limit": "Túllépte a termékkorlátot"
     },
     "order": {
-      "deleted": "ÉRVÉNYTELEN"
+      "deleted": "ÉRVÉNYTELEN",
+      "rebuy": "Vegye meg újra"
     },
     "payment": {
       "continue_shopping": "Folytasd a vásárlást",
@@ -979,7 +1079,7 @@
       "error_message_1008": "Bejelentkezés harmadik fél csatornáinak konfigurálása nélkül",
       "error_message_1009": "Nem sikerült felhívni harmadik fél interfészét",
       "error_message_1010": "Nem sikerült elküldeni",
-      "error_message_1011": "A fiókszám nincs aktiválva",
+      "error_message_1011": "A fiók nincs aktiválva, regisztráljon a jelszó és egyéb adatok megadásához.",
       "error_message_1012": "Szolgáltatás kivételek",
       "error_message_1013": "Szolgáltatás kivételek",
       "error_message_1014": "Nem sikerült ellenőrizni az ellenőrző kódot",

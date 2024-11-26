@@ -63,7 +63,7 @@
       "max_amount_limit": "لقد تجاوزت الحد الأقصى لمبلغ الدفع"
     },
     "checkout_proceeding": {
-      "checkout": "دفع الحساب",
+      "checkout": "إتمام الشراء",
       "checkout_proceed": "تجاوزت العناصر التالية حد الشراء ، هل تريد متابعة الدفع؟",
       "continue": "متابعة",
       "continue_shopping": "اذهب للتسوق",
@@ -164,7 +164,7 @@
       "status": "الحالة",
       "subtotal_price": "السعر الإجمالي للمنتجات",
       "sum": "المبلغ",
-      "total_sum": "المجموع",
+      "total_sum": "الإجمالي",
       "update_time": "تحديث في"
     },
     "policy": {
@@ -186,7 +186,7 @@
       "information": "اشتراك"
     },
     "tips": {
-      "agree_with_the_shop": "أنا أوافق على",
+      "agree_with_the_shop": "لقد قرأت وأوافق على",
       "change_binding_after_verification": "بعد التحقق، يمكنك ربط / تعديل {{value}}",
       "forget_password": "نسيت كلمة المرور",
       "proceed_to_checkout": "الشروع في الدفع",
@@ -196,9 +196,6 @@
     "cart_quantity_error_html": "يمكنك فقط إضافة {{quantity}} قطعة من هذا المنتج إلى سلة التسوق ."
   },
   "customer": {
-    "accoount": {
-      "email_subscribe_invalid_tip": "البريدالالكتروني غير صالح"
-    },
     "account": {
       "account_binding": "ربط الحساب",
       "account_information": "الحساب",
@@ -216,6 +213,7 @@
       "delete_account_notify": "يمكنك التقدم بطلب لإلغاء هذا الحساب. بعد إلغاء الحساب ، سيتم حذف أي معلومات مستخدمة لتعريف الحساب ، بما في ذلك:",
       "email": "البريد الإلكتروني",
       "email_repeat_tip": "البريد الإلكتروني مسجل",
+      "email_subscribe_invalid_tip": "",
       "first_name": "الاسم",
       "gender": "نوع الجنس",
       "gender_female": "أنثى",
@@ -300,19 +298,98 @@
         "shipping": "عنوان الشحن الخاص بالشركة",
         "title": "تطبيق حساب الشركة"
       },
+      "address": {
+        "placeholder": "العنوان التفصيلي"
+      },
+      "address2": {
+        "placeholder": "العنوان التفصيلي 2"
+      },
       "bill": {
         "sameAsCompany": "عنوان إرسال فواتير الشركة هو نفس عنوان الشحن الخاص بالشركة"
+      },
+      "billing": {
+        "address": {
+          "placeholder": "العنوان التفصيلي"
+        },
+        "address2": {
+          "placeholder": "العنوان التفصيلي 2"
+        },
+        "city": {
+          "placeholder": "المدينة"
+        },
+        "country": {
+          "placeholder": "البلد/المنطقة"
+        },
+        "district": {
+          "placeholder": "المنطقة"
+        },
+        "phone": {
+          "placeholder": "رقم الهاتف المحمول"
+        },
+        "province": {
+          "placeholder": "المقاطعة"
+        },
+        "zip": {
+          "placeholder": "الرمز البريدي"
+        }
+      },
+      "billingSameAsShipping": {
+        "placeholder": "عنوان الفواتير للشركة هو نفس عنوان المستلمة"
+      },
+      "billing_address": {
+        "title": ""
+      },
+      "city": {
+        "placeholder": "المدينة"
+      },
+      "company_name": {
+        "placeholder": "اسم الشركة"
+      },
+      "country": {
+        "placeholder": "البلد/المنطقة"
       },
       "create": {
         "limit": "وقد وصل عدد الشركات للمحل إلى الحد الأقصى. يرجى الاتصال بالتاجر للحصول على المساعدة.",
         "success": "شكرًا لك. تم تقديم النموذج."
       },
+      "district": {
+        "placeholder": "المنطقة"
+      },
+      "email": {
+        "placeholder": "البريد الإلكتروني"
+      },
       "field": {
         "companyName": "اسم الشركة",
         "email": "بريد إلكتروني"
       },
+      "first_name": {
+        "placeholder": "الاسم الأول"
+      },
       "form": {
         "submit": "يُقدِّم"
+      },
+      "last_name": {
+        "placeholder": "اسم العائلة"
+      },
+      "phone": {
+        "placeholder": "رقم الهاتف المحمول"
+      },
+      "province": {
+        "placeholder": "المقاطعة"
+      },
+      "register": {
+        "button": "إرسال",
+        "success": {
+          "description": "تم إرسال الاستمارة بنجاح.",
+          "title": "شكراً لك على إكماله!"
+        },
+        "title": "طلب حساب الشركة"
+      },
+      "shipping_address": {
+        "title": "عنوان الشركة المستلمة"
+      },
+      "zip": {
+        "placeholder": "الرمز البريدي"
       }
     },
     "email": {
@@ -342,6 +419,8 @@
       "clear_button": "مسح",
       "company_empty_hint": "لا يمكن أن يكون اسم الشركة فارغًا",
       "company_existed": "اسم الشركة موجود بالفعل",
+      "company_frequent_operation": "كرر العملية، يرجى المحاولة مرة أخرى في وقت لاحق",
+      "company_registry_closed": "لم يقم التاجر بتفعيل وظيفة طلب حساب الشركة، يرجى الاتصال بالتاجر لتقديم الطلب.",
       "confirm": "تأكيد",
       "confirm_button": "تأكيد",
       "date_format": "yyyy-MM-dd",
@@ -461,20 +540,26 @@
       "go_to_login": "انتقل إلى تسجيل الدخول",
       "tips_agree_with_the_shop": "أنا أوافق على"
     },
+    "subscribe": {
+      "email_has_bind": "تم ربط هذا البريد الإلكتروني بحساب آخر",
+      "phone_has_bind": "تم ربط هذا الهاتف بحساب آخر"
+    },
     "subscription": {
       "email": "البريد الإلكتروني",
+      "email_subscribe_error_tip": "هذا البريد الإلكتروني مرتبط بحساب آخر",
       "email_subscription_text": "تلقي الاخبار الترويجية من خلال الاشتراك عبر البريد الإلكتروني",
       "line": "LINE",
       "messenger": "Messenger",
-      "phone": "الهاتف",
+      "phone": "رقم الهاتف",
+      "phone_subscribe_error_tip": "هذا الهاتف المحمول مرتبط بحساب آخر",
       "phone_subscription_text": "تلقي الاخبار الترويجية من خلال الاشتراك عبر الهاتف",
       "reason_other_length": "أدخل ما يصل إلى 300 حرف",
       "reason_other_placeholder": "إدخال المحتوى",
       "save_button": "حفظ",
-      "subscribe_button": "اشتراك",
+      "subscribe_button": "اشترك",
       "subscription_cancel_text": "إلغاء الاشتراك",
-      "subscription_hint": "تم الاشتراك بنجاح",
-      "subscription_title": "اشتراك",
+      "subscription_hint": "مشترك",
+      "subscription_title": "الاشتراكات",
       "unsubscribe": "إلغاء الاشتراك",
       "unsubscribe_btn": "إلغاء الاشتراك",
       "unsubscribe_confirm_text": "إلغاء الاشتراك",
@@ -490,6 +575,14 @@
       "unsubscribe_success": "تم إلغاء الاشتراك ، وسيتم إعادة توجيهك إلى الصفحة الرئيسية",
       "unsubscribe_tip": "بعد إلغاء الاشتراك ، لن تتلقى بعد الآن أحدث الاخبار الترويجية.",
       "unsubscribe_title": "إلغاء الاشتراك"
+    },
+    "unsubscribe": {
+      "content_placeholder": "الرجاء إدخال المحتوى الخاص بك",
+      "goto_btn": "اذهب إلى المتجر",
+      "notyet": "أنت لم تشترك بعد",
+      "notyet_desc": "يمكنك الدخول إلى المتجر للاشتراك",
+      "success": "غير مشترك",
+      "success_tip": "لقد ألغيت اشتراكك في {{storeName}}"
     }
   },
   "general": {
@@ -503,7 +596,7 @@
       }
     },
     "address": {
-      "address": "العنوان"
+      "address": "عنوان"
     },
     "contact_us": {
       "contact_us": "اتصل بنا",
@@ -532,7 +625,7 @@
       "proofing_tip": "عذرًا ، المتجر الذي قمت بزيارته مغلق ، <br/> يُرجى المحاولة مرة أخرى لاحقًا."
     },
     "header": {
-      "cart": "سلة التسوق",
+      "cart": "السلة",
       "center": "إدارة الحساب",
       "close": "إغلاق",
       "login": "تسجيل الدخول",
@@ -578,6 +671,7 @@
     }
   },
   "order": {
+    "buy_again": "اشرِ مرة أخرى",
     "checkout_order": {
       "pay_amount": "مبلغ الدفع",
       "receiver_account": "حساب الاستلام",
@@ -596,8 +690,9 @@
       "details": "تفاصيل الطلب",
       "insuranceService": "خدمة التأمين",
       "insuranceService_applyClaim": "التقدم بطلب الحصول على تعويض ",
-      "insuranceService_content_email": "1. تم إرسال بوليصة التأمين إلى عنوان بريدك الإلكتروني \"{{email}}\" بواسطة {{serviceName}}.  إذا لم تتلق رسالة البريد الإلكتروني الخاصة ببوليصة التأمين، فيرجى الاتصال بخدمة عملاء المتجر.2. إذا كان هناك ضرر او خسارة او تأخير في عملية الشحن، يمكنك التقدم بطلب للحصول على تعويض.",
-      "insuranceService_content_phone": "1. تم إرسال بوليصة التأمين إلى هاتفك المحمول \"{{phopne}}\" بواسطة {{serviceName}}.  إذا لم تتلق معلومات بولصية التأمين، فيرجى الاتصال بخدمة عملاء المتجر. 2. إذا كان هناك ضرر او خسارة او تأخير في عملية الشحن، يمكنك التقدم بطلب للحصول على تعويض.",
+      "insuranceService_content_line1__email": "1. تم إرسال بوليصة التأمين إلى عنوان بريدك الإلكتروني \"{{email}}\" بواسطة {{serviceName}}.  إذا لم تتلق رسالة البريد الإلكتروني الخاصة ببوليصة التأمين، فيرجى الاتصال بخدمة عملاء المتجر.",
+      "insuranceService_content_line1__phone": "1.تم شراء خدمة ضمان النقل من خلال {{serviceName}}. إذا كانت لديك أي أسئلة أخرى، يرجى الاتصال بخدمة عملاء المتجر.\n",
+      "insuranceService_content_line2": "2. إذا كان هناك ضرر او خسارة او تأخير في عملية الشحن، يمكنك التقدم بطلب للحصول على تعويض.",
       "order": "الطلبات",
       "remark": "ملاحظات الطلب",
       "time": "وقت الطلب:",
@@ -679,11 +774,13 @@
     },
     "general": {
       "load_more_btn": "تحميل المزيد من المشاريع\n",
+      "loading_btn": "تحميل المزيد",
       "no_product_data_found": "لا توجد بيانات للمنتج الحالي ، يرجى المحاولة مرة أخرى في وقت لاحق",
       "sold_out": "نفدت",
-      "added_to_cart_successfully": "تمت الإضافة إلى سلة التسوق بنجاح",
+      "load_more": "تحميل المزيد من العناصر",
       "load_more_items": "تحميل {{current_offset}} ~ {{last_current_offset}} / {{total}} العناصر",
-      "unavailable": "غير متوفر"
+      "unavailable": "العنصر غير موجود",
+      "variant_property_color": "اللون"
     },
     "giftcard": {
       "seoTitle": "رصيد بطاقة الهدايا {{ shop }} الخاص بك هو {{ value }}!",
@@ -765,6 +862,7 @@
       "filter": "تصفية",
       "filters_selected": "تم اختيار {{count}}",
       "from_price_html": "من {{price}}",
+      "infinite_btn_desc": "{{last_current_offset}} / {{total}} العناصر",
       "less": "تسميات أقل",
       "load_more_desc": "{{current_offset}} ~ {{last_current_offset}} / {{total}} العناصر",
       "load_more_tip": "تحميل المزيد من العناصر",
@@ -778,18 +876,15 @@
       "product_has_been_removed": "تمت إزالة المنتج الحالي",
       "product_sold_out": "نفذ المنتج",
       "products": "المنتجات",
-      "quick_shop": "التسوق السريع",
+      "quick_shop": "عرض سريع",
       "recommend": "يوصي",
-      "sale": "الأكثر بيعاً",
+      "sale": "تخفيضات",
       "save": "خصم",
       "save_byjs": "خصم {{priceDom}}",
       "save_ratio": "خصم {{price}}%",
       "select_product_all_options": "النوع المحدد للمنتج غير مكتمل أو غير متوفر. يرجى اختيار مرة أخرى",
       "sort_button": "فرز",
-      "top_sellers": "الأكثر بيعاً",
-      "more__product_num": "{{num}} منتج",
-      "one_product_num": "{{num}} منتج",
-      "show": "عرض"
+      "top_sellers": "الأكثر بيعاً"
     },
     "product_search": {
       "back_to_home": "رجوع إلى الصفحة الرئيسية",
@@ -886,6 +981,10 @@
       "MultiplePayment": "مدفوعات متعددة القنوات",
       "Paypal": "Paypal",
       "adjustPay": "manual",
+      "mpay": {
+        "alipay": "Alipay (For Real-name user of the Mainland China.)",
+        "mpay": "MPay (For MPay Users)"
+      },
       "third-part": "بطاقة إئتمان"
     },
     "reduction_code": {
@@ -942,12 +1041,13 @@
       "product_limit": "تم تجاوز حد المنتج"
     },
     "order": {
-      "deleted": "تم الحذف"
+      "deleted": "تم الحذف",
+      "rebuy": "شراء مرة أخرى"
     },
     "payment": {
       "continue_shopping": "مواصلة التسوق",
       "more": "المزيد",
-      "saved": "أنقذ",
+      "saved": "تم توفير",
       "total": "الإجمالي الكلي"
     },
     "payment_disconut_channelinvalid_code": {
@@ -968,7 +1068,7 @@
       "paywith": "ادفع عن طريق"
     },
     "customer": {
-      "error_message_1": "اشترك في رسائل البريد الإلكتروني للحصول على التحديثات والعروض الحصرية والمزيد",
+      "error_message_1": "اشترك في الرسائل الإلكترونية لتلقي التحديثات والعروض الحصرية والمزيد.",
       "error_message_1001": "خطأ في كلمة المرور",
       "error_message_1002": "المستخدم غير موجود",
       "error_message_1003": "تم حظر الحساب مؤقتًا ، يرجى الاتصال بالتاجر لرفع الحظر",
@@ -979,7 +1079,7 @@
       "error_message_1008": "لم يتم تكوين تسجيل دخول لقناة طرف ثالث",
       "error_message_1009": "فشل التحقق من الطرف الثالث",
       "error_message_1010": "فشل فى الارسال",
-      "error_message_1011": "الحساب غير مفعل",
+      "error_message_1011": "الحساب غير مفعل يرجى التسجيل لاستكمال كلمة المرور والمعلومات الأخرى.",
       "error_message_1012": "النظام مشغول",
       "error_message_1013": "النظام مشغول",
       "error_message_1014": "فشل التحقق من رمز التحقق",
