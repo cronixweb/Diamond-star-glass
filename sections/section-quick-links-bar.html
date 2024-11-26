@@ -6,18 +6,20 @@
   }
 </style>
 <div class="section-announcement-bar">
-    <div class="announcement-bar page-width blocks-{{section.settings.blocks_col}}">
-        {{#for section.blocks as |block|}}
-            <div class="announcement-content">
-                <h2 class="announcement-text body3">
-                    {{{ block.settings.announcement_text }}}
-                </h2>
-                <a href="{{ block.settings.link_url }}" class="announcement-link body1">
-                    {{{ block.settings.link_text }}}
-                </a>
-            </div>
-        {{/for}}
+  <div class="page-width">
+    <div class="announcement-bar grid  grid-cols-{{section.settings.blocks_col}} grid-cols-1-tablet">
+      {{#for section.blocks as |block|}}
+          <div class="announcement-content grid__item">
+              <h2 class="announcement-text body3">
+                  {{{ block.settings.announcement_text }}}
+              </h2>
+              <a href="{{ block.settings.link_url }}" class="announcement-link body1">
+                  {{{ block.settings.link_text }}}
+              </a>
+          </div>
+      {{/for}}
     </div>
+  </div>
 </div>
 
 {{#schema}}

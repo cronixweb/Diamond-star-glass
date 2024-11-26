@@ -1284,7 +1284,7 @@ predictive-search[data-focus][loading]
 p#header_icon-text {
   margin: 0;
   text-align: center;
-  font-size: var(--body2-font-size);
+  font-size: var(--body1-font-size);
   font-weight: 400;
   line-height: 0.9625rem;
   text-transform: capitalize;
@@ -1314,6 +1314,7 @@ p#header_icon-text {
   font-family: var(--body-font);
   color: rgb(var(--color-header-pc-searchbar-text));
   background-color: rgba(var(--color-header-pc-searchbar-bg), 1);
+  line-height: 1.2;
 }
 .tile-search .search-modal__input::placeholder{
   color: rgb(var(--color-header-pc-searchbar-text));
@@ -1339,6 +1340,19 @@ p#header_icon-text {
 }
 .header-inline-menus__item:last-child{
   padding-right: 0;
+}
+.header__buttons .header__icon-button{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.header__buttons .header__icon-button svg{
+  width: 20px;
+}
+.header__menu-drawer .drawer__title .header__user-center-button{
+  gap: 10px;
+}
+details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
+  transform: rotate(180deg);
 }
 @media screen and (max-width: 959px) {
   .header__container {
@@ -1373,6 +1387,9 @@ p#header_icon-text {
   }
   .tile-search .search-modal__form {
     max-width: 513px;
+  }
+  .header__icons .header__icon-button{
+    margin-left: 4px;
   }
 }
 @media (min-width: 1200px) {
