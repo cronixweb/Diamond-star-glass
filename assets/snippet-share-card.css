@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: var(--flex-items-align, center);
+  justify-content: var(--flex-items-align, left);
 }
 
 .third-party-share > a {

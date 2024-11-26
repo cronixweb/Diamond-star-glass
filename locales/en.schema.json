@@ -3073,6 +3073,29 @@
     },
     "main-article": {
       "name": "Article",
+      "settings": {
+        "show_content": {
+          "label": "Show Side Content"
+        },
+        "box_text": {
+          "label": "Side Content"
+        },
+        "show_share": {
+          "label": "Enable Share"
+        },
+        "contact_text": {
+          "label": "Title"
+        },
+        "contact_title": {
+          "label": "Text"
+        },
+        "contact-button_text": {
+          "label": "Button Text"
+        },
+        "contact-button_link": {
+          "label": "Button Link"
+        }
+      },
       "blocks": {
         "select": {
           "name": "Image",
@@ -3104,12 +3127,6 @@
               "label": "Display author"
             }
           }
-        },
-        "share": {
-          "name": "Share"
-        },
-        "content": {
-          "name": "Content"
         }
       }
     },

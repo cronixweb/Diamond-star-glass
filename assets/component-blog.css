@@ -179,3 +179,9 @@
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
+
+.simple-blog__title {
+  font-size: var(--body6-font-size);
+font-weight: 600;
+line-height: 130%; 
+}
