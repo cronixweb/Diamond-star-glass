@@ -13,10 +13,10 @@
 @font-face {
     font-family: 'Gotham';
     src: local('Gotham-Bold'), 
-        url('{{ asset_url 'Gotham-Bold.ttf' }}') format('ttf'),
-        url('{{ asset_url 'Gotham-Bold.otf' }}') format('otf'),
+        url('{{ asset_url 'Gotham-Bold.ttf' }}') format('truetype'),
+        url('{{ asset_url 'Gotham-Bold.otf' }}') format('embedded-opentype'),
         url('{{ asset_url 'Gotham-Bold.woff2' }}') format('woff2'),
-        url('{{ asset_url 'Gotham-Bold.woff' }}') format('woff');
+        url('{{ asset_url 'Gotham-Bold.woff' }}') format('font-woff');
     font-weight: 700; /* Bold weight */
     font-style: normal;
     font-display: swap;
