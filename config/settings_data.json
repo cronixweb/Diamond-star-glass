@@ -348,15 +348,15 @@
             "show": true,
             "pay_channel_list": [
               {
+                "type": "visa",
+                "show": true
+              },
+              {
                 "type": "american_express",
                 "show": true
               },
               {
                 "type": "master",
-                "show": true
-              },
-              {
-                "type": "visa",
                 "show": true
               }
             ]
