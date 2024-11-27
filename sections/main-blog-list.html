@@ -13,9 +13,15 @@
     "
 >
   {{snippet "breadcrumb" class="text-left" settings=settings}}
-  <h1 class="blogslist__title title4">
-    {{blog.title}}
-  </h1>
+    {{#if section.settings.blog_text}}
+      <h1 class="blogslist__title-custom">
+        {{section.settings.blog_text}}
+      </h1>
+    {{else}}
+      <h1 class="blogslist__title title4">
+        {{blog.title}}
+      </h1>
+    {{/if}}
   {{#paginate blog.articles by=section.settings.page_number}}
     <div class="bloglist__main">
       <div class="blogslist__page-list">
@@ -43,6 +49,7 @@
           </ul>
         </div>
         {{#if paginate.pages > 1}}
+          <a href="" class="blog_list-button">View All</a>        
           {{snippet "pagination" paginate=paginate anchor=""}}
         {{/if}}
       </div>
@@ -54,6 +61,12 @@
 {
   "name": "t:sections.main-blog-list.name",
   "settings": [
+    {
+      "type": "text",
+      "id": "blog_text",
+      "default": "Read The Latest",
+      "label": "t:sections.main-blog-list.settings.blog_text.label"
+    },
     {
       "type": "select",
       "id": "layout",

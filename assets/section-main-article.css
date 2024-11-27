@@ -265,7 +265,7 @@
   margin-bottom: 24px;
 }
 
- .blog-caption__date {
+.blog-caption__date {
   font-size: var(--body4-font-size);
   color: var(--color-grey-caption);
   font-weight: 600;

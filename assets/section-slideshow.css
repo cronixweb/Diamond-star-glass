@@ -212,7 +212,7 @@ a.slideshow-slide__media {
 
   display: flex;
 
-  padding: 0 15%;
+  padding: 0 2%;
 }
 
 .slideshow-slide__text {
@@ -470,22 +470,21 @@ a.slideshow-slide__media {
 /** Small dot style switcher */
 
 .slideshow__control--dots {
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 10%;
+  right: 5%;
 }
 
 .control__dots {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 16px;
 }
 
 .control__dot {
   display: block;
   padding: 0;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border: none;
   border-radius: 50%;
   background-color: rgba(var(--control-item-color, 255, 255, 255), 0.4);
@@ -494,8 +493,8 @@ a.slideshow-slide__media {
 }
 
 .control__dot.is-active {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   cursor: default;
 }
 
@@ -554,7 +553,7 @@ a.slideshow-slide__media {
   }
 
   .slideshow-slide__text-max-width {
-    padding: 0 var(--pc-content-padding, 15%);
+    padding: 38px var(--pc-content-padding, 15%);
   }
 
   .slideshow-slide__text-max-width .slideshow-slide__text {
@@ -570,3 +569,20 @@ a.slideshow-slide__media {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+p.slideshow-slide__desc.body3 {
+  font-size: var(--body8-font-size);
+  font-weight: 400;
+  line-height: 62.4px;
+}
+
+button.featured-control__arrow-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a.slideshow-slide__button {
+  width: 150px;
+}
