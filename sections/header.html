@@ -361,7 +361,7 @@
               href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
             >
               {{snippet "icon-user"}}
-              <p id="header_icon-text">Account</p>
+              <p class="header_icon-text">Account</p>
             </a>
             {{#if section.settings.hover_show_user_menu}}
               {{assign "menu_text_1" section.settings.user_menu_text_1}}
@@ -420,7 +420,7 @@
 
         <a class="icon-button header__icon-button {{#if (isFalsey section.settings.show_favorite_icon)}}display-none{{/if}}" href="#">
           {{snippet "icon-favorite"}}
-          <p id="header_icon-text">Favorites</p>
+          <p class="header_icon-text">Favorites</p>
         </a>
 
         <a
@@ -429,7 +429,7 @@
           href="{{routes.cart_url}}"
         >
           {{snippet "cart-icon-bubble"}}
-          <p id="header_icon-text">Cart</p>
+          <p class="header_icon-text">Cart</p>
         </a>
       </div>
 

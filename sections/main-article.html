@@ -20,39 +20,52 @@
         {{snippet "breadcrumb" class="text-left" settings=settings}}
         <h1 class="article-template__title title4">{{article.title}}</h1>
         {{#if block.settings.blog_show_date}}
-          <span class="circle-divider caption-with-letter-spacing body3" id="blog-caption__date">
+          <span class="circle-divider caption-with-letter-spacing body3 blog-caption__date">
             {{date article.published_at "abbreviated_date"}}
           </span>
         {{/if}}
         {{#if block.settings.blog_show_author}}
-          <span class="caption-with-letter-spacing body3" id="blog-caption__author">
+          <span class="caption-with-letter-spacing body3 blog-caption__author">
             <span itemprop="name">{{article.author}}</span>
           </span>
         {{/if}}
       </header>
-      {{#comment}} <div class="article-template__divide page-width"></div> {{/comment}}
     {{/if}}
   {{/for}}
 
   {{#if section.settings.show_content }}
     <div class="article-template__content-wrapper page-width rte body3">
-      <div class="article-template__summery-wrapper">
-        {{#if section.settings.box_text }}
-          <div class="article-template__summery">
-            <p>{{section.settings.box_text}}</p>
+      <div class="article-template__summary-wrapper">
+        {{#if article.excerpt }}
+          <div class="article-template__summary">
+            <p>{{article.excerpt}}</p>
           </div>
         {{/if}}
         {{#if section.settings.show_share }}
           <div class="article-template__social-sharing" {{{block.shopline_attributes}}}>
-            <p><strong>SHARE</strong></p>
-            {{snippet
-              "share-card"
-              theme_settings=settings
-              share_type="article_detail"
-              share_data=article
-              domain=request.host
-              show_social_name = "false"
-            }}
+            <p class="share_text"><strong>SHARE</strong></p>
+            <ul class="blog__list-social list-unstyled list-social">
+              <li>
+                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
+                  {{snippet "icon-social-fb-new"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
+                  {{snippet "icon-social-ig"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
+                  {{snippet "icon-social-pin"}}
+                </a>
+              </li>
+              <li>
+                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
+                  {{snippet "icon-social-twitter"}}
+                </a>
+              </li>
+            </ul>
           </div>
         {{/if}}
           <div class="article-template__contact">
@@ -248,13 +261,6 @@
       "id": "show_content",
       "label": "t:sections.main-article.settings.show_content.label",
       "default": true
-    },
-    {
-      "type": "textarea",
-      "id": "box_text",
-      "default": "When it comes to hosting an event or elevating your client’s experience, choosing the right glassware can make all the difference. Glassware is not only functional, but it also adds to the aesthetic appeal of the table setting, enhancing the overall mood of the occasion. Whether you're a retailer, event planner, or designer, understanding how to select the appropriate glassware is essential. Here’s a comprehensive guide to help you choose the perfect pieces for any occasion.",
-      "label": "t:sections.main-article.settings.box_text.label",
-      "limit": 500
     },
     {
       "type": "switch",

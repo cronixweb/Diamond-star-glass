@@ -171,7 +171,7 @@
   }
 
   .simple-blog__title {
-    text-decoration: underline;
+    text-decoration: none;
     font-size: calc(var(--title-font-size) * 0.733333 * 0.6);
   }
 }
@@ -180,8 +180,9 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
 
+/* Custom Styles */
 .simple-blog__title {
   font-size: var(--body6-font-size);
-font-weight: 600;
-line-height: 130%; 
+  font-weight: 600;
+  line-height: 41.6px; 
 }

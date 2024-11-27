@@ -146,7 +146,7 @@
             {{assign "show_date" (if info.published_at and show_date)}}
             {{assign "show_author" (if info.author and show_author)}}
             {{#if show_date}}
-              <span class="text" id="blog-caption__date">
+              <span class="text blog-caption__date">
                 <{{link_ele}} {{#if link_url}}href="{{link_url}}"{{/if}} title="{{info.title}}">
                   {{date info.published_at "abbreviated_date"}}
                 </{{link_ele}}>
@@ -156,7 +156,7 @@
               <span class="separator">·</span>
             {{/if}}
             {{#if show_author}}
-              <span class="text" id="blog-caption__author">
+              <span class="text blog-caption__author">
                 <{{link_ele}} {{#if link_url}}href="{{link_url}}"{{/if}} title="{{title}}">
                   {{info.author}}
                 </{{link_ele}}>

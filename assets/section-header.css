@@ -1281,7 +1281,7 @@ predictive-search[data-focus][loading]
   gap: 6px;
 }
 
-p#header_icon-text {
+p.header_icon-text {
   margin: 0;
   text-align: center;
   font-size: var(--body2-font-size);
