@@ -69,48 +69,6 @@
         "block-6"
       ]
     },
-    "1732178487923605d885": {
-      "disabled": false,
-      "type": "section-image-banner-custom",
-      "settings": {
-        "width_style": true,
-        "layer_opacity": 30,
-        "horizontal_align": "left",
-        "vertical_align": "middle",
-        "color_scheme": "none",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "background_image": "shopline://shop_images/Frame 1000002456 (1).jpg"
-      },
-      "blocks": {
-        "1732178540080d7b5140": {
-          "type": "richtext",
-          "settings": {
-            "heading": "25+ Years of Craftsmanship and Design Expertise."
-          }
-        },
-        "1732178605980286de59": {
-          "type": "text",
-          "settings": {
-            "subheading": "Discover Custom Beach Essentials That Blend Style, Comfort, And Functionality—Curated To Create Your Perfect Beachside Retreat."
-          }
-        },
-        "17321786164954a8e2cc": {
-          "type": "buttons",
-          "settings": {
-            "button_outline": true,
-            "button_text": "View Catalog",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "1732178540080d7b5140",
-        "1732178605980286de59",
-        "17321786164954a8e2cc"
-      ],
-      "custom_css": []
-    },
     "1732178924874a51f28c": {
       "disabled": false,
       "type": "section-rich-text-custom",
@@ -138,143 +96,6 @@
       "block_order": [
         "17321789322925ea0413",
         "1732178940665d7bbf35"
-      ],
-      "custom_css": []
-    },
-    "17321789952269d54a93": {
-      "disabled": false,
-      "type": "section-collection-list-custom",
-      "settings": {
-        "section_title": "Our Product Categories",
-        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "1732178999539bb5c569": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267112976879693429683575"
-          }
-        },
-        "1732179016729eace2d8": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267112976879693429683575"
-          }
-        },
-        "17321790180775c84e5d": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267112976879693429683575"
-          }
-        },
-        "1732179019562c15dc59": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267112976879693429683575"
-          }
-        },
-        "1732179020898665ef59": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267112976879693429683575"
-          }
-        }
-      },
-      "block_order": [
-        "1732178999539bb5c569",
-        "1732179016729eace2d8",
-        "17321790180775c84e5d",
-        "1732179019562c15dc59",
-        "1732179020898665ef59"
-      ],
-      "custom_css": []
-    },
-    "17321790789703fa3e7d": {
-      "disabled": false,
-      "type": "section-image-banner-custom",
-      "settings": {
-        "background_image": "shopline://shop_images/banner_2_6721831604329605126.png",
-        "width_style": false,
-        "layer_opacity": 30,
-        "horizontal_align": "left",
-        "vertical_align": "middle",
-        "color_scheme": "none",
-        "padding_top": 0,
-        "padding_bottom": 80
-      },
-      "blocks": {
-        "173217909214313cf9b1": {
-          "type": "richtext",
-          "settings": {
-            "heading": "candleholders"
-          }
-        },
-        "1732179096427d6e5d4a": {
-          "type": "text",
-          "settings": {
-            "subheading": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
-          }
-        },
-        "17321791026266a547b0": {
-          "type": "buttons",
-          "settings": {
-            "button_outline": true,
-            "button_text": "Explore More",
-            "button_link": "/collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "173217909214313cf9b1",
-        "1732179096427d6e5d4a",
-        "17321791026266a547b0"
-      ],
-      "custom_css": [
-        ".shopline-section{max-width:1920px; padding:0 120px;}"
-      ]
-    },
-    "1732179207074cf0c35c": {
-      "disabled": false,
-      "type": "section-image-banner-custom",
-      "settings": {
-        "background_image": "shopline://shop_images/image 4.jpg",
-        "width_style": false,
-        "layer_opacity": 10,
-        "horizontal_align": "right",
-        "vertical_align": "middle",
-        "color_scheme": "none",
-        "padding_top": 0,
-        "padding_bottom": 0
-      },
-      "blocks": {
-        "1732179365483548319a": {
-          "type": "richtext",
-          "settings": {
-            "heading": "Terrariums"
-          }
-        },
-        "173217936999644e9ba8": {
-          "type": "text",
-          "settings": {
-            "subheading": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
-          }
-        },
-        "17321793749465a6ab08": {
-          "type": "buttons",
-          "settings": {
-            "button_outline": true,
-            "button_text": "Explore More",
-            "button_link": "/collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "1732179365483548319a",
-        "173217936999644e9ba8",
-        "17321793749465a6ab08"
       ],
       "custom_css": []
     },
@@ -319,130 +140,18 @@
       ],
       "custom_css": []
     },
-    "17321800082023010e72": {
-      "disabled": false,
-      "type": "section-multicolumn-custom",
-      "settings": {
-        "color_page_background": "#F3F0EA",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "17321800300664c5773f": {
-          "type": "multimedia",
-          "settings": {
-            "title": "Specialty-Assortments",
-            "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More",
-            "image": "shopline://shop_images/img5.jpeg"
-          }
-        },
-        "1732180027284f0c4587": {
-          "type": "multimedia",
-          "settings": {
-            "title": "Assortments",
-            "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More",
-            "image": "shopline://shop_images/img2.jpeg"
-          }
-        },
-        "1732180031635896fbb1": {
-          "type": "multimedia",
-          "settings": {
-            "title": "Specialty",
-            "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More",
-            "image": "shopline://shop_images/img3.jpeg"
-          }
-        }
-      },
-      "block_order": [
-        "17321800300664c5773f",
-        "1732180027284f0c4587",
-        "1732180031635896fbb1"
-      ],
-      "custom_css": []
-    },
-    "1732180213100914cef3": {
-      "disabled": false,
-      "type": "section-recommended-product-custom",
-      "settings": {
-        "heading-product-list": "Shop by Style",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60,
-        "product_list": [
-          "16067287634590165924383575",
-          "16067287632576732294063575",
-          "16067287630039849867663575",
-          "16067112743325411662363575"
-        ]
-      },
-      "blocks": {},
-      "block_order": [],
-      "custom_css": []
-    },
-    "173218023734864d5750": {
-      "disabled": false,
-      "type": "section-featured-collection-custom",
-      "settings": {
-        "section_title": "Best Collections",
-        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "173218024929746b52a3": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267112976879693429683575"
-          }
-        },
-        "1732180262514ee60307": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267112976879693429683575"
-          }
-        },
-        "17321802697634674a55": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267112976879693429683575"
-          }
-        },
-        "17321802798314843832": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267112976879693429683575"
-          }
-        }
-      },
-      "block_order": [
-        "173218024929746b52a3",
-        "1732180262514ee60307",
-        "17321802697634674a55",
-        "17321802798314843832"
-      ],
-      "custom_css": []
-    },
     "17321803840959e6e8b6": {
       "disabled": false,
       "type": "section-image-with-text-custom",
       "settings": {
+        "section_image": "shopline://shop_images/iwt.png",
         "section_title": "Custom Design",
-        "section_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
+        "section_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque. Eget massa feugiat vitae donec eu nunc etiam. Tellus nunc ultricies lorem id etiam a ullamcorper mattis. Risus at proin placerat ipsum cras eu nam sapien.",
         "section_link_text": "Explore More",
         "color_page_background": "#f3f0ea",
         "color_scheme": "none",
         "padding_top": 60,
-        "padding_bottom": 60,
-        "section_image": "shopline://shop_images/iwt.png"
+        "padding_bottom": 60
       },
       "blocks": {},
       "block_order": [],
@@ -516,18 +225,417 @@
         "1732181295063fd94816"
       ],
       "custom_css": []
+    },
+    "17325437940212daaabe": {
+      "disabled": false,
+      "type": "image-banner",
+      "settings": {
+        "banner1": "shopline://shop_images/Frame 1000002456 (2).jpg",
+        "banner2": "",
+        "banner_height_size": "high",
+        "override_banner_height": false,
+        "pc_content_position": "left",
+        "pc_text_position": "left",
+        "pc_show_textarea": false,
+        "alpha_range": "30",
+        "color_scheme": "none",
+        "mobile_text_position": "left",
+        "desktop_text_container": "half",
+        "mobile_banner_flatten": false,
+        "m_show_textarea": false,
+        "width_style": true,
+        "width_style_padding": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17325437940219eec0bd": {
+          "type": "title",
+          "settings": {
+            "title": "25+ Years of Craftsmanship and Design Expertise.",
+            "title_size": "custom--title"
+          },
+          "blockId": "17325437940219eec0bd"
+        },
+        "17325437940213ebde67": {
+          "type": "desc",
+          "settings": {
+            "description": "Discover custom beach essentials that blend style, comfort, and functionality—curated to create your perfect beachside retreat."
+          },
+          "blockId": "17325437940213ebde67"
+        },
+        "1732543794021da22bad": {
+          "type": "button",
+          "settings": {
+            "button_text": "View catalog",
+            "link": "",
+            "outline_button": false,
+            "link_text_2": "",
+            "link_2": "",
+            "outline_button_2": false
+          },
+          "blockId": "1732543794021da22bad"
+        }
+      },
+      "block_order": [
+        "17325437940219eec0bd",
+        "17325437940213ebde67",
+        "1732543794021da22bad"
+      ],
+      "custom_css": [
+        ".custom--title {font-size: 40px;}",
+        ".custom--body {font-size: 18px;}",
+        "@media screen and (min-width: 991px) {.custom--title {font-size: 64px; } .custom--body {font-size: 24px; }}"
+      ]
+    },
+    "1732544033019e3e41c2": {
+      "disabled": false,
+      "type": "image-banner",
+      "settings": {
+        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png",
+        "banner2": "",
+        "banner_height_size": "middle",
+        "override_banner_height": false,
+        "pc_content_position": "left",
+        "pc_text_position": "left",
+        "pc_show_textarea": false,
+        "alpha_range": "30",
+        "color_scheme": "none",
+        "mobile_text_position": "left",
+        "desktop_text_container": "onethird",
+        "mobile_banner_flatten": false,
+        "m_show_textarea": false,
+        "width_style": false,
+        "width_style_padding": true,
+        "padding_top": 60,
+        "padding_bottom": 62
+      },
+      "blocks": {
+        "1732544033019b70e437": {
+          "type": "title",
+          "settings": {
+            "title": "Candleholders",
+            "title_size": "custom--title"
+          },
+          "blockId": "1732544033019b70e437"
+        },
+        "173254403301954ee2f0": {
+          "type": "desc",
+          "settings": {
+            "description": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
+          },
+          "blockId": "173254403301954ee2f0"
+        },
+        "1732544033019894fac8": {
+          "type": "button",
+          "settings": {
+            "button_text": "Explore More",
+            "link": "",
+            "outline_button": false,
+            "link_text_2": "",
+            "link_2": "",
+            "outline_button_2": false
+          },
+          "blockId": "1732544033019894fac8"
+        }
+      },
+      "block_order": [
+        "1732544033019b70e437",
+        "173254403301954ee2f0",
+        "1732544033019894fac8"
+      ],
+      "custom_css": [
+        ".custom--title {font-size: 40px;}",
+        ".custom--body {font-size: 18px;}",
+        "@media screen and (min-width: 991px) {.custom--title {font-size: 56px; } .custom--body {font-size: 20px; }}"
+      ]
+    },
+    "1732544206145c58ecb7": {
+      "disabled": false,
+      "type": "image-banner",
+      "settings": {
+        "banner1": "shopline://shop_images/image 4.jpg",
+        "banner2": "",
+        "banner_height_size": "middle",
+        "override_banner_height": false,
+        "pc_content_position": "right",
+        "pc_text_position": "left",
+        "pc_show_textarea": false,
+        "alpha_range": "30",
+        "color_scheme": "none",
+        "mobile_text_position": "left",
+        "desktop_text_container": "onethird",
+        "mobile_banner_flatten": false,
+        "m_show_textarea": false,
+        "width_style": false,
+        "width_style_padding": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1732544206146cf0281c": {
+          "type": "title",
+          "settings": {
+            "title": "Terrariums",
+            "title_size": "title3"
+          },
+          "blockId": "1732544206146cf0281c"
+        },
+        "17325442061468901d5d": {
+          "type": "desc",
+          "settings": {
+            "description": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
+          },
+          "blockId": "17325442061468901d5d"
+        },
+        "17325442061464ad9f9c": {
+          "type": "button",
+          "settings": {
+            "button_text": "Explore More",
+            "link": "",
+            "outline_button": false,
+            "link_text_2": "",
+            "link_2": "",
+            "outline_button_2": false
+          },
+          "blockId": "17325442061464ad9f9c"
+        }
+      },
+      "block_order": [
+        "1732544206146cf0281c",
+        "17325442061468901d5d",
+        "17325442061464ad9f9c"
+      ],
+      "custom_css": [
+        ".custom--title {font-size: 40px;}",
+        ".custom--body {font-size: 18px;}",
+        "@media screen and (min-width: 991px) {.custom--title {font-size: 56px; } .custom--body {font-size: 20px; }}"
+      ]
+    },
+    "17325444134397d214eb": {
+      "disabled": false,
+      "type": "section-collection-list-custom",
+      "settings": {
+        "section_title": "Our Product Categories",
+        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
+        "progress-bar": false,
+        "collection-arrows": true,
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17325444519254c9c118": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267434425038846115743575"
+          }
+        },
+        "1732544462971ea61844": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267434438770829633093575"
+          }
+        },
+        "17325444733997a19d58": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267434442957583888093575"
+          }
+        },
+        "17325444921786bd8a5f": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267434445835044624483575"
+          }
+        }
+      },
+      "block_order": [
+        "17325444519254c9c118",
+        "1732544462971ea61844",
+        "17325444733997a19d58",
+        "17325444921786bd8a5f"
+      ],
+      "custom_css": []
+    },
+    "1732544527169ec450b7": {
+      "disabled": false,
+      "type": "section-multicolumn-custom",
+      "settings": {
+        "color_page_background": "#F3F0EA",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17325445313413a23da4": {
+          "type": "multimedia",
+          "settings": {
+            "image": "shopline://shop_images/001.jpg.jpg",
+            "title": "Assortments",
+            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "button_text": "Explore More"
+          }
+        },
+        "173254454535071bff75": {
+          "type": "multimedia",
+          "settings": {
+            "image": "shopline://shop_images/001.jpg (1).jpg",
+            "title": "Specialty-Assortments",
+            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "button_text": "Explore More"
+          }
+        },
+        "173254455475704811fb": {
+          "type": "multimedia",
+          "settings": {
+            "image": "shopline://shop_images/001.jpg (2).jpg",
+            "title": "Specialty",
+            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "button_text": "Explore More"
+          }
+        }
+      },
+      "block_order": [
+        "17325445313413a23da4",
+        "173254454535071bff75",
+        "173254455475704811fb"
+      ],
+      "custom_css": []
+    },
+    "1732544616088988745b": {
+      "disabled": false,
+      "type": "section-collection-list-custom",
+      "settings": {
+        "section_title": "Shop by Style",
+        "section_subtitle": "",
+        "progress-bar": true,
+        "collection-arrows": false,
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1732544634370b38467c": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479946896080972843575"
+          }
+        },
+        "17325446437677d3dc20": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479951051797797813575"
+          }
+        },
+        "1732544652564077391d": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479955044942979283575"
+          }
+        },
+        "1732544659482e878c85": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479958744150910633575"
+          }
+        },
+        "1732544669514cd3a616": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479946896080972843575"
+          }
+        },
+        "1732544674309d14948b": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479951051797797813575"
+          }
+        },
+        "17325446780745dc53ed": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479955044942979283575"
+          }
+        },
+        "17325446808150857472": {
+          "type": "collection",
+          "settings": {
+            "product_categories": "12267479958744150910633575"
+          }
+        }
+      },
+      "block_order": [
+        "1732544634370b38467c",
+        "17325446437677d3dc20",
+        "1732544652564077391d",
+        "1732544659482e878c85",
+        "1732544669514cd3a616",
+        "1732544674309d14948b",
+        "17325446780745dc53ed",
+        "17325446808150857472"
+      ],
+      "custom_css": []
+    },
+    "1732544727807d96b034": {
+      "disabled": false,
+      "type": "section-featured-collection-custom",
+      "settings": {
+        "section_title": "Best Collections",
+        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1732544731345a7474f5": {
+          "type": "collection",
+          "settings": {
+            "product_category": "12267436178452030502433575",
+            "button_text": "Shop Now"
+          }
+        },
+        "1732544744399879a9c9": {
+          "type": "collection",
+          "settings": {
+            "product_category": "12267436182779210006003575",
+            "button_text": "Shop Now"
+          }
+        },
+        "1732544757290c236b5b": {
+          "type": "collection",
+          "settings": {
+            "product_category": "12267436189929156152733575",
+            "button_text": "Shop Now"
+          }
+        },
+        "173254476940470c1075": {
+          "type": "collection",
+          "settings": {
+            "product_category": "12267436193572496841633575",
+            "button_text": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "1732544731345a7474f5",
+        "1732544744399879a9c9",
+        "1732544757290c236b5b",
+        "173254476940470c1075"
+      ],
+      "custom_css": []
     }
   },
   "order": [
     "1732179452820d023915",
-    "1732178487923605d885",
+    "17325437940212daaabe",
     "1732178924874a51f28c",
-    "17321789952269d54a93",
-    "17321790789703fa3e7d",
-    "1732179207074cf0c35c",
-    "17321800082023010e72",
-    "1732180213100914cef3",
-    "173218023734864d5750",
+    "17325444134397d214eb",
+    "1732544033019e3e41c2",
+    "1732544206145c58ecb7",
+    "1732544527169ec450b7",
+    "1732544616088988745b",
+    "1732544727807d96b034",
     "17321803840959e6e8b6",
     "17321804744621df169f",
     "1732180510845b0d2ea5"
