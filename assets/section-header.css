@@ -1299,9 +1299,6 @@ header .header__cart-point{
   align-items: center;
   gap: 6px;
 }
-#cart-icon-bubble-wrapper + .header_icon-text{
-  display: none;
-}
 .header-inline-menus__link::after{
   top: 75%;
 }
