@@ -334,7 +334,7 @@
           "settings": {
             "title": "Specialty-Assortments",
             "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More >",
+            "button_text": "Explore More",
             "image": "shopline://shop_images/img5.jpeg"
           }
         },
@@ -343,7 +343,7 @@
           "settings": {
             "title": "Assortments",
             "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More >",
+            "button_text": "Explore More",
             "image": "shopline://shop_images/img2.jpeg"
           }
         },
@@ -352,7 +352,7 @@
           "settings": {
             "title": "Specialty",
             "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More >",
+            "button_text": "Explore More",
             "image": "shopline://shop_images/img3.jpeg"
           }
         }
@@ -397,28 +397,28 @@
         "173218024929746b52a3": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now >",
+            "button_text": "Shop Now",
             "product_category": "12267112976879693429683575"
           }
         },
         "1732180262514ee60307": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now >",
+            "button_text": "Shop Now",
             "product_category": "12267112976879693429683575"
           }
         },
         "17321802697634674a55": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now >",
+            "button_text": "Shop Now",
             "product_category": "12267112976879693429683575"
           }
         },
         "17321802798314843832": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now >",
+            "button_text": "Shop Now",
             "product_category": "12267112976879693429683575"
           }
         }
@@ -437,7 +437,7 @@
       "settings": {
         "section_title": "Custom Design",
         "section_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
-        "section_link_text": "Explore More >",
+        "section_link_text": "Explore More",
         "color_page_background": "#f3f0ea",
         "color_scheme": "none",
         "padding_top": 60,
