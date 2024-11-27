@@ -1281,7 +1281,7 @@ predictive-search[data-focus][loading]
   gap: 6px;
 }
 
-p#header_icon-text {
+header .header_icon-text {
   margin: 0;
   text-align: center;
   font-size: var(--body1-font-size);
@@ -1289,7 +1289,19 @@ p#header_icon-text {
   line-height: 0.9625rem;
   text-transform: capitalize;
 }
-
+header .header__cart-point{
+  background-color: var(--color-grey-dark);
+  color: var(--color-white);
+  font-size:var(--body2-font-size);
+}
+#cart-icon-bubble-wrapper{
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+#cart-icon-bubble-wrapper + .header_icon-text{
+  display: none;
+}
 .header-inline-menus__link::after{
   top: 75%;
 }
