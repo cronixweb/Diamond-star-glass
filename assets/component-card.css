@@ -512,3 +512,23 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+
+/* Card custom styles */
+.card .card__content .size-option{
+  text-align: var(--product-card-content-align);
+}
+.card .card__content .price-and-shop-all{
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+.card .card__content .inner-content-btn,
+.card .card__content .price{
+  width: 50%;
+}
+.card .card__content .inner-content-btn{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}

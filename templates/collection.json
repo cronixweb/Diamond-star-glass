@@ -27,7 +27,7 @@
         "show_secondary_image": false,
         "mobile_show_secondary_image": false,
         "enable_filtering": true,
-        "filter_type": "drawer",
+        "filter_type": "horizontal",
         "enable_sorting": true,
         "padding_top": 40,
         "padding_bottom": 80

@@ -2431,3 +2431,6 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
 .body7 {
   font-size: var(--body7-font-size);
 }
+.breadcrumb{
+  display: block;
+}
