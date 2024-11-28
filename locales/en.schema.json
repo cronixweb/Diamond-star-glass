@@ -3077,8 +3077,8 @@
         "show_content": {
           "label": "Show Side Content"
         },
-        "box_text": {
-          "label": "Side Content"
+        "share_text": {
+          "label": "Share Text"
         },
         "show_share": {
           "label": "Enable Share"
@@ -3087,7 +3087,7 @@
           "label": "Title"
         },
         "contact_title": {
-          "label": "Text"
+          "label": "Paragraph"
         },
         "contact-button_text": {
           "label": "Button Text"
@@ -3133,9 +3133,6 @@
     "main-blog-list": {
       "name": "Blogs",
       "settings": {
-        "blog_text": {
-          "label": "Title"
-        },
         "layout": {
           "label": "Layout",
           "options__0": {

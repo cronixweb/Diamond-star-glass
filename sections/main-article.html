@@ -43,29 +43,14 @@
         {{/if}}
         {{#if section.settings.show_share }}
           <div class="article-template__social-sharing" {{{block.shopline_attributes}}}>
-            <p class="share_text"><strong>SHARE</strong></p>
-            <ul class="blog__list-social list-unstyled list-social">
-              <li>
-                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
-                  {{snippet "icon-social-fb-new"}}
-                </a>
-              </li>
-              <li>
-                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
-                  {{snippet "icon-social-ig"}}
-                </a>
-              </li>
-              <li>
-                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
-                  {{snippet "icon-social-pin"}}
-                </a>
-              </li>
-              <li>
-                <a href="{{theme_settings.social_facebook_link}}" target="_blank">
-                  {{snippet "icon-social-twitter"}}
-                </a>
-              </li>
-            </ul>
+            <p class="share_text">{{section.settings.share_text}}</p>
+            {{snippet
+              "share-card"
+              theme_settings=settings
+              share_type="article_detail"
+              share_data=article
+              domain=request.host
+            }}
           </div>
         {{/if}}
           <div class="article-template__contact">
@@ -261,6 +246,12 @@
       "id": "show_content",
       "label": "t:sections.main-article.settings.show_content.label",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "share_text",
+      "default": "SHARE",
+      "label": "t:sections.main-article.settings.share_text.label"
     },
     {
       "type": "switch",

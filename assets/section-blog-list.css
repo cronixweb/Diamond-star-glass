@@ -25,16 +25,16 @@
   display: grid;
   column-gap: 22px;
   row-gap: 50px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .blogslist__list .blogslist__item {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 
 @media (max-width: 959px) {
   .blogslist__list .blogslist__item {
-    grid-column: span 1 !important;
+    grid-column: span 2 !important;
   }
 }
 
@@ -44,23 +44,17 @@
 
 @media (min-width: 960px) {
   .blogslist__list--grid {
-    grid-template-columns: repeat(var(--blog-list-columns, 3), 1fr);
-  }
-
-  .blogslist__list {
-    display: grid;
-    column-gap: 22px;
-    row-gap: 50px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(var(--blog-list-columns, 2), 1fr);
   }
 }
 
 .blog-item-grid-list .blogslist__item {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 
-.blog-item-grid-list .blogslist__item:first-child {
-  grid-column: span 3;
+.blog-item-grid-list .blogslist__item:nth-child(3n - 1),
+.blog-item-grid-list .blogslist__item:nth-child(3n) {
+  grid-column: span 1;
 }
 
 /* The ipad end responds to the mobile end in vertical screen */
@@ -70,55 +64,3 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
-
-/* Custom Styles */
-.blogslist__title-custom {
-  font-size: var(--body8-font-size);
-  font-weight: 700;
-  line-height: 62.4px;
-  margin-bottom: 24px;
-}
-
-.blogslist__item:first-child .simple-blog__title{
-  font-size: var(--body8-font-size);
-  font-weight: 350;
-  line-height: 62.4px;
-}
-
-.blog-caption__date {
-  font-size: var(--body4-font-size);
-  color: var(--color-grey-caption);
-  font-weight: 600;
-  line-height: 23.4px;
-}
-
-.blog-caption__author {
-  font-size: var(--body4-font-size);
-  color: var(--color-grey-caption);
-  font-weight: 700;
-  line-height: 23.4px;
-  text-transform: uppercase;
-}
-
-a.blog_list-button {
-  display: block;
-  width: 150px;
-  border-radius: 26px;
-  border: 1px solid;
-  color: rgba(var(--color-text));
-  text-align: center;
-  font-size: var(--body4-font-size);
-  font-weight: 600;
-  line-height: 52px;
-  letter-spacing: 0.5px;
-  background: transparent;
-  text-transform: uppercase;
-  justify-self: center;
-  margin-top: 40px;
-  transition: all .2s ease-in-out;
-}
-
-a.blog_list-button:hover {
-  background-color: rgba(var(--color-text));
-  color: var(--color-white);
-}

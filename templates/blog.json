@@ -1,17 +1,269 @@
 {
   "sections": {
     "main-blog-list": {
-      "type": "main-blog-list",
       "disabled": false,
+      "type": "main-blog-list",
       "settings": {
-        "layout": "grid",
-        "is_show_author": true,
-        "is_show_date": true,
+        "blog_text": "Read The Latest",
+        "layout": "list",
+        "page_number": 7,
+        "columns": "3",
         "is_show_cover": true,
-        "cover_img_ratio": "medium"
-      }
+        "cover_img_ratio": "medium",
+        "is_show_date": true,
+        "is_show_author": true,
+        "is_show_desc": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {},
+      "custom_css": []
+    },
+    "17327121740253907e67": {
+      "disabled": false,
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "left",
+        "color_scheme": "none",
+        "normal_width": true,
+        "show_decoration": false,
+        "padding_top": 60,
+        "padding_bottom": 38
+      },
+      "blocks": {
+        "17327121740254fa7675": {
+          "type": "heading",
+          "settings": {
+            "heading": "Blog",
+            "heading_size": "title2"
+          },
+          "blockId": "17327121740254fa7675"
+        },
+        "17327121740257e00e5e": {
+          "type": "text",
+          "settings": {
+            "text": "<p><span style=\"font-size: 24px;\">Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.</span></p>"
+          },
+          "blockId": "17327121740257e00e5e"
+        }
+      },
+      "block_order": [
+        "17327121740254fa7675",
+        "17327121740257e00e5e"
+      ],
+      "custom_css": []
+    },
+    "173271224002427e40e0": {
+      "disabled": false,
+      "type": "slideshow",
+      "settings": {
+        "section_height": "100vh",
+        "mobile_height": "500px",
+        "full_screen": true,
+        "style": "dots",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "mobile_content_layout": "inside"
+      },
+      "blocks": {
+        "17327122400245c50d92": {
+          "type": "image",
+          "icon": "image",
+          "settings": {
+            "image_show_position": "center_center",
+            "overlay_opacity": 30,
+            "text_mask": false,
+            "text_mask_color": "deep",
+            "pc_text_position": "flex-end flex-start",
+            "mobile_text_position": "center flex-start",
+            "pc_text_color": "#ffffff",
+            "pc_text_align": "left",
+            "mobile_text_align": "left",
+            "sub_title": "",
+            "title": "",
+            "title_size": 50,
+            "subheading": "The Art of Hand-Blown Glass: Tradition Meets Innovation",
+            "pc_content_width": "800px",
+            "text_color": "rgba(0,0,0,0)",
+            "text_area_background_color": "rgba(0,0,0,0)",
+            "link_text": "READ MORE",
+            "button_style": "button--secondary",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#ffffff",
+            "link_text_2": "",
+            "button_style2": "button",
+            "btn_bg_color2": "#000000",
+            "btn_text_color2": "#FFFFFF",
+            "btn_border_color2": "#000000",
+            "image_mobile": {},
+            "image": "shopline://shop_images/Frame 1000002469 (1).jpg"
+          },
+          "blockId": "17327122400245c50d92"
+        },
+        "173271242033470cbf8e": {
+          "type": "image",
+          "settings": {
+            "image_show_position": "center_center",
+            "overlay_opacity": 30,
+            "text_mask": false,
+            "text_mask_color": "deep",
+            "pc_text_position": "flex-end flex-start",
+            "mobile_text_position": "center flex-start",
+            "pc_text_color": "#ffffff",
+            "pc_text_align": "left",
+            "mobile_text_align": "left",
+            "sub_title": "",
+            "title": "",
+            "title_size": 50,
+            "subheading": "The Art of Hand-Blown Glass: Tradition Meets Innovation",
+            "pc_content_width": "800px",
+            "text_color": "rgba(0,0,0,0)",
+            "text_area_background_color": "rgba(0,0,0,0)",
+            "link_text": "READ MORE",
+            "button_style": "button--secondary",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#ffffff",
+            "link_text_2": "",
+            "button_style2": "button",
+            "btn_bg_color2": "#000000",
+            "btn_text_color2": "#FFFFFF",
+            "btn_border_color2": "#000000",
+            "image_mobile": {},
+            "image": "shopline://shop_images/Frame 1000002469 (1).jpg"
+          }
+        },
+        "17327124238827d1e376": {
+          "type": "image",
+          "settings": {
+            "image_show_position": "center_center",
+            "overlay_opacity": 30,
+            "text_mask": false,
+            "text_mask_color": "deep",
+            "pc_text_position": "flex-end flex-start",
+            "mobile_text_position": "center flex-start",
+            "pc_text_color": "#ffffff",
+            "pc_text_align": "left",
+            "mobile_text_align": "left",
+            "sub_title": "",
+            "title": "",
+            "title_size": 50,
+            "subheading": "The Art of Hand-Blown Glass: Tradition Meets Innovation",
+            "pc_content_width": "800px",
+            "text_color": "rgba(0,0,0,0)",
+            "text_area_background_color": "rgba(0,0,0,0)",
+            "link_text": "READ MORE",
+            "button_style": "button--secondary",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#ffffff",
+            "link_text_2": "",
+            "button_style2": "button",
+            "btn_bg_color2": "#000000",
+            "btn_text_color2": "#FFFFFF",
+            "btn_border_color2": "#000000",
+            "image_mobile": {},
+            "image": "shopline://shop_images/Frame 1000002469 (1).jpg"
+          }
+        },
+        "1732712426998dc27de5": {
+          "type": "image",
+          "settings": {
+            "image_show_position": "center_center",
+            "overlay_opacity": 30,
+            "text_mask": false,
+            "text_mask_color": "deep",
+            "pc_text_position": "flex-end flex-start",
+            "mobile_text_position": "center flex-start",
+            "pc_text_color": "#ffffff",
+            "pc_text_align": "left",
+            "mobile_text_align": "left",
+            "sub_title": "",
+            "title": "",
+            "title_size": 50,
+            "subheading": "The Art of Hand-Blown Glass: Tradition Meets Innovation",
+            "pc_content_width": "800px",
+            "text_color": "rgba(0,0,0,0)",
+            "text_area_background_color": "rgba(0,0,0,0)",
+            "link_text": "READ MORE",
+            "button_style": "button--secondary",
+            "btn_bg_color": "#ffffff",
+            "btn_text_color": "#FFFFFF",
+            "btn_border_color": "#ffffff",
+            "link_text_2": "",
+            "button_style2": "button",
+            "btn_bg_color2": "#000000",
+            "btn_text_color2": "#FFFFFF",
+            "btn_border_color2": "#000000",
+            "image_mobile": {},
+            "image": "shopline://shop_images/Frame 1000002469 (1).jpg"
+          }
+        }
+      },
+      "block_order": [
+        "17327122400245c50d92",
+        "173271242033470cbf8e",
+        "17327124238827d1e376",
+        "1732712426998dc27de5"
+      ],
+      "custom_css": []
+    },
+    "1732712445064d6165f2": {
+      "disabled": false,
+      "type": "section-instagram-feed-custom",
+      "settings": {
+        "heading-instagram-feed": "Follow us @diamondstarglass",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17327124663488516f76": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+          }
+        },
+        "173271247773242ccaf1": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+          }
+        },
+        "173271248568668ab346": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+          }
+        },
+        "173271249370077599ef": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+          }
+        },
+        "1732712488616d2d7193": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "17327124663488516f76",
+        "173271247773242ccaf1",
+        "173271248568668ab346",
+        "173271249370077599ef",
+        "1732712488616d2d7193"
+      ],
+      "custom_css": []
     }
   },
-
-  "order": ["main-blog-list"]
+  "order": [
+    "17327121740253907e67",
+    "173271224002427e40e0",
+    "main-blog-list",
+    "1732712445064d6165f2"
+  ]
 }
