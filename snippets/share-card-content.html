@@ -29,10 +29,10 @@
       {{#if show_official_share_icon}}
         {{snippet "icon-official-fb"}}
       {{else}}
-        {{snippet "icon-social-fb-new"}}
+        {{snippet "icon-social-fb"}}
       {{/if}}
     </div>
-    {{#if show_social_name == true}}
+    {{#if show_social_name}}
       <span class="third-party-name body6">{{name}}</span>
     {{/if}}
   </a>
@@ -52,10 +52,9 @@
         {{snippet "icon-social-twitter"}}
       {{/if}}
     </div>
-    {{#if show_social_name == true}}
+    {{#if show_social_name}}
       <span class="third-party-name body6">{{name}}</span>
     {{/if}}
-    
   </a>
 {{/if}}
 {{#if name == "Pin"}}
@@ -75,7 +74,7 @@
         {{snippet "icon-social-pin"}}
       {{/if}}
     </div>
-    {{#if show_social_name == true}}
+    {{#if show_social_name}}
       <span class="third-party-name body6">{{name}}</span>
     {{/if}}
   </a>
@@ -95,7 +94,7 @@
         {{snippet "icon-social-line"}}
       {{/if}}
     </div>
-    {{#if show_social_name == true}}
+    {{#if show_social_name}}
       <span class="third-party-name body6">{{name}}</span>
     {{/if}}
   </a>
@@ -115,7 +114,7 @@
         {{snippet "icon-social-whatsapp"}}
       {{/if}}
     </div>
-    {{#if show_social_name == true}}
+    {{#if show_social_name}}
       <span class="third-party-name body6">{{name}}</span>
     {{/if}}
   </a>
@@ -135,27 +134,7 @@
         {{snippet "icon-social-tumblr"}}
       {{/if}}
     </div>
-    {{#if show_social_name == true}}
-      <span class="third-party-name body6">{{name}}</span>
-    {{/if}}
-  </a>
-{{/if}}
-{{#if name == "Instagram"}}
-  <a
-    target="_blank"
-    class="third-party-item"
-    data-platform="{{name}}"
-    href="https://www.instagram.com/sharer.php?u={{encodeURI share_url}}"
-    rel="noreferrer"
-  >
-    <div class="third-party-icon">
-      {{#if show_official_share_icon}}
-        {{snippet "icon-official-ig"}}
-      {{else}}
-        {{snippet "icon-social-ig"}}
-      {{/if}}
-    </div>
-    {{#if show_social_name == true}}
+    {{#if show_social_name}}
       <span class="third-party-name body6">{{name}}</span>
     {{/if}}
   </a>

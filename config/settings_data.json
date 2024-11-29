@@ -173,7 +173,7 @@
       "favicon_image": "",
       "show_official_icon": false,
       "show_official_share_icon": false,
-      "show_social_name": true,
+      "show_social_name": false,
       "share_to_facebook": true,
       "share_to_twitter": true,
       "share_to_pinterest": true,

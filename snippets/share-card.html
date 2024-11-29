@@ -14,14 +14,11 @@
 {{#if theme_settings.share_to_facebook}}
   {{assign "share_list_data" (concat share_list_data (arrayify "Facebook"))}}
 {{/if}}
-{{#if theme_settings.share_to_facebook}}
-  {{assign "share_list_data" (concat share_list_data (arrayify "Instagram"))}}
+{{#if theme_settings.share_to_twitter}}
+  {{assign "share_list_data" (concat share_list_data (arrayify "Twitter"))}}
 {{/if}}
 {{#if theme_settings.share_to_pinterest}}
   {{assign "share_list_data" (concat share_list_data (arrayify "Pin"))}}
-{{/if}}
-{{#if theme_settings.share_to_twitter}}
-  {{assign "share_list_data" (concat share_list_data (arrayify "Twitter"))}}
 {{/if}}
 {{#if theme_settings.share_to_line}}
   {{assign "share_list_data" (concat share_list_data (arrayify "Line"))}}
@@ -43,7 +40,7 @@
   {{assign "share_image" share_data.image.src}}
 {{/if}}
 <share-card data-id="{{id}}" class="third-party-share notranslate">
-  {{#for share_list_data limit=4 as |name|}}
+  {{#for share_list_data limit=3 as |name|}}
     {{snippet
       "share-card-content"
       share_url=share_url
@@ -51,10 +48,11 @@
       share_image=share_image
       name=name
       show_official_share_icon=theme_settings.show_official_share_icon
+      show_social_name=theme_settings.show_social_name
     }}
   {{/for}}
-  {{#if leng > 4}}
-    {{assign "share_more_data" (after share_list_data 4)}}
+  {{#if leng > 3}}
+    {{assign "share_more_data" (after share_list_data 3)}}
     <div class="third-party-more" id="share_card_{{id}}">
       <div class="third-party-arrow third-party-arrow-small">
         {{snippet "icon-arrow"}}
@@ -68,6 +66,7 @@
             share_image=share_image
             name=name
             show_official_share_icon=theme_settings.show_official_share_icon
+            show_social_name=theme_settings.show_social_name
           }}
         {{/for}}
       </div>
