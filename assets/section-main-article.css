@@ -228,6 +228,14 @@
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* Custom Styles */
+.article-template__divide {
+  margin-bottom: 30px;
+}
+
+.article-template__back {
+  padding-bottom: 40px;
+}
+
 .article-template__back {
   display: none;
 }
@@ -291,6 +299,7 @@
   font-weight: 600;
   line-height: 1.4;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .article-template__contact-title {
@@ -331,15 +340,12 @@
   margin: 16px 0;
 }
 
-.article-template__content {
-  padding-top: 0;
-}
-.article-template__divide {
-  margin-bottom: 30px;
+.third-party-more {
+  display: none;
 }
 
-.article-template__back {
-  padding-bottom: 40px;
+.article-template__content {
+  padding-top: 0;
 }
 
 @media (min-width: 960px) {

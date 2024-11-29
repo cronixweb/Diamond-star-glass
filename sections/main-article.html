@@ -43,7 +43,7 @@
         {{/if}}
         {{#if section.settings.show_share }}
           <div class="article-template__social-sharing" {{{block.shopline_attributes}}}>
-            <p class="share_text">{{section.settings.share_text}}</p>
+            <h4 class="share_text">{{section.settings.share_text}}</h4>
             {{snippet
               "share-card"
               theme_settings=settings
@@ -55,13 +55,13 @@
         {{/if}}
         <div class="article-template__contact">
           {{#if section.settings.contact_text }}
-              <p class="article-template__contact-title"><strong>{{section.settings.contact_text}}</strong></p>
+            <h3 class="article-template__contact-title"><strong>{{section.settings.contact_text}}</strong></h3>
           {{/if}}
           {{#if section.settings.contact_title }}
-              <p class="article-template__contact-info">{{section.settings.contact_title}}</p>
+            <p class="article-template__contact-info">{{section.settings.contact_title}}</p>
           {{/if}}
           {{#if section.settings.contact-button_text }}
-              <a href="{{section.settings.contact-button_link}}" class="article-template__contact-button">{{section.settings.contact-button_text}}</a>
+            <a href="{{section.settings.contact-button_link}}" class="article-template__contact-button">{{section.settings.contact-button_text}}</a>
           {{/if}}
         </div>
       </div>
