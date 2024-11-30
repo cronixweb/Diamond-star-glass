@@ -24,7 +24,7 @@
     <div class="page-width blogs__head {{#unless section.settings.title}}blogs__head--no-title{{/unless}}">
       {{#if section.settings.title}}
         <h2 class="blogs__title word-break title3 title__align-{{section.settings.title_align}}">
-          {{section.settings.title}}
+          {{{section.settings.title}}}
         </h2>
       {{/if}}
     </div>
@@ -106,7 +106,7 @@
   "class": "section",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "title",
       "label": "t:sections.blog.settings.title.label",
       "default": "Blog"
