@@ -3143,7 +3143,8 @@
           }
         },
         "page_number": {
-          "label": "Number of blogs per page"
+          "label": "Number of blogs per page",
+          "info": "When Pagination is enabled"
         },
         "columns": {
           "label": "No. of rows on desktop",
@@ -3154,6 +3155,9 @@
           "options__1": {
             "label": "3 columns"
           }
+        },
+        "is_show_viewall": {
+          "label": "Enable Pagination"
         },
         "is_show_cover": {
           "label": "Display cover"
