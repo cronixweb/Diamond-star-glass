@@ -75,6 +75,20 @@
         {{{collection.description}}}
       </div>
     {{/if}}
+    {{#if collection.metafields.my_fields.similar_categories.value}}
+    <div class="page-width">
+      <ul class="similar-category-group grid grid-cols-4 grid-cols-1-tablet">
+        {{#for collection.metafields.my_fields.similar_categories.value as |similar_category| }}
+          <li class="grid_item">
+            <a href="{{similar_category.url}}">
+              <img src="{{similar_category.image}}" alt="{{similar_category.title}}">
+              <h2>{{similar_category.title}}</h2>
+            </a>
+          </li>
+        {{/for}}
+      </ul>
+    </div>
+    {{/if}}
   </div>
 {{/if}}
 
@@ -97,21 +111,37 @@
         {{#unless section.settings.show_collection_name}}collection-hero__no-title{{/unless}}"
     >
       {{snippet "breadcrumb" class="text-left" settings=settings}}
-      {{#if section.settings.show_collection_name}}
-        <h1 class="title4 collection-hero__title">
-          {{default collection.title (t "products.product_list.products")}}
-        </h1>
-      {{/if}}
-    </div>
-
-    {{#if section.settings.show_collection_description and collection.description}}
-      <div class="collection-hero__description body3 rte">
-        {{{collection.description}}}
+      <div class="collection-banner-content">
+        <div class="banner-content">
+          {{#if section.settings.show_collection_name}}
+            <h1 class="title4 collection-hero__title">
+              {{default collection.title (t "products.product_list.products")}}
+            </h1>
+          {{/if}}
+          {{#if section.settings.show_collection_description and collection.description}}
+            <div class="collection-hero__description body3 rte">
+              {{{collection.description}}}
+            </div>
+          {{/if}}
+        </div>
+        <div class="banner-categories">
+          {{#if collection.metafields.my_fields.similar_categories.value}}
+            <ul class="similar-category-group grid grid-cols-4 grid-cols-1-tablet">
+              {{#for collection.metafields.my_fields.similar_categories.value as |similar_category| }}
+                <li class="grid_item">
+                  <a href="{{similar_category.url}}">
+                    <img src="{{similar_category.image}}" alt="{{similar_category.title}}">
+                    <h2>{{similar_category.title}}</h2>
+                  </a>
+                </li>
+              {{/for}}
+            </ul>
+          {{/if}}
+        </div>
       </div>
-    {{/if}}
+    </div>
   </div>
 {{/if}}
-
 {{#schema}}
 {
   "name": "t:sections.main-collection-banner.name",
