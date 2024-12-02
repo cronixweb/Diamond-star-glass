@@ -311,9 +311,9 @@ deferred-media {
 }
 
 :root {
-  --title1-font-size: calc(var(--title-font-size) * 1);
-  --title2-font-size: calc(var(--title-font-size) * 0.833333);
-  --title3-font-size: calc(var(--title-font-size) * 0.733333);
+  --title1-font-size: calc(var(--title-font-size) * 1); /* 30px */
+  --title2-font-size: calc(var(--title-font-size) * 1.06); /* 32px */
+  --title3-font-size: calc(var(--title-font-size) * 0.733333); /* 36px */
   --title4-font-size: calc(var(--title-font-size) * 0.666667);
   --title5-font-size: calc(var(--title-font-size) * 0.6);
   --title6-font-size: calc(var(--title-font-size) * 0.6);
@@ -331,9 +331,9 @@ deferred-media {
 
 @media (min-width: 960px) {
   :root {
-    --title1-font-size: calc(var(--title-font-size) * 2.333333);
-    --title2-font-size: calc(var(--title-font-size) * 1.666667);
-    --title3-font-size: calc(var(--title-font-size) * 1.2);
+    --title1-font-size: calc(var(--title-font-size) * 2.333333); /* 70px */
+    --title2-font-size: calc(var(--title-font-size) * 1.86); /* 56px */
+    --title3-font-size: calc(var(--title-font-size) * 1.6); 
     --title4-font-size: calc(var(--title-font-size) * 1);
     --title5-font-size: calc(var(--title-font-size) * 0.833333);
     --title6-font-size: calc(var(--title-font-size) * 0.666667);

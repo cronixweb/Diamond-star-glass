@@ -5,7 +5,7 @@
       "disabled": false,
       "settings": {
         "show_collection_description": true,
-        "show_collection_cover": true,
+        "show_collection_cover": false,
         "pc_collection_img_height":470,
         "md_collection_img_height":250,
         "collection_cover_area": "center",
@@ -22,15 +22,15 @@
         "columns_desktop": 4,
         "columns_mobile": 2,
         "enable_infinite_scroll": false,
-        "product_image_ratio": "150",
-        "image_fill_type": "contain",
+        "product_image_ratio": "100",
+        "image_fill_type": "cover",
         "show_secondary_image": false,
         "mobile_show_secondary_image": false,
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "padding_top": 40,
-        "padding_bottom": 80
+        "padding_top": 108,
+        "padding_bottom": 124
       }
     }
   },
