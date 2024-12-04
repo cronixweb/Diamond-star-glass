@@ -241,11 +241,13 @@
             {{/if}}
             <div class="footer__column footer__column--info">
               {{#if settings.show_pay_channel.show}}
-                <div class="footer__payment">
-                  {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
+              <ul class="footer__payment list-unstyled">
+                {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
+                  <li class="icon-{{pay_channel_item.type}}">
                     {{payment_type_svg_tag pay_channel_item.type}}
-                  {{/for}}
-                </div>
+                  </li>
+                {{/for}}
+              </ul>
               {{/if}}
             </div>
           </div>
@@ -417,11 +419,13 @@
       {{/if}}
       <div class="footer__column footer__column--info">
         {{#if settings.show_pay_channel.show}}
-          <div class="footer__payment">
+          <ul class="footer__payment list-unstyled">
             {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
-              {{payment_type_svg_tag pay_channel_item.type}}
+              <li class="icon-{{pay_channel_item.type}}">
+                {{payment_type_svg_tag pay_channel_item.type}}
+              </li>
             {{/for}}
-          </div>
+          </ul>
         {{/if}}
       </div>
     </div>
@@ -513,7 +517,7 @@
       "id": "padding_left",
       "label": "t:sections.footer.settings.padding_left.label",
       "default": 30,
-      "max": 400,
+      "max": 50,
       "min": 10,
       "step": 2,
       "unit": "px"
@@ -523,7 +527,7 @@
       "id": "padding_right",
       "label": "t:sections.footer.settings.padding_right.label",
       "default": 30,
-      "max": 400,
+      "max": 50,
       "min": 10,
       "step": 2,
       "unit": "px"
