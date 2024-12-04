@@ -634,6 +634,10 @@
       "no_currency_fallback": "No relevant currency found",
       "search_input_placeholder": "Enter here and click search"
     },
+    "main-blog-list": {
+      "view_all": "View All",
+      "hide_all": "Hide"
+    },
     "order_tracking": {
       "code": "Verification code",
       "email": "Email",

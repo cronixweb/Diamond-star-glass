@@ -66,6 +66,10 @@
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* Custom Styles */
+.rte.rich-text__text.body2 {
+  margin-top: 8px;
+}
+
 .blogslist__list {
   grid-template-columns: 1fr;
 }
@@ -123,7 +127,7 @@
 /* Style label as button below items */
 .limit-items {
   position: relative;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 }
 
 .limit-items #show-all { display: none; }
@@ -153,6 +157,15 @@
 }
 
 @media (min-width: 960px) {
+  .blogslist__title-custom {
+    margin-bottom: 48px;
+  }
+
+  .simple-blog__extra-info {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
   .blogslist__list--grid {
     grid-template-columns: repeat(var(--blog-list-columns, 3), 1fr);
   }

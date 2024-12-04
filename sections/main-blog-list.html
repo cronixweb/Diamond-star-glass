@@ -14,9 +14,9 @@
 >
   {{snippet "breadcrumb" class="text-left" settings=settings}}
     {{#if section.settings.blog_text}}
-      <h1 class="blogslist__title-custom">
+      <h2 class="blogslist__title-custom">
         {{section.settings.blog_text}}
-      </h1>
+      </h2>
     {{else}}
       <h1 class="blogslist__title title4">
         {{blog.title}}
@@ -59,8 +59,8 @@
       <div class="bloglist__main">
         <div class="blogslist__page-list limit-items">
             <input type='checkbox' id='show-all'>
-            <label for='show-all' class='text-show'>View All</label>
-            <label for='show-all' class='text-hide'>Hide</label>
+            <label for='show-all' class='text-show'>{{ t 'general.main-blog-list.view_all' }}</label>
+            <label for='show-all' class='text-hide'>{{ t 'general.main-blog-list.hide_all' }}</label>
           <div class="blogslist__list-wrapper items">
             <ul
               class="blogslist__list

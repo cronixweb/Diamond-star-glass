@@ -3133,6 +3133,9 @@
     "main-blog-list": {
       "name": "Blogs",
       "settings": {
+        "blog_text": {
+        "label": "Heading"
+        },
         "layout": {
           "label": "Layout",
           "options__0": {
