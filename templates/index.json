@@ -245,7 +245,7 @@
         "m_show_textarea": false,
         "width_style": true,
         "width_style_padding": false,
-        "padding_top": 60,
+        "padding_top": 0,
         "padding_bottom": 60
       },
       "blocks": {
@@ -282,11 +282,7 @@
         "17325437940213ebde67",
         "1732543794021da22bad"
       ],
-      "custom_css": [
-        ".custom--title {font-size: 40px;}",
-        ".custom--body {font-size: 18px;}",
-        "@media screen and (min-width: 991px) {.custom--title {font-size: 64px; } .custom--body {font-size: 24px; }}"
-      ]
+      "custom_css": []
     },
     "1732544033019e3e41c2": {
       "disabled": false,
@@ -344,11 +340,7 @@
         "173254403301954ee2f0",
         "1732544033019894fac8"
       ],
-      "custom_css": [
-        ".custom--title {font-size: 40px;}",
-        ".custom--body {font-size: 18px;}",
-        "@media screen and (min-width: 991px) {.custom--title {font-size: 56px; } .custom--body {font-size: 20px; }}"
-      ]
+      "custom_css": []
     },
     "1732544206145c58ecb7": {
       "disabled": false,
@@ -406,11 +398,7 @@
         "17325442061468901d5d",
         "17325442061464ad9f9c"
       ],
-      "custom_css": [
-        ".custom--title {font-size: 40px;}",
-        ".custom--body {font-size: 18px;}",
-        "@media screen and (min-width: 991px) {.custom--title {font-size: 56px; } .custom--body {font-size: 20px; }}"
-      ]
+      "custom_css": []
     },
     "17325444134397d214eb": {
       "disabled": false,

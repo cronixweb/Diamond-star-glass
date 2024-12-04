@@ -11,7 +11,7 @@
     background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.mb_background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat;
     
   }
-  @media screen and (min-width: 911px) {
+  @media screen and (min-width: 960px) {
     .section-rich-text .section-rich-text__content{
     background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.ds_background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat; 
   }
@@ -36,7 +36,7 @@
 
       {{#if (trim block.type) == "buttons"}}
         {{#if block.settings.button_text}}
-          <a href="{{ block.settings.button_link }}" class="section-rich-text__button">{{{ block.settings.button_text }}}</a>
+          <a href="{{ block.settings.button_link }}" class="button">{{{ block.settings.button_text }}}</a>
         {{/if}}
       {{/if}}
 
@@ -94,9 +94,9 @@
       "id": "padding_top",
       "label": "Top Padding",
       "default": 60,
-      "max": 100,
+      "max": 120,
       "min": 0,
-      "step": 2,
+      "step": 4,
       "unit": "px"
     },
     {
@@ -104,9 +104,9 @@
       "id": "padding_bottom",
       "label": "Bottom Padding",
       "default": 60,
-      "max": 100,
+      "max": 120,
       "min": 0,
-      "step": 2,
+      "step": 4,
       "unit": "px"
     }
   ],
