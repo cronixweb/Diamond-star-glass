@@ -1,4 +1,16 @@
+{{snippet "stylesheet" href=(asset_url "component-card.css")}}
+{{snippet "stylesheet" href=(asset_url "component-price.css")}}
 {{snippet "stylesheet" href=(asset_url "section-recommended-product-custom.css")}}
+{{#if settings.enabled_color_swatch}}
+  {{snippet "stylesheet" href=(asset_url "component-color-swatches.css")}}
+  <script src="{{asset_url 'component-color-swatch.js'}}" defer="defer"></script>
+  <script src="{{asset_url 'component-color-swatch-radios.js'}}" defer="defer"></script>
+  <script src="{{asset_url 'component-product-form.js'}}" defer></script>
+{{/if}}
+{{#if settings.enable_quick_view}}
+  {{snippet "stylesheet" href=(asset_url "component-quick-add.css")}}
+  <script src="{{asset_url 'component-quick-add.js'}}" defer></script>
+{{/if}}
 {{snippet "stylesheet" href=(asset_url "splide-custom.css")}}
 {{snippet "stylesheet" href=(asset_url "lib-splide.min.css")}}
 <script src="{{asset_url 'lib-splide.min.js'}}" defer></script>
@@ -36,10 +48,6 @@
         {{/for}}
       </ul>
     </div>
-    {{#comment}} <!-- Add the progress bar element -->
-    <div class="my-slider-progress">
-      <div class="my-slider-progress-bar"></div>
-    </div> {{/comment}}
   </div>
 </div>
 
