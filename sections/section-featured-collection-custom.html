@@ -64,24 +64,31 @@ document.addEventListener( 'DOMContentLoaded', function () {
    var splide = new Splide( '.splide.featured-collection__slider-{{section.id}}', {
     perPage: 4,
     perMove: 1,
-    autoplay: true,
-    interval: 8000,
+    autoplay: false,
     pagination: false,
     arrows: false,
     gap    : '30px',
     breakpoints: {
+      1301: {
+        perPage: 4,
+        gap: '1rem',
+      },
+      1300: {
+        perPage: 3,
+        gap: '1rem',
+      },
       1024: {
         perPage: 3,
-        gap    : '1rem',
+        gap: '1rem',
+      },
+      1023: {
+        perPage: 2,
+        gap: '1rem',
       },
       640: {
-        perPage: 2,
-        gap    : '1rem',
-      },
-      480: {
         perPage: 1,
-        gap    : '1rem',
-      },
+        gap: '1rem',
+      }
     },
   } );
   // Add the progress bar element
