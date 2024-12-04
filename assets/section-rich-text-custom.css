@@ -60,9 +60,6 @@ a.section-rich-text__button:hover {
   .section-rich-text {
     background-size: cover;
     background-position: center;
-    margin-top: 120px;
-    margin-bottom: 120px;
-  
   }
   .section-rich-text__content {
     padding: 55px 80px;
