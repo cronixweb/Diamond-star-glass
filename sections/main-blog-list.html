@@ -8,7 +8,7 @@
 }}
 <script src="{{asset_url 'blog-view-all.js'}}" defer></script>
 <main
-  class="section section-padding page-width"
+  class="section section-padding page-width bloglist_container"
   style="
     --blog-list-columns:{{section.settings.columns}};
     "
@@ -27,7 +27,8 @@
         <div class="blogslist__page-list">
           <div class="blogslist__list-wrapper">
             <ul
-              class="blogslist__list
+              class="{{#if section.settings.columns == '2'}} grid-col__2 {{/if}}
+                blogslist__list
                 blogslist__list--{{section.settings.layout}}
                 {{#if (eq section.settings.layout 'list') and (gt (length blog.articles) 2)}}blog-item-grid-list{{/if}}
                 list-unstyled"
@@ -59,7 +60,8 @@
       <div class="blogslist__page-list">
         <div class="blogslist__list-wrapper">
           <ul
-            class="blogslist__list
+            class="{{#if section.settings.columns == '2'}} grid-col__2 {{/if}}
+              blogslist__list
               blogslist__list--{{section.settings.layout}}
               {{#if (eq section.settings.layout 'list') and (gt (length blog.articles) 2)}}blog-item-grid-list{{/if}}
               list-unstyled"

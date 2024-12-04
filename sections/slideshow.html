@@ -148,13 +148,13 @@
         {{~#capture "pc_content_padding"~}}
           {{#case block.settings.pc_content_width}}
             {{#when "400px" "600px"}}
-              15%
+              2%
             {{/when}}
             {{#when "800px"}}
-              8%
+              2%
             {{/when}}
             {{#when "1200px"}}
-              5%
+              2%
             {{/when}}
           {{/case}} 
         {{~/capture~}}
@@ -235,10 +235,18 @@
           {{/for}}
         </div>
       {{else if section.settings.style == "dots"}}
-        <div class="control__dots">
-          {{#for section.blocks}}
-            <button class="slider-counter__link control__dot" name="pager" data-index="{{forloop.index0}}"></button>
-          {{/for}}
+        <div class="featured-slideshow__control  display-block-desktop">
+          <div class="featured-control__arrow-buttons control__dots">
+            <button class="featured-control__arrow-button" name="previous">
+              {{snippet "slide-left-arrow"}} 
+            </button>
+            {{#for section.blocks}}
+              <button class="slider-counter__link control__dot" name="pager" data-index="{{forloop.index0}}"></button>
+            {{/for}}
+            <button class="featured-control__arrow-button" name="next">
+              {{snippet "slide-right-arrow"}} 
+            </button>
+          </div>
         </div>
       {{/if}}
     </div>
