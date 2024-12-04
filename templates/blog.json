@@ -4,9 +4,14 @@
       "type": "main-blog-list",
       "disabled": false,
       "settings": {
+        "cards_feature": "view_all",
+        "custom_title": "Read the latest",
         "layout": "grid",
+        "page_number":"7",
+        "columns": "3",
         "is_show_author": true,
         "is_show_date": true,
+        "is_show_desc": false,
         "is_show_cover": true,
         "cover_img_ratio": "medium"
       }

@@ -3133,6 +3133,15 @@
     "main-blog-list": {
       "name": "Blogs",
       "settings": {
+        "cards_feature": {
+          "label": "More card feature",
+          "options__0": {
+            "label": "Pagination"
+          },
+          "options__1": {
+            "label": "View ALL"
+          }
+        },
         "layout": {
           "label": "Layout",
           "options__0": {
@@ -3157,6 +3166,9 @@
         },
         "is_show_cover": {
           "label": "Display cover"
+        },
+        "custom_title": {
+          "label": "Custom Title"
         },
         "cover_img_ratio": {
           "label": "Cover height",
@@ -5408,6 +5420,18 @@
               },
               "options__2": {
                 "label": "Large"
+              }
+            },
+            "heading_level": {
+              "label": "Heading level",
+              "options__0": {
+                "label": "h1"
+              },
+              "options__1": {
+                "label": "h2"
+              },
+              "options__2": {
+                "label": "h3"
               }
             }
           }
