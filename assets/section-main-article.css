@@ -228,16 +228,26 @@
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* Custom Styles */
-.article-template__divide {
-  margin-bottom: 30px;
+.article-template {
+  padding-top: 40px;
 }
 
-.article-template__back {
+.article-template__title {
+  font-size: var(--body7-font-size);
+  font-weight: 350;
+  line-height: 1.3;
+  text-transform: capitalize;
+  padding-bottom: 24px;
+}
+
+.article-template header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.article-template__hero-container {
+  padding-top: 32px;
   padding-bottom: 40px;
-}
-
-.article-template__back {
-  display: none;
 }
 
 .article-template__content-wrapper {
@@ -245,61 +255,79 @@
   flex-direction: column-reverse;
 }
 
-.article-template__summary {
-  border: 30px solid var(--color-grey-border-light);
-  background: var(--color-white);
-  padding: 20px;
+.article-template__content h2 {
+  font-size: var(--body7-max-font-size);
+  font-weight: 350;
+  line-height: 1.3; 
+  margin-bottom: 24px;
+  text-transform: capitalize;
 }
 
-.article-template__content h2 {
+.article-template__content h3 {
+  font-size: var(--body6-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.article-template__content h4 {
   font-size: var(--body7-font-size);
   font-weight: 600;
-  line-height: 1.4; 
+  line-height: 1.4;
+  letter-spacing: 0.48px;
   margin-bottom: 24px;
+  text-transform: capitalize;
 }
-.article-template__content h3 {
-  font-size: var(--body5-font-size);
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
+
 .article-template__content p,
 .article-template__content li  {
-  font-size: var(--body4-font-size);
+  font-size: var(--body5-font-size);
   font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
   margin-bottom: 24px;
+  line-height: 1.4;
+  margin-top: 0;
 }
 
 .blog-caption__date {
-  font-size: var(--body4-font-size);
+  font-size: var(--body3-font-size);
   color: var(--color-grey-caption);
   font-weight: 600 !important;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .blog-caption__author {
-  font-size: var(--body4-font-size);
+  font-size: var(--body3-font-size);
   color: var(--color-grey-caption);
   font-weight: 700 !important;
-  line-height: 1.3;
+  line-height: 1.4;
   text-transform: uppercase;
+}
+
+.article-template__summary {
+  border: 20px solid var(--color-grey-border-light);
+  background: var(--color-white);
+  padding: 20px;
 }
 
 .article-template__summary p {
   color: var(--color-black);
   font-size: var(--body6-font-size);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.article-template__social-sharing {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .share_text {
-  font-size: var(--body5-font-size);
-  font-weight: 600;
-  line-height: 1.4;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  font-size: var(--body6-font-size);
+  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 130%;
+  text-transform: capitalize;
 }
 
 .article-template__contact-title {
@@ -310,14 +338,16 @@
 }
 
 .article-template__contact-info {
-  font-size: var(--body5-font-size);
+  font-size: var(--body4-font-size);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.4;
+  margin-top: 16px;
+  margin-bottom: 32px;
 }
 
 .article-template__contact-button {
-  display: block;
-  width: 200px;
+  max-width: 190px;
+  width: 100%;
   text-decoration: none !important;
   text-align: center;
   font-size: var(--body4-font-size);
@@ -325,20 +355,12 @@
   line-height: 3.25;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-radius: 24px;
-  border: 1px solid;
-  background-color: transparent;
-  color: rgba(var(--color-text)) !important;
-  transition: all .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
 }
 
 .article-template__contact-button:hover {
-  background-color: rgba(var(--color-text));
+  background-color: var(--color-black);
   color: var(--color-white) !important;
-}
-
-.image_wrapper-col {
-  margin: 16px 0;
 }
 
 .article-template__content {
@@ -348,12 +370,31 @@
 .image_wrapper {
   display: flex;
   flex-wrap: wrap;
+  gap: 27px;
   justify-content: center;
+  padding-top: 8px;
+  margin-bottom: 32px;
 }
 
 .image_wrapper img {
   max-width: 100%;
   height: auto;
+}
+
+.article-template__summary-wrapper {
+  margin-top: 36px;
+}
+
+.article-template__divide {
+  margin-bottom: 30px;
+}
+
+.article-template__back {
+  padding-bottom: 40px;
+}
+
+.article-template__back {
+  display: none;
 }
 
 @media (min-width: 767px) {
@@ -367,10 +408,6 @@
 }
 
 @media (min-width: 960px) {
-  .article-template__title {
-    max-width: 70%;
-  }
-
   .article-template__content-wrapper {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -382,10 +419,85 @@
 
   .article-template__summary {
     border: 60px solid var(--color-grey-border-light);
-    padding: 30px;
+    padding: 60px;
   }
 
   .article-template__divide {
     margin-bottom: 50px;
+  }
+
+  .article-template {
+    padding-top: 80px;
+  }
+
+  .article-template__title {
+    font-size: var(--body8-font-size);
+    font-weight: 350;
+    line-height: 1.3;
+    text-transform: initial;
+    padding-bottom: 32px;
+  }
+
+  .blog-caption__author {
+    font-size: var(--body5-font-size);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .blog-caption__date {
+    font-size: var(--body5-font-size);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .article-template__hero-container {
+    padding-bottom: 80px;
+  }
+
+  .article-template__summary-wrapper {
+    margin-top: 0;
+  }
+
+  .share_text {
+    font-size: var(--body5-font-size);
+  }
+
+  .article-template__contact-title {
+    margin-top: 20px;
+  }
+
+  .article-template__contact-info {
+    margin-top: 24px;
+    font-size: var(--body4-max-font-size);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .article-template__content h2 {
+    font-size: var(--body7-font-size);
+    font-weight: 350;
+    line-height: 1.3; 
+    text-transform: capitalize;
+  }
+
+  .article-template__content h3 {
+    font-size: var(--body5-font-size);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .article-template__content h4 {
+    font-size: var(--body6-font-size);
+    font-weight: 600;
+    line-height: 1.4; 
+    letter-spacing: 0.48px;
+    text-transform: capitalize;
+  }
+
+  .article-template__content p,
+  .article-template__content li {
+    font-size: var(--body4-max-font-size);
+    font-weight: 400;
+    line-height: 1.4; 
   }
 }
