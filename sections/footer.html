@@ -81,9 +81,6 @@
   <div class="footer__content-top page-width page-width--narrow">
     {{#if letter_is_block_up or media_is_block_up}}
       {{assign "align_class" "content-align-row"}}
-      {{#if letter_is_block_up and media_is_block_up and is_db_col and is_db_show}}
-        {{assign "align_class" "content-align-col"}}
-      {{/if}}
       <div class="footer-block--newsletter footer-letter-media-up {{align_class}}">
         {{#if show_letter and letter_is_block_up}}
           {{snippet "footer-newsletter" data=section}}
@@ -166,8 +163,7 @@
         >
       
           <div
-            class="footer__copyright body3
-              {{#if section.settings.copyright_menu_type == 'copyright_left'}}corner-content__left{{/if}}"
+            class="footer__copyright body3"
           > 
             {{#capture "storeName"}}
               <a href="{{routes.root_url}}">{{shop.name}}</a>
@@ -245,11 +241,13 @@
             {{/if}}
             <div class="footer__column footer__column--info">
               {{#if settings.show_pay_channel.show}}
-                <div class="footer__payment">
-                  {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
+              <ul class="footer__payment list-unstyled">
+                {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
+                  <li class="icon-{{pay_channel_item.type}}">
                     {{payment_type_svg_tag pay_channel_item.type}}
-                  {{/for}}
-                </div>
+                  </li>
+                {{/for}}
+              </ul>
               {{/if}}
             </div>
           </div>
@@ -297,9 +295,6 @@
     </div>
     {{#if (isFalsey letter_is_block_up) or (isFalsey media_is_block_up)}}
       {{assign "align_class" "content-align-row"}}
-      {{#if (isFalsey letter_is_block_up) and (isFalsey media_is_block_up) and is_db_col and is_db_show}}
-        {{assign "align_class" "content-align-col"}}
-      {{/if}}
       <div class="footer-block--newsletter footer-letter-media-down {{align_class}}">
         {{#if show_letter and (isFalsey letter_is_block_up)}}
           {{snippet "footer-newsletter" data=section}}
@@ -323,8 +318,7 @@
     {{/if}}
   {{/for}}
   <div
-    class="footer__content-bottom page-width page-width--narrow display-none-desktop 
-      {{#if section.settings.copyright_show_type == 'vertical'}}content_vertical{{/if}}"
+    class="footer__content-bottom page-width page-width--narrow display-none-desktop content_vertical"
   >
 
     <div
@@ -425,11 +419,13 @@
       {{/if}}
       <div class="footer__column footer__column--info">
         {{#if settings.show_pay_channel.show}}
-          <div class="footer__payment">
+          <ul class="footer__payment list-unstyled">
             {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
-              {{payment_type_svg_tag pay_channel_item.type}}
+              <li class="icon-{{pay_channel_item.type}}">
+                {{payment_type_svg_tag pay_channel_item.type}}
+              </li>
             {{/for}}
-          </div>
+          </ul>
         {{/if}}
       </div>
     </div>
@@ -521,7 +517,7 @@
       "id": "padding_left",
       "label": "t:sections.footer.settings.padding_left.label",
       "default": 30,
-      "max": 400,
+      "max": 50,
       "min": 10,
       "step": 2,
       "unit": "px"
@@ -531,7 +527,7 @@
       "id": "padding_right",
       "label": "t:sections.footer.settings.padding_right.label",
       "default": 30,
-      "max": 400,
+      "max": 50,
       "min": 10,
       "step": 2,
       "unit": "px"
@@ -545,12 +541,6 @@
       "id": "show_letter_subscribe",
       "label": "t:sections.footer.settings.show_letter_subscribe.label",
       "default": true
-    },
-    {
-      "type": "switch",
-      "id": "letter_pc_show_row",
-      "label": "t:sections.footer.settings.letter_pc_show_row.label",
-      "default": false
     },
     {
       "type": "select",
@@ -612,12 +602,6 @@
       "default": true
     },
     {
-      "type": "switch",
-      "id": "media_pc_show_row",
-      "label": "t:sections.footer.settings.media_pc_show_row.label",
-      "default": false
-    },
-    {
       "type": "select",
       "id": "media_show_type",
       "label": "t:sections.footer.settings.media_show_type.label",
@@ -658,22 +642,6 @@
       "label": "t:sections.footer.settings.group_header__3.label"
     },
     {
-      "type": "select",
-      "id": "copyright_show_type",
-      "label": "t:sections.footer.settings.copyright_show_type.label",
-      "options": [
-        {
-          "value": "flatten",
-          "label": "t:sections.footer.settings.copyright_show_type.options__0.label"
-        },
-        {
-          "value": "vertical",
-          "label": "t:sections.footer.settings.copyright_show_type.options__1.label"
-        }
-      ],
-      "default": "flatten"
-    },
-    {
       "type": "choose_payment_icons",
       "id": "show_pay_channel",
       "label": "t:sections.footer.settings.show_pay_channel.label",
@@ -697,22 +665,6 @@
       "type": "menu_picker",
       "id": "copyright_menu",
       "label": "t:sections.footer.settings.copyright_menu.label"
-    },
-    {
-      "type": "select",
-      "id": "copyright_menu_type",
-      "label": "t:sections.footer.settings.copyright_menu_type.label",
-      "options": [
-        {
-          "value": "copyright_top",
-          "label": "t:sections.footer.settings.copyright_menu_type.options__0.label"
-        },
-        {
-          "value": "copyright_left",
-          "label": "t:sections.footer.settings.copyright_menu_type.options__1.label"
-        }
-      ],
-      "default": "copyright_top"
     }
   ],
   "blocks": [
@@ -1327,9 +1279,7 @@
       "padding_top": 40,
       "padding_bottom": 40,
       "letter_show_type": "down",
-      "media_show_type": "down",
-      "letter_pc_show_row": false,
-      "media_pc_show_row": false
+      "media_show_type": "down"
     }
   }
 }

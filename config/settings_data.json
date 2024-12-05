@@ -52,9 +52,9 @@
       "body_line_height": 1.6,
       "page_width": 1680,
       "section_vertical_gap": 0,
-      "grid_horizontal_space": 30,
-      "grid_vertical_space": 48,
-      "btn_border_radius": 4,
+      "grid_horizontal_space": 20,
+      "grid_vertical_space": 20,
+      "btn_border_radius": 38,
       "btn_hover_animation": "fill_right",
       "btn_border_thickness": 1,
       "btn_border_opacity": 100,
@@ -127,10 +127,10 @@
       "collection_card_shadow_opacity": 0,
       "blog_card_style": "normal",
       "blog_card_image_padding": 0,
-      "blog_card_content_align": "center",
+      "blog_card_content_align": "left",
       "blog_card_border_thickness": 0,
       "blog_card_border_opacity": 10,
-      "blog_card_border_radius": 12,
+      "blog_card_border_radius": 0,
       "blog_card_shadow_offset_x": 0,
       "blog_card_shadow_offset_y": 0,
       "blog_card_shadow_blur": 0,
@@ -173,7 +173,7 @@
       "favicon_image": "",
       "show_official_icon": false,
       "show_official_share_icon": false,
-      "show_social_name": true,
+      "show_social_name": false,
       "share_to_facebook": true,
       "share_to_twitter": true,
       "share_to_pinterest": true,
@@ -348,15 +348,15 @@
             "show": true,
             "pay_channel_list": [
               {
-                "type": "visa",
-                "show": true
-              },
-              {
                 "type": "american_express",
                 "show": true
               },
               {
                 "type": "master",
+                "show": true
+              },
+              {
+                "type": "visa",
                 "show": true
               }
             ]

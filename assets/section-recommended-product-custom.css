@@ -1,6 +1,5 @@
 .top-trending-products h2 {
   margin-bottom: 32px;
-
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -13,7 +12,7 @@
 }
 
 .product-item {
-  background: var(--Background, #FFF);
+  background: var(--color-white);
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.04);
 }
 
@@ -36,7 +35,7 @@
   margin: 0;
   margin-bottom: 10px;
 
-  color: #424551;
+  color: var(--color-grey-caption);
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -75,6 +74,8 @@ a.shop-now-button {
 @media screen and (min-width: 768px) {
   .top-trending-products h2 {
     font-size: 48px;
+    margin-bottom: 64px;
+
   }
 
 }

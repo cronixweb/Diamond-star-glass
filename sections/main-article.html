@@ -20,35 +20,61 @@
         {{snippet "breadcrumb" class="text-left" settings=settings}}
         <h1 class="article-template__title title4">{{article.title}}</h1>
         {{#if block.settings.blog_show_date}}
-          <span class="circle-divider caption-with-letter-spacing body3">
+          <span class="circle-divider caption-with-letter-spacing body3 blog-caption__date">
             {{date article.published_at "abbreviated_date"}}
           </span>
         {{/if}}
         {{#if block.settings.blog_show_author}}
-          <span class="caption-with-letter-spacing body3">
+          <span class="caption-with-letter-spacing body3 blog-caption__author">
             <span itemprop="name">{{article.author}}</span>
           </span>
         {{/if}}
       </header>
-      <div class="article-template__divide page-width"></div>
-    {{/if}}
-    {{#if block.type == "content"}}
-      <div class="article-template__content page-width rte body3" itemprop="articleBody" {{{block.shopline_attributes}}}>
-        {{{article.content}}}
-      </div>
-    {{/if}}
-    {{#if block.type == "share"}}
-      <div class="article-template__social-sharing page-width" {{{block.shopline_attributes}}}>
-        {{snippet
-          "share-card"
-          theme_settings=settings
-          share_type="article_detail"
-          share_data=article
-          domain=request.host
-        }}
-      </div>
     {{/if}}
   {{/for}}
+
+  {{#if section.settings.show_content }}
+    <div class="article-template__content-wrapper page-width rte body3">
+      <div class="article-template__summary-wrapper">
+        {{#if article.excerpt }}
+          <div class="article-template__summary">
+            <p>{{article.excerpt}}</p>
+          </div>
+        {{/if}}
+        {{#if section.settings.show_share }}
+          <div class="article-template__social-sharing" {{{block.shopline_attributes}}}>
+            <h2 class="share_text">{{section.settings.share_text}}</h2>
+            {{snippet
+              "share-card"
+              theme_settings=settings
+              share_type="article_detail"
+              share_data=article
+              domain=request.host
+            }}
+          </div>
+        {{/if}}
+        <div class="article-template__contact">
+          {{#if section.settings.contact_text }}
+            <h3 class="article-template__contact-title"><strong>{{section.settings.contact_text}}</strong></h3>
+          {{/if}}
+          {{#if section.settings.contact_title }}
+            <p class="article-template__contact-info">{{section.settings.contact_title}}</p>
+          {{/if}}
+          {{#if section.settings.contact-button_text }}
+            <a href="{{section.settings.contact-button_link}}" class="article-template__contact-button">{{section.settings.contact-button_text}}</a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="article-template__content" itemprop="articleBody" {{{block.shopline_attributes}}}>
+        {{{article.content}}}
+      </div>
+    </div>
+  {{else}}
+    <div class="article-template__content page-width rte body3" itemprop="articleBody" {{{block.shopline_attributes}}}>
+      {{{article.content}}}
+    </div>
+  {{/if}}
+
   <div class="article-template__back element-margin-top page-width">
     <a href="{{blog.url}}" class="article-template__link link animate-arrow body3">
       <span class="icon-wrap">{{snippet "icon-arrow"}}</span>
@@ -214,7 +240,51 @@
 {{#schema}}
 {
   "name": "t:sections.main-article.name",
-  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "switch",
+      "id": "show_content",
+      "label": "t:sections.main-article.settings.show_content.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "share_text",
+      "default": "SHARE",
+      "label": "t:sections.main-article.settings.share_text.label"
+    },
+    {
+      "type": "switch",
+      "id": "show_share",
+      "label": "t:sections.main-article.settings.show_share.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "default": "READY TO BECOME A CUSTOMER?",
+      "label": "t:sections.main-article.settings.contact_text.label"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_title",
+      "label": "t:sections.main-article.settings.contact_title.label",
+      "default": "A quick and easy registration gives you access to design-forward wholesale decor, wholesale pricing, product details ordering options, and much more!",
+      "limit": 300
+    },
+    {
+      "type": "text",
+      "id": "contact-button_text",
+      "default": "Contact Now",
+      "label": "t:sections.main-article.settings.contact-button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "contact-button_link",
+      "label": "t:sections.main-article.settings.contact-button_link.label"
+    }
+  ],
+  "max_blocks": 2,
   "blocks": [
     {
       "type": "@app"
@@ -268,18 +338,6 @@
           "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
         }
       ]
-    },
-    {
-      "type": "share",
-      "name": "t:sections.main-article.blocks.share.name",
-      "limit": 1,
-      "settings": []
-    },
-    {
-      "type": "content",
-      "name": "t:sections.main-article.blocks.content.name",
-      "limit": 1,
-      "settings": []
     }
   ]
 }

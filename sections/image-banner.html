@@ -9,6 +9,7 @@
 
 {{assign "banner1" section.settings.banner1}}
 {{assign "banner2" section.settings.banner2}}
+{{assign "mb_banner" section.settings.mb-banner}}
 {{assign "banner_height_size" section.settings.banner_height_size}}
 {{assign "override_banner_height" section.settings.override_banner_height}}
 {{assign "pc_position" section.settings.pc_content_position}}
@@ -31,7 +32,8 @@
     {{/unless}}
   {{/if}}
 {{/if}}
-<div class="section section-image-banner {{#if section.settings.width_style == false}}custom-padding section-padding page-width{{/if}}">
+
+<div class="section section-image-banner section-padding{{#if section.settings.width_style == false}} custom-padding page-width{{/if}}">
   
   <div
     class="section-image-banner-pc {{#if banner1 or banner2}}image-banner-loaded{{/if}} display-none display-block-desktop"
@@ -64,7 +66,7 @@
     </div>
     
     {{#if blocks_length > 0}}
-      <div class="content content--pos-{{pc_position}}">
+      <div class="content content--pos-{{pc_position}} {{#if section.settings.gradient_style == true}}iha-gradient{{/if}}">
         <div class="page-width {{#if section.settings.width_style_padding == true}}cc-page-padding{{/if}}">
           <div
             class="wrapper global-content-border-shadow
@@ -97,7 +99,7 @@
                     {{~#if block.settings.button_text}}
                       <a
                         {{#if block.settings.link}}href="{{block.settings.link}}"{{else}}href="javascript:;"{{/if}}
-                        class="button {{#if (isTruthy outline_button)}}button--secondary{{else}}btn-primary{{/if}}"
+                        class="button {{#if block.settings.button_height_size == 'large' }}iha-button{{/if}} {{#if (isTruthy outline_button)}}button--secondary{{else}}btn-primary{{/if}}"
                       >
                         {{block.settings.button_text}}
                       </a>
@@ -138,7 +140,7 @@
             banner-item-wrapper--size-{{#if override_banner_height}}none{{else}}{{banner_height_size}}{{/if}}"
         >
           <div style="padding-bottom: {{banner_ratio}};">
-            {{snippet "image" data=banner1 mobile_size="100%" class="banner-item banner-mobile-item"}}
+            {{snippet "image" data=mb_banner mobile_size="100%" class="banner-item banner-mobile-item"}}
           </div>
         </div>
       {{/if}}
@@ -227,7 +229,7 @@
       "label": "t:sections.image-banner.settings.banner1.label"
     },
     {
-      "id": "banner2",
+      "id": "mb-banner",
       "type": "image_picker",
       "label": "t:sections.image-banner.settings.banner2.label"
     },
@@ -433,6 +435,14 @@
     },
     {
       "type": "switch",
+      "id": "gradient_style",
+      "label": {
+        "en": "Apply gradient"
+      },
+      "default": false
+    },
+    {
+      "type": "switch",
       "id": "width_style_padding",
       "label": {
         "en": "Extra Padding"
@@ -444,7 +454,7 @@
       "id": "padding_top",
       "label": "Top Padding",
       "default": 60,
-      "max": 100,
+      "max": 120,
       "min": 0,
       "step": 2,
       "unit": "px"
@@ -454,7 +464,7 @@
       "id": "padding_bottom",
       "label": "Bottom Padding",
       "default": 60,
-      "max": 100,
+      "max": 120,
       "min": 0,
       "step": 2,
       "unit": "px"
@@ -482,6 +492,10 @@
           "default": "title3",
           "options": [
             {
+              "value": "large--title",
+              "label": "t:sections.image-banner.blocks.title.settings.title_size.options__custom.label"
+            },
+            {
               "value": "title1",
               "label": "t:sections.image-banner.blocks.title.settings.title_size.options__0.label"
             },
@@ -492,10 +506,6 @@
             {
               "value": "title5",
               "label": "t:sections.image-banner.blocks.title.settings.title_size.options__2.label"
-            },
-            {
-              "value": "custom--title",
-              "label": "t:sections.image-banner.blocks.title.settings.title_size.options__custom.label"
             }
           ]
         }
@@ -554,6 +564,22 @@
           "type": "switch",
           "default": true,
           "label": "t:sections.image-banner.blocks.button.settings.outline_button_2.label"
+        },
+        {
+          "id": "button_height_size",
+          "type": "select",
+          "label": "t:sections.image-banner.blocks.button.settings.button_height_size.label",
+          "options": [
+            {
+              "value": "normal",
+              "label": "t:sections.image-banner.blocks.button.settings.button_height_size.options__0.label"
+            },
+            {
+              "label": "t:sections.image-banner.blocks.button.settings.button_height_size.options__1.label",
+              "value": "large"
+            }
+          ],
+          "default": "normal"
         }
       ]
     }
@@ -599,7 +625,8 @@
             "outline_button": true,
             "link_text_2": "Shop all",
             "link_2": "",
-            "outline_button_2": true
+            "outline_button_2": true,
+            "button_height_size": "normal"
           }
         }
       ]

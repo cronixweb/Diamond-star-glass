@@ -1,8 +1,16 @@
 {
   "sections": {
     "main-article": {
-      "type": "main-article",
       "disabled": false,
+      "type": "main-article",
+      "settings": {
+        "show_content": true,
+        "show_share": true,
+        "contact_text": "READY TO BECOME A CUSTOMER?",
+        "contact_title": "A quick and easy registration gives you access to design-forward wholesale decor, wholesale pricing, product details ordering options, and much more!",
+        "contact-button_text": "Contact Now",
+        "contact-button_link": "shopline://blogs/6736f2fe469078308ee5922d/67457b871c27e658690000de"
+      },
       "blocks": {
         "block1": {
           "type": "title",
@@ -16,25 +24,94 @@
           "settings": {
             "image_height": "medium"
           }
-        },
-        "block3": {
-          "type": "content",
-          "settings": {}
-        },
-        "block4": {
-          "type": "share",
-          "settings": {}
         }
       },
       "block_order": [
         "block1",
-        "block2",
-        "block3",
-        "block4"
-      ]
+        "block2"
+      ],
+      "custom_css": []
+    },
+    "173268738434484241af": {
+      "disabled": false,
+      "type": "blog",
+      "settings": {
+        "title": "<span style=\"font-size: 48px;\">Related Post</span>",
+        "title_align": "left",
+        "blog_collection": "6736f2fe469078308ee5922d",
+        "limit": 3,
+        "pc_cols": 3,
+        "mobile_cols": 1,
+        "enable_mobile_slide": true,
+        "mobile_pagination_style": "dots",
+        "is_show_date": true,
+        "is_show_author": true,
+        "is_show_cover": true,
+        "image_cover_ratio": "0.75",
+        "is_show_desc": false,
+        "btn_text": "",
+        "color_scheme": "none",
+        "padding_top": 8,
+        "padding_bottom": 40
+      },
+      "blocks": {},
+      "block_order": [],
+      "custom_css": []
+    },
+    "1732687446677d7c2582": {
+      "disabled": false,
+      "type": "section-instagram-feed-custom",
+      "settings": {
+        "heading-instagram-feed": "Follow us @diamondstarglass",
+        "color_scheme": "none",
+        "padding_top": 30,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "173268746471149527c1": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+          }
+        },
+        "1732687476097c42670e": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+          }
+        },
+        "1732687490561888a857": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+          }
+        },
+        "1732687495593321fba2": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+          }
+        },
+        "1732687501197736af00": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "173268746471149527c1",
+        "1732687476097c42670e",
+        "1732687490561888a857",
+        "1732687495593321fba2",
+        "1732687501197736af00"
+      ],
+      "custom_css": []
     }
   },
   "order": [
-    "main-article"
+    "main-article",
+    "173268738434484241af",
+    "1732687446677d7c2582"
   ]
 }

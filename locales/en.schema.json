@@ -2672,10 +2672,10 @@
       "name": "Image banner",
       "settings": {
         "banner1": {
-          "label": "Image 1"
+          "label": "Desktop Image"
         },
         "banner2": {
-          "label": "Image 2"
+          "label": "Mobile Image"
         },
         "banner_height_size": {
           "label": "Image height",
@@ -2810,7 +2810,7 @@
                 "label": "Small"
               },
               "options__custom": {
-                "label": "Custom"
+                "label": "Extra Large"
               }
             }
           }
@@ -2843,7 +2843,16 @@
             },
             "outline_button_2": {
               "label": "Apply button outline style"
+            },
+            "button_height_size": {
+            "label": "Button height",
+            "options__0": {
+              "label": "Medium"
+            },
+            "options__1": {
+              "label": "Large"
             }
+          }
           }
         }
       },
@@ -3073,6 +3082,29 @@
     },
     "main-article": {
       "name": "Article",
+      "settings": {
+        "show_content": {
+          "label": "Show Side Content"
+        },
+        "share_text": {
+          "label": "Share Text"
+        },
+        "show_share": {
+          "label": "Enable Share"
+        },
+        "contact_text": {
+          "label": "Title"
+        },
+        "contact_title": {
+          "label": "Paragraph"
+        },
+        "contact-button_text": {
+          "label": "Button Text"
+        },
+        "contact-button_link": {
+          "label": "Button Link"
+        }
+      },
       "blocks": {
         "select": {
           "name": "Image",
@@ -3104,12 +3136,6 @@
               "label": "Display author"
             }
           }
-        },
-        "share": {
-          "name": "Share"
-        },
-        "content": {
-          "name": "Content"
         }
       }
     },

@@ -1,6 +1,7 @@
 .section-rich-text {
   background-size: cover;
   background-position: center;
+
 }
 
 .section-rich-text__content {
@@ -31,14 +32,14 @@
 }
 
 a.section-rich-text__button {
-  color: #ffffff !important;
+  color: var(--color-white) !important;
   display: inline-block;
   width: 100%;
   max-width: 245px;
   height: 52px;
-  background-color: #000;
+  background-color: rgb(var(--color-text));
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 26px;
   transition: all 0.3s ease;
 
   text-align: center;
@@ -49,10 +50,20 @@ a.section-rich-text__button {
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
+a.section-rich-text__button:hover {
+  color: var(--color-text) !important;
+  background-color: rgb(var(--color-white));
+  border: 1px solid;
+}
 
 @media screen and (min-width: 768px) {
+  .section-rich-text {
+    background-size: cover;
+    background-position: center;
+  }
   .section-rich-text__content {
     padding: 55px 80px;
+    min-height: 260px;
   }
 
   .section-rich-text h2 {

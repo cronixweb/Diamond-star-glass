@@ -55,11 +55,15 @@ a.image-text-section__button {
   text-transform: uppercase;
 }
 
+a.image-text-section__button:hover {
+  text-decoration: underline;
+}
 
 @media screen and (min-width: 1024px) {
   .image-text-section__container {
     flex-direction: row;
     gap: 115px;
+    padding-bottom: 0;
 
   }
   .image-text-section__content {

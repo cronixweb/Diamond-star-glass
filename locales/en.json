@@ -628,9 +628,10 @@
       "cart": "Cart",
       "center": "User Center",
       "close": "Close",
-      "login": "Log in",
       "account": "Account",
       "favorites": "Favorites",
+      "login": "Log in",
+      "search": "Search",
       "no_currency_fallback": "No relevant currency found",
       "search_input_placeholder": "Enter here and click search"
     },
