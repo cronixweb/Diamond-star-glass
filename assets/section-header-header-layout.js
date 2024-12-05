@@ -37,6 +37,7 @@ defineCustomElement(
         this.addEventListener('openChange', this.onDropdownOpenChange);
         this.addEventListener('click', this.setTopPosition);
         this.createObserver();
+        this.closesubmenu();
       }
 
       bindStickyCallback(fn) {
@@ -253,6 +254,14 @@ defineCustomElement(
       removeScrollingClass() {
         this.resetHeaderTop();
         this.header.classList.remove('shopline-section-header-scrolling');
+      }
+      closesubmenu(){
+        const submenuCloseButton = document.querySelectorAll(".header__menu-drawer .menu__close-button");
+        for (let i = 0; i < submenuCloseButton.length; i++) {
+          submenuCloseButton[i].addEventListener('click', function(){
+            this.closest('details').removeAttribute('open')
+          });
+        }
       }
     },
 );

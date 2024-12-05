@@ -47,25 +47,22 @@
                       <summary class="body3">
                         <div class="drawer-menus__item">
                           <a
-                            class="body3 fw-bold"
+                            class="body3"
                             {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;"{{/if}}
                           >
                             <span class="{{#if is_highlight}}menu-item--highlight{{/if}}">{{link.title}}</span>
                           </a>
-                          <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                          <span class="drawer-menus__item-icon">
                             {{snippet "icon-arrow"}}
-                          </span>
-                          <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
-                            {{ snippet 'icon-arrow' }}
                           </span>
                         </div>
                       </summary>
                       <div class="drawer-menus__sub-menus">
                         <div class="nav-child-head">
-                          <span>
-                            {{snippet "icon-arrow"}}
-                            {{link.title}}
-                          </span>
+                          <button  class="menu__close-button">
+                            {{snippet "icon-arrow-left-new"}}
+                            <span>{{link.title}}</span>
+                          </button>
                           <button class="drawer__close-button icon-button" name="close">
                             {{snippet "icon-close"}}
                           </button>
@@ -74,18 +71,15 @@
                           {{#for link.links as |sub_link|}}
                             {{#if (length sub_link.links) > 0}}
                               <details>
-                                <summary class="body5">
+                                <summary class="body4">
                                   <div class="drawer-menus__sub-item">
   
                                     <a
-                                      class="body5"
+                                      class="body4"
                                       {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}
                                     >{{sub_link.title}}</a>
-                                    <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                                    <span class="drawer-menus__item-icon">
                                       {{snippet "icon-arrow"}}
-                                    </span>
-                                    <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
-                                      {{ snippet 'icon-arrow' }}
                                     </span>
                                   </div>
                                 </summary>
@@ -93,7 +87,7 @@
                                   {{#for sub_link.links as |sub_sub_link|}}
                                     <li class="drawer-menus__sub-item">
                                       <a
-                                        class="body5"
+                                        class="body4"
                                         {{#if sub_sub_link.url}}href="{{sub_sub_link.url}}"{{else}}href="javascript:;"{{/if}}
                                       >{{sub_sub_link.title}}</a>
                                     </li>
@@ -102,7 +96,7 @@
                               </details>
                             {{else}}
                               <li class="drawer-menus__sub-item">
-                                <a class="body5" {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}>{{sub_link.title}}</a>
+                                <a class="body4" {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}>{{sub_link.title}}</a>
                               </li>
                             {{/if}}
                           {{/for}}
@@ -112,7 +106,7 @@
                   </li>
                 {{else}}
                   <li class="drawer-menus__sub-item">
-                    <a class="body4 fw-bold" {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;"{{/if}}>
+                    <a class="body4" {{#if link.url}}href="{{link.url}}"{{else}}href="javascript:;"{{/if}}>
                       <span class="{{#if is_highlight}}menu-item--highlight{{/if}}">{{link.title}}</span>
                     </a>
                   </li>
@@ -130,12 +124,12 @@
         </accordion-component>
         {{#if section.settings.show_user_entry}}
           <a
-            class="header__user-center-button body3 fw-bold
+            class="header__user-center-button body3 
               {{#if section.settings.user_mobile_layout == 'home'}}display-none-tablet{{/if}}"
             href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
           >
             {{snippet "icon-user"}}
-            {{#not customer}}{{t "general.header.login"}}{{/not}}
+            {{#not customer}}{{t "general.header.create_account"}}{{/not}}
             </a>
         {{/if}}
       </div>

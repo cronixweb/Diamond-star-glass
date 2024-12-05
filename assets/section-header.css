@@ -713,10 +713,13 @@ header.is-transparent--active
   position: relative;
 }
 .header__user-center-button {
+  margin-top: 28px;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   letter-spacing: 0.1em;
+  gap: 8px;
+  width: 100%;
 }
 .header__user-center-button .icon {
   margin-right: 8px;
@@ -1520,9 +1523,6 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
 }
 
 /* mobile menu styles */
-.header .drawer .modal__content{
-  top: 92px;
-}
 .mobile-menu .drawer {
   --drawer-padding-inline: 16px;
 }
@@ -1550,9 +1550,41 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: var(--drawer-padding-inline);
-  padding-right:var(--drawer-padding-inline);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-grey-light);
 }
-.nav-child-head .icon-arrow{
-  tranform: rotate(90deg)
+.nav-child-head .menu__close-button{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+}
+.nav-child-head span{
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.nav-child-head .drawer__close-button{
+  padding: 0;
+}
+.drawer-menus__item > a{
+  font-weight: 400;
+  padding-left: 0;
+}
+.drawer-menus__sub-item > a{
+  padding-left: 0;
+}
+.drawer-menus__item-icon .icon-arrow{
+  transform: rotate(270deg);
+}
+.header__menu-drawer .drawer__main{
+  margin: 0;
+}
+.header__drawer-menus > li{
+  border-bottom: 1px solid var(--color-grey-light);
+}
+.drawer-menus__item-icon{
+  padding-right: 0;
 }
