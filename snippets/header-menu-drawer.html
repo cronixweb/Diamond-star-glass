@@ -30,6 +30,23 @@
     <div class="modal__content global-drawer-border-shadow" data-position="left">
       <div class="modal__overlay"></div>
       <div class="drawer__main">
+        <div class="drawer__head">
+          <h5 class="drawer__title">
+            {{#if section.settings.show_user_entry}}
+              <a
+                class="header__user-center-button body3 fw-bold
+                  {{#if section.settings.user_mobile_layout == 'home'}}display-none-tablet{{/if}}"
+                href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
+              >
+                {{snippet "icon-user"}}
+                {{#not customer}}{{t "general.header.create_account"}}{{/not}}
+              </a>
+            {{/if}}
+          </h5>
+          <button class="drawer__close-button icon-button" name="close">
+            {{snippet "icon-close"}}
+          </button>
+        </div>
         <accordion-component>
           <nav class="header__drawer-nav">
             <ul class="header__drawer-menus list-unstyled">
@@ -53,7 +70,7 @@
                             <span class="{{#if is_highlight}}menu-item--highlight{{/if}}">{{link.title}}</span>
                           </a>
                           <span class="drawer-menus__item-icon">
-                            {{snippet "icon-arrow"}}
+                            {{snippet "icon-arrow-right-new"}}
                           </span>
                         </div>
                       </summary>
@@ -67,7 +84,7 @@
                             {{snippet "icon-close"}}
                           </button>
                         </div>
-                        <ul class="list-unstyled test2">
+                        <ul class="list-unstyled">
                           {{#for link.links as |sub_link|}}
                             {{#if (length sub_link.links) > 0}}
                               <details>
@@ -79,11 +96,20 @@
                                       {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}
                                     >{{sub_link.title}}</a>
                                     <span class="drawer-menus__item-icon">
-                                      {{snippet "icon-arrow"}}
+                                      {{snippet "icon-arrow-right-new"}}
                                     </span>
                                   </div>
                                 </summary>
-                                <ul class="drawer-menus__sub-menus list-unstyled test">
+                                <ul class="drawer-menus__sub-menus list-unstyled">
+                                  <li class="nav-child-head">
+                                    <button  class="menu__close-button">
+                                      {{snippet "icon-arrow-left-new"}}
+                                      <span>{{sub_link.title}}</span>
+                                    </button>
+                                    <button class="drawer__close-button icon-button" name="close">
+                                      {{snippet "icon-close"}}
+                                    </button>
+                                  </li>
                                   {{#for sub_link.links as |sub_sub_link|}}
                                     <li class="drawer-menus__sub-item">
                                       <a
@@ -122,16 +148,6 @@
             </ul>
           </nav>
         </accordion-component>
-        {{#if section.settings.show_user_entry}}
-          <a
-            class="header__user-center-button body3 
-              {{#if section.settings.user_mobile_layout == 'home'}}display-none-tablet{{/if}}"
-            href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
-          >
-            {{snippet "icon-user"}}
-            {{#not customer}}{{t "general.header.create_account"}}{{/not}}
-            </a>
-        {{/if}}
       </div>
       <div class="drawer_footer">
         <div class="header__localization header-drawer__localization display-none-desktop">
@@ -145,7 +161,7 @@
                       <span data-label>{{localization.language.endonym_name}}</span>
                       {{snippet "icon-arrow"}}
                     </button>
-                    <div class="dropdown-menu__list-wrapper top body4" hidden>
+                    <div class="dropdown-menu__list-wrapper top body3" hidden>
                       <ul class="dropdown-menu__list list-unstyled">
                         {{#for localization.available_languages as |language|}}
                           <li>
@@ -166,7 +182,7 @@
                         {{localization.country.currency.symbol}}）</span>
                       {{snippet "icon-arrow"}}
                     </button>
-                    <div class="dropdown-menu__list-wrapper top body4" hidden>
+                    <div class="dropdown-menu__list-wrapper top body3" hidden>
                       <ul class="dropdown-menu__list list-unstyled">
                         {{#for localization.available_countries as |country|}}
                           <li>
