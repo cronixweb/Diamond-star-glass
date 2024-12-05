@@ -23,30 +23,12 @@
     <summary class="modal__toggle">
       <button class="icon-button header__icon-button">
         {{snippet "icon-menu"}}
+        {{snippet "icon-close"}}
       </button>
     </summary>
 
     <div class="modal__content global-drawer-border-shadow" data-position="left">
       <div class="modal__overlay"></div>
-
-      <div class="drawer__head drawer__head--divider">
-        <h5 class="drawer__title">
-          {{#if section.settings.show_user_entry}}
-            <a
-              class="header__user-center-button body3 fw-bold
-                {{#if section.settings.user_mobile_layout == 'home'}}display-none-tablet{{/if}}"
-              href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
-            >
-              {{snippet "icon-user"}}
-              {{#not customer}}{{t "general.header.login"}}{{/not}}
-            </a>
-          {{/if}}
-        </h5>
-        <button class="drawer__close-button icon-button" name="close">
-          {{snippet "icon-close"}}
-        </button>
-      </div>
-
       <div class="drawer__main">
         <accordion-component>
           <nav class="header__drawer-nav">
@@ -78,43 +60,54 @@
                           </span>
                         </div>
                       </summary>
-                      <ul class="drawer-menus__sub-menus list-unstyled">
-                        {{#for link.links as |sub_link|}}
-                          {{#if (length sub_link.links) > 0}}
-                            <details>
-                              <summary class="body5">
-                                <div class="drawer-menus__sub-item">
-
-                                  <a
-                                    class="body5"
-                                    {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}
-                                  >{{sub_link.title}}</a>
-                                  <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
-                                    {{snippet "icon-arrow"}}
-                                  </span>
-                                  <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
-                                    {{ snippet 'icon-arrow' }}
-                                  </span>
-                                </div>
-                              </summary>
-                              <ul class="drawer-menus__sub-menus list-unstyled">
-                                {{#for sub_link.links as |sub_sub_link|}}
-                                  <li class="drawer-menus__sub-item">
+                      <div class="drawer-menus__sub-menus">
+                        <div class="nav-child-head">
+                          <span>
+                            {{snippet "icon-arrow"}}
+                            {{link.title}}
+                          </span>
+                          <button class="drawer__close-button icon-button" name="close">
+                            {{snippet "icon-close"}}
+                          </button>
+                        </div>
+                        <ul class="list-unstyled test2">
+                          {{#for link.links as |sub_link|}}
+                            {{#if (length sub_link.links) > 0}}
+                              <details>
+                                <summary class="body5">
+                                  <div class="drawer-menus__sub-item">
+  
                                     <a
                                       class="body5"
-                                      {{#if sub_sub_link.url}}href="{{sub_sub_link.url}}"{{else}}href="javascript:;"{{/if}}
-                                    >{{sub_sub_link.title}}</a>
-                                  </li>
-                                {{/for}}
-                              </ul>
-                            </details>
-                          {{else}}
-                            <li class="drawer-menus__sub-item">
-                              <a class="body5" {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}>{{sub_link.title}}</a>
-                            </li>
-                          {{/if}}
-                        {{/for}}
-                      </ul>
+                                      {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}
+                                    >{{sub_link.title}}</a>
+                                    <span class="drawer-menus__item-icon drawer-menus__item-icon-on">
+                                      {{snippet "icon-arrow"}}
+                                    </span>
+                                    <span class="drawer-menus__item-icon drawer-menus__item-icon-off">
+                                      {{ snippet 'icon-arrow' }}
+                                    </span>
+                                  </div>
+                                </summary>
+                                <ul class="drawer-menus__sub-menus list-unstyled test">
+                                  {{#for sub_link.links as |sub_sub_link|}}
+                                    <li class="drawer-menus__sub-item">
+                                      <a
+                                        class="body5"
+                                        {{#if sub_sub_link.url}}href="{{sub_sub_link.url}}"{{else}}href="javascript:;"{{/if}}
+                                      >{{sub_sub_link.title}}</a>
+                                    </li>
+                                  {{/for}}
+                                </ul>
+                              </details>
+                            {{else}}
+                              <li class="drawer-menus__sub-item">
+                                <a class="body5" {{#if sub_link.url}}href="{{sub_link.url}}"{{else}}href="javascript:;"{{/if}}>{{sub_link.title}}</a>
+                              </li>
+                            {{/if}}
+                          {{/for}}
+                        </ul>
+                      </div>
                     </details>
                   </li>
                 {{else}}
@@ -135,8 +128,17 @@
             </ul>
           </nav>
         </accordion-component>
+        {{#if section.settings.show_user_entry}}
+          <a
+            class="header__user-center-button body3 fw-bold
+              {{#if section.settings.user_mobile_layout == 'home'}}display-none-tablet{{/if}}"
+            href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
+          >
+            {{snippet "icon-user"}}
+            {{#not customer}}{{t "general.header.login"}}{{/not}}
+            </a>
+        {{/if}}
       </div>
-
       <div class="drawer_footer">
         <div class="header__localization header-drawer__localization display-none-desktop">
           <localization-form>

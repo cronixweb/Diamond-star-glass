@@ -42,13 +42,6 @@
   <script src="{{asset_url 'theme-editor.js'}}" defer="defer"></script>
 {{/if}}
 
-{{snippet
-  "section-padding-creator"
-  section_id=section.id
-  padding_top=section.settings.padding_top
-  padding_bottom=section.settings.padding_bottom
-}}
-
 {{#if show_announcement}}
   {{#if cyclic_scroll}}
     <cyclic-scroll 

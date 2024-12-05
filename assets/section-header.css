@@ -1518,3 +1518,41 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
     column-gap: 120px;
   }
 }
+
+/* mobile menu styles */
+.header .drawer .modal__content{
+  top: 92px;
+}
+.mobile-menu .drawer {
+  --drawer-padding-inline: 16px;
+}
+.drawer-menus__sub-menus{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 1;
+}
+.header__menu-drawer .icon-close {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+.header__menu-drawer [open] .icon-close{
+  display: block;
+}
+.header__menu-drawer [open] .icon-menu{
+  display: none;
+}
+.nav-child-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: var(--drawer-padding-inline);
+  padding-right:var(--drawer-padding-inline);
+}
+.nav-child-head .icon-arrow{
+  tranform: rotate(90deg)
+}

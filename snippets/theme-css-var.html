@@ -21,6 +21,17 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Gotham';
+    src: local('Gotham-Light'), 
+        url('{{ asset_url 'Gotham-Light.ttf' }}') format('truetype'),
+        url('{{ asset_url 'Gotham-Light.otf' }}') format('embedded-opentype'),
+        url('{{ asset_url 'Gotham-Light.woff2' }}') format('woff2'),
+        url('{{ asset_url 'Gotham-Light.woff' }}') format('font-woff');
+    font-weight: 400; /* Bold weight */
+    font-style: normal;
+    font-display: swap;
+}
 :root {
     --title-font: "{{ settings.title_font_family.family }}", "{{ settings.title_font_family.fallback_families }}";
     --title-font-weight: {{ settings.title_font_family.weight }};
