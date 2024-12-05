@@ -21,7 +21,7 @@
         <h1 class="article-template__title title4">{{article.title}}</h1>
         {{#if block.settings.blog_show_date}}
           <span class="circle-divider caption-with-letter-spacing body3 blog-caption__date">
-            {{date article.published_at "abbreviated_date"}}
+            {{ date article.published_at '%d %B %Y' }}
           </span>
         {{/if}}
         {{#if block.settings.blog_show_author}}
@@ -250,7 +250,7 @@
     {
       "type": "text",
       "id": "share_text",
-      "default": "SHARE",
+      "default": "Share",
       "label": "t:sections.main-article.settings.share_text.label"
     },
     {

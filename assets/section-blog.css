@@ -170,7 +170,7 @@
 .blogs__main .blogs__head::after {
   content: "";
   display: block;
-  border-bottom: 1px solid rgba(var(--color-entry-line));
+  border-bottom: 1px solid var(--color-borber-line);
   margin-top: 24px;
 }
 
@@ -191,9 +191,26 @@
 }
 
 .blogs__main .simple-blog__title {
+  font-family: var(--body-font-family);
   font-size: var(--body6-font-size);
   font-weight: 600;
   line-height: 1.4;
+}
+
+.blogs__item {
+  padding: 0 15px;
+}
+
+.title__align-left {
+  text-align: left;
+}
+
+.title__align-center {
+  text-align: center;
+}
+
+.title__align-right {
+  text-align: right;
 }
 
 @media screen and (min-width: 960px) {
@@ -228,9 +245,5 @@
 
   .blogs__main .simple-blog__extra-info {
     margin-bottom: 24px;
-  }
-  
-  .image_wrapper {
-    margin: 40px 0;
   }
 }
