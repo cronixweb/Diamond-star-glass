@@ -233,11 +233,13 @@
 
   .blogs__main .blog-caption__date {
     font-size: var(--body4-font-size);
+    color: var(--color-grey-caption);
     font-weight: 600;
     line-height: 1.4;
   }
 
   .blogs__main .blog-caption__author {
+    color: var(--color-grey-caption);
     font-size: var(--body4-font-size);
     font-weight: 700;
     line-height: 1.4;

@@ -53,7 +53,7 @@
   {{/for}}
   {{#if leng > 3}}
     {{assign "share_more_data" (after share_list_data 3)}}
-    <div class="third-party-more" id="share_card_{{id}}">
+    <div class="third-party-more" id="share_card_{{id}}" style="display: {{section.settings.show_share_more}};">
       <div class="third-party-arrow third-party-arrow-small">
         {{snippet "icon-arrow"}}
       </div>

@@ -423,6 +423,10 @@
   }
 }
 
+.article-template__hero-large {
+  height: 191px;
+}
+
 @media (min-width: 960px) {
   .article-template__content-wrapper {
     display: grid;
@@ -457,6 +461,7 @@
 
   .blog-caption__author {
     font-size: var(--body5-font-size);
+    color: var(--color-grey-caption);
     font-weight: 700;
     line-height: 1.4;
   }
@@ -464,6 +469,7 @@
   .blog-caption__date {
     font-size: var(--body5-font-size);
     font-weight: 600;
+    color: var(--color-grey-caption);
     line-height: 1.4;
   }
 
@@ -525,5 +531,11 @@
 
   .article-template__content li {
     margin-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .article-template__hero-large {
+    height: 900px;
   }
 }
