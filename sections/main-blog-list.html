@@ -6,22 +6,62 @@
   padding_top=section.settings.padding_top
   padding_bottom=section.settings.padding_bottom
 }}
+<script src="{{asset_url 'blog-view-all.js'}}" defer></script>
 <main
-  class="section section-padding page-width"
+  class="section section-padding page-width bloglist_container"
   style="
     --blog-list-columns:{{section.settings.columns}};
     "
 >
   {{snippet "breadcrumb" class="text-left" settings=settings}}
-  <h1 class="blogslist__title title4">
-    {{blog.title}}
-  </h1>
-  {{#paginate blog.articles by=section.settings.page_number}}
-    <div class="bloglist__main">
+  <h2 class="blogslist__title title4">
+    {{#if section.settings.custom_title }}
+      {{section.settings.custom_title}}
+    {{else}}
+      {{blog.title}}
+    {{/if}}
+  </h2>
+  {{#if section.settings.cards_feature "==" "pagination"}}
+    {{#paginate blog.articles by=section.settings.page_number}}
+      <div class="bloglist__main">
+        <div class="blogslist__page-list">
+          <div class="blogslist__list-wrapper">
+            <ul
+              class="{{#if section.settings.columns == '2'}} grid-col__2 {{/if}}
+                blogslist__list
+                blogslist__list--{{section.settings.layout}}
+                {{#if (eq section.settings.layout 'list') and (gt (length blog.articles) 2)}}blog-item-grid-list{{/if}}
+                list-unstyled"
+            >
+              {{#for blog.articles as |article|}}
+                <li class="blogslist__item hover-image-scale">
+                  {{snippet
+                    "blog-card"
+                    info=article
+                    show_author=section.settings.is_show_author
+                    show_date=section.settings.is_show_date
+                    show_cover=section.settings.is_show_cover
+                    cover_ratio=section.settings.cover_img_ratio
+                    show_desc=section.settings.is_show_desc
+                    shopline_attributes=article.shopline_attributes
+                  }}
+                </li>
+              {{/for}}
+            </ul>
+          </div>
+          {{#if paginate.pages > 1}}
+            {{snippet "pagination" paginate=paginate anchor=""}}
+          {{/if}}
+        </div>
+      </div>
+    {{/paginate}}
+  {{else}}
+    <div class="bloglist__main" data-cards-count="{{section.settings.page_number}}">
       <div class="blogslist__page-list">
         <div class="blogslist__list-wrapper">
           <ul
-            class="blogslist__list
+            class="{{#if section.settings.columns == '2'}} grid-col__2 {{/if}}
+              blogslist__list
               blogslist__list--{{section.settings.layout}}
               {{#if (eq section.settings.layout 'list') and (gt (length blog.articles) 2)}}blog-item-grid-list{{/if}}
               list-unstyled"
@@ -42,13 +82,16 @@
             {{/for}}
           </ul>
         </div>
-        {{#if paginate.pages > 1}}
-          {{snippet "pagination" paginate=paginate anchor=""}}
+        {{#if blog.articles.size ">" section.settings.page_number}}
+        <div class="blog-button">
+          <button id="loadMoreBtn" class="button button--secondary loadmorebtn">
+            {{t 'blog.blog.view_all'}}
+          </button>
+        </div>
         {{/if}}
       </div>
     </div>
-  {{/paginate}}
-
+  {{/if}}
 </main>
 {{#schema}}
 {
@@ -69,6 +112,27 @@
           "value": "list"
         }
       ]
+    },
+    {
+      "type": "select",
+      "id": "cards_feature",
+      "default": "view_all",
+      "label": "t:sections.main-blog-list.settings.cards_feature.label",
+      "options": [
+        {
+          "label": "t:sections.main-blog-list.settings.cards_feature.options__0.label",
+          "value": "pagination"
+        },
+        {
+          "label": "t:sections.main-blog-list.settings.cards_feature.options__1.label",
+          "value": "view_all"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "t:sections.main-blog-list.settings.custom_title.label"
     },
     {
       "type": "range",

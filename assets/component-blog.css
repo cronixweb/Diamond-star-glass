@@ -186,3 +186,11 @@
   font-weight: 600;
   line-height: 1.3; 
 }
+
+.simple-blog__extra-info .text {
+  opacity: unset;
+}
+
+.simple-blog__extra-info .separator {
+  font-weight: bold;
+}
