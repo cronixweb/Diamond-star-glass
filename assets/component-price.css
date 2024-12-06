@@ -157,3 +157,17 @@
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+.card__content .price-item--regular {
+  font-size: var(--body6-font-size);
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+  .card__content .price-item--regular {
+    font-size: var(--body5-font-size);
+  }
+}

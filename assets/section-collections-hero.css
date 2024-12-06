@@ -98,3 +98,69 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+
+/* Custom styles for collection banner */
+.collection-hero__no-cover{
+  padding-top: 30px;
+}
+.collection-hero__no-cover .collection-banner-content{
+  margin-top: 44px;
+}
+.similar-category-group img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.similar-category-group .similar-cateogory-image{
+  aspect-ratio: 1;
+  border-radius: 50%;
+  line-height: 0;
+}
+.similar-category-group .collection-title{
+  font-size: var(--body4-font-size);
+  font-family: var(--body-font);
+  text-align: center;
+  font-weight: 600;
+  margin-top: 24px;
+  line-height: normal;
+}
+.collection-banner-content .banner-categories,
+.has-collection-image .similar-category-group{
+  margin-top: 40px;
+}
+@media (min-width: 960px) {
+  #shopline-section-main-collection-product-list .section-padding{
+    padding-top: 109px;
+    padding-bottom: 124px;
+  }
+  .collection-banner-content{
+    display: flex;
+    align-items: center;
+  }
+  .collection-banner-content .banner-content{
+    width: 34%;
+  }
+  .collection-banner-content .banner-categories{
+    width: 67%;
+    padding-left: 26px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .collection-banner-content .similar-category-group{
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .collection-banner-content .grid_item{
+    margin: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .collection-banner-content .banner-categories{
+    padding-left: 76px;
+  }
+  .similar-category-group .collection-title{
+    font-size: var(--megamenu-links);
+  }
+}
