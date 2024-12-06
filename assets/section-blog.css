@@ -213,6 +213,20 @@
   text-align: right;
 }
 
+.blogs__list-wrapper .blog__control--dots {
+  column-gap: 8px;
+}
+
+.blogs__list-wrapper .blog__control--dots .blog__control--dot {
+  width: 10px;
+  height: 10px;
+}
+
+.blogs__list-wrapper .slider-buttons {
+  padding-top: 12px;
+  padding-bottom: 12px; 
+}
+
 @media screen and (min-width: 960px) {
   .blogs__main .slider:not(.grid-cols-2-tablet) .blogs__item {
     width: 33.3333333333%;

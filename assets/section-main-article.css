@@ -268,7 +268,7 @@
   font-size: var(--body6-font-size);
   font-weight: 600;
   line-height: 1.4;
-  margin-top: 32px;
+  margin-top: 24px;
   margin-bottom: 8px;
 }
 
@@ -278,7 +278,7 @@
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.48px;
-  margin-top: 32px;
+  margin-top: 24px;
   text-transform: capitalize;
 }
 
@@ -301,14 +301,15 @@
 }
 
 .blog-caption__date {
-  font-size: var(--body3-font-size);
+  font-size: var(--body4-font-size);
   color: var(--color-grey-caption);
   font-weight: 600 !important;
   line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .blog-caption__author {
-  font-size: var(--body3-font-size);
+  font-size: var(--body4-font-size);
   color: var(--color-grey-caption);
   font-weight: 700 !important;
   line-height: 1.4;
@@ -329,8 +330,8 @@
 }
 
 .article-template__social-sharing {
-  padding-top: 34px;
-  padding-bottom: 40px;
+  padding-top: 44px;
+  padding-bottom: 44px;
 }
 
 .share_text {
@@ -386,7 +387,7 @@
   flex-wrap: wrap;
   gap: 27px;
   justify-content: center;
-  padding-top: 8px;
+  padding-top: 0;
   margin-top: 32px;
   margin-bottom: 32px;
 }
@@ -418,6 +419,7 @@
       flex-wrap: nowrap; 
       align-items: center;
       gap: 27px;
+      padding-top: 8px;
       margin-top: 56px;
       margin-bottom: 64px;
   }
@@ -427,6 +429,12 @@
   height: 191px;
 }
 
+p.custom_font {
+  font-size: var(--body5-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 @media (min-width: 960px) {
   .article-template__content-wrapper {
     display: grid;
@@ -434,12 +442,12 @@
   }
 
   .article-template__summary-wrapper {
-    padding-right: 113px;
+    padding-right: 80px;
   }
 
   .article-template__summary {
-    border: 60px solid var(--color-grey-border-light);
-    padding: 60px;
+    border: 40px solid var(--color-grey-border-light);
+    padding: 40px;
   }
 
   .article-template__divide {
@@ -532,10 +540,36 @@
   .article-template__content li {
     margin-bottom: 8px;
   }
+
+  p.custom_font {
+    font-size: var(--body5-font-size);
+  }
 }
 
 @media screen and (min-width: 990px) {
   .article-template__hero-large {
     height: 900px;
+  }
+}
+
+@media (min-width: 1240px) {
+  .article-template__summary-wrapper {
+    padding-right: 80px;
+  }
+
+  .article-template__summary {
+    border: 50px solid var(--color-grey-border-light);
+    padding: 50px;
+  }
+}
+
+@media (min-width: 1540px) {
+  .article-template__summary-wrapper {
+    padding-right: 113px;
+  }
+
+  .article-template__summary {
+    border: 60px solid var(--color-grey-border-light);
+    padding: 60px;
   }
 }
