@@ -343,12 +343,13 @@ deferred-media {
     --body2-font-size: calc(var(--body-font-size) * 0.75); /* 12px */
     --body3-font-size: calc(var(--body-font-size) * 0.875); /* 14px */
     --body4-font-size: calc(var(--body-font-size) * 1);
+    --body4-max-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
     --body5-font-size: calc(var(--body-font-size) * 1.25); /* 20px */
     --body6-font-size: calc(var(--body-font-size) * 1.5); /* 24px */
     --body7-min-font-size: calc(var(--body-font-size) * 1.75); /* 28px */
     --body7-font-size: calc(var(--body-font-size) * 2); /* 32px */
     --body8-font-size: calc(var(--body-font-size) * 3); /* 48px */
-    --body9-font-size: calc(var(--body-font-size) * 3.6); /* 56px */
+    --body9-font-size: calc(var(--body-font-size) * 3.5); /* 56px */
   }
 }
 
