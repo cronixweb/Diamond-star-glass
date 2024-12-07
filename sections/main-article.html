@@ -21,7 +21,7 @@
         <h1 class="article-template__title title4">{{article.title}}</h1>
         {{#if block.settings.blog_show_date}}
           <span class="circle-divider caption-with-letter-spacing body3 blog-caption__date">
-            {{date article.published_at "abbreviated_date"}}
+            {{ date article.published_at '%d %B %Y' }}
           </span>
         {{/if}}
         {{#if block.settings.blog_show_author}}
@@ -61,7 +61,7 @@
             <p class="article-template__contact-info">{{section.settings.contact_title}}</p>
           {{/if}}
           {{#if section.settings.contact-button_text }}
-            <a href="{{section.settings.contact-button_link}}" class="article-template__contact-button">{{section.settings.contact-button_text}}</a>
+            <a href="{{section.settings.contact-button_link}}" class="article-template__contact-button button button--secondary ">{{section.settings.contact-button_text}}</a>
           {{/if}}
         </div>
       </div>
@@ -250,7 +250,7 @@
     {
       "type": "text",
       "id": "share_text",
-      "default": "SHARE",
+      "default": "Share",
       "label": "t:sections.main-article.settings.share_text.label"
     },
     {
@@ -258,6 +258,22 @@
       "id": "show_share",
       "label": "t:sections.main-article.settings.show_share.label",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "show_share_more",
+      "label": "t:sections.main-article.settings.show_share_more.label",
+      "default": "none",
+      "options": [
+        {
+          "value": "block",
+          "label": "t:sections.main-article.settings.show_share_more.options__0.label"
+        },
+        {
+          "value": "none",
+          "label": "t:sections.main-article.settings.show_share_more.options__1.label"
+        }
+      ]
     },
     {
       "type": "text",

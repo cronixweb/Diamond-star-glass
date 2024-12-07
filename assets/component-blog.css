@@ -27,7 +27,7 @@
 }
 .simple-blog__extra-info .text {
   max-width: calc(50% - 25px);
-  opacity: 0.6;
+  /* opacity: 0.6; */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

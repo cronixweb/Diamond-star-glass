@@ -3092,6 +3092,15 @@
         "show_share": {
           "label": "Enable Share"
         },
+        "show_share_more": {
+          "label": "Show More Icons",
+          "options__0": {
+            "label": "Block"
+          },
+          "options__1": {
+            "label": "None"
+          }
+        },
         "contact_text": {
           "label": "Title"
         },
