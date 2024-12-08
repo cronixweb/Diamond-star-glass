@@ -151,8 +151,6 @@
 }
 
 .bloglist_container .blog-button .button{
-  max-width: 154px;
-  width: 100%;
   font-size: var(--body4-font-size);
   font-weight: 600;
   line-height: 1.4;
@@ -177,10 +175,6 @@
   row-gap: 40px;
 }
 
-.loadmorebtn {
-  color: var(--color-text);
-  text-transform: capitalize;
-}
 @media screen and (min-width: 960px) {
   .blogslist__list--grid .blogslist__item:first-child .simple-blog__title{
     font-size: var(--body8-font-size);
