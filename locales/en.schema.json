@@ -2820,6 +2820,15 @@
           "settings": {
             "description": {
               "label": "Description"
+            },
+            "text_size": {
+              "label": "Main text font size",
+              "options__0": {
+                "label": "Large"
+              },
+              "options__1": {
+                "label": "Small"
+              }
             }
           }
         },
@@ -3004,6 +3013,15 @@
               },
               "options__2": {
                 "label": "Large"
+              }
+            },
+            "button_type": {
+              "label": "Link type",
+              "options__0": {
+                "label": "Button"
+              },
+              "options__1": {
+                "label": "Arrow link"
               }
             }
           }

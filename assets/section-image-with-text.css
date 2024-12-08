@@ -44,7 +44,7 @@ input {
   flex: 1;
 }
 .image-with-text.img-w-large .image-with-text__info-wrap {
-  flex: 0.6;
+  flex: 0.7;
 }
 .image-with-text__img-wrap {
   flex: 1;
@@ -239,3 +239,37 @@ input {
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* custom styles */
+.image-with-text .image-with-text__link{
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 24px;
+}
+.image-with-text__content{
+  margin-top: 12px;
+}
+.image-with-text__title{
+  margin-bottom: 12px!important;
+}
+@media screen and (max-width: 959px){
+  .image-with-text__info{
+    padding: 48px 24px;
+  }
+  .image-with-text__content{
+    font-size: var(--body5-font-size);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .image-with-text.img-w-large .image-with-text__info-wrap{
+    flex: 0.7;
+  }
+  .image-with-text__info--align-center{
+    max-width: 563px;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

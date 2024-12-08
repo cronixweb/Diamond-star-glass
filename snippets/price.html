@@ -30,7 +30,7 @@
 
 {{assign "compare_at_price" target.compare_at_price}}
 {{assign "price" (default target.price 1999)}}
-{{assign "money_price" (money_with_currency price)}}
+{{assign "money_price" (money price)}}
 {{assign "save_style" (default save_style "text")}}
 {{assign "save_radius" (default save_radius 4)}}
 {{assign "discount_style" (default discount_style "number")}}
@@ -40,21 +40,21 @@
 {{assign "show_range" (if show_range and (not show_from) and (not use_variant) and target.price_max > target.price_min)}}
 
 {{#if show_range}}
-  {{assign "money_price_max" (money_with_currency target.price_max)}}
-  {{assign "money_price_min" (money_with_currency target.price_min)}}
+  {{assign "money_price_max" (money target.price_max)}}
+  {{assign "money_price_min" (money target.price_min)}}
 {{/if}}
 
 <div class="price {{price_class}} ">
   <div class="price__container">
     {{#if product.quantity_price_breaks_configured}}
       <div class="price__regular body2">
-        <span class="fw-bold price-item price-item--regular {{#unless block.settings.font_size_flexible}}{{block.settings.sale_font_size}}{{/unless}}">{{ money_with_currency product.price_min }} - {{ money_with_currency product.price_max }}</span>
+        <span class="fw-bold price-item price-item--regular {{#unless block.settings.font_size_flexible}}{{block.settings.sale_font_size}}{{/unless}}">{{ money product.price_min }} - {{ money product.price_max }}</span>
       </div>
     {{else}}
       {{#if compare_at_price > price}}
         <div class="price__sale {{block.settings.show_order}}">
           <span class="body2 price-position-sale">
-            <span class="{{sale_font_bold}} price-item price-item--sale {{#unless block.settings.font_size_flexible}}{{block.settings.sale_font_size}}{{/unless}}">
+            <span class="fw-bold {{sale_font_bold}} price-item price-item--sale {{#unless block.settings.font_size_flexible}}{{block.settings.sale_font_size}}{{/unless}}">
               {{#if show_from}}
                 {{{t "products.product_list.from_price_html" price=money_price}}}
               {{else}}
@@ -69,8 +69,8 @@
             </span>
           </span>
           {{#if show_origin}}
-            <span class="body5 price-position-origin">
-              <span class="fw-bold price-item--regular {{#unless block.settings.font_size_flexible}}{{block.settings.regular_font_size}}{{/unless}}">{{money_with_currency compare_at_price}}</span>
+            <span class="body3 price-position-origin">
+              <span class="price-item--regular {{#unless block.settings.font_size_flexible}}{{block.settings.regular_font_size}}{{/unless}}">{{money compare_at_price}}</span>
             </span>
           {{/if}}
           {{#if show_save}}
@@ -85,7 +85,7 @@
                 style="--save-button-radius: {{save_radius}}px" class="price-item--save price-item--save-{{save_style}} {{#unless block.settings.font_size_flexible}}{{block.settings.save_font_size}}{{/unless}}"
               >
                 {{#if discount_style == "number"}}
-                Save {{money_with_currency save_price}}
+                Save {{money save_price}}
                 {{else}}
                 {{save_ratio}}%OFF
                 {{/if}}

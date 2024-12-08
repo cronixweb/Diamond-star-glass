@@ -24,7 +24,7 @@
 
 <div class="top-trending-products page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
   {{#if section.settings.heading-product-list }}
-    <h2>{{{ section.settings.heading-product-list }}}</h2>
+    <h2 class="title4">{{{ section.settings.heading-product-list }}}</h2>
   {{/if}}
 
   <div class="splide product-list__slider-{{section.id}}">
@@ -63,18 +63,18 @@ document.addEventListener( 'DOMContentLoaded', function () {
     perMove: 1,
     arrows: true,
     breakpoints: {
-      1024: {
+      1400: {
         perPage: 3,
         gap    : '1rem',
       },
-      640: {
+      990: {
         perPage: 2,
         gap    : '1rem',
       },
-      480: {
+      750: {
         perPage: 1,
         gap    : '1rem',
-      },
+      }
     },
   } );
   // Add the progress bar element
@@ -92,7 +92,7 @@ splide.mount();
 
 {{#schema }}
 {
-  "name": "Recommended Product Custom",
+  "name": "Recommended Product Slider",
   "class": "section",
   "settings": [
     {

@@ -587,6 +587,13 @@
     }
   },
   "general": {
+    "card":{
+      "shopnow":"Shop now"
+    },
+    "pagination":{
+      "prev":"Previous",
+      "next":"Next"
+    },
     "404": {
       "subtext": "The page you were looking for does not exist.",
       "title": "404 page not found"

@@ -21,6 +21,7 @@
         "products_per_page": 16,
         "columns_desktop": 4,
         "columns_mobile": 2,
+        "pagination_style": "normal",
         "enable_infinite_scroll": false,
         "product_image_ratio": "100",
         "image_fill_type": "cover",

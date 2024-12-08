@@ -192,7 +192,7 @@
   }
 
   .rich-text__heading {
-    font-size: var(--body9-font-size);
+    font-size: var(--body8-max-font-size);
   }
 
   .rich-text__text {

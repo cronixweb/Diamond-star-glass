@@ -8,6 +8,7 @@
 }
 .image-text-section__image{
   flex-basis: 60%;
+  line-height: 0;
 }
 
 .image-text-section__image img {

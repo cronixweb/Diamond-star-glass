@@ -424,9 +424,10 @@
           show_from=(if is_multi_variant and price_show_type == "from_lowest_price")
           show_range=(if is_multi_variant and price_show_type == "price_interval")
           show_origin=show_origin_price
+          use_variant=true
         }}
         <div class="inner-content-btn">
-          <span class="shop-now-button">Shop Now</span>
+          <span class="shop-now-button">{{ t "general.card.shopnow"}}</span>
           {{snippet "icon-right-arrow" }}
         </div>
       </div>

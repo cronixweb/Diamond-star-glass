@@ -130,7 +130,15 @@
 .has-collection-image .similar-category-group{
   margin-top: 40px;
 }
+.banner-categories .similar-category-group{
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
 @media (min-width: 960px) {
+  .banner-categories .similar-category-group{
+    flex-wrap: wrap;
+    overflow-x: unset;
+  }
   #shopline-section-main-collection-product-list .section-padding{
     padding-top: 109px;
     padding-bottom: 124px;

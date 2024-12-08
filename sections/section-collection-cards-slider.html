@@ -1,5 +1,5 @@
 <!-- Stylesheets and script -->
-{{snippet "stylesheet" href=(asset_url "section-collection-list-custom.css")}}
+{{snippet "stylesheet" href=(asset_url "section-collection-cards-slider.css")}}
 {{snippet "stylesheet" href=(asset_url "splide-custom.css")}}
 {{snippet "stylesheet" href=(asset_url "lib-splide.min.css")}}
 <script src="{{asset_url 'lib-splide.min.js'}}" defer></script>
@@ -14,10 +14,10 @@
 <div class="collection-list-section page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
   <div class="collection-list-section__header">
     {{#if section.settings.section_title}}
-      <h2>{{{ section.settings.section_title }}}</h2>
+      <h2 class="title4">{{{ section.settings.section_title }}}</h2>
     {{/if}}
     {{#if section.settings.section_subtitle}}
-      <p>{{{ section.settings.section_subtitle }}}</p>
+      <p class="body6">{{{ section.settings.section_subtitle }}}</p>
     {{/if}}
   </div>
 
@@ -31,7 +31,7 @@
               {{#for block.settings as |product_categories|}}
                 <a href="{{ product_categories.url }}">
                   {{snippet "image" data=product_categories.featured_image }}
-                  <h3>{{ product_categories.title }}</h3>
+                  <h3 class="body6">{{ product_categories.title }}</h3>
                 </a>
               {{/for}}
             </li>
@@ -58,11 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
     perMove: 1,
     autoplay: false,
     pagination: false,
-   
     arrows:{{#if section.settings.collection-arrows}}true{{else}}false{{/if}},
     gap: '29px',
     breakpoints: {
-      1301: {
+      1500: {
         perPage: 4,
         gap: '29px',
       },
@@ -70,15 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 3,
         gap: '29px',
       },
-      1024: {
-        perPage: 3,
-        gap: '29px',
-      },
-      1023: {
-        perPage: 2,
-        gap: '29px',
-      },
-      640: {
+      767: {
         perPage: 1,
         gap: '16px',
       }
@@ -99,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 {{#schema}}
 {
-  "name": "Collection List Custom",
+  "name": "Collection List Cards",
   "class": "section",
   "settings": [
     {

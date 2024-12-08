@@ -7,19 +7,22 @@
   padding_bottom=section.settings.padding_bottom
 }}
 <style>
-  .section-rich-text .section-rich-text__content{
-    background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.mb_background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat;
-    
-  }
-  @media screen and (min-width: 960px) {
+  {{#if section.settings.ds_background_pattern }}
     .section-rich-text .section-rich-text__content{
-    background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.ds_background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat; 
-  }
-  }
+      background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.mb_background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat;
+    }
+  {{/if}}
+  {{#if section.settings.ds_background_pattern}}
+    @media screen and (min-width: 960px) {
+      .section-rich-text .section-rich-text__content{
+        background: linear-gradient(270deg, rgba(243, 240, 234, 0.00) 0%, #E6E3DC 56.09%), url('{{section.settings.ds_background_pattern}}') lightgray 0px -48.5px / 100% 137.308% no-repeat; 
+      }
+    }
+  {{/if}}
 </style>
 
-<div class="section-rich-text page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
-  <div class="section-rich-text__content">
+<div class="test section-rich-text page-width section-padding">
+  <div class="section-rich-text__content color-scheme-{{section.settings.color_scheme}}">
     {{#for section.blocks as |block|}}
 
       {{#if (trim block.type) == "richtext"}}
@@ -46,7 +49,7 @@
 
 {{#schema}}
 {
-  "name": "Rich Text",
+  "name": "Rich Text with gradient images",
   "class": "section", 
   "settings": [
     {

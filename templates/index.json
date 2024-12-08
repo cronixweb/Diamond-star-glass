@@ -73,10 +73,11 @@
       "disabled": false,
       "type": "section-rich-text-custom",
       "settings": {
+        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg",
+        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
         "color_scheme": "none",
         "padding_top": 60,
-        "padding_bottom": 60,
-        "background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
+        "padding_bottom": 60
       },
       "blocks": {
         "17321789322925ea0413": {
@@ -141,7 +142,7 @@
       "custom_css": []
     },
     "17321803840959e6e8b6": {
-      "disabled": false,
+      "disabled": true,
       "type": "section-image-with-text-custom",
       "settings": {
         "section_image": "shopline://shop_images/iwt.png",
@@ -157,9 +158,58 @@
       "block_order": [],
       "custom_css": []
     },
+    "1733673220654919ccad": {
+      "disabled": false,
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopline://shop_images/banner.jpg",
+        "image_height": "auto",
+        "pc_image_width": "large",
+        "pc_image_position": "left",
+        "pc_box_align": "middle",
+        "pc_text_align": "center",
+        "image_overlap_display": false,
+        "color_scheme": "1",
+        "mobile_text_align": "center",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1733673220654d226840": {
+          "type": "title",
+          "settings": {
+            "title": "Custom Design",
+            "title_size": "title5"
+          },
+          "blockId": "1733673220654d226840"
+        },
+        "1733673220654daa273b": {
+          "type": "content",
+          "settings": {
+            "content": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque. Eget massa feugiat vitae donec eu nunc etiam. Tellus nunc ultricies lorem id etiam a ullamcorper mattis. Risus at proin placerat ipsum cras eu nam sapien."
+          },
+          "blockId": "1733673220654daa273b"
+        },
+        "17336732206548259f99": {
+          "type": "button",
+          "settings": {
+            "button_text": "Explore more",
+            "link": "",
+            "button_type":"link"
+          },
+          "blockId": "17336732206548259f99"
+        }
+      },
+      "block_order": [
+        "1733673220654d226840",
+        "1733673220654daa273b",
+        "17336732206548259f99"
+      ],
+      "custom_css": []
+    },
     "17321804744621df169f": {
       "disabled": false,
-      "type": "section-recommended-product-custom",
+      "type": "section-recommended-product-slider",
       "settings": {
         "heading-product-list": "Top Trending Products",
         "color_scheme": "none",
@@ -231,7 +281,7 @@
       "type": "image-banner",
       "settings": {
         "banner1": "shopline://shop_images/Frame 1000002456 (2).jpg",
-        "banner2": "",
+        "mb-banner": "shopline://shop_images/Frame 1000002456 (1)_6753479818308655126.jpg",
         "banner_height_size": "high",
         "override_banner_height": false,
         "pc_content_position": "left",
@@ -253,14 +303,15 @@
           "type": "title",
           "settings": {
             "title": "25+ Years of Craftsmanship and Design Expertise.",
-            "title_size": "custom--title"
+            "title_size": "title2"
           },
           "blockId": "17325437940219eec0bd"
         },
         "17325437940213ebde67": {
           "type": "desc",
           "settings": {
-            "description": "Discover custom beach essentials that blend style, comfort, and functionality—curated to create your perfect beachside retreat."
+            "description": "Discover custom beach essentials that blend style, comfort, and functionality—curated to create your perfect beachside retreat.",
+            "text_size" : "body9"
           },
           "blockId": "17325437940213ebde67"
         },
@@ -311,7 +362,7 @@
           "type": "title",
           "settings": {
             "title": "Candleholders",
-            "title_size": "custom--title"
+            "title_size": "title3"
           },
           "blockId": "1732544033019b70e437"
         },
@@ -362,7 +413,7 @@
         "width_style": false,
         "width_style_padding": true,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 120
       },
       "blocks": {
         "1732544206146cf0281c": {
@@ -402,7 +453,7 @@
     },
     "17325444134397d214eb": {
       "disabled": false,
-      "type": "section-collection-list-custom",
+      "type": "section-collection-cards-slider",
       "settings": {
         "section_title": "Our Product Categories",
         "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
@@ -493,7 +544,7 @@
     },
     "1732544616088988745b": {
       "disabled": false,
-      "type": "section-collection-list-custom",
+      "type": "section-collection-cards-slider",
       "settings": {
         "section_title": "Shop by Style",
         "section_subtitle": "",
@@ -625,6 +676,7 @@
     "1732544616088988745b",
     "1732544727807d96b034",
     "17321803840959e6e8b6",
+    "1733673220654919ccad",
     "17321804744621df169f",
     "1732180510845b0d2ea5"
   ]
