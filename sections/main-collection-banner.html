@@ -125,6 +125,9 @@
               {{{collection.description}}}
             </div>
           {{/if}}
+          {{#if section.settings.btn_collection_text}}
+            <a href="{{section.settings.btn_collection_url}}" class="button button-primary">{{section.settings.btn_collection_text}}</a>
+          {{/if}}
         </div>
         <div class="banner-categories">
           {{#if collection.metafields.my_fields.similar_categories.value}}
@@ -162,6 +165,16 @@
       "id": "show_collection_name",
       "label": "t:sections.main-collection-banner.settings.show_collection_name.label",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "btn_collection_text",
+      "label": "t:sections.main-collection-banner.settings.btn_collection_text.label"
+    },
+    {
+      "type": "url",
+      "id": "btn_collection_url",
+      "label": "t:sections.main-collection-banner.settings.btn_collection_url.label"
     },
     {
       "type": "switch",

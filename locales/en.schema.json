@@ -3275,6 +3275,12 @@
         "show_collection_name": {
           "label": "Display collection name"
         },
+        "btn_collection_text": {
+          "label": "Button Text"
+        },
+        "btn_collection_url": {
+          "label": "Button Url"
+        },
         "show_collection_cover": {
           "label": "Display collection image",
           "info": "To add collection images, go to the product collection management page. [Add now](/admin/categories)"

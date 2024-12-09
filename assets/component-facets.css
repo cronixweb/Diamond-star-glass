@@ -752,3 +752,55 @@ a.facets__reset:hover {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+.facets__disclosure {
+  margin-right: 12px;
+}
+
+.facets__form details[open] .facets__summary span {
+  text-decoration: none;
+}
+
+.facets__summary > div {
+  justify-content: space-between;
+  border-radius: 30px;
+  border: 1px solid var(--collection-filter-border);
+  background: var(--color-white);
+  padding: 10px 16px;
+  width: 182px;
+  height: 46px;
+}
+
+.facets__summary span {
+  padding-right: 0;
+  color: var(--collection-filter-caption);
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__heading {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__summary span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__footer .mobile-facets__count {
+  display: none;
+}
+
+.product-count {
+  display: none;
+}
+
+.mobile-facets__footer .button {
+  width: 100%;
+  word-break: unset;
+}
