@@ -102,10 +102,10 @@
 
 /* Custom styles for collection banner */
 .collection-hero__no-cover{
-  padding-top: 30px;
+  padding-top: 16px;
 }
 .collection-hero__no-cover .collection-banner-content{
-  margin-top: 26px;
+  margin-top: 36px;
 }
 .similar-category-group img{
   width: 100%;
@@ -129,7 +129,6 @@
 .collection-banner-content .banner-categories,
 .has-collection-image .similar-category-group{
   margin-top: 48px;
-  margin-bottom: 48px;
 }
 .banner-categories .similar-category-group{
   flex-wrap: nowrap;
@@ -154,6 +153,15 @@
   margin-top: 8px;
 }
 
+.similar-category-group {
+  padding-bottom: 48px;
+}
+
+@media screen and (max-width: 959px) {
+  .grid-cols-2-tablet > * {
+    width: 45%;
+  }
+}
 @media (min-width: 960px) {
   .banner-categories .similar-category-group{
     flex-wrap: wrap;
@@ -185,7 +193,7 @@
   }
 
   .collection-hero__no-cover .collection-banner-content{
-    margin-top: 31px;
+    margin-top: 41px;
   }
 
   .collection-hero__title {
@@ -195,6 +203,11 @@
 
   .collection-hero__description {
     font-size: 20px;
+    max-width: 86%;
+  }
+
+  .collection-hero__no-cover{
+    padding-top: 30px;
   }
 }
 @media (min-width: 1440px) {

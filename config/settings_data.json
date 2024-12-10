@@ -141,7 +141,7 @@
       "swatch_show_style": "tiling",
       "product_discount_style": "number",
       "product_discount_size": "medium",
-      "product_discount_position": "left_bottom",
+      "product_discount_position": "right_top",
       "product_discount_radius": 4,
       "product_add_to_cart": true,
       "enable_quick_view": false,
@@ -187,7 +187,8 @@
       "co_type_body_font": {
         "lib": "system",
         "value": "System"
-      }
+      },
+      "swatch_size": 18
     },
     "sections": {
       "announcement-bar": {
