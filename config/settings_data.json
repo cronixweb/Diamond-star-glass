@@ -39,8 +39,8 @@
       "color_scheme_1_text": "#121212",
       "color_scheme_2_bg": "#FFF",
       "color_scheme_2_text": "#000",
-      "color_scheme_3_bg": "#F4F7FB",
-      "color_scheme_3_text": "#000000",
+      "color_scheme_3_bg": "#fafafa",
+      "color_scheme_3_text": "#121212",
       "title_font_family": "Jost:500",
       "title_letter_spacing": 0,
       "title_font_size": 30,
@@ -187,7 +187,9 @@
       "co_type_body_font": {
         "lib": "system",
         "value": "System"
-      }
+      },
+      "show_pc_breadcrumb": false,
+      "show_mobile_breadcrumb": false
     },
     "sections": {
       "announcement-bar": {

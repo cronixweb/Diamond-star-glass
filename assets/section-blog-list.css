@@ -175,6 +175,11 @@
   row-gap: 40px;
 }
 
+.blog-caption__date a,
+.blog-caption__author a {
+  color: var(--color-grey-caption);
+}
+
 @media screen and (min-width: 960px) {
   .blogslist__list--grid .blogslist__item:first-child .simple-blog__title{
     font-size: var(--body8-font-size);
