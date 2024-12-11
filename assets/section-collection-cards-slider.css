@@ -45,3 +45,9 @@
     letter-spacing: 0.48px;
   }
 }
+
+@media screen and (max-width: 959px) {
+  .collection-list-section__header p {
+    font-size: var(--body5-font-size);
+  }
+}

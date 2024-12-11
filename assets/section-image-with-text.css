@@ -247,9 +247,11 @@ input {
   display: inline-flex;
   align-items: center;
   margin-top: 24px;
+  line-height: 1.4;
 }
 .image-with-text__content{
   margin-top: 12px;
+  line-height: 1.4;
 }
 .image-with-text__title{
   margin-bottom: 12px!important;
@@ -259,7 +261,12 @@ input {
     padding: 48px 24px;
   }
   .image-with-text__content{
-    font-size: var(--body5-font-size);
+    font-size: var(--body4-font-size);
+    font-weight: 400;
+  }
+  .image-with-text__title {
+    font-size: var(--body8-font-size);
+    font-weight: 700;
   }
 }
 @media screen and (min-width: 1440px) {
