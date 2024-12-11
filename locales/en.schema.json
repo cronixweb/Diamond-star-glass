@@ -4528,6 +4528,9 @@
               },
               "options__3": {
                 "label": "Underlined"
+              },
+              "options__4": {
+                "label": "Custom"
               }
             }
           }
@@ -5304,6 +5307,9 @@
       "settings": {
         "title": {
           "label": "Title"
+        },
+        "text_align": {
+          "label": "Title align"
         },
         "title_size": {
           "label": "Heading size",
