@@ -133,6 +133,8 @@
 .banner-categories .similar-category-group{
   flex-wrap: nowrap;
   overflow-x: scroll;
+  margin-left:0;
+  margin-right:0;
 }
 
 .collection-hero__title {
@@ -156,16 +158,29 @@
 .similar-category-group {
   padding-bottom: 48px;
 }
-
-@media screen and (max-width: 959px) {
-  .grid-cols-2-tablet > * {
-    width: 45%;
-  }
+/* width */
+.similar-category-group::-webkit-scrollbar {
+  height: 8px;
 }
+
+/* Track */
+.similar-category-group::-webkit-scrollbar-track {
+  border-radius: 34px;
+  background-color: var(--color-grey-border-light);
+}
+ 
+/* Handle */
+.similar-category-group::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-color); 
+  border-radius: 35px;
+}
+
 @media (min-width: 960px) {
   .banner-categories .similar-category-group{
     flex-wrap: wrap;
     overflow-x: unset;
+    margin-left: calc(var(--grid-horizontal-space) * -0.5);
+    margin-right: calc(var(--grid-horizontal-space) * -0.5);
   }
   #shopline-section-main-collection-product-list .section-padding{
     padding-top: 109px;
@@ -217,5 +232,15 @@
   .similar-category-group .collection-title{
     font-size: var(--body5-font-size);
     margin-top: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .collection-hero .banner-categories{
+    margin-right: -16px;
+  }
+  .collection-hero .banner-categories .grid_item{
+    padding-left: 0;
+    padding-right: 16px;
+    width: 160px;
   }
 }

@@ -2357,5 +2357,17 @@
         "default": ""
       }
     ]
+  },
+  {
+    "name": "t:settings_schema.template_colors.name",
+    "settings": [
+      {
+        "id": "collection_color",
+        "type": "color",
+        "label": "t:settings_schema.template_colors.settings.collection_color.label",
+        "info": "t:settings_schema.template_colors.settings.collection_color.info",
+        "default": "#FFFFFF"
+      }
+    ]
   }
 ]

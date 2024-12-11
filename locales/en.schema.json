@@ -3440,6 +3440,9 @@
         "enable_filtering": {
           "label": "Turn on filtering"
         },
+        "enable_product_count": {
+          "label": "Enable product count"
+        },
         "filter_type": {
           "label": "Filter layout",
           "options__0": {
@@ -7491,6 +7494,15 @@
         "favicon_image": {
           "label": "Site icon",
           "info": "Size: 32 x 32 px"
+        }
+      }
+    },
+    "template_colors": {
+      "name": "Template color",
+      "settings": {
+        "collection_color": {
+          "label": "Collection template background",
+          "info": "Set backgrround color to collection template"
         }
       }
     }

@@ -258,9 +258,6 @@ input {
   .image-with-text__info{
     padding: 48px 24px;
   }
-  .image-with-text__content{
-    font-size: var(--body5-font-size);
-  }
 }
 @media screen and (min-width: 1440px) {
   .image-with-text.img-w-large .image-with-text__info-wrap{

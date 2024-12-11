@@ -754,6 +754,13 @@ a.facets__reset:hover {
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* Custom Styles */
+
+.facets__form.without-product-count {
+  grid-template-columns: 1fr max-content;
+}
+.facets__form .filter-title{
+  margin-right: 12px;
+}
 .facets__disclosure {
   margin-right: 12px;
 }
@@ -768,7 +775,7 @@ a.facets__reset:hover {
   border: 1px solid var(--collection-filter-border);
   background: var(--color-white);
   padding: 10px 16px;
-  width: 200px;
+  width: 180px;
   align-items: center;
 }
 
@@ -797,10 +804,6 @@ a.facets__reset:hover {
 }
 
 .mobile-facets__footer .mobile-facets__count {
-  display: none;
-}
-
-.product-count {
   display: none;
 }
 
@@ -839,4 +842,7 @@ span.mobile-facets__open  {
 
 .product-list-container {
   padding-top: 0;
+}
+.main-collection-container:not(.facets-vertical) .facets-wrapper{
+  background-color: rgba(var(--collection-page-background)) ;
 }
