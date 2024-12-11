@@ -764,6 +764,7 @@
       "collection": "Collections"
     },
     "facets": {
+      "filter":"Filters:",
       "in_stock_only": "Show only in-stock items",
       "clear": "Clear",
       "clear_all_filter": "Clear all",
