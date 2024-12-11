@@ -81,7 +81,9 @@
       <script src="{{asset_url 'component-product-photo-swipe.js'}}" defer="defer"></script>
     {{/if}}
   {{/if}}
-
+  <div class="main-product__breadcrumb">
+    {{snippet "breadcrumb" class="text-left"}}
+  </div>
   <main-product-detail
     class="product grid grid-cols-1 grid-cols-2-desktop product--left
       product--{{section.settings.product_image_pc_show_style}}
@@ -118,7 +120,7 @@
           {{#if section.settings.product_info_sticky}}product__column-sticky{{/if}}
           mobile-text-align--{{section.settings.product_mobile_text_align}}"
       >
-        {{snippet "breadcrumb" class="text-left"}}
+        {{#comment}} {{snippet "breadcrumb" class="text-left"}} {{/comment}}
         {{#for section.blocks as |block|}}
           {{#startsWith "shopline://apps" block.type}}
             {{render block}}
@@ -135,7 +137,7 @@
               >
                 <summary id="Summary-{{block.id}}-{{section.id}}">
                   {{snippet "icon-select" icon=block.settings.icon}}
-                  <h3 class="accordion__title body2 fw-bold">
+                  <h3 class="accordion__title body5 fw-bold">
                     {{block.settings.title}}
                   </h3>
                   {{snippet "icon-arrow"}}
@@ -160,7 +162,7 @@
                 {{#unless block.settings.fold}}open{{/unless}}
               >
                 <summary id="Summary-{{block.id}}-{{section.id}}">
-                  <h3 class="accordion__title body2 fw-bold">
+                  <h3 class="accordion__title body5 fw-bold">
                     {{block.settings.title}}
                   </h3>
                   {{snippet "icon-arrow"}}
@@ -181,7 +183,7 @@
                 {{block.settings.layout_direction}}"
               {{{block.shopline_attributes}}}
             >
-              <div class="quantity-input-label body3 fw-bold">
+              <div class="quantity-input-label body5 fw-bold">
                 {{t "order.order_details.products.quantity"}}
               </div>
               {{snippet
@@ -361,7 +363,7 @@
           {{else if block.type == "dividing_line"}}
             <div
               {{{block.shopline_attributes}}}
-              class="product__info-item product__dividing-line display-none m-12
+              class="product__info-item product__dividing-line display-none
                 {{#if block.settings.show_pc_line}}display-block-desktop{{/if}}
                 {{#if block.settings.show_mobile_line}}display-block-tablet{{/if}}"
               style="
@@ -376,7 +378,8 @@
                 {{#if block.settings.text_style == 'body'}}body3{{/if}}
                 {{#if block.settings.text_style == 'subtitle'}}body2{{/if}}
                 {{#if block.settings.text_style == 'uppercase'}}body3 text-uppercase{{/if}}
-                {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}"
+                {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}
+                {{#if block.settings.text_style == 'custom'}}text-style_custom{{/if}}"
               {{{block.shopline_attributes}}}
             >
               {{{block.settings.text}}}
@@ -1989,6 +1992,10 @@
             {
               "value": "underline",
               "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            },
+            {
+              "value": "custom",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__4.label"
             }
           ],
           "default": "uppercase"

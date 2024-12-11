@@ -437,7 +437,7 @@
     .product__thumbnail-slider-group.product__thumbnail--beside {
     position: relative;
 
-    --thumbnail-image-width: 114px;
+    --thumbnail-image-width: 144px;
   }
   .product--thumbnail_flatten
     .product__thumbnail-slider-group.product__thumbnail--beside.product__thumbnail--medium,
@@ -762,3 +762,22 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+.thumbnail-slider .thumbnail-list.thumbnail-list-grid {
+  column-gap: 8px;
+  row-gap: 16px;
+}
+
+@media screen and (max-width: 959px) {
+  .product__media-wrapper .thumbnail-slider .thumbnail-list.slider {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .product--thumbnail_flatten .product__thumbnail-slider-group.product__thumbnail--beside .thumbnail-preview, 
+  .product--carousel .product__thumbnail-slider-group.product__thumbnail--beside .thumbnail-preview {
+    margin-left: calc(var(--thumbnail-image-width) + 32px);
+  }
+}

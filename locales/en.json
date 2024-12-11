@@ -711,7 +711,7 @@
       "adjust": "Rounding",
       "products": {
         "price": "Price",
-        "quantity": "Quantity"
+        "quantity": "Qty:"
       },
       "tax_included": "Including {{price}} in taxes"
     },

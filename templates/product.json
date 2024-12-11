@@ -1,56 +1,70 @@
 {
   "sections": {
     "main-product-info": {
+      "disabled": false,
       "type": "main-product",
       "settings": {
         "product_info_sticky": true,
         "product_image_pc_show_style": "thumbnail_flatten",
-        "product_image_pc_thumbnail_postion": "bottom",
         "product_image_size": "large",
-        "product_mobile_thumbnail_image_size": "medium",
-        "product_thumbnail_image_size": "medium",
-        "product_mobile_thumbnail_image_hide": "show",
-        "pc_magnifier_type": "click",
-        "video_loop": false,
-        "default_selected_variant": true,
-        "hide_variants": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
         "product_image_fill_type": "contain",
         "product_image_ratio": "original",
+        "image_quality": "80",
+        "product_image_pc_thumbnail_postion": "beside",
+        "product_thumbnail_image_size": "large",
+        "video_loop": false,
+        "video_autoplay": false,
+        "youtube_simple_style": false,
+        "pc_magnifier_type": "click",
+        "magnifier_interactive_type": "mode_1",
+        "default_selected_variant": true,
+        "hide_variants": false,
+        "product_mobile_text_align": "left",
+        "product_mobile_thumbnail_image_hide": "show",
         "product_mobile_image_fill_type": "contain",
-        "product_mobile_image_ratio": "original"
+        "product_mobile_image_ratio": "original",
+        "product_mobile_thumbnail_image_size": "medium",
+        "product_mobile_image_switch_style": "number",
+        "product_mobile_image_switch_position": "bottom",
+        "padding_top": 30,
+        "padding_bottom": 94
       },
       "blocks": {
         "block_1": {
           "type": "title",
           "settings": {
-            "title_pc_font_size": 20,
-            "title_mobile_font_size": 20
+            "title_pc_font_size": 32,
+            "title_mobile_font_size": 24
           }
         },
         "block_2": {
           "type": "price",
           "settings": {
-            "show_order": "save_sale_origin",
-            "sale_font_size": "font_size_small",
-            "regular_font_size": "font_size_small",
-            "sale_font_bold": true,
-            "font_size_flexible": false,
-            "sale_price_pc_font_size": 20,
-            "sale_price_mobile_font_size": 18,
-            "regular_price_pc_font_size": 20,
-            "regular_price_mobile_font_size": 16,
+            "show_order": "sale_origin",
+            "sale_font_size": "font_size_huge",
+            "regular_font_size": "font_size_big",
+            "save_font_size": "font_size_small",
+            "discount_style": "number",
             "save_style": "text",
             "save_radius": 4,
-            "discount_style": "number"
+            "font_size_flexible": true,
+            "sale_price_pc_font_size": 24,
+            "sale_price_mobile_font_size": 20,
+            "regular_price_pc_font_size": 20,
+            "regular_price_mobile_font_size": 18,
+            "save_price_pc_font_size": 20,
+            "save_price_mobile_font_size": 16,
+            "sale_font_bold": true
           }
         },
         "block_3": {
           "type": "dividing_line",
           "settings": {
-            "dividing_line_color": "#000000",
+            "show_pc_line": true,
+            "show_mobile_line": true,
+            "dividing_line_color": "#b3b7bc",
             "desktop_dividing_line_height": 1,
+            "dividing_line_style": "0",
             "dividing_line_height": 1
           }
         },
@@ -58,64 +72,50 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "flatten",
-            "enabled_color_swatch": true,
-            "color_swatch_type": "square",
             "sizes": "medium",
-            "layout_direction": "row"
+            "layout_direction": "column",
+            "enabled_color_swatch": true,
+            "color_swatch_type": "square"
           }
         },
         "block_5": {
           "type": "quantity_selector",
-          "settings": {}
+          "settings": {
+            "width": "half",
+            "layout_direction": "row",
+            "border_style": "outline"
+          }
         },
         "block_6": {
           "type": "buy_buttons",
           "settings": {
             "button_layout": "embed"
-          }
+          },
+          "disabled": false
         },
-        "block_7": {
-          "type": "description",
+        "17338922505076cc704c": {
+          "type": "text",
           "settings": {
-            "location": "image_right",
-            "is_fold": false
+            "text": "<a id=\"17338923787202\" href=\"/pages/shipping-policy\" target=\"_self\" data-link=\"{&quot;pageType&quot;:3,&quot;value&quot;:&quot;shipping-policy&quot;,&quot;linkType&quot;:&quot;select&quot;,&quot;label&quot;:&quot;Shipping Policy&quot;}\">Discover exclusive rates for B2B members</a><br>Already a partner? <a id=\"17338923253191\" href=\"/user/center\" target=\"_self\" data-link=\"{&quot;pageType&quot;:13,&quot;value&quot;:&quot;user/center&quot;,&quot;linkType&quot;:&quot;select&quot;,&quot;label&quot;:&quot;Account page&quot;}\">Log into your account</a>",
+            "text_style": "custom"
           }
         },
-        "block_8": {
+        "173389239269469cab0c": {
+          "type": "description_accordion",
+          "settings": {
+            "title": "Description",
+            "fold": false
+          }
+        },
+        "1733892415259a2ed5f0": {
           "type": "product_additional",
           "settings": {
-            "title": "Example title",
-            "description": "",
-            "enabled_fold": true
+            "title": "Details",
+            "icon": "none",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+            "enabled_fold": true,
+            "custom_page": ""
           }
-        },
-        "block_9": {
-          "type": "product_additional",
-          "settings": {
-            "title": "Example title",
-            "description": "",
-            "enabled_fold": true
-          }
-        },
-        "block_10": {
-          "type": "product_additional",
-          "settings": {
-            "title": "Example title",
-            "description": "",
-            "enabled_fold": true
-          }
-        },
-        "block_11": {
-          "type": "product_additional",
-          "settings": {
-            "title": "Example title",
-            "description": "",
-            "enabled_fold": true
-          }
-        },
-        "block_12": {
-          "type": "share",
-          "settings": {}
         }
       },
       "block_order": [
@@ -125,30 +125,86 @@
         "block_4",
         "block_5",
         "block_6",
-        "block_7",
-        "block_8",
-        "block_9",
-        "block_10",
-        "block_11",
-        "block_12"
-      ]
+        "17338922505076cc704c",
+        "173389239269469cab0c",
+        "1733892415259a2ed5f0"
+      ],
+      "custom_css": []
     },
     "product-recommendations": {
+      "disabled": false,
       "type": "product-recommendations",
       "settings": {
-        "show_product_number": 6,
-        "pc_cols": 4,
-        "md_cols": 2,
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "product_image_ratio": "150",
-        "product_fill_type": "contain",
-        "product_hover_show_next": true,
-        "notice_style": "",
+        "title": "Related Products",
         "title_size": "medium",
-        "enable_horizontal_slider": false
-      }
+        "products_to_show": 8,
+        "pc_cols": 4,
+        "mobile_cols": "1",
+        "enable_horizontal_slider": true,
+        "color_scheme": "none",
+        "product_image_ratio": "adapt",
+        "product_fill_type": "contain",
+        "show_secondary_image": false,
+        "padding_top": 100,
+        "padding_bottom": 60
+      },
+      "blocks": {},
+      "custom_css": []
+    },
+    "1733892710958af0f6f9": {
+      "disabled": false,
+      "type": "section-instagram-feed-custom",
+      "settings": {
+        "heading-instagram-feed": "Follow us @diamondstarglass",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1733892725824f2eaae5": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+          }
+        },
+        "173389273964357338a3": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 10_6769306021962986579.jpg"
+          }
+        },
+        "17338927628757d8656b": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+          }
+        },
+        "17338927729077176793": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 10_6769306021962986579.jpg"
+          }
+        },
+        "17338927596574751f66": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1733892725824f2eaae5",
+        "173389273964357338a3",
+        "17338927628757d8656b",
+        "17338927729077176793",
+        "17338927596574751f66"
+      ],
+      "custom_css": []
     }
   },
-  "order": ["main-product-info", "product-recommendations"]
+  "order": [
+    "main-product-info",
+    "product-recommendations",
+    "1733892710958af0f6f9"
+  ]
 }

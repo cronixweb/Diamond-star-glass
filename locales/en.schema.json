@@ -4534,6 +4534,9 @@
               },
               "options__3": {
                 "label": "Underlined"
+              },
+              "options__4": {
+                "label": "Custom"
               }
             }
           }
@@ -5310,6 +5313,9 @@
       "settings": {
         "title": {
           "label": "Title"
+        },
+        "text_align": {
+          "label": "Title align"
         },
         "title_size": {
           "label": "Heading size",
@@ -7503,6 +7509,10 @@
         "collection_color": {
           "label": "Collection template background",
           "info": "Set backgrround color to collection template"
+        },
+        "product_color": {
+          "label": "Product template background",
+          "info": "Set backgrround color to product template"
         }
       }
     }

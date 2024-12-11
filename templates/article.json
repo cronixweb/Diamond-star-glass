@@ -5,7 +5,9 @@
       "type": "main-article",
       "settings": {
         "show_content": true,
+        "share_text": "Share",
         "show_share": true,
+        "show_share_more": "none",
         "contact_text": "READY TO BECOME A CUSTOMER?",
         "contact_title": "A quick and easy registration gives you access to design-forward wholesale decor, wholesale pricing, product details ordering options, and much more!",
         "contact-button_text": "Contact Now",
@@ -22,7 +24,7 @@
         "block2": {
           "type": "select",
           "settings": {
-            "image_height": "medium"
+            "image_height": "large"
           }
         }
       },
@@ -36,7 +38,7 @@
       "disabled": false,
       "type": "blog",
       "settings": {
-        "title": "<span style=\"font-size: 48px;\">Related Post</span>",
+        "title": "Related Posts",
         "title_align": "left",
         "blog_collection": "6736f2fe469078308ee5922d",
         "limit": 3,
@@ -47,12 +49,12 @@
         "is_show_date": true,
         "is_show_author": true,
         "is_show_cover": true,
-        "image_cover_ratio": "0.75",
+        "image_cover_ratio": "0.5625",
         "is_show_desc": false,
         "btn_text": "",
-        "color_scheme": "none",
-        "padding_top": 8,
-        "padding_bottom": 40
+        "color_scheme": "3",
+        "padding_top": 100,
+        "padding_bottom": 100
       },
       "blocks": {},
       "block_order": [],
@@ -64,47 +66,47 @@
       "settings": {
         "heading-instagram-feed": "Follow us @diamondstarglass",
         "color_scheme": "none",
-        "padding_top": 30,
+        "padding_top": 100,
         "padding_bottom": 60
       },
       "blocks": {
-        "173268746471149527c1": {
+        "1733809932621e2e01de": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+            "instagram-image": "shopline://shop_images/Rectangle 7_6769304565314877445.jpg"
           }
         },
-        "1732687476097c42670e": {
+        "1733809963191ddb7761": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+            "instagram-image": "shopline://shop_images/Rectangle 9.jpg"
           }
         },
-        "1732687490561888a857": {
+        "17338102302228b4cd7d": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+            "instagram-image": "shopline://shop_images/Rectangle 7_6769304565314877445.jpg"
           }
         },
-        "1732687495593321fba2": {
+        "17338102265724d864ee": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9379.jpg"
+            "instagram-image": "shopline://shop_images/Rectangle 9.jpg"
           }
         },
-        "1732687501197736af00": {
+        "173381022340725f412d": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9378.jpg"
+            "instagram-image": "shopline://shop_images/Rectangle 7_6769304565314877445.jpg"
           }
         }
       },
       "block_order": [
-        "173268746471149527c1",
-        "1732687476097c42670e",
-        "1732687490561888a857",
-        "1732687495593321fba2",
-        "1732687501197736af00"
+        "1733809932621e2e01de",
+        "1733809963191ddb7761",
+        "17338102302228b4cd7d",
+        "17338102265724d864ee",
+        "173381022340725f412d"
       ],
       "custom_css": []
     }

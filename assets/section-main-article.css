@@ -234,7 +234,7 @@
 
 .article-template__title {
   font-size: var(--body7-font-size);
-  font-weight: 350;
+  font-weight: 600;
   line-height: 1.3;
   text-transform: capitalize;
   padding-bottom: 24px;
@@ -257,7 +257,7 @@
 
 .article-template__content h2 {
   font-size: var(--body7-max-font-size);
-  font-weight: 350;
+  font-weight: 600;
   line-height: 1.3; 
   margin-top: 32px;
   text-transform: capitalize;
@@ -413,6 +413,11 @@
   display: none;
 }
 
+.blog-caption__date a,
+.blog-caption__author a {
+  color: var(--color-grey-caption);
+}
+
 @media (min-width: 767px) {
   .image_wrapper {
       display: flex;
@@ -433,6 +438,7 @@ p.custom_font {
   font-size: var(--body5-font-size);
   font-weight: 400;
   line-height: 1.4;
+  margin-top: 0;
 }
 
 @media (min-width: 960px) {
@@ -456,12 +462,13 @@ p.custom_font {
 
   .article-template {
     padding-top: 80px;
+    padding-bottom: 120px;
   }
 
   .article-template__title {
     max-width: 80%;
     font-size: var(--body8-font-size);
-    font-weight: 350;
+    font-weight: 600;
     line-height: 1.3;
     text-transform: initial;
     padding-bottom: 32px;
@@ -506,7 +513,7 @@ p.custom_font {
 
   .article-template__content h2 {
     font-size: var(--body7-font-size);
-    font-weight: 350;
+    font-weight: 600;
     line-height: 1.3; 
     text-transform: capitalize;
     margin-top: 64px;
@@ -543,6 +550,7 @@ p.custom_font {
 
   p.custom_font {
     font-size: var(--body5-font-size);
+    margin-top: 0;
   }
 }
 

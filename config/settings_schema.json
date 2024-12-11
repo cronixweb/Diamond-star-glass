@@ -2367,6 +2367,13 @@
         "label": "t:settings_schema.template_colors.settings.collection_color.label",
         "info": "t:settings_schema.template_colors.settings.collection_color.info",
         "default": "#FFFFFF"
+      },
+      {
+        "id": "product_color",
+        "type": "color",
+        "label": "t:settings_schema.template_colors.settings.product_color.label",
+        "info": "t:settings_schema.template_colors.settings.product_color.info",
+        "default": "#FFFFFF"
       }
     ]
   }
