@@ -42,7 +42,7 @@
       {{assign "mobile_enable_horizontal_slider" true}}
     {{/if}}
 
-    <h2 class="title4 title-wrapper text-center product-recommendations-title {{section.settings.title_size}}">
+    <h2 class="title4 title-wrapper product-recommendations-title {{section.settings.title_size}} text-{{section.settings.text_align}}">
       {{title}}
     </h2>
     {{#if (isTruthy recommendations.performed) and recommendations.products_count > 0}}
@@ -102,6 +102,12 @@
       "id": "title",
       "label": "t:sections.product-recommendations.settings.title.label",
       "default": "You may also like"
+    },
+    {
+      "type": "text_align",
+      "id": "text_align",
+      "label": "t:sections.product-recommendations.settings.text_align.label",
+      "default": "left"
     },
     {
       "id": "title_size",

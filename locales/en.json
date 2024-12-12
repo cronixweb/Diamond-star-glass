@@ -711,7 +711,7 @@
       "adjust": "Rounding",
       "products": {
         "price": "Price",
-        "quantity": "Quantity"
+        "quantity": "Qty:"
       },
       "tax_included": "Including {{price}} in taxes"
     },
@@ -764,10 +764,11 @@
       "collection": "Collections"
     },
     "facets": {
+      "filter":"Filters:",
       "in_stock_only": "Show only in-stock items",
       "clear": "Clear",
       "clear_all_filter": "Clear all",
-      "confirm": "Confirm",
+      "confirm": "Apply",
       "filter_and_sort": "Filter and sort",
       "filter_button": "Filter",
       "less_than": "less than",

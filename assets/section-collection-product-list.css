@@ -290,6 +290,9 @@
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* custom styles */
+body[data-template="collection"]{
+  background-color: rgba(var(--collection-page-background)) ;
+}
 @media (max-width: 750px){
   .product-list-content .product-block{
     width: 100%;

@@ -65,10 +65,6 @@
 
 /* detectingScreen need to consider the configuration of the tablet */
 /* custom blog list styles */
-#shopline-section-main-blog-list .section-padding {
-  padding-top: 60px !important;
-}
-
 .grid-col__2.blogslist__list--grid .blogslist__item:first-child {
   grid-column: span 2;
 }
@@ -112,6 +108,7 @@
   color: var(--color-grey-caption);
   font-weight: 600;
   line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .blog-caption__author {
@@ -184,10 +181,6 @@
   .blogslist__list--grid .blogslist__item:first-child .simple-blog__title{
     font-size: var(--body8-font-size);
     margin-bottom: 0;
-  }
-
-  #shopline-section-main-blog-list .section-padding {
-    padding-top: 120px !important;
   }
 
   .rich-text__heading {

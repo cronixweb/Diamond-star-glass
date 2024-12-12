@@ -752,3 +752,97 @@ a.facets__reset:hover {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+
+.facets__form.without-product-count {
+  grid-template-columns: 1fr max-content;
+}
+.facets__form .filter-title{
+  margin-right: 12px;
+}
+.facets__disclosure {
+  margin-right: 12px;
+}
+
+.facets__form details[open] .facets__summary span {
+  text-decoration: none;
+}
+
+.facets__summary  {
+  justify-content: space-between;
+  border-radius: 30px;
+  border: 1px solid var(--collection-filter-border);
+  background: var(--color-white);
+  padding: 10px 16px;
+  width: 180px;
+  align-items: center;
+}
+
+.facets__summary > div {
+  justify-content: space-between;
+}
+
+.facets__summary span {
+  padding-right: 0;
+  color: var(--collection-filter-caption);
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__heading {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__summary span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__footer .mobile-facets__count {
+  display: none;
+}
+
+.mobile-facets__footer .button {
+  width: 100%;
+  word-break: unset;
+}
+
+span.mobile-facets__open  {
+  border-radius: 30px;
+  background: var(--collection-filter-bg);
+  padding: 10px 16px;
+  justify-content: space-between;
+}
+
+.facets-sort-filter__wrapper.has-middle-line::after {
+  content: unset;
+}
+
+.facets-sort-filter__wrapper {
+  border: none;
+}
+
+.product-list-container {
+  padding-top: 40px;
+}
+
+.mobile-facets__clear-wrapper {
+  display: none;
+}
+
+.facets-sort-filter__wrapper .mobile-facets__wrapper .mobile-facets__open {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.product-list-container {
+  padding-top: 0;
+}
+.main-collection-container:not(.facets-vertical) .facets-wrapper{
+  background-color: rgba(var(--collection-page-background)) ;
+}

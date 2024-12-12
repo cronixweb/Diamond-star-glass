@@ -125,6 +125,9 @@
               {{{collection.description}}}
             </div>
           {{/if}}
+          {{#if collection.metafields.my_fields.new_arrivals_link.value }}
+            <a href="{{collection.metafields.my_fields.new_arrivals_link.value}}" class="button button-primary">{{section.settings.btn_collection_text}}</a>
+          {{/if}}
         </div>
         <div class="banner-categories">
           {{#if collection.metafields.my_fields.similar_categories.value}}
@@ -162,6 +165,12 @@
       "id": "show_collection_name",
       "label": "t:sections.main-collection-banner.settings.show_collection_name.label",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "btn_collection_text",
+      "label": "t:sections.main-collection-banner.settings.btn_collection_text.label",
+      "default": "NEW ARRIVALS"
     },
     {
       "type": "switch",
@@ -241,6 +250,7 @@
   "default": {
     "settings": {
       "show_collection_description": true,
+      "btn_collection_text": "NEW ARRIVALS",
       "show_collection_cover": true,
       "pc_collection_img_height": "470",
       "md_collection_img_height": "250",
