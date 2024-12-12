@@ -247,9 +247,11 @@ input {
   display: inline-flex;
   align-items: center;
   margin-top: 24px;
+  line-height: 1.4;
 }
 .image-with-text__content{
   margin-top: 12px;
+  line-height: 1.4;
 }
 .image-with-text__title{
   margin-bottom: 12px!important;

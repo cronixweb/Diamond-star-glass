@@ -66,7 +66,7 @@
     font-size: var(--body3-font-size);
     font-style: normal;
     font-weight: 600;
-    line-height: 1.85;
+    line-height: 1.4;
     text-transform: uppercase;
 }
 .multicolumn-section .splide__pagination.splide__pagination--ltr{
@@ -95,6 +95,11 @@
     height: 417px;
     object-fit: cover;
 }
+
+.multicolumn_content {
+    font-size: var(--body3-font-size);
+}
+
 @media screen and (min-width: 1400px) {
     .splide__list.multimedia-list{
         padding: 64px 92px 51px 92px !important;
@@ -116,6 +121,13 @@
     }
     .multimedia-block h3{
         font-size: var(--body5-font-size);
+    }
+    .multicolumn_content {
+        font-size: var(--body4-font-size);
+    }
+    .multimedia-block a.explore-more {
+        font-size: var(--body4-font-size);
+        font-weight: 400;
     }
 }
 @media screen and (min-width: 1500px) {
