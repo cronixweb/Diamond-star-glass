@@ -348,7 +348,7 @@
   font-size: var(--body6-font-size);
   font-weight: 700;
   line-height: 1.4; 
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .article-template__contact-info {
@@ -501,7 +501,7 @@ p.custom_font {
   }
 
   .article-template__contact-title {
-    margin-top: 20px;
+    margin-top: 36px;
   }
 
   .article-template__contact-info {
