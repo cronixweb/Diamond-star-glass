@@ -304,8 +304,21 @@ input {
   margin-bottom: 21px;
 }
 
+.custom__padding-none {
+  padding: 0;
+  padding-top: 32px;
+}
+
+.custom__padding-low {
+  padding: 32px 16px;
+}
+
+.custom__padding-high {
+  padding: 140px 16px;
+}
+
 @media screen and (max-width: 959px){
-  .image-with-text__info{
+  .image-with-text__info.custom__padding-default{
     padding: 48px 24px;
   }
   .image-with-text__content{
@@ -353,5 +366,19 @@ input {
   
   .image-with-text__sub-title.body_large {
     font-size: var(--body6-font-size);
+    max-width: 600px;
+  }
+
+  .custom__padding-none {
+    padding: 0;
+    padding-left: 80px;
+  }
+
+  .custom__padding-low {
+    padding: 32px 96px;
+  }
+  
+  .custom__padding-high {
+    padding: 140px 120px;
   }
 }

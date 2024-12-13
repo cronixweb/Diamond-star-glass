@@ -136,12 +136,12 @@
           "type": "item",
           "name": "Title",
           "settings": {
-            "image": "shopline://shop_images/Rectangle 2.jpg",
             "title": "",
             "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
             "button_text": "view map",
             "jump_link": "",
-            "description_font_size": "description_custom"
+            "description_font_size": "description_custom",
+            "image": "shopline://shop_images/Rectangle 2.jpg"
           },
           "blockId": "1733991052687f58225d"
         },
@@ -199,17 +199,20 @@
       "disabled": false,
       "type": "image-with-text",
       "settings": {
+        "enable_full_width": false,
+        "image": "shopline://shop_images/Rectangle 9376.jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "left",
+        "reverse_column": "col",
         "pc_box_align": "middle",
         "pc_text_align": "left",
+        "padding": "low",
         "image_overlap_display": false,
         "color_scheme": "1",
         "mobile_text_align": "left",
         "padding_top": 80,
-        "padding_bottom": 34,
-        "image": "shopline://shop_images/Rectangle 9376.jpg"
+        "padding_bottom": 34
       },
       "blocks": {
         "17339993906805ceac24": {
@@ -248,17 +251,20 @@
       "disabled": false,
       "type": "image-with-text",
       "settings": {
+        "enable_full_width": false,
+        "image": "shopline://shop_images/Rectangle 9376 (1).jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "right",
+        "reverse_column": "col",
         "pc_box_align": "middle",
         "pc_text_align": "left",
+        "padding": "low",
         "image_overlap_display": false,
         "color_scheme": "1",
         "mobile_text_align": "left",
         "padding_top": 36,
-        "padding_bottom": 60,
-        "image": "shopline://shop_images/Rectangle 9376 (1).jpg"
+        "padding_bottom": 60
       },
       "blocks": {
         "17339993906805ceac24": {
@@ -297,17 +303,20 @@
       "disabled": false,
       "type": "image-with-text",
       "settings": {
+        "enable_full_width": false,
+        "image": "shopline://shop_images/Rectangle 9377 (6).jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "left",
+        "reverse_column": "col",
         "pc_box_align": "middle",
         "pc_text_align": "left",
+        "padding": "none",
         "image_overlap_display": false,
         "color_scheme": "none",
         "mobile_text_align": "left",
         "padding_top": 60,
-        "padding_bottom": 60,
-        "image": "shopline://shop_images/Rectangle 9377 (6).jpg"
+        "padding_bottom": 60
       },
       "blocks": {
         "1733999650448353befd": {
@@ -404,6 +413,7 @@
       "disabled": false,
       "type": "image-with-text",
       "settings": {
+        "enable_full_width": true,
         "image": "shopline://shop_images/Rectangle 9376 (2).jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
@@ -411,6 +421,7 @@
         "reverse_column": "reverse_col",
         "pc_box_align": "bottom",
         "pc_text_align": "left",
+        "padding": "high",
         "image_overlap_display": false,
         "color_scheme": "2",
         "mobile_text_align": "left",

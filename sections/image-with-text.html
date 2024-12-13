@@ -24,7 +24,7 @@
 {{#if color_scheme != "none" or image_overlap_display}}
   {{assign "ignore_image_height" true}}
 {{/if}}
-<div class="section-padding page-width">
+<div class="section-padding {{#if section.settings.enable_full_width}} {{else}}page-width{{/if}}">
   <div
     class="image-with-text
       image-with-text--align-{{pc_box_align}}
@@ -57,7 +57,8 @@
             class="image-with-text__info
               {{#if (isTruthy image_overlap_display)}}color-scheme-{{color_scheme}} image-with-text__info--overlap-pc-{{pc_image_position}}{{/if}}
               image-with-text__info--align-{{pc_text_align}}
-              image-with-text__info--m-align-{{mobile_text_align}}"
+              image-with-text__info--m-align-{{mobile_text_align}}
+              custom__padding-{{section.settings.padding}}"
           >
             {{#for section.blocks as |block|}}
               {{#startsWith app_block_prefix block.type}}
@@ -111,6 +112,12 @@
   "name": "t:sections.image-with-text.name",
   "class": "section",
   "settings": [
+    {
+      "type": "switch",
+      "id": "enable_full_width",
+      "label": "t:sections.image-with-text.settings.enable_full_width.label",
+      "default": false
+    },
     {
       "id": "image",
       "type": "image_picker",
@@ -231,6 +238,30 @@
       "default": "left"
     },
     {
+      "type": "select",
+      "id": "padding",
+      "label": "t:sections.image-with-text.settings.padding.label",
+      "default": "default",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.image-with-text.settings.padding.options__0.label"
+        },
+        {
+          "value": "default",
+          "label": "t:sections.image-with-text.settings.padding.options__1.label"
+        },
+        {
+          "value": "low",
+          "label": "t:sections.image-with-text.settings.padding.options__2.label"
+        },
+        {
+          "value": "high",
+          "label": "t:sections.image-with-text.settings.padding.options__3.label"
+        }
+      ]
+    },
+    {
       "id": "image_overlap_display",
       "type": "switch",
       "label": "t:sections.image-with-text.settings.image_overlap_display.label",
@@ -315,9 +346,10 @@
       "settings": [
         {
           "id": "text",
-          "type": "text",
+          "type": "textarea",
           "label": "t:sections.image-with-text.blocks.sub_title.settings.text.label",
-          "default": "Improved"
+          "default": "Improved",
+          "limit": 1000
         },
         {
           "id": "text_size",

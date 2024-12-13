@@ -2875,6 +2875,9 @@
     "image-with-text": {
       "name": "Image with text",
       "settings": {
+        "enable_full_width": {
+          "label": "Make full width"
+        },
         "image": {
           "label": "Image"
         },
@@ -2944,6 +2947,21 @@
           },
           "options__2": {
             "label": "Right align"
+          }
+        },
+        "padding": {
+          "label": "Content padding",
+          "options__0": {
+            "label": "None"
+          },
+          "options__1": {
+            "label": "Default"
+          },
+          "options__2": {
+            "label": "Low"
+          },
+          "options__3": {
+            "label": "High"
           }
         },
         "image_overlap_display": {
