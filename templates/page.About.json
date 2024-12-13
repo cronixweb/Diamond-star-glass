@@ -1,0 +1,466 @@
+{
+  "sections": {
+    "main": {
+      "disabled": false,
+      "type": "main-page",
+      "settings": {
+        "text_align": "left",
+        "padding_top": 80,
+        "padding_bottom": 60
+      },
+      "blocks": {},
+      "custom_css": []
+    },
+    "17339901232555f12c89": {
+      "disabled": false,
+      "type": "image-banner",
+      "settings": {
+        "banner_height_size": "high",
+        "override_banner_height": true,
+        "pc_content_position": "center",
+        "pc_text_position": "center",
+        "pc_show_textarea": false,
+        "alpha_range": 0,
+        "color_scheme": "none",
+        "mobile_text_position": "center",
+        "desktop_text_container": "full",
+        "mobile_banner_flatten": false,
+        "m_show_textarea": false,
+        "width_style": true,
+        "gradient_style": false,
+        "padding_top": 0,
+        "padding_bottom": 44,
+        "banner1": "shopline://shop_images/Frame 1000002469 (2).jpg",
+        "mb-banner": "shopline://shop_images/Frame 1000002469 (4).jpg"
+      },
+      "blocks": {},
+      "block_order": [],
+      "custom_css": []
+    },
+    "1733990440123aa1e6a7": {
+      "disabled": false,
+      "type": "section-rich-text-custom",
+      "settings": {
+        "show_box": true,
+        "color_scheme": "none",
+        "padding_top": 40,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "173399044595600da129": {
+          "type": "textarea",
+          "settings": {
+            "subheading": "At Diamond Star, we take pride in being the premier global resource for high-quality glassware designs. Headquartered in Ontario, California, with additional showrooms in Atlanta, Dallas and Las Vegas, we are dedicated to supplying our customers with exceptional glassware at affordable prices."
+          }
+        }
+      },
+      "block_order": [
+        "173399044595600da129"
+      ],
+      "custom_css": []
+    },
+    "17339909882203482e1f": {
+      "disabled": false,
+      "type": "section-instagram-feed-custom",
+      "settings": {
+        "heading-instagram-feed": "Follow us @diamondstarglass",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "173399099207016760b1": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
+          }
+        },
+        "17339910018047ee2184": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+          }
+        },
+        "173399100943715b74b5": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
+          }
+        },
+        "17339910164709f34556": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+          }
+        },
+        "17339910122533b317ba": {
+          "type": "image",
+          "settings": {
+            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "173399099207016760b1",
+        "17339910018047ee2184",
+        "173399100943715b74b5",
+        "17339910164709f34556",
+        "17339910122533b317ba"
+      ],
+      "custom_css": []
+    },
+    "1733991052687987f0e6": {
+      "disabled": false,
+      "type": "text-columns-with-image",
+      "settings": {
+        "title": "Global Presence & Showrooms",
+        "title_font_size": "title_custom",
+        "content": "With a global presence and showrooms across key U.S. cities, we invite you to explore our collections in person. Each showroom showcases our latest designs, allowing you to see and feel the quality of our glassware firsthand.",
+        "content_font_size": "body_custom",
+        "image_width": "100%",
+        "image_ratio": "auto",
+        "pc_cols": 5,
+        "text_align": "left",
+        "show_block_bg": "true",
+        "color_card_background": "#FFFFFF",
+        "button_text": "",
+        "jump_link": "",
+        "show_touch": true,
+        "pagignation_styles": "dot",
+        "color_scheme": "3",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "1733991052687f58225d": {
+          "type": "item",
+          "name": "Title",
+          "settings": {
+            "image": "shopline://shop_images/Rectangle 2.jpg",
+            "title": "",
+            "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
+            "button_text": "view map",
+            "jump_link": "",
+            "description_font_size": "description_custom"
+          },
+          "blockId": "1733991052687f58225d"
+        },
+        "1733991170920c77b605": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
+            "button_text": "view map",
+            "jump_link": "",
+            "image": "shopline://shop_images/Rectangle 2.jpg"
+          }
+        },
+        "1733991173670423fd9d": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
+            "button_text": "view map",
+            "jump_link": "",
+            "image": "shopline://shop_images/Rectangle 2.jpg"
+          }
+        },
+        "1733991177487a23841d": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
+            "button_text": "view map",
+            "jump_link": "",
+            "image": "shopline://shop_images/Rectangle 2.jpg"
+          }
+        },
+        "17339911803042bc0e6a": {
+          "type": "item",
+          "settings": {
+            "title": "",
+            "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
+            "button_text": "view map",
+            "jump_link": "",
+            "image": "shopline://shop_images/Rectangle 2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1733991052687f58225d",
+        "17339911803042bc0e6a",
+        "1733991177487a23841d",
+        "1733991170920c77b605",
+        "1733991173670423fd9d"
+      ],
+      "custom_css": []
+    },
+    "173399939067997e123c": {
+      "disabled": false,
+      "type": "image-with-text",
+      "settings": {
+        "image_height": "auto",
+        "pc_image_width": "medium",
+        "pc_image_position": "left",
+        "pc_box_align": "middle",
+        "pc_text_align": "left",
+        "image_overlap_display": false,
+        "color_scheme": "1",
+        "mobile_text_align": "left",
+        "padding_top": 80,
+        "padding_bottom": 34,
+        "image": "shopline://shop_images/Rectangle 9376.jpg"
+      },
+      "blocks": {
+        "17339993906805ceac24": {
+          "type": "title",
+          "settings": {
+            "title": "Custom Designs",
+            "title_size": "title_center"
+          },
+          "blockId": "17339993906805ceac24"
+        },
+        "17340700238254075720": {
+          "type": "sub_title",
+          "settings": {
+            "text": "We specialize in custom glassware that meets the specific needs of our B2B clients. Whether you're looking for a personalized color scheme, logo engraving, or bespoke shapes, our in-house design and R&D teams work closely with you to bring your vision to life.",
+            "text_size": "body_small"
+          }
+        },
+        "173399939068035a7c03": {
+          "type": "button",
+          "settings": {
+            "button_text": "CONTACT US",
+            "link": "",
+            "button_type": "button"
+          },
+          "blockId": "173399939068035a7c03"
+        }
+      },
+      "block_order": [
+        "17339993906805ceac24",
+        "17340700238254075720",
+        "173399939068035a7c03"
+      ],
+      "custom_css": []
+    },
+    "1733999507478b4f902b": {
+      "disabled": false,
+      "type": "image-with-text",
+      "settings": {
+        "image_height": "auto",
+        "pc_image_width": "medium",
+        "pc_image_position": "right",
+        "pc_box_align": "middle",
+        "pc_text_align": "left",
+        "image_overlap_display": false,
+        "color_scheme": "1",
+        "mobile_text_align": "left",
+        "padding_top": 36,
+        "padding_bottom": 60,
+        "image": "shopline://shop_images/Rectangle 9376 (1).jpg"
+      },
+      "blocks": {
+        "17339993906805ceac24": {
+          "type": "title",
+          "settings": {
+            "title": "Hand-Blown & Machine-Made Glassware",
+            "title_size": "title_center"
+          },
+          "blockId": "17339993906805ceac24"
+        },
+        "173407004521067638e2": {
+          "type": "sub_title",
+          "settings": {
+            "text": "At Diamond Star, we offer a broad selection of both hand-blown glass pieces for a one-of-a-kind look and machine-made glassware for more affordable, high-volume orders. This flexibility allows us to cater to a wide range of clients, from boutique retailers to large event companies.",
+            "text_size": "body_small"
+          }
+        },
+        "173399939068035a7c03": {
+          "type": "button",
+          "settings": {
+            "button_text": "CONTACT US",
+            "link": "",
+            "button_type": "button"
+          },
+          "blockId": "173399939068035a7c03"
+        }
+      },
+      "block_order": [
+        "17339993906805ceac24",
+        "173407004521067638e2",
+        "173399939068035a7c03"
+      ],
+      "custom_css": []
+    },
+    "17339996504487eacdf1": {
+      "disabled": false,
+      "type": "image-with-text",
+      "settings": {
+        "image_height": "auto",
+        "pc_image_width": "medium",
+        "pc_image_position": "left",
+        "pc_box_align": "middle",
+        "pc_text_align": "left",
+        "image_overlap_display": false,
+        "color_scheme": "none",
+        "mobile_text_align": "left",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "image": "shopline://shop_images/Rectangle 9377 (6).jpg"
+      },
+      "blocks": {
+        "1733999650448353befd": {
+          "type": "title",
+          "settings": {
+            "title": "With over 25 years of industry experience, our extensive inventory covers a wide range of categories, including Art Glass, Mercury, Wall Décor, Floral Basics, Garden & Specialty, and Seasonal & Holiday collections.",
+            "title_size": "title_small"
+          },
+          "blockId": "1733999650448353befd"
+        },
+        "173406989216193aaa89": {
+          "type": "sub_title",
+          "settings": {
+            "text": "We combine both traditional craftsmanship and advanced technology to produce exquisite glassware, offering hand-blown and machine-made products. As an importer and design house, we also specialize in customizing designs and colors to meet our clients' needs. Our in-house design and R&D teams continuously push the boundaries of innovation, setting trends with fresh designs for every season. We are passionate about bringing the finest glassware to our customers and remain committed to offering qua",
+            "text_size": "body_center"
+          }
+        }
+      },
+      "block_order": [
+        "1733999650448353befd",
+        "173406989216193aaa89"
+      ],
+      "custom_css": []
+    },
+    "17340000919885800b3c": {
+      "disabled": false,
+      "type": "collection-list-new",
+      "settings": {
+        "title": "Our Core categories",
+        "collection_image_ratio": "adapt",
+        "collection_image_shape": "round",
+        "color_scheme": "none",
+        "desktop_grid_cols": 5,
+        "m_cols": "1",
+        "m_rows": "1",
+        "slice_in_mobile": true,
+        "full_in_mobile": false,
+        "button_text": "",
+        "padding_top": 60,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "17340000919895d5f37b": {
+          "type": "collection",
+          "settings": {
+            "image_display_area": "center center",
+            "category": "12267434425038846115743575"
+          },
+          "blockId": "17340000919895d5f37b"
+        },
+        "17340000919897f887f6": {
+          "type": "collection",
+          "settings": {
+            "image_display_area": "center center",
+            "category": "12267434438770829633093575"
+          },
+          "blockId": "17340000919897f887f6"
+        },
+        "17340000919899f6edbb": {
+          "type": "collection",
+          "settings": {
+            "image_display_area": "center center",
+            "category": "12267434442957583888093575"
+          },
+          "blockId": "17340000919899f6edbb"
+        },
+        "173400009198991c0ba7": {
+          "type": "collection",
+          "settings": {
+            "image_display_area": "center center",
+            "category": "12267436182779210006003575"
+          },
+          "blockId": "173400009198991c0ba7"
+        },
+        "17340000919899caff89": {
+          "type": "collection",
+          "settings": {
+            "image_display_area": "center center",
+            "category": "12267576730749952416443575"
+          },
+          "blockId": "17340000919899caff89"
+        }
+      },
+      "block_order": [
+        "17340000919895d5f37b",
+        "17340000919897f887f6",
+        "17340000919899f6edbb",
+        "173400009198991c0ba7",
+        "17340000919899caff89"
+      ],
+      "custom_css": []
+    },
+    "1734000378422ca758d7": {
+      "disabled": false,
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopline://shop_images/Rectangle 9376 (2).jpg",
+        "image_height": "auto",
+        "pc_image_width": "medium",
+        "pc_image_position": "right",
+        "reverse_column": "reverse_col",
+        "pc_box_align": "bottom",
+        "pc_text_align": "left",
+        "image_overlap_display": false,
+        "color_scheme": "2",
+        "mobile_text_align": "left",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17340003784225d18203": {
+          "type": "title",
+          "settings": {
+            "title": "READY TO BECOME A B2B CUSTOMER?",
+            "title_size": "title_xlarge"
+          },
+          "blockId": "17340003784225d18203"
+        },
+        "1734070160011e137a64": {
+          "type": "sub_title",
+          "settings": {
+            "text": "A quick and easy registration gives you access to design-forward wholesale decor, wholesale pricing, product details ordering options, and much more!",
+            "text_size": "body_large"
+          }
+        },
+        "17340003784228953388": {
+          "type": "button",
+          "settings": {
+            "button_text": "SIGN IN NOW",
+            "link": "",
+            "button_type": "button"
+          },
+          "blockId": "17340003784228953388"
+        }
+      },
+      "block_order": [
+        "17340003784225d18203",
+        "1734070160011e137a64",
+        "17340003784228953388"
+      ],
+      "custom_css": []
+    }
+  },
+  "order": [
+    "main",
+    "17339901232555f12c89",
+    "1733990440123aa1e6a7",
+    "17339996504487eacdf1",
+    "17340000919885800b3c",
+    "173399939067997e123c",
+    "1733999507478b4f902b",
+    "1733991052687987f0e6",
+    "1734000378422ca758d7",
+    "17339909882203482e1f"
+  ]
+}

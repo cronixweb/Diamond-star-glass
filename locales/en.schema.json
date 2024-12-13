@@ -2912,6 +2912,16 @@
             "label": "Image to right"
           }
         },
+        "reverse_column": {
+          "label": "Reverse column order",
+          "info": "Applicable on mobile",
+          "options__0": {
+            "label": "Column"
+          },
+          "options__1": {
+            "label": "Column Reverse"
+          }
+        },
         "pc_box_align": {
           "label": "Content position on desktop",
           "options__0": {
@@ -3013,6 +3023,9 @@
               },
               "options__2": {
                 "label": "Large"
+              },
+              "options__3": {
+                "label": "X Large"
               }
             },
             "button_type": {
@@ -3741,6 +3754,18 @@
     "main-page": {
       "name": "Custom page",
       "settings": {
+        "font_size": {
+          "label": "Font size",
+          "options__0": {
+            "label": "Small"
+          },
+          "options__1": {
+            "label": "Large"
+          }
+        },
+        "text_align": {
+          "label": "Text align"
+        },
         "group_header__0": {
           "label": "Padding by section"
         },
@@ -6080,6 +6105,27 @@
           },
           "options__2": {
             "label": "Small"
+          },
+          "options__3": {
+            "label": "Title"
+          }
+        },
+        "content": {
+          "label": "Text"
+        },
+        "content_font_size": {
+          "label": "Text Size",
+          "options__0": {
+            "label": "Large"
+          },
+          "options__1": {
+            "label": "Center"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Body"
           }
         },
         "image_width": {
@@ -6121,6 +6167,9 @@
             "label": "List display"
           }
         },
+        "color_card_background": {
+          "label": "List Background"
+        },
         "button_text": {
           "label": "Button text"
         },
@@ -6129,6 +6178,15 @@
         },
         "show_touch": {
           "label": "Turn on left-right scroll on mobile"
+        },
+        "pagignation_styles": {
+          "label": "Pagination styles",
+          "options__0": {
+            "label": "Numeric"
+          },
+          "options__1": {
+            "label": "Dots"
+          }
         },
         "color_scheme": {
           "label": "Color",
@@ -6173,6 +6231,15 @@
             },
             "jump_link": {
               "label": "URL"
+            },
+            "description_font_size": {
+              "label": "Content Size",
+              "options__0": {
+                "label": "Default"
+              },
+              "options__1": {
+                "label": "Custom"
+              }
             }
           }
         }
