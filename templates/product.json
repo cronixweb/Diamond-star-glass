@@ -4,7 +4,7 @@
       "disabled": false,
       "type": "main-product",
       "settings": {
-        "product_info_sticky": true,
+        "product_info_sticky": false,
         "product_image_pc_show_style": "thumbnail_flatten",
         "product_image_size": "large",
         "product_image_fill_type": "contain",
@@ -145,7 +145,7 @@
         "product_image_ratio": "adapt",
         "product_fill_type": "contain",
         "show_secondary_image": false,
-        "padding_top": 100,
+        "padding_top": 120,
         "padding_bottom": 60
       },
       "blocks": {},

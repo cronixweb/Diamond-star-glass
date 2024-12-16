@@ -168,3 +168,10 @@
 .price .price-item--regular {
   margin-right: 16px;
 }
+
+.price .price__regular .price-item--regular {
+  color: rgba(var(--color-text));
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: capitalize;
+}

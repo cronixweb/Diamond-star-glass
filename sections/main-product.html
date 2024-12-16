@@ -120,7 +120,6 @@
           {{#if section.settings.product_info_sticky}}product__column-sticky{{/if}}
           mobile-text-align--{{section.settings.product_mobile_text_align}}"
       >
-        {{#comment}} {{snippet "breadcrumb" class="text-left"}} {{/comment}}
         {{#for section.blocks as |block|}}
           {{#startsWith "shopline://apps" block.type}}
             {{render block}}
@@ -140,7 +139,8 @@
                   <h3 class="accordion__title body5 fw-bold">
                     {{block.settings.title}}
                   </h3>
-                  {{snippet "icon-arrow"}}
+                  {{snippet "icon-plus"}}
+                  {{snippet "icon-minus"}}
                 </summary>
                 {{#if block.settings.enabled_fold}}
                   <template>
@@ -165,7 +165,8 @@
                   <h3 class="accordion__title body5 fw-bold">
                     {{block.settings.title}}
                   </h3>
-                  {{snippet "icon-arrow"}}
+                  {{snippet "icon-plus"}}
+                  {{snippet "icon-minus"}}
                 </summary>
                 <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
                   {{{product.description}}}
