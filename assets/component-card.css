@@ -554,8 +554,11 @@
   text-transform: capitalize;
 }
 .card .price .price__sale  .price-position-origin .price-item--regular{
-  font-size: var(--body3-font-size);
+  font-size: var(--body4-font-size);
   color: var(--color-grey-caption);
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: line-through;
 }
 
 .card__content .size-option {
@@ -582,7 +585,7 @@
 
 .card .card__badge.sold-out-message span {
   font-size: var(--body3-font-size);
-  font-weight: 600;
+  font-weight: 600 !important;
   line-height: 1.4;
 }
 

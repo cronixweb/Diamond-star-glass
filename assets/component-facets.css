@@ -793,7 +793,7 @@ a.facets__reset:hover {
 
 .mobile-facets__heading {
   font-size: var(--body4-font-size);
-  font-weight: 600;
+  font-weight: 600 !important;
   line-height: 1.4;
 }
 
@@ -845,4 +845,21 @@ span.mobile-facets__open  {
 }
 .main-collection-container:not(.facets-vertical) .facets-wrapper{
   background-color: rgba(var(--collection-page-background)) ;
+}
+
+.mobile-facets__summary > div {
+  padding: 12px 0;
+}
+
+.mobile-facets__header {
+  padding: 0 16px;
+}
+
+.mobile-facets__main {
+  padding: 0 18px;
+}
+
+.mobile-facets__main .mobile-facets__arrow svg {
+  width: 20px;
+  height: 20px;
 }
