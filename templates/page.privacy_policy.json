@@ -1,0 +1,71 @@
+{
+  "sections": {
+    "main": {
+      "disabled": true,
+      "type": "main-page",
+      "settings": {},
+      "blocks": {}
+    },
+    "1734435993708a7322bf": {
+      "disabled": false,
+      "type": "custom-tabs-with-content",
+      "settings": {
+        "heading": "Customer Service",
+        "color_scheme": "3",
+        "padding_top": 60,
+        "padding_bottom": 100
+      },
+      "blocks": {
+        "1734436006024b6957d9": {
+          "type": "text",
+          "settings": {
+            "title": "Privacy Policy"
+          }
+        },
+        "17344360084772c59dbb": {
+          "type": "text",
+          "settings": {
+            "title": "Return Policy"
+          }
+        },
+        "1734436017407ef2fb6b": {
+          "type": "text",
+          "settings": {
+            "title": "FAQ"
+          }
+        },
+        "17344360231598cd20b9": {
+          "type": "text",
+          "settings": {
+            "title": "Backorder & Cancellation Policy"
+          }
+        },
+        "17344360381085269125": {
+          "type": "text",
+          "settings": {
+            "title": "Ordering Terms"
+          }
+        },
+        "17344360478755b559f6": {
+          "type": "text",
+          "settings": {
+            "title": "Payment Terms"
+          }
+        }
+      },
+      "block_order": [
+        "1734436006024b6957d9",
+        "17344360084772c59dbb",
+        "1734436017407ef2fb6b",
+        "17344360231598cd20b9",
+        "17344360381085269125",
+        "17344360478755b559f6"
+      ],
+      "custom_css": []
+    }
+  },
+  "order": [
+    "main",
+    "1734435993708a7322bf"
+  ]
+}
