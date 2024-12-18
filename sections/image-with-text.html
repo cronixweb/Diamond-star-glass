@@ -57,8 +57,7 @@
             class="image-with-text__info
               {{#if (isTruthy image_overlap_display)}}color-scheme-{{color_scheme}} image-with-text__info--overlap-pc-{{pc_image_position}}{{/if}}
               image-with-text__info--align-{{pc_text_align}}
-              image-with-text__info--m-align-{{mobile_text_align}}
-              custom__padding-{{section.settings.padding}}"
+              image-with-text__info--m-align-{{mobile_text_align}}"
           >
             {{#for section.blocks as |block|}}
               {{#startsWith app_block_prefix block.type}}
@@ -236,30 +235,6 @@
         }
       ],
       "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "padding",
-      "label": "t:sections.image-with-text.settings.padding.label",
-      "default": "default",
-      "options": [
-        {
-          "value": "none",
-          "label": "t:sections.image-with-text.settings.padding.options__0.label"
-        },
-        {
-          "value": "default",
-          "label": "t:sections.image-with-text.settings.padding.options__1.label"
-        },
-        {
-          "value": "low",
-          "label": "t:sections.image-with-text.settings.padding.options__2.label"
-        },
-        {
-          "value": "high",
-          "label": "t:sections.image-with-text.settings.padding.options__3.label"
-        }
-      ]
     },
     {
       "id": "image_overlap_display",
