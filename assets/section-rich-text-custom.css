@@ -56,6 +56,21 @@ a.section-rich-text__button:hover {
   border: 1px solid;
 }
 
+.section-rich-text__content.content__border-box {
+  border: 20px solid var(--color-grey-border-light);
+  background: var(--color-white);
+  padding: 20px;
+}
+
+.section-rich-text .subheading {
+  font-family: var(--custom-font-family);
+  font-size: var(--body6-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: capitalize;
+  margin: 0;
+}
+
 @media screen and (min-width: 768px) {
   .section-rich-text {
     background-size: cover;
@@ -74,4 +89,14 @@ a.section-rich-text__button:hover {
     margin-bottom: 48px;
     letter-spacing: 0.03rem;
   }
+
+  .section-rich-text__content.content__border-box {
+    border: 60px solid var(--color-grey-border-light);
+    padding: 60px;
+  }
+
+  .section-rich-text .subheading {
+    font-size: var(--body7-font-size);
+  }
 }
+

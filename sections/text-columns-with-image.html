@@ -115,17 +115,25 @@
               </li>
             {{/for}}
           </ul>
-          <div class="text-image-pagination-box body4">
-            <button class="ctr-button prev" name="previous">
-              {{snippet "icon-arrow"}}
-            </button>
-            <div class="text-image-pagination-slider-counter">
-              <span class="slider-counter--current"></span>/<span class="slider-counter--total"></span>
+          {{#if section.settings.pagignation_styles == "number" }}
+            <div class="text-image-pagination-box body4">
+              <button class="ctr-button prev" name="previous">
+                {{snippet "icon-arrow"}}
+              </button>
+              <div class="text-image-pagination-slider-counter">
+                <span class="slider-counter--current"></span>/<span class="slider-counter--total"></span>
+              </div>
+              <button class="ctr-button next" name="next">
+                {{snippet "icon-arrow"}}
+              </button>
             </div>
-            <button class="ctr-button next" name="next">
-              {{snippet "icon-arrow"}}
-            </button>
-          </div>
+          {{else}}
+            <div class="text-image__control--dots slider-buttons display-none-desktop">
+              {{#for section.blocks as |block|}}
+                <button class="text-image--dot" name="pager" data-index="{{forloop.index0}}"></button>
+              {{/for}}
+            </div>
+          {{/if}}
         </text-image-slide-section>
 
       </div>
@@ -169,15 +177,17 @@
         {
           "value": "title5",
           "label": "t:sections.text-columns-with-image.settings.title_font_size.options__2.label"
+        },
+        {
+          "value": "title_custom",
+          "label": "t:sections.text-columns-with-image.settings.title_font_size.options__3.label"
         }
       ]
     },
     {
       "type": "richtext",
       "id": "content",
-      "label": {
-        "en": "Main text"
-      },
+      "label": "t:sections.text-columns-with-image.settings.content.label",
       "default": "Shop our latest designs—thoughtfully made to complete every room in your home."
     },
     {
@@ -197,6 +207,10 @@
         {
           "value": "title5",
           "label": "t:sections.text-columns-with-image.settings.content_font_size.options__2.label"
+        },
+        {
+          "value": "body_custom",
+          "label": "t:sections.text-columns-with-image.settings.content_font_size.options__3.label"
         }
       ]
     },
@@ -283,6 +297,12 @@
       ]
     },
     {
+      "id": "color_card_background",
+      "type": "color",
+      "label": "t:sections.text-columns-with-image.settings.color_card_background.label",
+      "default": "#FFFFFF"
+    },
+    {
       "id": "button_text",
       "type": "text",
       "label": "t:sections.text-columns-with-image.settings.button_text.label",
@@ -298,6 +318,22 @@
       "type": "switch",
       "label": "t:sections.text-columns-with-image.settings.show_touch.label",
       "default": false
+    },
+    {
+      "type": "select",
+      "id": "pagignation_styles",
+      "label": "t:sections.text-columns-with-image.settings.pagignation_styles.label",
+      "default": "dot",
+      "options": [
+        {
+          "value": "number",
+          "label": "t:sections.text-columns-with-image.settings.pagignation_styles.options__0.label"
+        },
+        {
+          "value": "dot",
+          "label": "t:sections.text-columns-with-image.settings.pagignation_styles.options__1.label"
+        }
+      ]
     },
     {
       "type": "select",
@@ -382,6 +418,22 @@
           "id": "jump_link",
           "type": "url",
           "label": "t:sections.text-columns-with-image.blocks.item.settings.jump_link.label"
+        },
+        {
+          "type": "select",
+          "id": "description_font_size",
+          "label": "t:sections.text-columns-with-image.blocks.item.settings.description_font_size.label",
+          "default": "description_custom",
+          "options": [
+            {
+              "value": "",
+              "label": "t:sections.text-columns-with-image.blocks.item.settings.description_font_size.options__0.label"
+            },
+            {
+              "value": "description_custom",
+              "label": "t:sections.text-columns-with-image.blocks.item.settings.description_font_size.options__1.label"
+            }
+          ]
         }
       ]
     }
