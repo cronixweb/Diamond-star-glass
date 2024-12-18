@@ -15,22 +15,25 @@
   <div class="section-tab_container">
 
     <details class="section-tab_dropdown">
-      {{#for section.blocks as |block|}}
-        {{#if (trim block.type) == "text"}}
-          {{#if block.settings.title}}
-            <summary>
-              <a href="{{block.settings.link}}">{{{ block.settings.title }}}</a><span> {{ snippet 'icon-arrow' }}</span>
-            </summary>
+      <summary>
+        <p> {{page.title}} </p><span> {{ snippet 'icon-arrow' }}</span>
+      </summary>
+      <div class="section-tab_list {{#if page.url == block.settings.link}} active_tab {{/if}}">
+        {{#for section.blocks as |block|}}
+          {{#if (trim block.type) == "text"}}
+            {{#if block.settings.title}}
+                <a class="section-tab_items {{#if page.url == block.settings.link}} active_tab {{/if}} " href="{{block.settings.link}}">{{{ block.settings.title }}} </a>
+            {{/if}}
           {{/if}}
-        {{/if}}
-      {{/for}}
+        {{/for}}
+      </div>
     </details>
 
     <ul class="section-tab_sidebar">
       {{#for section.blocks as |block|}}
         {{#if (trim block.type) == "text"}}
           {{#if block.settings.title}}
-            <li class="tab_title" id="tab-{{ block.id }}"><a href="{{block.settings.link}}">{{{ block.settings.title }}}</a></li>
+            <li class="tab_title {{#if page.url == block.settings.link}} active_tab {{/if}}" id="tab-{{ block.id }}"><a class="link_match" href="{{block.settings.link}}">{{{ block.settings.title }}}</a></li>
           {{/if}}
         {{/if}}
       {{/for}}
@@ -42,24 +45,6 @@
     </div>
   </div>  
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const tabs = document.querySelectorAll(".tab_title");
-
-  if (tabs.length > 0) {
-    tabs[0].classList.add("active_tab");
-
-    tabs.forEach(tab => {
-      tab.addEventListener("click", function () {
-        tabs.forEach(t => t.classList.remove("active_tab"));
-
-        this.classList.add("active_tab");
-      });
-    });
-  }
-});
-</script>
 
 {{#schema}}
 {
