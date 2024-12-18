@@ -6474,6 +6474,54 @@
           "name": "VQuick links bar"
         }
       }
+    },
+    "custom-tabs-with-content": {
+      "name": "Custom Tabs With Content",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "color_scheme": {
+          "label": "Color",
+          "options__0": {
+            "label": "None"
+          },
+          "options__1": {
+            "label": "Color 1"
+          },
+          "options__2": {
+            "label": "Color 2"
+          },
+          "options__3": {
+            "label": "Color 3"
+          }
+        },
+        "padding_top": {
+          "label": "Top padding"
+        },
+        "padding_bottom": {
+          "label": "Bottom padding"
+        }
+      },
+      "blocks": {
+        "text": {
+          "name": "Title",
+          "settings": {
+            "title": {
+              "label": "Title"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "presets__0": {
+          "category": "Custom",
+          "name": "Custom Tabs With Content"
+        }
+      }
     }
   },
   "settings_schema": {
