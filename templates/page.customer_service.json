@@ -19,37 +19,44 @@
         "1734436006024b6957d9": {
           "type": "text",
           "settings": {
-            "title": "Privacy Policy"
-          }
+            "title": "Privacy Policy",
+            "link": "shopline://pages/6762912038102503267"
+          },
+          "disabled": false
         },
         "17344360084772c59dbb": {
           "type": "text",
           "settings": {
-            "title": "Return Policy"
+            "title": "Return Policy",
+            "link": "shopline://pages/6780034432017375153"
           }
         },
         "1734436017407ef2fb6b": {
           "type": "text",
           "settings": {
-            "title": "FAQ"
+            "title": "FAQ",
+            "link": "shopline://pages/6780035049184062753"
           }
         },
         "17344360231598cd20b9": {
           "type": "text",
           "settings": {
-            "title": "Backorder & Cancellation Policy"
+            "title": "Backorder & Cancellation Policy",
+            "link": "shopline://pages/6780035344597263913"
           }
         },
         "17344360381085269125": {
           "type": "text",
           "settings": {
-            "title": "Ordering Terms"
+            "title": "Ordering Terms",
+            "link": "shopline://pages/6780036018185727267"
           }
         },
         "17344360478755b559f6": {
           "type": "text",
           "settings": {
-            "title": "Payment Terms"
+            "title": "Payment Terms",
+            "link": "shopline://pages/6780036403524806187"
           }
         }
       },

@@ -9,7 +9,7 @@
 
 <div class="section-tab_wrapper page-width section-padding">
   {{#if section.settings.heading}}
-    <h2 class="page-title tab_heading">{{ section.settings.heading }}</h2>
+    <h1 class="page-title tab_heading">{{ section.settings.heading }}</h1>
   {{/if}}
 
   <div class="section-tab_container">
@@ -19,7 +19,7 @@
         {{#if (trim block.type) == "text"}}
           {{#if block.settings.title}}
             <summary>
-              <a href="{{block.settings.link}}">{{{ block.settings.title }}} {{ snippet 'icon-arrow' }}</a>
+              <a href="{{block.settings.link}}">{{{ block.settings.title }}}</a><span> {{ snippet 'icon-arrow' }}</span>
             </summary>
           {{/if}}
         {{/if}}
@@ -36,8 +36,8 @@
       {{/for}}
     </ul>
 
-    <div class="section-tab_content color-scheme-{{section.settings.color_scheme}}">
-      <h3 class="tab-page_title">{{{ page.title }}}</h3>
+    <div class="section-tab_content {{#if page.content}} color-scheme-{{section.settings.color_scheme}}{{/if}}">
+      <h2 class="tab-page_title">{{{ page.title }}}</h2>
       {{{ page.content }}}
     </div>
   </div>  
