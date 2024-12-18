@@ -89,6 +89,18 @@
   text-transform: capitalize;
 }
 
+.slider-product-recommendations__button:disabled {
+  background: var(--color-grey-light);
+  color: var(--splide-button-disabled);
+  border: none;
+}
+
+.slider-product-recommendations__button {
+  background: var(--splide-button);
+  color: var(--color-white);
+  border: none;
+}
+
 @media screen and (max-width: 959px) {
   .slider-product-recommendations > .slider.slider--mobile > .slider__slide {
       width: 100%;
