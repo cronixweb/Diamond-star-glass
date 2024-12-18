@@ -34,6 +34,7 @@
         "mobile_show_secondary_image": false,
         "sticky_filtering": false,
         "enable_filtering": true,
+        "enable_product_count":false,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "padding_top": 80,
