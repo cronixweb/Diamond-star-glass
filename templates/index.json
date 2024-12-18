@@ -141,23 +141,6 @@
       ],
       "custom_css": []
     },
-    "17321803840959e6e8b6": {
-      "disabled": true,
-      "type": "section-image-with-text-custom",
-      "settings": {
-        "section_image": "shopline://shop_images/iwt.png",
-        "section_title": "Custom Design",
-        "section_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque. Eget massa feugiat vitae donec eu nunc etiam. Tellus nunc ultricies lorem id etiam a ullamcorper mattis. Risus at proin placerat ipsum cras eu nam sapien.",
-        "section_link_text": "Explore More",
-        "color_page_background": "#f3f0ea",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {},
-      "block_order": [],
-      "custom_css": []
-    },
     "1733673220654919ccad": {
       "disabled": false,
       "type": "image-with-text",
@@ -675,7 +658,6 @@
     "1732544527169ec450b7",
     "1732544616088988745b",
     "1732544727807d96b034",
-    "17321803840959e6e8b6",
     "1733673220654919ccad",
     "17321804744621df169f",
     "1732180510845b0d2ea5"
