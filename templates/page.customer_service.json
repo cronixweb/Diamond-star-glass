@@ -1,11 +1,5 @@
 {
   "sections": {
-    "main": {
-      "disabled": true,
-      "type": "main-page",
-      "settings": {},
-      "blocks": {}
-    },
     "1734435993708a7322bf": {
       "disabled": false,
       "type": "custom-tabs-with-content",
@@ -72,7 +66,6 @@
     }
   },
   "order": [
-    "main",
     "1734435993708a7322bf"
   ]
 }
