@@ -806,6 +806,21 @@
     "contact-form": {
       "name": "Contact form",
       "settings": {
+        "title": {
+          "label": "Content"
+        },
+        "solid_button_text": {
+          "label": "Solid button text"
+        },
+        "solid_button_link": {
+          "label": "Solid button link"
+        },
+        "outline_button_text": {
+          "label": "Outline button text"
+        },
+        "outline_button_link": {
+          "label": "Outline button link"
+        },
         "heading": {
           "label": "Title"
         },
@@ -837,7 +852,13 @@
           }
         },
         "group_header__0": {
-          "label": "Padding by section"
+          "label": "Section settings"
+        },
+        "group_header__1": {
+          "label": "Content of section"
+        },
+        "group_header__2": {
+          "label": "Contact Form"
         },
         "padding_top": {
           "label": "Top padding"

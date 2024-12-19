@@ -54,3 +54,89 @@
 /* @custom-media --tablet (max-width: 959px); */
 /* @custom-media --gt-mobile (min-width: 751px); */
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+.contact-form__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.contact-form__wrapper .contact {
+  background: var(--color-white);
+  box-shadow: 0px 0px 80px -24px rgba(0, 0, 0, 0.16);
+  padding: 24px 16px;
+  width: 100%;
+}
+
+.contact-form__wrapper .field_title { 
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.contact-form__wrapper .field__input {
+  border: 1px solid var(--color-grey-border-dark);
+  /* border-radius: 0; */
+  background: var(--color-white);
+  height: 56px;
+  padding: 16px 20px;
+}
+
+.contact-form__wrapper .field {
+  color: var(--color-grey-caption);
+  font-size: var(--body4-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.contact-form__wrapper .text-area {
+  min-height: 144px;
+}
+
+.contact-form__wrapper .contact__button button {
+  width: 100%;
+}
+
+.contact-form__wrapper .contact .field {
+  margin-bottom: 24px;
+}
+
+.contact-form__wrapper .contact__button {
+  margin-top: 32px;
+}
+
+.contact-form__wrapper .content_button {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media screen and (min-width: 960px) {
+  .contact__fields {
+    display: block;
+  }
+
+  .contact-form__wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 128px;
+  }
+
+  .contact-form__wrapper .contact {
+    padding: 48px;
+    max-width: 725px;
+  }
+
+  .contact-form__wrapper .field__input {
+    height: 54px;
+  }
+
+  .page_title {
+    font-size: var(--body8-max-font-size);
+    margin-bottom: 16px;
+  }
+}

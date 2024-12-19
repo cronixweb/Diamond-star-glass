@@ -8,8 +8,18 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="color-scheme-{{section.settings.color_scheme}}">
-  <div class="contact page-width page-width--narrow section-padding">
+<div class="contact-form__wrapper page-width section-padding color-scheme-{{section.settings.color_scheme}}">
+  <div class="contact-form__content">
+    <h1 class="page_title">{{page.title}}</h1>
+    <p>{{{section.settings.title}}}</p>
+
+    <div class="content_button">
+      <a href="{{section.settings.solid_button_link}}" class="button button--primary">{{section.settings.solid_button_text}}</a>
+      <a href="{{section.settings.outline_button_link}}" class="button button--secondary">{{section.settings.outline_button_text}}</a>
+    </div>
+  </div>
+
+  <div class="contact page-width--narrow">
     {{#if section.settings.heading}}
       <h2 class="title title-wrapper--no-top-margin {{section.settings.heading_size}}">
         {{section.settings.heading}}
@@ -30,6 +40,7 @@
           </h2>
         {{/if}}
         <div class="contact__fields">
+          <p class="field_title">{{t "contact.title.name"}}</p>
           <div class="field">
             <input
               class="field__input"
@@ -41,8 +52,9 @@
               placeholder="{{t 'general.general.username'}}"
               title="{{t 'general.general.username'}}"
             />
-            <label class="field__label" for="ContactForm-name">{{t "general.general.username"}}</label>
+            <label class="field__label" for="ContactForm-name">{{t "contact.placeholder.name"}}</label>
           </div>
+          <p class="field_title">{{t "contact.title.email"}}</p>
           <div class="field field--with-error">
             {{snippet
               "input-email"
@@ -58,10 +70,11 @@
               input_title=(t 'customer.email.mail_common')
             }}
             <label class="field__label" for="ContactForm-email">
-              {{t "customer.email.mail_common"}}
-              <span>*</span></label>
+              {{t "contact.placeholder.email"}}
+            </label>
           </div>
         </div>
+        <p class="field_title">{{t "contact.title.phone"}}</p>
         <div class="field">
           <input
             type="tel"
@@ -74,8 +87,9 @@
             placeholder="{{t 'general.general.tel_phone'}}"
             title="{{t 'general.general.tel_phone'}}"
           />
-          <label class="field__label" for="ContactForm-phone">{{t "general.general.tel_phone"}}</label>
+          <label class="field__label" for="ContactForm-phone">{{t "contact.placeholder.phone"}}</label>
         </div>
+        <p class="field_title">{{t "contact.title.message"}}</p>
         <div class="field">
           <textarea
             rows="10"
@@ -86,12 +100,12 @@
             title="{{t 'products.product_details.message'}}"
           >{{form.body}}</textarea>
           <label class="form__label field__label" for="ContactForm-body">
-            {{t "products.product_details.message"}}
+            {{t "contact.placeholder.message"}}
           </label>
         </div>
         <div class="contact__button">
           <button type="submit" class="button">
-            {{t "customer.general.send"}}
+            {{t "contact.title.send"}}
           </button>
         </div>
       {{/form}}
@@ -119,6 +133,43 @@
   ],
   "settings": [
     {
+      "type": "group_header",
+      "label": "t:sections.contact-form.settings.group_header__1.label"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "text",
+      "id": "solid_button_text",
+      "default": "FAQ",
+      "label": "t:sections.contact-form.settings.solid_button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "solid_button_link",
+      "default": "Contact us",
+      "label": "t:sections.contact-form.settings.solid_button_link.label"
+    },
+    {
+      "type": "text",
+      "id": "outline_button_text",
+      "default": "Contact us",
+      "label": "t:sections.contact-form.settings.outline_button_text.label"
+    },
+    {
+      "type": "url",
+      "id": "outline_button_link",
+      "default": "SHIPPING POLICIES",
+      "label": "t:sections.contact-form.settings.outline_button_link.label"
+    },
+    {
+      "type": "group_header",
+      "label": "t:sections.contact-form.settings.group_header__2.label"
+    },
+    {
       "type": "text",
       "id": "heading",
       "default": "Contact us",
@@ -145,6 +196,10 @@
       "label": "t:sections.contact-form.settings.heading_size.label"
     },
     {
+      "type": "group_header",
+      "label": "t:sections.contact-form.settings.group_header__0.label"
+    },
+    {
       "type": "select",
       "id": "color_scheme",
       "label": "t:sections.contact-form.settings.color_scheme.label",
@@ -169,10 +224,6 @@
       ]
     },
     {
-      "type": "group_header",
-      "label": "t:sections.contact-form.settings.group_header__0.label"
-    },
-    {
       "type": "range",
       "id": "padding_top",
       "min": 0,
@@ -180,7 +231,7 @@
       "step": 2,
       "unit": "px",
       "label": "t:sections.contact-form.settings.padding_top.label",
-      "default": 80
+      "default": 100
     },
     {
       "type": "range",
@@ -190,7 +241,7 @@
       "step": 2,
       "unit": "px",
       "label": "t:sections.contact-form.settings.padding_bottom.label",
-      "default": 80
+      "default": 50
     }
   ]
 }
