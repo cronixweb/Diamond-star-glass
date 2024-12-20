@@ -365,7 +365,7 @@ input {
 .description_custom .text-columns-with-images-item__button .button-text {
   font-size: var(--body3-font-size);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.4;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-right: 31px;
@@ -393,7 +393,11 @@ input {
 .text-image__control--dots .text-image--dot.is-active{
   width: 10px;
   height: 10px;
-  background: var(--color-text);
+  background: rgba(var(--color-text));
+}
+
+.text-columns-with-images__title.title_margin {
+  margin-bottom: 32px !important;
 }
 
 @media screen and (min-width: 960px) {
@@ -409,5 +413,8 @@ input {
   }
   .description_custom .text-columns-with-images-item__text {
     padding-bottom: 42px;
+  }
+  .text-columns-with-images__title.title_margin {
+    margin-bottom: 48px !important;
   }
 }

@@ -807,7 +807,13 @@
       "name": "Contact form",
       "settings": {
         "title": {
-          "label": "Content"
+          "label": "Title"
+        },
+        "contact": {
+          "label": "Contact"
+        },
+        "text": {
+          "label": "Text"
         },
         "solid_button_text": {
           "label": "Solid button text"
@@ -6144,7 +6150,7 @@
       "name": "Text columns with images",
       "settings": {
         "title": {
-          "label": "Title"
+          "label": "Heading"
         },
         "title_font_size": {
           "label": "Heading size",
@@ -6160,6 +6166,12 @@
           "options__3": {
             "label": "Title"
           }
+        },
+        "text_align_title": {
+          "label": "Heading alignment"
+        },
+        "outline_style": {
+          "label": "Add extra spacing"
         },
         "content": {
           "label": "Text"

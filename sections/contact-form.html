@@ -11,8 +11,9 @@
 <div class="contact-form__wrapper page-width section-padding color-scheme-{{section.settings.color_scheme}}">
   <div class="contact-form__content">
     <h1 class="page_title">{{page.title}}</h1>
-    <p>{{{section.settings.title}}}</p>
-
+    <p class="content_title">{{section.settings.title}}</p>
+    <p class="content_contact">{{{section.settings.contact}}}</p>
+    <p class="content_text">{{section.settings.text}}</p>
     <div class="content_button">
       <a href="{{section.settings.solid_button_link}}" class="button button--primary">{{section.settings.solid_button_text}}</a>
       <a href="{{section.settings.outline_button_link}}" class="button button--secondary">{{section.settings.outline_button_text}}</a>
@@ -137,9 +138,19 @@
       "label": "t:sections.contact-form.settings.group_header__1.label"
     },
     {
-      "type": "richtext",
+      "type": "text",
       "id": "title",
       "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "richtext",
+      "id": "contact",
+      "label": "t:sections.contact-form.settings.contact.label"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "t:sections.contact-form.settings.text.label"
     },
     {
       "type": "text",
