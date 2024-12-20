@@ -154,6 +154,39 @@
                 {{/if}}
               </details>
             </accordion-component>
+          {{else if block.type == "metafield_content"}}
+            <div class="product__info-item accordion " {{{block.shopline_attributes}}}>
+              <details
+                id="Details-{{block.id}}-{{section.id}}"
+                class="product__details-container"
+              >
+                <summary id="Summary-{{block.id}}-{{section.id}}">
+                  <h3 class="accordion__title body5 fw-bold">
+                    {{block.settings.field_title}}
+                  </h3>
+                  {{snippet "icon-plus"}}
+                  {{snippet "icon-minus"}}
+                </summary>
+                <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
+                  <dl class="field_text">
+                    <dt>{{t 'products.unit.unit'}}</dt>
+                    <dd>{{product.metafields.my_fields.unit.value}}</dd>
+                    <dt>{{t 'products.unit.unit_case'}}</dt>
+                    <dd>{{product.metafields.my_fields.unit_case.value}}</dd>
+                    <dt>{{t 'products.unit.case_weight'}}</dt>
+                    <dd>{{product.metafields.my_fields.case_weight.value}}</dd>
+                    <dt>{{t 'products.unit.unit_length'}}</dt>
+                    <dd>{{product.metafields.my_fields.unit_length.value}}</dd>
+                    <dt>{{t 'products.unit.unit_height'}}</dt>
+                    <dd>{{product.metafields.my_fields.unit_height.value}}</dd>
+                    <dt>{{t 'products.unit.unit_width'}}</dt>
+                    <dd>{{product.metafields.my_fields.unit_width.value}}</dd>
+                    <dt>{{t 'products.unit.unit_weight'}}</dt>
+                    <dd>{{product.metafields.my_fields.unit_weight.value}}</dd>
+                  </dl>
+                </div>
+              </details>
+            </div>
           {{else if block.type == "description_accordion"}}
             <div class="product__info-item accordion product__details-wrapper" {{{block.shopline_attributes}}}>
               <details
@@ -1958,6 +1991,17 @@
           "id": "html",
           "limit": 0,
           "label": "t:sections.main-product.blocks.html.settings.html.label"
+        }
+      ]
+    },
+    {
+      "type": "metafield_content",
+      "name": "t:sections.main-product.blocks.metafield_content.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "field_title",
+          "label": "t:sections.main-product.blocks.metafield_content.settings.field_title.label"
         }
       ]
     },

@@ -908,6 +908,15 @@
     },
     "recently_viewed_products": {
       "recently_viewed_products": "Recently Viewed Products"
+    },
+    "unit": {
+      "unit": "Unit:",
+      "unit_case": "Unit/Case:",
+      "case_weight": "Case Weight:",
+      "unit_length": "Unit Length:",
+      "unit_height": "Unit Height:",
+      "unit_width": "Unit Width:",
+      "unit_weight": "Unit Weight:"
     }
   },
   "reduction_code": {
