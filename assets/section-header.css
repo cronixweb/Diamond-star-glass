@@ -1392,10 +1392,11 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
 }
 @media (min-width: 960px) {
   .header-inline-menus__link.menus__link {
-    font-size: var(--body2-font-size);
+    font-size: var(--body4-font-size);
   }
   .header__container--left-line .header__inline-menus {
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 20px;
   }
   .tile-search .desktop-search-wrapper{
     max-width: 660px;
@@ -1418,10 +1419,15 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
   .header__icons .header__icon-button{
     margin-left: 4px;
   }
+  .header__inline-menus .header-inline-menus__item:last-child .header-dropdown-menu,
+  .header__inline-menus .header-inline-menus__item:nth-last-child(2) .header-dropdown-menu{
+    right: 0;
+    left: auto;
+  }
 }
 @media (min-width: 1200px) {
-  .header-inline-menus__link.menus__link {
-    font-size: var(--body4-font-size);
+  .header__container--left-line .header__inline-menus {
+    column-gap: 50px;
   }
 }
 
