@@ -4558,6 +4558,14 @@
             }
           }
         },
+        "metafield_content": {
+          "name": "Metafield Content",
+          "settings": {
+            "field_title": {
+              "label": "Title"
+            }
+          }
+        },
         "text": {
           "name": "Text",
           "settings": {

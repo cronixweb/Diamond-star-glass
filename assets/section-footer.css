@@ -691,6 +691,9 @@ footer-menu {
 .footer-mobile-social-icons .footer__list-social {
   grid-column-gap: var(--block-media-icon-padding);
 }
+.footer__content-bottom .copyright-menu-box *{
+  word-break: break-all;
+}
 @media (min-width: 960px) {
   .footer-other-details{
     margin-top: 42px;
@@ -726,6 +729,7 @@ footer-menu {
   .footer__payment{
     gap:16px;
     margin-bottom: 0;
+    justify-content: start;
   }
   .footer__content-bottom{
     margin-top: 14px;

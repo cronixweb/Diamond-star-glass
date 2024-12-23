@@ -1068,7 +1068,20 @@ variant-radios .product-form__input.medium .product-form__input--right {
   font-weight: 600;
   line-height: 1.4;
 }
-  
+.accordion__content .field_text{
+  margin:0;
+}
+.accordion__content .field_text dt{
+  font-weight: 600;
+  margin: 5px 0 5px 0;
+  clear: left;
+  float: left;
+}
+.accordion__content .field_text dd{
+  margin: 5px 0 5px 0;
+  clear: right;
+  float: right;
+}  
 @media screen and (min-width: 960px) {
   .product__media-wrapper,
   .product__info-wrapper {

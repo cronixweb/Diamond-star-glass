@@ -58,11 +58,12 @@
   z-index: 3;
 }
 .section-image-banner .content .wrapper .desc {
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 16px;
   margin-top: 8px;
   position: relative;
   z-index: 2;
+  line-height: 1.4;
 }
 .section-image-banner .content .wrapper {
   box-sizing: border-box;
