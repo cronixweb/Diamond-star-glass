@@ -22,7 +22,7 @@
         {{#for section.blocks as |block|}}
           {{#if (trim block.type) == "text"}}
             {{#if block.settings.title}}
-                <a class="section-tab_items {{#if page.url == block.settings.link}} active_tab {{/if}} " href="{{block.settings.link}}">{{{ block.settings.title }}} </a>
+              <a class="section-tab_items {{#if page.url == block.settings.link}} active_tab {{/if}} " href="{{block.settings.link}}">{{{ block.settings.title }}} </a>
             {{/if}}
           {{/if}}
         {{/for}}
