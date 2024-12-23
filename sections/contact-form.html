@@ -52,6 +52,7 @@
               value="{{form.name}}"
               placeholder="{{t 'general.general.username'}}"
               title="{{t 'general.general.username'}}"
+              required
             />
             <label class="field__label" for="ContactForm-name">{{t "contact.placeholder.name"}}</label>
           </div>
@@ -99,6 +100,7 @@
             name="contact[comment]"
             placeholder="{{t 'products.product_details.message'}}"
             title="{{t 'products.product_details.message'}}"
+            required
           >{{form.body}}</textarea>
           <label class="form__label field__label" for="ContactForm-body">
             {{t "contact.placeholder.message"}}
@@ -167,7 +169,7 @@
     {
       "type": "text",
       "id": "outline_button_text",
-      "default": "Contact us",
+      "default": "SHIPPING POLICIES",
       "label": "t:sections.contact-form.settings.outline_button_text.label"
     },
     {

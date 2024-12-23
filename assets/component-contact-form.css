@@ -162,6 +162,14 @@
   margin-top: 48px;
 }
 
+
+.contact .field__label {
+  color: var(--color-grey-caption);
+  font-size: var(--body4-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 @media screen and (min-width: 960px) {
   .contact__fields {
     display: block;
@@ -199,11 +207,16 @@
   }
 
   .contact-form__content .content_contact {
+    font-size: var(--body5-font-size);
     margin-bottom: 24px;
   }
   
   .contact-form__content .content_text {
     font-size: var(--body5-font-size);
     margin-top: 72px;
+  }
+
+  .contact-form__content .content_contact strong{
+    font-size: var(--body5-font-size);
   }
 }
