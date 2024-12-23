@@ -156,22 +156,24 @@
             </accordion-component>
           {{else if block.type == "description_accordion"}}
             <div class="product__info-item accordion product__details-wrapper" {{{block.shopline_attributes}}}>
-              <details
-                id="Details-{{block.id}}-{{section.id}}"
-                class="product__details-container"
-                {{#unless block.settings.fold}}open{{/unless}}
-              >
-                <summary id="Summary-{{block.id}}-{{section.id}}">
-                  <h3 class="accordion__title body5 fw-bold">
-                    {{block.settings.title}}
-                  </h3>
-                  {{snippet "icon-plus"}}
-                  {{snippet "icon-minus"}}
-                </summary>
-                <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
-                  {{{product.description}}}
-                </div>
-              </details>
+              {{#if product.description}}
+                <details
+                  id="Details-{{block.id}}-{{section.id}}"
+                  class="product__details-container"
+                  {{#unless block.settings.fold}}open{{/unless}}
+                >
+                  <summary id="Summary-{{block.id}}-{{section.id}}">
+                    <h3 class="accordion__title body5 fw-bold">
+                      {{block.settings.title}}
+                    </h3>
+                    {{snippet "icon-plus"}}
+                    {{snippet "icon-minus"}}
+                  </summary>
+                  <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
+                    {{{product.description}}}
+                  </div>
+                </details>
+              {{/if}}
             </div>
           {{else if block.type == "quantity_selector"}}
             {{assign "volume_pricing_array" featured_variant.quantity_price_breaks}}
