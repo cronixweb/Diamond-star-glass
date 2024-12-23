@@ -2448,3 +2448,6 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
   font-size: var(--body4-font-size);
   text-transform: uppercase;
 }
+.button {
+  line-height: 1.4;
+} 

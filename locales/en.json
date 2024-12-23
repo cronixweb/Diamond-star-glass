@@ -682,6 +682,21 @@
       "search_hint": "Search for “{{key}}”"
     }
   },
+  "contact": {
+    "title": {
+      "name": "Name (required)",
+      "email": "Email (required)",
+      "phone": "Phone Number (optional)",
+      "message": "Comment (required)",
+      "send": "SUBMIT"
+    },
+    "placeholder": {
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "message": "Your comment here"
+    }
+  },
   "order": {
     "buy_again": "Buy again",
     "checkout_order": {

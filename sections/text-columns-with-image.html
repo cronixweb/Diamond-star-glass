@@ -51,7 +51,7 @@
 >
   <div class="page-width color-scheme-{{color_scheme}}">
     {{#if section.settings.title}}
-      <h2 class="text-columns-with-images__title section-title {{section.settings.title_font_size}} text-center">
+      <h2 class="text-columns-with-images__title section-title {{section.settings.title_font_size}} text-{{ section.settings.text_align_title}} {{#if section.settings.outline_style}}title_margin{{/if}}">
         {{section.settings.title}}
       </h2>
       <p class="text-columns-with-images__text {{section.settings.content_font_size}} text-center">{{section.settings.content}}</p>
@@ -183,6 +183,18 @@
           "label": "t:sections.text-columns-with-image.settings.title_font_size.options__3.label"
         }
       ]
+    },
+    {
+      "type": "text_align",
+      "id": "text_align_title",
+      "label": "t:sections.text-columns-with-image.settings.text_align_title.label",
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "outline_style",
+      "label": "t:sections.text-columns-with-image.settings.outline_style.label",
+      "default": false
     },
     {
       "type": "richtext",
