@@ -4482,6 +4482,9 @@
               "options__2": {
                 "label": "Built in page with floating"
               }
+            },
+            "enable_buy_button": {
+              "label": "Enable buy button"
             }
           }
         },

@@ -926,9 +926,11 @@ input[type="radio"]:checked
   border-radius: 45px;
   border: 1px solid rgba(var(--color-text));
   align-items: center;
+  padding: 13px 16px;
 }
 
 .product__info-item .quantity::before {
+  background: transparent;
   border-radius: 45px;
 }
 
@@ -938,7 +940,7 @@ input[type="radio"]:checked
 }
 
 .product__info-item .accordion__content {
-  font-size: var(--body4-font-size);
+  font-size: var(--body3-font-size);
   font-weight: 400;
   line-height: 1.4;
   padding: 0;
@@ -1005,7 +1007,7 @@ fieldset.product-form__input .form__label {
   line-height: 1.4;
 }
 
-.main-product__breadcrumb .breadcrumb {
+.main-product__breadcrumb .breadcrumb a {
   color: var(--color-grey-caption);
   font-size: var(--body2-font-size);
   font-weight: 400;
@@ -1019,7 +1021,7 @@ fieldset.product-form__input .form__label {
 .main-product__breadcrumb .breadcrumb__last-crumb {
   color: var(--color-grey-caption);
   font-size: var(--body2-font-size);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
   opacity: unset;
 }
@@ -1065,7 +1067,7 @@ variant-radios .product-form__input.medium .product-form__input--right {
 
 .product__details-container summary .accordion__title {
   font-size: var(--body4-font-size);
-  font-weight: 600;
+  font-weight: 600 !important;
   line-height: 1.4;
 }
 .accordion__content .field_text{
@@ -1081,7 +1083,17 @@ variant-radios .product-form__input.medium .product-form__input--right {
   margin: 5px 0 5px 0;
   clear: right;
   float: right;
-}  
+}
+@media (max-width: 959px) {
+  .product .product__info-wrapper {
+    margin-top: 32px;
+  }
+
+  #shopline-section-main-product-info .section-padding {
+    padding-bottom: 0;
+  }
+}
+  
 @media screen and (min-width: 960px) {
   .product__media-wrapper,
   .product__info-wrapper {
@@ -1115,7 +1127,7 @@ variant-radios .product-form__input.medium .product-form__input--right {
     font-size: var(--body4-max-font-size);
   }
 
-  .main-product__breadcrumb .breadcrumb {
+  .main-product__breadcrumb .breadcrumb a {
     font-size: var(--body4-font-size);
   }
   
@@ -1125,5 +1137,9 @@ variant-radios .product-form__input.medium .product-form__input--right {
 
   .product__details-container summary .accordion__title {
     font-size: var(--body5-font-size);
+  }
+
+  .product__info-item .accordion__content {
+    font-size: var(--body4-font-size);
   }
 }
