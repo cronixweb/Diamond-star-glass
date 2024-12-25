@@ -251,8 +251,12 @@
   }
 }
 @media screen and (min-width: 960px) {
+  .blogs__main .simple-blog__title{
+    letter-spacing: 0.48px;
+  }
+
   .blogs__main .slider:not(.grid-cols-2-tablet) .blogs__item {
-    width: 33.3333333333%;
+    width: 33.33%;
   }
 
   .blogs__main .blogs__title {

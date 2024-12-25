@@ -31,7 +31,7 @@
         id="{{product_form_id}}-submit"
         type="submit"
         name="add"
-        class="product-form__submit button button--full-width button--secondary"
+        class="product-form__submit button button--full-width {{#if block.settings.enable_buy_button}}button--secondary{{else}}button--primary{{/if}}"
         data-selected_or_first_available_variant="{{product.selected_or_first_available_variant.available}}"
         {{#unless product.selected_or_first_available_variant.available}}
           disabled
