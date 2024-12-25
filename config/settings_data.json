@@ -192,7 +192,11 @@
       },
       "swatch_size": 18,
       "show_pc_breadcrumb": false,
-      "show_mobile_breadcrumb": false
+      "show_mobile_breadcrumb": false,
+      "sku_selector_shadow_opacity": 0,
+      "sku_selector_shadow_offset_x": 0,
+      "sku_selector_shadow_offset_y": 0,
+      "sku_selector_shadow_blur": 0
     },
     "sections": {
       "announcement-bar": {
@@ -224,16 +228,12 @@
           "show_search_entry": true,
           "enabled_tile_search": true,
           "transparent_header": false,
-          "transparent_image": null,
           "transparent_title_color": "#FFFFFF",
-          "main_menu_link_list": "main-menu",
-          "mobile_main_menu_link_list": "",
           "main_menu_style": "dropdown",
           "navigation_layout": "left-line",
           "body_pc_second_font_size": "body3",
           "body_pc_second_font_bold": false,
           "body_pc_thirdly_font_size": "body4",
-          "mobile_top_menu": "",
           "mobile_top_menu_show_home": false,
           "user_mobile_layout": "menu",
           "sticky_header_type": "on-scroll-up",
@@ -252,7 +252,11 @@
           "highlight_text_color": "#FFFFFF",
           "highlight_bg_color": "#000000",
           "padding_top": 0,
-          "padding_bottom": 0
+          "padding_bottom": 0,
+          "transparent_image": null,
+          "mobile_main_menu_link_list": "",
+          "mobile_top_menu": "",
+          "main_menu_link_list": "main-menu"
         },
         "blocks": {
           "menuImage1": {
@@ -303,8 +307,122 @@
           "17325463020702f2c9d4": {
             "type": "menuImage",
             "settings": {
-              "menu_link_list": "6746684712855540965",
-              "menu_title": "New",
+              "menu_title": "vases",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more",
+              "menu_link_list": "",
+              "image_2": "shopline://shop_images/flowers.jpg",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg"
+            }
+          },
+          "1735016684632ce31576": {
+            "type": "menuImage",
+            "settings": {
+              "menu_title": "Garden",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more",
+              "menu_link_list": "",
+              "image_2": "shopline://shop_images/flowers.jpg",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg"
+            }
+          },
+          "1735016707332b5488c6": {
+            "type": "menuImage",
+            "settings": {
+              "menu_title": "Home Décor",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more",
+              "menu_link_list": "",
+              "image_2": "shopline://shop_images/flowers.jpg",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg"
+            }
+          },
+          "1735016737881b2a89b7": {
+            "type": "menuImage",
+            "settings": {
+              "menu_title": "Wedding & Event",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more",
+              "menu_link_list": "",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg",
+              "image_2": "shopline://shop_images/flowers.jpg"
+            }
+          },
+          "1735016753183000b633": {
+            "type": "menuImage",
+            "settings": {
+              "menu_title": "Seasonal",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more",
+              "menu_link_list": "",
+              "image_2": "shopline://shop_images/flowers.jpg",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg"
+            }
+          },
+          "1735017009032f7e9f84": {
+            "type": "menuImage",
+            "settings": {
+              "menu_link_list": "",
+              "menu_title": "Coastal",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1": "shopline://shop_images/Rectangle 8.jpg",
+              "image_1_title": "New Arrivals",
+              "image_1_link_text": "Explore more",
+              "image_2": "shopline://shop_images/flowers.jpg",
+              "image_2_title": "Featured Collections",
+              "image_2_link_text": "Explore more",
+              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
+              "image_3_title": "Sale",
+              "image_3_link_text": "Explore more"
+            }
+          },
+          "1735017015582ee1a1a7": {
+            "type": "menuImage",
+            "settings": {
+              "menu_link_list": "",
+              "menu_title": "Sale",
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
@@ -321,7 +439,13 @@
           }
         },
         "block_order": [
-          "17325463020702f2c9d4"
+          "17325463020702f2c9d4",
+          "1735016684632ce31576",
+          "1735016707332b5488c6",
+          "1735016737881b2a89b7",
+          "1735016753183000b633",
+          "1735017009032f7e9f84",
+          "1735017015582ee1a1a7"
         ],
         "custom_css": []
       },
@@ -368,32 +492,32 @@
           },
           "show_country_selector": false,
           "show_locale_selector": false,
-          "copyright_menu": "6722860962066470982",
-          "copyright_menu_type": "copyright_left"
+          "copyright_menu_type": "copyright_left",
+          "copyright_menu": "6722860962066470982"
         },
         "blocks": {
           "footer-menu1": {
             "type": "menu",
             "settings": {
               "title": "CUSTOMER SERVICE",
-              "menu": "footer",
-              "default_fold": false
+              "default_fold": false,
+              "menu": "footer"
             }
           },
           "footer-menu2": {
             "type": "menu",
             "settings": {
               "title": "ABOUT US",
-              "menu": "6722852336396410065",
-              "default_fold": false
+              "default_fold": false,
+              "menu": "6722852336396410065"
             }
           },
           "17310434078307d983be": {
             "type": "menu",
             "settings": {
               "title": "RESOURCES",
-              "menu": "6722853746907290841",
-              "default_fold": false
+              "default_fold": false,
+              "menu": "6722853746907290841"
             }
           },
           "173104341918049221eb": {
@@ -407,16 +531,16 @@
             "type": "menu",
             "settings": {
               "title": "BUSINESS TO BUSINESS",
-              "menu": "6722854983740433219",
-              "default_fold": false
+              "default_fold": false,
+              "menu": "6722854983740433219"
             }
           },
           "1731043436758c63b483": {
             "type": "menu",
             "settings": {
               "title": "DESIGN CREW",
-              "menu": "6722856077614936384",
-              "default_fold": false
+              "default_fold": false,
+              "menu": "6722856077614936384"
             }
           },
           "1731043441254ce68db2": {

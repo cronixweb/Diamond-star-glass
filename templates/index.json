@@ -73,11 +73,11 @@
       "disabled": false,
       "type": "section-rich-text-custom",
       "settings": {
-        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg",
-        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
         "color_scheme": "none",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
+        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
       },
       "blocks": {
         "17321789322925ea0413": {
@@ -145,7 +145,6 @@
       "disabled": false,
       "type": "image-with-text",
       "settings": {
-        "image": "shopline://shop_images/banner.jpg",
         "image_height": "auto",
         "pc_image_width": "large",
         "pc_image_position": "left",
@@ -155,7 +154,8 @@
         "color_scheme": "1",
         "mobile_text_align": "center",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "image": "shopline://shop_images/banner.jpg"
       },
       "blocks": {
         "1733673220654d226840": {
@@ -177,8 +177,8 @@
           "type": "button",
           "settings": {
             "button_text": "Explore more",
-            "link": "",
-            "button_type":"link"
+            "link": "shopline://collections-all",
+            "button_type": "link"
           },
           "blockId": "17336732206548259f99"
         }
@@ -263,8 +263,6 @@
       "disabled": false,
       "type": "image-banner",
       "settings": {
-        "banner1": "shopline://shop_images/Frame 1000002456 (2).jpg",
-        "mb-banner": "shopline://shop_images/Frame 1000002456 (1)_6753479818308655126.jpg",
         "banner_height_size": "high",
         "override_banner_height": false,
         "pc_content_position": "left",
@@ -279,7 +277,9 @@
         "width_style": true,
         "width_style_padding": false,
         "padding_top": 0,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "banner1": "shopline://shop_images/Frame 1000002456 (2).jpg",
+        "mb-banner": "shopline://shop_images/Frame 1000002456 (1)_6753479818308655126.jpg"
       },
       "blocks": {
         "17325437940219eec0bd": {
@@ -294,7 +294,7 @@
           "type": "desc",
           "settings": {
             "description": "Discover custom beach essentials that blend style, comfort, and functionality—curated to create your perfect beachside retreat.",
-            "text_size" : "body9"
+            "text_size": "body9"
           },
           "blockId": "17325437940213ebde67"
         },
@@ -322,8 +322,6 @@
       "disabled": false,
       "type": "image-banner",
       "settings": {
-        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png",
-        "banner2": "",
         "banner_height_size": "middle",
         "override_banner_height": false,
         "pc_content_position": "left",
@@ -336,9 +334,11 @@
         "mobile_banner_flatten": false,
         "m_show_textarea": false,
         "width_style": false,
-        "width_style_padding": true,
+        "gradient_style": false,
         "padding_top": 60,
-        "padding_bottom": 62
+        "padding_bottom": 62,
+        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png",
+        "mb-banner": "shopline://shop_images/candle-holders.png"
       },
       "blocks": {
         "1732544033019b70e437": {
@@ -380,8 +380,6 @@
       "disabled": false,
       "type": "image-banner",
       "settings": {
-        "banner1": "shopline://shop_images/image 4.jpg",
-        "banner2": "",
         "banner_height_size": "middle",
         "override_banner_height": false,
         "pc_content_position": "right",
@@ -394,9 +392,11 @@
         "mobile_banner_flatten": false,
         "m_show_textarea": false,
         "width_style": false,
-        "width_style_padding": true,
+        "gradient_style": false,
         "padding_top": 60,
-        "padding_bottom": 120
+        "padding_bottom": 120,
+        "mb-banner": "shopline://shop_images/Rectangle 9.jpg",
+        "banner1": "shopline://shop_images/image 4.jpg"
       },
       "blocks": {
         "1732544206146cf0281c": {
@@ -450,7 +450,7 @@
         "17325444519254c9c118": {
           "type": "collection",
           "settings": {
-            "product_categories": "12267434425038846115743575"
+            "product_categories": "12267112976879693429683575"
           }
         },
         "1732544462971ea61844": {
@@ -493,28 +493,28 @@
         "17325445313413a23da4": {
           "type": "multimedia",
           "settings": {
-            "image": "shopline://shop_images/001.jpg.jpg",
             "title": "Assortments",
             "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More"
+            "button_text": "Explore More",
+            "image": "shopline://shop_images/001.jpg.jpg"
           }
         },
         "173254454535071bff75": {
           "type": "multimedia",
           "settings": {
-            "image": "shopline://shop_images/001.jpg (1).jpg",
             "title": "Specialty-Assortments",
             "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More"
+            "button_text": "Explore More",
+            "image": "shopline://shop_images/001.jpg (1).jpg"
           }
         },
         "173254455475704811fb": {
           "type": "multimedia",
           "settings": {
-            "image": "shopline://shop_images/001.jpg (2).jpg",
             "title": "Specialty",
             "content": "Meet our Project Collective partner and shop her favorite looks.",
-            "button_text": "Explore More"
+            "button_text": "Explore More",
+            "image": "shopline://shop_images/001.jpg (2).jpg"
           }
         }
       },
@@ -613,29 +613,29 @@
         "1732544731345a7474f5": {
           "type": "collection",
           "settings": {
-            "product_category": "12267436178452030502433575",
-            "button_text": "Shop Now"
+            "button_text": "Shop Now",
+            "product_category": "12267436178452030502433575"
           }
         },
         "1732544744399879a9c9": {
           "type": "collection",
           "settings": {
-            "product_category": "12267436182779210006003575",
-            "button_text": "Shop Now"
+            "button_text": "Shop Now",
+            "product_category": "12267436182779210006003575"
           }
         },
         "1732544757290c236b5b": {
           "type": "collection",
           "settings": {
-            "product_category": "12267436189929156152733575",
-            "button_text": "Shop Now"
+            "button_text": "Shop Now",
+            "product_category": "12267436189929156152733575"
           }
         },
         "173254476940470c1075": {
           "type": "collection",
           "settings": {
-            "product_category": "12267436193572496841633575",
-            "button_text": "Shop Now"
+            "button_text": "Shop Now",
+            "product_category": "12267436193572496841633575"
           }
         }
       },
