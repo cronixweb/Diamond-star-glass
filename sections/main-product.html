@@ -1,4 +1,3 @@
-
 <section id="MainProduct-{{section.id}}" class="page-width section-padding" data-section="{{section.id}}">
   {{assign "theme_settings" settings}}
   {{assign "product_form_id" (append "product-form-" section.id)}}
@@ -541,7 +540,7 @@
             </div>
           {{else if block.type == "variant_picker"}}
             {{#if (isFalsey product.has_only_default_variant)}}
-              <div class="product__info-item m-26" {{{block.shopline_attributes}}}>
+              <div class="product__info-item m-26 product-variants" {{{block.shopline_attributes}}}>
                 {{snippet
                   "product-variant-picker"
                   section=section
