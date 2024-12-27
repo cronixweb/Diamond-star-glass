@@ -116,17 +116,21 @@
 }
 
 .slider-product-recommendations__button.previous {
-  left: 25px;
+  left: 15px;
   transform: translate(-50%, -50%) rotate(0);
 }
 
 .slider-product-recommendations__button.next {
-  right: 25px;
+  right: 15px;
   transform: translate(50%, -50%) rotate(0);
 }
 
 .slider-product-recommendations  li#Slide- {
   padding: 0 16px;
+}
+
+.slider-product-recommendations li#Slide- {
+  padding: 0;
 }
 
 @media screen and (max-width: 959px) {

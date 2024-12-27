@@ -1029,7 +1029,7 @@ fieldset.product-form__input .form__label {
 .product__info-item .form__label {
   font-size: var(--body5-font-size);
   font-weight: 600 !important;
-  line-height: 140%;
+  line-height: 1.4;
 }
 
 variant-radios .product-form__input.medium .product-form__input--right {
@@ -1084,6 +1084,13 @@ variant-radios .product-form__input.medium .product-form__input--right {
   clear: right;
   float: right;
 }
+
+.product__info-item .selected-variant {
+  font-size: var(--body5-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
 @media (max-width: 959px) {
   .product .product__info-wrapper {
     margin-top: 32px;
@@ -1136,11 +1143,26 @@ variant-radios .product-form__input.medium .product-form__input--right {
   }
 
   .product__details-container summary .accordion__title {
-    font-size: var(--body5-font-size);
+    font-size: var(--body4-max-font-size);
   }
 
   .product__info-item .accordion__content {
     font-size: var(--body4-font-size);
+  }
+
+  .product__info-item .form__label {
+    font-size: var(--body4-max-font-size);
+  }
+
+  .product__info-item--quantity-input.row .quantity-input-label {
+    margin-right: 14px;
+    font-size: var(--body4-max-font-size);
+  }
+
+  .product__info-item .selected-variant {
+    font-size: var(--body4-max-font-size);
+    font-weight: 400;
+    line-height: 1.4;
   }
 }
 
@@ -1158,7 +1180,7 @@ variant-radios .product-form__input.medium .product-form__input--right {
   }
   .wishlist-collect-block-btn{
     padding: 5px;
-    border-radius: 48px;
+    border-radius: 35px;
     border-color: var(--color-black)!important;
     width: 54px;
     height: 54px;
