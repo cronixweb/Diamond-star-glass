@@ -76,8 +76,8 @@
         "color_scheme": "none",
         "padding_top": 60,
         "padding_bottom": 60,
-        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
-        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
+        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg",
+        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg"
       },
       "blocks": {
         "17321789322925ea0413": {
@@ -195,15 +195,19 @@
       "type": "section-recommended-product-slider",
       "settings": {
         "heading-product-list": "Top Trending Products",
+        "product_list": [
+          "16067743524854966603263575",
+          "16067743477161535815393575",
+          "16067741869933771265683575",
+          "16067741839150599444673575",
+          "16067741810060752821483575",
+          "16067741768584454964993575",
+          "16067741734866445048963575",
+          "16067741686129471428623575"
+        ],
         "color_scheme": "none",
         "padding_top": 60,
-        "padding_bottom": 60,
-        "product_list": [
-          "16067287634590165924383575",
-          "16067287632576732294063575",
-          "16067287630039849867663575",
-          "16067112743325411662363575"
-        ]
+        "padding_bottom": 60
       },
       "blocks": {},
       "block_order": [],
@@ -337,8 +341,8 @@
         "gradient_style": false,
         "padding_top": 60,
         "padding_bottom": 62,
-        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png",
-        "mb-banner": "shopline://shop_images/candle-holders.png"
+        "mb-banner": "shopline://shop_images/candle-holders.png",
+        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png"
       },
       "blocks": {
         "1732544033019b70e437": {
