@@ -1,4 +1,4 @@
 <div id="cart-icon-bubble-wrapper">
   {{snippet 'icon-cart'}}
-  <span class="body6 header_icon-text">{{ t 'general.header.cart' }} ({{ cart.item_count }})</span>
+  <span class="body6 header_icon-text">{{ t 'general.header.cart' }} {{#if cart.item_count }}({{ cart.item_count }}){{/if}}</span>
 </div>

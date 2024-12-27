@@ -158,36 +158,6 @@
           </header-modal>
         {{/if}}
       </div>
-
-      
-      <div class="header__buttons display-none-desktop">
-        {{#if section.settings.show_user_entry}}
-          <a
-            class="icon-button header__icon-button
-              {{#if section.settings.user_mobile_layout == 'menu'}}display-none-tablet{{/if}}"
-            href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
-          >
-            {{snippet "icon-user"}}
-          </a>
-        {{/if}}
-
-        {{#if section.settings.show_favorite_icon}}
-          <a
-          class="icon-button header__icon-button {{#if (isFalsey section.settings.show_cart_entry)}}display-none{{/if}}" href="#">
-            {{snippet "icon-favorite"}}
-          </a>
-        {{/if}}
-
-        <a
-          id="cart-icon-bubble-mobile"
-          class="icon-button header__icon-button display-none-desktop
-            {{#if (isFalsey section.settings.show_cart_entry)}}visibility-hidden{{/if}}"
-          href="{{routes.cart_url}}"
-        >
-          {{snippet "cart-icon-bubble-mobile"}}
-        </a>
-      </div>
-
       
       {{assign "page_type" template.name}}
       {{assign "pc_logo_width" settings.desktop_logo_width}}
@@ -306,7 +276,7 @@
         "show_country_selector"
         (if section.settings.show_country_selector and (gt (length localization.available_countries) 1))
       }}
-      <div class="header__icons display-none-tablet">
+      <div class="header__icons">
         {{#if show_locale_selector or show_country_selector}}
           <div class="header__localization display-none-tablet">
             <localization-form>
@@ -423,18 +393,20 @@
             {{/if}}
           </div>
         {{/if}}
-
-        <a class="icon-button header__icon-button {{#if (isFalsey section.settings.show_favorite_icon)}}display-none{{/if}}" href="#">
-          {{snippet "icon-favorite"}}
-          <span class="header_icon-text">{{ t 'general.header.favorites' }}</span>
-        </a>
-
         <a
           id="cart-icon-bubble"
           class="icon-button header__icon-button {{#if (isFalsey section.settings.show_cart_entry)}}display-none{{/if}}"
           href="{{routes.cart_url}}"
         >
           {{snippet "cart-icon-bubble"}}
+        </a>
+        <a
+          id="cart-icon-bubble-mobile"
+          class="icon-button header__icon-button display-none-desktop
+            {{#if (isFalsey section.settings.show_cart_entry)}}visibility-hidden{{/if}}"
+          href="{{routes.cart_url}}"
+        >
+          {{snippet "cart-icon-bubble-mobile"}}
         </a>
       </div>
 
@@ -1006,12 +978,6 @@
       "id": "show_user_entry",
       "default": true,
       "label": "t:sections.header.settings.show_user_entry.label"
-    },
-      {
-      "type": "switch",
-      "id": "show_favorite_icon",
-      "default": true,
-      "label": "Display Favorite Icon"
     },
     {
       "type": "switch",

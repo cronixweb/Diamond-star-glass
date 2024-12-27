@@ -1379,9 +1379,26 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
   .header__nav-style--drawer.header__container--left-left,
   .header__nav-style--drawer.header__container--left-line{
     grid-template:
-      "drawer_menu logo buttons" auto
+      "drawer_menu logo icons" auto
       "tools tools tools" auto
       / auto 1fr auto auto;
+  }
+  .header .seedmore_wishlist_header{
+    display: inline-flex!important;
+  }
+  #HeaderBtnBox .header__btn>div {
+    display: flex;
+    align-items: center;
+  }
+  .header__icons #HeaderBtnBox .body4,
+  header .header_icon-text,
+  .header__icons #cart-icon-bubble,
+  .header__icons .user__container{
+    display: none;
+  }
+  .header__icons #HeaderBtnBox svg{
+    width: 20px;
+    height: 17px;
   }
   .header__heading {
     margin: 8px auto;
@@ -1640,4 +1657,32 @@ details[open] > summary > .drawer-menus__item > .drawer-menus__item-icon-off {
 }
 .header-drawer__localization{
   padding: 0;
+}
+
+/* header wishlist icon styles */
+@media (min-width: 960px) {
+  .header__icons .user__container{
+    order: 1;
+  }
+  .header__icons #HeaderBtnBox svg{
+    width: 27px;
+    height: 24px;
+  }
+  .header__icons #HeaderBtnBox .body4{
+    margin: 0;
+    text-align: center;
+    font-size: var(--body2-font-size);
+    font-weight: 400;
+    line-height: 0.9625rem;
+    text-transform: capitalize;
+  }
+  .header__icons #HeaderBtnBox [direction="column"]{
+    gap: 6px;
+  }
+  .header__icons #HeaderBtnBox{
+    order: 2;
+  }
+  .header__icons #cart-icon-bubble{
+    order: 3;
+  }
 }
