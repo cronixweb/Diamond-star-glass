@@ -551,7 +551,7 @@
               </div>
             {{/if}}
           {{else if block.type == "buy_buttons"}}
-            <div class="product__info-item m-10" {{{block.shopline_attributes}}}>
+            <div class="product__info-item m-10 product-but-buttons" {{{block.shopline_attributes}}}>
               <div class="{{#if block.settings.button_layout == 'float'}}display-none-tablet{{/if}} quick-add-show">
                 {{snippet
                   "product-buy-buttons"

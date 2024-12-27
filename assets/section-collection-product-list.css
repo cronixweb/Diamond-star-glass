@@ -298,3 +298,12 @@ body[data-template="collection"]{
     width: 100%;
   }
 }
+
+@media (min-width: 960px) {
+  .product-list-content{
+      margin-top: 0;
+  }
+  .shopline-section .product-list-container{
+      margin-top: -50px;
+  }
+}
