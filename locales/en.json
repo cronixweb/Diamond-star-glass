@@ -798,7 +798,8 @@
       "stock": {
         "label": "Product supply",
         "value": "In stock"
-      }
+      },
+      "sort": "Sort By:"
     },
     "general": {
       "load_more_btn": "Loading more items",

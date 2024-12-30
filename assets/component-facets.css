@@ -775,8 +775,9 @@ a.facets__reset:hover {
   border: 1px solid var(--collection-filter-border);
   background: var(--color-white);
   padding: 10px 16px;
-  width: 180px;
-  align-items: center;
+  width: 221px;
+  height: 46px;
+  align-content: center;
 }
 
 .facets__summary > div {
@@ -862,4 +863,98 @@ span.mobile-facets__open  {
 .mobile-facets__main .mobile-facets__arrow svg {
   width: 20px;
   height: 20px;
+}
+
+.product-list-container .filter-folder-trigger {
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: 1px solid var(--color-grey-border-dark);
+  background: var(--color-white);
+  color: var(--collection-filter-caption);
+  text-align: center;
+  width: 182px;
+  height: 46px;
+}
+
+.filter-plugin-horizon-con .filter-folder-con .body-font {
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.filter-plugin-horizon-con .filter-folder-con {
+  margin-right: 12px;
+}
+
+.filter-checkbox-title span {
+  font-size: var(--body3-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.filter-folder-popup .filter-folder-inner {
+  max-height: unset;
+}
+
+.filter-folder-popup .filter-apply-btn-con .filter-apply-btn {
+  font-size: var(--body4-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+/* Mobile */
+.facets-container .filter-m-trigger {
+  display: flex;
+  padding: 10px 16px !important;
+  justify-content: space-between !important;
+  align-content: center;
+  flex-direction: row-reverse;
+  border-radius: 30px;
+  background: var(--collection-filter-bg);
+  height: 44px;
+  max-width: 120px;
+  color: var(--color-grey-caption);
+  text-align: center;
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.filter-drawer-header.title-font span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.filter-drawer-inner .filter-folder-header span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.facets-sort-filter__wrapper .mobile-facets__sort {
+  flex: unset;
+  padding: unset; 
+}
+
+@media (max-width: 959px) {
+  .facets-sort-filter__wrapper {
+    padding: 10px 16px;
+  }
+}
+
+@media (min-width: 960px) {
+  .product-list-content{
+    margin-top: 0;
+  }
+
+  .shopline-section .product-list-container{
+    margin-top: -50px;
+  }
+
+  .facets__summary  {
+    width: 250px;
+  }
 }

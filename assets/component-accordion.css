@@ -150,3 +150,7 @@ summary .icon-fold svg {
 .accordion details[open] summary {
   border-bottom: 1px solid var(--color-borber-line);
 }
+
+.accordion summary {
+  padding: 24px 0;
+}
