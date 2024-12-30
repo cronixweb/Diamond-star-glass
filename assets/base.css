@@ -931,6 +931,7 @@ body[data-button-hover-animation="fill_right"]
   border-radius: var(--btn-border-radius);
   transition: box-shadow var(--duration-short) ease;
   z-index: 1;
+  height: 54px;
 }
 
 .button--secondary {
@@ -2451,3 +2452,6 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
 .button {
   line-height: 1.4;
 } 
+.filter-plugin-horizon-con::after{
+    content: "Filter:";
+}

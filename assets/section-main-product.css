@@ -1033,7 +1033,7 @@ fieldset.product-form__input .form__label {
 }
 
 variant-radios .product-form__input.medium .product-form__input--right {
-  gap: 8px;
+  gap: 16px;
 }
 
 .product__info-item .quantity__button svg {

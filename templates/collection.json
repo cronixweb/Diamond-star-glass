@@ -5,6 +5,8 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
+        "show_collection_name": true,
+        "btn_collection_text": "NEW ARRIVALS",
         "show_collection_cover": false,
         "pc_collection_img_height": 470,
         "md_collection_img_height": 250,
@@ -34,7 +36,7 @@
         "mobile_show_secondary_image": false,
         "sticky_filtering": false,
         "enable_filtering": true,
-        "enable_product_count":false,
+        "enable_product_count": false,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "padding_top": 80,
