@@ -305,7 +305,9 @@ input {
   margin: 0;
   margin-bottom: 21px;
 }
-
+.image-with-text .image-with-text__btn{
+  margin-top: 16px;
+}
 @media screen and (max-width: 959px){
   .image-with-text__info{
     padding: 48px 24px;
@@ -327,6 +329,9 @@ input {
     width:100%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .section-padding:not(.page-width) .pos-right .image-with-text__info{
+    padding: 140px 120px;
   }
 }
 
@@ -356,5 +361,13 @@ input {
   .image-with-text__sub-title.body_large {
     font-size: var(--body6-font-size);
     max-width: 600px;
+  }
+  .image-with-text.img-w-medium .image-with-text__info-wrap{
+    flex: 1.04;
+  }
+  .image-with-text.image-with-text--align-middle.img-w-medium .image-with-text__info{
+    max-width: 764px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

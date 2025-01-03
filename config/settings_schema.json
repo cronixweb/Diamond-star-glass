@@ -279,6 +279,18 @@
         "default": "#2C2924"
       },
       {
+        "id": "color_scheme_1_btn_bg_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_bg_color.label",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "color_scheme_1_btn_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_color.label",
+        "default": "#000000"
+      },
+      {
         "type": "group_header",
         "label": "t:settings_schema.color.settings.group_header__8.label"
       },
@@ -295,6 +307,18 @@
         "default": "#FFFFFF"
       },
       {
+        "id": "color_scheme_2_btn_bg_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_bg_color.label",
+        "default": "#EFEFEF"
+      },
+      {
+        "id": "color_scheme_2_btn_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_color.label",
+        "default": "#121212"
+      },
+      {
         "type": "group_header",
         "label": "t:settings_schema.color.settings.group_header__9.label"
       },
@@ -308,6 +332,18 @@
         "id": "color_scheme_3_text",
         "type": "color",
         "label": "t:settings_schema.color.settings.color_scheme_3_text.label",
+        "default": "#000000"
+      },
+      {
+        "id": "color_scheme_3_btn_bg_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_bg_color.label",
+        "default": "#F4F7FB"
+      },
+      {
+        "id": "color_scheme_3_btn_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_color.label",
         "default": "#000000"
       }
     ]
