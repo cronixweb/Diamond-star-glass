@@ -6711,6 +6711,12 @@
         "color_scheme_1_text": {
           "label": "Font color"
         },
+        "color_scheme_1_btn_color": {
+          "label": "Button color"
+        },
+        "color_scheme_1_btn_bg_color": {
+          "label": "Button background color"
+        },
         "group_header__8": {
           "label": "Color 2"
         },

@@ -950,7 +950,7 @@ span.mobile-facets__open  {
     margin-top: 0;
   }
 
-  .shopline-section .product-list-container{
+  [data-template="collection"] .shopline-section .product-list-container{
     margin-top: -50px;
   }
 

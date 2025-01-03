@@ -408,7 +408,7 @@ input {
   .text-columns-with-images__text.body_custom {
     font-size: var(--body6-font-size);
     margin-bottom: 64px !important;
-    max-width: 58%;
+    max-width: 967px;
     justify-self: center;
   }
   .description_custom .text-columns-with-images-item__text {

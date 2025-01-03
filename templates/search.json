@@ -1,19 +1,25 @@
 {
   "sections": {
     "main": {
+      "disabled": false,
       "type": "main-search",
       "settings": {
+        "products_per_page": 16,
         "columns_desktop": 4,
         "columns_mobile": 2,
-        "product_image_ratio": "150",
-        "image_fill_type": "contain",
+        "product_image_ratio": "100",
+        "image_fill_type": "cover",
         "show_secondary_image": false,
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
+        "show_article_author": true,
+        "show_article_date": true,
         "padding_top": 80,
         "padding_bottom": 80
-      }
+      },
+      "blocks": {},
+      "custom_css": []
     }
   },
   "order": [
