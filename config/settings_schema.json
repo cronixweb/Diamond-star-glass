@@ -279,6 +279,18 @@
         "default": "#2C2924"
       },
       {
+        "id": "color_scheme_1_btn_bg_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_bg_color.label",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "color_scheme_1_btn_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_color.label",
+        "default": "#000000"
+      },
+      {
         "type": "group_header",
         "label": "t:settings_schema.color.settings.group_header__8.label"
       },
@@ -295,6 +307,18 @@
         "default": "#FFFFFF"
       },
       {
+        "id": "color_scheme_2_btn_bg_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_bg_color.label",
+        "default": "#EFEFEF"
+      },
+      {
+        "id": "color_scheme_2_btn_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_color.label",
+        "default": "#121212"
+      },
+      {
         "type": "group_header",
         "label": "t:settings_schema.color.settings.group_header__9.label"
       },
@@ -308,6 +332,18 @@
         "id": "color_scheme_3_text",
         "type": "color",
         "label": "t:settings_schema.color.settings.color_scheme_3_text.label",
+        "default": "#000000"
+      },
+      {
+        "id": "color_scheme_3_btn_bg_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_bg_color.label",
+        "default": "#F4F7FB"
+      },
+      {
+        "id": "color_scheme_3_btn_color",
+        "type": "color",
+        "label": "t:settings_schema.color.settings.color_scheme_1_btn_color.label",
         "default": "#000000"
       }
     ]
@@ -433,7 +469,7 @@
         "label": "t:settings_schema.layout.settings.grid_horizontal_space.label",
         "min": 0,
         "max": 40,
-        "step": 4,
+        "step": 2,
         "unit": "px",
         "default": 20
       },
@@ -442,8 +478,8 @@
         "type": "range",
         "label": "t:settings_schema.layout.settings.grid_vertical_space.label",
         "min": 0,
-        "max": 40,
-        "step": 4,
+        "max": 52,
+        "step": 2,
         "unit": "px",
         "default": 20
       }
@@ -2355,6 +2391,25 @@
         "label": "t:settings_schema.favicon.settings.favicon_image.label",
         "info": "t:settings_schema.favicon.settings.favicon_image.info",
         "default": ""
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.template_colors.name",
+    "settings": [
+      {
+        "id": "collection_color",
+        "type": "color",
+        "label": "t:settings_schema.template_colors.settings.collection_color.label",
+        "info": "t:settings_schema.template_colors.settings.collection_color.info",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "product_color",
+        "type": "color",
+        "label": "t:settings_schema.template_colors.settings.product_color.label",
+        "info": "t:settings_schema.template_colors.settings.product_color.info",
+        "default": "#FFFFFF"
       }
     ]
   }

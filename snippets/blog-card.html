@@ -148,7 +148,7 @@
             {{#if show_date}}
               <span class="text blog-caption__date">
                 <{{link_ele}} {{#if link_url}}href="{{link_url}}"{{/if}} title="{{info.title}}">
-                  {{date info.published_at "abbreviated_date"}}
+                  {{ date info.published_at '%d %B' }}
                 </{{link_ele}}>
               </span>
             {{/if}}

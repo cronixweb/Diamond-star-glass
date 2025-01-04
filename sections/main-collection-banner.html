@@ -75,6 +75,22 @@
         {{{collection.description}}}
       </div>
     {{/if}}
+    {{#if collection.metafields.my_fields.similar_categories.value}}
+    <div class="page-width">
+      <ul class="similar-category-group grid grid-cols-4 grid-cols-2-tablet">
+        {{#for collection.metafields.my_fields.similar_categories.value as |similar_category| }}
+          <li class="grid_item">
+            <a href="{{similar_category.url}}">
+              <div class="similar-cateogory-image">
+                <img src="{{similar_category.image}}" alt="{{similar_category.title}}" width="255px" height="255px">
+              </div>
+              <h2 class="collection-title">{{similar_category.title}}</h2>
+            </a>
+          </li>
+        {{/for}}
+      </ul>
+    </div>
+    {{/if}}
   </div>
 {{/if}}
 
@@ -97,21 +113,42 @@
         {{#unless section.settings.show_collection_name}}collection-hero__no-title{{/unless}}"
     >
       {{snippet "breadcrumb" class="text-left" settings=settings}}
-      {{#if section.settings.show_collection_name}}
-        <h1 class="title4 collection-hero__title">
-          {{default collection.title (t "products.product_list.products")}}
-        </h1>
-      {{/if}}
-    </div>
-
-    {{#if section.settings.show_collection_description and collection.description}}
-      <div class="collection-hero__description body3 rte">
-        {{{collection.description}}}
+      <div class="collection-banner-content">
+        <div class="banner-content">
+          {{#if section.settings.show_collection_name}}
+            <h1 class="title2 collection-hero__title">
+              {{default collection.title (t "products.product_list.products")}}
+            </h1>
+          {{/if}}
+          {{#if section.settings.show_collection_description and collection.description}}
+            <div class="collection-hero__description body5 rte">
+              {{{collection.description}}}
+            </div>
+          {{/if}}
+          {{#if collection.metafields.my_fields.new_arrivals_link.value }}
+            <a href="{{collection.metafields.my_fields.new_arrivals_link.value}}" class="button button-primary">{{section.settings.btn_collection_text}}</a>
+          {{/if}}
+        </div>
+        <div class="banner-categories">
+          {{#if collection.metafields.my_fields.similar_categories.value}}
+            <ul class="similar-category-group grid grid-cols-4 grid-cols-2-tablet">
+              {{#for collection.metafields.my_fields.similar_categories.value as |similar_category| }}
+                <li class="grid_item">
+                  <a href="{{similar_category.url}}">
+                    <div class="similar-cateogory-image">
+                      <img src="{{similar_category.image}}" alt="{{similar_category.title}}" width="255px" height="255px">
+                    </div>
+                    <h2 class="collection-title">{{similar_category.title}}</h2>
+                  </a>
+                </li>
+              {{/for}}
+            </ul>
+          {{/if}}
+        </div>
       </div>
-    {{/if}}
+    </div>
   </div>
 {{/if}}
-
 {{#schema}}
 {
   "name": "t:sections.main-collection-banner.name",
@@ -128,6 +165,12 @@
       "id": "show_collection_name",
       "label": "t:sections.main-collection-banner.settings.show_collection_name.label",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "btn_collection_text",
+      "label": "t:sections.main-collection-banner.settings.btn_collection_text.label",
+      "default": "NEW ARRIVALS"
     },
     {
       "type": "switch",
@@ -207,6 +250,7 @@
   "default": {
     "settings": {
       "show_collection_description": true,
+      "btn_collection_text": "NEW ARRIVALS",
       "show_collection_cover": true,
       "pc_collection_img_height": "470",
       "md_collection_img_height": "250",

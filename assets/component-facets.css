@@ -752,3 +752,209 @@ a.facets__reset:hover {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+
+.facets__form.without-product-count {
+  grid-template-columns: 1fr max-content;
+}
+.facets__form .filter-title{
+  margin-right: 12px;
+}
+.facets__disclosure {
+  margin-right: 12px;
+}
+
+.facets__form details[open] .facets__summary span {
+  text-decoration: none;
+}
+
+.facets__summary  {
+  justify-content: space-between;
+  border-radius: 30px;
+  border: 1px solid var(--collection-filter-border);
+  background: var(--color-white);
+  padding: 10px 16px;
+  width: 221px;
+  height: 46px;
+  align-content: center;
+}
+
+.facets__summary > div {
+  justify-content: space-between;
+}
+
+.facets__summary span {
+  padding-right: 0;
+  color: var(--collection-filter-caption);
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__heading {
+  font-size: var(--body4-font-size);
+  font-weight: 600 !important;
+  line-height: 1.4;
+}
+
+.mobile-facets__summary span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mobile-facets__footer .mobile-facets__count {
+  display: none;
+}
+
+.mobile-facets__footer .button {
+  width: 100%;
+  word-break: unset;
+}
+
+span.mobile-facets__open  {
+  border-radius: 30px;
+  background: var(--collection-filter-bg);
+  padding: 10px 16px;
+  justify-content: space-between;
+}
+
+.facets-sort-filter__wrapper.has-middle-line::after {
+  content: unset;
+}
+
+.facets-sort-filter__wrapper {
+  border: none;
+}
+
+.product-list-container {
+  padding-top: 40px;
+}
+
+.mobile-facets__clear-wrapper {
+  display: none;
+}
+
+.facets-sort-filter__wrapper .mobile-facets__wrapper .mobile-facets__open {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.product-list-container {
+  padding-top: 0;
+}
+.main-collection-container:not(.facets-vertical) .facets-wrapper{
+  background-color: rgba(var(--collection-page-background)) ;
+}
+
+.mobile-facets__summary > div {
+  padding: 12px 0;
+}
+
+.mobile-facets__header {
+  padding: 0 16px;
+}
+
+.mobile-facets__main {
+  padding: 0 18px;
+}
+
+.mobile-facets__main .mobile-facets__arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.product-list-container .filter-folder-trigger {
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: 1px solid var(--color-grey-border-dark);
+  background: var(--color-white);
+  color: var(--collection-filter-caption);
+  text-align: center;
+  width: 182px;
+  height: 46px;
+}
+
+.filter-plugin-horizon-con .filter-folder-con .body-font {
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.filter-plugin-horizon-con .filter-folder-con {
+  margin-right: 12px;
+}
+
+.filter-checkbox-title span {
+  font-size: var(--body3-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.filter-folder-popup .filter-folder-inner {
+  max-height: unset;
+}
+
+.filter-folder-popup .filter-apply-btn-con .filter-apply-btn {
+  font-size: var(--body4-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+/* Mobile */
+.facets-container .filter-m-trigger {
+  display: flex;
+  padding: 10px 16px !important;
+  justify-content: space-between !important;
+  align-content: center;
+  flex-direction: row-reverse;
+  border-radius: 30px;
+  background: var(--collection-filter-bg);
+  height: 44px;
+  max-width: 120px;
+  color: var(--color-grey-caption);
+  text-align: center;
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.filter-drawer-header.title-font span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.filter-drawer-inner .filter-folder-header span {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.facets-sort-filter__wrapper .mobile-facets__sort {
+  flex: unset;
+  padding: unset; 
+}
+
+@media (max-width: 959px) {
+  .facets-sort-filter__wrapper {
+    padding: 10px 16px;
+  }
+}
+
+@media (min-width: 960px) {
+  .product-list-content{
+    margin-top: 0;
+  }
+
+  [data-template="collection"] .shopline-section .product-list-container{
+    margin-top: -50px;
+  }
+
+  .facets__summary  {
+    width: 250px;
+  }
+}

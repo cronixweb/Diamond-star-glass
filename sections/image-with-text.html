@@ -24,14 +24,15 @@
 {{#if color_scheme != "none" or image_overlap_display}}
   {{assign "ignore_image_height" true}}
 {{/if}}
-<div class="section-padding page-width">
+<div class="section-padding {{#if section.settings.enable_full_width}} {{else}}page-width{{/if}}">
   <div
     class="image-with-text
       image-with-text--align-{{pc_box_align}}
       img-w-{{pc_image_width}}
       pos-{{pc_image_position}}
       {{#if ignore_image_height}}image-with-text--stretch{{/if}}
-      {{#if (isTruthy image_overlap_display)}}image-with-text--overlap{{/if}}"
+      {{#if (isTruthy image_overlap_display)}}image-with-text--overlap{{/if}}
+       {{ section.settings.reverse_column }}"
   >
     <a
       class="image-with-text__img-wrap
@@ -65,7 +66,7 @@
               {{#if (trim block.type) == "title"}}
                 <h2
                   {{{block.shopline_attributes}}}
-                  class="title3 image-with-text__title image-with-text__title--size-{{block.settings.title_size}}"
+                  class="image-with-text__title {{block.settings.title_size}}"
                 >
                   {{block.settings.title}}
                 </h2>
@@ -73,21 +74,28 @@
               {{#if (trim block.type) == "content"}}
                 <div
                   {{{block.shopline_attributes}}}
-                  class="body3 image-with-text__content rte"
+                  class="body4 image-with-text__content rte"
                 >{{{block.settings.content}}}</div>
               {{/if}}
               {{#if (trim block.type) == "sub_title"}}
-                <div {{{block.shopline_attributes}}} class="body3 image-with-text__sub-title image-with-text__sub-title--size-{{block.settings.text_size}}">{{{block.settings.text}}}</div>
+                <div {{{block.shopline_attributes}}} class="image-with-text__sub-title {{block.settings.text_size}}">{{{block.settings.text}}}</div>
               {{/if}}
               {{#if (trim block.type) == "button"}}
                 {{#if (trim block.settings.button_text)}}
-                  <a
-                    {{{block.shopline_attributes}}}
-                    {{#if block.settings.link}}href="{{block.settings.link}}"{{else}}href="javascript:;"{{/if}}
-                    class="image-with-text__btn button"
-                  >
-                    {{block.settings.button_text}}
-                  </a>
+                  {{#if block.settings.button_type '==' 'button'}}
+                    <a
+                      {{{block.shopline_attributes}}}
+                      {{#if block.settings.link}}href="{{block.settings.link}}"{{else}}href="javascript:;"{{/if}}
+                      class="image-with-text__btn button"
+                    >
+                      {{block.settings.button_text}}
+                    </a>  
+                  {{else}}
+                    <a class="image-with-text__link body4"  {{#if block.settings.link}}href="{{block.settings.link}}"{{else}}href="javascript:;"{{/if}}>
+                      {{{ block.settings.button_text}}}
+                      {{snippet "icon-right-arrow" }}
+                    </a>
+                  {{/if}}
                 {{/if}}
               {{/if}}
             {{/for}}
@@ -103,6 +111,12 @@
   "name": "t:sections.image-with-text.name",
   "class": "section",
   "settings": [
+    {
+      "type": "switch",
+      "id": "enable_full_width",
+      "label": "t:sections.image-with-text.settings.enable_full_width.label",
+      "default": false
+    },
     {
       "id": "image",
       "type": "image_picker",
@@ -164,6 +178,23 @@
         }
       ],
       "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "reverse_column",
+      "label": "t:sections.image-with-text.settings.reverse_column.label",
+      "info": "t:sections.image-with-text.settings.reverse_column.info",
+      "options": [
+        {
+          "value": "col",
+          "label": "t:sections.image-with-text.settings.reverse_column.options__0.label"
+        },
+        {
+          "value": "reverse_col",
+          "label": "t:sections.image-with-text.settings.reverse_column.options__1.label"
+        }
+      ],
+      "default": "col"
     },
     {
       "id": "pc_box_align",
@@ -290,9 +321,10 @@
       "settings": [
         {
           "id": "text",
-          "type": "text",
+          "type": "textarea",
           "label": "t:sections.image-with-text.blocks.sub_title.settings.text.label",
-          "default": "Improved"
+          "default": "Improved",
+          "limit": 1000
         },
         {
           "id": "text_size",
@@ -301,18 +333,18 @@
           "options": [
             {
               "label": "t:sections.image-with-text.blocks.sub_title.settings.text_size.options__0.label",
-              "value": "small"
+              "value": "body_small"
             },
             {
-              "value": "medium",
+              "value": "body_center",
               "label": "t:sections.image-with-text.blocks.sub_title.settings.text_size.options__1.label"
             },
             {
-              "value": "large",
+              "value": "body_large",
               "label": "t:sections.image-with-text.blocks.sub_title.settings.text_size.options__2.label"
             }
           ],
-          "default": "medium"
+          "default": "body_center"
         }
       ]
     },
@@ -331,21 +363,25 @@
         {
           "id": "title_size",
           "type": "select",
-          "default": "medium",
+          "default": "title5",
           "limit": 1,
           "label": "t:sections.image-with-text.blocks.title.settings.title_size.label",
           "options": [
             {
-              "value": "small",
+              "value": "title_small",
               "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__0.label"
             },
             {
-              "value": "medium",
+              "value": "title_center",
               "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__1.label"
             },
             {
-              "value": "large",
+              "value": "title5",
               "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__2.label"
+            },
+            {
+              "value": "title_xlarge",
+              "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__3.label"
             }
           ]
         }
@@ -382,6 +418,23 @@
           "id": "link",
           "label": "t:sections.image-with-text.blocks.button.settings.link.label",
           "default": ""
+        },
+        {
+          "id": "button_type",
+          "type": "select",
+          "default": "button",
+          "limit": 1,
+          "label": "t:sections.image-with-text.blocks.title.settings.button_type.label",
+          "options": [
+            {
+              "value": "button",
+              "label": "t:sections.image-with-text.blocks.title.settings.button_type.options__0.label"
+            },
+            {
+              "value": "link",
+              "label": "t:sections.image-with-text.blocks.title.settings.button_type.options__1.label"
+            }
+          ]
         }
       ]
     },

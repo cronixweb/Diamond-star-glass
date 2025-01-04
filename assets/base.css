@@ -311,11 +311,11 @@ deferred-media {
 }
 
 :root {
-  --title1-font-size: calc(var(--title-font-size) * 1);
-  --title2-font-size: calc(var(--title-font-size) * 0.833333);
-  --title3-font-size: calc(var(--title-font-size) * 0.733333);
-  --title4-font-size: calc(var(--title-font-size) * 0.666667);
-  --title5-font-size: calc(var(--title-font-size) * 0.6);
+  --title1-font-size: calc(var(--title-font-size) * 1); /* 30px */
+  --title2-font-size: calc(var(--title-font-size) * 1.33); /* 40px */
+  --title3-font-size: calc(var(--title-font-size) * 1.33); /* 40px */
+  --title4-font-size: calc(var(--title-font-size) * 1.06); /* 36px */
+  --title5-font-size: calc(var(--title-font-size) * 1.0); /* 32px */
   --title6-font-size: calc(var(--title-font-size) * 0.6);
 
   --body1-font-size: calc(var(--body-font-size) * 0.6875); /* 11px */
@@ -325,29 +325,35 @@ deferred-media {
   --body5-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
   --body6-font-size: calc(var(--body-font-size) * 1.25); /* 20px */
   --body7-font-size: calc(var(--body-font-size) * 1.5); /* 24px */
+  --body7-max-font-size: calc(var(--body-font-size) * 1.75); /* 28px */
   --body8-font-size: calc(var(--body-font-size) * 2); /* 32px */
+  --body9-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
   --megamenu-title: calc(var(--body-font-size) * 1.375); /* 22px */
   --megamenu-links: calc(var(--body-font-size) * 1.125); /* 18px */
 }
 
 @media (min-width: 960px) {
   :root {
-    --title1-font-size: calc(var(--title-font-size) * 2.333333);
-    --title2-font-size: calc(var(--title-font-size) * 1.666667);
-    --title3-font-size: calc(var(--title-font-size) * 1.2);
-    --title4-font-size: calc(var(--title-font-size) * 1);
-    --title5-font-size: calc(var(--title-font-size) * 0.833333);
+    --title1-font-size: calc(var(--title-font-size) * 2.333333); /* 70px */
+    --title2-font-size: calc(var(--title-font-size) * 2.13); /* 64px */
+    --title3-font-size: calc(var(--title-font-size) * 1.876); /* 56px */
+    --title4-font-size: calc(var(--title-font-size) * 1.876); /* 56px */
+    --title5-font-size: calc(var(--title-font-size) * 1.33); /* 40px */
     --title6-font-size: calc(var(--title-font-size) * 0.666667);
 
     --body1-font-size: calc(var(--body-font-size) * 0.6875); /* 11px */
     --body2-font-size: calc(var(--body-font-size) * 0.75); /* 12px */
     --body3-font-size: calc(var(--body-font-size) * 0.875); /* 14px */
     --body4-font-size: calc(var(--body-font-size) * 1);
+    --body4-max-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
+    --body4-max-font-size: calc(var(--body-font-size) * 1.125); /* 18px */
     --body5-font-size: calc(var(--body-font-size) * 1.25); /* 20px */
     --body6-font-size: calc(var(--body-font-size) * 1.5); /* 24px */
     --body7-min-font-size: calc(var(--body-font-size) * 1.75); /* 28px */
     --body7-font-size: calc(var(--body-font-size) * 2); /* 32px */
     --body8-font-size: calc(var(--body-font-size) * 3); /* 48px */
+    --body9-font-size: calc(var(--body-font-size) * 1.5); /* 24px */
+    --body8-max-font-size: calc(var(--body-font-size) * 3.5); /* 56px */
   }
 }
 
@@ -1063,8 +1069,8 @@ body[data-button-hover-animation="fill_right"]
 .color-scheme-1 .button::before {
   --color-page-background: var(--color-scheme-1-bg);
   --color-text: var(--color-scheme-1-text);
-  --color-button-background: var(--color-scheme-1-text);
-  --color-button-text: var(--color-scheme-1-bg);
+  --color-button-background: var(--color-scheme-1-btn-bg-text);
+  --color-button-text: var(--color-scheme-1-btn-text);
 }
 
 .color-scheme-1 .price {
@@ -1075,8 +1081,8 @@ body[data-button-hover-animation="fill_right"]
 .color-scheme-2 .button::before {
   --color-page-background: var(--color-scheme-2-bg);
   --color-text: var(--color-scheme-2-text);
-  --color-button-background: var(--color-scheme-2-text);
-  --color-button-text: var(--color-scheme-2-bg);
+  --color-button-background: var(--color-scheme-2-btn-bg-text);
+  --color-button-text: var(--color-scheme-2-btn-text);
 }
 
 .color-scheme-2 .price {
@@ -1087,8 +1093,8 @@ body[data-button-hover-animation="fill_right"]
 .color-scheme-3 .button::before {
   --color-page-background: var(--color-scheme-3-bg);
   --color-text: var(--color-scheme-3-text);
-  --color-button-background: var(--color-scheme-3-text);
-  --color-button-text: var(--color-scheme-3-bg);
+  --color-button-background: var(--color-scheme-3-btn-bg-text);
+  --color-button-text: var(--color-scheme-3-btn-text);
 }
 
 .color-scheme-3 .price {
@@ -2434,3 +2440,14 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
 .body7 {
   font-size: var(--body7-font-size);
 }
+.body9{
+  font-size: var(--body9-font-size);
+}
+.button, .shopline-element-buy-now{
+  padding: calc(var(--btn-border-thickness) + 15px) calc(var(--btn-border-thickness) + 39px);
+  font-size: var(--body4-font-size);
+  text-transform: uppercase;
+}
+.button {
+  line-height: 1.4;
+} 

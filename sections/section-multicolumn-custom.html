@@ -10,6 +10,12 @@
   padding_bottom=section.settings.padding_bottom
 }}
 <style>
+  @media screen and (min-width: 960px) {
+    #shopline-section-{{section.id}} .section-padding{
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
   .multicolumn-section-main{
     background: {{section.settings.color_page_background}};
   }
@@ -48,10 +54,10 @@
                       {{snippet "image" data=block.settings.image }}
                     {{/if}}
                     {{#if block.settings.title}}
-                      <h3>{{ block.settings.title }}</h3>
+                      <h3 class="body3">{{ block.settings.title }}</h3>
                     {{/if}}
                     {{#if block.settings.content}}
-                      <p>{{{ block.settings.content }}}</p>
+                      <p class="body3 multicolumn_content">{{{ block.settings.content }}}</p>
                     {{/if}}
                     {{#if block.settings.button_text}}
                       <div class="inner-content-btn">
@@ -85,7 +91,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
     gap: '50px',
     
     breakpoints: {
-      991: {
+      990: {
+        perPage: 2,
+        gap : '1rem',
+      },
+      767: {
         perPage: 1,
         gap : '1rem',
       }
@@ -106,7 +116,7 @@ splide.mount();
 
 {{#schema }}
 {
-  "name": "Multicolumn Custom",
+  "name": "Multicolumn",
   "class": "section",
   "settings": [
     {
@@ -158,9 +168,9 @@ splide.mount();
       "id": "padding_top",
       "label": "Top Padding",
       "default": 60,
-      "max": 100,
+      "max": 120,
       "min": 0,
-      "step": 2,
+      "step": 4,
       "unit": "px"
     },
     {
@@ -168,9 +178,9 @@ splide.mount();
       "id": "padding_bottom",
       "label": "Bottom Padding",
       "default": 60,
-      "max": 100,
+      "max": 120,
       "min": 0,
-      "step": 2,
+      "step": 4,
       "unit": "px"
     }
   ],

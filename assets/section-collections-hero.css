@@ -98,3 +98,196 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+
+/* Custom styles for collection banner */
+.collection-hero .breadcrumb {
+  display: block;
+  margin: 0;
+}
+.collection-hero .breadcrumb {
+  color: var(--color-grey-caption);
+  font-size: var(--body2-font-size);
+  font-weight: 400;
+  line-height: 1.4;
+}
+  
+.collection-hero .breadcrumb__divider {
+  opacity: unset;
+}
+  
+.collection-hero .breadcrumb__last-crumb {
+  font-size: var(--body2-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  opacity: unset;
+}
+
+.product-list-content .product-block {
+  padding: 16px 0;
+  margin: 0;
+}
+
+.collection-hero__no-cover{
+  padding-top: 16px;
+}
+.collection-hero__no-cover .collection-banner-content{
+  margin-top: 36px;
+}
+.similar-category-group img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.similar-category-group .similar-cateogory-image{
+  aspect-ratio: 1;
+  border-radius: 50%;
+  line-height: 0;
+}
+.similar-category-group .collection-title{
+  font-size: var(--body4-font-size);
+  font-family: var(--body-font);
+  text-align: center;
+  font-weight: 600;
+  margin-top: 16px;
+  line-height: normal;
+}
+.collection-banner-content .banner-categories,
+.has-collection-image .similar-category-group{
+  margin-top: 48px;
+}
+.banner-categories .similar-category-group{
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  margin-left:0;
+  margin-right:0;
+}
+
+.collection-hero__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+.collection-hero__description {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.collection-hero:not(.has-collection-image) .collection-hero__description {
+  margin-top: 8px;
+}
+
+.similar-category-group {
+  padding-bottom: 48px;
+}
+/* width */
+.similar-category-group::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Track */
+.similar-category-group::-webkit-scrollbar-track {
+  border-radius: 34px;
+  background-color: var(--color-grey-border-light);
+}
+ 
+/* Handle */
+.similar-category-group::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-color); 
+  border-radius: 35px;
+}
+
+.collection-hero .breadcrumb a {
+  color: var(--color-grey-caption);
+}
+
+@media (min-width: 960px) {
+  .banner-categories .similar-category-group{
+    flex-wrap: wrap;
+    overflow-x: unset;
+    margin-left: calc(var(--grid-horizontal-space) * -0.5);
+    margin-right: calc(var(--grid-horizontal-space) * -0.5);
+  }
+  #shopline-section-main-collection-product-list .section-padding{
+    padding-top: 109px;
+    padding-bottom: 124px;
+  }
+  .collection-banner-content{
+    display: flex;
+    align-items: center;
+  }
+  .collection-banner-content .banner-content{
+    width: 34%;
+  }
+  .collection-banner-content .banner-categories{
+    width: 67%;
+    padding-left: 26px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .collection-banner-content .similar-category-group{
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .collection-banner-content .grid_item{
+    margin: 0;
+  }
+
+  .collection-hero__no-cover .collection-banner-content{
+    margin-top: 41px;
+  }
+
+  .collection-hero__title {
+    font-size: 56px;
+    line-height: 1.3;
+  }
+
+  .collection-hero__description {
+    font-size: 20px;
+    max-width: 86%;
+  }
+
+  .collection-hero__no-cover{
+    padding-top: 30px;
+  }
+
+  .collection-hero .breadcrumb {
+    font-size: var(--body4-font-size);
+  }
+
+  .collection-hero .breadcrumb__last-crumb {
+    font-size: var(--body4-font-size);
+  }
+
+  .similar-category-group {
+    padding-bottom: 0;
+  }
+
+  .product-list-content .product-block {
+    padding: 32px 15px 16px 15px;
+  }
+}
+@media (min-width: 1440px) {
+  .collection-banner-content .banner-categories{
+    padding-left: 76px;
+  }
+  .similar-category-group .collection-title{
+    font-size: var(--body5-font-size);
+    margin-top: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .collection-hero .banner-categories{
+    margin-right: -16px;
+  }
+  .collection-hero .banner-categories .grid_item{
+    padding-left: 0;
+    padding-right: 16px;
+    width: 160px;
+  }
+}

@@ -6,7 +6,6 @@
 }
 .announcement-bar {
     justify-content: space-around;
-    align-items: center;
     align-content: center;
     margin: 0;
 }  
@@ -22,7 +21,7 @@
 .announcement-content:after{
     content: "";
     position: absolute;
-    border-left: 1px solid var(--color-black);
+    border-left: 1px solid var(--bar-text-color);
     left: 0;
     height: 100%;
 }

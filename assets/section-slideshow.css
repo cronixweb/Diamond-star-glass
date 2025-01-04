@@ -471,8 +471,8 @@ a.slideshow-slide__media {
 
 .slideshow__control--dots {
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* left: 50%;
+  transform: translateX(-50%); */
 }
 
 .control__dots {
@@ -570,3 +570,82 @@ a.slideshow-slide__media {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+/* Custom Styles */
+.slideshow-slide__text-wrapper {
+  top: unset;
+  bottom: 15%;
+}
+
+.slideshow__control--dots {
+  bottom: 10%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.control__dots {
+  gap: 24px;
+}
+
+.control__dot {
+  width: 12px;
+  height: 12px;
+}
+
+.control__dot.is-active {
+  width: 12px;
+  height: 12px;
+}
+
+p.slideshow-slide__desc.body3 {
+  font-family: var(--custom-font-family);
+  font-size: var(--body8-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: capitalize;
+}
+
+button.featured-control__arrow-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a.slideshow-slide__button {
+  width: 190px;
+}
+
+.slideshow-slide__buttons {
+  margin-top: 24px;
+}
+
+.slideshow-slide__button {
+  text-align: center;
+  font-size: var(--body4-max-font-size);
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.slideshow-slide__button.button--link {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+@media screen and (min-width: 960px) {
+  p.slideshow-slide__desc.body3 {
+    line-height: 1.3;
+  }
+
+  .slideshow-slide__text-wrapper {
+    top: 0;
+    bottom: unset;
+  }
+
+  .slideshow__control--dots {
+    right: 5%;
+    transform: none;
+  }
+
+  .slideshow-slide__text-max-width {
+    padding: 38px var(--pc-content-padding, 15%);
+  }
+}

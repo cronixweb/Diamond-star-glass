@@ -56,7 +56,7 @@
         {{#if paginate.previous }}
           <li>
             <a href="{{ paginate.previous.url }}{{ anchor }}" class="pagination__item pagination__item--next pagination__item-arrow">
-              {{ snippet 'icon-arrow' }}
+              {{ t "general.pagination.prev"}}
             </a>
           </li>
         {{/if}}
@@ -79,7 +79,7 @@
         {{#if paginate.next }}
           <li>
             <a href="{{ paginate.next.url }}{{ anchor }}" class="pagination__item pagination__item--prev pagination__item-arrow">
-              {{ snippet 'icon-arrow' }}
+              {{ t "general.pagination.next"}}
             </a>
           </li>
         {{/if}}

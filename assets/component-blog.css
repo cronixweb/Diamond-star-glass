@@ -27,7 +27,7 @@
 }
 .simple-blog__extra-info .text {
   max-width: calc(50% - 25px);
-  opacity: 0.6;
+  /* opacity: 0.6; */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -185,4 +185,12 @@
   font-size: var(--body7-font-size);
   font-weight: 600;
   line-height: 1.3; 
+}
+
+.simple-blog__extra-info .text {
+  opacity: unset;
+}
+
+.simple-blog__extra-info .separator {
+  font-weight: bold;
 }

@@ -32,12 +32,13 @@
   
   {{#if filter_type == "vertical" or filter_type == "horizontal"}}
     <facet-filters-form class="facets display-none-tablet">
-      <form id="FacetFiltersForm" class="{{#if filter_type == 'horizontal' }}facets__form{{else}}facets__form-vertical{{/if}}" data-form-type="Tiled">
+      <form id="FacetFiltersForm" class="{{#if filter_type == 'horizontal' }}facets__form {{#unless enable_product_count}}without-product-count{{/unless}}{{else}}facets__form-vertical{{/if}}" data-form-type="Tiled">
         {{#if results.terms }}
           <input type="hidden" name="keyword" value="{{ results.terms }}">
         {{/if}}
         <div id="FacetsWrapperDesktop" {{#if filter_type == 'horizontal' }} class="facets__wrapper"{{/if}}>
           {{#if enable_filtering}}
+           {{#if filter_type == 'horizontal' }}<h2 class="body4 fw-bold filter-title">{{t "products.facets.filter"}}</h2>{{/if}}
             {{#for results.filters as |filter|}}
               {{#case filter.type}}
                 {{#when "boolean" "list"}}
@@ -140,13 +141,15 @@
           {{#if enable_sorting}}
             {{ snippet 'facet-sort' data=results product_count=products_count}}
           {{/if}}
-          <div id="ProductCountDesktop" class="product-count body3">
-            {{#if products_count > 0}}
-              <span>
-                {{t "products.facets.product_count" product_count=products_count}}
-              </span>
-            {{/if}}
-          </div>
+          {{#if enable_product_count }}
+            <div id="ProductCountDesktop" class="product-count body3">
+              {{#if products_count > 0}}
+                <span>
+                  {{t "products.facets.product_count" product_count=products_count}}
+                </span>
+              {{/if}}
+            </div>
+          {{/if}}
         {{/if}}
       </form>
     </facet-filters-form>
@@ -177,7 +180,7 @@
                   <div class="mobile-facets__header-inner">
 
                     <h2 class="mobile-facets__heading body1 fw-bold">{{t "products.facets.filter_button"}}</h2>
-                    <span class="mobile-facets__close">{{snippet "icon-close"}}</span>
+                    <span class="mobile-facets__close">{{snippet "icon-close-new"}}</span>
 
                   </div>
                 </div>

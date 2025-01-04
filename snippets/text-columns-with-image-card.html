@@ -47,7 +47,7 @@
       {{#style}}
         .text-columns-with-images-item__extract-mask {
           {{#if theme_bg.lightness >= 40 }}
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: {{section.settings.color_card_background}};
           {{else}}
             background-color: rgba(255, 255, 255, 0.1);
           {{/if}}
@@ -71,7 +71,7 @@
         </div>
       {{/if}}
       {{#if block.settings.title or block.settings.description or block.settings.button_text}}
-        <div class="text-columns-with-images-item__content">
+        <div class="text-columns-with-images-item__content  {{#if block.settings.description_font_size}} description_custom {{/if}}">
           {{#if block.settings.title}}
             <div class="text-columns-with-images-item__title title5">
               {{block.settings.title}}
@@ -90,7 +90,7 @@
                 {{block.settings.button_text}}
               </span>
               <span class="button-arrow">
-                {{snippet "icon-arrow"}}
+                {{snippet "icon-arrow-new"}}
               </span>
             </a>
           {{/if}}

@@ -13,10 +13,10 @@
 <div class="featured-collection-section featured-collection-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}" style="background: {{section.settings.color_page_background}};">
   <div class="featured-collection-section__header">
     {{#if section.settings.section_title}}
-      <h2>{{{ section.settings.section_title }}}</h2>
+      <h2 class="title4">{{{ section.settings.section_title }}}</h2>
     {{/if}}
     {{#if section.settings.section_subtitle}}
-      <p>{{{ section.settings.section_subtitle }}}</p>
+      <p class="body9">{{{ section.settings.section_subtitle }}}</p>
     {{/if}}
   </div>
   <div class="splide featured-collection__slider-{{section.id}}">
@@ -35,7 +35,7 @@
                     <h3>{{ product_category.title }}</h3>
                   {{/if}}
                   {{#if product_category.description}}
-                    <p>{{{ product_category.description }}}</p>
+                    <div class="body3">{{{ product_category.description }}}</div>
                   {{/if}}
                   {{#if product_category.url}}
                     <div class="inner-content-btn">

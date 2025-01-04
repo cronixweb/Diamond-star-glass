@@ -4,6 +4,7 @@
       "next": "Next",
       "previous": "Previous",
       "read_more": "View more",
+      "view_all":"View All",
       "related_articles": "Related articles"
     },
     "blog_list": {
@@ -586,6 +587,13 @@
     }
   },
   "general": {
+    "card":{
+      "shopnow":"Shop now"
+    },
+    "pagination":{
+      "prev":"Previous",
+      "next":"Next"
+    },
     "404": {
       "subtext": "The page you were looking for does not exist.",
       "title": "404 page not found"
@@ -631,6 +639,7 @@
       "account": "Account",
       "favorites": "Favorites",
       "login": "Log in",
+      "create_account": "Create Account",
       "search": "Search",
       "no_currency_fallback": "No relevant currency found",
       "search_input_placeholder": "Enter here and click search"
@@ -673,6 +682,21 @@
       "search_hint": "Search for “{{key}}”"
     }
   },
+  "contact": {
+    "title": {
+      "name": "Name (required)",
+      "email": "Email (required)",
+      "phone": "Phone Number (optional)",
+      "message": "Comment (required)",
+      "send": "SUBMIT"
+    },
+    "placeholder": {
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "message": "Your comment here"
+    }
+  },
   "order": {
     "buy_again": "Buy again",
     "checkout_order": {
@@ -702,7 +726,7 @@
       "adjust": "Rounding",
       "products": {
         "price": "Price",
-        "quantity": "Quantity"
+        "quantity": "Qty:"
       },
       "tax_included": "Including {{price}} in taxes"
     },
@@ -755,10 +779,11 @@
       "collection": "Collections"
     },
     "facets": {
+      "filter":"Filter:",
       "in_stock_only": "Show only in-stock items",
       "clear": "Clear",
       "clear_all_filter": "Clear all",
-      "confirm": "Confirm",
+      "confirm": "Apply",
       "filter_and_sort": "Filter and sort",
       "filter_button": "Filter",
       "less_than": "less than",
@@ -773,7 +798,8 @@
       "stock": {
         "label": "Product supply",
         "value": "In stock"
-      }
+      },
+      "sort": "Sort By:"
     },
     "general": {
       "load_more_btn": "Loading more items",
@@ -898,6 +924,15 @@
     },
     "recently_viewed_products": {
       "recently_viewed_products": "Recently Viewed Products"
+    },
+    "unit": {
+      "unit": "Unit:",
+      "unit_case": "Unit/Case:",
+      "case_weight": "Case Weight:",
+      "unit_length": "Unit Length:",
+      "unit_height": "Unit Height:",
+      "unit_width": "Unit Width:",
+      "unit_weight": "Unit Weight:"
     }
   },
   "reduction_code": {

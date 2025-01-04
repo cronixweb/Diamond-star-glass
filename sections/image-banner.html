@@ -33,7 +33,7 @@
   {{/if}}
 {{/if}}
 
-<div class="section section-image-banner section-padding{{#if section.settings.width_style == false}} custom-padding page-width{{/if}}">
+<div class="section section-image-banner section-padding{{#if section.settings.width_style == true}} full-page-width{{ else }} page-width{{/if}}">
   
   <div
     class="section-image-banner-pc {{#if banner1 or banner2}}image-banner-loaded{{/if}} display-none display-block-desktop"
@@ -67,7 +67,7 @@
     
     {{#if blocks_length > 0}}
       <div class="content content--pos-{{pc_position}} {{#if section.settings.gradient_style == true}}iha-gradient{{/if}}">
-        <div class="page-width {{#if section.settings.width_style_padding == true}}cc-page-padding{{/if}}">
+        <div class="page-width content-wrapper">
           <div
             class="wrapper global-content-border-shadow
               pc-content-text-{{section.settings.pc_text_position}}
@@ -81,13 +81,13 @@
           >
             {{#for section.blocks as |block|}}
               {{#if (trim block.type) == "title"}}
-                <h2 {{{block.shopline_attributes}}} class="title {{block.settings.title_size}}">
+                <h2 {{{block.shopline_attributes}}} class="title {{block.settings.title_size}} title">
                   {{newline_to_br block.settings.title}}
                 </h2>
               {{/if}}
 
               {{#if (trim block.type) == "desc"}}
-                <p {{{block.shopline_attributes}}} class="desc body1 custom--body">
+                <p {{{block.shopline_attributes}}} class="desc {{ block.settings.text_size }}">
                   {{block.settings.description}}
                 </p>
               {{/if}}
@@ -161,13 +161,13 @@
           >
             {{#for section.blocks as |block|}}
               {{#if (trim block.type) == "title"}}
-                <h2 {{{block.shopline_attributes}}} class="title2 {{block.settings.title_size}}">
+                <h2 {{{block.shopline_attributes}}} class="{{block.settings.title_size}} title">
                   {{newline_to_br block.settings.title}}
                 </h2>
               {{/if}}
 
               {{#if (trim block.type) == "desc"}}
-                <p {{{block.shopline_attributes}}} class="body1 custom--body">
+                <p {{{block.shopline_attributes}}} class="desc {{ block.settings.text_size }}">
                   {{block.settings.description}}
                 </p>
               {{/if}}
@@ -442,21 +442,13 @@
       "default": false
     },
     {
-      "type": "switch",
-      "id": "width_style_padding",
-      "label": {
-        "en": "Extra Padding"
-      },
-      "default": false
-    },
-    {
       "type": "range",
       "id": "padding_top",
       "label": "Top Padding",
       "default": 60,
       "max": 120,
       "min": 0,
-      "step": 2,
+      "step": 4,
       "unit": "px"
     },
     {
@@ -466,7 +458,7 @@
       "default": 60,
       "max": 120,
       "min": 0,
-      "step": 2,
+      "step": 4,
       "unit": "px"
     }
   ],
@@ -492,19 +484,15 @@
           "default": "title3",
           "options": [
             {
-              "value": "large--title",
-              "label": "t:sections.image-banner.blocks.title.settings.title_size.options__custom.label"
-            },
-            {
               "value": "title1",
               "label": "t:sections.image-banner.blocks.title.settings.title_size.options__0.label"
             },
             {
-              "value": "title3",
+              "value": "title2",
               "label": "t:sections.image-banner.blocks.title.settings.title_size.options__1.label"
             },
             {
-              "value": "title5",
+              "value": "title3",
               "label": "t:sections.image-banner.blocks.title.settings.title_size.options__2.label"
             }
           ]
@@ -522,6 +510,22 @@
           "type": "text",
           "default": "And optional subtext",
           "label": "t:sections.image-banner.blocks.desc.settings.description.label"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "t:sections.image-banner.blocks.desc.settings.text_size.label",
+          "default": "body5",
+          "options": [
+            {
+              "value": "body9",
+              "label": "t:sections.image-banner.blocks.desc.settings.text_size.options__0.label"
+            },
+            {
+              "value": "body5",
+              "label": "t:sections.image-banner.blocks.desc.settings.text_size.options__1.label"
+            }
+          ]
         }
       ]
     },

@@ -1,4 +1,3 @@
-
 <section id="MainProduct-{{section.id}}" class="page-width section-padding" data-section="{{section.id}}">
   {{assign "theme_settings" settings}}
   {{assign "product_form_id" (append "product-form-" section.id)}}
@@ -81,7 +80,9 @@
       <script src="{{asset_url 'component-product-photo-swipe.js'}}" defer="defer"></script>
     {{/if}}
   {{/if}}
-
+  <div class="main-product__breadcrumb">
+    {{snippet "breadcrumb" class="text-left"}}
+  </div>
   <main-product-detail
     class="product grid grid-cols-1 grid-cols-2-desktop product--left
       product--{{section.settings.product_image_pc_show_style}}
@@ -118,7 +119,6 @@
           {{#if section.settings.product_info_sticky}}product__column-sticky{{/if}}
           mobile-text-align--{{section.settings.product_mobile_text_align}}"
       >
-        {{snippet "breadcrumb" class="text-left"}}
         {{#for section.blocks as |block|}}
           {{#startsWith "shopline://apps" block.type}}
             {{render block}}
@@ -135,10 +135,11 @@
               >
                 <summary id="Summary-{{block.id}}-{{section.id}}">
                   {{snippet "icon-select" icon=block.settings.icon}}
-                  <h3 class="accordion__title body2 fw-bold">
+                  <h3 class="accordion__title body5 fw-bold">
                     {{block.settings.title}}
                   </h3>
-                  {{snippet "icon-arrow"}}
+                  {{snippet "icon-plus"}}
+                  {{snippet "icon-minus"}}
                 </summary>
                 {{#if block.settings.enabled_fold}}
                   <template>
@@ -152,23 +153,75 @@
                 {{/if}}
               </details>
             </accordion-component>
+          {{else if block.type == "metafield_content"}}
+            {{#or (if product.metafields.my_fields.unit.value) (if product.metafields.my_fields.unit_case.value) (if product.metafields.my_fields.weight.value.value) (if product.metafields.my_fields.unit_height.value.value) (if product.metafields.my_fields.unit_length.value.value) (if product.metafields.my_fields.unit_width.value.value) (if product.metafields.my_fields.unit_weight.value.value)}}
+              <div class="product__info-item accordion " {{{block.shopline_attributes}}}>
+                <details
+                  id="Details-{{block.id}}-{{section.id}}"
+                  class="product__details-container"
+                >
+                  <summary id="Summary-{{block.id}}-{{section.id}}">
+                    <h3 class="accordion__title body5 fw-bold">
+                      {{block.settings.field_title}}
+                    </h3>
+                    {{snippet "icon-plus"}}
+                    {{snippet "icon-minus"}}
+                  </summary>
+                  <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
+                    <dl class="field_text">
+                      {{#if product.metafields.my_fields.unit.value }}
+                        <dt>{{t 'products.unit.unit'}}</dt>
+                        <dd>{{product.metafields.my_fields.unit.value}}</dd>
+                      {{/if}}
+                      {{#if product.metafields.my_fields.unit_case.value }}
+                        <dt>{{t 'products.unit.unit_case'}}</dt>
+                        <dd>{{product.metafields.my_fields.unit_case.value}}</dd>
+                      {{/if }}
+                      {{#if product.metafields.my_fields.weight.value.value }}
+                        <dt>{{t 'products.unit.case_weight'}}</dt>
+                        <dd>{{product.metafields.my_fields.weight.value.value}} {{product.metafields.my_fields.weight.value.unit}}</dd>
+                      {{/if}}
+                      {{#if product.metafields.my_fields.unit_length.value.value }}
+                        <dt>{{t 'products.unit.unit_length'}}</dt>
+                        <dd>{{product.metafields.my_fields.unit_length.value.value}} {{product.metafields.my_fields.unit_length.value.unit}}</dd>
+                      {{/if}}
+                      {{#if product.metafields.my_fields.unit_height.value.value }}
+                        <dt>{{t 'products.unit.unit_height'}}</dt>
+                        <dd>{{product.metafields.my_fields.unit_height.value.value}} {{product.metafields.my_fields.unit_height.value.unit}}</dd>
+                      {{/if}}
+                      {{#if product.metafields.my_fields.unit_width.value.value }}
+                        <dt>{{t 'products.unit.unit_width'}}</dt>
+                        <dd>{{product.metafields.my_fields.unit_width.value.value}} {{product.metafields.my_fields.unit_width.value.unit}}</dd>
+                      {{/if}}
+                      {{#if product.metafields.my_fields.unit_weight.value.value }}
+                        <dt>{{t 'products.unit.unit_weight'}}</dt>
+                        <dd>{{product.metafields.my_fields.unit_weight.value.value}} {{product.metafields.my_fields.unit_weight.value.unit}}</dd>
+                      {{/if}}
+                    </dl>
+                  </div>
+                </details>
+              </div>
+            {{/or}}
           {{else if block.type == "description_accordion"}}
             <div class="product__info-item accordion product__details-wrapper" {{{block.shopline_attributes}}}>
-              <details
-                id="Details-{{block.id}}-{{section.id}}"
-                class="product__details-container"
-                {{#unless block.settings.fold}}open{{/unless}}
-              >
-                <summary id="Summary-{{block.id}}-{{section.id}}">
-                  <h3 class="accordion__title body2 fw-bold">
-                    {{block.settings.title}}
-                  </h3>
-                  {{snippet "icon-arrow"}}
-                </summary>
-                <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
-                  {{{product.description}}}
-                </div>
-              </details>
+              {{#if product.description}}
+                <details
+                  id="Details-{{block.id}}-{{section.id}}"
+                  class="product__details-container"
+                  {{#unless block.settings.fold}}open{{/unless}}
+                >
+                  <summary id="Summary-{{block.id}}-{{section.id}}">
+                    <h3 class="accordion__title body5 fw-bold">
+                      {{block.settings.title}}
+                    </h3>
+                    {{snippet "icon-plus"}}
+                    {{snippet "icon-minus"}}
+                  </summary>
+                  <div class="accordion__content rte" id="CollapsibleAccordion-{{block.id}}-{{section.id}}">
+                    {{{product.description}}}
+                  </div>
+                </details>
+              {{/if}}
             </div>
           {{else if block.type == "quantity_selector"}}
             {{assign "volume_pricing_array" featured_variant.quantity_price_breaks}}
@@ -181,7 +234,7 @@
                 {{block.settings.layout_direction}}"
               {{{block.shopline_attributes}}}
             >
-              <div class="quantity-input-label body3 fw-bold">
+              <div class="quantity-input-label body5 fw-bold">
                 {{t "order.order_details.products.quantity"}}
               </div>
               {{snippet
@@ -361,7 +414,7 @@
           {{else if block.type == "dividing_line"}}
             <div
               {{{block.shopline_attributes}}}
-              class="product__info-item product__dividing-line display-none m-12
+              class="product__info-item product__dividing-line display-none
                 {{#if block.settings.show_pc_line}}display-block-desktop{{/if}}
                 {{#if block.settings.show_mobile_line}}display-block-tablet{{/if}}"
               style="
@@ -376,7 +429,8 @@
                 {{#if block.settings.text_style == 'body'}}body3{{/if}}
                 {{#if block.settings.text_style == 'subtitle'}}body2{{/if}}
                 {{#if block.settings.text_style == 'uppercase'}}body3 text-uppercase{{/if}}
-                {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}"
+                {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}
+                {{#if block.settings.text_style == 'custom'}}text-style_custom{{/if}}"
               {{{block.shopline_attributes}}}
             >
               {{{block.settings.text}}}
@@ -486,7 +540,7 @@
             </div>
           {{else if block.type == "variant_picker"}}
             {{#if (isFalsey product.has_only_default_variant)}}
-              <div class="product__info-item m-26" {{{block.shopline_attributes}}}>
+              <div class="product__info-item m-26 product-variants" {{{block.shopline_attributes}}}>
                 {{snippet
                   "product-variant-picker"
                   section=section
@@ -497,7 +551,7 @@
               </div>
             {{/if}}
           {{else if block.type == "buy_buttons"}}
-            <div class="product__info-item m-10" {{{block.shopline_attributes}}}>
+            <div class="product__info-item m-10 product-but-buttons" {{{block.shopline_attributes}}}>
               <div class="{{#if block.settings.button_layout == 'float'}}display-none-tablet{{/if}} quick-add-show">
                 {{snippet
                   "product-buy-buttons"
@@ -1791,6 +1845,12 @@
             }
           ],
           "default": "embed"
+        },
+        {
+          "type": "switch",
+          "id": "enable_buy_button",
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.enable_buy_button.label",
+          "default": false
         }
       ]
     },
@@ -1958,6 +2018,17 @@
       ]
     },
     {
+      "type": "metafield_content",
+      "name": "t:sections.main-product.blocks.metafield_content.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "field_title",
+          "label": "t:sections.main-product.blocks.metafield_content.settings.field_title.label"
+        }
+      ]
+    },
+    {
       "type": "text",
       "icon": "normal",
       "name": "t:sections.main-product.blocks.text.name",
@@ -1989,6 +2060,10 @@
             {
               "value": "underline",
               "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            },
+            {
+              "value": "custom",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__4.label"
             }
           ],
           "default": "uppercase"

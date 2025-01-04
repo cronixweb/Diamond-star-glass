@@ -166,3 +166,36 @@ a.pagination__item:hover {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* custom styles */
+.normal-pagination__list{
+  column-gap: 20px;
+}
+.pagination-wrapper{
+  margin-top: 44px;
+}
+.normal-pagination__list .pagination__item{
+  color: rgba(var(--color-text));
+  font-size: var(--body3-font-size);
+  font-weight: 600;
+  line-height: 1.14;
+}
+.normal-pagination__list .pagination__item.pagination__item--prev,
+.normal-pagination__list .pagination__item.pagination__item--next{
+  background: none;
+  color: rgba(var(--color-text));
+  width: max-content;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.normal-pagination__list .pagination__item:not(.pagination__item-arrow, .pagination__item--current),
+.normal-pagination__list .pagination__item.pagination__item--prev:hover,
+.normal-pagination__list .pagination__item.pagination__item--next:hover{
+  color: rgba(var(--color-text))
+}
+@media screen and (min-width: 960px) {
+  .pagination-wrapper{
+    margin-top: 56px;
+  }
+}

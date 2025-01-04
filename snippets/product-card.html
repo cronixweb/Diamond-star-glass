@@ -403,20 +403,33 @@
           <span class="color-suffix"></span>
         {{/if}}
       </h3>
-
+      {{#for product_data.options_with_values as |option_info|}}
+      {{#if option_info.name "==" "Size"}}
+        <p class="size-option">Size:
+          {{#for option_info.values as |option|}}
+            {{option}}
+          {{/for}}</p>
+        {{/if}}
+      {{/for}}
       {{assign "enable_mb_bottom_quick_view_icon" (if valid_quick_view and quick_view_button_mobile_style == "icon" and quick_view_mobile_position == "below")}}
 
       <div
         class="card__content-bottom
           {{#if (isFalsey enable_mb_bottom_quick_view_icon) and card_content_align == 'center'}}card__content-bottom-center{{/if}}
           {{#if card_content_align == 'left'}}card__content-bottom-left{{/if}}"
-      >
+      > 
+      <div class="price-and-shop-all">
         {{snippet "price"
           product=product_data
           show_from=(if is_multi_variant and price_show_type == "from_lowest_price")
           show_range=(if is_multi_variant and price_show_type == "price_interval")
           show_origin=show_origin_price
         }}
+        <div class="inner-content-btn">
+          <span class="shop-now-button">{{ t "general.card.shopnow"}}</span>
+          {{snippet "icon-right-arrow" }}
+        </div>
+      </div>
         {{#if enable_mb_bottom_quick_view_icon}}
           {{assign "button_id" (append "quick-add-" section_id "-mobile__" product_data.id "-submit")}}
           {{assign "classes" "quick-add--tiled display-none-desktop"}}
