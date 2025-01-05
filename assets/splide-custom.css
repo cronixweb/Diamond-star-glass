@@ -32,20 +32,20 @@ button.splide__arrow:hover{
     background: var(--color-grey-dark);
 }
 
-button.splide__arrow svg {
-    height: 24px;
-    width: 24px;
+button.splide__arrow svg{
+    height: 16px;
+    width: 16px;
 }
 button.splide__arrow svg{
     fill: var(--color-white);
 }
 button.splide__arrow.splide__arrow--prev {
-    left: 0;
+    left: -6px;
     transform: translateY(-50%) rotate(180deg);
 }
 
 button.splide__arrow.splide__arrow--next {
-    right: 0;
+    right: -6px;
     transform: translateY(-50%);
 }
 
@@ -59,21 +59,17 @@ button.splide__arrow[disabled]{
 button.splide__arrow[disabled] svg path{
     fill:var(--splide-button-disabled);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
     button.splide__arrow {
         padding: 16px;
         width: 56px;
         height: 56px;
     }
-    button.splide__arrow svg{
-        height: 16px;
-        width: 16px;
-    }
     button.splide__arrow.splide__arrow--prev {
-        left: 0;
+        left: -28px;
     }
     button.splide__arrow.splide__arrow--next {
-        right: 0;
+        right: -28px;
     }
 }
 
