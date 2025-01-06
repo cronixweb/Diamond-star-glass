@@ -95,10 +95,10 @@
     "
   >
     <div
-      class="page-width header__container
+      class="header__container
         header__container--{{section.settings.navigation_layout}}
         header__nav-style--{{section.settings.main_menu_style}}
-        {{ternary section.settings.full_width 'header__full_width' ''}}
+        {{ternary section.settings.full_width 'header__full_width' 'page-width'}}
         {{#if section.settings.enabled_tile_search and section.settings.show_search_entry}}tile-search{{/if}}
         "
     >
@@ -878,7 +878,7 @@
       "default": "body4",
       "options": [
         {
-          "value": "body2",
+          "value": "body4",
           "label": "t:sections.header.settings.body_pc_second_font_size.options__0.label"
         },
         {
@@ -886,7 +886,7 @@
           "label": "t:sections.header.settings.body_pc_second_font_size.options__1.label"
         },
         {
-          "value": "body4",
+          "value": "body2",
           "label": "t:sections.header.settings.body_pc_second_font_size.options__2.label"
         }
       ]
@@ -904,7 +904,7 @@
       "default": "body3",
       "options": [
         {
-          "value": "body3",
+          "value": "body5",
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__0.label"
         },
         {
@@ -912,7 +912,7 @@
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__1.label"
         },
         {
-          "value": "body5",
+          "value": "body3",
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__2.label"
         }
       ]

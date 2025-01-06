@@ -608,6 +608,9 @@
   top: 16px;
   right: 13px;
 }
+.card .card__content{
+  margin-top: 0;
+}
 
 @media screen and (min-width: 960px) {
   .card .card__content .product__title {
