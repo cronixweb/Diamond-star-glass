@@ -17,7 +17,7 @@
     line-height: normal;
 }
 
-.splide__list.multimedia-list{
+.multicolumn-section{
     padding: 0 !important;
 }
 
@@ -103,9 +103,11 @@
 .multimedia-block .card-link-wrapper{
     display: block;
 }
-
+.multicolumn-section .inner-content-btn path{
+    fill:rgb(var(--color-text));
+}
 @media screen and (min-width: 1400px) {
-    .splide__list.multimedia-list{
+    .multicolumn-section{
         padding: 64px 92px 51px 92px !important;
     }
 }
@@ -114,7 +116,7 @@
     .multimedia-block {
         text-align: center;
     }
-    .splide__list.multimedia-list{
+    .multicolumn-section {
         padding: 60px 0 !important;
     }
     .multicolumn-section__header h2 {
@@ -132,7 +134,7 @@
     }
 }
 @media screen and (min-width: 1500px) {
-    .splide__list.multimedia-list{
+    .multicolumn-section {
         padding: 120px 87px !important;
     }
     .multimedia-block {

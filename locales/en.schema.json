@@ -2831,7 +2831,7 @@
                 "label": "Large"
               },
               "options__1": {
-                "label": "Center"
+                "label": "Medium"
               },
               "options__2": {
                 "label": "Small"
@@ -5302,7 +5302,7 @@
             "label": "Small"
           },
           "options__1": {
-            "label": "Center"
+            "label": "Medium"
           },
           "options__2": {
             "label": "Large"
@@ -6431,7 +6431,7 @@
             "label": "Small"
           },
           "options__1": {
-            "label": "Center"
+            "label": "Medium"
           },
           "options__2": {
             "label": "Large"

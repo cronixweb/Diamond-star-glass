@@ -10,7 +10,7 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="featured-collection-section featured-collection-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}" style="background: {{section.settings.color_page_background}};">
+<div class="featured-collection-section featured-collection-section-{{section.id}} page-width section-padding {{#if section.settings.color_scheme}}color-scheme-{{section.settings.color_scheme}}{{/if}}">
   <div class="featured-collection-section__header">
     {{#if section.settings.section_title}}
       <h2 class="title4">{{{ section.settings.section_title }}}</h2>
@@ -24,13 +24,15 @@
       <ul class="splide__list">
         {{#for section.blocks as |block|}}
           {{#if (trim block.type) == "collection"}}
-            <li class="splide__slide category-block" style="text-align: {{ block.settings.text_align }}">
+            <li class="splide__slide category-block text-{{ section.settings.text_align }}">
               
               {{#for block.settings as |product_category|}}
                 <a href="{{ product_category.url }}">
-                  {{#if product_category.featured_image}}
-                    {{snippet "image" data=product_category.featured_image }}
-                  {{/if}}
+                  <div>
+                    {{#if product_category.featured_image}}
+                      {{snippet "image" data=product_category.featured_image }}
+                    {{/if}}
+                  </div>
                   {{#if product_category.title}}
                     <h3>{{ product_category.title }}</h3>
                   {{/if}}
@@ -122,11 +124,6 @@ splide.mount();
       "default": "Shop our latest designs—thoughtfully made to complete every room in your home."
     },
     {
-      "id": "color_page_background",
-      "type": "color",
-      "label": "Background"
-    },
-    {
       "type": "select",
       "id": "color_scheme",
       "options": [
@@ -149,6 +146,11 @@ splide.mount();
       ],
       "default": "none",
       "label": "Color Scheme"
+    },
+    {
+      "type": "text_align",
+      "id": "text_align",
+      "label":"Card Text alignment"
     },
     {
       "type": "group_header",
@@ -192,14 +194,7 @@ splide.mount();
           "type": "text",
           "id": "button_text",
           "label": "Button Text",
-          "default": "Shop Now >"
-        },
-        {
-          "type": "text_align",
-          "id": "text_align",
-          "label": {
-            "en": "Text alignment"
-          }
+          "default": "Shop Now"
         }
       ]
     }
