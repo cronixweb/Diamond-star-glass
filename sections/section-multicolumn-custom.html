@@ -49,7 +49,7 @@
           {{#for section.blocks as |block|}}
             {{#if (trim block.type) == "multimedia"}}
               <li class="splide__slide multimedia-block {{#if @index == 1}}multimedia-none{{/if}}" style="text-align: {{ block.settings.text_align }}">
-                  <a href="{{ block.settings.button_url }}">
+                  <a href="{{ block.settings.button_url }}" class="card-link-wrapper">
                     {{#if block.settings.image}}
                       {{snippet "image" data=block.settings.image }}
                     {{/if}}
@@ -61,8 +61,8 @@
                     {{/if}}
                     {{#if block.settings.button_text}}
                       <div class="inner-content-btn">
-                      <a class="explore-more" href="{{ block.settings.button_url }}">{{{ block.settings.button_text}}}</a>
-                      {{snippet "icon-right-arrow" }}
+                        <span class="explore-more" href="{{ block.settings.button_url }}">{{{ block.settings.button_text}}}</span>
+                        {{snippet "icon-right-arrow" }}
                       </div>
                     {{/if}}
                   </a>

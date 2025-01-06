@@ -1,6 +1,7 @@
 .my-slider-progress {
     margin-top: 2rem;
     background: #F3F0EA;
+    border-radius: 34px;
 }
 
 .my-slider-progress-bar {
@@ -8,6 +9,7 @@
     height: 8px;
     transition: width 400ms ease;
     width: 0;
+    border-radius: 34px;
 }
 
 button.splide__arrow {
@@ -66,16 +68,15 @@ button.splide__arrow[disabled] svg path{
         height: 56px;
     }
     button.splide__arrow.splide__arrow--prev {
-        left: -28px;
+        left: -22px;
     }
     button.splide__arrow.splide__arrow--next {
-        right: -28px;
+        right: -22px;
     }
 }
 
 @media (max-width: 640px) {
     .splide__slide.mb-slide--show-half {
         width: calc(100% + -24%) !important;
-
     }
 }
