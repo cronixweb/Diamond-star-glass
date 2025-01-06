@@ -57,7 +57,20 @@
   line-height: 1.4; 
   text-transform: uppercase;
 }
-
+.category-block .inner-content-btn path{
+  fill:rgb(var(--color-text));
+}
+.category-block.text-center .inner-content-btn{
+  justify-content: center;
+}
+.category-block.text-right .inner-content-btn{
+  justify-content: start;
+}
+.category-block .inner-content-btn svg{
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
 @media screen and (min-width: 960px) {
   .featured-collection-section__header{
     max-width: 800px;

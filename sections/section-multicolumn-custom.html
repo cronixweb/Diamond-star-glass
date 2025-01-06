@@ -28,12 +28,12 @@
     background: none;
   }
   .multicolumn-section-{{section.id}}{
-    background: {{section.settings.color_page_background}};
-  }
+    background: rgb(var(--color-page-background));
+  } 
 }
 </style>
 <div class="multicolumn-section-main page-width section-padding">
-<div class="multicolumn-section multicolumn-section-{{section.id}} {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}">
+<div class="multicolumn-section multicolumn-section-{{section.id}} {{#if section.settings.color_scheme}}color-scheme-{{section.settings.color_scheme}}{{/if}}">
   <div class="multicolumn-section__header">
     {{#if section.settings.section_title}}
       <h2>{{{ section.settings.section_title }}}</h2>
@@ -128,12 +128,6 @@ splide.mount();
       "type": "textarea",
       "id": "section_subtitle",
       "label": "Subheading"
-    },
-    {
-      "id": "color_page_background",
-      "type": "color",
-      "label": "Background",
-      "default": "#F3F0EA"
     },
     {
       "type": "select",

@@ -489,7 +489,7 @@
       "type": "section-multicolumn-custom",
       "settings": {
         "color_page_background": "#F3F0EA",
-        "color_scheme": "none",
+        "color_scheme": "3",
         "padding_top": 60,
         "padding_bottom": 60
       },
