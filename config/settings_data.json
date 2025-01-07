@@ -196,7 +196,13 @@
       "sku_selector_shadow_opacity": 0,
       "sku_selector_shadow_offset_x": 0,
       "sku_selector_shadow_offset_y": 0,
-      "sku_selector_shadow_blur": 0
+      "sku_selector_shadow_blur": 0,
+      "color_scheme_1_btn_bg_color": "#121212",
+      "color_scheme_1_btn_color": "#ffffff",
+      "color_scheme_2_btn_bg_color": "#EFEFEF",
+      "color_scheme_2_btn_color": "#121212",
+      "color_scheme_3_btn_bg_color": "#F4F7FB",
+      "color_scheme_3_btn_color": "#000000"
     },
     "sections": {
       "announcement-bar": {
