@@ -142,3 +142,8 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Style */
+.card-container .fw-bold {
+  font-size: var(--body4-font-size);
+}
