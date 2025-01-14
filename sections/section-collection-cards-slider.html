@@ -27,7 +27,7 @@
       <ul class="splide__list">
         {{#for section.blocks as |block|}}
           {{#if (trim block.type) == "collection"}}
-            <li class="splide__slide collection-category {{#if section.settings.mb-collection-size}}mb-slide--show{{/if}}">
+            <li class="splide__slide collection-category {{#if section.settings.mb-collection-size}}mb-slide--show-half{{/if}}">
               {{#for block.settings as |product_categories|}}
                 <a href="{{ product_categories.url }}">
                   {{snippet "image" data=product_categories.featured_image }}
@@ -42,9 +42,9 @@
 
     <!-- Progress Bar -->
     {{#if section.settings.progress-bar}}
-    <div class="my-slider-progress">
-      <div class="my-slider-progress-bar"></div>
-    </div>
+      <div class="my-slider-progress">
+        <div class="my-slider-progress-bar"></div>
+      </div>
     {{/if}}
   </div>
 </div>
