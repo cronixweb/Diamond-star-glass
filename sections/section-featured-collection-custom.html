@@ -31,7 +31,7 @@
       <ul class="splide__list">
         {{#for section.blocks as |block|}}
           {{#if (trim block.type) == "collection"}}
-            <li class="splide__slide category-block text-{{ section.settings.text_align }} card">
+            <li class="splide__slide category-block text-{{ section.settings.text_align }} card {{#if section.settings.mb-collection-size}}mb-slide--show-half{{/if}}">
               <div class="card__inner ratio">
                 <a href="{{ block.settings.product_category.url }}" class="card__media">
                   {{#if block.settings.product_category.featured_image}}
@@ -121,24 +121,6 @@
       "default": "Shop our latest designs—thoughtfully made to complete every room in your home."
     },
     {
-      "type": "switch",
-      "id": "progress-bar",
-      "label": "Show Progress Bar on desktop",
-      "default": false
-    },
-    {
-      "type": "switch",
-      "id": "collection-arrows",
-      "label": "Show Arrows",
-      "default": false
-    },
-    {
-      "type": "switch",
-      "id": "show-collection-details",
-      "label": "Show collection description and shop now button",
-      "default": false
-    },
-    {
       "id": "product_image_ratio",
       "type": "select",
       "label": "t:sections.main-collection-product-list.settings.product_image_ratio.label",
@@ -199,6 +181,30 @@
       ]
     },
     {
+      "type": "switch",
+      "id": "progress-bar",
+      "label": "Show Progress Bar on desktop",
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "collection-arrows",
+      "label": "Show Arrows",
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show-collection-details",
+      "label": "Show collection description and shop now button",
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "mb-collection-size",
+      "label": "Half Slide on mobile",
+      "default": true
+    },
+    {
       "type": "text_align",
       "id": "header_text_align",
       "label":"Header Text alignment",
@@ -207,7 +213,8 @@
     {
       "type": "text_align",
       "id": "text_align",
-      "label":"Card Text alignment"
+      "label":"Card Text alignment",
+      "default": "center"
     },
     {
       "type": "group_header",

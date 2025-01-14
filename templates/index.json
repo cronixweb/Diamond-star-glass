@@ -76,8 +76,8 @@
         "color_scheme": "none",
         "padding_top": 60,
         "padding_bottom": 60,
-        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg",
-        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg"
+        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
+        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
       },
       "blocks": {
         "17321789322925ea0413": {
@@ -195,6 +195,9 @@
       "type": "section-recommended-product-slider",
       "settings": {
         "heading-product-list": "Top Trending Products",
+        "color_scheme": "none",
+        "padding_top": 60,
+        "padding_bottom": 60,
         "product_list": [
           "16067743524854966603263575",
           "16067743477161535815393575",
@@ -204,63 +207,10 @@
           "16067741768584454964993575",
           "16067741734866445048963575",
           "16067741686129471428623575"
-        ],
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
+        ]
       },
       "blocks": {},
       "block_order": [],
-      "custom_css": []
-    },
-    "1732180510845b0d2ea5": {
-      "disabled": false,
-      "type": "section-instagram-feed-custom",
-      "settings": {
-        "heading-instagram-feed": "Follow us @diamondstarglass",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "1732180852654ee7b462": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 7.jpg"
-          }
-        },
-        "17321808720547055fe6": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 8.jpg"
-          }
-        },
-        "1732181200635df7c486": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9.jpg"
-          }
-        },
-        "173218129373027ffd1e": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 7.jpg"
-          }
-        },
-        "1732181295063fd94816": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 9.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "1732180852654ee7b462",
-        "17321808720547055fe6",
-        "1732181200635df7c486",
-        "173218129373027ffd1e",
-        "1732181295063fd94816"
-      ],
       "custom_css": []
     },
     "17325437940212daaabe": {
@@ -438,52 +388,6 @@
       ],
       "custom_css": []
     },
-    "17325444134397d214eb": {
-      "disabled": false,
-      "type": "section-collection-cards-slider",
-      "settings": {
-        "section_title": "Our Product Categories",
-        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
-        "progress-bar": false,
-        "collection-arrows": true,
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "17325444519254c9c118": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267112976879693429683575"
-          }
-        },
-        "1732544462971ea61844": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267434438770829633093575"
-          }
-        },
-        "17325444733997a19d58": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267434442957583888093575"
-          }
-        },
-        "17325444921786bd8a5f": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267434445835044624483575"
-          }
-        }
-      },
-      "block_order": [
-        "17325444519254c9c118",
-        "1732544462971ea61844",
-        "17325444733997a19d58",
-        "17325444921786bd8a5f"
-      ],
-      "custom_css": []
-    },
     "1732544527169ec450b7": {
       "disabled": false,
       "type": "section-multicolumn-custom",
@@ -497,10 +401,10 @@
         "17325445313413a23da4": {
           "type": "multimedia",
           "settings": {
-            "title": "Assortments",
-            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "title": "Apothecary",
+            "content": "Experience the allure of our glass apothecary jars, offering a sophisticated way to store your cherished items while adding a vintage-inspired touch to your home.",
             "button_text": "Explore More",
-            "image": "shopline://shop_images/001.jpg.jpg"
+            "image": "shopline://shop_images/64071&_1.jpg"
           }
         },
         "173254454535071bff75": {
@@ -529,87 +433,20 @@
       ],
       "custom_css": []
     },
-    "1732544616088988745b": {
-      "disabled": false,
-      "type": "section-collection-cards-slider",
-      "settings": {
-        "section_title": "Shop by Style",
-        "section_subtitle": "",
-        "progress-bar": true,
-        "collection-arrows": false,
-        "color_scheme": "none",
-        "padding_top": 120,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "1732544634370b38467c": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479946896080972843575"
-          }
-        },
-        "17325446437677d3dc20": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479951051797797813575"
-          }
-        },
-        "1732544652564077391d": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479955044942979283575"
-          }
-        },
-        "1732544659482e878c85": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479958744150910633575"
-          }
-        },
-        "1732544669514cd3a616": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479946896080972843575"
-          }
-        },
-        "1732544674309d14948b": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479951051797797813575"
-          }
-        },
-        "17325446780745dc53ed": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479955044942979283575"
-          }
-        },
-        "17325446808150857472": {
-          "type": "collection",
-          "settings": {
-            "product_categories": "12267479958744150910633575"
-          }
-        }
-      },
-      "block_order": [
-        "1732544634370b38467c",
-        "17325446437677d3dc20",
-        "1732544652564077391d",
-        "1732544659482e878c85",
-        "1732544669514cd3a616",
-        "1732544674309d14948b",
-        "17325446780745dc53ed",
-        "17325446808150857472"
-      ],
-      "custom_css": []
-    },
     "1732544727807d96b034": {
       "disabled": false,
       "type": "section-featured-collection-custom",
       "settings": {
         "section_title": "Best Collections",
         "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
+        "progress-bar": false,
+        "collection-arrows": false,
+        "show-collection-details": true,
+        "product_image_ratio": "133",
         "color_scheme": "none",
+        "title_size": "title1",
+        "header_text_align": "center",
+        "text_align": "left",
         "padding_top": 60,
         "padding_bottom": 60
       },
@@ -618,14 +455,14 @@
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267436178452030502433575"
+            "product_category": "12267434442957583888093575"
           }
         },
         "1732544744399879a9c9": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267436182779210006003575"
+            "product_category": "12267434445835044624483575"
           }
         },
         "1732544757290c236b5b": {
@@ -639,7 +476,7 @@
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267436193572496841633575"
+            "product_category": "12267837477650442569693575"
           }
         }
       },
@@ -650,20 +487,143 @@
         "173254476940470c1075"
       ],
       "custom_css": []
+    },
+    "17368524474787c4e40a": {
+      "disabled": false,
+      "type": "section-featured-collection-custom",
+      "settings": {
+        "section_title": "Shop by Style",
+        "section_subtitle": "",
+        "progress-bar": true,
+        "collection-arrows": false,
+        "show-collection-details": false,
+        "product_image_ratio": "99",
+        "color_scheme": "none",
+        "title_size": "body6",
+        "header_text_align": "left",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "17368524863090bc1fac": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267479946896080972843575"
+          }
+        },
+        "17368525035916d83455": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267479955044942979283575"
+          }
+        },
+        "173685256880415cdcd2": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267479958744150910633575"
+          }
+        },
+        "1736852581274f91208d": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267434438770829633093575"
+          }
+        },
+        "17368526011994d5760b": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837477650442569693575"
+          }
+        }
+      },
+      "block_order": [
+        "17368524863090bc1fac",
+        "17368525035916d83455",
+        "173685256880415cdcd2",
+        "1736852581274f91208d",
+        "17368526011994d5760b"
+      ],
+      "custom_css": []
+    },
+    "1736852645008d5cad0d": {
+      "disabled": false,
+      "type": "section-featured-collection-custom",
+      "settings": {
+        "section_title": "Our Product categories",
+        "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
+        "progress-bar": false,
+        "collection-arrows": true,
+        "show-collection-details": false,
+        "product_image_ratio": "99",
+        "color_scheme": "none",
+        "title_size": "body6",
+        "header_text_align": "left",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "173685268540178a0c01": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837477650442569693575"
+          }
+        },
+        "173685269725022896fa": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267434438770829633093575"
+          }
+        },
+        "1736852714033a970d5e": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267434442957583888093575"
+          }
+        },
+        "1736852749496f88ebaf": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267434445835044624483575"
+          }
+        },
+        "1736852848001107da55": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837468046325259293575"
+          }
+        }
+      },
+      "block_order": [
+        "173685268540178a0c01",
+        "173685269725022896fa",
+        "1736852714033a970d5e",
+        "1736852749496f88ebaf",
+        "1736852848001107da55"
+      ],
+      "custom_css": []
     }
   },
   "order": [
     "1732179452820d023915",
     "17325437940212daaabe",
     "1732178924874a51f28c",
-    "17325444134397d214eb",
+    "1736852645008d5cad0d",
     "1732544033019e3e41c2",
     "1732544206145c58ecb7",
     "1732544527169ec450b7",
-    "1732544616088988745b",
+    "17368524474787c4e40a",
     "1732544727807d96b034",
     "1733673220654919ccad",
-    "17321804744621df169f",
-    "1732180510845b0d2ea5"
+    "17321804744621df169f"
   ]
 }
