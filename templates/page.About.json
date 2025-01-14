@@ -200,7 +200,6 @@
       "type": "image-with-text",
       "settings": {
         "enable_full_width": false,
-        "image": "shopline://shop_images/Rectangle 9376.jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "left",
@@ -211,7 +210,8 @@
         "color_scheme": "1",
         "mobile_text_align": "left",
         "padding_top": 80,
-        "padding_bottom": 34
+        "padding_bottom": 34,
+        "image": "shopline://shop_images/Rectangle 9376.jpg"
       },
       "blocks": {
         "17339993906805ceac24": {
@@ -251,7 +251,6 @@
       "type": "image-with-text",
       "settings": {
         "enable_full_width": false,
-        "image": "shopline://shop_images/Rectangle 9376 (1).jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "right",
@@ -262,7 +261,8 @@
         "color_scheme": "1",
         "mobile_text_align": "left",
         "padding_top": 36,
-        "padding_bottom": 60
+        "padding_bottom": 120,
+        "image": "shopline://shop_images/Rectangle 9377_6809890440243006518.jpg"
       },
       "blocks": {
         "17339993906805ceac24": {
@@ -302,7 +302,7 @@
       "type": "image-with-text",
       "settings": {
         "enable_full_width": false,
-        "image": "shopline://shop_images/Rectangle 9377 (6).jpg",
+        "image": "shopline://shop_images/Rectangle 9377_6809890440243006518.jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "left",
@@ -312,8 +312,8 @@
         "image_overlap_display": false,
         "color_scheme": "none",
         "mobile_text_align": "left",
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 80,
+        "padding_bottom": 80
       },
       "blocks": {
         "1733999650448353befd": {
@@ -411,7 +411,6 @@
       "type": "image-with-text",
       "settings": {
         "enable_full_width": true,
-        "image": "shopline://shop_images/Rectangle 9376 (2).jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "right",
@@ -422,7 +421,8 @@
         "color_scheme": "2",
         "mobile_text_align": "left",
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 60,
+        "image": "shopline://shop_images/Rectangle 9376 (2).jpg"
       },
       "blocks": {
         "17340003784225d18203": {
