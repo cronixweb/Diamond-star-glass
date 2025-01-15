@@ -920,6 +920,7 @@ span.mobile-facets__open  {
   font-size: var(--body3-font-size);
   font-weight: 600;
   line-height: 1.4;
+  flex: 0 1 120px!important;
 }
 
 .filter-drawer-header.title-font span {
@@ -942,6 +943,8 @@ span.mobile-facets__open  {
 @media (max-width: 959px) {
   .facets-sort-filter__wrapper {
     padding: 10px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
 
