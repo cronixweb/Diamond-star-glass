@@ -454,29 +454,38 @@
         "1732544731345a7474f5": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267434442957583888093575"
+            "product_category": "12267434442957583888093575",
+            "collection_image": "shopline://shop_images/009.jpg_6821623845058425950.jpg",
+            "collection_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
+            "button_text": "Shop Now"
           }
         },
         "1732544744399879a9c9": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267434445835044624483575"
+            "product_category": "12267434445835044624483575",
+            "collection_image": "shopline://shop_images/009.jpg (1)_6821624101867411477.jpg",
+            "collection_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
+            "button_text": "Shop Now"
           }
         },
         "1732544757290c236b5b": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267436189929156152733575"
+            "product_category": "12267436189929156152733575",
+            "collection_image": "shopline://shop_images/009.jpg (2)_6821624304821393434.jpg",
+            "collection_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
+            "button_text": "Shop Now"
           }
         },
         "173254476940470c1075": {
           "type": "collection",
           "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267837477650442569693575"
+            "product_category": "12267837477650442569693575",
+            "collection_image": "shopline://shop_images/009.jpg (3)_6821625011343513671.jpg",
+            "collection_heading": "Art Glass",
+            "collection_description": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.",
+            "button_text": "Shop Now"
           }
         }
       },
@@ -512,10 +521,19 @@
             "product_category": "12267479946896080972843575"
           }
         },
+        "17369282915371dfe78c": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Traditional",
+            "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/002.jpg_6821615041650677771.jpg"
+          }
+        },
         "17368525035916d83455": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/Rectangle 9377 (4).jpg",
             "product_category": "12267479955044942979283575"
           }
         },
@@ -523,6 +541,7 @@
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg",
             "product_category": "12267479958744150910633575"
           }
         },
@@ -532,21 +551,14 @@
             "button_text": "Shop Now",
             "product_category": "12267434438770829633093575"
           }
-        },
-        "17368526011994d5760b": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267837477650442569693575"
-          }
         }
       },
       "block_order": [
         "17368524863090bc1fac",
+        "17369282915371dfe78c",
         "17368525035916d83455",
         "173685256880415cdcd2",
-        "1736852581274f91208d",
-        "17368526011994d5760b"
+        "1736852581274f91208d"
       ],
       "custom_css": []
     },
@@ -570,7 +582,9 @@
         "173685268540178a0c01": {
           "type": "collection",
           "settings": {
+            "collection_heading": "Art Glass",
             "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/002.jpg (2)_6749000414195050507.jpg",
             "product_category": "12267837477650442569693575"
           }
         },
@@ -578,13 +592,16 @@
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/002.jpg_6821612090622269498.jpg",
             "product_category": "12267434438770829633093575"
           }
         },
         "1736852714033a970d5e": {
           "type": "collection",
           "settings": {
+            "collection_heading": "Mercury / Foil Glass",
             "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/002.jpg (1)_6821614855238890580.jpg",
             "product_category": "12267434442957583888093575"
           }
         },
@@ -592,6 +609,7 @@
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
+            "collection_image": "shopline://shop_images/002.jpg (2)_6821615245611152475.jpg",
             "product_category": "12267434445835044624483575"
           }
         },
