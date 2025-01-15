@@ -34,18 +34,30 @@
             <li class="splide__slide category-block text-{{ section.settings.text_align }} card {{#if section.settings.mb-collection-size}}mb-slide--show-half{{/if}}">
               <div class="card__inner ratio">
                 <a href="{{ block.settings.product_category.url }}" class="card__media">
-                  {{#if block.settings.product_category.featured_image}}
-                    {{snippet "image" data=block.settings.product_category.featured_image }}
+                  {{#if block.settings.collection_image}}
+                    {{snippet "image" data=block.settings.collection_image }}
+                  {{else}}
+                    {{#if block.settings.product_category.featured_image}}
+                      {{snippet "image" data=block.settings.product_category.featured_image }}
+                    {{/if}}
                   {{/if}}
                 </a>
               </div>
               <div class="card_content">
-                {{#if block.settings.product_category.title}}
-                  <h3 class="{{section.settings.title_size}}">{{ block.settings.product_category.title }}</h3>
+                {{#if block.settings.collection_heading}}
+                  <h3 class="{{section.settings.title_size}}">{{ block.settings.collection_heading }}</h3>
+                {{else}}
+                  {{#if block.settings.product_category.title}}
+                    <h3 class="{{section.settings.title_size}}">{{ block.settings.product_category.title }}</h3>
+                  {{/if}}
                 {{/if}}
                 {{#if section.settings.show-collection-details}}
-                  {{#if block.settings.product_category.description}}
-                    <div class="body3">{{{ block.settings.product_category.description }}}</div>
+                  {{#if block.settings.collection_description}}
+                    <div class="body3">{{ block.settings.collection_description }}</div>
+                  {{else}}
+                    {{#if block.settings.product_category.description}}
+                      <div class="body3">{{{ block.settings.product_category.description }}}</div>
+                    {{/if}}
                   {{/if}}
                   {{#if block.settings.button_text}}
                     <div class="inner-content-btn">
@@ -253,6 +265,22 @@
           "label": {
             "en": "Collection list"
           }
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "collection_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "collection_description",
+          "label": "Description",
+          "limit": 500
         },
         {
           "type": "text",
