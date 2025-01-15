@@ -36,28 +36,22 @@
                 <a href="{{ block.settings.product_category.url }}" class="card__media">
                   {{#if block.settings.collection_image}}
                     {{snippet "image" data=block.settings.collection_image }}
-                  {{else}}
-                    {{#if block.settings.product_category.featured_image}}
+                  {{else if block.settings.product_category.featured_image}}
                       {{snippet "image" data=block.settings.product_category.featured_image }}
-                    {{/if}}
                   {{/if}}
                 </a>
               </div>
               <div class="card_content">
                 {{#if block.settings.collection_heading}}
                   <h3 class="{{section.settings.title_size}}">{{ block.settings.collection_heading }}</h3>
-                {{else}}
-                  {{#if block.settings.product_category.title}}
+                {{else if block.settings.product_category.title}}
                     <h3 class="{{section.settings.title_size}}">{{ block.settings.product_category.title }}</h3>
-                  {{/if}}
                 {{/if}}
                 {{#if section.settings.show-collection-details}}
                   {{#if block.settings.collection_description}}
                     <div class="body3">{{ block.settings.collection_description }}</div>
-                  {{else}}
-                    {{#if block.settings.product_category.description}}
+                  {{else if block.settings.product_category.description}}
                       <div class="body3">{{{ block.settings.product_category.description }}}</div>
-                    {{/if}}
                   {{/if}}
                   {{#if block.settings.button_text}}
                     <div class="inner-content-btn">
