@@ -939,6 +939,28 @@ span.mobile-facets__open  {
   padding: unset; 
 }
 
+.filter-drawer-content .filter-folder-header {
+  padding: 12px 0;
+}
+
+#filter-drawer-con .filter-drawer-content .filter-drawer-header {
+  height: 57px;
+  padding: 0 16px;
+}
+
+#filter-drawer-con .filter-drawer-content .filter-drawer-inner .filter-plugin-scroll-content {
+  padding: 0 18px;
+}
+
+.filter-drawer-content .filter-folder-header svg {
+  width: 16px;
+  height: 16px;
+}
+
+.filter-drawer-content .filter-more-btn.btn-link {
+  display: none;
+}
+
 @media (max-width: 959px) {
   .facets-sort-filter__wrapper {
     padding: 10px 16px;
