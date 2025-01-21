@@ -210,7 +210,7 @@
   }
 
   .contact-form__content .content_contact {
-    font-size: var(--body5-font-size);
+    font-size: var(--body4-max-font-size);
     margin-bottom: 24px;
   }
   
