@@ -914,9 +914,13 @@ body[data-template="product"]{
 }
 
 .product-form__input
-input[type="radio"]:checked
+input[type="radio"]
 + label:not(.product-form--color-swatch) {
   font-size: var(--body4-font-size);
+}
+.product-form__input
+input[type="radio"]:checked
++ label:not(.product-form--color-swatch) {
   font-style: normal;
   font-weight: 600;
   line-height: 1.4;
@@ -1090,7 +1094,9 @@ variant-radios .product-form__input.medium .product-form__input--right {
   font-weight: 400;
   line-height: 1.4;
 }
-
+variant-radios .product-form__input.option-list-color .product-form__input--right{
+  gap: 16px;
+}
 @media (max-width: 959px) {
   .product .product__info-wrapper {
     margin-top: 32px;
@@ -1168,12 +1174,13 @@ variant-radios .product-form__input.medium .product-form__input--right {
 
 /* wishlist and ATC button */
 @media screen and (min-width: 750px) {
-  .product-but-buttons{
-    width: 80%;
+  .product-atc-buttons{
+    margin-top: 0;
+    width: calc(100% - 85px);
     display: inline-block;
   }
   #wishlist-product-details{
-    margin: 8px 0;
+    margin: 10px 0;
     display: inline-block;
     width: 82px;
     vertical-align: top;

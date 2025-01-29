@@ -298,12 +298,16 @@ body[data-template="collection"]{
     width: 100%;
   }
 }
-
+.filter-selected-con .filter-selected-title{
+  margin: 5px 0;
+  font-size: var(--body4-font-size);
+}
+.filter-selected-con .filter-selected-item{
+  width: auto;
+  margin-right: 5px;
+}
 @media (min-width: 960px) {
   .product-list-content{
       margin-top: 0;
-  }
-  .shopline-section .product-list-container{
-      margin-top: -50px;
   }
 }
