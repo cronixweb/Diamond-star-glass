@@ -893,10 +893,6 @@ span.mobile-facets__open  {
   line-height: 1.4;
 }
 
-.filter-folder-popup .filter-folder-inner {
-  max-height: unset;
-}
-
 .filter-folder-popup .filter-apply-btn-con .filter-apply-btn {
   font-size: var(--body4-font-size);
   font-weight: 700;
@@ -920,7 +916,6 @@ span.mobile-facets__open  {
   font-size: var(--body3-font-size);
   font-weight: 600;
   line-height: 1.4;
-  flex: 0 1 120px!important;
 }
 
 .filter-drawer-header.title-font span {
@@ -939,6 +934,7 @@ span.mobile-facets__open  {
   flex: unset;
   padding: unset; 
 }
+
 .filter-drawer-content .filter-folder-header {
   padding: 12px 0;
 }
@@ -957,14 +953,9 @@ span.mobile-facets__open  {
   height: 16px;
 }
 
-.filter-drawer-content .filter-more-btn.btn-link {
-  display: none;
-}
 @media (max-width: 959px) {
   .facets-sort-filter__wrapper {
     padding: 10px 16px;
-    flex-wrap: wrap;
-    gap: 10px;
   }
 }
 

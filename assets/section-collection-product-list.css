@@ -298,22 +298,12 @@ body[data-template="collection"]{
     width: 100%;
   }
 }
-.filter-selected-con .filter-selected-title{
-  font-size: var(--body4-font-size);
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 @media (min-width: 960px) {
   .product-list-content{
       margin-top: 0;
   }
   .shopline-section .product-list-container{
       margin-top: -50px;
-  }
-}
-@media (max-width: 959px) {
-  .collection .product-list-content{
-    margin-left: 0;
-    margin-right: 0;
   }
 }

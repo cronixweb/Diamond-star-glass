@@ -118,7 +118,7 @@
   
 .collection-hero .breadcrumb__last-crumb {
   font-size: var(--body2-font-size);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
   opacity: unset;
 }
@@ -222,10 +222,10 @@
     align-items: center;
   }
   .collection-banner-content .banner-content{
-    width: 32.5%;
+    width: 34%;
   }
   .collection-banner-content .banner-categories{
-    width: 77.5%;
+    width: 67%;
     padding-left: 26px;
     margin-top: 0;
     margin-bottom: 0;
@@ -249,6 +249,7 @@
 
   .collection-hero__description {
     font-size: 20px;
+    max-width: 86%;
   }
 
   .collection-hero__no-cover{

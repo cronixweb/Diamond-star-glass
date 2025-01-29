@@ -401,13 +401,16 @@ input {
   margin-bottom: 32px !important;
 }
 .text-columns-with-images-item__button .button-arrow {
-  width: 17px;
-  height: 16px;
-  display: inline-block;
-  line-height: 1;
+    width: 17px;
+    height: 16px;
+    display: inline-block;
+    line-height: 1;
 }
-.text-columns-with-images-item__button{
-  display: flex;
+.text-columns-with-images-item__button {
+    display: flex;
+}
+.text-columns-with-images-item__title{
+    font-family: 'Gotham';
 }
 @media screen and (min-width: 960px) {
   .text-columns-with-images__title.title_custom {
@@ -426,12 +429,12 @@ input {
   .text-columns-with-images__title.title_margin {
     margin-bottom: 48px !important;
   }
-  .text-columns-with-images .grid-cols-5-desktop > *{
+  .text-columns-with-images .grid-cols-5-desktop>* {
     width: 25%;
   }
 }
 @media screen and (min-width: 1200px) {
-  .text-columns-with-images .grid-cols-5-desktop > *{
-    width: 20%;
-  }
+    .text-columns-with-images .grid-cols-5-desktop>* {
+        width: 20%;
+    }
 }

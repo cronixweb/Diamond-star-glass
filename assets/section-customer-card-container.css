@@ -144,7 +144,6 @@
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* Custom Style */
-.navbar__container .body2,
-.customer-order-list__empty .empty-title {
+.account-section .card-container .card__title p {
   font-size: var(--body4-font-size);
 }

@@ -1,7 +1,7 @@
 {
   "sections": {
     "main-blog-list": {
-      "disabled": false,
+      "disabled": true,
       "type": "main-blog-list",
       "settings": {
         "layout": "grid",
@@ -39,14 +39,16 @@
             "heading_size": "title2",
             "heading_level": "h1"
           },
-          "blockId": "1733812139116162b0c9"
+          "blockId": "1733812139116162b0c9",
+          "disabled": true
         },
         "173381213911639d5a58": {
           "type": "text",
           "settings": {
             "text": "<p>Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque.</p>"
           },
-          "blockId": "173381213911639d5a58"
+          "blockId": "173381213911639d5a58",
+          "disabled": true
         }
       },
       "block_order": [
@@ -56,7 +58,7 @@
       "custom_css": []
     },
     "173381220986748ce5e1": {
-      "disabled": false,
+      "disabled": true,
       "type": "slideshow",
       "settings": {
         "section_height": "natural",
@@ -198,8 +200,8 @@
             "btn_bg_color2": "#000000",
             "btn_text_color2": "#FFFFFF",
             "btn_border_color2": "#000000",
-            "image_mobile": "shopline://shop_images/Frame 1000002469 (6).jpg",
-            "image": "shopline://shop_images/Frame 1000002469 (5).jpg"
+            "image": "shopline://shop_images/Frame 1000002469 (5).jpg",
+            "image_mobile": "shopline://shop_images/Frame 1000002469 (6).jpg"
           }
         }
       },
@@ -224,31 +226,33 @@
         "173381319970614ea29c": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.png",
+            "image_url": "https://www.instagram.com/p/DEh3LhwxHK9/?img_index=1"
           }
         },
         "1733813213257389c363": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769306021962986579.jpg"
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.1.png",
+            "image_url": "https://www.instagram.com/p/DD-UMDYS4Xd/"
           }
         },
         "1733813273023c64ce73": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.2.png"
           }
         },
         "17338132821735eb3a76": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769306021962986579.jpg"
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.3.png"
           }
         },
         "1733813277606e34492d": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.4.png"
           }
         }
       },
