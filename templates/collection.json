@@ -5,21 +5,25 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_cover": false,
+        "show_collection_name": true,
+        "btn_collection_text": "NEW ARRIVALS",
+        "show_collection_cover": true,
         "pc_collection_img_height": 470,
         "md_collection_img_height": 250,
         "collection_cover_area": "center",
         "mask_color": "#000000",
         "mask_color_opacity": 20,
-        "parallax_scroll": false
+        "parallax_scroll": false,
+        "banner_image_mobile": null
       },
-      "blocks": {}
+      "blocks": {},
+      "custom_css": []
     },
     "main-collection-product-list": {
       "disabled": false,
       "type": "main-collection-product-list",
       "settings": {
-        "products_per_page": 16,
+        "products_per_page": 20,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "pagination_style": "normal",
@@ -27,20 +31,61 @@
         "enable_infinite_scroll_button": false,
         "price_show_type": "price_interval",
         "show_origin_price": true,
-        "product_image_ratio": "adapt",
+        "product_image_ratio": "100",
         "image_fill_type": "cover",
         "image_display_area": "center center",
         "show_secondary_image": false,
         "mobile_show_secondary_image": false,
         "sticky_filtering": false,
         "enable_filtering": true,
-        "enable_product_count":false,
+        "enable_product_count": false,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "padding_top": 80,
         "padding_bottom": 80
       },
-      "blocks": {},
+      "blocks": {
+        "1736875837862cfc9b75": {
+          "type": "promotional",
+          "settings": {
+            "promotional_image_display_area": "center center",
+            "title": "Promotion heading",
+            "desc": "Describe your promotion",
+            "button_text": "",
+            "button_style": "button",
+            "image_content_position": "center",
+            "overlay_opacity": 0,
+            "grid_position": 5,
+            "card_width": "single_column",
+            "color_scheme": "1",
+            "pc_image": "shopline://shop_images/Z58017.jpg.png"
+          },
+          "disabled": true
+        },
+        "1736875581262673344c": {
+          "type": "promotional",
+          "settings": {
+            "promotional_image_display_area": "center center",
+            "title": "Promotion heading",
+            "desc": "Describe your promotion",
+            "button_text": "Text",
+            "link": "https://www.instagram.com/accounts/login/?hl=en",
+            "button_style": "button--link",
+            "image_content_position": "center",
+            "overlay_opacity": 0,
+            "grid_position": 5,
+            "card_width": "single_column",
+            "color_scheme": "1",
+            "pc_image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg",
+            "mobile_image": "shopline://shop_images/2025 Winter Banner 2 (1).png"
+          },
+          "disabled": true
+        }
+      },
+      "block_order": [
+        "1736875837862cfc9b75",
+        "1736875581262673344c"
+      ],
       "custom_css": []
     }
   },

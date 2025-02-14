@@ -616,6 +616,7 @@
       "subscribe_format_error": "Invalid email address",
       "subscribe_success": "Subscribed successfully"
     },
+    "selected": "Selected",
     "general": {
       "accept": "Accept",
       "decline": "Decline",

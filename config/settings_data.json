@@ -162,10 +162,10 @@
       "cart_empty_recommend_product_to_show": 12,
       "cart_empty_recommend_product_image_ratio": 150,
       "cart_empty_recommend_product_image_fill_type": "contain",
-      "social_facebook_link": "https://www.facebook.com/",
-      "social_twitter_link": "https://x.com/",
-      "social_pinterest_link": "https://in.pinterest.com/",
-      "social_instagram_link": "https://www.instagram.com/",
+      "social_facebook_link": "https://www.facebook.com/diamondstarglassware",
+      "social_twitter_link": "https://x.com/dsglassware",
+      "social_pinterest_link": "https://www.pinterest.com/dsglassware/",
+      "social_instagram_link": "https://www.instagram.com/diamond_star_glass/",
       "social_snapchat_link": "",
       "social_tiktok_link": "",
       "social_youtube_link": "",
@@ -202,7 +202,10 @@
       "color_scheme_2_btn_bg_color": "#EFEFEF",
       "color_scheme_2_btn_color": "#121212",
       "color_scheme_3_btn_bg_color": "#F4F7FB",
-      "color_scheme_3_btn_color": "#000000"
+      "color_scheme_3_btn_color": "#000000",
+      "social_whatsapp_link": "",
+      "social_line_link": "",
+      "social_kakao_link": ""
     },
     "sections": {
       "announcement-bar": {
@@ -213,13 +216,21 @@
           "item-1": {
             "type": "item",
             "settings": {
-              "notice_link_text": "All Orders Over $200 = <strong>FREE FedEx Express Delivery</strong>",
+              "notice_link_text": "A fresh design for your favorite finds—welcome to our newly revamped website!",
+              "announcement_division_bottom": false
+            }
+          },
+          "17370573045665c7ab8d": {
+            "type": "item",
+            "settings": {
+              "notice_link_text": "Dive in and see what’s new!",
               "announcement_division_bottom": false
             }
           }
         },
         "block_order": [
-          "item-1"
+          "item-1",
+          "17370573045665c7ab8d"
         ],
         "custom_css": []
       },
@@ -265,87 +276,49 @@
           "main_menu_link_list": "main-menu"
         },
         "blocks": {
-          "menuImage1": {
-            "type": "menuImage",
-            "settings": {
-              "menu_title": "",
-              "menu_img_style": "fill",
-              "image_1_title": "Promotion heading",
-              "image_1_link_text": "Shop",
-              "image_1_link": "",
-              "image_1_position": "right",
-              "image_2_title": "Promotion heading",
-              "image_2_link_text": "Shop",
-              "image_2_link": "",
-              "image_2_position": "right",
-              "image_3_title": "Promotion heading",
-              "image_3_link_text": "Shop",
-              "image_3_link": "",
-              "image_3_position": "right",
-              "image_1": null,
-              "image_2": null,
-              "image_3": null
-            }
-          },
-          "menuImage2": {
-            "type": "menuImage",
-            "max_blocks": 5,
-            "settings": {
-              "menu_title": "",
-              "menu_img_style": "fill",
-              "image_1_title": "Promotion heading",
-              "image_1_link_text": "Shop",
-              "image_1_link": "",
-              "image_1_position": "right",
-              "image_2_title": "Promotion heading",
-              "image_2_link_text": "Shop",
-              "image_2_link": "",
-              "image_2_position": "right",
-              "image_3_title": "Promotion heading",
-              "image_3_link_text": "Shop",
-              "image_3_link": "",
-              "image_3_position": "right",
-              "image_1": null,
-              "image_2": null,
-              "image_3": null
-            }
-          },
           "17325463020702f2c9d4": {
             "type": "menuImage",
             "settings": {
-              "menu_title": "vases",
+              "menu_title": "Vases",
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
-              "image_1_title": "New Arrivals",
+              "image_1_title": "Colored Vases",
               "image_1_link_text": "Explore more",
-              "image_2_title": "Featured Collections",
+              "image_1_link": "shopline://collections/12267837482347559726653575",
+              "image_2_title": "Art Glass",
               "image_2_link_text": "Explore more",
-              "image_3_title": "Sale",
+              "image_2_link": "shopline://collections/12267837477650442569693575",
+              "image_3_title": "Flower Essentials",
               "image_3_link_text": "Explore more",
+              "image_3_link": "shopline://collections/12267837484138695714883575",
               "menu_link_list": "",
-              "image_2": "shopline://shop_images/flowers.jpg",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg"
-            }
+              "image_3": "shopline://shop_images/89702, 89703, 89704, 89705, 84809C_3.jpg",
+              "image_2": "shopline://shop_images/22154,22155_1.png",
+              "image_1": "shopline://shop_images/12206&12207_1.png"
+            },
+            "disabled": false
           },
           "1735016684632ce31576": {
             "type": "menuImage",
             "settings": {
+              "menu_link_list": "",
               "menu_title": "Garden",
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
-              "image_1_title": "New Arrivals",
+              "image_1": "shopline://shop_images/69.jpg",
+              "image_1_title": "Aerial Planters",
               "image_1_link_text": "Explore more",
-              "image_2_title": "Featured Collections",
+              "image_1_link": "shopline://collections/12268542933044035674173575",
+              "image_2": "shopline://shop_images/60059 (3).jpg",
+              "image_2_title": "Terrariums",
               "image_2_link_text": "Explore more",
-              "image_3_title": "Sale",
+              "image_2_link": "shopline://collections/12267837495037510371223575",
+              "image_3": "shopline://shop_images/OA23003S3.jpg",
+              "image_3_title": "Planters",
               "image_3_link_text": "Explore more",
-              "menu_link_list": "",
-              "image_2": "shopline://shop_images/flowers.jpg",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg"
+              "image_3_link": "shopline://collections/12267837493206109464613575"
             }
           },
           "1735016707332b5488c6": {
@@ -355,16 +328,19 @@
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
-              "image_1_title": "New Arrivals",
+              "image_1_title": "Bowls",
               "image_1_link_text": "Explore more",
-              "image_2_title": "Featured Collections",
+              "image_1_link": "shopline://collections/12267837503170601362293575",
+              "image_2_title": "Wall Decor",
               "image_2_link_text": "Explore more",
-              "image_3_title": "Sale",
+              "image_2_link": "shopline://collections/12267434438770829633093575",
+              "image_3_title": "Knots & Orbs",
               "image_3_link_text": "Explore more",
+              "image_3_link": "shopline://collections/12267837557283330545753575",
               "menu_link_list": "",
-              "image_2": "shopline://shop_images/flowers.jpg",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg"
+              "image_3": "shopline://shop_images/9.jpg",
+              "image_1": "shopline://shop_images/21294+21295主图5.jpg",
+              "image_2": "shopline://shop_images/38.jpg"
             }
           },
           "1735016737881b2a89b7": {
@@ -374,16 +350,41 @@
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
-              "image_1_title": "New Arrivals",
+              "image_1_title": "Candle Holders",
               "image_1_link_text": "Explore more",
-              "image_2_title": "Featured Collections",
+              "image_1_link": "shopline://collections/12267837504991264856943575",
+              "image_2_title": "Apothecary",
               "image_2_link_text": "Explore more",
-              "image_3_title": "Sale",
+              "image_2_link": "shopline://collections/12268236964814567569363575",
+              "image_3_title": "Bowls & Plates",
               "image_3_link_text": "Explore more",
+              "image_3_link": "shopline://collections/12267837503170601362293575",
               "menu_link_list": "",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg",
-              "image_2": "shopline://shop_images/flowers.jpg"
+              "image_1": "shopline://shop_images/39132.jpg",
+              "image_2": "shopline://shop_images/64898,64897.jpg",
+              "image_3": "shopline://shop_images/M20075.jpg"
+            }
+          },
+          "1735017009032f7e9f84": {
+            "type": "menuImage",
+            "settings": {
+              "menu_title": "Coastal",
+              "menu_img_style": "normal",
+              "text_color": "#121212",
+              "link_color": "#424551",
+              "image_1_title": "Vases",
+              "image_1_link_text": "Explore more",
+              "image_1_link": "shopline://collections/12267508338300918248223575",
+              "image_2_title": "Art Glass",
+              "image_2_link_text": "Explore more",
+              "image_2_link": "shopline://collections/12267837477650442569693575",
+              "image_3_title": "Figurines & Sculptures",
+              "image_3_link_text": "Explore more",
+              "image_3_link": "shopline://collections/12267837506514636465673575",
+              "menu_link_list": "",
+              "image_3": "shopline://shop_images/49663ASST.jpg",
+              "image_1": "shopline://shop_images/45334_1.jpg",
+              "image_2": "shopline://shop_images/57572.jpg"
             }
           },
           "1735016753183000b633": {
@@ -393,54 +394,41 @@
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
-              "image_1_title": "New Arrivals",
+              "image_1_title": "Valentine's Day",
               "image_1_link_text": "Explore more",
-              "image_2_title": "Featured Collections",
+              "image_1_link": "shopline://collections/12267837552353345624023575",
+              "image_2_title": "Easter",
               "image_2_link_text": "Explore more",
-              "image_3_title": "Sale",
+              "image_2_link": "shopline://collections/12267837542560820584083575",
+              "image_3_title": "Mardi Gras",
               "image_3_link_text": "Explore more",
+              "image_3_link": "shopline://collections/12267837547408764523793575",
               "menu_link_list": "",
-              "image_2": "shopline://shop_images/flowers.jpg",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg"
-            }
-          },
-          "1735017009032f7e9f84": {
-            "type": "menuImage",
-            "settings": {
-              "menu_link_list": "",
-              "menu_title": "Coastal",
-              "menu_img_style": "normal",
-              "text_color": "#121212",
-              "link_color": "#424551",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg",
-              "image_1_title": "New Arrivals",
-              "image_1_link_text": "Explore more",
-              "image_2": "shopline://shop_images/flowers.jpg",
-              "image_2_title": "Featured Collections",
-              "image_2_link_text": "Explore more",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
-              "image_3_title": "Sale",
-              "image_3_link_text": "Explore more"
+              "image_1": "shopline://shop_images/GV10006.JPG",
+              "image_3": "shopline://shop_images/M20217.jpg",
+              "image_2": "shopline://shop_images/0_6833857262449767484.jpg"
             }
           },
           "1735017015582ee1a1a7": {
             "type": "menuImage",
             "settings": {
-              "menu_link_list": "",
               "menu_title": "Sale",
               "menu_img_style": "normal",
               "text_color": "#121212",
               "link_color": "#424551",
-              "image_1": "shopline://shop_images/Rectangle 8.jpg",
-              "image_1_title": "New Arrivals",
+              "image_1_title": "Christmas",
               "image_1_link_text": "Explore more",
-              "image_2": "shopline://shop_images/flowers.jpg",
-              "image_2_title": "Featured Collections",
+              "image_1_link": "shopline://collections/12267837462055349210823575",
+              "image_2_title": "Halloween",
               "image_2_link_text": "Explore more",
-              "image_3": "shopline://shop_images/Rectangle 10_6741971957745072168.jpg",
-              "image_3_title": "Sale",
-              "image_3_link_text": "Explore more"
+              "image_2_link": "shopline://collections/12267837462055349210823575",
+              "image_3_title": "Harvest",
+              "image_3_link_text": "Explore more",
+              "image_3_link": "shopline://collections/12267837462055349210823575",
+              "menu_link_list": "",
+              "image_1": "shopline://shop_images/31859.jpg",
+              "image_3": "shopline://shop_images/79522.jpg",
+              "image_2": "shopline://shop_images/31840ASST_6833870916553594977.jpg"
             }
           }
         },
@@ -449,8 +437,8 @@
           "1735016684632ce31576",
           "1735016707332b5488c6",
           "1735016737881b2a89b7",
-          "1735016753183000b633",
           "1735017009032f7e9f84",
+          "1735016753183000b633",
           "1735017015582ee1a1a7"
         ],
         "custom_css": []

@@ -243,9 +243,15 @@
               {{#if settings.show_pay_channel.show}}
               <ul class="footer__payment list-unstyled">
                 {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
-                  <li class="icon-{{pay_channel_item.type}}">
-                    {{payment_type_svg_tag pay_channel_item.type}}
-                  </li>
+                  {{#if pay_channel_item.type == "american_express"}}
+                    <li class="icon-{{pay_channel_item.type}}">
+                      {{snippet "american-express"}}
+                    </li>
+                  {{else}}
+                    <li class="icon-{{pay_channel_item.type}}">
+                      {{payment_type_svg_tag pay_channel_item.type}}
+                    </li>
+                  {{/if}}
                 {{/for}}
               </ul>
               {{/if}}

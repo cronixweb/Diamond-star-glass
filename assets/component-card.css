@@ -569,7 +569,9 @@
   margin: 0;
   margin-bottom: 10px;
 }
-
+.card__content  .product-sku{
+  display: inline-block;
+}
 .card__content .shop-now-button {
   font-size: var(--body3-font-size);
   font-weight: 700;

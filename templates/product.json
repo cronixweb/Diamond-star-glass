@@ -30,6 +30,10 @@
         "padding_bottom": 94
       },
       "blocks": {
+        "1738881878237c7aaa73": {
+          "type": "variant_sku",
+          "settings": {}
+        },
         "block_1": {
           "type": "title",
           "settings": {
@@ -116,6 +120,7 @@
         }
       },
       "block_order": [
+        "1738881878237c7aaa73",
         "block_1",
         "block_2",
         "block_3",
@@ -133,14 +138,15 @@
       "type": "product-recommendations",
       "settings": {
         "title": "Related Products",
+        "text_align": "left",
         "title_size": "medium",
         "products_to_show": 8,
         "pc_cols": 4,
         "mobile_cols": "1",
         "enable_horizontal_slider": true,
         "color_scheme": "none",
-        "product_image_ratio": "adapt",
-        "product_fill_type": "contain",
+        "product_image_ratio": "100",
+        "product_fill_type": "cover",
         "show_secondary_image": false,
         "padding_top": 120,
         "padding_bottom": 60
