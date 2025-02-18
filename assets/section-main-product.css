@@ -1168,8 +1168,9 @@ variant-radios .product-form__input.medium .product-form__input--right {
 
 /* wishlist and ATC button */
 @media screen and (min-width: 750px) {
-  .product-but-buttons{
-    width: 80%;
+  .product-atc-buttons{
+    margin-top: 0;
+    width: calc(100% - 85px);
     display: inline-block;
   }
   #wishlist-product-details{

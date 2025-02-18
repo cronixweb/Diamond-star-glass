@@ -79,14 +79,16 @@
     <div class="page-width">
       <ul class="similar-category-group grid grid-cols-4 grid-cols-2-tablet">
         {{#for collection.metafields.my_fields.similar_categories.value as |similar_category| }}
-          <li class="grid_item">
-            <a href="{{similar_category.url}}">
-              <div class="similar-cateogory-image">
-                <img src="{{similar_category.image}}" alt="{{similar_category.title}}" width="255px" height="255px">
-              </div>
-              <h2 class="collection-title">{{similar_category.title}}</h2>
-            </a>
-          </li>
+          {{#if similar_category.title }}
+            <li class="grid_item">
+              <a href="{{similar_category.url}}">
+                <div class="similar-cateogory-image">
+                  <img src="{{similar_category.image}}" alt="{{similar_category.title}}" width="255px" height="255px">
+                </div>
+                <h2 class="collection-title">{{similar_category.title}}</h2>
+              </a>
+            </li>
+          {{/if}}
         {{/for}}
       </ul>
     </div>
@@ -125,8 +127,8 @@
               {{{collection.description}}}
             </div>
           {{/if}}
-          {{#if collection.metafields.my_fields.new_arrivals_link.value }}
-            <a href="{{collection.metafields.my_fields.new_arrivals_link.value}}" class="button button-primary">{{section.settings.btn_collection_text}}</a>
+          {{#if collection.metafields.my_fields.button-link.value != blank }}
+            <a href="{{collection.metafields.my_fields.button-link.value}}" class="button button-primary">{{section.settings.btn_collection_text}}</a>
           {{/if}}
         </div>
         <div class="banner-categories">

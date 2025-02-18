@@ -16,7 +16,7 @@
   </div>
   <div class="cart-item__details__wrapper">
     <div class="cart-item__details">
-      <a href="{{item.url}}" class="cart-item__name body2">{{item.product.title}}</a>
+      <a href="{{item.url}}" class="cart-item__name body3">{{item.product.title}}</a>
       {{#if (isFalsey item.product.has_only_default_variant)}}
         {{#for item.options_with_values as |option|}}
           <div class="product-option body4">
@@ -73,12 +73,12 @@
           <div class="original__price original__price__desktop body2">
             {{money_with_currency item.original_line_price}}
           </div>
-          <div class="final__price body2 fw-bold">{{money_with_currency item.final_line_price}}</div>
+          <div class="final__price body3 fw-bold">{{money_with_currency item.final_line_price}}</div>
           <div class="original__price original__price__mobile body2">
             {{money_with_currency item.original_line_price}}
           </div>
         {{else}}
-          <div class="final__price body2 fw-bold">{{money_with_currency item.final_line_price}}</div>
+          <div class="final__price body3 fw-bold">{{money_with_currency item.final_line_price}}</div>
         {{/if}}
       </div>
     </div>
@@ -94,12 +94,12 @@
           <div class="original__price original__price__desktop body2">
             {{money_with_currency item.original_line_price}}
           </div>
-          <div class="final__price body2 fw-bold">{{money_with_currency item.final_line_price}}</div>
+          <div class="final__price body3 fw-bold">{{money_with_currency item.final_line_price}}</div>
           <div class="original__price original__price__mobile body2">
             {{money_with_currency item.original_line_price}}
           </div>
         {{else}}
-          <div class="final__price body2 fw-bold">{{money_with_currency item.final_line_price}}</div>
+          <div class="final__price body3 fw-bold">{{money_with_currency item.final_line_price}}</div>
         {{/if}}
       </div>
     </div>

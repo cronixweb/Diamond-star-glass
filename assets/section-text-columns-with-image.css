@@ -412,6 +412,18 @@ input {
 .text-columns-with-images-item__title{
     font-family: 'Gotham';
 }
+.text-columns-with-images__text.text-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-columns-with-images__text.text-left{
+  margin-left: 0;
+  margin-right:auto;
+}
+.text-columns-with-images__text.text-right{
+  margin-left: auto;
+  margin-right:0;
+}
 @media screen and (min-width: 960px) {
   .text-columns-with-images__title.title_custom {
     font-size: var(--body8-max-font-size);

@@ -97,9 +97,18 @@
             {{#if block.type == "menu"}}
               <footer-menu class="footer-block grid__item footer-block--list" {{{block.shopline_attributes}}} {{#if block.settings.default_fold}}open{{/if}}>
                 {{#if block.settings.title}}
-                  <div class="footer-block__heading body4" id="menu_text">
-                    {{block.settings.title}}
-                    {{snippet "icon-arrow-down"}}
+                  <div class="footer-block__heading body4 {{#if block.settings.link}}with-link{{/if}}" id="menu_text">
+                    {{#if block.settings.link}}
+                      <span class="footer-block__heading-with-link">
+                        <a href="{{block.settings.link}}">
+                          {{block.settings.title}}
+                        </a>
+                        <span>{{block.settings.title}}</span>
+                      </span>
+                    {{else}}
+                      <span>{{block.settings.title}}</span>
+                    {{/if}}
+                      {{snippet "icon-arrow-down"}}
                   </div>
                 {{/if}}
                 {{assign "link" block.settings.menu}}
@@ -246,6 +255,14 @@
                   {{#if pay_channel_item.type == "american_express"}}
                     <li class="icon-{{pay_channel_item.type}}">
                       {{snippet "american-express"}}
+                    </li>
+                  {{else if pay_channel_item.type == "master"}}
+                    <li class="icon-{{pay_channel_item.type}}">
+                      {{snippet "master"}}
+                    </li>
+                  {{else if pay_channel_item.type == "visa"}}
+                    <li class="icon-{{pay_channel_item.type}}">
+                      {{snippet "visa"}}
                     </li>
                   {{else}}
                     <li class="icon-{{pay_channel_item.type}}">
@@ -427,9 +444,23 @@
         {{#if settings.show_pay_channel.show}}
           <ul class="footer__payment list-unstyled">
             {{#for settings.show_pay_channel.pay_channel_list as |pay_channel_item|}}
-              <li class="icon-{{pay_channel_item.type}}">
-                {{payment_type_svg_tag pay_channel_item.type}}
-              </li>
+              {{#if pay_channel_item.type == "american_express"}}
+                <li class="icon-{{pay_channel_item.type}}">
+                    {{snippet "american-express"}}
+                </li>
+                {{else if pay_channel_item.type == "master"}}
+                <li class="icon-{{pay_channel_item.type}}">
+                    {{snippet "master"}}
+                </li>
+                {{else if pay_channel_item.type == "visa"}}
+                <li class="icon-{{pay_channel_item.type}}">
+                    {{snippet "visa"}}
+                </li>
+                {{else}}
+                <li class="icon-{{pay_channel_item.type}}">
+                    {{payment_type_svg_tag pay_channel_item.type}}
+                </li>
+                {{/if}}
             {{/for}}
           </ul>
         {{/if}}
@@ -737,6 +768,11 @@
           "type": "text",
           "id": "title",
           "label": "t:sections.footer.blocks.menu.settings.title.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.footer.blocks.menu.settings.link.label"
         },
         {
           "type": "menu_picker",

@@ -30,8 +30,8 @@
         "gradient_style": false,
         "padding_top": 0,
         "padding_bottom": 44,
-        "banner1": "shopline://shop_images/Frame 1000002469 (2).jpg",
-        "mb-banner": "shopline://shop_images/Frame 1000002469 (4).jpg"
+        "mb-banner": "shopline://shop_images/Frame 1000002469 (4).jpg",
+        "banner1": "shopline://shop_images/Frame 1000002469 (2).jpg"
       },
       "blocks": {},
       "block_order": [],
@@ -115,6 +115,8 @@
       "settings": {
         "title": "Global Presence & Showrooms",
         "title_font_size": "title_custom",
+        "text_align_title": "center",
+        "outline_style": false,
         "content": "With a global presence and showrooms across key U.S. cities, we invite you to explore our collections in person. Each showroom showcases our latest designs, allowing you to see and feel the quality of our glassware firsthand.",
         "content_font_size": "body_custom",
         "image_width": "100%",
@@ -302,7 +304,6 @@
       "type": "image-with-text",
       "settings": {
         "enable_full_width": false,
-        "image": "shopline://shop_images/Rectangle 9377_6809890440243006518.jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "left",
@@ -313,7 +314,8 @@
         "color_scheme": "none",
         "mobile_text_align": "left",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "image": "shopline://shop_images/Rectangle 9377_6809890440243006518.jpg"
       },
       "blocks": {
         "1733999650448353befd": {

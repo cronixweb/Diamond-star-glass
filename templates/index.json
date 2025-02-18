@@ -76,8 +76,8 @@
         "color_scheme": "none",
         "padding_top": 60,
         "padding_bottom": 60,
-        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
-        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
+        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg",
+        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg"
       },
       "blocks": {
         "17321789322925ea0413": {
@@ -90,7 +90,7 @@
           "type": "buttons",
           "settings": {
             "button_text": "Shop All In-Stock",
-            "button_link": "/collections/in-stock"
+            "button_link": "https://diamondstarglass.myshopline.com/collections?filter_select=%7B%7D&price=%2C&onlyQueryInStock=true&page_num=1"
           }
         }
       },
@@ -235,8 +235,8 @@
         "gradient_style": false,
         "padding_top": 0,
         "padding_bottom": 60,
-        "banner1": "shopline://shop_images/Untitled (6) (1).png",
-        "mb-banner": "shopline://shop_images/Untitled (6) (1).png"
+        "mb-banner": "shopline://shop_images/Untitled (6) (1).png",
+        "banner1": "shopline://shop_images/Untitled (6) (1).png"
       },
       "blocks": {
         "17325437940219eec0bd": {
@@ -294,8 +294,8 @@
         "gradient_style": false,
         "padding_top": 60,
         "padding_bottom": 62,
-        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png",
-        "mb-banner": "shopline://shop_images/candle-holders.png"
+        "mb-banner": "shopline://shop_images/candle-holders.png",
+        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png"
       },
       "blocks": {
         "1732544033019b70e437": {
@@ -318,11 +318,12 @@
           "type": "button",
           "settings": {
             "button_text": "Explore More",
-            "link": "",
+            "link": "shopline://collections/12267837504991264856943575",
             "outline_button": false,
             "link_text_2": "",
             "link_2": "",
-            "outline_button_2": false
+            "outline_button_2": false,
+            "button_height_size": "normal"
           },
           "blockId": "1732544033019894fac8"
         }
@@ -353,8 +354,8 @@
         "gradient_style": false,
         "padding_top": 60,
         "padding_bottom": 120,
-        "banner1": "shopline://shop_images/image 4.jpg",
-        "mb-banner": "shopline://shop_images/Rectangle 9.jpg"
+        "mb-banner": "shopline://shop_images/Rectangle 9.jpg",
+        "banner1": "shopline://shop_images/image 4.jpg"
       },
       "blocks": {
         "1732544206146cf0281c": {
@@ -377,11 +378,12 @@
           "type": "button",
           "settings": {
             "button_text": "Explore More",
-            "link": "",
+            "link": "shopline://collections/12267576730749952416443575",
             "outline_button": false,
             "link_text_2": "",
             "link_2": "",
-            "outline_button_2": false
+            "outline_button_2": false,
+            "button_height_size": "normal"
           },
           "blockId": "17325442061464ad9f9c"
         }
@@ -409,6 +411,7 @@
             "title": "Apothecary",
             "content": "Apothecary jars, once used by 18th-century pharmacists to store herbs and remedies, have found a new life in home décor. Their classic glass shapes and timeless charm make them perfect for organizing essentials, displaying seasonal accents, or creating stylish centerpieces. Both functional and decorative, they add a touch of vintage elegance to any space",
             "button_text": "Explore More",
+            "button_url": "shopline://collections/12268236964814567569363575",
             "image": "shopline://shop_images/64071&_1.jpg"
           }
         },
@@ -418,6 +421,7 @@
             "title": "Cloches",
             "content": "Originally used to protect delicate plants, these clear domes have evolved into stylish accents for showcasing treasures while adding a layer of sophistication to any space. Perfect for creating seasonal centerpieces, highlighting collectibles, or elevating simple items like candles or greenery, glass cloches bring charm and a sense of curiosity to your displays.",
             "button_text": "Explore More",
+            "button_url": "shopline://collections/12268237215476576482263575",
             "image": "shopline://shop_images/68072, 68073, 68074_3.jpg"
           }
         },
@@ -427,6 +431,7 @@
             "title": "Mercury Glass",
             "content": "With roots in 19th-century craftsmanship, mercury glass offers a delicate balance of vintage charm and modern elegance. Its reflective, antique-style finish makes it a favorite for home décor, whether adorning mantels, tablescapes, or festive arrangements.",
             "button_text": "Explore More",
+            "button_url": "shopline://collections/12268543242049987631743575",
             "image": "shopline://shop_images/57008&57009_1.jpg"
           }
         }
@@ -511,18 +516,19 @@
         "padding_bottom": 60
       },
       "blocks": {
-        "17368525035916d83455": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267479955044942979283575"
-          }
-        },
         "1736852581274f91208d": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
             "product_category": "12267434438770829633093575"
+          },
+          "disabled": true
+        },
+        "17368525035916d83455": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267479955044942979283575"
           }
         },
         "17368526011994d5760b": {
@@ -548,8 +554,8 @@
         }
       },
       "block_order": [
-        "17368525035916d83455",
         "1736852581274f91208d",
+        "17368525035916d83455",
         "17368526011994d5760b",
         "173748587783033d0427",
         "173748590603549d1d9f"

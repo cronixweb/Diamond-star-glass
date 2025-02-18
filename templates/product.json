@@ -101,7 +101,7 @@
         "17338922505076cc704c": {
           "type": "text",
           "settings": {
-            "text": "<a id=\"17338923787202\" href=\"/pages/shipping-policy\" target=\"_self\" data-link=\"{&quot;pageType&quot;:3,&quot;value&quot;:&quot;shipping-policy&quot;,&quot;linkType&quot;:&quot;select&quot;,&quot;label&quot;:&quot;Shipping Policy&quot;}\">Discover exclusive rates for B2B members</a><br>Already a partner? <a id=\"17338923253191\" href=\"/user/center\" target=\"_self\" data-link=\"{&quot;pageType&quot;:13,&quot;value&quot;:&quot;user/center&quot;,&quot;linkType&quot;:&quot;select&quot;,&quot;label&quot;:&quot;Account page&quot;}\">Log into your account</a>",
+            "text": "<a id=\"17398593716671\" href=\"https://diamondstarglass.myshopline.com/user/company\" target=\"_blank\" rel=\"noopener\" data-link=\"{&quot;pageType&quot;:-1,&quot;value&quot;:&quot;https://diamondstarglass.myshopline.com/user/company&quot;,&quot;linkType&quot;:&quot;input&quot;,&quot;label&quot;:&quot;https://diamondstarglass.myshopline.com/user/company&quot;}\">Discover exclusive rates for B2B members</a><br>Already a partner? <a id=\"17338923253191\" href=\"/user/center\" target=\"_self\" data-link=\"{&quot;pageType&quot;:13,&quot;value&quot;:&quot;user/center&quot;,&quot;linkType&quot;:&quot;select&quot;,&quot;label&quot;:&quot;Account page&quot;}\">Log into your account</a>",
             "text_style": "custom"
           }
         },
@@ -153,61 +153,10 @@
       },
       "blocks": {},
       "custom_css": []
-    },
-    "1733892710958af0f6f9": {
-      "disabled": false,
-      "type": "section-instagram-feed-custom",
-      "settings": {
-        "heading-instagram-feed": "Follow us @diamondstarglass",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "1733892725824f2eaae5": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
-          }
-        },
-        "173389273964357338a3": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769306021962986579.jpg"
-          }
-        },
-        "17338927628757d8656b": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
-          }
-        },
-        "17338927729077176793": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769306021962986579.jpg"
-          }
-        },
-        "17338927596574751f66": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "1733892725824f2eaae5",
-        "173389273964357338a3",
-        "17338927628757d8656b",
-        "17338927729077176793",
-        "17338927596574751f66"
-      ],
-      "custom_css": []
     }
   },
   "order": [
     "main-product-info",
-    "product-recommendations",
-    "1733892710958af0f6f9"
+    "product-recommendations"
   ]
 }

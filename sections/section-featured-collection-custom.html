@@ -32,29 +32,31 @@
         {{#for section.blocks as |block|}}
           {{#if (trim block.type) == "collection"}}
             <li class="splide__slide category-block text-{{ section.settings.text_align }} card {{#if section.settings.mb-collection-size}}mb-slide--show-half{{/if}}">
-              <div class="card__inner ratio">
-                <a href="{{ block.settings.product_category.url }}" class="card__media">
-                  {{#if block.settings.product_category.featured_image}}
-                    {{snippet "image" data=block.settings.product_category.featured_image }}
+              {{#if block.settings.product_category.url }}<a href="{{ block.settings.product_category.url }}">{{/if}}
+                <div class="card__inner ratio">
+                  <div class="card__media">
+                    {{#if block.settings.product_category.featured_image}}
+                      {{snippet "image" data=block.settings.product_category.featured_image }}
+                    {{/if}}
+                  </div>
+                </div>
+                <div class="card_content">
+                  {{#if block.settings.product_category.title}}
+                    <h3 class="{{section.settings.title_size}}">{{ block.settings.product_category.title }}</h3>
                   {{/if}}
-                </a>
-              </div>
-              <div class="card_content">
-                {{#if block.settings.product_category.title}}
-                  <h3 class="{{section.settings.title_size}}">{{ block.settings.product_category.title }}</h3>
-                {{/if}}
-                {{#if section.settings.show-collection-details}}
-                  {{#if block.settings.product_category.description}}
-                    <div class="body3">{{{ block.settings.product_category.description }}}</div>
+                  {{#if section.settings.show-collection-details}}
+                    {{#if block.settings.product_category.description}}
+                      <div class="body3">{{{ block.settings.product_category.description }}}</div>
+                    {{/if}}
+                    {{#if block.settings.button_text}}
+                      <div class="inner-content-btn">
+                        <span class="explore-more">{{{ block.settings.button_text}}}</span>
+                        {{snippet "icon-right-arrow" }}
+                      </div>
+                    {{/if}}
                   {{/if}}
-                  {{#if block.settings.button_text}}
-                    <div class="inner-content-btn">
-                      <span class="explore-more">{{{ block.settings.button_text}}}</span>
-                      {{snippet "icon-right-arrow" }}
-                    </div>
-                  {{/if}}
-                {{/if}}
-              </div>
+                </div>
+              {{#if block.settings.product_category.url }}</a>{{/if}}
             </li>
           {{/if}}
         {{/for}}
