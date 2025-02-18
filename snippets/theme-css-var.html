@@ -13,8 +13,10 @@
 @font-face {
     font-family: 'Gotham';
     src: local('Gotham-Bold'), 
-        url(https://cdn.shopify.com/s/files/1/0695/2996/0759/files/Gotham-Bold.woff?v=1732553125) format('woff'),
-        url(https://cdn.shopify.com/s/files/1/0695/2996/0759/files/Gotham-Bold.woff2?v=1732553140) format('woff2');
+        url('{{ asset_url 'Gotham-Bold.ttf' }}') format('truetype'),
+        url('{{ asset_url 'Gotham-Bold.otf' }}') format('embedded-opentype'),
+        url('{{ asset_url 'Gotham-Bold.woff2' }}') format('woff2'),
+        url('{{ asset_url 'Gotham-Bold.woff' }}') format('font-woff');
     font-weight: 700; /* Bold weight */
     font-style: normal;
     font-display: swap;
@@ -22,8 +24,10 @@
 @font-face {
     font-family: 'Gotham';
     src: local('Gotham-Light'), 
-        url(https://cdn.shopify.com/s/files/1/0587/1789/6869/files/Gotham-Light.woff?v=1733456051) format('woff'),
-        url(https://cdn.shopify.com/s/files/1/0587/1789/6869/files/Gotham-Light.woff2?v=1733456050) format('woff2');
+        url('{{ asset_url 'Gotham-Light.ttf' }}') format('truetype'),
+        url('{{ asset_url 'Gotham-Light.otf' }}') format('embedded-opentype'),
+        url('{{ asset_url 'Gotham-Light.woff2' }}') format('woff2'),
+        url('{{ asset_url 'Gotham-Light.woff' }}') format('font-woff');
     font-weight: 400; /* Bold weight */
     font-style: normal;
     font-display: swap;
