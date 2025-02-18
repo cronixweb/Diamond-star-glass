@@ -892,6 +892,7 @@ span.mobile-facets__open  {
   font-size: var(--body3-font-size);
   font-weight: 400;
   line-height: 1.4;
+  text-transform: capitalize;
 }
 
 .filter-folder-popup .filter-apply-btn-con .filter-apply-btn {
