@@ -58,7 +58,7 @@
                   {{block.settings.sizes}}"
                 for="{{section.id}}-{{option.position}}-{{forloop.index0}}"
               >
-                <div class="product-form--color-swatch-inner" style="--swatch-background-color: {{item.value}}"></div>
+                <div class="product-form--color-swatch-inner" data-swatch-color="{{item.value}}" style="--swatch-background-color: {{item.value}}"></div>
               </label>
             {{else}}
               <label

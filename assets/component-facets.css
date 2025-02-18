@@ -981,3 +981,14 @@ span.mobile-facets__open  {
     width: 250px;
   }
 }
+@media (min-width: 650px) and (max-width: 959px){
+  .collection .product-list-content > *{
+    width: 50%;
+    padding: 10px;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px){
+  .product-list-content > *{
+    width: 33.33%;
+  }
+}

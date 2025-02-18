@@ -253,6 +253,9 @@
     max-width: 86%;
   }
 
+  .has-collection-image .collection-hero__description{
+    max-width: 100%;
+  }
   .collection-hero__no-cover{
     padding-top: 30px;
   }
@@ -290,5 +293,32 @@
     padding-left: 0;
     padding-right: 16px;
     width: 160px;
+  }
+}
+
+.category-cover-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.category-cover-image{
+  height: 300px;
+  line-height: 0;
+}
+@media (min-width: 767px) {
+  .category-cover-image{
+    height: 400px;
+  }
+}
+@media (min-width: 960px) {
+  .category-cover-image{
+    max-width: 400px;
+    margin-right: 0;
+    margin-left: auto;
+    width: 100%;
+  }
+  .collection-banner-content.with-cover-image .banner-content,
+  .collection-banner-content.with-cover-image .banner-categories {
+    width: 50%;
   }
 }
