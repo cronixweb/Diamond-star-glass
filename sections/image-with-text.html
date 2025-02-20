@@ -24,14 +24,15 @@
 {{#if color_scheme != "none" or image_overlap_display}}
   {{assign "ignore_image_height" true}}
 {{/if}}
-<div class="section-padding page-width">
+<div class="section-padding {{#if section.settings.enable_full_width}} {{else}}page-width{{/if}}">
   <div
     class="image-with-text
       image-with-text--align-{{pc_box_align}}
       img-w-{{pc_image_width}}
       pos-{{pc_image_position}}
       {{#if ignore_image_height}}image-with-text--stretch{{/if}}
-      {{#if (isTruthy image_overlap_display)}}image-with-text--overlap{{/if}}"
+      {{#if (isTruthy image_overlap_display)}}image-with-text--overlap{{/if}}
+       {{ section.settings.reverse_column }}"
   >
     <a
       class="image-with-text__img-wrap
@@ -111,6 +112,12 @@
   "class": "section",
   "settings": [
     {
+      "type": "switch",
+      "id": "enable_full_width",
+      "label": "t:sections.image-with-text.settings.enable_full_width.label",
+      "default": false
+    },
+    {
       "id": "image",
       "type": "image_picker",
       "label": "t:sections.image-with-text.settings.image.label"
@@ -171,6 +178,23 @@
         }
       ],
       "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "reverse_column",
+      "label": "t:sections.image-with-text.settings.reverse_column.label",
+      "info": "t:sections.image-with-text.settings.reverse_column.info",
+      "options": [
+        {
+          "value": "col",
+          "label": "t:sections.image-with-text.settings.reverse_column.options__0.label"
+        },
+        {
+          "value": "reverse_col",
+          "label": "t:sections.image-with-text.settings.reverse_column.options__1.label"
+        }
+      ],
+      "default": "col"
     },
     {
       "id": "pc_box_align",
@@ -271,7 +295,7 @@
       "id": "padding_top",
       "label": "t:sections.image-with-text.settings.padding_top.label",
       "default": 80,
-      "max": 100,
+      "max": 120,
       "min": 0,
       "step": 2,
       "unit": "px"
@@ -281,7 +305,7 @@
       "id": "padding_bottom",
       "label": "t:sections.image-with-text.settings.padding_bottom.label",
       "default": 80,
-      "max": 100,
+      "max": 120,
       "min": 0,
       "step": 2,
       "unit": "px"
@@ -297,9 +321,10 @@
       "settings": [
         {
           "id": "text",
-          "type": "text",
+          "type": "textarea",
           "label": "t:sections.image-with-text.blocks.sub_title.settings.text.label",
-          "default": "Improved"
+          "default": "Improved",
+          "limit": 1000
         },
         {
           "id": "text_size",
@@ -308,18 +333,18 @@
           "options": [
             {
               "label": "t:sections.image-with-text.blocks.sub_title.settings.text_size.options__0.label",
-              "value": "body4"
+              "value": "body_small"
             },
             {
-              "value": "body5",
+              "value": "body_center",
               "label": "t:sections.image-with-text.blocks.sub_title.settings.text_size.options__1.label"
             },
             {
-              "value": "body6",
+              "value": "body_large",
               "label": "t:sections.image-with-text.blocks.sub_title.settings.text_size.options__2.label"
             }
           ],
-          "default": "body4"
+          "default": "body_center"
         }
       ]
     },
@@ -343,16 +368,20 @@
           "label": "t:sections.image-with-text.blocks.title.settings.title_size.label",
           "options": [
             {
-              "value": "title3",
+              "value": "title_small",
               "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__0.label"
             },
             {
-              "value": "title4",
+              "value": "title_center",
               "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__1.label"
             },
             {
               "value": "title5",
               "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__2.label"
+            },
+            {
+              "value": "title_xlarge",
+              "label": "t:sections.image-with-text.blocks.title.settings.title_size.options__3.label"
             }
           ]
         }

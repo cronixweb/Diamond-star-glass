@@ -411,6 +411,9 @@
           {{/for}}</p>
         {{/if}}
       {{/for}}
+      <span class="size-option product-sku">
+        SKU: {{product_data.selected_or_first_available_variant.sku}}
+      </span>
       {{assign "enable_mb_bottom_quick_view_icon" (if valid_quick_view and quick_view_button_mobile_style == "icon" and quick_view_mobile_position == "below")}}
 
       <div
@@ -424,7 +427,6 @@
           show_from=(if is_multi_variant and price_show_type == "from_lowest_price")
           show_range=(if is_multi_variant and price_show_type == "price_interval")
           show_origin=show_origin_price
-          use_variant=true
         }}
         <div class="inner-content-btn">
           <span class="shop-now-button">{{ t "general.card.shopnow"}}</span>

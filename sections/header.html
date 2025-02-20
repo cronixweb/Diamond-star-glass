@@ -95,10 +95,10 @@
     "
   >
     <div
-      class="page-width header__container
+      class="header__container
         header__container--{{section.settings.navigation_layout}}
         header__nav-style--{{section.settings.main_menu_style}}
-        {{ternary section.settings.full_width 'header__full_width' ''}}
+        {{ternary section.settings.full_width 'header__full_width' 'page-width'}}
         {{#if section.settings.enabled_tile_search and section.settings.show_search_entry}}tile-search{{/if}}
         "
     >
@@ -158,36 +158,6 @@
           </header-modal>
         {{/if}}
       </div>
-
-      
-      <div class="header__buttons display-none-desktop">
-        {{#if section.settings.show_user_entry}}
-          <a
-            class="icon-button header__icon-button
-              {{#if section.settings.user_mobile_layout == 'menu'}}display-none-tablet{{/if}}"
-            href="{{#if customer}}{{routes.account_url}}{{else}}{{routes.account_login_url}}{{/if}}"
-          >
-            {{snippet "icon-user"}}
-          </a>
-        {{/if}}
-
-        {{#if section.settings.show_favorite_icon}}
-          <a
-          class="icon-button header__icon-button {{#if (isFalsey section.settings.show_cart_entry)}}display-none{{/if}}" href="#">
-            {{snippet "icon-favorite"}}
-          </a>
-        {{/if}}
-
-        <a
-          id="cart-icon-bubble-mobile"
-          class="icon-button header__icon-button display-none-desktop
-            {{#if (isFalsey section.settings.show_cart_entry)}}visibility-hidden{{/if}}"
-          href="{{routes.cart_url}}"
-        >
-          {{snippet "cart-icon-bubble-mobile"}}
-        </a>
-      </div>
-
       
       {{assign "page_type" template.name}}
       {{assign "pc_logo_width" settings.desktop_logo_width}}
@@ -306,7 +276,7 @@
         "show_country_selector"
         (if section.settings.show_country_selector and (gt (length localization.available_countries) 1))
       }}
-      <div class="header__icons display-none-tablet">
+      <div class="header__icons">
         {{#if show_locale_selector or show_country_selector}}
           <div class="header__localization display-none-tablet">
             <localization-form>
@@ -423,18 +393,20 @@
             {{/if}}
           </div>
         {{/if}}
-
-        <a class="icon-button header__icon-button {{#if (isFalsey section.settings.show_favorite_icon)}}display-none{{/if}}" href="#">
-          {{snippet "icon-favorite"}}
-          <span class="header_icon-text">{{ t 'general.header.favorites' }}</span>
-        </a>
-
         <a
           id="cart-icon-bubble"
           class="icon-button header__icon-button {{#if (isFalsey section.settings.show_cart_entry)}}display-none{{/if}}"
           href="{{routes.cart_url}}"
         >
           {{snippet "cart-icon-bubble"}}
+        </a>
+        <a
+          id="cart-icon-bubble-mobile"
+          class="icon-button header__icon-button display-none-desktop
+            {{#if (isFalsey section.settings.show_cart_entry)}}visibility-hidden{{/if}}"
+          href="{{routes.cart_url}}"
+        >
+          {{snippet "cart-icon-bubble-mobile"}}
         </a>
       </div>
 
@@ -588,20 +560,24 @@
                                 {{/if}}
                                 "
                               >
+                              {{#if menu_block.settings.image_1_link }}<a href="{{menu_block.settings.image_1_link}}">{{/if}}
                                 {{snippet "image" data=show_img1}}
+                              {{#if menu_block.settings.image_1_link }}</a>{{/if}}
                               </div>
                               <div class="header__image--cover">
                                 <p
                                   class="header__image_title
                                     {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
                                 >{{menu_block.settings.image_1_title}}</p>
-                                {{snippet
-                                  "link"
-                                  classes="header__image_button body5 button--link"
-                                  href=menu_block.settings.image_1_link
-                                  text=menu_block.settings.image_1_link_text
-                                  with_icon= true
-                                }}
+                                {{#if menu_block.settings.image_1_link }}
+                                  {{snippet
+                                    "link"
+                                    classes="header__image_button body5 button--link"
+                                    href=menu_block.settings.image_1_link
+                                    text=menu_block.settings.image_1_link_text
+                                    with_icon= true
+                                  }}
+                                {{/if}}
                               </div>
                             </div>
                           {{/if}}
@@ -618,7 +594,9 @@
                                 {{/if}}
                                 "
                               >
+                              {{#if menu_block.settings.image_2_link }}<a href="{{menu_block.settings.image_2_link}}">{{/if}}
                                 {{snippet "image" data=show_img2}}
+                              {{#if menu_block.settings.image_2_link }}</a">{{/if}}
                               </div>
 
                               <div class="header__image--cover">
@@ -626,13 +604,15 @@
                                   class="header__image_title
                                     {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
                                 >{{menu_block.settings.image_2_title}}</p>
-                                {{snippet
-                                  "link"
-                                  classes="header__image_button body5 button--link"
-                                  href=menu_block.settings.image_2_link
-                                  text=menu_block.settings.image_2_link_text
-                                  with_icon= true
-                                }}
+                                {{#if menu_block.settings.image_2_link }}
+                                  {{snippet
+                                    "link"
+                                    classes="header__image_button body5 button--link"
+                                    href=menu_block.settings.image_2_link
+                                    text=menu_block.settings.image_2_link_text
+                                    with_icon= true
+                                  }}
+                                {{/if}}
                               </div>
                             </div>
                           {{/if}}
@@ -648,20 +628,24 @@
                                   padding-bottom:{{divide 100 show_img3.aspect_ratio}}%;
                                 {{/if}}"
                               >
+                              {{#if menu_block.settings.image_3_link }}<a href="{{menu_block.settings.image_3_link}}">{{/if}}
                                 {{snippet "image" data=show_img3}}
+                              {{#if menu_block.settings.image_3_link }}</a>{{/if}}
                               </div>
                               <div class="header__image--cover">
                                 <p
                                   class="header__image_title
                                     {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
                                 >{{menu_block.settings.image_3_title}}</p>
-                                {{snippet
-                                  "link"
-                                  classes="header__image_button body5 button--link"
-                                  href=menu_block.settings.image_3_link
-                                  text=menu_block.settings.image_3_link_text
-                                  with_icon= true
-                                }}
+                                {{#if menu_block.settings.image_3_link }}
+                                  {{snippet
+                                    "link"
+                                    classes="header__image_button body5 button--link"
+                                    href=menu_block.settings.image_3_link
+                                    text=menu_block.settings.image_3_link_text
+                                    with_icon= true
+                                  }}
+                                {{/if}}
                               </div>
                             </div>
                           {{/if}}
@@ -906,7 +890,7 @@
       "default": "body4",
       "options": [
         {
-          "value": "body2",
+          "value": "body4",
           "label": "t:sections.header.settings.body_pc_second_font_size.options__0.label"
         },
         {
@@ -914,7 +898,7 @@
           "label": "t:sections.header.settings.body_pc_second_font_size.options__1.label"
         },
         {
-          "value": "body4",
+          "value": "body2",
           "label": "t:sections.header.settings.body_pc_second_font_size.options__2.label"
         }
       ]
@@ -932,7 +916,7 @@
       "default": "body3",
       "options": [
         {
-          "value": "body3",
+          "value": "body5",
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__0.label"
         },
         {
@@ -940,7 +924,7 @@
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__1.label"
         },
         {
-          "value": "body5",
+          "value": "body3",
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__2.label"
         }
       ]
@@ -1006,12 +990,6 @@
       "id": "show_user_entry",
       "default": true,
       "label": "t:sections.header.settings.show_user_entry.label"
-    },
-      {
-      "type": "switch",
-      "id": "show_favorite_icon",
-      "default": true,
-      "label": "Display Favorite Icon"
     },
     {
       "type": "switch",
@@ -1122,7 +1100,7 @@
       "type": "menuImage",
       "name": "t:sections.header.blocks.menuImage.name",
       "icon": "image",
-      "limit": 5,
+      "limit": 10,
       "settings": [
         {
           "type": "menu_picker",

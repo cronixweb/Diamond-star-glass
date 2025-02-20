@@ -7,9 +7,9 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="main-page page-width page-width--narrow section-padding">
+<div class="main-page page-width section-padding">
   {{snippet "breadcrumb" class="text-center" settings=settings}}
-  <h1 class="page-title title4">
+  <h1 class="page-title title4 {{ section.settings.font_size }}" style="text-align: {{section.settings.text_align}};">
     {{ page.title }}
   </h1>
   <div class="rte">
@@ -22,6 +22,27 @@
   "name": "t:sections.main-page.name",
   "class": "section",
   "settings": [
+      {
+        "type": "select",
+        "id": "font_size",
+        "label": "t:sections.main-page.settings.font_size.label",
+        "default": "large",
+        "options": [
+          {
+            "value": "small",
+            "label": "t:sections.main-page.settings.font_size.options__0.label"
+          },
+          {
+            "value": "large",
+            "label": "t:sections.main-page.settings.font_size.options__1.label"
+          }
+        ]
+      },
+      {
+      "type": "text_align",
+      "id": "text_align",
+      "label": "t:sections.main-page.settings.text_align.label"
+    },
     {
       "type": "group_header",
       "label": "t:sections.main-page.settings.group_header__0.label"

@@ -616,6 +616,7 @@
       "subscribe_format_error": "Invalid email address",
       "subscribe_success": "Subscribed successfully"
     },
+    "selected": "Selected",
     "general": {
       "accept": "Accept",
       "decline": "Decline",
@@ -682,6 +683,21 @@
       "search_hint": "Search for “{{key}}”"
     }
   },
+  "contact": {
+    "title": {
+      "name": "Name (required)",
+      "email": "Email (required)",
+      "phone": "Phone Number (optional)",
+      "message": "Comment (required)",
+      "send": "SUBMIT"
+    },
+    "placeholder": {
+      "name": "Your name",
+      "email": "Your email",
+      "phone": "Your phone number",
+      "message": "Your comment here"
+    }
+  },
   "order": {
     "buy_again": "Buy again",
     "checkout_order": {
@@ -711,7 +727,7 @@
       "adjust": "Rounding",
       "products": {
         "price": "Price",
-        "quantity": "Quantity"
+        "quantity": "Number of Cases:"
       },
       "tax_included": "Including {{price}} in taxes"
     },
@@ -764,10 +780,11 @@
       "collection": "Collections"
     },
     "facets": {
+      "filter":"Filter:",
       "in_stock_only": "Show only in-stock items",
       "clear": "Clear",
       "clear_all_filter": "Clear all",
-      "confirm": "Confirm",
+      "confirm": "Apply",
       "filter_and_sort": "Filter and sort",
       "filter_button": "Filter",
       "less_than": "less than",
@@ -782,7 +799,8 @@
       "stock": {
         "label": "Product supply",
         "value": "In stock"
-      }
+      },
+      "sort": "Sort By:"
     },
     "general": {
       "load_more_btn": "Loading more items",
@@ -907,6 +925,15 @@
     },
     "recently_viewed_products": {
       "recently_viewed_products": "Recently Viewed Products"
+    },
+    "unit": {
+      "unit": "Unit:",
+      "unit_case": "Unit/Case:",
+      "case_weight": "Case Weight:",
+      "unit_length": "Unit Length:",
+      "unit_height": "Unit Height:",
+      "unit_width": "Unit Width:",
+      "unit_weight": "Unit Weight:"
     }
   },
   "reduction_code": {
