@@ -716,17 +716,19 @@
               </div>
             {{/if}}
           {{else if block.type == "b2b_signin"}}
-            <div
-              class="product__info-item rte m-26
-                {{#if block.settings.text_style == 'body'}}body3{{/if}}
-                {{#if block.settings.text_style == 'subtitle'}}body2{{/if}}
-                {{#if block.settings.text_style == 'uppercase'}}body3 text-uppercase{{/if}}
-                {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}
-                {{#if block.settings.text_style == 'custom'}}text-style_custom{{/if}}"
-              {{{block.shopline_attributes}}}
-            >
-              {{{block.settings.text}}}
-            </div>
+            {{#unless customer.b2b}}
+              <div
+                class="product__info-item rte m-26
+                  {{#if block.settings.text_style == 'body'}}body3{{/if}}
+                  {{#if block.settings.text_style == 'subtitle'}}body2{{/if}}
+                  {{#if block.settings.text_style == 'uppercase'}}body3 text-uppercase{{/if}}
+                  {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}
+                  {{#if block.settings.text_style == 'custom'}}text-style_custom{{/if}}"
+                {{{block.shopline_attributes}}}
+              >
+                {{{block.settings.text}}}
+              </div>
+            {{/unless}}
           {{/if}}
         {{/for}}
       </product-info>

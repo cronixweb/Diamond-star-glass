@@ -105,8 +105,8 @@
           },
           "disabled": false
         },
-        "17338922505076cc704c": {
-          "type": "text",
+        "1740044194174311cc82": {
+          "type": "b2b_signin",
           "settings": {
             "text": "<a id=\"17398593716671\" href=\"https://diamondstarglass.myshopline.com/user/company\" target=\"_blank\" rel=\"noopener\" data-link=\"{&quot;pageType&quot;:-1,&quot;value&quot;:&quot;https://diamondstarglass.myshopline.com/user/company&quot;,&quot;linkType&quot;:&quot;input&quot;,&quot;label&quot;:&quot;https://diamondstarglass.myshopline.com/user/company&quot;}\">Discover exclusive rates for B2B members</a><br>Already a partner? <a id=\"17338923253191\" href=\"/user/center\" target=\"_self\" data-link=\"{&quot;pageType&quot;:13,&quot;value&quot;:&quot;user/center&quot;,&quot;linkType&quot;:&quot;select&quot;,&quot;label&quot;:&quot;Account page&quot;}\">Log into your account</a>",
             "text_style": "custom"
@@ -135,7 +135,7 @@
         "block_4",
         "block_5",
         "block_6",
-        "17338922505076cc704c",
+        "1740044194174311cc82",
         "173389239269469cab0c",
         "1734933473305018ca23"
       ],
