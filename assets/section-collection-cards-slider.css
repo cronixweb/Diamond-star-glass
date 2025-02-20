@@ -1,5 +1,5 @@
 .collection-list-section__header{
-  margin-bottom: 64px;
+  margin-bottom: 32px;
 }
 
 .collection-list-section__header h2 {
@@ -37,12 +37,12 @@
   margin-top: 40px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .collection-list-section .my-slider-progress{
     margin-top: 86px;
   }
-  .collection-category h3 {
-    letter-spacing: 0.48px;
+  .collection-list-section__header{
+    margin-bottom: 64px;
   }
 }
 

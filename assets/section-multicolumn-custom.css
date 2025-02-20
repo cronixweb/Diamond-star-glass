@@ -17,7 +17,7 @@
     line-height: normal;
 }
 
-.splide__list.multimedia-list{
+.multicolumn-section{
     padding: 0 !important;
 }
 
@@ -35,8 +35,7 @@
 }
 
 .multimedia-block h3 {
-    margin: 0;
-    margin-top: 16px;
+    margin: 16px 0 8px;
     font-family: var(--body-font);
     color: var(--color-secondary-grey);
     text-align: center;
@@ -47,22 +46,24 @@
 }
 
 .multimedia-block p {
-    margin: 0;
+    margin: 0 auto;
     margin-bottom: 10px;
     color: var(--color-secondary-grey);
     text-align: center;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.4; 
+    line-height: 1.4;
 }
 .multimedia-block .inner-content-btn{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4px;
+    margin-top: 16px;
 }
 
-.multimedia-block a.explore-more {
+.multimedia-block .explore-more {
+    display: inline-block;
     font-size: var(--body3-font-size);
     font-style: normal;
     font-weight: 600;
@@ -99,9 +100,14 @@
 .multicolumn_content {
     font-size: var(--body3-font-size);
 }
-
+.multimedia-block .card-link-wrapper{
+    display: block;
+}
+.multicolumn-section .inner-content-btn path{
+    fill:rgb(var(--color-text));
+}
 @media screen and (min-width: 1400px) {
-    .splide__list.multimedia-list{
+    .multicolumn-section{
         padding: 64px 92px 51px 92px !important;
     }
 }
@@ -110,7 +116,7 @@
     .multimedia-block {
         text-align: center;
     }
-    .splide__list.multimedia-list{
+    .multicolumn-section {
         padding: 60px 0 !important;
     }
     .multicolumn-section__header h2 {
@@ -122,25 +128,29 @@
     .multimedia-block h3{
         font-size: var(--body5-font-size);
     }
-    .multicolumn_content {
-        font-size: var(--body4-font-size);
-    }
-    .multimedia-block a.explore-more {
+    .multimedia-block .explore-more {
         font-size: var(--body4-font-size);
         font-weight: 400;
     }
 }
 @media screen and (min-width: 1500px) {
-    .splide__list.multimedia-list{
+    .multicolumn-section {
         padding: 120px 87px !important;
     }
     .multimedia-block {
-        padding: 64px 64px 0;
+        padding: 64px 35px 0;
     }
     .multimedia-block img{
         height: 420px;
     }
     .multimedia-block.multimedia-none img{
         height: 613px;
+    }
+    .multimedia-block p {
+        max-width: 286px;
+        width: 100%;
+    }
+    .multimedia-block.multimedia-none p{
+        max-width: 100%;
     }
 }

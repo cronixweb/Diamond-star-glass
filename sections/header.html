@@ -95,10 +95,10 @@
     "
   >
     <div
-      class="page-width header__container
+      class="header__container
         header__container--{{section.settings.navigation_layout}}
         header__nav-style--{{section.settings.main_menu_style}}
-        {{ternary section.settings.full_width 'header__full_width' ''}}
+        {{ternary section.settings.full_width 'header__full_width' 'page-width'}}
         {{#if section.settings.enabled_tile_search and section.settings.show_search_entry}}tile-search{{/if}}
         "
     >
@@ -560,20 +560,24 @@
                                 {{/if}}
                                 "
                               >
+                              {{#if menu_block.settings.image_1_link }}<a href="{{menu_block.settings.image_1_link}}">{{/if}}
                                 {{snippet "image" data=show_img1}}
+                              {{#if menu_block.settings.image_1_link }}</a>{{/if}}
                               </div>
                               <div class="header__image--cover">
                                 <p
                                   class="header__image_title
                                     {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
                                 >{{menu_block.settings.image_1_title}}</p>
-                                {{snippet
-                                  "link"
-                                  classes="header__image_button body5 button--link"
-                                  href=menu_block.settings.image_1_link
-                                  text=menu_block.settings.image_1_link_text
-                                  with_icon= true
-                                }}
+                                {{#if menu_block.settings.image_1_link }}
+                                  {{snippet
+                                    "link"
+                                    classes="header__image_button body5 button--link"
+                                    href=menu_block.settings.image_1_link
+                                    text=menu_block.settings.image_1_link_text
+                                    with_icon= true
+                                  }}
+                                {{/if}}
                               </div>
                             </div>
                           {{/if}}
@@ -590,7 +594,9 @@
                                 {{/if}}
                                 "
                               >
+                              {{#if menu_block.settings.image_2_link }}<a href="{{menu_block.settings.image_2_link}}">{{/if}}
                                 {{snippet "image" data=show_img2}}
+                              {{#if menu_block.settings.image_2_link }}</a">{{/if}}
                               </div>
 
                               <div class="header__image--cover">
@@ -598,13 +604,15 @@
                                   class="header__image_title
                                     {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
                                 >{{menu_block.settings.image_2_title}}</p>
-                                {{snippet
-                                  "link"
-                                  classes="header__image_button body5 button--link"
-                                  href=menu_block.settings.image_2_link
-                                  text=menu_block.settings.image_2_link_text
-                                  with_icon= true
-                                }}
+                                {{#if menu_block.settings.image_2_link }}
+                                  {{snippet
+                                    "link"
+                                    classes="header__image_button body5 button--link"
+                                    href=menu_block.settings.image_2_link
+                                    text=menu_block.settings.image_2_link_text
+                                    with_icon= true
+                                  }}
+                                {{/if}}
                               </div>
                             </div>
                           {{/if}}
@@ -620,20 +628,24 @@
                                   padding-bottom:{{divide 100 show_img3.aspect_ratio}}%;
                                 {{/if}}"
                               >
+                              {{#if menu_block.settings.image_3_link }}<a href="{{menu_block.settings.image_3_link}}">{{/if}}
                                 {{snippet "image" data=show_img3}}
+                              {{#if menu_block.settings.image_3_link }}</a>{{/if}}
                               </div>
                               <div class="header__image--cover">
                                 <p
                                   class="header__image_title
                                     {{#if menu_block.settings.menu_img_style == 'normal'}}body4{{else}}body3{{/if}}"
                                 >{{menu_block.settings.image_3_title}}</p>
-                                {{snippet
-                                  "link"
-                                  classes="header__image_button body5 button--link"
-                                  href=menu_block.settings.image_3_link
-                                  text=menu_block.settings.image_3_link_text
-                                  with_icon= true
-                                }}
+                                {{#if menu_block.settings.image_3_link }}
+                                  {{snippet
+                                    "link"
+                                    classes="header__image_button body5 button--link"
+                                    href=menu_block.settings.image_3_link
+                                    text=menu_block.settings.image_3_link_text
+                                    with_icon= true
+                                  }}
+                                {{/if}}
                               </div>
                             </div>
                           {{/if}}
@@ -878,7 +890,7 @@
       "default": "body4",
       "options": [
         {
-          "value": "body2",
+          "value": "body4",
           "label": "t:sections.header.settings.body_pc_second_font_size.options__0.label"
         },
         {
@@ -886,7 +898,7 @@
           "label": "t:sections.header.settings.body_pc_second_font_size.options__1.label"
         },
         {
-          "value": "body4",
+          "value": "body2",
           "label": "t:sections.header.settings.body_pc_second_font_size.options__2.label"
         }
       ]
@@ -904,7 +916,7 @@
       "default": "body3",
       "options": [
         {
-          "value": "body3",
+          "value": "body5",
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__0.label"
         },
         {
@@ -912,7 +924,7 @@
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__1.label"
         },
         {
-          "value": "body5",
+          "value": "body3",
           "label": "t:sections.header.settings.body_pc_thirdly_font_size.options__2.label"
         }
       ]

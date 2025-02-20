@@ -616,6 +616,7 @@
       "subscribe_format_error": "Invalid email address",
       "subscribe_success": "Subscribed successfully"
     },
+    "selected": "Selected",
     "general": {
       "accept": "Accept",
       "decline": "Decline",
@@ -726,7 +727,7 @@
       "adjust": "Rounding",
       "products": {
         "price": "Price",
-        "quantity": "Qty:"
+        "quantity": "Number of Cases:"
       },
       "tax_included": "Including {{price}} in taxes"
     },

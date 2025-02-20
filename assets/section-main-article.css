@@ -305,7 +305,7 @@
 .blog-caption__date {
   font-size: var(--body3-font-size);
   color: var(--color-grey-caption);
-  font-weight: 600;
+  font-weight: 600 !important;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -313,7 +313,7 @@
 .blog-caption__author {
   font-size: var(--body3-font-size);
   color: var(--color-grey-caption);
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -428,9 +428,8 @@
       flex-wrap: nowrap; 
       align-items: center;
       gap: 27px;
-      padding-top: 8px;
-      margin-top: 56px;
-      margin-bottom: 64px;
+      margin-top: 48px;
+      margin-bottom: 48px;
   }
 }
 

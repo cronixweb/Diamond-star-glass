@@ -224,7 +224,7 @@
 
 .blogs__list-wrapper .slider-buttons {
   padding-top: 12px;
-  padding-bottom: 12px; 
+  padding-bottom: 0; 
 }
 
 @media screen and (max-width: 959px) {
