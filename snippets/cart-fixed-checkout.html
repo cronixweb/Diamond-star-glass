@@ -37,7 +37,7 @@
 
       <div class="cart-fixed-checkout__footer">
         <a href="javascript:;" class="cart__total {{#if cart.total_discount > 0}}cart-drawer__dropdown-toggle{{else}}cart-drawer__dropdown-toggle-normal{{/if}}">
-          <b class="body3 fw-bold cart__total-text">{{t "cart.payment.total_sum"}}</b>
+          <b class="body5 fw-bold cart__total-text">{{t "cart.payment.total_sum"}}</b>
           <div class="cart__price-zone">
             {{#if cart.total_discount > 0}}
             <div class="cart__saved-price">
@@ -45,7 +45,7 @@
             </div>
             {{/if}}
             <div class="cart__total-price">
-              <span class="body2 fw-bold">{{money_with_currency cart.total_price}}</span>
+              <span class="body5 fw-bold">{{money_with_currency cart.total_price}}</span>
               {{#if cart.total_discount > 0}}
               <span class="cart__toggle-icon">
                 {{snippet "icon-arrow"}}

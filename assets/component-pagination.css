@@ -172,7 +172,7 @@ a.pagination__item:hover {
   column-gap: 20px;
 }
 .pagination-wrapper{
-  margin-top: 64px;
+  margin-top: 44px;
 }
 .normal-pagination__list .pagination__item{
   color: rgba(var(--color-text));
@@ -196,6 +196,6 @@ a.pagination__item:hover {
 }
 @media screen and (min-width: 960px) {
   .pagination-wrapper{
-    margin-top: 85px;
+    margin-top: 56px;
   }
 }

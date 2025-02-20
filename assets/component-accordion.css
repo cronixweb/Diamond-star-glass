@@ -145,3 +145,12 @@ summary .icon-fold svg {
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+.product__info-item.accordion,
+.accordion details[open] summary {
+  border-bottom: 1px solid var(--color-borber-line);
+}
+
+.accordion summary {
+  padding: 24px 0;
+}

@@ -290,8 +290,26 @@
 /* detectingScreen need to consider the configuration of the tablet */
 
 /* custom styles */
+body[data-template="collection"]{
+  background-color: rgba(var(--collection-page-background)) ;
+}
+.product-list-container .filter-folder-popup{
+    left: 0;
+}
+.product-list-container .filter-folder-popup:before {
+    content: none;
+}
 @media (max-width: 750px){
   .product-list-content .product-block{
     width: 100%;
+  }
+}
+
+@media (min-width: 960px) {
+  .product-list-content{
+      margin-top: 0;
+  }
+  .shopline-section .product-list-container{
+      margin-top: -50px;
   }
 }

@@ -625,6 +625,11 @@ a.slideshow-slide__button {
   line-height: 140%;
 }
 
+.slideshow-slide__button.button--link {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 @media screen and (min-width: 960px) {
   p.slideshow-slide__desc.body3 {
     line-height: 1.3;

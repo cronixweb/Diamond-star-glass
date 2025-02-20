@@ -8,8 +8,7 @@
     <details-modal class="{{#if product_count == 0}}display-none{{/if}} {{ wrapper_class }}">
       <details class="facets__sorting-details js-disclosure-has-modal">
         <summary class="facets__summary body3">
-          {{snippet "icon-sort"}}
-          <span>{{ t "products.facets.sort_button" }}</span>
+          <span>{{t 'products.facets.sort' }} {{ selected_sort.name }}</span>
         </summary>
         <div class="modal__overlay"></div>
         <div class="modal__content">
@@ -32,7 +31,7 @@
     <details class="{{#if product_count == 0}}display-none{{/if}} facets__sorting-details disclosure-has-popup {{ wrapper_class }}" data-counts="{{ product_count }}">
       <summary class="facets__summary body3">
         <div>
-          <span>{{ selected_sort.name }}</span>
+          <span>Sort By: {{ selected_sort.name }}</span>
           {{snippet "icon-arrow"}}
         </div>
       </summary>

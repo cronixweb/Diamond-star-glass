@@ -1069,8 +1069,8 @@ body[data-button-hover-animation="fill_right"]
 .color-scheme-1 .button::before {
   --color-page-background: var(--color-scheme-1-bg);
   --color-text: var(--color-scheme-1-text);
-  --color-button-background: var(--color-scheme-1-text);
-  --color-button-text: var(--color-scheme-1-bg);
+  --color-button-background: var(--color-scheme-1-btn-bg-text);
+  --color-button-text: var(--color-scheme-1-btn-text);
 }
 
 .color-scheme-1 .price {
@@ -1081,8 +1081,8 @@ body[data-button-hover-animation="fill_right"]
 .color-scheme-2 .button::before {
   --color-page-background: var(--color-scheme-2-bg);
   --color-text: var(--color-scheme-2-text);
-  --color-button-background: var(--color-scheme-2-text);
-  --color-button-text: var(--color-scheme-2-bg);
+  --color-button-background: var(--color-scheme-2-btn-bg-text);
+  --color-button-text: var(--color-scheme-2-btn-text);
 }
 
 .color-scheme-2 .price {
@@ -1093,8 +1093,8 @@ body[data-button-hover-animation="fill_right"]
 .color-scheme-3 .button::before {
   --color-page-background: var(--color-scheme-3-bg);
   --color-text: var(--color-scheme-3-text);
-  --color-button-background: var(--color-scheme-3-text);
-  --color-button-text: var(--color-scheme-3-bg);
+  --color-button-background: var(--color-scheme-3-btn-bg-text);
+  --color-button-text: var(--color-scheme-3-btn-text);
 }
 
 .color-scheme-3 .price {
@@ -2447,4 +2447,17 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
   padding: calc(var(--btn-border-thickness) + 15px) calc(var(--btn-border-thickness) + 39px);
   font-size: var(--body4-font-size);
   text-transform: uppercase;
+}
+.button {
+  line-height: 1.4;
+} 
+
+.main-page .rte {
+    font-size: calc(var(--body-font-size) * 1.12)
+}
+
+@media (min-width: 960px) {
+    .main-page .rte {
+        font-size: calc(var(--body-font-size) * 1.13)
+    }
 }

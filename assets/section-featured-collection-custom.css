@@ -1,6 +1,5 @@
 .featured-collection-section__header h2 {
   margin-bottom: 8px;
-  text-align: center;
   font-family: var(--custom-font-family);
   font-style: normal;
   font-weight: 700;
@@ -9,7 +8,6 @@
 }
 
 .featured-collection-section__header p {
-  text-align: center;
   font-style: normal;
   font-weight: 400;
   line-height: 1.4;
@@ -17,21 +15,24 @@
 }
 .featured-collection-section__header{
   margin-bottom: 32px;
-
 }
-
+.featured-collection-section__header.text-left{
+  margin-left: 0;
+}
+.featured-collection-section__header.text-right{
+  margin-right: 0;
+}
 .category-block img {
   width: 100%;
   object-fit: cover;
 }
-
-.category-block h3 {
+.featured-collection-section .title1{
   font-size: var(--body6-font-size);
   font-family: var(--body-font);
   font-style: normal;
   font-weight: 700;
   line-height: 1.4; 
-  margin-top: 16px;
+  margin: 16px 0 8px;
 }
 
 .category-block p {
@@ -50,28 +51,56 @@
   justify-content: left;
   gap: 4px;
 }
-.category-block a.explore-more {
+.category-block .explore-more {
   font-size: var(--body3-font-size);
   font-style: normal;
   font-weight: 600;
-  line-height: 1.85714; 
+  line-height: 1.4; 
   text-transform: uppercase;
 }
-
+.category-block .inner-content-btn path{
+  fill:rgb(var(--color-text));
+}
+.category-block.text-center .inner-content-btn{
+  justify-content: center;
+}
+.category-block.text-right .inner-content-btn{
+  justify-content: start;
+}
+.category-block .inner-content-btn svg{
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.featured-collection-section .my-slider-progress{
+  margin-top: 40px;
+}
+.featured-collection-section .body6{
+  margin: 0;
+  margin-top: 24px;
+  font-family: var(--body-font);
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4;
+}
 @media screen and (min-width: 960px) {
   .featured-collection-section__header{
-    max-width: 800px;
-    margin: 0 auto;
     margin-bottom: 80px;
-  
   }
-  .featured-collection-section .my-slider-progress{
-    display: none;
+  .featured-collection-section__header.text-center{
+    max-width: 800px;
+    margin-left:auto;
+    margin-right: auto;
   }
   .featured-collection-section__header h2{
     margin-bottom: 16px;
   }
-  .category-block h3 {
+  .featured-collection-section .title1{
     font-size: var(--body5-font-size);
+    margin-bottom: 16px;
+  }
+  .featured-collection-section .body6{
+    letter-spacing: 0.48px;
   }
 }

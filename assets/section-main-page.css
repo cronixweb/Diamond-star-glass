@@ -32,3 +32,25 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+.main-page .large,
+.main-page .small {
+  font-size: var(--body8-font-size);
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: capitalize;
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 960px) {
+  .main-page .large {
+    font-size: var(--body8-max-font-size);
+    line-height: 1.3;
+  }
+
+  .main-page .small {
+    font-size: var(--body8-font-size);
+    line-height: 1.3;
+  }
+}

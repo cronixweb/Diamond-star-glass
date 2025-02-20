@@ -63,6 +63,7 @@
   margin-top: 8px;
   position: relative;
   z-index: 2;
+  line-height: 1.4;
 }
 .section-image-banner .content .wrapper {
   box-sizing: border-box;
@@ -269,13 +270,13 @@
 }
 
 .section-image-banner .content .wrapper--default-scheme .control .button:after {
-  border-radius: 35px;
+  border-radius: var(--btn-border-radius-outset);
 }
 
 .section-image-banner .content .wrapper--default-scheme .control .button {
   --btn-border-background-color: #EFEFEF;
-  background-color: #EFEFEF;
-  border-radius: 35px;
+  background-color: var(--btn-border-background-color);
+  border-radius: var(--btn-border-radius-outset);
   color: var(--color-text);
   margin: 0;
   line-height: 1.4;
@@ -300,6 +301,9 @@
 }
 .section-image-banner .wrapper .body9 + .control-wrap{
   margin-top: 42px;
+}
+.section-image-banner .content .wrapper .desc.body9{
+  font-weight: 600;
 }
 @media screen and (min-width:767px) {
   .section-image-banner .content .wrapper {
@@ -342,5 +346,21 @@
   .section-image-banner .content .wrapper .desc {
     margin-bottom: 40px;
     letter-spacing: 0.36px;
+  }
+}
+
+.image-banner--container .title {
+  text-transform: capitalize;
+}
+
+.image-banner--container .desc {
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 960px) {
+  .image-banner--container .desc {
+    font-weight: 600;
+    line-height: 1.4;
   }
 }

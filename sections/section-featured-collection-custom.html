@@ -1,6 +1,8 @@
 {{snippet "stylesheet" href=(asset_url "section-featured-collection-custom.css")}}
 {{snippet "stylesheet" href=(asset_url "splide-custom.css")}}
 {{snippet "stylesheet" href=(asset_url "lib-splide.min.css")}}
+{{snippet "stylesheet" href=(asset_url "component-card.css")}}
+
 <script src="{{asset_url 'lib-splide.min.js'}}" defer></script>
 
 {{snippet
@@ -10,8 +12,13 @@
   padding_bottom=section.settings.padding_bottom
 }}
 
-<div class="featured-collection-section featured-collection-section-{{section.id}} page-width section-padding {{#if settings.color_scheme}}color-scheme-{{settings.color_scheme}}{{/if}}" style="background: {{section.settings.color_page_background}};">
-  <div class="featured-collection-section__header">
+<style>
+  .featured-collection-section-{{section.id}} .card__inner{
+    --ratio-percent: {{section.settings.product_image_ratio}}%;"
+  }
+</style>
+<div class="featured-collection-section featured-collection-section-{{section.id}} page-width section-padding {{#if section.settings.color_scheme}}color-scheme-{{section.settings.color_scheme}}{{/if}}">
+  <div class="featured-collection-section__header text-{{ section.settings.header_text_align }}">
     {{#if section.settings.section_title}}
       <h2 class="title4">{{{ section.settings.section_title }}}</h2>
     {{/if}}
@@ -24,34 +31,37 @@
       <ul class="splide__list">
         {{#for section.blocks as |block|}}
           {{#if (trim block.type) == "collection"}}
-            <li class="splide__slide category-block" style="text-align: {{ block.settings.text_align }}">
-              
-              {{#for block.settings as |product_category|}}
-                <a href="{{ product_category.url }}">
-                  {{#if product_category.featured_image}}
-                    {{snippet "image" data=product_category.featured_image }}
+            <li class="splide__slide category-block text-{{ section.settings.text_align }} card {{#if section.settings.mb-collection-size}}mb-slide--show-half{{/if}}">
+              {{#if block.settings.product_category.url }}<a href="{{ block.settings.product_category.url }}">{{/if}}
+                <div class="card__inner ratio">
+                  <div class="card__media">
+                    {{#if block.settings.product_category.featured_image}}
+                      {{snippet "image" data=block.settings.product_category.featured_image }}
+                    {{/if}}
+                  </div>
+                </div>
+                <div class="card_content">
+                  {{#if block.settings.product_category.title}}
+                    <h3 class="{{section.settings.title_size}}">{{ block.settings.product_category.title }}</h3>
                   {{/if}}
-                  {{#if product_category.title}}
-                    <h3>{{ product_category.title }}</h3>
-                  {{/if}}
-                  {{#if product_category.description}}
-                    <div class="body3">{{{ product_category.description }}}</div>
-                  {{/if}}
-                  {{#if product_category.url}}
-                    <div class="inner-content-btn">
-                      <a class="explore-more" href="{{ product_category.url }}">{{{ block.settings.button_text}}}</a>
-                      {{snippet "icon-right-arrow" }}
+                  {{#if section.settings.show-collection-details}}
+                    {{#if block.settings.product_category.description}}
+                      <div class="body3">{{{ block.settings.product_category.description }}}</div>
+                    {{/if}}
+                    {{#if block.settings.button_text}}
+                      <div class="inner-content-btn">
+                        <span class="explore-more">{{{ block.settings.button_text}}}</span>
+                        {{snippet "icon-right-arrow" }}
                       </div>
+                    {{/if}}
                   {{/if}}
-                </a>
-              {{/for}}
-
+                </div>
+              {{#if block.settings.product_category.url }}</a>{{/if}}
             </li>
           {{/if}}
         {{/for}}
       </ul>
-      <!-- Add the progress bar element -->
-      <div class="my-slider-progress">
+      <div class="my-slider-progress{{#unless section.settings.progress-bar}} display-none-desktop{{/unless}}">
         <div class="my-slider-progress-bar"></div>
       </div>
     </div>
@@ -59,51 +69,42 @@
 </div>
 
 <script>
-document.addEventListener( 'DOMContentLoaded', function () {
-  // Initialize Splide
-   var splide = new Splide( '.splide.featured-collection__slider-{{section.id}}', {
-    perPage: 4,
-    perMove: 1,
-    autoplay: false,
-    pagination: false,
-    arrows: false,
-    gap    : '30px',
-    breakpoints: {
-      1301: {
-        perPage: 4,
-        gap: '1rem',
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Splide slider
+    var splide = new Splide('.splide.featured-collection__slider-{{section.id}}', {
+      perPage: 4,
+      perMove: 1,
+      autoplay: false,
+      pagination: false,
+      arrows:{{#if section.settings.collection-arrows}}true{{else}}false{{/if}},
+      gap: '29px',
+      breakpoints: {
+        1500: {
+          perPage: 4,
+          gap: '29px',
+        },
+        1300: {
+          perPage: 3,
+          gap: '29px',
+        },
+        767: {
+          perPage: 1,
+          gap: '16px',
+        }
       },
-      1300: {
-        perPage: 3,
-        gap: '1rem',
-      },
-      1024: {
-        perPage: 3,
-        gap: '1rem',
-      },
-      1023: {
-        perPage: 2,
-        gap: '1rem',
-      },
-      640: {
-        perPage: 1,
-        gap: '1rem',
-      }
-    },
-  } );
-  // Add the progress bar element
-  splide.on('mounted move', function () {
-    var bar = document.querySelector('.featured-collection__slider-{{section.id}} .my-slider-progress-bar');
-    if (bar && bar.style) {
-        var end = splide.length;
-        var rate = Math.min((splide.index + 1) / end, 1);
-        bar.style.width = String(100 * rate) + '%';
-    }
+    });
+  
+    var bar    = splide.root.querySelector( '.my-slider-progress-bar' );
+    
+    splide.on( 'mounted move', function () {
+      var end  = splide.Components.Controller.getEnd() + 1;
+      var rate = Math.min( ( splide.index + 1 ) / end, 1 );
+      bar.style.width = String( 100 * rate ) + '%';
+    } );
+    
+    splide.mount();
   });
-splide.mount();
-} );
 </script>
-
 {{#schema }}
 {
   "name": "Featured Collection Custom",
@@ -122,9 +123,24 @@ splide.mount();
       "default": "Shop our latest designs—thoughtfully made to complete every room in your home."
     },
     {
-      "id": "color_page_background",
-      "type": "color",
-      "label": "Background"
+      "id": "product_image_ratio",
+      "type": "select",
+      "label": "t:sections.main-collection-product-list.settings.product_image_ratio.label",
+      "options": [
+        {
+          "value": "100",
+          "label": "t:sections.main-collection-product-list.settings.product_image_ratio.options__1.label"
+        },
+        {
+          "value": "99",
+          "label": "t:sections.main-collection-product-list.settings.product_image_ratio.options__3.label"
+        },
+        {
+          "value": "133",
+          "label": "t:sections.main-collection-product-list.settings.product_image_ratio.options__4.label"
+        }
+      ],
+      "default": "133"
     },
     {
       "type": "select",
@@ -149,6 +165,58 @@ splide.mount();
       ],
       "default": "none",
       "label": "Color Scheme"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Card Title size",
+      "default": "title1",
+      "options": [
+        {
+          "value": "title1",
+          "label": "Small"
+        },
+        {
+          "value": "body6",
+          "label": "Medium"
+        }
+      ]
+    },
+    {
+      "type": "switch",
+      "id": "progress-bar",
+      "label": "Show Progress Bar on desktop",
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "collection-arrows",
+      "label": "Show Arrows",
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "show-collection-details",
+      "label": "Show collection description and shop now button",
+      "default": false
+    },
+    {
+      "type": "switch",
+      "id": "mb-collection-size",
+      "label": "Half Slide on mobile",
+      "default": true
+    },
+    {
+      "type": "text_align",
+      "id": "header_text_align",
+      "label":"Header Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "text_align",
+      "id": "text_align",
+      "label":"Card Text alignment",
+      "default": "center"
     },
     {
       "type": "group_header",
@@ -192,14 +260,7 @@ splide.mount();
           "type": "text",
           "id": "button_text",
           "label": "Button Text",
-          "default": "Shop Now >"
-        },
-        {
-          "type": "text_align",
-          "id": "text_align",
-          "label": {
-            "en": "Text alignment"
-          }
+          "default": "Shop Now"
         }
       ]
     }

@@ -187,3 +187,61 @@
 /* @custom-media --gt-mobile (min-width: 751px); */
 
 /* detectingScreen need to consider the configuration of the tablet */
+
+/* Custom Styles */
+.collection_content .title-wrapper {
+  font-size: var(--body8-font-size);
+  font-weight: 700;
+  line-height: 1.4; 
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.collection_content .text-wrapper {
+  font-size: var(--body5-font-size);
+  font-weight: 400;
+  line-height: 1.4; 
+  margin: 0;
+  margin-bottom: 48px;
+}
+
+.collection_content .shopline-element-collection-item {
+  padding: 0 8px;
+}
+
+.collection_content .collection__item__name {
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0;
+  margin: 0;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .collection_content .collection-list-new__slider__container.slider.slider--mobile .collection-item {
+    width: 47%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .collection_content .title-wrapper {
+    font-size: var(--body8-max-font-size);
+    line-height: 1.3;
+  }
+  
+  .collection_content .text-wrapper {
+    font-size: var(--body6-font-size);
+    margin-bottom: 80px;
+  }
+
+  .collection_content .shopline-element-collection-item {
+    padding: 0 28px;
+  }
+
+  .collection_content .collection__item__name {
+    font-size: var(--body6-font-size);
+    line-height: normal;
+    margin-top: 16px;
+  }
+}

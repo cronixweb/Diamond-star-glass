@@ -22,7 +22,9 @@
 </style>
 
 <div class="test section-rich-text page-width section-padding">
-  <div class="section-rich-text__content color-scheme-{{section.settings.color_scheme}}">
+  <div class="section-rich-text__content 
+  color-scheme-{{section.settings.color_scheme}} 
+  {{#if section.settings.show_box}} content__border-box {{/if}}">
     {{#for section.blocks as |block|}}
 
       {{#if (trim block.type) == "richtext"}}
@@ -33,7 +35,7 @@
 
       {{#if (trim block.type) == "textarea"}}
         {{#if block.settings.subheading}}
-          <p>{{{ block.settings.subheading }}}</p>
+          <p class="subheading">{{{ block.settings.subheading }}}</p>
         {{/if}}
       {{/if}}
 
@@ -63,6 +65,12 @@
       "id": "mb_background_pattern",
       "label": "Mobile Background Pattern",
       "info": "Upload a background pattern image to be displayed behind the content"
+    },
+    {
+      "type": "switch",
+      "id": "show_box",
+      "label": "Border Box Layout",
+      "default": false
     },
     {
       "type": "select",

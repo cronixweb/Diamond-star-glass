@@ -9,6 +9,7 @@ defineCustomElement('product-info', () => {
       this.variantSelects = this.querySelector('variant-radios');
       this.submitButton = this.querySelector('[type="submit"]');
       this.variantChangeUnSubscriber = undefined;
+      this.productVariants = this.querySelector('.product-variants');
     }
 
     connectedCallback() {
@@ -20,6 +21,9 @@ defineCustomElement('product-info', () => {
         this.updateQuantityRules(event.data.sectionId, event.data.html);
         this.setQuantityBoundary();
       });
+      if(this.productVariants){
+        this.showSelectedVariant();
+      }
     }
 
     disconnectedCallback() {
@@ -67,6 +71,25 @@ defineCustomElement('product-info', () => {
           }
         }
       }
+    }
+    showSelectedVariant(){
+      const variantsOptions = this.querySelectorAll(".variant-input-wrapper");    
+      variantsOptions.forEach((item) => {
+        const selectedInput = item.querySelector("input[checked]"); 
+        if (selectedInput) {
+          const selectedValue = selectedInput.getAttribute("value");
+          console.log(selectedValue);
+          item.querySelector(".selected-variant").innerHTML = selectedValue; 
+        }
+    
+        const inputs = item.querySelectorAll("input");
+        inputs.forEach(input => {
+          input.addEventListener("change", (event) => {
+            const updateSelectedValue = event.target.getAttribute("value");
+            item.querySelector(".selected-variant").innerHTML = updateSelectedValue; // Update the selected variant text
+          });
+        });
+      });
     }
   };
 });
