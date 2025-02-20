@@ -41,6 +41,13 @@
             "title_mobile_font_size": 24
           }
         },
+        "17399433021322107afd": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>{{product.metafields.my_fields.unit_case.value}} PCS/Case</strong>",
+            "text_style": "custom"
+          }
+        },
         "block_2": {
           "type": "price",
           "settings": {
@@ -122,6 +129,7 @@
       "block_order": [
         "1738881878237c7aaa73",
         "block_1",
+        "17399433021322107afd",
         "block_2",
         "block_3",
         "block_4",

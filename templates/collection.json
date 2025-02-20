@@ -14,6 +14,8 @@
         "mask_color": "#000000",
         "mask_color_opacity": 20,
         "parallax_scroll": false,
+        "show-similar-categories": false,
+        "show-cover-image": true,
         "banner_image_mobile": null
       },
       "blocks": {},
@@ -23,7 +25,7 @@
       "disabled": false,
       "type": "main-collection-product-list",
       "settings": {
-        "products_per_page": 20,
+        "products_per_page": 50,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "pagination_style": "normal",
@@ -76,8 +78,8 @@
             "grid_position": 5,
             "card_width": "single_column",
             "color_scheme": "1",
-            "pc_image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg",
-            "mobile_image": "shopline://shop_images/2025 Winter Banner 2 (1).png"
+            "mobile_image": "shopline://shop_images/2025 Winter Banner 2 (1).png",
+            "pc_image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg"
           },
           "disabled": true
         }

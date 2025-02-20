@@ -873,7 +873,7 @@ span.mobile-facets__open  {
   background: var(--color-white);
   color: var(--collection-filter-caption);
   text-align: center;
-  width: 182px;
+  min-width: 80px;
   height: 46px;
 }
 
@@ -981,6 +981,11 @@ span.mobile-facets__open  {
   .facets__summary  {
     width: 250px;
   }
+}
+@media (min-width: 1200px) {
+    .product-list-container .filter-folder-trigger {
+        min-width: 182px;
+    }
 }
 @media (min-width: 650px) and (max-width: 959px){
   .collection .product-list-content > *{

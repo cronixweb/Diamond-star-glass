@@ -214,10 +214,10 @@
         "settings": {
           "enable_sticky": false,
           "sticky_mode": "always",
-          "display_mode": "5",
-          "autoplay_speed": 5,
-          "pc_scroll_interval": 12,
-          "mb_scroll_interval": 5,
+          "display_mode": "4",
+          "autoplay_speed": 6,
+          "pc_scroll_interval": 20,
+          "mb_scroll_interval": 19,
           "show_social_media": false,
           "padding_top": 10,
           "padding_bottom": 10
@@ -303,9 +303,9 @@
               "image_3_link_text": "Explore more",
               "image_3_link": "shopline://collections/12267837484138695714883575",
               "menu_link_list": "",
-              "image_3": "shopline://shop_images/89702, 89703, 89704, 89705, 84809C_3.jpg",
               "image_2": "shopline://shop_images/22154,22155_1.png",
-              "image_1": "shopline://shop_images/12206&12207_1.png"
+              "image_1": "shopline://shop_images/12206&12207_1.png",
+              "image_3": "shopline://shop_images/89702, 89703, 89704, 89705, 84809C_3.jpg"
             },
             "disabled": false
           },
@@ -326,8 +326,8 @@
               "image_3_link_text": "Explore more",
               "image_3_link": "shopline://collections/12267837493206109464613575",
               "menu_link_list": "",
-              "image_2": "shopline://shop_images/60059 (3).jpg",
               "image_1": "shopline://shop_images/69.jpg",
+              "image_2": "shopline://shop_images/60059 (3).jpg",
               "image_3": "shopline://shop_images/OA23003S3.jpg"
             }
           },
@@ -348,8 +348,8 @@
               "image_3_link_text": "Explore more",
               "image_3_link": "shopline://collections/12267837557283330545753575",
               "menu_link_list": "",
-              "image_3": "shopline://shop_images/9.jpg",
               "image_2": "shopline://shop_images/38.jpg",
+              "image_3": "shopline://shop_images/9.jpg",
               "image_1": "shopline://shop_images/21294+21295主图5.jpg"
             }
           },
@@ -370,9 +370,9 @@
               "image_3_link_text": "Explore more",
               "image_3_link": "shopline://collections/12267837503170601362293575",
               "menu_link_list": "",
-              "image_3": "shopline://shop_images/M20075.jpg",
               "image_1": "shopline://shop_images/39132.jpg",
-              "image_2": "shopline://shop_images/64898,64897.jpg"
+              "image_2": "shopline://shop_images/64898,64897.jpg",
+              "image_3": "shopline://shop_images/M20075.jpg"
             }
           },
           "1735017009032f7e9f84": {
@@ -392,8 +392,8 @@
               "image_3_link_text": "Explore more",
               "image_3_link": "shopline://collections/12267837506514636465673575",
               "menu_link_list": "",
-              "image_2": "shopline://shop_images/57572.jpg",
               "image_1": "shopline://shop_images/45334_1.jpg",
+              "image_2": "shopline://shop_images/57572.jpg",
               "image_3": "shopline://shop_images/49663ASST.jpg"
             }
           },
@@ -415,8 +415,8 @@
               "image_3_link": "shopline://collections/12267837547408764523793575",
               "menu_link_list": "",
               "image_2": "shopline://shop_images/0_6833857262449767484.jpg",
-              "image_3": "shopline://shop_images/M20217.jpg",
-              "image_1": "shopline://shop_images/GV10006.JPG"
+              "image_1": "shopline://shop_images/GV10006.JPG",
+              "image_3": "shopline://shop_images/M20217.jpg"
             }
           },
           "1735017015582ee1a1a7": {
@@ -436,9 +436,9 @@
               "image_3_link_text": "Explore more",
               "image_3_link": "shopline://collections/12267837462055349210823575",
               "menu_link_list": "",
-              "image_1": "shopline://shop_images/31859.jpg",
               "image_3": "shopline://shop_images/79522.jpg",
-              "image_2": "shopline://shop_images/31840ASST_6833870916553594977.jpg"
+              "image_2": "shopline://shop_images/31840ASST_6833870916553594977.jpg",
+              "image_1": "shopline://shop_images/31859.jpg"
             }
           }
         },
@@ -512,7 +512,7 @@
             "type": "menu",
             "settings": {
               "title": "ABOUT US",
-              "link": "shopline://pages/6752192514608863257",
+              "link": "",
               "default_fold": false,
               "menu": "6722852336396410065"
             }
@@ -521,8 +521,8 @@
             "type": "menu",
             "settings": {
               "title": "RESOURCES",
-              "menu": "6722853746907290841",
-              "default_fold": false
+              "default_fold": false,
+              "menu": "6722853746907290841"
             },
             "disabled": false
           },
