@@ -59,62 +59,14 @@
       ],
       "custom_css": []
     },
-    "17339909882203482e1f": {
-      "disabled": false,
-      "type": "section-instagram-feed-custom",
-      "settings": {
-        "heading-instagram-feed": "Follow us @diamondstarglass",
-        "color_scheme": "none",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "173399099207016760b1": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
-          }
-        },
-        "17339910018047ee2184": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
-          }
-        },
-        "173399100943715b74b5": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
-          }
-        },
-        "17339910164709f34556": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
-          }
-        },
-        "17339910122533b317ba": {
-          "type": "image",
-          "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "173399099207016760b1",
-        "17339910018047ee2184",
-        "173399100943715b74b5",
-        "17339910164709f34556",
-        "17339910122533b317ba"
-      ],
-      "custom_css": []
-    },
     "1733991052687987f0e6": {
-      "disabled": false,
+      "disabled": true,
       "type": "text-columns-with-image",
       "settings": {
         "title": "Global Presence & Showrooms",
         "title_font_size": "title_custom",
+        "text_align_title": "center",
+        "outline_style": false,
         "content": "With a global presence and showrooms across key U.S. cities, we invite you to explore our collections in person. Each showroom showcases our latest designs, allowing you to see and feel the quality of our glassware firsthand.",
         "content_font_size": "body_custom",
         "image_width": "100%",
@@ -136,12 +88,12 @@
           "type": "item",
           "name": "Title",
           "settings": {
+            "image": "shopline://shop_images/Rectangle 2.jpg",
             "title": "",
             "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
             "button_text": "view map",
-            "jump_link": "",
-            "description_font_size": "description_custom",
-            "image": "shopline://shop_images/Rectangle 2.jpg"
+            "jump_link": "https://maps.app.goo.gl/6pbWrVaJFWYskjhL7",
+            "description_font_size": "description_custom"
           },
           "blockId": "1733991052687f58225d"
         },
@@ -178,11 +130,12 @@
         "17339911803042bc0e6a": {
           "type": "item",
           "settings": {
+            "image": "shopline://shop_images/Rectangle 2.jpg",
             "title": "",
-            "description": "Ontario Showroom -&nbsp;<br>1010 E. Belmont St, Ontario, CA 91761",
+            "description": "Ontario Showroom - California 1455 Auto Center Drive, Suite 150, Ontario, CA 91761",
             "button_text": "view map",
             "jump_link": "",
-            "image": "shopline://shop_images/Rectangle 2.jpg"
+            "description_font_size": "description_custom"
           }
         }
       },
@@ -233,7 +186,7 @@
           "type": "button",
           "settings": {
             "button_text": "CONTACT US",
-            "link": "",
+            "link": "shopline://pages/6755486509661427217",
             "button_type": "button"
           },
           "blockId": "173399939068035a7c03"
@@ -284,7 +237,7 @@
           "type": "button",
           "settings": {
             "button_text": "CONTACT US",
-            "link": "",
+            "link": "shopline://pages/6755486509661427217",
             "button_type": "button"
           },
           "blockId": "173399939068035a7c03"
@@ -302,7 +255,6 @@
       "type": "image-with-text",
       "settings": {
         "enable_full_width": false,
-        "image": "shopline://shop_images/Rectangle 9377_6809890440243006518.jpg",
         "image_height": "auto",
         "pc_image_width": "medium",
         "pc_image_position": "left",
@@ -313,7 +265,8 @@
         "color_scheme": "none",
         "mobile_text_align": "left",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "image": "shopline://shop_images/Rectangle 9377_6809890440243006518.jpg"
       },
       "blocks": {
         "1733999650448353befd": {
@@ -339,7 +292,7 @@
       "custom_css": []
     },
     "17340000919885800b3c": {
-      "disabled": false,
+      "disabled": true,
       "type": "collection-list-new",
       "settings": {
         "title": "Our Core categories",
@@ -444,7 +397,7 @@
           "type": "button",
           "settings": {
             "button_text": "SIGN IN NOW",
-            "link": "",
+            "link": "https://diamondstarglass.com/user/company",
             "button_type": "button"
           },
           "blockId": "17340003784228953388"
@@ -467,7 +420,6 @@
     "173399939067997e123c",
     "1733999507478b4f902b",
     "1733991052687987f0e6",
-    "1734000378422ca758d7",
-    "17339909882203482e1f"
+    "1734000378422ca758d7"
   ]
 }

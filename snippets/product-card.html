@@ -411,6 +411,9 @@
           {{/for}}</p>
         {{/if}}
       {{/for}}
+      <span class="size-option product-sku">
+        SKU: {{product_data.selected_or_first_available_variant.sku}}
+      </span>
       {{assign "enable_mb_bottom_quick_view_icon" (if valid_quick_view and quick_view_button_mobile_style == "icon" and quick_view_mobile_position == "below")}}
 
       <div

@@ -795,3 +795,14 @@ footer-menu {
     display: flex;
   }
 }
+.footer-block__heading .footer-block__heading-with-link a{
+  display:none;
+}
+@media (min-width: 960px) {
+  .footer-block__heading .footer-block__heading-with-link a{
+    display:inline-block;
+  }
+  .footer-block__heading .footer-block__heading-with-link span{
+    display:none;
+  }
+}

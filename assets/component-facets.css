@@ -759,6 +759,7 @@ a.facets__reset:hover {
   grid-template-columns: 1fr max-content;
 }
 .facets__form .filter-title{
+  display: none;
   margin-right: 12px;
 }
 .facets__disclosure {
@@ -872,7 +873,7 @@ span.mobile-facets__open  {
   background: var(--color-white);
   color: var(--collection-filter-caption);
   text-align: center;
-  width: 182px;
+  min-width: 80px;
   height: 46px;
 }
 
@@ -891,10 +892,7 @@ span.mobile-facets__open  {
   font-size: var(--body3-font-size);
   font-weight: 400;
   line-height: 1.4;
-}
-
-.filter-folder-popup .filter-folder-inner {
-  max-height: unset;
+  text-transform: capitalize;
 }
 
 .filter-folder-popup .filter-apply-btn-con .filter-apply-btn {
@@ -939,22 +937,64 @@ span.mobile-facets__open  {
   padding: unset; 
 }
 
+.filter-drawer-content .filter-folder-header {
+  padding: 12px 0;
+}
+
+#filter-drawer-con .filter-drawer-content .filter-drawer-header {
+  height: 57px;
+  padding: 0 16px;
+}
+
+#filter-drawer-con .filter-drawer-content .filter-drawer-inner .filter-plugin-scroll-content {
+  padding: 0 18px;
+}
+
+.filter-drawer-content .filter-folder-header svg {
+  width: 16px;
+  height: 16px;
+}
+
 @media (max-width: 959px) {
   .facets-sort-filter__wrapper {
     padding: 10px 16px;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: start;
+  }
+  .facets-container .filter-m-trigger{
+    flex-basis: 120px!important;
+  }
+  .facets__summary  {
+    width: 219px;
+  }
+  .product-list-content{
+    margin: 0;
   }
 }
-
 @media (min-width: 960px) {
-  .product-list-content{
-    margin-top: 0;
-  }
 
   [data-template="collection"] .shopline-section .product-list-container{
-    margin-top: -50px;
+    margin-top: -56px;
   }
 
   .facets__summary  {
     width: 250px;
+  }
+}
+@media (min-width: 1200px) {
+    .product-list-container .filter-folder-trigger {
+        min-width: 182px;
+    }
+}
+@media (min-width: 650px) and (max-width: 959px){
+  .collection .product-list-content > *{
+    width: 50%;
+    padding: 10px;
+  }
+}
+@media (min-width: 960px) and (max-width: 1200px){
+  .product-list-content > *{
+    width: 33.33%;
   }
 }

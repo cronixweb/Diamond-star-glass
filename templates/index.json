@@ -76,8 +76,8 @@
         "color_scheme": "none",
         "padding_top": 60,
         "padding_bottom": 60,
-        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg",
-        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg"
+        "ds_background_pattern": "shopline://shop_images/Frame 1000002518.jpg",
+        "mb_background_pattern": "shopline://shop_images/Frame 1000002518 (1).jpg"
       },
       "blocks": {
         "17321789322925ea0413": {
@@ -90,7 +90,7 @@
           "type": "buttons",
           "settings": {
             "button_text": "Shop All In-Stock",
-            "button_link": "/collections/in-stock"
+            "button_link": "https://diamondstarglass.myshopline.com/collections?filter_select=%7B%7D&price=%2C&onlyQueryInStock=true&page_num=1"
           }
         }
       },
@@ -112,26 +112,27 @@
         "1732179457856e0a4480": {
           "type": "announcement",
           "settings": {
-            "announcement_text": "Long Weekend Sale: Up to 70% Off",
+            "announcement_text": "Spring Is Here – Shop Fresh New Arrivals!",
             "link_text": "Shop Now ›",
-            "link_url": "/collections/all"
+            "link_url": "shopline://collections/12267837542560820584083575"
           }
         },
         "17321794622553840299": {
           "type": "announcement",
           "settings": {
-            "announcement_text": "Free Shipping on Bedding, Decor & More",
+            "announcement_text": "Essentials – Everyday Basics In Stock Now!",
             "link_text": "Shop Now ›",
-            "link_url": "/collections/all"
+            "link_url": "shopline://collections/12267837484138695714883575"
           }
         },
         "17321794649733c3c8e3": {
           "type": "announcement",
           "settings": {
-            "announcement_text": "Quick Shipping on 1000s of Items",
-            "link_text": "Delivered in 1-5 Weeks ›",
-            "link_url": "/collections/all"
-          }
+            "announcement_text": "Celebrate Life’s Moments - Shop Wedding & Event",
+            "link_text": "Shop Now ›",
+            "link_url": "shopline://collections/12267576746245221327953575"
+          },
+          "disabled": false
         }
       },
       "block_order": [
@@ -145,9 +146,11 @@
       "disabled": false,
       "type": "image-with-text",
       "settings": {
+        "enable_full_width": false,
         "image_height": "auto",
         "pc_image_width": "large",
         "pc_image_position": "left",
+        "reverse_column": "col",
         "pc_box_align": "middle",
         "pc_text_align": "center",
         "image_overlap_display": false,
@@ -155,13 +158,13 @@
         "mobile_text_align": "center",
         "padding_top": 60,
         "padding_bottom": 60,
-        "image": "shopline://shop_images/banner.jpg"
+        "image": "shopline://shop_images/blownglass.png"
       },
       "blocks": {
         "1733673220654d226840": {
           "type": "title",
           "settings": {
-            "title": "Custom Design",
+            "title": "Artistry in Every Curve",
             "title_size": "title5"
           },
           "blockId": "1733673220654d226840"
@@ -169,7 +172,7 @@
         "1733673220654daa273b": {
           "type": "content",
           "settings": {
-            "content": "Lorem ipsum dolor sit amet consectetur. Velit elementum porta nunc cras ipsum pellentesque. Eget massa feugiat vitae donec eu nunc etiam. Tellus nunc ultricies lorem id etiam a ullamcorper mattis. Risus at proin placerat ipsum cras eu nam sapien."
+            "content": "Artisanal glass vases and décor pieces embody the perfect blend of craftsmanship and creativity. Each item is a testament to the skill and dedication of glassmakers, as molten material is carefully shaped, blown, and etched into stunning works of art. These pieces aren’t just decorations; they’re unique expressions of design, with every ripple, curve, and hue telling a story of hands-on artistry. From elegant vases with hand-pulled details to vibrant glass sculptures, artisanal glass brings warmth and character to any space. Choosing handcrafted glass décor means embracing timeless beauty and celebrating the individuality of items that are as unique as the homes they adorn."
           },
           "blockId": "1733673220654daa273b"
         },
@@ -222,24 +225,24 @@
         "pc_content_position": "left",
         "pc_text_position": "left",
         "pc_show_textarea": false,
-        "alpha_range": "30",
+        "alpha_range": 30,
         "color_scheme": "none",
         "mobile_text_position": "left",
         "desktop_text_container": "half",
         "mobile_banner_flatten": false,
         "m_show_textarea": false,
         "width_style": true,
-        "width_style_padding": false,
+        "gradient_style": false,
         "padding_top": 0,
         "padding_bottom": 60,
-        "banner1": "shopline://shop_images/Frame 1000002456 (2).jpg",
-        "mb-banner": "shopline://shop_images/Frame 1000002456 (1)_6753479818308655126.jpg"
+        "mb-banner": "shopline://shop_images/Untitled (6) (1).png",
+        "banner1": "shopline://shop_images/Untitled (6) (1).png"
       },
       "blocks": {
         "17325437940219eec0bd": {
           "type": "title",
           "settings": {
-            "title": "25+ Years of Craftsmanship and Design Expertise.",
+            "title": "Proudly Delivering Expert Craftsmanship and Style for Over 25 Years.",
             "title_size": "title2"
           },
           "blockId": "17325437940219eec0bd"
@@ -247,7 +250,7 @@
         "17325437940213ebde67": {
           "type": "desc",
           "settings": {
-            "description": "Discover custom beach essentials that blend style, comfort, and functionality—curated to create your perfect beachside retreat.",
+            "description": "From sleek modern designs to artful seasonal creations, we redefine stylish glassware for life’s spaces and special moments.",
             "text_size": "body9"
           },
           "blockId": "17325437940213ebde67"
@@ -256,11 +259,12 @@
           "type": "button",
           "settings": {
             "button_text": "View catalog",
-            "link": "",
+            "link": "https://diamondstarglass.myshopline.com/collections-all",
             "outline_button": false,
             "link_text_2": "",
             "link_2": "",
-            "outline_button_2": false
+            "outline_button_2": false,
+            "button_height_size": "normal"
           },
           "blockId": "1732543794021da22bad"
         }
@@ -291,14 +295,14 @@
         "gradient_style": false,
         "padding_top": 60,
         "padding_bottom": 62,
-        "mb-banner": "shopline://shop_images/candle-holders.png",
-        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png"
+        "banner1": "shopline://shop_images/banner_2_6721831604329605126.png",
+        "mb-banner": "shopline://shop_images/candle-holders.png"
       },
       "blocks": {
         "1732544033019b70e437": {
           "type": "title",
           "settings": {
-            "title": "Candleholders",
+            "title": "The Glow Up",
             "title_size": "title3"
           },
           "blockId": "1732544033019b70e437"
@@ -306,7 +310,8 @@
         "173254403301954ee2f0": {
           "type": "desc",
           "settings": {
-            "description": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
+            "description": "Create ambiance effortlessly with our curated collection of elegant candle holders.",
+            "text_size": "body5"
           },
           "blockId": "173254403301954ee2f0"
         },
@@ -314,11 +319,12 @@
           "type": "button",
           "settings": {
             "button_text": "Explore More",
-            "link": "",
+            "link": "shopline://collections/12267837504991264856943575",
             "outline_button": false,
             "link_text_2": "",
             "link_2": "",
-            "outline_button_2": false
+            "outline_button_2": false,
+            "button_height_size": "normal"
           },
           "blockId": "1732544033019894fac8"
         }
@@ -349,14 +355,14 @@
         "gradient_style": false,
         "padding_top": 60,
         "padding_bottom": 120,
-        "mb-banner": "shopline://shop_images/Rectangle 9.jpg",
-        "banner1": "shopline://shop_images/image 4.jpg"
+        "banner1": "shopline://shop_images/image 4.jpg",
+        "mb-banner": "shopline://shop_images/Rectangle 9.jpg"
       },
       "blocks": {
         "1732544206146cf0281c": {
           "type": "title",
           "settings": {
-            "title": "Terrariums",
+            "title": "The Green Scene",
             "title_size": "title3"
           },
           "blockId": "1732544206146cf0281c"
@@ -364,7 +370,8 @@
         "17325442061468901d5d": {
           "type": "desc",
           "settings": {
-            "description": "Lorem ipsum dolor sit amet consectetur. Ut semper consequat eget eros. Purus pulvinar sit diam congue eu id porttitor dui sagittis. Eu volutpat vitae sagittis lectus."
+            "description": "Our terrariums create the perfect little ecosystem, bringing nature indoors with ease and adding a touch of green to any space.",
+            "text_size": "body5"
           },
           "blockId": "17325442061468901d5d"
         },
@@ -372,11 +379,12 @@
           "type": "button",
           "settings": {
             "button_text": "Explore More",
-            "link": "",
+            "link": "shopline://collections/12267576730749952416443575",
             "outline_button": false,
             "link_text_2": "",
             "link_2": "",
-            "outline_button_2": false
+            "outline_button_2": false,
+            "button_height_size": "normal"
           },
           "blockId": "17325442061464ad9f9c"
         }
@@ -402,27 +410,30 @@
           "type": "multimedia",
           "settings": {
             "title": "Apothecary",
-            "content": "Experience the allure of our glass apothecary jars, offering a sophisticated way to store your cherished items while adding a vintage-inspired touch to your home.",
+            "content": "Apothecary jars, once used by 18th-century pharmacists to store herbs and remedies, have found a new life in home décor. Their classic glass shapes and timeless charm make them perfect for organizing essentials, displaying seasonal accents, or creating stylish centerpieces. Both functional and decorative, they add a touch of vintage elegance to any space",
             "button_text": "Explore More",
+            "button_url": "shopline://collections/12268236964814567569363575",
             "image": "shopline://shop_images/64071&_1.jpg"
           }
         },
         "173254454535071bff75": {
           "type": "multimedia",
           "settings": {
-            "title": "Specialty-Assortments",
-            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "title": "Cloches",
+            "content": "Originally used to protect delicate plants, these clear domes have evolved into stylish accents for showcasing treasures while adding a layer of sophistication to any space. Perfect for creating seasonal centerpieces, highlighting collectibles, or elevating simple items like candles or greenery, glass cloches bring charm and a sense of curiosity to your displays.",
             "button_text": "Explore More",
-            "image": "shopline://shop_images/001.jpg (1).jpg"
+            "button_url": "shopline://collections/12268237215476576482263575",
+            "image": "shopline://shop_images/68072, 68073, 68074_3.jpg"
           }
         },
         "173254455475704811fb": {
           "type": "multimedia",
           "settings": {
-            "title": "Specialty",
-            "content": "Meet our Project Collective partner and shop her favorite looks.",
+            "title": "Mercury Glass",
+            "content": "With roots in 19th-century craftsmanship, mercury glass offers a delicate balance of vintage charm and modern elegance. Its reflective, antique-style finish makes it a favorite for home décor, whether adorning mantels, tablescapes, or festive arrangements.",
             "button_text": "Explore More",
-            "image": "shopline://shop_images/001.jpg (2).jpg"
+            "button_url": "shopline://collections/12268543242049987631743575",
+            "image": "shopline://shop_images/57008&57009_1.jpg"
           }
         }
       },
@@ -439,52 +450,53 @@
       "settings": {
         "section_title": "Best Collections",
         "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
-        "progress-bar": false,
-        "collection-arrows": false,
-        "show-collection-details": true,
         "product_image_ratio": "133",
         "color_scheme": "none",
         "title_size": "title1",
+        "progress-bar": false,
+        "collection-arrows": false,
+        "show-collection-details": true,
+        "mb-collection-size": false,
         "header_text_align": "center",
         "text_align": "left",
         "padding_top": 60,
         "padding_bottom": 60
       },
       "blocks": {
+        "1737071704652be8c91b": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267479955044942979283575"
+          }
+        },
+        "1737071701569b049037": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267576730749952416443575"
+          }
+        },
         "1732544731345a7474f5": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267434442957583888093575"
-          }
-        },
-        "1732544744399879a9c9": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267434445835044624483575"
+            "product_category": "12267837493206109464613575"
           }
         },
         "1732544757290c236b5b": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267436189929156152733575"
-          }
-        },
-        "173254476940470c1075": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267837477650442569693575"
+            "product_category": "12267837506514636465673575"
           }
         }
       },
       "block_order": [
+        "1737071704652be8c91b",
+        "1737071701569b049037",
         "1732544731345a7474f5",
-        "1732544744399879a9c9",
-        "1732544757290c236b5b",
-        "173254476940470c1075"
+        "1732544757290c236b5b"
       ],
       "custom_css": []
     },
@@ -505,12 +517,13 @@
         "padding_bottom": 60
       },
       "blocks": {
-        "17368524863090bc1fac": {
+        "1736852581274f91208d": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267479946896080972843575"
-          }
+            "product_category": "12267434438770829633093575"
+          },
+          "disabled": true
         },
         "17368525035916d83455": {
           "type": "collection",
@@ -519,34 +532,34 @@
             "product_category": "12267479955044942979283575"
           }
         },
-        "173685256880415cdcd2": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267479958744150910633575"
-          }
-        },
-        "1736852581274f91208d": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267434438770829633093575"
-          }
-        },
         "17368526011994d5760b": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
             "product_category": "12267837477650442569693575"
           }
+        },
+        "173748587783033d0427": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837557283330545753575"
+          }
+        },
+        "173748590603549d1d9f": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837554316447653093575"
+          }
         }
       },
       "block_order": [
-        "17368524863090bc1fac",
-        "17368525035916d83455",
-        "173685256880415cdcd2",
         "1736852581274f91208d",
-        "17368526011994d5760b"
+        "17368525035916d83455",
+        "17368526011994d5760b",
+        "173748587783033d0427",
+        "173748590603549d1d9f"
       ],
       "custom_css": []
     },
@@ -556,17 +569,47 @@
       "settings": {
         "section_title": "Our Product categories",
         "section_subtitle": "Shop our latest designs—thoughtfully made to complete every room in your home.",
-        "progress-bar": false,
-        "collection-arrows": true,
-        "show-collection-details": false,
         "product_image_ratio": "99",
         "color_scheme": "none",
         "title_size": "body6",
+        "progress-bar": false,
+        "collection-arrows": true,
+        "show-collection-details": false,
+        "mb-collection-size": false,
         "header_text_align": "left",
+        "text_align": "center",
         "padding_top": 60,
         "padding_bottom": 60
       },
       "blocks": {
+        "1737063371506ef4079e": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837552353345624023575"
+          }
+        },
+        "17370633380238ddb0bf": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837542560820584083575"
+          }
+        },
+        "17370633986759f6581d": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267837479475468116743575"
+          }
+        },
+        "1737057201560373b9de": {
+          "type": "collection",
+          "settings": {
+            "button_text": "Shop Now",
+            "product_category": "12267576746245221327953575"
+          }
+        },
         "173685268540178a0c01": {
           "type": "collection",
           "settings": {
@@ -574,41 +617,37 @@
             "product_category": "12267837477650442569693575"
           }
         },
-        "173685269725022896fa": {
+        "1737484902109b821a31": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267434438770829633093575"
+            "product_category": "12267837480910255630023575"
           }
         },
-        "1736852714033a970d5e": {
+        "173748493910873bef49": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267434442957583888093575"
+            "product_category": "12267837482347559726653575"
           }
         },
-        "1736852749496f88ebaf": {
+        "173748494856654a3819": {
           "type": "collection",
           "settings": {
             "button_text": "Shop Now",
-            "product_category": "12267434445835044624483575"
-          }
-        },
-        "1736852848001107da55": {
-          "type": "collection",
-          "settings": {
-            "button_text": "Shop Now",
-            "product_category": "12267837468046325259293575"
+            "product_category": "12267837484138695714883575"
           }
         }
       },
       "block_order": [
+        "1737063371506ef4079e",
+        "17370633380238ddb0bf",
+        "17370633986759f6581d",
+        "1737057201560373b9de",
         "173685268540178a0c01",
-        "173685269725022896fa",
-        "1736852714033a970d5e",
-        "1736852749496f88ebaf",
-        "1736852848001107da55"
+        "1737484902109b821a31",
+        "173748493910873bef49",
+        "173748494856654a3819"
       ],
       "custom_css": []
     }

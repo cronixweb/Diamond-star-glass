@@ -2451,3 +2451,13 @@ expand-component .expand-view-more-box[open] .expand-view-less-button {
 .button {
   line-height: 1.4;
 } 
+
+.main-page .rte {
+    font-size: calc(var(--body-font-size) * 1.12)
+}
+
+@media (min-width: 960px) {
+    .main-page .rte {
+        font-size: calc(var(--body-font-size) * 1.13)
+    }
+}

@@ -1996,6 +1996,9 @@
             "title": {
               "label": "Title"
             },
+            "link": {
+              "label": "Link"
+            },
             "menu": {
               "label": "Navigation menu"
             },

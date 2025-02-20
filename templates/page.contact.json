@@ -5,12 +5,12 @@
       "type": "contact-form",
       "settings": {
         "title": "Have a question or compliment? Let us know in the form.",
-        "contact": "<strong>Phone: (909) 980-1658</strong><br>Operating Hours: 7:30 - 5:00pm Mon-Fri<br><br><strong>Email:</strong><br>service@diamondstarglass.com",
+        "contact": "<strong>Phone: (909) 980-1658</strong><br>Operating Hours: 7:30 - 5:00pm Mon-Fri<br><br><strong>Email:</strong><br><a id=\"17376119693361\" href=\"mailto:service@diamondstarglass.com\" target=\"_blank\" rel=\"noopener\" data-link=\"{&quot;pageType&quot;:-1,&quot;value&quot;:&quot;mailto:service@diamondstarglass.com&quot;,&quot;linkType&quot;:&quot;input&quot;,&quot;label&quot;:&quot;mailto:service@diamondstarglass.com&quot;}\">service@diamondstarglass.com</a>",
         "text": "Visit our FAQ page and shipping policy page to find answers to frequently asked order and shipping questions.",
-        "solid_button_text": "FAQ",
+        "solid_button_text": "",
         "solid_button_link": "Contact us",
         "outline_button_text": "SHIPPING POLICIES",
-        "outline_button_link": "SHIPPING POLICIES",
+        "outline_button_link": "shopline://pages/6762933280406771208",
         "heading": "",
         "heading_size": "title3",
         "color_scheme": "none",
@@ -32,7 +32,7 @@
         "content_font_size": "title3",
         "image_width": "100%",
         "image_ratio": "auto",
-        "pc_cols": 5,
+        "pc_cols": 4,
         "text_align": "left",
         "show_block_bg": "true",
         "color_card_background": "#FFFFFF",
@@ -49,57 +49,46 @@
           "type": "item",
           "name": "Title",
           "settings": {
-            "title": "",
-            "description": "Dallas Market Center<br>2050 N. Stemmons Fwy, Suite WTC 312, Dallas TX 75207",
+            "title": "Ontario, CA",
+            "description": "1455 Auto Center Drive<br>Ontario, CA 91761",
             "button_text": "VIEW MAP",
             "jump_link": "",
             "description_font_size": "description_custom",
-            "image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg"
+            "image": "shopline://shop_images/1455 Auto Ctr 2024.jpg"
           },
           "blockId": "1734673772239b32558d"
         },
         "173467396449568d7c26": {
           "type": "item",
           "settings": {
-            "title": "",
-            "description": "Dallas Market Center<br>2050 N. Stemmons Fwy, Suite WTC 312, Dallas TX 75207",
+            "title": "Las Vegas, NV",
+            "description": "World Market Center<br>Building A, Suite 400<br>495 S. Grand Central Pkwy<br>Las Vegas, NV 89106",
             "button_text": "VIEW MAP",
             "jump_link": "",
             "description_font_size": "description_custom",
-            "image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg"
-          }
-        },
-        "173467397326377cc568": {
-          "type": "item",
-          "settings": {
-            "title": "",
-            "description": "Dallas Market Center<br>2050 N. Stemmons Fwy, Suite WTC 312, Dallas TX 75207",
-            "button_text": "VIEW MAP",
-            "jump_link": "",
-            "description_font_size": "description_custom",
-            "image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg"
+            "image": "shopline://shop_images/LV.jpg"
           }
         },
         "173467397649473d8b31": {
           "type": "item",
           "settings": {
-            "title": "",
-            "description": "Dallas Market Center<br>2050 N. Stemmons Fwy, Suite WTC 312, Dallas TX 75207",
+            "title": "Atlanta, GA",
+            "description": "AmericasMart<br>Building 1, 13th Floor, STE D1<br>240 Peachtree Street, NW<br>Atlanta, GA 30303",
             "button_text": "VIEW MAP",
             "jump_link": "",
             "description_font_size": "description_custom",
-            "image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg"
+            "image": "shopline://shop_images/ATL.jpg"
           }
         },
         "1734673979461719a274": {
           "type": "item",
           "settings": {
-            "title": "",
+            "title": "Dallas, TX",
             "description": "Dallas Market Center<br>2050 N. Stemmons Fwy, Suite WTC 312, Dallas TX 75207",
             "button_text": "VIEW MAP",
             "jump_link": "",
             "description_font_size": "description_custom",
-            "image": "shopline://shop_images/Rectangle 2_6783796993803373596.jpg"
+            "image": "shopline://shop_images/DMC.jpg"
           }
         }
       },
@@ -107,8 +96,7 @@
         "1734673772239b32558d",
         "1734673979461719a274",
         "173467397649473d8b31",
-        "173467396449568d7c26",
-        "173467397326377cc568"
+        "173467396449568d7c26"
       ],
       "custom_css": []
     },
@@ -116,7 +104,7 @@
       "disabled": false,
       "type": "section-instagram-feed-custom",
       "settings": {
-        "heading-instagram-feed": "Follow us @diamondstarglass",
+        "heading-instagram-feed": "Follow us @diamond_star_glass",
         "color_scheme": "none",
         "padding_top": 94,
         "padding_bottom": 60
@@ -125,31 +113,36 @@
         "17346741552932fd9f4c": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+            "image_url": "https://www.instagram.com/p/DEh3LhwxHK9/?img_index=1",
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.png"
           }
         },
         "173467411601197c005e": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
+            "image_url": "https://www.instagram.com/p/DD-UMDYS4Xd/",
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.1.png"
           }
         },
         "1734674178162f7aaca7": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+            "image_url": "https://www.instagram.com/p/DD-GpQDyIW9/",
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.2.png"
           }
         },
         "1734674182213257f376": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 10_6769305373372708927.jpg"
+            "image_url": "https://www.instagram.com/p/DDI0_IyPbtZ/",
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.3.png"
           }
         },
         "173467417477845ac810": {
           "type": "image",
           "settings": {
-            "instagram-image": "shopline://shop_images/Rectangle 6_6769304130197664837.jpg"
+            "image_url": "https://www.instagram.com/p/DDIXdbhzHAY/",
+            "instagram-image": "shopline://shop_images/Insta 21Jan25.4.png"
           }
         }
       },
