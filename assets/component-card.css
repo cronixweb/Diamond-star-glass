@@ -615,6 +615,15 @@
   margin-top: 0;
 }
 
+.card__content .product-qty {
+  color: var(--color-grey-caption);
+  font-size: var(--body4-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
 @media screen and (min-width: 960px) {
   .card .card__content .product__title {
     font-size: var(--body5-font-size);

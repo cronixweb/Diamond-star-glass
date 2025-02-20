@@ -3428,6 +3428,9 @@
         "show_origin_price": {
           "label": "Whether display original price"
         },
+        "show_product_qty": {
+          "label": "Whether display quantity"
+        },
         "group_header__1": {
           "label": "Product image"
         },
