@@ -715,6 +715,18 @@
                 </div>
               </div>
             {{/if}}
+          {{else if block.type == "b2b_signin"}}
+            <div
+              class="product__info-item rte m-26
+                {{#if block.settings.text_style == 'body'}}body3{{/if}}
+                {{#if block.settings.text_style == 'subtitle'}}body2{{/if}}
+                {{#if block.settings.text_style == 'uppercase'}}body3 text-uppercase{{/if}}
+                {{#if block.settings.text_style == 'underline'}}text-underline{{/if}}
+                {{#if block.settings.text_style == 'custom'}}text-style_custom{{/if}}"
+              {{{block.shopline_attributes}}}
+            >
+              {{{block.settings.text}}}
+            </div>
           {{/if}}
         {{/for}}
       </product-info>
@@ -2481,6 +2493,48 @@
           "type": "color",
           "label": "t:sections.main-product.blocks.button_link.settings.button_text_color.label",
           "default": "transparent"
+        }
+      ]
+    },
+    {
+      "type": "b2b_signin",
+      "icon": "text",
+      "name": "t:sections.main-product.blocks.b2b_signin.label",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "limit": 0,
+          "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "limit": 0,
+          "label": "t:sections.main-product.blocks.text.settings.text_style.label",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__0.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "underline",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            },
+            {
+              "value": "custom",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__4.label"
+            }
+          ],
+          "default": "uppercase"
         }
       ]
     }
