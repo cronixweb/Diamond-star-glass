@@ -779,6 +779,9 @@
     "collection": {
       "collection": "Collections"
     },
+    "quantity": {
+      "qty": "PCS/Case"
+    },
     "facets": {
       "filter":"Filter:",
       "in_stock_only": "Show only in-stock items",
