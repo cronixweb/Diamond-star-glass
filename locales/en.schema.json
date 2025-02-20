@@ -4602,6 +4602,9 @@
             }
           }
         },
+        "b2b_signin": {
+          "label": "Sign In"
+        },
         "text": {
           "name": "Text",
           "settings": {
