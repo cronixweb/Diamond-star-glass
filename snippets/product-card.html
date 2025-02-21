@@ -415,13 +415,17 @@
         SKU: {{product_data.selected_or_first_available_variant.sku}}
       </span>
       {{assign "enable_mb_bottom_quick_view_icon" (if valid_quick_view and quick_view_button_mobile_style == "icon" and quick_view_mobile_position == "below")}}
-
       {{#if theme_settings.show_product_qty}}
-        <div class="product-qty">
-          {{#if product_data.metafields.my_fields.unit_case.value }}
-            {{product_data.metafields.my_fields.unit_case.value}} {{t 'products.quantity.qty'}}
-          {{/if}}
-        </div>
+        {{#if product_data.metafields.my_fields.unit_case.value > '1'}}
+          {{ assign 'prefix' 'PCS/Sets' }}
+        {{else}}
+          {{ assign 'prefix' 'PC/Set' }}
+        {{/if}}
+        {{#if product_data.metafields.my_fields.unit_case.value }}
+          <div class="product-qty">
+            {{product_data.metafields.my_fields.unit_case.value}} {{prefix}}
+          </div>
+        {{/if}}
       {{/if}}
 
       <div
