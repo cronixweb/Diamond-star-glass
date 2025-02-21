@@ -403,6 +403,14 @@
                 }
             </style>
             <h1 class="product__info-item product-title m-12" {{{block.shopline_attributes}}}>{{product.title}}</h1>
+            {{#if product.metafields.my_fields.unit_case.value }}
+              {{#if product.metafields.my_fields.unit_case.value > '1'}}
+                {{ assign 'prefix' 'PCS/Sets' }}
+              {{else}}
+                {{ assign 'prefix' 'PC/Set' }}
+              {{/if}}
+            <span class="product-quantity body5 fw-bold">{{product.metafields.my_fields.unit_case.value}} {{prefix}}</span>
+            {{/if}}
           {{else if block.type == "variant_sku"}}
             <div
               class="product__info-item body4 m-12"
