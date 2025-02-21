@@ -416,7 +416,7 @@
       </span>
       {{assign "enable_mb_bottom_quick_view_icon" (if valid_quick_view and quick_view_button_mobile_style == "icon" and quick_view_mobile_position == "below")}}
 
-      {{#if section.settings.show_product_qty}}
+      {{#if theme_settings.show_product_qty}}
         <div class="product-qty">
           {{#if product_data.metafields.my_fields.unit_case.value }}
             {{product_data.metafields.my_fields.unit_case.value}} {{t 'products.quantity.qty'}}

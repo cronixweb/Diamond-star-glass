@@ -1078,6 +1078,12 @@
         ]
       },
       {
+        "id": "show_product_qty",
+        "label": "t:sections.main-collection-product-list.settings.show_product_qty.label",
+        "type": "switch",
+        "default": true
+      },
+      {
         "type": "group_header",
         "label": "t:settings_schema.product_card.settings.group_header__0.label"
       },
