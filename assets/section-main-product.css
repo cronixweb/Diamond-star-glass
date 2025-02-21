@@ -1204,7 +1204,8 @@ variant-radios .product-form__input.medium .product-form__input--right {
 .product-form--color-swatch [data-swatch-color="Smoke"]{
   --swatch-background-color: #dbe1e3!important;;
 }
-.product-form--color-swatch [data-swatch-color="Amber"]{
+.product-form--color-swatch [data-swatch-color="Amber"],
+.product-form--color-swatch [data-swatch-color="AMBER"]{
   --swatch-background-color: #BF9712!important;
 }
 .product-form--color-swatch [data-swatch-color="Rose Gold"]{
