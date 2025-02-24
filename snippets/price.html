@@ -94,7 +94,7 @@
           {{/if}}
         </div>
       {{else}}
-        <div class="price__regular body2">
+        <div class="price__regular body2 price_flex">
           <span class="{{sale_font_bold}} price-item price-item--regular {{#unless block.settings.font_size_flexible}}{{block.settings.sale_font_size}}{{/unless}}">
             {{#if show_from}}
               {{{t "products.product_list.from_price_html" price=money_price}}}
@@ -106,6 +106,13 @@
               {{else}}
                 {{money_price}}
               {{/if}}
+            {{/if}}
+          </span>
+          <span class="product_actual-price">
+            {{#if product.metafields.my_fields.unit.value == "Each"}}
+              {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.each"}}
+            {{else if product.metafields.my_fields.unit.value == "Set"}}
+              {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.set"}}
             {{/if}}
           </span>
         </div>
