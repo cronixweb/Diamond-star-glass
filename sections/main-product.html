@@ -403,11 +403,19 @@
                 }
             </style>
             <h1 class="product__info-item product-title m-12" {{{block.shopline_attributes}}}>{{product.title}}</h1>
-            {{#if product.metafields.my_fields.unit_case.value }}
+            {{#if product.metafields.my_fields.unit_case.value and product.metafields.my_fields.unit.value}}
               {{#if product.metafields.my_fields.unit_case.value > '1'}}
-                {{ assign 'prefix' 'PCS/Sets' }}
+                {{#if product.metafields.my_fields.unit.value == 'Each'}}
+                  {{ assign 'prefix' 'PCS/Case' }}
+                {{else}}
+                  {{ assign 'prefix' 'SETS/Case' }}
+                {{/if}}
               {{else}}
-                {{ assign 'prefix' 'PC/Set' }}
+                {{#if product.metafields.my_fields.unit.value == 'Each'}}
+                  {{ assign 'prefix' 'PC/Case' }}
+                {{else}}
+                  {{ assign 'prefix' 'SET/Case' }}
+                {{/if}}
               {{/if}}
             <span class="product-quantity body5 fw-bold">{{product.metafields.my_fields.unit_case.value}} {{prefix}}</span>
             {{/if}}
