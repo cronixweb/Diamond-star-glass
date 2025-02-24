@@ -109,9 +109,9 @@
             {{/if}}
           </span>
           <span class="product_actual-price">
-            {{#if product.metafields.my_fields.unit.value == "Each"}}
+            {{#if product_data.metafields.my_fields.unit.value == "Each"}}
               {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.each"}}
-            {{else if product.metafields.my_fields.unit.value == "Set"}}
+            {{else if product_data.metafields.my_fields.unit.value == "SET"}}
               {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.set"}}
             {{/if}}
           </span>
