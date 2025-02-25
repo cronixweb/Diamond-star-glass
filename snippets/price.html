@@ -93,6 +93,13 @@
             </span>
           {{/if}}
         </div>
+        <span class="product_actual-price">
+          {{#if (or (eq product.metafields.my_fields.unit.value "Each") (eq product.metafields.my_fields.unit.value "each") (eq product.metafields.my_fields.unit.value "EACH"))}}
+            {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.each"}}
+          {{else if (or (eq product.metafields.my_fields.unit.value "SET") (eq product.metafields.my_fields.unit.value "Set") (eq product.metafields.my_fields.unit.value "set"))}}
+            {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.set"}}
+          {{/if}}
+        </span>
       {{else}}
         <div class="price__regular body2 price_flex">
           <span class="{{sale_font_bold}} price-item price-item--regular {{#unless block.settings.font_size_flexible}}{{block.settings.sale_font_size}}{{/unless}}">
@@ -109,9 +116,9 @@
             {{/if}}
           </span>
           <span class="product_actual-price">
-            {{#if product_data.metafields.my_fields.unit.value == "Each"}}
+            {{#if (or (eq product.metafields.my_fields.unit.value "Each") (eq product.metafields.my_fields.unit.value "each") (eq product.metafields.my_fields.unit.value "EACH"))}}
               {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.each"}}
-            {{else if product_data.metafields.my_fields.unit.value == "SET"}}
+            {{else if (or (eq product.metafields.my_fields.unit.value "SET") (eq product.metafields.my_fields.unit.value "Set") (eq product.metafields.my_fields.unit.value "set"))}}
               {{money (divided_by product.price product.metafields.my_fields.unit_case.value) }} {{t "products.actual_price.set"}}
             {{/if}}
           </span>

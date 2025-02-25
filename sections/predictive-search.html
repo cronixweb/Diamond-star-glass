@@ -21,7 +21,7 @@
             <div class="predictive-search__item-content">
               <p class="predictive-search__item-head body3">{{ product.title }}</p>
               {{#if settings.show_search_goods_price}}
-                <p class="predictive-search__item-price"><span class="body3">{{money product.price}}</span> {{#if product.compare_at_price > product.price}}<span class="body5 line-through">{{money product.compare_at_price}}</span>{{/if}}</p>
+                <p class="predictive-search__item-price"><span class="body3">{{money product.price}}</span> {{#if product.compare_at_price > product.price}}<span class="body2 line-through">{{money product.compare_at_price}}</span>{{/if}}</p>
               {{/if}}
             </div>
           </a>

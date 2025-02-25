@@ -637,7 +637,6 @@
   font-size: var(--body4-font-size);
   color: var(--color-text);
   line-height: 1.3;
-  text-transform: capitalize;
 }
 
 .price .price_flex {
