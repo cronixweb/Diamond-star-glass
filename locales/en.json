@@ -782,6 +782,10 @@
     "quantity": {
       "qty": "PCS/Case"
     },
+    "actual_price": {
+      "each": "Per PC",
+      "set": "Per Set"
+    },
     "facets": {
       "filter":"Filter:",
       "in_stock_only": "Show only in-stock items",
